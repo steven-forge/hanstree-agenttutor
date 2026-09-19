@@ -1,0 +1,52 @@
+name: Update Docs
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+      timezone: 'Asia/Seoul'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Run doc update script
+        run: |
+          python3 scripts/update_docs.py
+
+      - name: Commit and push if changed
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add index.html sources.json .source-cache
+            git commit -m "docs: 공식 문서 명령어 자동 갱신"
+            git push origin master
+          else
+            echo "No changes detected. Skipping commit and push."
+          fi
+
+      - name: Handle failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_TITLE="[자동 갱신] 공식 문서 갱신 실패"
+          EXISTING_ISSUE=$(gh issue list --state open --json title --jq ".[] | select(.title == \"$ISSUE_TITLE\") | .title" | head -n 1)
+          if [ -z "$EXISTING_ISSUE" ]; then
+            gh issue create \
+              --title "$ISSUE_TITLE" \
+              --body "공식 문서 자동 갱신 워크플로우 실행 중 오류가 발생했습니다. 세부 사항은 Actions 실행 로그를 확인해 주세요."
+          else
+            echo "An open issue with title '$ISSUE_TITLE' already exists. Skipping duplicate issue creation."
+          fi
