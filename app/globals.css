@@ -46,7 +46,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .docs-sidebar nav a { padding: 7px 10px; border-radius: 6px; color: #6b7280; font-size: 14px; text-decoration: none; }
 .docs-sidebar nav a:hover { color: var(--blue); }
 .docs-sidebar nav a.selected { color: var(--blue); background: var(--blue-soft); font-weight: 700; }
-.docs-sidebar footer { position: absolute; right: 20px; bottom: 20px; left: 20px; padding-top: 14px; border-top: 1px solid var(--line); color: #9ca3af; font-size: 12px; }
+.docs-sidebar footer { position: absolute; right: 20px; bottom: 20px; left: 20px; display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--line); color: #9ca3af; font-size: 12px; }
 .doc-main { min-width: 0; padding: 42px 40px 64px; }
 .doc-meta { margin-bottom: 30px; }
 .doc-meta > a { display: inline-flex; margin-bottom: 10px; color: var(--blue); font-size: 13px; font-weight: 650; text-decoration: none; }
