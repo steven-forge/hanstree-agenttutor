@@ -19,9 +19,20 @@ jobs:
         with:
           ref: master
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run doc update script
-        run: |
-          python3 scripts/update_docs.py
+        run: python3 scripts/update_docs.py
+
+      - name: Build Next.js
+        run: npm run build
 
       - name: Commit and push if changed
         if: success()
@@ -29,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
-            git add index.html sources.json .source-cache
+            git add data/docs.json .source-cache
             git commit -m "docs: 공식 문서 명령어 자동 갱신"
             git push origin master
           else
