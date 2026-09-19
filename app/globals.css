@@ -49,7 +49,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .docs-sidebar nav a.selected { color: var(--blue); background: var(--blue-soft); font-weight: 700; }
 .docs-sidebar footer { position: absolute; right: 20px; bottom: 20px; left: 20px; display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--line); color: #9ca3af; font-size: 12px; text-align: center; }
 .doc-main { min-width: 0; padding: 42px 40px 64px; }
-.doc-meta { margin-bottom: 30px; }
+.doc-meta { margin-bottom: 0; }
 .doc-meta > div { display: flex; justify-content: space-between; gap: 18px; color: #9ca3af; font-size: 12px; }
 .doc-meta a { color: var(--blue); text-decoration: none; }
 .doc-meta a:hover { text-decoration: underline; }
@@ -86,7 +86,18 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .legacy-content th, .legacy-content td, .auto-managed th, .auto-managed td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 .legacy-content th, .auto-managed th { color: var(--muted); background: var(--wash); font-size: .76rem; letter-spacing: .03em; }
 .legacy-content tr:last-child td, .auto-managed tr:last-child td { border-bottom: 0; }
-.legacy-content .table-wrap, .auto-managed .table-wrap { overflow-x: auto; }
+.table-wrap { width: 100%; overflow-x: auto; }
+.table-wrap table { width: 100%; table-layout: fixed; }
+.table-wrap th, .table-wrap td { overflow-wrap: anywhere; }
+.table-wrap table:has(th:nth-child(2):last-child) th:nth-child(1) { width: 32%; }
+.table-wrap table:has(th:nth-child(2):last-child) th:nth-child(2) { width: 68%; }
+.table-wrap table:has(th:nth-child(3):last-child) th:nth-child(1) { width: 30%; }
+.table-wrap table:has(th:nth-child(3):last-child) th:nth-child(2) { width: 22%; }
+.table-wrap table:has(th:nth-child(3):last-child) th:nth-child(3) { width: 48%; }
+.table-wrap table:has(th:nth-child(4):last-child) th:nth-child(1) { width: 28%; }
+.table-wrap table:has(th:nth-child(4):last-child) th:nth-child(2) { width: 20%; }
+.table-wrap table:has(th:nth-child(4):last-child) th:nth-child(3) { width: 40%; }
+.table-wrap table:has(th:nth-child(4):last-child) th:nth-child(4) { width: 12%; }
 .legacy-content .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; counter-reset: step; }
 .legacy-content .step { position: relative; padding: 16px 14px 16px 46px; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
 .legacy-content .step::before { counter-increment: step; content: counter(step); position: absolute; left: 13px; top: 16px; display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; color: #fff; background: var(--blue); font-weight: 800; font-size: .75rem; }
