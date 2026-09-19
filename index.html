@@ -31,7 +31,7 @@
     </aside>
     <section class="content">
       <section class="viewer" aria-label="선택한 문서">
-        <div class="viewer-head"><strong id="currentTitle">문서</strong><span id="currentMeta">출처 · 갱신일</span></div>
+        <div class="viewer-head"><strong id="currentTitle">문서</strong><span>출처 · <a id="currentSource" href="#" target="_blank" rel="noopener"></a>　|　갱신 · <span id="currentUpdated"></span></span></div>
         
       <article class="embedded-doc" data-doc="hanstree" hidden>
         <style>
@@ -394,11 +394,11 @@ python3 /workspace/tools/ai_team.py claude --mode edit \
     </section>
   </main>
   <script>
-    const documents=[{id:'hanstree',title:'Hanstree',group:'한스트리 작업실 운영 안내',source:'한스트리 작업실 운영 안내',updated:'2026년 09월 19일'},{id:'codex',title:'Codex CLI',group:'OpenAI 공식 문서',source:'OpenAI Codex CLI 공식 문서',updated:'2026년 09월 19일'},{id:'claude',title:'Claude Code CLI',group:'Anthropic 공식 문서',source:'Anthropic Claude Code 공식 문서',updated:'2026년 09월 19일'},{id:'gemini',title:'Gemini CLI',group:'Google 공식 문서',source:'Google Gemini CLI 공식 문서',updated:'2026년 09월 19일'},{id:'agy',title:'Antigravity CLI',group:'Google 공식 문서',source:'Google Antigravity CLI 공식 문서',updated:'2026년 09월 19일'},{id:'grok',title:'Grok CLI',group:'xAI 공식 문서',source:'xAI Grok CLI 공식 문서',updated:'2026년 09월 19일'}];
-    const list=document.querySelector('#docList'),count=document.querySelector('#count'),currentTitle=document.querySelector('#currentTitle'),currentMeta=document.querySelector('#currentMeta');
+    const documents=[{id:'hanstree',title:'Hanstree',group:'한스트리 작업실 운영 안내',source:'한스트리 작업실 운영 안내',sourceUrl:'https://github.com/steven-forge/hanstree-agenttutor',updated:'2026년 09월 19일'},{id:'codex',title:'Codex CLI',group:'OpenAI 공식 문서',source:'OpenAI Codex CLI 공식 문서',sourceUrl:'https://developers.openai.com/ko-KR/docs/codex/cli',updated:'2026년 09월 19일'},{id:'claude',title:'Claude Code CLI',group:'Anthropic 공식 문서',source:'Anthropic Claude Code 공식 문서',sourceUrl:'https://code.claude.com/docs/en/cli-usage',updated:'2026년 09월 19일'},{id:'gemini',title:'Gemini CLI',group:'Google 공식 문서',source:'Google Gemini CLI 공식 문서',sourceUrl:'https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md',updated:'2026년 09월 19일'},{id:'agy',title:'Antigravity CLI',group:'Google 공식 문서',source:'Google Antigravity CLI 공식 문서',sourceUrl:'https://www.agy.dev/docs/cli/reference/',updated:'2026년 09월 19일'},{id:'grok',title:'Grok CLI',group:'xAI 공식 문서',source:'xAI Grok CLI 공식 문서',sourceUrl:'https://docs.x.ai/build/cli/reference',updated:'2026년 09월 19일'}];
+    const list=document.querySelector('#docList'),count=document.querySelector('#count'),currentTitle=document.querySelector('#currentTitle'),currentSource=document.querySelector('#currentSource'),currentUpdated=document.querySelector('#currentUpdated');
     let selected=documents[0].id;
     function render(){count.textContent=`${documents.length}개 문서`;list.innerHTML='';documents.forEach(doc=>{const button=document.createElement('button');button.className=`doc-button${doc.id===selected?' active':''}`;button.type='button';button.innerHTML=`${doc.title}<small>${doc.group}</small>`;button.addEventListener('click',()=>select(doc));list.appendChild(button);});}
-    function select(doc){selected=doc.id;const contentId=doc.id==='agy'?'gemini':doc.id;document.querySelectorAll('.embedded-doc').forEach(panel=>{panel.hidden=panel.dataset.doc!==contentId;});currentTitle.textContent=doc.title;currentMeta.textContent=`출처 · ${doc.source}　|　갱신 · ${doc.updated}`;render();}
+    function select(doc){selected=doc.id;const contentId=doc.id==='agy'?'gemini':doc.id;document.querySelectorAll('.embedded-doc').forEach(panel=>{panel.hidden=panel.dataset.doc!==contentId;});currentTitle.textContent=doc.title;currentSource.textContent=doc.source;currentSource.href=doc.sourceUrl;currentUpdated.textContent=doc.updated;render();}
     select(documents[0]);
   </script>
 </body>
