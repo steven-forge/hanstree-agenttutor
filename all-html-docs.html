@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML 문서 모아보기</title>
+  <style>
+    :root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--paper:#fff;--wash:#fff;--blue:#2563eb;--blue-soft:#eff6ff;--sidebar:#f8fafc}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--wash);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.55}
+    .topbar{height:64px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 28px;gap:18px;background:#fff}.brand{font-weight:800;letter-spacing:-.02em;white-space:nowrap}.brand-mark{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:8px;border-radius:8px;background:var(--blue);color:white;font-size:14px}.topbar p{margin:0;color:var(--muted);font-size:14px}
+    .layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:calc(100vh - 64px)}
+    .panel{padding:28px 18px;background:var(--sidebar);border-right:1px solid var(--line);position:sticky;top:0;height:calc(100vh - 64px);overflow:auto}.panel h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 10px 14px}
+    .doc-list{display:grid;gap:3px}.doc-button{display:block;width:100%;text-align:left;padding:9px 12px;border:0;border-radius:7px;background:transparent;color:var(--muted);font:inherit;cursor:pointer}.doc-button:hover{background:#eef2f7;color:var(--ink)}.doc-button.active{background:var(--blue-soft);color:#4338ca;font-weight:700}.doc-button small{display:block;color:#9ca3af;font-size:11px;margin-top:2px;font-weight:400}.doc-button.active small{color:#6366f1}
+    .count{color:var(--muted);font-size:12px;margin:0 10px 10px}.empty{color:var(--muted);font-size:14px;padding:8px 10px}
+    .content{min-width:0}.viewer{width:100%;margin:0 0 40px;padding:0 32px 40px;background:var(--paper)}.viewer-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 18px;margin:0 -32px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}.viewer-head strong{font-size:14px}.viewer-head a{color:var(--blue);font-size:13px;text-decoration:none}.viewer-head a:hover{text-decoration:underline}
+    .embedded-doc{display:block}.embedded-doc[hidden]{display:none}.embedded-body{min-width:0}.embedded-body>.wrap{max-width:none;margin:0;padding:0}.embedded-body>.wrap>footer{margin-top:28px}
+    @media(max-width:800px){.topbar{padding:0 16px}.topbar p{display:none}.layout{grid-template-columns:1fr}.panel{position:static;height:auto;padding:16px;border-right:0;border-bottom:1px solid var(--line)}.doc-list{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.hero{padding:28px 20px 22px}.viewer{padding:0 20px 28px}.viewer-head{margin:0 -20px 24px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">A</span>AgentTutor</div>
+    <p>명령어 모아보기</p>
+  </header>
+  <main class="layout" aria-label="HTML 문서 모아보기">
+    <aside class="panel">
+      <h2>명령어 문서</h2>
+      <p id="count" class="count"></p>
+      <nav id="docList" class="doc-list" aria-label="문서 선택"></nav>
+    </aside>
+    <section class="content">
+      <section class="viewer" aria-label="선택한 문서">
+        <div class="viewer-head"><strong id="currentTitle">문서</strong><span id="currentMeta">출처 · 갱신일</span></div>
+        
+      <article class="embedded-doc" data-doc="hanstree" hidden>
+        <style>
+    :root {
+      --ink: #17212b;
+      --muted: #66717d;
+      --line: #e3e8ed;
+      --paper: #ffffff;
+      --wash: #f4f7f8;
+      --blue: #2563eb;
+      --blue-soft: #eaf1ff;
+      --mint: #0f766e;
+      --mint-soft: #e8f7f3;
+      --amber: #a16207;
+      --amber-soft: #fff7df;
+      --shadow: 0 18px 45px rgba(20, 35, 50, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--wash);
+      font-family: Pretendard, "Noto Sans KR", system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 34px 20px 70px; }
+    .hero {
+      position: relative; overflow: hidden; padding: 42px 42px 38px;
+      border-radius: 28px; color: white;
+      background: linear-gradient(135deg, #173b62 0%, #2563eb 55%, #18a39a 115%);
+      box-shadow: var(--shadow);
+    }
+    .hero::after { content: ""; position: absolute; width: 270px; height: 270px; right: -80px; top: -100px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,255,255,.04), 0 0 0 58px rgba(255,255,255,.03); }
+    .eyebrow { margin: 0 0 10px; color: #cbe1ff; font-size: .82rem; font-weight: 800; letter-spacing: .12em; }
+    h1 { margin: 0; max-width: 700px; font-size: clamp(2rem, 5vw, 3.45rem); line-height: 1.15; letter-spacing: -.055em; }
+    .lead { max-width: 700px; margin: 18px 0 0; color: #eaf3ff; font-size: 1.08rem; }
+    .date { position: relative; z-index: 1; display: inline-flex; margin-top: 25px; padding: 7px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #f2f8ff; background: rgba(0,0,0,.14); font-size: .88rem; }
+    main { display: grid; gap: 22px; margin-top: 24px; }
+    .section { padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: 0 8px 25px rgba(20,35,50,.035); }
+    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.035em; }
+    h3 { margin: 0 0 8px; font-size: 1.03rem; }
+    .section-note { margin: 4px 0 0; color: var(--muted); font-size: .92rem; }
+    .badge { flex: 0 0 auto; padding: 5px 10px; border-radius: 999px; color: var(--blue); background: var(--blue-soft); font-size: .76rem; font-weight: 800; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card { padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: #fbfcfd; }
+    .card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .card code, td code, .command { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    code, .command { color: #1e40af; background: var(--blue-soft); border-radius: 7px; padding: 2px 7px; font-size: .9em; }
+    .command-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+    .command { display: inline-block; padding: 7px 10px; border: 1px solid #d7e4ff; }
+    .two { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .callout { margin-top: 16px; padding: 14px 16px; border-left: 4px solid var(--mint); border-radius: 10px; color: #235b56; background: var(--mint-soft); font-size: .92rem; }
+    .warning { border-left-color: var(--amber); color: #76510b; background: var(--amber-soft); }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); background: #f8fafb; font-size: .8rem; letter-spacing: .03em; }
+    tr:last-child td { border-bottom: 0; }
+    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; counter-reset: step; }
+    .step { position: relative; padding: 17px 17px 17px 52px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd; }
+    .step::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 17px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; color: white; background: var(--blue); font-weight: 800; font-size: .8rem; }
+    .step strong { display: block; margin-bottom: 4px; }
+    .step span { color: var(--muted); font-size: .9rem; }
+    pre { overflow-x: auto; margin: 14px 0 0; padding: 17px; border-radius: 13px; color: #dbeafe; background: #122033; font-size: .84rem; line-height: 1.7; }
+    footer { margin-top: 22px; color: var(--muted); text-align: center; font-size: .84rem; }
+    @media (max-width: 760px) { .wrap { padding: 18px 14px 45px; } .hero, .section { padding: 24px 20px; border-radius: 19px; } .grid, .two, .flow { grid-template-columns: 1fr; } .section-head { display: block; } .badge { display: inline-block; margin-top: 10px; } table { display: block; overflow-x: auto; white-space: nowrap; } }
+  </style>
+        <div class="embedded-body"><div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">HANSTREE WORKROOM · COMMAND GUIDE</p>
+      <h1>한스트리 작업실<br>명령어 안내</h1>
+      <p class="lead">Codex를 중심으로 Claude, Gemini(AGY), Grok, Kimi, Perplexity와 협업하고 프로젝트를 마무리할 때 사용하는 대화 명령 모음입니다.</p>
+      <span class="date">작성일 · 2026년 09월 19일 14:48 KST</span>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-head"><div><h2>먼저 알아둘 점</h2><p class="section-note">대화창에 자연스럽게 입력하면 됩니다.</p></div><span class="badge">사용 방법</span></div>
+        <div class="flow">
+          <div class="step"><strong>작업 지시</strong><span>무엇을 만들거나 고칠지 말합니다.</span></div>
+          <div class="step"><strong>에이전트 선택</strong><span>Codex, Claude, Gemini 등에 맡깁니다.</span></div>
+          <div class="step"><strong>검증·마무리</strong><span><code>검토</code> 또는 <code>마무리</code>로 확인합니다.</span></div>
+        </div>
+        <div class="callout">앞에 <code>/</code>를 붙이는 형식과 붙이지 않는 형식이 모두 지원됩니다. 예: <code>/클로드 화면을 검토해줘</code></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>기본 작업 명령</h2><p class="section-note">프로젝트를 진행하고 완료할 때 가장 자주 사용합니다.</p></div><span class="badge">핵심</span></div>
+        <table><thead><tr><th>명령어</th><th>하는 일</th></tr></thead><tbody>
+          <tr><td><code>코덱스</code></td><td>Codex가 직접 처리하거나 결과를 검증합니다.</td></tr>
+          <tr><td><code>검토</code></td><td>Claude·Gemini 등 다른 에이전트의 작업을 Codex가 확인합니다.</td></tr>
+          <tr><td><code>마무리</code></td><td>빌드, 설치, 실행, Git 백업까지 개발 작업을 마무리합니다.</td></tr>
+          <tr><td><code>릴리즈</code></td><td>검증 후 외부 공개와 Hanstree.com 정보 반영까지 진행합니다.</td></tr>
+          <tr><td><code>싱크 맞춰</code> · <code>씽크업</code></td><td>연결된 프로젝트의 기능·화면·상태를 동기화합니다.</td></tr>
+        </tbody></table>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>AI 협업 명령</h2><p class="section-note">한 번만 맡기거나, 모드를 시작한 뒤 이어서 요청할 수 있습니다.</p></div><span class="badge">협업</span></div>
+        <div class="grid">
+          <article class="card"><h3>Claude</h3><p>복잡한 구조, iPhone·iPad 구현, 코드 수정에 적합합니다.</p><div class="command-list"><span class="command">클로드</span><span class="command">/클로드</span><span class="command">클로드 종료</span></div></article>
+          <article class="card"><h3>Gemini · AGY</h3><p>큰 규모의 파일 분석, Android 작업, 비교·요약에 적합합니다.</p><div class="command-list"><span class="command">제미나이</span><span class="command">/제미나이</span><span class="command">제미나이 종료</span></div></article>
+          <article class="card"><h3>Grok</h3><p>난제, 반례, 빠뜨린 부분을 점검할 때 사용합니다.</p><div class="command-list"><span class="command">글록</span><span class="command">그록</span><span class="command">/그록</span></div></article>
+          <article class="card"><h3>Kimi</h3><p>공개 자료만으로 끝나는 간단한 요약·번역·아이디어에 사용합니다.</p><div class="command-list"><span class="command">키미</span><span class="command">/키미</span><span class="command">키미 종료</span></div></article>
+          <article class="card"><h3>Perplexity</h3><p>최신 공개 정보 검색과 원문 출처 수집에 사용합니다.</p><div class="command-list"><span class="command">P</span><span class="command">/P</span><span class="command">P 종료</span></div></article>
+        </div>
+        <div class="callout warning">에이전트 모드가 진행 중일 때 <code>검토</code> 또는 <code>코덱스</code>를 입력하면 Codex에게 제어권이 돌아옵니다.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>화면·제품 작업</h2><p class="section-note">자연어로 요청하면 관련 작업 방식이 적용됩니다.</p></div><span class="badge">디자인·제품</span></div>
+        <div class="command-list"><span class="command">디자인해줘</span><span class="command">매치업</span><span class="command">매치업 스킬 써</span><span class="command">안드로이드도 만들어</span><span class="command">시각화해줘</span><span class="command">이미지 만들어줘</span><span class="command">이미지 수정해줘</span></div>
+        <p class="section-note" style="margin-top:16px">예: <code>아이폰 버전하고 안드로이드 버전 맞춰줘</code></p>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>문서·파일 작업</h2><p class="section-note">파일 형식이나 서비스 이름을 함께 말하면 됩니다.</p></div><span class="badge">자료 작업</span></div>
+        <div class="two">
+          <div class="card"><h3>문서·자료</h3><div class="command-list"><span class="command">문서 만들어줘</span><span class="command">PDF 읽어줘</span><span class="command">PDF 만들어줘</span><span class="command">엑셀 분석해줘</span><span class="command">스프레드시트 수정해줘</span><span class="command">파워포인트 만들어줘</span><span class="command">슬라이드 만들어줘</span><span class="command">템플릿으로 만들어줘</span></div></div>
+          <div class="card"><h3>연결 서비스</h3><div class="command-list"><span class="command">Google Drive에서 찾아줘</span><span class="command">Google 문서 만들어줘</span><span class="command">노션에 정리해줘</span><span class="command">Canva 디자인 검토해줘</span><span class="command">Canva 디자인 수정해줘</span><span class="command">Canva 디자인 번역해줘</span></div></div>
+        </div>
+        <div class="callout warning">Google Drive, Notion, Canva, Excel 같은 연결 서비스는 해당 연결이 활성화된 경우에만 실제 작업할 수 있습니다.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>뉴스·관리 명령</h2><p class="section-note">최신 정보나 작업실 자체를 관리할 때 사용합니다.</p></div><span class="badge">관리</span></div>
+        <div class="grid">
+          <div class="card"><h3>오늘 뉴스</h3><div class="command-list"><span class="command">출석</span><span class="command">출석체크</span><span class="command">출첵</span><span class="command">뉴스</span><span class="command">오늘의 뉴스</span><span class="command">현재 뉴스</span></div></div>
+          <div class="card"><h3>Codex 관리</h3><div class="command-list"><span class="command">코덱스 동기화</span><span class="command">스킬 설치해줘</span><span class="command">사용 가능한 스킬 알려줘</span><span class="command">새 스킬 만들어줘</span></div></div>
+          <div class="card"><h3>플러그인</h3><div class="command-list"><span class="command">플러그인 찾아줘</span><span class="command">플러그인 설치해줘</span><span class="command">플러그인 권한 확인해줘</span></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-head"><div><h2>스킬 목록과 용도</h2><p class="section-note">현재 한스트리 작업실에 등록된 스킬을 분야별로 정리했습니다.</p></div><span class="badge">Skill catalog</span></div>
+        <div class="callout">스킬은 별도 명령어를 외우지 않아도 됩니다. 예를 들어 “PDF를 읽고 표로 정리해줘”, “Android 버전도 만들어줘”처럼 목적을 말하면 관련 스킬이 적용됩니다.</div>
+        <table><thead><tr><th>분야</th><th>스킬</th><th>용도</th></tr></thead><tbody>
+          <tr><td>AI 협업</td><td><code>claude-collab</code><br><code>gemini-collab</code><br><code>grok-collab</code><br><code>kimi-collab</code><br><code>perplexity-collab</code><br><code>samdaejang</code></td><td>Claude·Gemini·Grok·Kimi·Perplexity에 제한된 업무를 맡기고 Codex가 결과를 확인합니다. 여러 에이전트의 역할 조정에도 사용합니다.</td></tr>
+          <tr><td>프로젝트·릴리즈</td><td><code>finish-work</code><br><code>release</code><br><code>project</code><br><code>project-sync</code><br><code>android-counterpart</code><br><code>testflight-public-beta</code></td><td>개발 마무리, 공개 릴리즈, 프로젝트 생성·이름 변경, iOS·Android 동기화, Android 버전 제작, TestFlight 공개 베타를 관리합니다.</td></tr>
+          <tr><td>디자인·화면</td><td><code>design</code><br><code>matchup</code><br><code>visualize</code><br><code>imagegen</code></td><td>UX·UI·브랜드 설계, iOS·Android 화면 비교, 차트·시각화 제작, 이미지 생성·편집을 담당합니다.</td></tr>
+          <tr><td>문서·파일</td><td><code>documents</code><br><code>pdf</code><br><code>Spreadsheets</code><br><code>Presentations</code><br><code>template-creator</code></td><td>DOCX 문서, PDF, XLSX·CSV·TSV 스프레드시트, PowerPoint·Google Slides, 재사용 템플릿을 만들고 검증합니다.</td></tr>
+          <tr><td>Google·Notion</td><td><code>google-drive</code><br><code>google-docs</code><br><code>google-sheets</code><br><code>google-slides</code><br><code>google-drive-comments</code><br><code>notion-knowledge-capture</code><br><code>notion-meeting-intelligence</code><br><code>notion-research-documentation</code><br><code>notion-spec-to-implementation</code></td><td>Drive 파일과 Docs·Sheets·Slides를 찾고 편집하며, 댓글을 관리합니다. Notion 지식 정리, 회의 준비, 자료 조사, 기획서 구현 계획도 지원합니다.</td></tr>
+          <tr><td>Canva</td><td><code>canva-brand-check</code><br><code>canva-branded-presentation</code><br><code>canva-bulk-create</code><br><code>canva-design-feedback</code><br><code>canva-edit-design</code><br><code>canva-implement-feedback</code><br><code>canva-resize-for-social-media</code><br><code>canva-translate-design</code></td><td>브랜드 일치 여부 점검, 프레젠테이션 제작, 데이터 기반 일괄 생성, 디자인 피드백·수정·번역·SNS 규격 변환을 처리합니다.</td></tr>
+          <tr><td>Codex·플러그인</td><td><code>openai-docs</code><br><code>codex-sync</code><br><code>skill-creator</code><br><code>skill-installer</code><br><code>plugin-creator</code><br><code>plugin-management</code><br><code>codex-pass</code></td><td>Codex·OpenAI 공식 사용법, 개인 프로필 동기화, 스킬 제작·설치, 플러그인 생성·관리, 관리용 인증정보 기록을 담당합니다.</td></tr>
+          <tr><td>검토·간소화</td><td><code>review-agent</code><br><code>ponytail</code><br><code>ponytail-review</code><br><code>ponytail-audit</code><br><code>ponytail-debt</code><br><code>ponytail-gain</code><br><code>ponytail-help</code></td><td>코드의 결함을 읽기 전용으로 검토하고, 불필요한 복잡성·기술 부채를 줄이며, 간소화 효과와 사용법을 확인합니다.</td></tr>
+          <tr><td>특수 기능·사이트</td><td><code>aibi</code><br><code>hanstree-site-manager</code><br><code>today-news</code><br><code>excel-live-control</code></td><td>AI 웹 브라우저 연동, Hanstree.com 공개 정보 동기화, 오늘 뉴스 점검, 연결된 Microsoft Excel 제어를 담당합니다.</td></tr>
+        </tbody></table>
+        <div class="callout warning">Google·Notion·Canva·Excel 관련 스킬은 연결된 외부 도구가 활성화되어야 실제 작업할 수 있습니다. Mac 전용 기능이나 로그인·권한이 필요한 기능은 현재 실행 환경에 따라 제한될 수 있습니다.</div>
+      </section>
+
+      <section class="section" id="agents">
+        <div class="section-head"><div><h2>에이전트 목록과 용도</h2><p class="section-note">한스트리 작업실에서 업무를 맡을 수 있는 공식 에이전트와 실행 경로입니다.</p></div><span class="badge">Agent roster</span></div>
+        <div class="callout">에이전트는 실제로 일을 수행하는 담당자이고, 스킬은 그 일을 처리하는 방법입니다. 최종 범위 판단·통합·검증은 Codex Desktop 팀장이 담당합니다.</div>
+        <table><thead><tr><th>에이전트</th><th>경로</th><th>주요 용도</th></tr></thead><tbody>
+          <tr><td><strong>Codex Desktop</strong><br><small>팀장(TM)</small></td><td>Codex 작업실</td><td>요구사항 확정, 업무 배정, 범위·안전 판단, 결과 통합, 복구 지휘, 최종 검증과 완료 판단을 담당합니다.</td></tr>
+          <tr><td><strong>Codex CLI</strong></td><td>터미널</td><td>로컬 파일을 다루는 개발 작업에 사용합니다. 기본 담당자가 아니라 사용량·승인 조건을 확인한 경우에만 투입합니다.</td></tr>
+          <tr><td><strong>Codex 웹/클라우드</strong></td><td>클라우드</td><td>클라우드 환경에 위임하는 개발·조사 작업에 사용합니다. 실행 가능 경로와 업무 범위를 먼저 확인합니다.</td></tr>
+          <tr><td><strong>Claude 웹</strong></td><td>웹 대화</td><td>공개 웹 기반 조사와 대화 작업을 담당합니다.</td></tr>
+          <tr><td><strong>Claude Fable</strong></td><td>Claude CLI</td><td>복잡한 기능·구조 작업, 특히 iPhone·iPad 구현에 우선 사용합니다.</td></tr>
+          <tr><td><strong>Claude Sonnet</strong></td><td>Claude CLI</td><td>Fable을 사용할 수 없거나 단순 반복·기계적 작업에 적합합니다.</td></tr>
+          <tr><td><strong>Gemini CLI</strong></td><td>AGY / 로컬 CLI</td><td>많은 로컬 파일을 분석하거나 Android 기능을 구현할 때 우선 사용합니다.</td></tr>
+          <tr><td><strong>Gemini 웹</strong></td><td>웹 대화</td><td>공개 인터넷 자료를 폭넓게 조사·비교·정리할 때 사용합니다.</td></tr>
+          <tr><td><strong>Grok CLI</strong></td><td>Grok CLI</td><td>난제, 반례, 누락 위험을 찾아내는 독립 점검에 사용합니다.</td></tr>
+          <tr><td><strong>Grok 웹</strong></td><td>웹 대화</td><td>공개 웹 기반 조사와 대화 작업에 사용합니다.</td></tr>
+          <tr><td><strong>Kimi 웹</strong></td><td>웹 대화</td><td>공개 자료만으로 끝나는 간단한 요약·번역·아이디어 작업에 사용합니다.</td></tr>
+          <tr><td><strong>Perplexity 웹 (P)</strong></td><td>웹 대화</td><td>최신 공개 정보 검색, 원문 출처 수집, 출처 교차확인에 사용합니다.</td></tr>
+        </tbody></table>
+        <div class="callout warning"><strong>참고:</strong> Codex Spark는 퇴역하여 현재 업무 배정·가용성 점검 대상에서 제외됩니다. 같은 성격의 짧고 저위험인 작업은 사용 가능한 Claude Sonnet 또는 다른 적합한 에이전트가 담당합니다.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>터미널 실행기</h2><p class="section-note">Claude·Gemini를 내부적으로 실행할 때 사용하는 실제 명령입니다.</p></div><span class="badge">고급</span></div>
+        <pre><code>python3 /workspace/tools/ai_team.py --help
+python3 /workspace/tools/ai_team.py --self-check
+
+# 검토만 허용
+python3 /workspace/tools/ai_team.py gemini --mode review \
+  --cwd /workspace/projects/AgentTutor \
+  --prompt-file /workspace/projects/AgentTutor/task.md
+
+# 파일 수정 허용
+python3 /workspace/tools/ai_team.py claude --mode edit \
+  --cwd /workspace/projects/AgentTutor \
+  --prompt-file /workspace/projects/AgentTutor/task.md</code></pre>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><div><h2>추천 사용 순서</h2><p class="section-note">처음 사용하는 분은 이 흐름대로 입력하면 됩니다.</p></div><span class="badge">빠른 시작</span></div>
+        <div class="flow">
+          <div class="step"><strong>요청하기</strong><span>“이 화면을 수정해줘”처럼 원하는 결과를 말합니다.</span></div>
+          <div class="step"><strong>맡기기</strong><span>필요하면 <code>/클로드</code> 또는 <code>/제미나이</code>를 붙입니다.</span></div>
+          <div class="step"><strong>확인하기</strong><span>마지막에 <code>검토</code> 또는 <code>마무리</code>를 입력합니다.</span></div>
+        </div>
+      </section>
+    </main>
+    <footer>한스트리 작업실 명령어 안내 · 작성일 2026년 09월 19일 14:48 KST</footer>
+  </div></div>
+      </article>
+
+      <article class="embedded-doc" data-doc="codex" hidden>
+        <style>
+    :root{--ink:#172033;--muted:#5c6b82;--line:#dfe6ef;--bg:#f5f7fb;--card:#fff;--blue:#2563eb;--orange:#b45309;--red:#b91c1c}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}
+    .wrap{max-width:1120px;margin:auto;padding:32px 20px 64px}.hero{background:linear-gradient(135deg,#172554,#2563eb);color:#fff;border-radius:20px;padding:34px 36px;margin-bottom:24px;box-shadow:0 12px 30px #17255420}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}.hero p{margin:6px 0;color:#e0e7ff}.note{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;padding:14px 16px;border-radius:12px;margin:20px 0}.group{margin:28px 0}.group h2{font-size:24px;margin:0 0 6px}.group>p{color:var(--muted);margin-top:0}.table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{border-collapse:collapse;width:100%;min-width:760px}th,td{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line)}th{background:#eef3fb;color:#334155;font-size:14px}tr:last-child td{border-bottom:0}code{background:#eef2ff;color:#1e3a8a;border-radius:5px;padding:2px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}.badge{display:inline-block;border-radius:99px;padding:1px 8px;font-size:12px;font-weight:700}.stable{background:#dcfce7;color:#166534}.experimental{background:#fef3c7;color:#92400e}.danger{color:var(--red);font-weight:700}.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}.quick div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.quick strong{display:block;color:var(--blue)}footer{margin-top:34px;color:var(--muted);font-size:14px}a{color:var(--blue)}
+  </style>
+        <div class="embedded-body"><main class="wrap">
+  
+  <div class="note"><strong>읽는 법</strong><br>터미널에서 쓰는 명령은 <code>codex ...</code>, Codex를 실행한 뒤 입력창에서 쓰는 명령은 <code>/...</code>로 표시했습니다. 기능 성숙도는 공식 문서의 Stable/Experimental 표기를 따릅니다. 버전에 따라 일부 명령은 보이지 않을 수 있습니다.</div>
+
+  <section class="group"><h2>1. 시작·일상 작업</h2><p>Codex를 열고, 작업을 이어가고, 결과를 검토할 때 쓰는 기본 명령입니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th><th>상태</th></tr></thead><tbody>
+  <tr><td><code>codex</code></td><td>Codex 실행</td><td>현재 폴더에서 Codex 대화창을 엽니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex resume</code></td><td>이전 대화 이어 하기</td><td>지난 작업을 다시 열어 계속합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex fork</code></td><td>대화 복제하기</td><td>기존 대화는 보존하고, 다른 방법을 시험할 새 가지를 만듭니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex review</code></td><td>코드 검토</td><td>커밋 전 변경 내용을 검사해 문제를 찾아줍니다. 보통 파일은 직접 고치지 않습니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex exec</code> <small>(별칭: <code>codex e</code>)</small></td><td>비대화형 실행</td><td>사람이 계속 대답하지 않아도 작업을 끝내도록 실행합니다. 자동화·CI에 적합합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex apply</code> <small>(별칭: <code>codex a</code>)</small></td><td>클라우드 변경 적용</td><td>Codex Cloud가 만든 최신 변경(diff)을 내 로컬 작업 폴더에 적용합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex update</code></td><td>Codex 업데이트</td><td>설치된 CLI를 확인하고 지원되는 경우 업데이트합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex completion</code></td><td>터미널 자동완성 생성</td><td>Bash, Zsh, Fish, PowerShell에서 명령어를 Tab으로 완성하게 합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  </tbody></table></div></section>
+
+  <section class="group"><h2>2. 세션 보관·삭제</h2><p>작업 기록을 정리하거나 되살릴 때 사용합니다. 삭제는 되돌리기 어렵습니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th><th>상태</th></tr></thead><tbody>
+  <tr><td><code>codex archive</code></td><td>대화 보관</td><td>저장된 대화를 보관함으로 옮깁니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex unarchive</code></td><td>보관 해제</td><td>보관한 대화를 다시 사용할 수 있게 복원합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex delete</code></td><td>대화 영구 삭제</td><td>저장된 세션과 기록을 지웁니다. 삭제 전 대상 확인이 필요합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  </tbody></table></div></section>
+
+  <section class="group"><h2>3. 연결·확장 기능</h2><p>외부 도구, 플러그인, 클라우드 작업과 연결할 때 사용합니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th><th>상태</th></tr></thead><tbody>
+  <tr><td><code>codex mcp</code></td><td>MCP 서버 관리</td><td>외부 도구 연결을 목록 확인·추가·삭제·인증합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex plugin</code></td><td>플러그인 관리</td><td>마켓플레이스에서 플러그인을 설치·조회·삭제합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex plugin marketplace</code></td><td>플러그인 마켓 관리</td><td>Git 또는 로컬 경로의 마켓을 추가·조회·업데이트·삭제합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex cloud</code> <small>(별칭: <code>codex cloud-tasks</code>)</small></td><td>Codex Cloud 작업 관리</td><td>터미널에서 클라우드 대화를 찾아 실행합니다. <span class="badge experimental">Experimental</span></td><td><span class="badge experimental">Experimental</span></td></tr>
+  <tr><td><code>codex remote-control</code></td><td>원격 제어 관리</td><td>로컬 app-server를 원격으로 제어하거나 짧은 연결 코드를 만듭니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  <tr><td><code>codex app</code></td><td>데스크톱 앱 열기</td><td>macOS 또는 Windows의 ChatGPT 데스크톱 앱을 엽니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex app-server</code></td><td>앱 서버 실행</td><td>개발·디버깅용 Codex 서버를 실행합니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  </tbody></table></div></section>
+
+  <section class="group"><h2>4. 로그인·설정·안전</h2><p>계정, 기능 플래그, 실행 권한과 보안 정책을 다룹니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th><th>상태</th></tr></thead><tbody>
+  <tr><td><code>codex login</code></td><td>로그인</td><td>ChatGPT 로그인, 기기 인증, API 키 등으로 Codex를 인증합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex logout</code></td><td>로그아웃</td><td>저장된 인증 정보를 제거합니다. 공유 컴퓨터에서 유용합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex features</code></td><td>기능 플래그 관리</td><td>실험 기능을 목록으로 보고 설정 파일에서 켜거나 끕니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex execpolicy</code></td><td>실행 정책 판정</td><td>특정 명령이 허용·확인 필요·차단 중 어디에 해당하는지 검사합니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  <tr><td><code>codex sandbox</code></td><td>샌드박스에서 명령 실행</td><td>Codex가 제공하는 격리 환경 안에서 명령을 실행합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  </tbody></table></div><p class="note"><span class="danger">주의:</span> 문서에 있는 <code>--yolo</code> 또는 <code>--dangerously-bypass-approvals-and-sandbox</code> 옵션은 승인과 샌드박스를 우회하므로 격리된 환경에서만 사용해야 합니다.</p></section>
+
+  <section class="group"><h2>5. 문제 확인·개발자용</h2><p>일반 사용자는 거의 쓸 일이 없지만, 설치·서버·모델 문제를 조사할 때 유용합니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th><th>상태</th></tr></thead><tbody>
+  <tr><td><code>codex doctor</code></td><td>진단 보고서 생성</td><td>설치, 설정, 인증, Git, 터미널, 서버 등을 한 번에 점검합니다.</td><td><span class="badge stable">Stable</span></td></tr>
+  <tr><td><code>codex debug app-server send-message-v2</code></td><td>앱 서버 메시지 디버깅</td><td>내장 테스트 클라이언트로 서버에 한 번 메시지를 보내 문제를 확인합니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  <tr><td><code>codex debug models</code></td><td>모델 목록 디버깅</td><td>Codex가 인식하는 원시 모델 목록을 출력합니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  <tr><td><code>codex debug prompt-input</code></td><td>프롬프트 입력 디버깅</td><td>모델에 실제로 전달될 입력 목록을 JSON으로 보여줍니다.</td><td><span class="badge experimental">Experimental</span></td></tr>
+  </tbody></table></div></section>
+
+  <section class="group"><h2>6. Codex 안에서 쓰는 슬래시 명령</h2><p><code>codex</code>를 실행한 뒤 입력창에서 입력합니다.</p>
+  <div class="table-wrap"><table><thead><tr><th>명령어</th><th>한국어 뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+  <tr><td><code>/init</code></td><td>프로젝트 지침 만들기</td><td>프로젝트용 <code>AGENTS.md</code>를 만듭니다.</td></tr><tr><td><code>/status</code></td><td>상태 보기</td><td>모델, 권한, 쓰기 가능 폴더, 남은 문맥을 확인합니다.</td></tr><tr><td><code>/permissions</code></td><td>권한 설정</td><td>Codex가 파일 수정·명령 실행 전에 얼마나 물어볼지 정합니다.</td></tr><tr><td><code>/model</code></td><td>모델 선택</td><td>사용할 모델과 추론 수준을 바꿉니다.</td></tr><tr><td><code>/review</code></td><td>작업 검토 요청</td><td>현재 작업 트리를 다시 검토합니다.</td></tr><tr><td><code>/plan</code></td><td>계획 모드</td><td>바로 구현하지 않고 먼저 실행 계획을 세우게 합니다.</td></tr><tr><td><code>/goal</code></td><td>목표 관리</td><td>장기 작업 목표를 설정·확인·수정·일시정지합니다.</td></tr><tr><td><code>/fast</code></td><td>빠른 처리 전환</td><td>지원되는 모델에서 Fast 등급을 켜고 끕니다.</td></tr><tr><td><code>/personality</code></td><td>대화 스타일 선택</td><td>친근하게, 실무적으로, 또는 기본 스타일로 바꿉니다.</td></tr><tr><td><code>/mention</code></td><td>파일 첨부</td><td>특정 파일이나 폴더를 다음 요청의 참고 대상으로 붙입니다.</td></tr><tr><td><code>/mcp</code></td><td>MCP 도구 보기</td><td>현재 연결된 외부 도구를 확인합니다.</td></tr><tr><td><code>/skills</code></td><td>스킬 선택</td><td>다음 요청에 적용할 작업 지침을 고릅니다.</td></tr><tr><td><code>/ps</code></td><td>백그라운드 작업 보기</td><td>뒤에서 실행 중인 터미널과 최근 출력을 확인합니다.</td></tr><tr><td><code>/stop</code></td><td>백그라운드 작업 중지</td><td>현재 세션이 시작한 백그라운드 작업을 멈춥니다.</td></tr><tr><td><code>/fork</code></td><td>현재 대화 복제</td><td>현재 대화의 다른 해결 방법을 별도 대화에서 시험합니다.</td></tr><tr><td><code>/resume</code></td><td>저장 대화 재개</td><td>세션 목록에서 이전 대화를 다시 엽니다.</td></tr><tr><td><code>/new</code></td><td>새 대화</td><td>같은 CLI 안에서 대화 맥락만 새로 시작합니다.</td></tr><tr><td><code>/clear</code></td><td>화면·대화 초기화</td><td>화면을 비우고 새 채팅을 시작합니다. <code>Ctrl+L</code>과 달리 새 대화입니다.</td></tr><tr><td><code>/archive</code></td><td>현재 대화 보관</td><td>현재 세션을 보관하고 Codex를 종료합니다.</td></tr><tr><td><code>/delete</code></td><td>현재 대화 삭제</td><td>현재 세션 기록을 영구 삭제하고 종료합니다.</td></tr><tr><td><code>/approve</code></td><td>최근 거부 작업 재승인</td><td>자동 검토가 막은 최근 작업을 한 번 다시 시도합니다.</td></tr><tr><td><code>/ide</code></td><td>IDE 정보 포함</td><td>열린 파일이나 선택 영역을 다음 요청에 포함합니다.</td></tr><tr><td><code>/import</code></td><td>다른 에이전트 설정 가져오기</td><td>Claude Code나 Cursor의 지원되는 설정·파일·대화를 가져옵니다.</td></tr><tr><td><code>/experimental</code></td><td>실험 기능 설정</td><td>실험 기능을 켜거나 끕니다.</td></tr><tr><td><code>/memories</code></td><td>메모리 설정</td><td>기존 기억 사용·새 기억 생성·기억 끄기를 정합니다.</td></tr><tr><td><code>/debug-config</code></td><td>설정 디버깅</td><td>설정 적용 순서와 정책 조건을 출력합니다.</td></tr><tr><td><code>/statusline</code></td><td>상태 표시줄 설정</td><td>하단에 모델·토큰·Git 등의 어떤 정보를 표시할지 고릅니다.</td></tr><tr><td><code>/title</code></td><td>터미널 제목 설정</td><td>창 제목에 프로젝트·브랜치·진행 상태 등을 표시합니다.</td></tr><tr><td><code>/theme</code></td><td>색상 테마 선택</td><td>터미널 문법 강조 색상을 바꿉니다.</td></tr><tr><td><code>/pets</code>, <code>/pet</code></td><td>터미널 펫 설정</td><td>화면에 표시되는 터미널 펫을 고르거나 숨깁니다.</td></tr><tr><td><code>/side</code>, <code>/btw</code></td><td>임시 옆 대화</td><td>본 대화 기록을 흐리지 않고 짧은 질문을 따로 합니다.</td></tr><tr><td><code>/app</code></td><td>데스크톱 앱으로 계속</td><td>현재 세션을 ChatGPT 데스크톱 앱으로 옮깁니다.</td></tr><tr><td><code>/raw</code></td><td>원시 출력 모드</td><td>긴 터미널 결과를 복사하기 쉽게 덜 꾸며서 표시합니다.</td></tr><tr><td><code>/quit</code>, <code>/exit</code></td><td>Codex 종료</td><td>Codex를 끝냅니다. 중요한 작업은 먼저 저장하세요.</td></tr><tr><td><code>/setup-default-sandbox</code></td><td>Windows 샌드박스 설정</td><td>특정 제한 상태의 Windows에서만 나타나는 관리자 설정입니다.</td></tr>
+  </tbody></table></div></section>
+
+  <section class="group"><h2>처음 배우는 분을 위한 추천 순서</h2><div class="quick"><div><strong>① 시작</strong><code>codex</code><br>Codex를 엽니다.</div><div><strong>② 상태 확인</strong><code>/status</code><br>현재 모델과 권한을 봅니다.</div><div><strong>③ 계획 세우기</strong><code>/plan</code><br>큰 작업은 먼저 계획을 받습니다.</div><div><strong>④ 작업 검토</strong><code>/review</code><br>완료 전에 변경 내용을 점검합니다.</div><div><strong>⑤ 이어 하기</strong><code>codex resume</code><br>이전 작업을 다시 엽니다.</div></div></section>
+
+  <footer>출처: <a href="https://learn.chatgpt.com/docs/developer-commands?surface=cli">OpenAI 공식 Codex Developer commands</a> 및 <a href="https://developers.openai.com/ko-KR/docs/codex/cli">OpenAI 공식 Codex CLI 문서</a>. 확인 기준: 2026-09-19.</footer>
+</main></div>
+      </article>
+
+      <article class="embedded-doc" data-doc="claude" hidden>
+        <style>
+:root{--ink:#241f1a;--muted:#6b625b;--line:#e6ddd4;--bg:#faf8f5;--card:#fff;--brand:#c2410c;--soft:#fff1eb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.6}.wrap{max-width:1160px;margin:auto;padding:30px 18px 60px}.hero{background:linear-gradient(135deg,#431407,#ea580c);color:white;border-radius:20px;padding:34px 36px;box-shadow:0 12px 30px #7c2d1222}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}.hero p{margin:5px 0;color:#ffedd5}.note{background:var(--soft);border:1px solid #fed7aa;padding:14px 16px;border-radius:12px;margin:20px 0;color:#7c2d12}.group{margin:28px 0}.group h2{margin:0 0 5px;font-size:24px}.group>p{color:var(--muted);margin-top:0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}table{border-collapse:collapse;width:100%;min-width:780px}th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#f7eee8;color:#6b3a24;font-size:14px}tr:last-child td{border-bottom:0}code{background:#fff0e8;color:#9a3412;border-radius:5px;padding:2px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em}.tag{font-size:12px;border-radius:99px;padding:1px 7px;background:#fef3c7;color:#92400e;font-weight:700}.danger{color:#b91c1c;font-weight:700}.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.quick div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.quick strong{display:block;color:var(--brand)}footer{margin-top:32px;color:var(--muted);font-size:14px}a{color:#c2410c}
+</style>
+        <div class="embedded-body"><main class="wrap">
+
+<div class="note"><strong>구분</strong><br>터미널에서 쓰는 것은 <code>claude ...</code>, Claude Code를 실행한 뒤 입력하는 것은 <code>/...</code>입니다. 명령은 Claude Code 버전·운영체제·요금제·연결 방식에 따라 일부 다르게 보일 수 있습니다.</div>
+
+<section class="group"><h2>1. 시작·질문·세션 이어 하기</h2><p>가장 먼저 익히면 좋은 기본 명령입니다.</p><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>claude</code></td><td>대화형 세션 시작</td><td>현재 폴더에서 Claude Code를 엽니다.</td></tr><tr><td><code>claude "질문"</code></td><td>질문과 함께 시작</td><td>시작하자마자 프로젝트 설명 같은 질문을 보냅니다.</td></tr><tr><td><code>claude -p "질문"</code></td><td>비대화형 질문</td><td>한 번 답을 받고 종료합니다. 자동화·스크립트에 적합합니다.</td></tr><tr><td><code>cat 파일 | claude -p "질문"</code></td><td>파이프로 내용 전달</td><td>로그나 파일 내용을 Claude에게 바로 분석시킵니다.</td></tr><tr><td><code>claude -c</code> / <code>--continue</code></td><td>최근 대화 계속</td><td>현재 폴더의 가장 최근 작업을 이어갑니다.</td></tr><tr><td><code>claude -r 이름</code> / <code>--resume</code></td><td>특정 세션 재개</td><td>세션 ID나 이름을 지정해 다시 엽니다.</td></tr><tr><td><code>claude update</code></td><td>업데이트</td><td>Claude Code를 최신 버전으로 업데이트합니다.</td></tr><tr><td><code>claude install [version]</code></td><td>네이티브 바이너리 설치</td><td>특정 버전이나 stable/latest 버전을 설치합니다.</td></tr><tr><td><code>claude auth login/logout/status</code></td><td>로그인·로그아웃·상태</td><td>Anthropic 계정을 관리하고 로그인 여부를 확인합니다.</td></tr>
+</tbody></table></div></section>
+
+<section class="group"><h2>2. 자동화·출력·권한</h2><p>사람이 지켜보지 않는 작업이나 CI에서 자주 쓰는 옵션입니다.</p><div class="table-wrap"><table><thead><tr><th>명령/옵션</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>-p</code> / <code>--print</code></td><td>비대화형 출력</td><td>대화창 없이 결과만 출력합니다.</td></tr><tr><td><code>--output-format text|json|stream-json</code></td><td>출력 형식</td><td>사람이 읽는 글, JSON, 실시간 JSON 중 고릅니다.</td></tr><tr><td><code>--input-format text|stream-json</code></td><td>입력 형식</td><td>일반 글 또는 스트리밍 JSON을 입력으로 받습니다.</td></tr><tr><td><code>--max-turns 숫자</code></td><td>최대 턴 수</td><td>자동 실행이 너무 오래 이어지지 않도록 횟수를 제한합니다.</td></tr><tr><td><code>--max-budget-usd 금액</code></td><td>최대 비용</td><td>API 사용 금액 상한을 정합니다.</td></tr><tr><td><code>--verbose</code></td><td>상세 로그</td><td>문제 해결 때 전체 진행 로그를 봅니다.</td></tr><tr><td><code>--model 모델명</code></td><td>모델 선택</td><td>sonnet, opus, haiku 또는 모델 ID를 지정합니다.</td></tr><tr><td><code>--permission-mode plan</code></td><td>권한 모드</td><td>계획 모드 등 시작 권한 정책을 정합니다.</td></tr><tr><td><code>--allowedTools</code></td><td>허용 도구</td><td>특정 도구는 매번 묻지 않고 사용하게 합니다.</td></tr><tr><td><code>--disallowedTools</code></td><td>차단 도구</td><td>특정 도구 사용을 막습니다.</td></tr><tr><td><code>--add-dir 경로</code></td><td>추가 작업 폴더</td><td>현재 프로젝트 밖의 폴더도 읽거나 편집할 수 있게 추가합니다.</td></tr><tr><td><code>--mcp-config 파일</code></td><td>MCP 설정</td><td>JSON 설정 파일로 외부 MCP 서버를 연결합니다.</td></tr><tr><td><code>--worktree [이름]</code></td><td>격리된 Git 작업 공간</td><td>원본 작업 폴더와 분리된 worktree에서 안전하게 작업합니다.</td></tr><tr><td><code>--dangerously-skip-permissions</code></td><td>권한 질문 건너뛰기</td><td class="danger">위험합니다. 승인 절차를 건너뛰므로 격리된 환경에서만 사용하세요.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>3. 병렬 작업·백그라운드 세션</h2><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>claude agents</code></td><td>에이전트 화면</td><td>병렬로 실행 중인 세션을 보고 작업을 나눕니다.</td></tr><tr><td><code>claude attach ID</code></td><td>백그라운드 세션 연결</td><td>뒤에서 실행 중인 작업을 현재 터미널로 가져옵니다.</td></tr><tr><td><code>claude logs ID</code></td><td>세션 로그 보기</td><td>백그라운드 작업의 최근 출력을 확인합니다.</td></tr><tr><td><code>claude stop ID</code> / <code>kill</code></td><td>세션 중지</td><td>백그라운드 작업을 멈춥니다.</td></tr><tr><td><code>claude respawn ID</code></td><td>세션 재시작</td><td>대화 내용은 유지한 채 백그라운드 세션을 다시 시작합니다.</td></tr><tr><td><code>claude rm ID</code></td><td>세션 목록에서 제거</td><td>백그라운드 세션을 목록에서 치웁니다. 작업 폴더·커밋 옵션은 주의하세요.</td></tr><tr><td><code>claude remote-control</code></td><td>원격 제어 서버</td><td>Claude.ai나 Claude 앱에서 터미널 세션을 제어하게 합니다.</td></tr><tr><td><code>claude self-hosted-runner</code></td><td>자체 호스팅 러너</td><td>내 컴퓨터나 컨테이너에서 클라우드 세션을 실행하는 러너를 관리합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>4. 외부 연결·관리자용</h2><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>claude mcp</code></td><td>MCP 서버 관리</td><td>외부 도구 연결을 추가·확인·관리합니다.</td></tr><tr><td><code>claude mcp login/logout 이름</code></td><td>MCP 인증 관리</td><td>특정 MCP 서버의 OAuth 인증을 시작하거나 지웁니다.</td></tr><tr><td><code>claude plugin</code></td><td>플러그인 관리</td><td>플러그인을 설치·조회·활성화·비활성화합니다.</td></tr><tr><td><code>claude gateway --config 파일</code></td><td>자체 호스팅 게이트웨이</td><td>관리자가 SSO·정책 앞단에 두는 게이트웨이를 실행합니다.</td></tr><tr><td><code>claude project purge 경로</code></td><td>프로젝트 데이터 삭제</td><td class="danger">해당 프로젝트의 로컬 기록·로그·상태를 모두 삭제합니다. 먼저 <code>--dry-run</code>으로 확인하세요.</td></tr><tr><td><code>claude setup-token</code></td><td>장기 OAuth 토큰 생성</td><td>CI·스크립트에 사용할 토큰을 출력합니다. 화면에 노출하지 않도록 주의하세요.</td></tr><tr><td><code>claude doctor</code></td><td>설치 진단</td><td>설치 상태와 설정 오류를 읽기 전용으로 점검합니다.</td></tr><tr><td><code>claude import codex|gemini|cursor</code></td><td>다른 에이전트 가져오기</td><td>Codex·Gemini CLI·Cursor의 설정을 가져옵니다.</td></tr><tr><td><code>claude ultrareview</code></td><td>심층 검토</td><td>비대화형으로 검토 결과를 출력하고 필요하면 PR에 게시합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>5. 세션 안 슬래시 명령: 작업 흐름</h2><p>Claude Code를 실행한 뒤 입력합니다.</p><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/init</code></td><td>프로젝트 초기화</td><td><code>CLAUDE.md</code> 안내 파일을 만듭니다.</td></tr><tr><td><code>/plan</code></td><td>계획 모드</td><td>큰 작업을 바로 수정하지 않고 계획부터 세웁니다.</td></tr><tr><td><code>/model</code></td><td>모델 변경</td><td>현재 모델을 바꾸고 기본 모델로 저장합니다.</td></tr><tr><td><code>/effort</code></td><td>추론 수준</td><td>low부터 max·ultracode까지 생각의 깊이를 조절합니다.</td></tr><tr><td><code>/compact</code></td><td>대화 요약</td><td>긴 대화를 요약해 문맥 공간을 확보합니다.</td></tr><tr><td><code>/context</code></td><td>문맥 사용량</td><td>무엇이 문맥을 많이 차지하는지 시각적으로 봅니다.</td></tr><tr><td><code>/clear</code> / <code>/reset</code> / <code>/new</code></td><td>새 대화</td><td>현재 프로젝트 기억은 유지하면서 대화 맥락을 비웁니다.</td></tr><tr><td><code>/resume</code></td><td>이전 대화 재개</td><td>예전 세션을 다시 엽니다.</td></tr><tr><td><code>/branch</code></td><td>대화 가지 만들기</td><td>현재 대화를 보존하고 다른 방향을 시험합니다.</td></tr><tr><td><code>/fork</code></td><td>백그라운드 복제</td><td>복사본을 백그라운드 세션으로 실행합니다.</td></tr><tr><td><code>/goal</code></td><td>목표 설정</td><td>목표가 끝날 때까지 이어갈 작업 조건을 정합니다.</td></tr><tr><td><code>/btw</code></td><td>옆 질문</td><td>현재 대화 기록에 넣지 않을 짧은 질문을 합니다.</td></tr><tr><td><code>/background</code> / <code>/bg</code></td><td>백그라운드 전환</td><td>현재 세션을 뒤에서 계속 돌리고 터미널을 비웁니다.</td></tr><tr><td><code>/tasks</code></td><td>작업 목록</td><td>현재 세션의 백그라운드 작업을 봅니다.</td></tr><tr><td><code>/batch</code></td><td>대규모 병렬 변경</td><td>큰 작업을 여러 단위로 나눠 병렬 처리합니다.</td></tr><tr><td><code>/diff</code></td><td>변경 확인</td><td>현재 작업 폴더에서 무엇이 바뀌었는지 봅니다.</td></tr><tr><td><code>/code-review</code> / <code>/review</code></td><td>코드 검토</td><td>변경 내용의 버그·정리할 부분을 찾습니다. <code>--fix</code>로 수정 적용도 가능합니다.</td></tr><tr><td><code>/security-review</code></td><td>보안 검토</td><td>현재 diff에서 보안 취약점을 확인합니다.</td></tr><tr><td><code>/rewind</code></td><td>되감기</td><td>체크포인트로 코드와 대화를 되돌립니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>6. 세션 안 슬래시 명령: 설정·도구·도움말</h2><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/help</code></td><td>도움말</td><td>사용 가능한 명령을 봅니다.</td></tr><tr><td><code>/permissions</code> / <code>/allowed-tools</code></td><td>권한 관리</td><td>허용·질문·차단 규칙을 관리합니다.</td></tr><tr><td><code>/memory</code></td><td>기억·CLAUDE.md 관리</td><td>프로젝트 지침과 자동 메모리를 편집합니다.</td></tr><tr><td><code>/config</code> / <code>/settings</code></td><td>설정</td><td>테마·모델·출력 스타일 등을 바꿉니다.</td></tr><tr><td><code>/mcp</code></td><td>MCP 연결</td><td>MCP 서버 연결과 인증 상태를 관리합니다.</td></tr><tr><td><code>/plugin</code></td><td>플러그인</td><td>플러그인을 설치·활성화·비활성화합니다.</td></tr><tr><td><code>/reload-plugins</code></td><td>플러그인 새로고침</td><td>재시작 없이 플러그인 변경을 적용합니다.</td></tr><tr><td><code>/skills</code></td><td>스킬 보기</td><td>사용 가능한 스킬과 사용자 정의 명령을 확인합니다.</td></tr><tr><td><code>/ide</code></td><td>IDE 연결</td><td>IDE 연동 상태를 관리합니다.</td></tr><tr><td><code>/add-dir</code></td><td>폴더 추가</td><td>현재 세션에서 접근할 작업 폴더를 추가합니다.</td></tr><tr><td><code>/cd</code></td><td>작업 폴더 이동</td><td>대화는 유지한 채 현재 세션의 폴더를 바꿉니다.</td></tr><tr><td><code>/doctor</code> / <code>/checkup</code></td><td>설정 점검</td><td>문제를 진단하고 가능한 수정 방법을 안내합니다.</td></tr><tr><td><code>/debug</code></td><td>실행 문제 조사</td><td>디버그 로그를 켜고 원인을 분석합니다.</td></tr><tr><td><code>/feedback</code> / <code>/bug</code> / <code>/share</code></td><td>피드백·버그 보고</td><td>대화 내용을 선택적으로 포함해 Anthropic에 의견을 보냅니다.</td><tr><td><code>/export</code></td><td>대화 내보내기</td><td>현재 대화를 텍스트 파일이나 클립보드로 내보냅니다.</td></tr><tr><td><code>/copy</code></td><td>답변 복사</td><td>최근 답변 또는 특정 답변을 클립보드에 복사합니다.</td></tr><tr><td><code>/usage</code> / <code>/cost</code></td><td>사용량·비용</td><td>사용량과 비용 정보를 확인합니다.</td></tr><tr><td><code>/fast</code></td><td>빠른 모드</td><td>지원되는 모델에서 빠른 처리 모드를 켜거나 끕니다.</td></tr><tr><td><code>/autocompact</code></td><td>자동 요약 시점</td><td>문맥이 얼마나 찼을 때 자동 요약할지 정합니다.</td></tr><tr><td><code>/output-style</code></td><td>출력 스타일</td><td>응답 형식을 바꿉니다.</td></tr><tr><td><code>/color</code></td><td>프롬프트 색상</td><td>현재 세션 입력창 색상을 바꿉니다.</td></tr><tr><td><code>/theme</code></td><td>테마</td><td>화면 색상 테마를 고릅니다.</td></tr><tr><td><code>/keybindings</code></td><td>키 설정</td><td>키보드 단축키 설정 파일을 엽니다.</td></tr><tr><td><code>/chrome</code></td><td>Chrome 설정</td><td>Claude in Chrome 연결을 설정합니다.</td></tr><tr><td><code>/login</code> / <code>/logout</code></td><td>로그인·로그아웃</td><td>세션 안에서 Anthropic 계정을 전환합니다.</td></tr><tr><td><code>/import</code></td><td>설정 가져오기</td><td>Codex·Gemini CLI·Cursor 설정을 가져옵니다.</td></tr><tr><td><code>/exit</code> / <code>/quit</code></td><td>종료</td><td>Claude Code를 끝냅니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>7. 기본 제공 스킬·워크플로우</h2><p>일반 명령과 달리 Claude가 긴 작업 지침을 따라 수행하는 기능입니다. 환경에 따라 제공되지 않을 수 있습니다.</p><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/run</code></td><td>앱 실행</td><td>앱을 실제로 실행해 변경 결과를 확인합니다.</td></tr><tr><td><code>/verify</code></td><td>변경 검증</td><td>빌드·실행으로 코드 변경이 제대로 동작하는지 확인합니다.</td></tr><tr><td><code>/debug</code></td><td>디버깅</td><td>실행 문제를 조사합니다.</td></tr><tr><td><code>/code-review</code></td><td>코드 리뷰</td><td>변경 사항의 버그와 개선점을 찾습니다.</td></tr><tr><td><code>/deep-research</code></td><td>심층 조사</td><td>웹 검색과 출처 교차 확인으로 조사 보고서를 만듭니다.</td></tr><tr><td><code>/design</code></td><td>디자인 초안</td><td>화면·흐름·포스터 등의 UI 초안을 만듭니다.</td></tr><tr><td><code>/dataviz</code></td><td>데이터 시각화</td><td>차트·그래프·대시보드 설계를 돕습니다.</td></tr><tr><td><code>/claude-api</code></td><td>Claude API 작업</td><td>API 마이그레이션·업그레이드·프롬프트 점검 등을 돕습니다.</td></tr><tr><td><code>/loop</code> / <code>/proactive</code></td><td>반복 실행</td><td>일정 간격으로 같은 확인 작업을 반복합니다.</td></tr><tr><td><code>/run-skill-generator</code></td><td>실행법 저장</td><td>프로젝트 실행 방법을 스킬로 기록해 다음 실행에 재사용합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>처음 배우는 분 추천 순서</h2><div class="quick"><div><strong>① 시작</strong><code>claude</code><br>Claude Code를 엽니다.</div><div><strong>② 프로젝트 안내</strong><code>/init</code><br>프로젝트 설명 파일을 만듭니다.</div><div><strong>③ 안전하게 계획</strong><code>/plan</code><br>큰 변경 전 계획을 받습니다.</div><div><strong>④ 결과 확인</strong><code>/diff</code><br>무엇이 바뀌었는지 확인합니다.</div><div><strong>⑤ 검토</strong><code>/code-review</code><br>버그와 위험을 점검합니다.</div><div><strong>⑥ 이어 하기</strong><code>claude -c</code><br>최근 작업을 계속합니다.</div></div></section>
+<footer>출처: <a href="https://code.claude.com/docs/en/cli-usage">Anthropic 공식 Claude Code CLI reference</a> 및 <a href="https://code.claude.com/docs/en/commands">Anthropic 공식 Commands reference</a>. 확인 기준: 2026-09-19. 공식 문서에는 환경별·버전별 조건이 있으므로 실제 화면에 표시되는 명령을 우선하세요.</footer>
+</main></div>
+      </article>
+
+      <article class="embedded-doc" data-doc="gemini" hidden>
+        <style>
+:root{--ink:#172033;--muted:#5d687a;--line:#dce4ef;--bg:#f5f7fb;--card:#fff;--blue:#2563eb;--purple:#6d28d9;--orange:#c2410c}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.62}.wrap{max-width:1160px;margin:auto;padding:30px 18px 60px}.hero{background:linear-gradient(135deg,#172554,#6d28d9);color:#fff;border-radius:20px;padding:34px 36px;box-shadow:0 12px 28px #312e8122}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}.hero p{margin:5px 0;color:#e0e7ff}.note{padding:14px 16px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;margin:20px 0}.product{margin-top:38px}.product h2{font-size:29px;margin:0}.product>p{color:var(--muted)}.group{margin:24px 0}.group h3{margin:0 0 5px;font-size:22px}.group>p{color:var(--muted);margin-top:0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}table{border-collapse:collapse;width:100%;min-width:780px}th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#eef3ff;color:#334155;font-size:14px}tr:last-child td{border-bottom:0}code{background:#eef2ff;color:#3730a3;border-radius:5px;padding:2px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em}.warn{color:#b91c1c;font-weight:700}.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.quick div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.quick strong{display:block;color:var(--blue)}footer{margin-top:32px;color:var(--muted);font-size:14px}a{color:var(--blue)}
+</style>
+        <div class="embedded-body"><main class="wrap"><div class="note"><strong>구분</strong><br><code>gemini</code>와 <code>agy</code>로 시작하면 터미널 명령입니다. <code>/</code>로 시작하면 해당 CLI를 실행한 뒤 입력하는 슬래시 명령입니다. 공식 문서에 따라 버전·플랜·운영체제별로 일부 기능이 다를 수 있습니다.</div>
+
+<section class="product"><h2>Gemini CLI</h2><p>Google의 Gemini CLI 공식 cheatsheet와 commands 문서를 기준으로 정리했습니다.</p>
+<section class="group"><h3>1. 시작·질문·세션</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>gemini</code></td><td>대화형 실행</td><td>현재 폴더에서 Gemini CLI를 시작합니다.</td></tr><tr><td><code>gemini "질문"</code></td><td>질문과 함께 시작</td><td>첫 질문을 보내고 계속 대화합니다.</td></tr><tr><td><code>gemini -p "질문"</code></td><td>비대화형 실행</td><td>한 번 답하고 끝냅니다. 스크립트·자동화에 좋습니다.</td></tr><tr><td><code>cat file | gemini</code></td><td>내용 파이프 전달</td><td>로그나 파일 내용을 분석시킵니다.</td></tr><tr><td><code>gemini -i "질문"</code></td><td>실행 후 계속 대화</td><td>질문을 먼저 실행하고 대화형 화면을 유지합니다.</td></tr><tr><td><code>gemini -r latest</code></td><td>최근 세션 계속</td><td>가장 최근 작업을 이어갑니다.</td></tr><tr><td><code>gemini -r 세션ID</code></td><td>특정 세션 재개</td><td>세션 ID나 번호를 지정해 다시 엽니다.</td></tr><tr><td><code>gemini update</code></td><td>업데이트</td><td>Gemini CLI를 최신 버전으로 업데이트합니다.</td></tr></tbody></table></div></section>
+<section class="group"><h3>2. 실행 옵션</h3><div class="table-wrap"><table><thead><tr><th>옵션</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>--help</code>, <code>-h</code></td><td>도움말</td><td>사용 가능한 옵션을 보여줍니다.</td></tr><tr><td><code>--version</code>, <code>-v</code></td><td>버전 확인</td><td>설치된 버전을 출력하고 끝냅니다.</td></tr><tr><td><code>--model</code>, <code>-m</code></td><td>모델 선택</td><td>사용할 Gemini 모델을 고릅니다.</td></tr><tr><td><code>--prompt</code>, <code>-p</code></td><td>프롬프트 지정</td><td>비대화형으로 질문을 보냅니다.</td></tr><tr><td><code>--prompt-interactive</code>, <code>-i</code></td><td>대화형 프롬프트</td><td>질문 실행 후 계속 대화합니다.</td></tr><tr><td><code>--resume</code>, <code>-r</code></td><td>세션 재개</td><td><code>latest</code> 또는 세션 번호를 사용합니다.</td></tr><tr><td><code>--output-format</code>, <code>-o</code></td><td>출력 형식</td><td>text·json·stream-json 중 선택합니다.</td></tr><tr><td><code>--debug</code>, <code>-d</code></td><td>디버그 로그</td><td>문제 해결용 상세 로그를 켭니다.</td></tr><tr><td><code>--sandbox</code>, <code>-s</code></td><td>샌드박스 실행</td><td>도구 실행을 격리 환경에서 수행합니다.</td></tr><tr><td><code>--approval-mode</code></td><td>승인 방식</td><td>default·auto_edit·yolo·plan 중 실행 승인 방식을 정합니다.</td></tr><tr><td><code>--worktree</code>, <code>-w</code></td><td>Git worktree</td><td>별도 작업 공간에서 실행합니다.</td></tr><tr><td><code>--list-sessions</code></td><td>세션 목록</td><td>현재 프로젝트의 저장 세션을 봅니다.</td></tr><tr><td><code>--delete-session</code></td><td>세션 삭제</td><td>세션 번호를 지정해 삭제합니다.</td></tr><tr><td><code>--list-extensions</code>, <code>-l</code></td><td>확장 목록</td><td>설치 가능한 확장을 보여줍니다.</td></tr><tr><td><code>--include-directories</code></td><td>추가 폴더</td><td>작업공간에 다른 폴더를 포함합니다.</td></tr><tr><td><code>--yolo</code>, <code>-y</code></td><td>자동 승인</td><td class="warn">공식 문서에서 deprecated입니다. 새 방식인 <code>--approval-mode=yolo</code>를 사용하세요.</td></tr></tbody></table></div></section>
+<section class="group"><h3>3. 확장·MCP·스킬 관리</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>gemini extensions install/uninstall/list/update/enable/disable</code></td><td>확장 설치·관리</td><td>확장을 설치하고 켜고 끄고 업데이트합니다.</td></tr><tr><td><code>gemini extensions link/new/validate</code></td><td>확장 개발</td><td>로컬 확장을 연결·생성·검사합니다.</td></tr><tr><td><code>gemini mcp add/remove/list</code></td><td>MCP 서버 관리</td><td>외부 도구 서버를 추가·삭제·조회합니다.</td></tr><tr><td><code>gemini skills list/install/link/uninstall</code></td><td>스킬 관리</td><td>스킬을 조회·설치·연결·삭제합니다.</td></tr><tr><td><code>gemini skills enable/disable [--all]</code></td><td>스킬 활성화</td><td>특정 스킬 또는 전체 스킬을 켜고 끕니다.</td></tr></tbody></table></div></section>
+<section class="group"><h3>4. Gemini CLI 안 슬래시 명령</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/about</code></td><td>버전 정보</td><td>버전을 보여줍니다.</td></tr><tr><td><code>/agents</code></td><td>에이전트 관리</td><td>발견된 로컬·원격 에이전트를 확인합니다.</td></tr><tr><td><code>/clear</code></td><td>화면 지우기</td><td>터미널 화면을 정리합니다.</td></tr><tr><td><code>/commands list|reload</code></td><td>사용자 명령 관리</td><td>커스텀 TOML 명령을 목록화하거나 다시 읽습니다.</td></tr><tr><td><code>/compress</code></td><td>대화 압축</td><td>전체 대화를 요약해 문맥을 줄입니다.</td></tr><tr><td><code>/docs</code></td><td>문서 열기</td><td>Gemini CLI 문서를 브라우저에서 엽니다.</td></tr><tr><td><code>/editor</code></td><td>편집기 선택</td><td>지원되는 편집기를 고릅니다.</td></tr><tr><td><code>/extensions</code></td><td>확장 관리</td><td>확장을 설치·삭제·활성화·비활성화합니다.</td></tr><tr><td><code>/help</code>, <code>/?</code></td><td>도움말</td><td>전체 명령과 사용법을 봅니다.</td></tr><tr><td><code>/skills reload</code></td><td>스킬 새로 읽기</td><td>디스크의 스킬 목록을 다시 읽습니다.</td></tr><tr><td><code>/agents reload</code></td><td>에이전트 목록 새로 읽기</td><td>에이전트 등록 정보를 다시 읽습니다.</td></tr><tr><td><code>/memory reload</code></td><td>기억 파일 새로 읽기</td><td><code>GEMINI.md</code> 같은 문맥 파일을 다시 읽습니다.</td></tr><tr><td><code>/mcp reload</code></td><td>MCP 새로고침</td><td>MCP 서버를 다시 시작합니다.</td></tr><tr><td><code>/extensions reload</code></td><td>확장 새로고침</td><td>활성 확장을 다시 시작합니다.</td></tr><tr><td><code>/quit</code></td><td>종료</td><td>Gemini CLI를 끝냅니다.</td></tr></tbody></table></div></section></section>
+
+<section class="product"><h2>Antigravity CLI (<code>agy</code>)</h2><p>Google Antigravity 공식 CLI reference의 핵심 슬래시 명령과 공식 설치·headless 안내를 기준으로 정리했습니다.</p>
+<section class="group"><h3>1. 시작·자동화</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>agy</code></td><td>Antigravity CLI 시작</td><td>터미널에서 Antigravity 에이전트를 엽니다.</td></tr><tr><td><code>agy -p "질문"</code></td><td>Headless 실행</td><td>대화 화면 없이 질문을 실행해 스크립트·CI에 연결합니다.</td></tr><tr><td><code>agy --help</code></td><td>도움말</td><td>설치된 버전에서 사용 가능한 도움말을 확인합니다.</td></tr><tr><td><code>agy --sandbox</code></td><td>샌드박스</td><td>에이전트의 터미널 실행을 제한된 환경에서 수행합니다.</td></tr><tr><td><code>agy --dangerously-skip-permissions</code></td><td>승인 우회</td><td class="warn">위험합니다. 도구 실행 승인 절차를 건너뛰므로 격리된 환경에서만 사용하세요.</td></tr></tbody></table></div></section>
+<section class="group"><h3>2. 작업·에이전트·검토</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/agents</code></td><td>에이전트 관리자</td><td>사용자 에이전트를 바꾸고 백그라운드 에이전트를 봅니다.</td></tr><tr><td><code>/boost 작업</code></td><td>추론 강화</td><td>여러 에이전트의 깊은 추론 루프를 실행합니다.</td></tr><tr><td><code>/teamwork-preview 작업</code></td><td>팀 작업</td><td>장시간 작업을 여러 에이전트 팀으로 나눕니다. 유료 플랜 조건이 있습니다.</td></tr><tr><td><code>/planning</code></td><td>계획 모드</td><td>복잡한 개발 작업 전에 여러 단계 계획을 켭니다.</td></tr><tr><td><code>/artifact</code></td><td>Artifact 검토</td><td>생성된 결과물 검토 패널을 엽니다.</td></tr><tr><td><code>/diff</code></td><td>변경 검토</td><td>파일 변경·턴·커밋을 확인합니다.</td></tr><tr><td><code>/tasks</code></td><td>작업 관리자</td><td>백그라운드 셸 작업 로그를 확인합니다.</td></tr><tr><td><code>/rewind</code> / <code>/undo</code></td><td>되돌리기</td><td>대화를 이전 메시지 시점으로 되돌립니다.</td></tr></tbody></table></div></section>
+<section class="group"><h3>3. 설정·계정·세션</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/config</code> / <code>/settings</code></td><td>설정</td><td>설정 편집 화면을 엽니다.</td></tr><tr><td><code>/model</code></td><td>모델 선택</td><td>추론 모델을 선택하고 기본값으로 저장합니다.</td></tr><tr><td><code>/fast</code></td><td>빠른 모드</td><td>빠른 작업을 위해 추론 계획을 줄입니다.</td></tr><tr><td><code>/permissions</code></td><td>권한 관리</td><td>도구 사용 승인 정책을 설정합니다.</td></tr><tr><td><code>/credits</code></td><td>크레딧 확인</td><td>남은 G1 크레딧과 구매 링크를 봅니다.</td></tr><tr><td><code>/usage</code> / <code>/quota</code></td><td>사용량·쿼터</td><td>모델 사용량을 확인합니다.</td></tr><tr><td><code>/resume</code> / <code>/switch</code> / <code>/conversation</code></td><td>대화 선택</td><td>이전 대화 목록에서 불러옵니다.</td></tr><tr><td><code>/fork</code> / <code>/branch</code></td><td>대화 복제</td><td>현재 대화를 새 병렬 세션으로 복사합니다.</td></tr><tr><td><code>/rename 이름</code></td><td>대화 이름 변경</td><td>현재 세션의 이름을 바꿉니다.</td></tr><tr><td><code>/clear</code> / <code>/new</code></td><td>새 대화</td><td>터미널과 현재 대화 맥락을 초기화합니다.</td></tr><tr><td><code>/logout</code></td><td>로그아웃</td><td>프로필과 보안 저장소의 인증 정보를 끊습니다.</td></tr><tr><td><code>/exit</code> / <code>/quit</code></td><td>종료</td><td>Antigravity CLI를 닫습니다.</td></tr></tbody></table></div></section>
+<section class="group"><h3>4. 도구·편의 기능</h3><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/add-dir 경로</code></td><td>폴더 추가</td><td>활성 작업공간에 폴더를 추가합니다.</td></tr><tr><td><code>/btw 질문</code></td><td>옆 질문</td><td>본 대화를 방해하지 않는 별도 질문을 합니다.</td></tr><tr><td><code>/context</code></td><td>문맥 사용량</td><td>현재 문맥 사용량을 시각화합니다.</td></tr><tr><td><code>/copy</code></td><td>답변 복사</td><td>마지막 에이전트 답변을 클립보드에 복사합니다.</td></tr><tr><td><code>/hooks</code></td><td>훅 보기</td><td>실행 전·후 스크립트 훅을 봅니다.</td></tr><tr><td><code>/keybindings</code></td><td>키 설정</td><td>키보드 단축키 편집기를 엽니다.</td></tr><tr><td><code>/mcp</code></td><td>MCP 관리</td><td>MCP 서버 관리 화면을 엽니다.</td></tr><tr><td><code>/open 경로</code></td><td>편집기로 열기</td><td>지정 경로를 기본 시스템 편집기에서 엽니다.</td></tr><tr><td><code>/remote-control on|off</code></td><td>원격 제어</td><td>현재 터미널 세션의 원격 제어를 켜거나 끕니다.</td></tr><tr><td><code>/statusline</code></td><td>상태 표시줄</td><td>하단 상태 표시를 설정합니다.</td></tr><tr><td><code>/title on|off</code></td><td>창 제목</td><td>터미널 창 제목 업데이트를 켜거나 끕니다.</td></tr><tr><td><code>/voice</code> / <code>/record</code></td><td>음성 입력</td><td>마이크로 프롬프트를 말합니다.</td></tr><tr><td><code>/feedback</code></td><td>피드백</td><td>Antigravity에 의견을 보냅니다.</td></tr></tbody></table></div></section></section>
+
+<section class="group"><h2>처음 배우는 분 추천 순서</h2><div class="quick"><div><strong>Gemini 시작</strong><code>gemini</code><br>대화형 CLI 실행</div><div><strong>Gemini 자동화</strong><code>gemini -p "질문"</code><br>한 번 실행 후 종료</div><div><strong>Gemini 도움말</strong><code>/help</code><br>현재 버전 명령 확인</div><div><strong>AGY 시작</strong><code>agy</code><br>Antigravity 실행</div><div><strong>AGY 계획</strong><code>/planning</code><br>복잡한 작업 계획 수립</div><div><strong>AGY 변경 확인</strong><code>/diff</code><br>수정 내용 검토</div></div></section>
+<footer>출처: <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/cli-reference.md">Google Gemini CLI 공식 CLI reference</a>, <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/commands.md">Gemini CLI commands reference</a>, <a href="https://www.agy.dev/docs/cli/reference/">Google Antigravity CLI 공식 CLI reference</a>, <a href="https://www.agy.dev/docs/cli/headless/">Antigravity headless mode</a>. 확인 기준: 2026-09-19.</footer>
+</main></div>
+      </article>
+
+      <article class="embedded-doc" data-doc="grok" hidden>
+        <style>
+:root{--ink:#172033;--muted:#5b6678;--line:#dfe5ee;--bg:#f5f7fb;--card:#fff;--brand:#111827;--blue:#2563eb;--soft:#eff6ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.62}.wrap{max-width:1140px;margin:auto;padding:30px 18px 60px}.hero{background:linear-gradient(135deg,#020617,#334155);color:#fff;border-radius:20px;padding:34px 36px;box-shadow:0 12px 28px #0f172a22}.hero h1{margin:0 0 8px;font-size:clamp(28px,4vw,44px)}.hero p{margin:5px 0;color:#cbd5e1}.note{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:12px;padding:14px 16px;margin:20px 0}.group{margin:28px 0}.group h2{font-size:24px;margin:0 0 5px}.group>p{color:var(--muted);margin-top:0}.table-wrap{overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}table{border-collapse:collapse;width:100%;min-width:790px}th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#eef2f7;color:#334155;font-size:14px}tr:last-child td{border-bottom:0}code{background:#e0e7ff;color:#1e3a8a;border-radius:5px;padding:2px 6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em}.danger{color:#b91c1c;font-weight:700}.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.quick div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.quick strong{display:block;color:var(--blue)}footer{margin-top:32px;color:var(--muted);font-size:14px}a{color:var(--blue)}
+</style>
+        <div class="embedded-body"><main class="wrap"><div class="note"><strong>참고</strong><br>현재 xAI 공식 문서에서는 코딩 에이전트 CLI를 <strong>Grok Build</strong>라고 설명합니다. 터미널에서 <code>grok</code>를 실행하고, 화면 안에서는 <code>/...</code> 명령을 사용합니다. 전체 옵션은 설치된 버전에서 <code>grok --help</code> 또는 <code>grok 명령 --help</code>로 확인할 수 있습니다.</div>
+
+<section class="group"><h2>1. 시작·로그인·버전</h2><p>처음 실행하거나 계정과 설치 상태를 관리할 때 씁니다.</p><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>grok</code></td><td>대화형 TUI 시작</td><td>현재 폴더에서 Grok 코딩 에이전트를 엽니다.</td></tr><tr><td><code>grok login</code></td><td>로그인</td><td>Grok에 로그인합니다. <code>--device-auth</code>는 원격·헤드리스 환경용입니다.</td></tr><tr><td><code>grok logout</code></td><td>로그아웃</td><td>로그아웃하고 저장된 인증 정보를 지웁니다.</td></tr><tr><td><code>grok version</code></td><td>버전 확인</td><td>설치된 Grok CLI 버전을 출력합니다.</td></tr><tr><td><code>grok update</code></td><td>업데이트</td><td>업데이트 확인 또는 특정 버전 설치를 합니다.</td></tr><tr><td><code>grok completions bash|zsh|fish|powershell</code></td><td>자동완성 생성</td><td>사용 중인 셸에서 Tab 자동완성을 설정할 수 있게 합니다.</td></tr><tr><td><code>grok setup</code></td><td>관리형 설정 설치</td><td>관리자가 제공한 설정을 가져와 설치합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>2. 자동화·Headless·IDE 연결</h2><p>사람이 화면을 계속 보지 않는 스크립트나 개발 도구 연동에 적합합니다.</p><div class="table-wrap"><table><thead><tr><th>명령어·옵션</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>grok -p "질문"</code></td><td>한 번 실행</td><td>질문을 처리하고 종료합니다.</td></tr><tr><td><code>-m, --model 모델</code></td><td>모델 선택</td><td>사용할 모델을 지정합니다.</td></tr><tr><td><code>-s, --session-id ID</code></td><td>세션 생성·재사용</td><td>이름 있는 Headless 세션을 만들거나 이어갑니다.</td></tr><tr><td><code>-r, --resume ID</code></td><td>세션 재개</td><td>기존 세션 ID를 다시 엽니다.</td></tr><tr><td><code>-c, --continue</code></td><td>최근 세션 계속</td><td>현재 폴더의 가장 최근 세션을 이어갑니다.</td></tr><tr><td><code>--cwd 경로</code></td><td>작업 폴더 지정</td><td>명령을 실행할 폴더를 지정합니다.</td></tr><tr><td><code>--output-format plain|json|streaming-json</code></td><td>출력 형식</td><td>사람용 글, JSON, 실시간 JSON 중 고릅니다.</td></tr><tr><td><code>--always-approve</code></td><td>자동 승인</td><td class="danger">도구 실행 승인 질문을 건너뜁니다. 신뢰·격리된 환경에서만 사용하세요.</td></tr><tr><td><code>--no-alt-screen</code></td><td>일반 화면 실행</td><td>전체 화면 TUI로 전환하지 않고 현재 터미널에 표시합니다.</td></tr><tr><td><code>grok agent stdio</code></td><td>ACP 에이전트 실행</td><td>JSON-RPC stdin/stdout으로 IDE나 다른 도구와 연결합니다.</td></tr><tr><td><code>grok wrap 명령...</code></td><td>터미널 명령 감싸기</td><td>로컬 PTY에서 명령을 실행하며 OSC 52 클립보드 쓰기를 전달합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>3. 설정·도구·플러그인 관리</h2><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>grok inspect [--json]</code></td><td>설정 검사</td><td>현재 폴더에서 발견한 규칙·스킬·플러그인·훅·MCP를 확인합니다.</td></tr><tr><td><code>grok models</code></td><td>모델 목록</td><td>사용 가능한 모델을 봅니다.</td></tr><tr><td><code>grok mcp list|add|remove|doctor</code></td><td>MCP 관리</td><td>MCP 서버를 조회·추가·삭제하고 연결 문제를 진단합니다.</td></tr><tr><td><code>grok plugin list|install|uninstall|update|enable|disable|details|validate</code></td><td>플러그인 관리</td><td>플러그인 설치부터 검증·활성화까지 관리합니다.</td></tr><tr><td><code>grok plugin marketplace list|add|remove|update</code></td><td>마켓 관리</td><td>플러그인 마켓 소스를 관리합니다.</td></tr><tr><td><code>grok dashboard</code></td><td>에이전트 대시보드</td><td>에이전트 작업을 한눈에 보는 화면을 엽니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>4. 세션·기억·작업공간 관리</h2><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>grok sessions list|search|delete</code></td><td>세션 관리</td><td>세션을 목록 확인·검색·삭제합니다.</td></tr><tr><td><code>grok export 세션ID [출력]</code></td><td>대화 내보내기</td><td>세션 기록을 Markdown으로 저장합니다.</td></tr><tr><td><code>grok import [targets...]</code></td><td>세션 가져오기</td><td>Claude Code 세션을 가져옵니다.</td></tr><tr><td><code>grok memory clear --workspace|--global|--all</code></td><td>기억 삭제</td><td>프로젝트·전체 또는 모든 교차 세션 기억을 지웁니다.</td></tr><tr><td><code>grok worktree list|show|rm|gc</code></td><td>Git worktree 관리</td><td>세션에서 만든 작업공간을 조회·삭제·정리합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>5. Grok 화면 안 슬래시 명령</h2><p>대화형 <code>grok</code> 화면에서 입력합니다.</p><div class="table-wrap"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>
+<tr><td><code>/quit</code> / <code>/exit</code></td><td>종료</td><td>Grok CLI를 닫습니다.</td></tr><tr><td><code>/help</code></td><td>도움말</td><td>명령과 키보드 단축키를 봅니다.</td></tr><tr><td><code>/home</code></td><td>첫 화면</td><td>환영 화면으로 돌아갑니다.</td></tr><tr><td><code>/new</code> / <code>/clear</code></td><td>새 세션</td><td>새 대화를 시작합니다.</td></tr><tr><td><code>/resume</code></td><td>세션 재개</td><td>이전 세션을 선택해 엽니다.</td></tr><tr><td><code>/sessions</code></td><td>세션 목록</td><td>활성 세션을 전환·이름 변경·종료합니다.</td></tr><tr><td><code>/fork</code></td><td>대화 분기</td><td>현재 세션을 별도 에이전트로 복사합니다.</td></tr><tr><td><code>/rename 이름</code> / <code>/title</code></td><td>이름 변경</td><td>현재 세션 제목을 바꿉니다.</td></tr><tr><td><code>/share</code></td><td>공유</td><td>세션을 URL로 공유합니다.</td></tr><tr><td><code>/session-info</code></td><td>세션 정보</td><td>현재 세션 정보를 표시합니다.</td></tr><tr><td><code>/context</code></td><td>문맥 사용량</td><td>현재 문맥 사용량을 확인합니다.</td></tr><tr><td><code>/compact [내용]</code></td><td>대화 압축</td><td>대화 기록을 요약해 문맥 공간을 확보합니다.</td></tr><tr><td><code>/rewind</code></td><td>되감기</td><td>이전 턴으로 되돌립니다.</td></tr><tr><td><code>/export</code></td><td>내보내기</td><td>대화를 파일이나 클립보드로 내보냅니다.</td></tr><tr><td><code>/plan [설명]</code></td><td>계획 모드</td><td>계획을 먼저 세우는 모드로 들어갑니다.</td></tr><tr><td><code>/auto</code></td><td>자동 승인 모드</td><td>안전한 도구는 자동 승인하도록 전환합니다.</td></tr><tr><td><code>/always-approve</code></td><td>항상 승인 모드</td><td class="danger">도구 승인 질문을 생략합니다. 매우 신중하게 사용하세요.</td></tr><tr><td><code>/create-workflow</code></td><td>워크플로우 생성</td><td>여러 에이전트가 나눠 할 반복 작업을 정의합니다.</td></tr><tr><td><code>/workflow 이름</code></td><td>워크플로우 실행</td><td>저장한 워크플로우를 실행·일시정지·재개·중지합니다.</td></tr><tr><td><code>/workflows</code></td><td>워크플로우 대시보드</td><td>실행 중이거나 보관된 워크플로우를 봅니다.</td></tr><tr><td><code>/deep-research 질문</code></td><td>심층 조사</td><td>웹 검색·출처 확인·요약을 여러 단계로 수행합니다.</td></tr></tbody></table></div></section>
+
+<section class="group"><h2>처음 배우는 분 추천 순서</h2><div class="quick"><div><strong>① 시작</strong><code>grok</code><br>현재 프로젝트에서 실행</div><div><strong>② 상태 확인</strong><code>/help</code><br>명령 목록 확인</div><div><strong>③ 계획</strong><code>/plan</code><br>큰 작업 전 계획 수립</div><div><strong>④ 변경 확인</strong><code>/diff</code><br>작업 결과 검토</div><div><strong>⑤ 자동화</strong><code>grok -p "질문"</code><br>스크립트·CI 실행</div><div><strong>⑥ 이어 하기</strong><code>grok -c</code><br>최근 세션 재개</div></div></section>
+<footer>출처: <a href="https://docs.x.ai/build/cli/reference">xAI 공식 Grok CLI Reference</a>, <a href="https://docs.x.ai/build/cli/headless-scripting">Headless &amp; Scripting</a>, <a href="https://docs.x.ai/build/modes-and-commands">Modes and Commands</a>. 확인 기준: 2026-09-19.</footer></main></div>
+      </article>
+
+      </section>
+    </section>
+  </main>
+  <script>
+    const documents=[{id:'hanstree',title:'AgentTutor 작업실 명령어',group:'AgentTutor',source:'한스트리 작업실 운영 안내',updated:'2026년 09월 19일'},{id:'codex',title:'Codex CLI',group:'OpenAI 공식 문서',source:'OpenAI Codex CLI 공식 문서',updated:'2026년 09월 19일'},{id:'claude',title:'Claude Code CLI',group:'Anthropic 공식 문서',source:'Anthropic Claude Code 공식 문서',updated:'2026년 09월 19일'},{id:'gemini',title:'Gemini CLI',group:'Google 공식 문서',source:'Google Gemini CLI 공식 문서',updated:'2026년 09월 19일'},{id:'agy',title:'Antigravity CLI',group:'Google 공식 문서',source:'Google Antigravity CLI 공식 문서',updated:'2026년 09월 19일'},{id:'grok',title:'Grok CLI',group:'xAI 공식 문서',source:'xAI Grok CLI 공식 문서',updated:'2026년 09월 19일'}];
+    const list=document.querySelector('#docList'),count=document.querySelector('#count'),currentTitle=document.querySelector('#currentTitle'),currentMeta=document.querySelector('#currentMeta');
+    let selected=documents[0].id;
+    function render(){count.textContent=`${documents.length}개 문서`;list.innerHTML='';documents.forEach(doc=>{const button=document.createElement('button');button.className=`doc-button${doc.id===selected?' active':''}`;button.type='button';button.innerHTML=`${doc.title}<small>${doc.group}</small>`;button.addEventListener('click',()=>select(doc));list.appendChild(button);});}
+    function select(doc){selected=doc.id;const contentId=doc.id==='agy'?'gemini':doc.id;document.querySelectorAll('.embedded-doc').forEach(panel=>{panel.hidden=panel.dataset.doc!==contentId;});currentTitle.textContent=doc.title;currentMeta.textContent=`출처 · ${doc.source}　|　갱신 · ${doc.updated}`;render();}
+    select(documents[0]);
+  </script>
+</body>
+</html>
