@@ -3,7 +3,8 @@
 - 기준 커밋: `3334f67f7cb908dc2b9ac89612560bc5dda347a2`
 - 기준 브랜치: `master`
 - 기준 시각: 2026-09-20 06:13 KST
-- 운영 주소: 저장소와 프로젝트 파일에서 확인되지 않음. 추정한 Vercel 주소 3개는 모두 HTTP 404여서 운영 화면을 확인하지 못함.
+- 운영 주소: `https://hanstree-agenttutor-jgwu.vercel.app/`
+- 전환 전 운영 상태: 기존 `index.html` 화면 HTTP 200, 최종 수정 시각 2026-09-20 05:20 KST
 
 ## 기존 문서
 
