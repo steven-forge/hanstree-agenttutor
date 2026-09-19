@@ -168,6 +168,6 @@
 
 - 2026-09-20 06:27 KST
 - 소스 커밋: `aeede5f80b3a748443c10c48eb9774f6bbb1e020`
-- GitHub: `origin/master`와 소스 커밋 일치
+- GitHub: `origin/master`에 소스와 이 작업표 반영 확인
 - 로컬: Next.js 16.3.5 빌드 성공, 홈·문서 6개 HTTP 200, 잘못된 문서 주소 HTTP 404
 - Vercel: 저장소에 운영 주소나 조회 설정이 없고 확인한 주소 후보는 404여서 운영 반영을 판정하지 못함
