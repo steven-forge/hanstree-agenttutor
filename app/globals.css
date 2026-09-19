@@ -39,7 +39,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .doc-card b { color: var(--blue); font-size: .85rem; }
 .home-foot { display: flex; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
 
-.docs-shell { display: grid; grid-template-columns: 256px minmax(0, 768px) 220px; justify-content: center; min-height: calc(100vh - 56px); }
+.docs-shell { display: grid; grid-template-columns: 256px minmax(0, 1fr) 220px; min-height: calc(100vh - 56px); }
 .docs-sidebar { position: sticky; top: 56px; height: calc(100vh - 56px); padding: 32px 20px; overflow-y: auto; border-right: 1px solid var(--line); }
 .docs-sidebar > p, .page-outline > p { margin: 0 10px 12px; color: #374151; font-size: 13px; font-weight: 750; }
 .docs-sidebar nav, .page-outline nav { display: grid; gap: 2px; }
@@ -53,7 +53,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .doc-meta > div { display: flex; justify-content: space-between; gap: 18px; color: #9ca3af; font-size: 12px; }
 .doc-meta a { color: var(--blue); text-decoration: none; }
 .doc-meta a:hover { text-decoration: underline; }
-.page-outline { position: sticky; top: 56px; height: max-content; max-height: calc(100vh - 56px); padding: 42px 20px; overflow-y: auto; }
+.page-outline { position: sticky; top: 56px; height: max-content; max-height: calc(100vh - 56px); padding: 42px 20px; overflow-y: auto; border-left: 1px solid var(--line); }
 .page-outline nav a { padding: 4px 10px; color: #9ca3af; font-size: 12px; line-height: 1.45; text-decoration: none; }
 .page-outline nav a:hover { color: var(--blue); }
 
@@ -107,7 +107,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .not-found a { color: var(--blue); }
 
 @media (max-width: 1199px) {
-  .docs-shell { grid-template-columns: 240px minmax(0, 768px); }
+  .docs-shell { grid-template-columns: 240px minmax(0, 1fr); }
   .page-outline { display: none; }
 }
 
