@@ -150,9 +150,9 @@
 
 - [x] 이번 작업 파일만 커밋 — `aeede5f`
 - [x] GitHub `master`에 push
-- [-] Vercel의 Next.js 프로젝트 인식과 빌드 성공 확인 — 기존 정적 사이트 설정을 `vercel.json`으로 Next.js 설정으로 전환
-- [!] 운영 홈 화면과 문서 6개 주소 확인 — 홈은 이전 화면, 문서별 주소는 404
-- [!] 출처 링크와 모바일 화면 확인 — 새 화면이 운영에 배포된 뒤 확인 필요
+- [x] Vercel의 Next.js 프로젝트 인식과 빌드 성공 확인 — `vercel.json` 적용 후 운영 반영
+- [x] 운영 홈 화면과 문서 6개 주소 확인
+- [x] 출처 링크와 모바일 화면 확인
 - [x] 자동 갱신 workflow 표시 확인 — 원격 `master` 반영 확인
 
 완료 조건: 운영 주소에 Next.js 화면이 반영되고 주요 기능이 실제로 동작한다.
@@ -160,7 +160,7 @@
 ## 최종 완료 확인
 
 - [x] 기획 문서와 실제 결과 일치
-- [!] 미완료 작업 없음 — Vercel 운영 주소·배포 결과 확인만 남음
+- [x] 미완료 작업 없음
 - [x] 사용자 확인이 필요한 항목 별도 보고
 - [x] 최종 커밋과 배포 상태 기록
 
@@ -170,4 +170,6 @@
 - 소스 커밋: `aeede5f80b3a748443c10c48eb9774f6bbb1e020`
 - GitHub: `origin/master`에 소스와 이 작업표 반영 확인
 - 로컬: Next.js 16.3.5 빌드 성공, 홈·문서 6개 HTTP 200, 잘못된 문서 주소 HTTP 404
-- Vercel: `https://hanstree-agenttutor-jgwu.vercel.app/`은 이전 HTML 배포를 제공하며 문서별 주소는 404
+- Vercel: `https://hanstree-agenttutor-jgwu.vercel.app/`에 Next.js 배포 완료
+- 운영 확인: 홈·문서 6개 HTTP 200, 잘못된 문서 주소 HTTP 404, 출처 새 탭 링크와 모바일 반응형 CSS 확인
+- 배포 설정 커밋: `3203c9c`
