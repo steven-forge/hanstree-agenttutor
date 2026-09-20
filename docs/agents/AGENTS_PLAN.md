@@ -44,7 +44,7 @@
 
 참고 목록은 다음 순서로 갱신한다.
 
-1. **후보 발견:** [Stack Overflow 2025 AI 설문](https://survey.stackoverflow.co/2025/ai)의 사용·관심도 자료와 [GitHub 저장소 검색 안내](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories), [GitHub 저장소 API](https://docs.github.com/en/rest/repos/repos)의 공개 활동 정보를 후보 발견용으로 수집한다. 이 자료만으로 제품을 자동 공개하거나 성능 순위를 만들지 않는다.
+1. **후보 발견:** [GitHub 저장소 검색 안내](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories)와 [GitHub 저장소 API](https://docs.github.com/en/rest/repos/repos)의 공개 활동 정보를 후보 발견용으로 수집한다. 이 자료만으로 제품을 자동 공개하거나 성능 순위를 만들지 않는다.
 2. **공식 제품 확인:** 후보마다 회사 또는 프로젝트의 공식 홈페이지·문서·릴리스 페이지를 확인한다. 예시는 [Cursor 문서](https://cursor.com/docs), [GitHub Copilot 문서](https://docs.github.com/en/copilot), [Windsurf 문서](https://docs.windsurf.com/), [Cline 저장소](https://github.com/cline/cline)와 같다. 공식 출처가 없거나 제품 정체성이 불명확하면 보류한다.
 3. **등록 조건:** AI Agent 또는 개발 에이전트로서의 사용 목적, 현재 접근 가능한 공식 제품·프로젝트 페이지, 비교표에 적을 최소 한 가지 제공 형태, 확인 가능한 날짜를 모두 갖춘 후보만 등록한다. 단순 모델·라이브러리·검색 결과 페이지는 제외한다.
 4. **자동화 범위:** 수집기는 후보 이름·후보 출처·발견 지표·발견일·공식 URL·공식 확인 상태만 갱신한다. 소개 문장, 강점, 지원 형태, 인기 표현은 편집 검토가 끝날 때까지 기존 공개 데이터에 자동 반영하지 않는다.
@@ -76,7 +76,7 @@ Codex의 이전 `developers.openai.com/codex/overview`와 `/codex/changelog`는 
 - GitHub Atom은 최근 항목만 제공한다. 조사 시 두 피드는 각각 10개 항목을 반환했으며 장기간 중단으로 공백이 생기면 [Releases API](https://docs.github.com/en/rest/releases/releases)로 필요한 기간을 보충한다. 시험판 릴리스를 안정판 지원 근거로 쓰지 않는다.
 - 최초 버전의 가격 정보는 공식 요금 페이지 링크 중심으로 제공한다. 숫자를 직접 비교할 때만 통화·단위·세금 포함 여부·지역·요금제·확인일을 함께 검토한다. 요금 페이지의 정확한 주소는 구현 시 제품별 공식 링크에서 확인해 등록한다.
 - 검색 결과·리뷰·벤치마크는 비교할 질문을 찾는 보조 자료다. 수치 비교를 추가하려면 원 벤치마크의 버전·조건까지 확인하며 현재 계획에서 임의의 제품 순위를 만들지 않는다.
-- Stack Overflow와 GitHub 자료는 후보 발견·활동 참고용이며 공식 제품의 품질·성능을 증명하지 않는다. 제품 설명과 제공 형태는 반드시 각 제품의 공식 문서로 재확인한다.
+- GitHub 자료는 후보 발견·활동 참고용이며 공식 제품의 품질·성능을 증명하지 않는다. 제품 설명과 제공 형태는 반드시 각 제품의 공식 문서로 재확인한다.
 
 ### 제품 구분·저장·실패 처리 제안
 
