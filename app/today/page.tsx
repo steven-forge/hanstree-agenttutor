@@ -262,7 +262,6 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                         <th>상태</th>
                         <th>새 기사</th>
                         <th>보류 건수</th>
-                        <th>건너뜀·범위</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -289,12 +288,6 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                               </span>
                             ) : (
                               <span style={{ color: "var(--muted)", fontSize: "0.82rem" }}>0건</span>
-                            )}
-                          </td>
-                          <td style={{ fontSize: "0.82rem" }}>
-                            이미 가져와 건너뜀 {s.skipped_count ?? 0}건
-                            {s.coverage_limited && (
-                              <span style={{ color: "#854d0e", fontWeight: 700 }}> · 수집 범위 제한(과거 기사 일부 누락 가능)</span>
                             )}
                           </td>
                         </tr>
