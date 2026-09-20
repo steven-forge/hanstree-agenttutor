@@ -27,6 +27,13 @@ SOURCE_CACHE_PATH = ROOT / ".source-cache" / "content.json"
 KST = timezone(timedelta(hours=9))
 TIMEOUT = 20
 MAX_BYTES = 3 * 1024 * 1024  # 3MB
+RELEASES_MAX_BYTES = 12 * 1024 * 1024  # Codex 30건 실측 약 10.5MB
+WINDOW_DAYS = 60
+SUMMARY_MAX = 500
+# ponytail: 출처당 Releases API 최대 20페이지(600건); 60일 안에 넘치면 coverage_limited로 기록되고 상한을 올린다.
+MAX_RELEASE_PAGES = 20
+RELEASES_PER_PAGE = 30
+PRERELEASE_RE = re.compile(r'(?i)\b(alpha|beta|rc|preview|nightly)\b|[.-](alpha|beta|rc|preview|nightly)')
 
 ALLOWED_HOSTS = {
     "openai.com", "www.openai.com", "learn.chatgpt.com", "developers.openai.com",
@@ -87,7 +94,7 @@ def canonicalize_url(url: str) -> str:
     return urllib.parse.urlunsplit((parsed.scheme.lower(), (parsed.hostname or "").lower(), path, new_query, ""))
 
 
-def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2) -> tuple[int, dict, bytes]:
+def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES) -> tuple[int, dict, bytes]:
     validate_url(url)
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; AgentTutor/0.2; +https://hanstree-agenttutor-jgwu.vercel.app)",
@@ -109,9 +116,9 @@ def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries
             with opener.open(request, timeout=TIMEOUT) as response:
                 status = response.status
                 resp_headers = {k.lower(): v for k, v in response.headers.items()}
-                body = response.read(MAX_BYTES + 1)
-                if len(body) > MAX_BYTES:
-                    raise ValueError(f"응답 크기가 최대 허용치(3MB)를 초과했습니다: {url}")
+                body = response.read(max_bytes + 1)
+                if len(body) > max_bytes:
+                    raise ValueError(f"응답 크기가 최대 허용치({max_bytes // (1024 * 1024)}MB)를 초과했습니다: {url}")
                 return status, resp_headers, body
         except urllib.error.HTTPError as error:
             resp_headers = {k.lower(): v for k, v in error.headers.items()} if error.headers else {}
@@ -188,10 +195,94 @@ def normalize_content(content_bytes: bytes, content_type: str = "") -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def parse_rss_feed(xml_bytes: bytes, source_id: str, source_name: str, window_start: datetime, window_end: datetime) -> tuple[list[dict], int, int]:
+NO_KNOWN = (frozenset(), frozenset())
+
+
+def new_stats() -> dict:
+    return {"held_count": 0, "excluded_count": 0, "skipped_count": 0, "coverage_limited": False}
+
+
+def url_id(canonical_url: str) -> str:
+    return hashlib.sha256(canonical_url.encode("utf-8")).hexdigest()[:16]
+
+
+def parse_iso(value) -> datetime | None:
+    try:
+        return datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    except (AttributeError, ValueError):
+        return None
+
+
+def classify_date(dt: datetime, window_start: datetime, window_end: datetime) -> tuple[str, dict]:
+    """(상태, 날짜 필드) 반환. 상태: ok/old/future. 시간대 없는 값은 날짜만 확인된 것으로 보고 시각을 만들지 않는다."""
+    if dt.tzinfo is None:
+        day = dt.date()
+        if day < window_start.astimezone(KST).date():
+            return "old", {}
+        if day > window_end.astimezone(KST).date():
+            return "future", {}
+        return "ok", {"published_on": day.isoformat(), "date_precision": "day"}
+    if dt < window_start:
+        return "old", {}
+    if dt > window_end:
+        return "future", {}
+    return "ok", {"published_at": dt.astimezone(timezone.utc).isoformat(), "date_precision": "time"}
+
+
+def make_candidate(title: str, source_id: str, source_name: str, canonical_url: str, summary_raw: str, date_fields: dict) -> dict:
+    return {
+        "id": url_id(canonical_url),
+        "title": title,
+        "source_id": source_id,
+        "source_name": source_name,
+        "source_url": canonical_url,
+        "source_summary": clean_html_text(summary_raw)[:SUMMARY_MAX],
+        "fetched_at": datetime.now(KST).isoformat(timespec="seconds"),
+        **date_fields,
+    }
+
+
+def archive_keys(articles: list) -> tuple[set, set]:
+    ids = {a.get("id") for a in articles if isinstance(a, dict)}
+    urls = {canonicalize_url(a["source_url"]) for a in articles if isinstance(a, dict) and isinstance(a.get("source_url"), str)}
+    return ids, urls
+
+
+def article_sort_key(article: dict) -> tuple:
+    """KST 발행일 내림차순 → 같은 날은 time 정밀도(시각 내림차순) 먼저 → day 정밀도는 id 오름차순."""
+    aid = str(article.get("id", ""))
+    try:
+        if article.get("date_precision") == "day":
+            day = datetime.strptime(article["published_on"], "%Y-%m-%d").date()
+            return (-day.toordinal(), 1, 0.0, aid)
+        dt = datetime.fromisoformat(article["published_at"])
+        return (-dt.astimezone(KST).date().toordinal(), 0, -dt.timestamp(), aid)
+    except (KeyError, TypeError, ValueError):
+        return (0, 2, 0.0, aid)  # 날짜 불량 항목은 맨 뒤로 (check_content가 잡는다)
+
+
+def merge_archive(today: dict, new_items: list[dict]) -> tuple[list[dict], bool]:
+    """새 항목만 누적하고 정렬한다. 기존 기사 객체는 수정하지 않는다. 반환: (추가된 항목, articles 변화 여부)"""
+    articles = today.get("articles") or []
+    ids, urls = archive_keys(articles)
+    added = []
+    for item in new_items:
+        url = canonicalize_url(item["source_url"])
+        if item["id"] in ids or url in urls:
+            continue
+        ids.add(item["id"])
+        urls.add(url)
+        added.append(item)
+    merged = sorted(articles + added, key=article_sort_key)
+    changed = merged != articles
+    today["articles"] = merged
+    return added, changed
+
+
+def parse_rss_feed(xml_bytes: bytes, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN) -> tuple[list[dict], dict]:
     candidates = []
-    held_count = 0
-    excluded_count = 0
+    stats = new_stats()
+    reached_start = False
     try:
         root = ET.fromstring(xml_bytes)
     except ET.ParseError as error:
@@ -216,169 +307,119 @@ def parse_rss_feed(xml_bytes: bytes, source_id: str, source_name: str, window_st
         desc_raw = (desc_el.text or "").strip() if desc_el is not None else ""
 
         if not title or not raw_url or not pubdate_str:
-            held_count += 1
+            stats["held_count"] += 1
             continue
 
         try:
             validate_url(raw_url)
         except ValueError:
-            held_count += 1
+            stats["held_count"] += 1
             continue
 
         try:
             pub_dt = parsedate_to_datetime(pubdate_str)
             if pub_dt.tzinfo is None:
-                held_count += 1
+                stats["held_count"] += 1
                 continue
         except Exception:
-            held_count += 1
+            stats["held_count"] += 1
             continue
 
-        if pub_dt > window_end:
-            excluded_count += 1
+        state, date_fields = classify_date(pub_dt, window_start, window_end)
+        if state == "old":
+            reached_start = True
             continue
-        if pub_dt < window_start:
+        if state == "future":
+            stats["excluded_count"] += 1
             continue
 
         canonical_url = canonicalize_url(raw_url)
-        cid = hashlib.sha256(canonical_url.encode("utf-8")).hexdigest()[:16]
-        evidence = clean_html_text(desc_raw)[:2000]
-
-        candidates.append({
-            "id": cid,
-            "title": title,
-            "source_id": source_id,
-            "source_name": source_name,
-            "source_url": canonical_url,
-            "published_at": pub_dt.astimezone(timezone.utc).isoformat(),
-            "evidence": evidence
-        })
-
-    return candidates, held_count, excluded_count
-
-
-def parse_atom_releases(xml_bytes: bytes, source_id: str, source_name: str, owner_repo: str, window_start: datetime, window_end: datetime) -> tuple[list[dict], int, int]:
-    candidates = []
-    held_count = 0
-    excluded_count = 0
-    try:
-        root = ET.fromstring(xml_bytes)
-    except ET.ParseError as error:
-        raise RuntimeError(f"Atom XML 파싱 실패: {error}")
-
-    if root.tag != "{http://www.w3.org/2005/Atom}feed":
-        raise RuntimeError(f"유효한 Atom 피드 루트 요소가 아닙니다: {root.tag}")
-
-    entries = root.findall("{http://www.w3.org/2005/Atom}entry")
-    if not entries:
-        raise RuntimeError("Atom 항목이 없습니다. 피드 구조를 확인해야 합니다.")
-    # ponytail: 최신 10개 피드 항목만 확인; 누락 구간이 필요해지면 Releases API 페이지 수집으로 확장.
-    for entry in entries[:10]:
-        title_el = entry.find("{http://www.w3.org/2005/Atom}title")
-        link_el = entry.find("{http://www.w3.org/2005/Atom}link")
-        updated_el = entry.find("{http://www.w3.org/2005/Atom}updated")
-        title = (title_el.text or "").strip() if title_el is not None else ""
-        href = link_el.get("href", "").strip() if link_el is not None else ""
-
-        if not title or not href:
-            held_count += 1
+        if url_id(canonical_url) in known[0] or canonical_url in known[1]:
+            stats["skipped_count"] += 1
             continue
 
-        if href.startswith("/"):
-            href = f"https://github.com{href}"
+        candidates.append(make_candidate(title, source_id, source_name, canonical_url, desc_raw, date_fields))
 
+    # 피드가 60일 시작 이전까지 닿지 않으면 출처가 이력을 제한한 것으로 기록
+    stats["coverage_limited"] = not reached_start
+    return candidates, stats
+
+
+def parse_release_page(releases: list, owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple, candidates: list, stats: dict) -> bool:
+    """Releases API 한 페이지를 처리한다. 60일 시작보다 오래된 release를 만나면 True."""
+    reached_start = False
+    expected_prefix = f"/{owner_repo}/releases/tag/"
+    for rel in releases:
+        if not isinstance(rel, dict):
+            stats["held_count"] += 1
+            continue
+        pub_dt = parse_iso(rel.get("published_at"))
+        if pub_dt is not None and pub_dt.tzinfo is not None and pub_dt < window_start:
+            reached_start = True
+            continue
+
+        tag = rel.get("tag_name") or ""
+        title = (rel.get("name") or tag).strip()
+        if rel.get("draft") or rel.get("prerelease") or PRERELEASE_RE.search(title) or PRERELEASE_RE.search(tag):
+            stats["excluded_count"] += 1
+            continue
+
+        href = rel.get("html_url") or ""
         try:
             validate_url(href)
         except ValueError:
-            held_count += 1
+            stats["held_count"] += 1
             continue
-
         p_href = urllib.parse.urlsplit(href)
-        if (p_href.hostname or "").lower() != "github.com":
-            held_count += 1
+        if not title or pub_dt is None or pub_dt.tzinfo is None or \
+           (p_href.hostname or "").lower() != "github.com" or not p_href.path.startswith(expected_prefix):
+            stats["held_count"] += 1
             continue
 
-        expected_prefix = f"/{owner_repo}/releases/tag/"
-        if not p_href.path.startswith(expected_prefix):
-            held_count += 1
-            continue
-
-        tag = p_href.path[len(expected_prefix):].split("/")[0].split("?")[0].split("#")[0]
-        if not tag:
-            held_count += 1
-            continue
-
-        if re.search(r'(?i)\b(alpha|beta|rc|preview|nightly)\b|[.-](alpha|beta|rc|preview|nightly)', title) or \
-           re.search(r'(?i)\b(alpha|beta|rc|preview|nightly)\b|[.-](alpha|beta|rc|preview|nightly)', tag):
-            excluded_count += 1
-            continue
-
-        # Filter obviously old Atom updated before API fetch to reduce quota (don't treat updated as published_at)
-        if updated_el is not None and updated_el.text:
-            try:
-                upd_dt = datetime.fromisoformat(updated_el.text.strip().replace("Z", "+00:00"))
-                if upd_dt.tzinfo is not None and upd_dt < window_start - timedelta(days=2):
-                    continue
-            except Exception:
-                pass
-
-        # Fetch official release metadata from GitHub API
-        api_url = f"https://api.github.com/repos/{owner_repo}/releases/tags/{tag}"
-        try:
-            status, _, body = fetch_url(api_url)
-            if status != 200:
-                held_count += 1
-                continue
-            gh_data = json.loads(body.decode("utf-8"))
-        except Exception:
-            held_count += 1
-            continue
-
-        if gh_data.get("prerelease") or gh_data.get("draft"):
-            excluded_count += 1
-            continue
-
-        pub_str = gh_data.get("published_at")
-        if not pub_str:
-            held_count += 1
-            continue
-
-        try:
-            pub_dt = datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
-            if pub_dt.tzinfo is None:
-                held_count += 1
-                continue
-        except Exception:
-            held_count += 1
-            continue
-
-        if pub_dt > window_end:
-            excluded_count += 1
-            continue
-        if pub_dt < window_start:
+        state, date_fields = classify_date(pub_dt, window_start, window_end)
+        if state != "ok":
+            stats["excluded_count"] += 1
             continue
 
         canonical_url = canonicalize_url(href)
-        cid = hashlib.sha256(canonical_url.encode("utf-8")).hexdigest()[:16]
-        evidence = clean_html_text(gh_data.get("body") or "")[:2000]
+        if url_id(canonical_url) in known[0] or canonical_url in known[1]:
+            stats["skipped_count"] += 1
+            continue
 
-        candidates.append({
-            "id": cid,
-            "title": title,
-            "source_id": source_id,
-            "source_name": source_name,
-            "source_url": canonical_url,
-            "published_at": pub_dt.astimezone(timezone.utc).isoformat(),
-            "evidence": evidence
-        })
-
-    return candidates, held_count, excluded_count
+        candidates.append(make_candidate(title, source_id, source_name, canonical_url, rel.get("body") or "", date_fields))
+    return reached_start
 
 
-def parse_html_news(index_url: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime) -> tuple[list[dict], int, int]:
+def parse_github_releases(owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN) -> tuple[list[dict], dict]:
     candidates = []
-    held_count = 0
-    excluded_count = 0
+    stats = new_stats()
+    stats["coverage_limited"] = True  # 60일 시작 또는 목록 끝에 닿으면 해제
+    for page in range(1, MAX_RELEASE_PAGES + 1):
+        api_url = f"https://api.github.com/repos/{owner_repo}/releases?per_page={RELEASES_PER_PAGE}&page={page}"
+        status, _, body = fetch_url(api_url, max_bytes=RELEASES_MAX_BYTES)
+        if status != 200:
+            raise RuntimeError(f"HTTP {status}: {api_url}")
+        releases = json.loads(body.decode("utf-8"))
+        if not isinstance(releases, list):
+            raise RuntimeError("Releases API 응답이 목록 형식이 아닙니다.")
+        if not releases:
+            if page == 1:
+                raise RuntimeError("Releases 항목이 없습니다. 빈 수집 성공으로 처리하지 않습니다.")
+            stats["coverage_limited"] = False
+            break
+        if parse_release_page(releases, owner_repo, source_id, source_name, window_start, window_end, known, candidates, stats):
+            stats["coverage_limited"] = False
+            break
+    return candidates, stats
+
+
+def parse_html_news(index_url: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, old_urls: set = None) -> tuple[list[dict], dict]:
+    """old_urls: 이전 실행에서 60일 시작보다 오래된 것으로 확정된 URL 캐시(제자리 갱신). 오래된 기사는 다시 범위에 들어오지 않는다."""
+    candidates = []
+    stats = new_stats()
+    reached_start = False
+    if old_urls is None:
+        old_urls = set()
 
     status, _, body = fetch_url(index_url)
     if status != 200:
@@ -401,28 +442,35 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
             if c_url not in seen:
                 seen.add(c_url)
                 article_urls.append(c_url)
-                # ponytail: 출처당 8개 기사로 요청량 제한; 누락이 확인되면 사이트별 페이지 수집 추가.
-                if len(article_urls) >= 8:
-                    break
 
     if not article_urls:
         raise RuntimeError(f"{source_name}: HTML 기사 목록을 추출할 수 없습니다 (형식 변경 의심).")
 
+    old_urls.intersection_update(article_urls)
     for art_url in article_urls:
+        # archive에 있거나 오래된 것으로 확정된 기사는 상세 요청 전에 건너뜀
+        if url_id(art_url) in known[0] or art_url in known[1]:
+            stats["skipped_count"] += 1
+            continue
+        if art_url in old_urls:
+            reached_start = True
+            stats["excluded_count"] += 1
+            continue
+
         try:
             validate_url(art_url)
         except ValueError:
-            held_count += 1
+            stats["held_count"] += 1
             continue
 
         try:
             art_status, _, art_body = fetch_url(art_url)
             if art_status != 200:
-                held_count += 1
+                stats["held_count"] += 1
                 continue
             art_html = art_body.decode("utf-8", errors="replace")
         except Exception:
-            held_count += 1
+            stats["held_count"] += 1
             continue
 
         title_m = re.search(r'<meta\b[^>]*property=["\']og:title["\'][^>]*content=["\']([^"\']+)["\']', art_html, re.I)
@@ -479,72 +527,52 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
                 except ValueError:
                     pass
 
-        if not date_str or not title:
-            held_count += 1
+        # 날짜·발행 메타데이터를 전혀 확인할 수 없으면 보류. 별도 큐 없이 다음 60일 실행에서 다시 확인한다.
+        pub_dt = parse_iso(date_str)
+        if pub_dt is None or not title:
+            stats["held_count"] += 1
             continue
 
-        if re.fullmatch(r'\d{4}-\d{2}-\d{2}', date_str):
-            try:
-                d_only = datetime.strptime(date_str, "%Y-%m-%d").date()
-                if d_only < window_start.date() - timedelta(days=1):
-                    excluded_count += 1
-                    continue
-            except Exception:
-                pass
-            held_count += 1
+        state, date_fields = classify_date(pub_dt, window_start, window_end)
+        if state == "old":
+            reached_start = True
+            old_urls.add(art_url)
+        if state != "ok":
+            stats["excluded_count"] += 1
             continue
 
-        try:
-            pub_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            if pub_dt.tzinfo is None:
-                held_count += 1
-                continue
-        except Exception:
-            held_count += 1
-            continue
-
-        if pub_dt > window_end:
-            excluded_count += 1
-            continue
-        if pub_dt < window_start:
-            continue
-
-        cid = hashlib.sha256(art_url.encode("utf-8")).hexdigest()[:16]
         desc_m = re.search(r'<meta\b[^>]*property=["\']og:description["\'][^>]*content=["\']([^"\']+)["\']', art_html, re.I)
         if not desc_m:
             desc_m = re.search(r'<meta\b[^>]*name=["\']description["\'][^>]*content=["\']([^"\']+)["\']', art_html, re.I)
-        evidence = clean_html_text(desc_m.group(1) if desc_m else "")[:2000]
 
-        candidates.append({
-            "id": cid,
-            "title": title,
-            "source_id": source_id,
-            "source_name": source_name,
-            "source_url": art_url,
-            "published_at": pub_dt.astimezone(timezone.utc).isoformat(),
-            "evidence": evidence
-        })
+        candidates.append(make_candidate(title, source_id, source_name, art_url, desc_m.group(1) if desc_m else "", date_fields))
 
-    return candidates, held_count, excluded_count
+    # 목록에 60일 시작 이전 기사가 하나도 없으면 목록 노출 개수가 이력을 제한한 것으로 기록
+    stats["coverage_limited"] = not reached_start
+    return candidates, stats
 
 
-def collect_news(days: int = 1) -> int:
-    if days not in (1, 7):
-        raise ValueError("수집 기간(days)은 1 또는 7만 허용됩니다.")
+def collect_news() -> int:
     now_kst = datetime.now(KST)
     window_end = now_kst
-    window_start = now_kst - timedelta(days=days)
+    window_start = now_kst - timedelta(days=WINDOW_DAYS)
     edition_date = window_end.strftime("%Y-%m-%d")
     collected_at = now_kst.isoformat()
 
     source_cache = read_json(SOURCE_CACHE_PATH)
     news_cache = source_cache.setdefault("news", {})
 
+    today = {"edition_date": None, "window_start": None, "window_end": None, "collected_at": None,
+             "reviewed_at": None, "articles": [], **read_json(TODAY_PATH)}
+    if not isinstance(today["articles"], list):
+        raise ValueError("data/today.json의 articles가 배열이 아닙니다. 공개 archive를 보호하기 위해 중단합니다.")
+    known = archive_keys(today["articles"])
+
     sources_def = [
         {"id": "openai-news", "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "type": "rss"},
         {"id": "google-ai", "name": "Google AI", "url": "https://blog.google/innovation-and-ai/technology/ai/rss/", "type": "rss"},
-        {"id": "codex-releases", "name": "Codex Releases", "url": "https://github.com/openai/codex/releases.atom", "type": "atom", "repo": "openai/codex"},
-        {"id": "gemini-releases", "name": "Gemini CLI Releases", "url": "https://github.com/google-gemini/gemini-cli/releases.atom", "type": "atom", "repo": "google-gemini/gemini-cli"},
+        {"id": "codex-releases", "name": "Codex Releases", "url": "https://github.com/openai/codex/releases", "type": "releases", "repo": "openai/codex"},
+        {"id": "gemini-releases", "name": "Gemini CLI Releases", "url": "https://github.com/google-gemini/gemini-cli/releases", "type": "releases", "repo": "google-gemini/gemini-cli"},
         {"id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html"},
         {"id": "xai-news", "name": "xAI News", "url": "https://x.ai/news", "type": "html"},
     ]
@@ -558,69 +586,33 @@ def collect_news(days: int = 1) -> int:
         sname = sdef["name"]
         surl = sdef["url"]
         stype = sdef["type"]
-        cached = news_cache.get(sid, {})
-        cached_items = cached.get("cached_items", [])
-
-        # news 조건부 요청은 days==1 및 cached.window_days==1일 때만 허용 (7일은 항상 피드 재조회)
-        use_conditional = (days == 1) and (cached.get("window_days") == 1) and bool(cached_items) and ("held_count" in cached)
-        etag = cached.get("etag") if use_conditional else None
-        last_mod = cached.get("last_modified") if use_conditional else None
 
         items = []
-        held_count = 0
+        stats = new_stats()
         error_msg = None
+        # 60일 수집은 조건부 요청(304)을 쓰지 않고 항상 전체 재조회한다.
+        cache_entry = {"last_checked": collected_at, "window_days": WINDOW_DAYS}
 
         try:
             if stype == "rss":
-                status, headers, body = fetch_url(surl, etag=etag, last_modified=last_mod)
-                if status == 304 and cached_items:
-                    held_count = cached["held_count"]
-                    for c_item in cached_items:
-                        p_dt = datetime.fromisoformat(c_item["published_at"])
-                        if window_start <= p_dt <= window_end:
-                            items.append(c_item)
-                else:
-                    items, held_count, _ = parse_rss_feed(body, sid, sname, window_start, window_end)
-                    news_cache[sid] = {
-                        "etag": headers.get("etag"),
-                        "last_modified": headers.get("last-modified"),
-                        "last_checked": collected_at,
-                        "window_days": days,
-                        "held_count": held_count,
-                        "cached_items": items
-                    }
-            elif stype == "atom":
-                status, headers, body = fetch_url(surl, etag=etag, last_modified=last_mod)
-                if status == 304 and cached_items:
-                    held_count = cached["held_count"]
-                    for c_item in cached_items:
-                        p_dt = datetime.fromisoformat(c_item["published_at"])
-                        if window_start <= p_dt <= window_end:
-                            items.append(c_item)
-                else:
-                    items, held_count, _ = parse_atom_releases(body, sid, sname, sdef["repo"], window_start, window_end)
-                    news_cache[sid] = {
-                        "etag": headers.get("etag"),
-                        "last_modified": headers.get("last-modified"),
-                        "last_checked": collected_at,
-                        "window_days": days,
-                        "held_count": held_count,
-                        "cached_items": items
-                    }
+                status, _, body = fetch_url(surl)
+                if status != 200:
+                    raise RuntimeError(f"HTTP {status}: {surl}")
+                items, stats = parse_rss_feed(body, sid, sname, window_start, window_end, known)
+            elif stype == "releases":
+                items, stats = parse_github_releases(sdef["repo"], sid, sname, window_start, window_end, known)
             elif stype == "html":
-                items, held_count, _ = parse_html_news(surl, sid, sname, window_start, window_end)
-                news_cache[sid] = {
-                    "last_checked": collected_at,
-                    "window_days": days,
-                    "cached_items": items
-                }
+                old_urls = set(news_cache.get(sid, {}).get("old_urls", []))
+                items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls)
+                cache_entry["old_urls"] = sorted(old_urls)
+            news_cache[sid] = cache_entry
         except Exception as error:
             error_msg = str(error)
             failed_sources += 1
 
         if error_msg:
             source_status = "failed"
-        elif held_count > 0:
+        elif stats["held_count"] > 0:
             source_status = "partial"
         else:
             source_status = "ok"
@@ -631,7 +623,7 @@ def collect_news(days: int = 1) -> int:
             "url": surl,
             "status": source_status,
             "count": len(items),
-            "held_count": held_count
+            **stats
         }
         if error_msg:
             source_report["error"] = error_msg
@@ -639,12 +631,13 @@ def collect_news(days: int = 1) -> int:
         sources_health.append(source_report)
         all_candidates.extend(items)
 
-    # Deduplicate candidates by ID
-    deduped = {}
-    for cand in all_candidates:
-        if cand["id"] not in deduped:
-            deduped[cand["id"]] = cand
-    candidates_list = sorted(deduped.values(), key=lambda x: x["published_at"], reverse=True)
+    # archive 및 동일 실행 내부의 id/정규화 URL 중복을 제거하며 새 항목만 누적
+    candidates_list, archive_changed = merge_archive(today, all_candidates)
+    candidates_list.sort(key=article_sort_key)
+    if archive_changed:
+        today.update(edition_date=edition_date, window_start=window_start.isoformat(),
+                     window_end=window_end.isoformat(), collected_at=collected_at)
+        write_json(TODAY_PATH, today)
 
     if failed_sources == len(sources_def):
         news_status = "failed"
@@ -660,6 +653,8 @@ def collect_news(days: int = 1) -> int:
         "window_end": window_end.isoformat(),
         "edition_date": edition_date,
         "sources": sources_health,
+        "new_count": len(candidates_list),
+        "archive_count": len(today["articles"]),
         "candidates": candidates_list
     }
     write_json(CANDIDATES_PATH, candidates_data)
@@ -670,6 +665,7 @@ def collect_news(days: int = 1) -> int:
         "checked_at": collected_at,
         "status": news_status,
         "candidate_count": len(candidates_list),
+        "archive_count": len(today["articles"]),
         "sources": sources_health
     }
     if "documents" not in current_health:
@@ -680,9 +676,11 @@ def collect_news(days: int = 1) -> int:
     source_cache["updated_at"] = collected_at
     write_json(SOURCE_CACHE_PATH, source_cache)
 
-    print(f"[뉴스 수집 완료] 상태: {news_status}, 후보: {len(candidates_list)}건, 실패 출처: {failed_sources}/{len(sources_def)}")
+    print(f"[뉴스 수집 완료] 상태: {news_status}, 최근 {WINDOW_DAYS}일 신규: {len(candidates_list)}건, archive: {len(today['articles'])}건, 실패 출처: {failed_sources}/{len(sources_def)}")
     for s in sources_health:
-        info = f"  - {s['name']}: {s['status']} (발견 {s['count']}건, 보류 {s['held_count']}건)"
+        info = f"  - {s['name']}: {s['status']} (신규 {s['count']}건, 기존 건너뜀 {s['skipped_count']}건, 보류 {s['held_count']}건)"
+        if s["coverage_limited"]:
+            info += " [출처 제공 범위가 60일에 못 미침]"
         if "error" in s:
             info += f" [오류: {s['error']}]"
         print(info)
@@ -890,15 +888,14 @@ def main():
     parser = argparse.ArgumentParser(description="AgentTutor 뉴스 및 문서 출처 수집·점검 도구")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    news_parser = subparsers.add_parser("news", help="최신 뉴스 후보를 수집하고 헬스 정보를 갱신합니다.")
-    news_parser.add_argument("--days", type=int, choices=[1, 7], default=1, help="수집 기간 일수 (1 또는 7, 기본값: 1)")
+    subparsers.add_parser("news", help="최근 60일 뉴스를 수집해 archive(data/today.json)에 누적하고 헬스 정보를 갱신합니다.")
 
     doc_parser = subparsers.add_parser("documents", help="학습 자료 출처의 변경 사항을 점검합니다.")
     doc_parser.add_argument("--force", action="store_true", help="점검 주기와 관계없이 모든 출처를 강제 점검합니다.")
 
     args = parser.parse_args()
     if args.command == "news":
-        sys.exit(collect_news(days=args.days))
+        sys.exit(collect_news())
     elif args.command == "documents":
         sys.exit(collect_documents(force=args.force))
 

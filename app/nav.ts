@@ -23,7 +23,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Today",
     href: "/today",
     items: [
-      { title: "오늘의 10대 뉴스", href: "/today" }
+      { title: "AI 뉴스레터", href: "/today" }
     ]
   },
   {

@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Collect news candidates
+      - name: Collect news (60-day window, merged into data/today.json)
         id: collect_news
         run: python3 scripts/collect_content.py news
         continue-on-error: true
@@ -65,9 +65,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
-            git add data/today-candidates.json data/content-health.json .source-cache/content.json
-            git commit -m "chore(content): 뉴스 후보 및 문서 출처 점검 갱신"
+          if [ -n "$(git status --porcelain data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
+            git add data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json
+            git commit -m "chore(content): 뉴스 archive·후보 및 문서 출처 점검 갱신"
             git pull --rebase origin master
             git push origin master
           else

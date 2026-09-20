@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-21T06:24:38.668796+09:00",
-  "window_start": "2026-09-20T06:24:38.668796+09:00",
-  "window_end": "2026-09-21T06:24:38.668796+09:00",
+  "collected_at": "2026-09-21T06:46:52.401938+09:00",
+  "window_start": "2026-07-23T06:46:52.401938+09:00",
+  "window_end": "2026-09-21T06:46:52.401938+09:00",
   "edition_date": "2026-09-21",
   "sources": [
     {
@@ -10,7 +10,10 @@
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 110,
+      "coverage_limited": false
     },
     {
       "id": "google-ai",
@@ -18,23 +21,32 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 20,
+      "coverage_limited": true
     },
     {
       "id": "codex-releases",
       "name": "Codex Releases",
-      "url": "https://github.com/openai/codex/releases.atom",
+      "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 151,
+      "skipped_count": 20,
+      "coverage_limited": false
     },
     {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
-      "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+      "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 66,
+      "skipped_count": 10,
+      "coverage_limited": false
     },
     {
       "id": "anthropic-news",
@@ -42,7 +54,10 @@
       "url": "https://www.anthropic.com/news",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 1,
+      "skipped_count": 10,
+      "coverage_limited": false
     },
     {
       "id": "xai-news",
@@ -50,8 +65,13 @@
       "url": "https://x.ai/news",
       "status": "ok",
       "count": 0,
-      "held_count": 0
+      "held_count": 0,
+      "excluded_count": 60,
+      "skipped_count": 22,
+      "coverage_limited": false
     }
   ],
+  "new_count": 0,
+  "archive_count": 192,
   "candidates": []
 }

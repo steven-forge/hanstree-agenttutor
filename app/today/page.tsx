@@ -6,9 +6,11 @@ import { todayData, contentHealth } from "../content";
 import latestCollection from "../../data/today-candidates.json";
 
 export const metadata: Metadata = {
-  title: "오늘의 주요 뉴스 · AgentTutor",
-  description: "매일 확인할 가치가 있는 AI 및 Agent 관련 주요 뉴스 브리핑"
+  title: "AI 뉴스레터 · AgentTutor",
+  description: "최근 60일간 수집한 AI 및 Agent 관련 공식 뉴스를 최신순으로 모아 보는 뉴스레터"
 };
+
+const PAGE_SIZE = 10;
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
@@ -29,28 +31,24 @@ function formatKstTime(isoString: string | null | undefined): string {
   }
 }
 
-export default function TodayPage() {
+export default async function TodayPage({ searchParams }: { searchParams: Promise<{ page?: string | string[] }> }) {
+  const { page } = await searchParams;
   const { edition_date, window_start, window_end, collected_at, reviewed_at, articles } = todayData;
   const { news: newsHealth } = contentHealth;
 
   const count = articles ? articles.length : 0;
+  const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
+  // 생략=1, 양의 정수 문자열만 유효, 그 외(배열·0·음수·소수·문자)는 0으로 무효 처리
+  const pageNum = page === undefined ? 1 : typeof page === "string" && /^[1-9]\d*$/.test(page) ? Number(page) : 0;
+  const pageOutOfRange = pageNum < 1 || pageNum > totalPages;
+  const pageHref = (n: number) => (n === 1 ? "/today" : `/today?page=${n}`);
+  const pageStart = (pageNum - 1) * PAGE_SIZE;
   const hasArticles = count > 0;
   const isReviewed = Boolean(reviewed_at);
   const isReviewedEmpty = isReviewed && count === 0;
   const hasNoCandidates = !isReviewed && newsHealth.status !== "failed" && Boolean(newsHealth.checked_at) && newsHealth.candidate_count === 0;
 
-  const is7DayEdition = Boolean(
-    window_start &&
-    window_end &&
-    Math.abs(Date.parse(window_end) - Date.parse(window_start) - 7 * 24 * 60 * 60 * 1000) <= 1000
-  );
-
-  const headlineTitle = count > 0 && count < 10 ? `오늘의 ${count}대 뉴스` : "오늘의 10대 뉴스";
-  const publishedCountText = isReviewed ? `${count}건 발행` : "발행 대기";
-
-  const isNewerCollection = Boolean(
-    newsHealth.checked_at && collected_at && Date.parse(newsHealth.checked_at) > Date.parse(collected_at)
-  );
+  const publishedCountText = `총 ${count}건`;
 
   return (
     <>
@@ -71,42 +69,30 @@ export default function TodayPage() {
                   : "수집 오류 (이전 판본 유지)"}
               </span>
               <time dateTime={reviewed_at || undefined}>
-                검토 시각 · {reviewed_at ? formatKstTime(reviewed_at) : "검토 대기"}
+                기존 검토 시각 · {reviewed_at ? formatKstTime(reviewed_at) : "검토 대기"} (이후 자동 수집 기사는 개별 검토 전일 수 있음)
               </time>
             </div>
           </header>
 
           <div className="legacy-content" style={{ padding: 0 }}>
             <header className="hero" id="overview">
-              <p className="eyebrow">DAILY BRIEFING · TODAY</p>
-              <h1>{headlineTitle}</h1>
+              <p className="eyebrow">AI NEWSLETTER</p>
+              <h1>AI 뉴스레터</h1>
               <p className="lead">
-                매일 확인할 가치가 있는 AI·Agent 관련 공식 발표와 릴리스 중 핵심 항목을 선별하여 초보자도 이해하기 쉽게 제공합니다.
+                최근 60일간 공식 출처에서 수집한 AI·Agent 관련 발표와 릴리스를 최신순으로 모아 보여줍니다.
               </p>
               <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 <span className="date">
-                  발행일 · {edition_date || "아직 발행되지 않음"}
+                  기준일 · {edition_date || "아직 발행되지 않음"}
                 </span>
                 <span className="date">
-                  발행 건수 · {publishedCountText}
+                  기사 수 · {publishedCountText}
                 </span>
                 <span className="date">
-                  {isReviewed ? "공개본 수집 기간" : "최근 수집 기간"} · {formatKstTime(window_start || latestCollection.window_start)} ~ {formatKstTime(window_end || latestCollection.window_end)}
+                  60일 수집 기간 · {formatKstTime(window_start || latestCollection.window_start)} ~ {formatKstTime(window_end || latestCollection.window_end)}
                 </span>
               </div>
             </header>
-
-            {is7DayEdition && (
-              <div className="health-notice" style={{ marginTop: "24px" }}>
-                <strong>판본 안내:</strong> 최근 7일 주요 뉴스를 선별한 판본이며 기사별 실제 발행일은 아래 표시됩니다.
-              </div>
-            )}
-
-            {isNewerCollection && (
-              <div className="health-notice" style={{ marginTop: "24px" }}>
-                <strong>판본 안내:</strong> 최근 검토 완료된 판본입니다. 더 새로운 수집 결과가 있으며 공개본은 검토 후 교체합니다.
-              </div>
-            )}
 
             {newsHealth.status === "not_collected" && (
               <div className="health-notice" style={{ marginTop: "24px" }}>
@@ -144,16 +130,26 @@ export default function TodayPage() {
                   </Link>
                 </div>
               </div>
+            ) : pageOutOfRange ? (
+              <div id="articles" className="empty-state" style={{ marginTop: "32px" }}>
+                <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)" }}>해당 페이지에 뉴스가 없습니다.</p>
+                <div style={{ marginTop: "16px" }}>
+                  <Link href="/today" className="tag-link" style={{ padding: "6px 14px", fontSize: "0.85rem" }}>
+                    1페이지로 이동 →
+                  </Link>
+                </div>
+              </div>
             ) : (
               <div id="articles" style={{ display: "grid", gap: "20px", marginTop: "32px" }}>
-                {articles.slice(0, 10).map((article, index) => (
+                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지</p>
+                {articles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
                   <article key={article.id} className="card" style={{ padding: "24px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
                       <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--blue)" }}>
-                        #{index + 1}
+                        #{pageStart + index + 1}
                       </span>
-                      <time dateTime={article.published_at} style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-                        발행 · {formatKstTime(article.published_at)}
+                      <time dateTime={article.published_at || article.published_on} style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+                        발행 · {article.published_at ? formatKstTime(article.published_at) : article.published_on ? `${article.published_on} · 날짜만 확인` : "미정"}
                       </time>
                     </div>
 
@@ -161,18 +157,28 @@ export default function TodayPage() {
                       {article.title}
                     </h2>
 
-                    <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
-                      {article.summary}
-                    </p>
-
-                    <details style={{ margin: "14px 0", background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
-                      <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.88rem" }}>
-                        왜 중요한가요? (초보자 해설)
-                      </summary>
-                      <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
-                        {article.why_it_matters}
+                    {article.summary ? (
+                      <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
+                        {article.summary}
                       </p>
-                    </details>
+                    ) : article.source_summary ? (
+                      <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
+                        <strong style={{ fontSize: "0.8rem", color: "var(--muted)" }}>출처 제공 설명</strong>
+                        <br />
+                        {article.source_summary}
+                      </p>
+                    ) : null}
+
+                    {article.why_it_matters && (
+                      <details style={{ margin: "14px 0", background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
+                        <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.88rem" }}>
+                          왜 중요한가요? (초보자 해설)
+                        </summary>
+                        <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                          {article.why_it_matters}
+                        </p>
+                      </details>
+                    )}
 
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px", paddingTop: "12px", borderTop: "1px solid var(--line)" }}>
                       <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
@@ -189,6 +195,17 @@ export default function TodayPage() {
                     </div>
                   </article>
                 ))}
+                {totalPages > 1 && (
+                  <nav aria-label="뉴스 페이지 이동" style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
+                    {pageNum > 1 && <Link href={pageHref(pageNum - 1)} className="tag-link" rel="prev">← 이전</Link>}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                      <Link key={n} href={pageHref(n)} className="tag-link" aria-current={n === pageNum ? "page" : undefined} style={n === pageNum ? { fontWeight: 800 } : undefined}>
+                        {n}
+                      </Link>
+                    ))}
+                    {pageNum < totalPages && <Link href={pageHref(pageNum + 1)} className="tag-link" rel="next">다음 →</Link>}
+                  </nav>
+                )}
               </div>
             )}
 
@@ -243,8 +260,9 @@ export default function TodayPage() {
                       <tr>
                         <th>출처</th>
                         <th>상태</th>
-                        <th>수집 건수</th>
+                        <th>새 기사</th>
                         <th>보류 건수</th>
+                        <th>건너뜀·범위</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -273,6 +291,12 @@ export default function TodayPage() {
                               <span style={{ color: "var(--muted)", fontSize: "0.82rem" }}>0건</span>
                             )}
                           </td>
+                          <td style={{ fontSize: "0.82rem" }}>
+                            이미 가져와 건너뜀 {s.skipped_count ?? 0}건
+                            {s.coverage_limited && (
+                              <span style={{ color: "#854d0e", fontWeight: 700 }}> · 수집 범위 제한(과거 기사 일부 누락 가능)</span>
+                            )}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -285,7 +309,7 @@ export default function TodayPage() {
           <footer className="home-foot" style={{ marginTop: "48px" }}>
             <span>공개본 수집 시각: {collected_at ? formatKstTime(collected_at) : "아직 공개본 없음"}</span>
             <span>검토 시각: {reviewed_at ? formatKstTime(reviewed_at) : "대기 중"}</span>
-            <span>한국 표준시(KST) 기준 기본 자동 24시간 수집 원칙 (수동 7일 수집 지원)</span>
+            <span>한국 표준시(KST) 기준 최근 60일 누적 뉴스레터</span>
           </footer>
         </div>
 
@@ -293,7 +317,7 @@ export default function TodayPage() {
           <p>이 페이지에서</p>
           <nav aria-label="페이지 목차">
             <a href="#overview">개요</a>
-            {hasArticles && <a href="#articles">선별 뉴스 목록</a>}
+            {hasArticles && <a href="#articles">뉴스 목록</a>}
             <a href="#updates">수집 및 점검 상태</a>
           </nav>
         </aside>

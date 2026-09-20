@@ -109,12 +109,16 @@ export type GlossaryTerm = {
 export type TodayArticle = {
   id: string;
   title: string;
-  summary: string;
-  why_it_matters: string;
+  summary?: string;
+  why_it_matters?: string;
+  source_summary?: string;
   source_id: string;
   source_name: string;
   source_url: string;
-  published_at: string;
+  published_at?: string;
+  published_on?: string;
+  date_precision?: "time" | "day";
+  fetched_at?: string;
 };
 
 export type TodayData = {
@@ -134,6 +138,9 @@ export type ContentHealthSource = {
   error?: string;
   count?: number;
   held_count?: number;
+  skipped_count?: number;
+  excluded_count?: number;
+  coverage_limited?: boolean;
   checked_at?: string;
   changed_at?: string;
 };
