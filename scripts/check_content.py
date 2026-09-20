@@ -19,6 +19,10 @@ from collect_content import (
     merge_archive,
     build_beginner_explanation,
     ensure_beginner_explanations,
+    needs_korean_translation,
+    split_translation_chunks,
+    translated_release_title,
+    translation_from_response,
     article_sort_key,
     new_stats,
     ALLOWED_HOSTS,
@@ -77,10 +81,10 @@ def test_rss_validation():
       <channel>
         <title>Valid Feed</title>
         <item>
-          <title>Valid Article</title>
+          <title>유효 기사</title>
           <link>https://openai.com/news/valid-item?utm_source=feed&amp;ref=ignore&amp;source=rss</link>
           <pubDate>{pub_in_window}</pubDate>
-          <description>Valid content</description>
+          <description>유효한 내용</description>
         </item>
       </channel>
     </rss>""".encode("utf-8")
@@ -88,7 +92,7 @@ def test_rss_validation():
     assert stats["held_count"] == 0, f"Expected held==0, got {stats['held_count']}"
     assert len(cands) == 1
     assert cands[0]["source_url"] == "https://openai.com/news/valid-item"
-    assert cands[0]["date_precision"] == "time" and cands[0]["source_summary"] == "Valid content"
+    assert cands[0]["date_precision"] == "time" and cands[0]["source_summary"] == "유효한 내용"
     assert re.search(r"[가-힣]", cands[0]["why_it_matters"]), "신규 후보에는 한국어 초보자 해설이 필요합니다"
     assert stats["coverage_limited"] is True, "피드가 60일 시작에 닿지 않으면 한계를 기록해야 합니다"
 
@@ -105,7 +109,7 @@ def test_releases_and_date_precision():
     base = "https://github.com/openai/codex/releases/tag/"
 
     releases = [
-        {"tag_name": "v1.5.0", "name": "1.5.0", "html_url": base + "v1.5.0", "published_at": iso(30), "body": "<b>Fixes</b> " + "x" * 5000},
+        {"tag_name": "v1.5.0", "name": "1.5.0", "html_url": base + "v1.5.0", "published_at": iso(30), "body": "<b>수정 사항</b> " + "가" * 5000},
         {"tag_name": "v1.6.0-beta.1", "name": "1.6.0 beta", "html_url": base + "v1.6.0-beta.1", "published_at": iso(2), "prerelease": True},
         {"tag_name": "v1.6.0-rc.1", "name": "1.6.0", "html_url": base + "v1.6.0-rc.1", "published_at": iso(3)},
         {"tag_name": "v1.4.0", "name": "1.4.0", "html_url": "https://github.com/evil/repo/releases/tag/v1.4.0", "published_at": iso(10)},
@@ -117,6 +121,7 @@ def test_releases_and_date_precision():
     assert [c["title"] for c in cands] == ["1.5.0"]
     assert stats["excluded_count"] == 2 and stats["held_count"] == 1
     assert len(cands[0]["source_summary"]) <= 500 and "<b>" not in cands[0]["source_summary"]
+    assert cands[0]["title_ko"] == "Codex 1.5.0 버전 출시"
 
     # 날짜만 확인된 값: 시각을 만들지 않고 day 정밀도로 수용, 60일 밖은 old
     state, fields = classify_date(datetime(now.year, now.month, now.day) - timedelta(days=20), w_start, w_end)
@@ -165,6 +170,13 @@ def test_today_archive_integrity():
     for a in articles:
         validate_url(a["source_url"])
         assert re.search(r"[가-힣]", a.get("why_it_matters", "")), f"{a['id']}: 한국어 초보자 해설 필요"
+        if needs_korean_translation(a.get("title", "")):
+            assert re.search(r"[가-힣]", a.get("title_ko", "")), f"{a['id']}: 한국어 제목 번역 필요"
+        release_title = translated_release_title(a.get("title", ""), a.get("source_id", ""))
+        if release_title:
+            assert a.get("title_ko") == release_title, f"{a['id']}: 릴리스 한국어 제목 필요"
+        if needs_korean_translation(a.get("source_summary", "")):
+            assert re.search(r"[가-힣]", a.get("source_summary_ko", "")), f"{a['id']}: 한국어 출처 설명 번역 필요"
         if a.get("date_precision") == "day":
             assert "published_at" not in a, f"{a['id']}: day 정밀도 항목에 시각이 있습니다"
             datetime.strptime(a["published_on"], "%Y-%m-%d")
@@ -178,6 +190,7 @@ def test_today_archive_integrity():
 def test_canonicalization_and_allowlist():
     assert "platform.claude.com" in ALLOWED_HOSTS
     assert "gemini.google" in ALLOWED_HOSTS
+    assert "api.mymemory.translated.net" not in ALLOWED_HOSTS, "번역 호스트를 기사 URL 허용목록에 넣으면 안 됩니다"
 
     # Tracking params dropped, semantic params preserved
     url = "https://anthropic.com/news/article?utm_campaign=launch&ref=feed&source=rss&reference=keep_this&source_id=123"
@@ -188,6 +201,18 @@ def test_canonicalization_and_allowlist():
     assert "reference=keep_this" in canonical
     assert "source_id=123" in canonical
     assert "새 버전" in build_beginner_explanation("1.0.0", "codex-releases")
+    assert needs_korean_translation("New AI model") and not needs_korean_translation("새 AI 모델")
+    chunks = split_translation_chunks("word " * 200)
+    assert len(chunks) > 1 and all(len(chunk.encode("utf-8")) <= 450 for chunk in chunks)
+    assert translated_release_title("Release v1.2.3", "gemini-releases") == "Gemini CLI v1.2.3 버전 출시"
+    good_translation = json.dumps({"responseStatus": 200, "responseData": {"translatedText": "한국어 번역"}}).encode()
+    assert translation_from_response(200, good_translation) == "한국어 번역"
+    try:
+        translation_from_response(200, b'{"responseStatus": 200, "responseData": {"translatedText": "English only"}}')
+    except RuntimeError:
+        pass
+    else:
+        assert False, "한국어가 없는 번역 응답은 거부해야 합니다"
 
 
 def test_publisher_validation():

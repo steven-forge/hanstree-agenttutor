@@ -8,6 +8,7 @@
 - **수집 범위**: 수집 시각 기준 고정 60일 rolling window(달력 두 달 아님). 기본 `news`가 60일이며 GitHub Actions 예약 수집(06:15 KST)도 60일로 실행한다. 6개 공식 출처가 제공하는 목록·피드·API 범위 안의 전체 항목이 대상이고, 출처가 이력을 제한(피드 항목 수, 목록 개수 등)하면 `data/content-health.json`의 해당 출처 상태에 한계를 기록한다. 1장의 "HTML 출처당 8개·Atom 10개" 제한은 이 범위에 맞게 재검토한다.
 - **304/캐시**: 60일 조회는 과거 누락 방지를 위해 조건부 요청(304)을 쓰지 않고 항상 전체 재조회한다.
 - **`data/today.json` = 누적 공개 아카이브**: 자동 수집이 원문 제목·공식 설명(`source_summary`)·링크·발행일을 그대로 누적하고, 제목·공식 설명의 주제에 근거한 한국어 초보자 해설(`why_it_matters`)을 반드시 추가한다. 기존 검토 완료 기사와 편집자가 쓴 `summary`·`why_it_matters`는 덮어쓰지 않는다. 화면에서 `source_summary`는 "출처 제공 설명"으로 구분해 표시한다.
+- **한국어 표시**: 영문 원문은 `title`·`source_summary`에 보존하고 [MyMemory 공개 번역 API](https://mymemory.translated.net/doc/spec.php)로 만든 `title_ko`·`source_summary_ko`를 화면에 우선 표시한다. 번역에 실패한 신규 기사는 archive에 넣지 않고 해당 출처를 실패 처리해 다음 수집에서 다시 시도한다. 공개 기사 텍스트 외의 정보는 번역 서비스로 보내지 않는다.
 - **중복 방지**: 새 수집 결과를 `data/today.json`과 `id`/정규화 URL로 대조해 이미 본 항목은 상세 재수집·재추가하지 않는다. 재실행 시 추가 0건·`data/today.json` 파일 무변경.
 - **보류 재확인**: `data/today-candidates.json`은 이번 실행의 새 항목·건너뛴 수·보류 수를 기록한다. 발행 날짜를 확인할 수 없는 항목은 60일 전체 재조회 때 다시 확인하며 별도 누적 큐는 두지 않는다.
 - **발행 시각**: 정확한 시각이 있으면 `published_at`(시간대 포함), 날짜만 확인되면 `published_on` + `date_precision: "day"`. 시각을 임의로 만들지 않는다.

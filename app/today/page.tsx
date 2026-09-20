@@ -154,7 +154,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                     </div>
 
                     <h2 style={{ fontSize: "1.25rem", margin: "0 0 10px", lineHeight: "1.4" }}>
-                      {article.title}
+                      {article.title_ko || article.title}
                     </h2>
 
                     {article.summary ? (
@@ -165,7 +165,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
                         <strong style={{ fontSize: "0.8rem", color: "var(--muted)" }}>출처 제공 설명</strong>
                         <br />
-                        {article.source_summary}
+                        {article.source_summary_ko || article.source_summary}
                       </p>
                     ) : null}
 

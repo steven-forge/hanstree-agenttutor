@@ -109,9 +109,11 @@ export type GlossaryTerm = {
 export type TodayArticle = {
   id: string;
   title: string;
+  title_ko?: string;
   summary?: string;
   why_it_matters: string;
   source_summary?: string;
+  source_summary_ko?: string;
   source_id: string;
   source_name: string;
   source_url: string;

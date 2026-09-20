@@ -45,6 +45,7 @@ ALLOWED_HOSTS = {
     "w3.org", "www.w3.org",
     "github.com", "api.github.com"
 }
+TRANSLATION_HOST = "api.mymemory.translated.net"
 
 
 def read_json(path: Path) -> dict:
@@ -64,12 +65,16 @@ def write_json(path: Path, data: dict) -> None:
 
 
 class SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def __init__(self, allowed_hosts=ALLOWED_HOSTS):
+        super().__init__()
+        self.allowed_hosts = allowed_hosts
+
     def redirect_request(self, req, fp, code, msg, headers, newurl):
-        validate_url(newurl)
+        validate_url(newurl, self.allowed_hosts)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
-def validate_url(url: str) -> None:
+def validate_url(url: str, allowed_hosts=ALLOWED_HOSTS) -> None:
     parsed = urllib.parse.urlsplit(url)
     if parsed.scheme.lower() != "https":
         raise ValueError(f"HTTPS 프로토콜만 허용됩니다: {url}")
@@ -78,7 +83,7 @@ def validate_url(url: str) -> None:
     if parsed.port and parsed.port != 443:
         raise ValueError(f"비정상 포트는 허용되지 않습니다: {url}")
     hostname = (parsed.hostname or "").lower()
-    if hostname not in ALLOWED_HOSTS:
+    if hostname not in allowed_hosts:
         raise ValueError(f"허용되지 않은 호스트입니다: {hostname}")
 
 
@@ -94,8 +99,8 @@ def canonicalize_url(url: str) -> str:
     return urllib.parse.urlunsplit((parsed.scheme.lower(), (parsed.hostname or "").lower(), path, new_query, ""))
 
 
-def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES) -> tuple[int, dict, bytes]:
-    validate_url(url)
+def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES, allowed_hosts=ALLOWED_HOSTS) -> tuple[int, dict, bytes]:
+    validate_url(url, allowed_hosts)
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; AgentTutor/0.2; +https://hanstree-agenttutor-jgwu.vercel.app)",
         "Accept": "text/html,application/xhtml+xml,application/xml,application/atom+xml,application/json;q=0.9,*/*;q=0.8",
@@ -106,7 +111,7 @@ def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries
     if last_modified:
         headers["If-Modified-Since"] = last_modified
 
-    opener = urllib.request.build_opener(SafeRedirectHandler())
+    opener = urllib.request.build_opener(SafeRedirectHandler(allowed_hosts))
     request = urllib.request.Request(url, headers=headers)
 
     attempts = 0
@@ -155,6 +160,61 @@ def clean_html_text(raw_html: str) -> str:
     unescaped = html.unescape(raw_html or "")
     no_tags = re.sub(r"<[^>]+>", " ", unescaped)
     return re.sub(r"\s+", " ", no_tags).strip()
+
+
+def needs_korean_translation(text: str) -> bool:
+    return bool(re.search(r"[A-Za-z]", text or "")) and not bool(re.search(r"[가-힣]", text or ""))
+
+
+def split_translation_chunks(text: str, max_bytes: int = 450) -> list[str]:
+    """MyMemory의 요청당 500바이트 제한을 넘지 않게 문장·단어 경계에서 나눈다."""
+    remaining = text.strip()
+    chunks = []
+    while remaining:
+        end = min(len(remaining), max_bytes)
+        while end > 1 and len(remaining[:end].encode("utf-8")) > max_bytes:
+            end -= 1
+        if end < len(remaining):
+            boundary = max(remaining.rfind(". ", 0, end), remaining.rfind(" ", 0, end))
+            if boundary > 0:
+                end = boundary + (1 if remaining[boundary] == "." else 0)
+        chunks.append(remaining[:end].strip())
+        remaining = remaining[end:].strip()
+    return [chunk for chunk in chunks if chunk]
+
+
+def translate_to_korean(text: str) -> str:
+    translated = []
+    for chunk in split_translation_chunks(text):
+        query = urllib.parse.urlencode({"q": chunk, "langpair": "en|ko", "mt": "1"})
+        status, _, body = fetch_url(
+            f"https://{TRANSLATION_HOST}/get?{query}",
+            max_retries=1,
+            allowed_hosts=ALLOWED_HOSTS | {TRANSLATION_HOST},
+        )
+        translated.append(translation_from_response(status, body))
+    return " ".join(translated)
+
+
+def translation_from_response(status: int, body: bytes) -> str:
+    try:
+        payload = json.loads(body.decode("utf-8"))
+        value = html.unescape(payload["responseData"]["translatedText"]).strip()
+    except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
+        raise RuntimeError(f"한국어 번역 응답을 읽을 수 없습니다: {error}")
+    if status != 200 or payload.get("responseStatus") != 200 or not re.search(r"[가-힣]", value):
+        raise RuntimeError("한국어 번역에 실패했습니다.")
+    return value
+
+
+def translated_release_title(title: str, source_id: str) -> str | None:
+    if not re.fullmatch(r"(?i)(?:release\s+)?v?\d[\w.-]*", title.strip()):
+        return None
+    product = "Codex" if source_id == "codex-releases" else "Gemini CLI" if source_id == "gemini-releases" else None
+    if not product:
+        return None
+    version = re.sub(r"(?i)^release\s+", "", title.strip())
+    return f"{product} {version} 버전 출시"
 
 
 def build_beginner_explanation(title: str, source_id: str, source_summary: str = "") -> str:
@@ -261,7 +321,7 @@ def classify_date(dt: datetime, window_start: datetime, window_end: datetime) ->
 
 def make_candidate(title: str, source_id: str, source_name: str, canonical_url: str, summary_raw: str, date_fields: dict) -> dict:
     source_summary = clean_html_text(summary_raw)[:SUMMARY_MAX]
-    return {
+    candidate = {
         "id": url_id(canonical_url),
         "title": title,
         "source_id": source_id,
@@ -272,6 +332,14 @@ def make_candidate(title: str, source_id: str, source_name: str, canonical_url: 
         "fetched_at": datetime.now(KST).isoformat(timespec="seconds"),
         **date_fields,
     }
+    release_title = translated_release_title(title, source_id)
+    if release_title:
+        candidate["title_ko"] = release_title
+    elif needs_korean_translation(title):
+        candidate["title_ko"] = translate_to_korean(title)
+    if needs_korean_translation(source_summary):
+        candidate["source_summary_ko"] = translate_to_korean(source_summary)
+    return candidate
 
 
 def ensure_beginner_explanations(articles: list[dict]) -> bool:
