@@ -20,9 +20,9 @@
 
 ## 완료 조건
 
-- [ ] `/today`에서 실제 검토된 뉴스가 정상 표시됨 (최대 10개, 24시간 내 적격 후보 0건으로 첫 기사 발행 대기)
+- [x] `/today`에서 실제 검토된 뉴스가 정상 표시됨 (최근 7일 첫 판본 10건, 운영 확인)
 - [x] 잘못된 링크·빈 데이터 상태가 안전하게 처리됨
-- [ ] 발행된 기사 요약을 실제 원문과 대조 확인함 (첫 기사 발행 후 확인, 현재 미발행으로 미충족)
+- [x] 발행된 기사 요약을 실제 원문과 대조 확인함 (첫 판본 10건 전체 대조)
 
 ## 구현·확인 기록
 
@@ -35,3 +35,12 @@
   - 출처별 확인: OpenAI RSS(최신 09-18 21:00 KST) 및 Google AI RSS(최신 09-18 23:00 KST) 모두 윈도우 밖. GitHub Releases API(최근 30건 직접 확인)상 최신 안정판(Codex rust-v0.155.1 09-19 05:03 KST, Gemini v0.60.0 09-16 05:31 KST)은 윈도우 이전이며, 윈도우 내 Codex alpha.9 및 Gemini nightly는 `prerelease: true`로 정책상 제외. Anthropic 최신 기사(accenture-embedded-evaluation)는 HTTP 200이나 본문에 'Sep 18, 2026' 텍스트만 존재하고 표준 발행시각 메타데이터 부재(사이트 설정 `_updatedAt`는 발행시각이 아니므로 미사용), xAI 최신 기사도 09-18자로 윈도우 밖.
   - 확인 출처: [OpenAI RSS](https://openai.com/news/rss.xml), [Google AI RSS](https://blog.google/innovation-and-ai/technology/ai/rss/), [Codex 안정판](https://github.com/openai/codex/releases/tag/rust-v0.155.1), [Gemini CLI 안정판](https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0), [Anthropic 원문](https://www.anthropic.com/news/accenture-embedded-evaluation), [xAI 목록](https://x.ai/news).
   - 원칙 및 판정: 허위 기사 작성·시각 임의 추정·과거 판본 날짜 변경·24시간 기준 완화 없이 `data/today.json` 보존. '실제 검토된 뉴스 표시' 및 '발행 기사 요약과 원문 대조' 완료 조건은 미충족 상태 유지. 최근 7일 범위 확대는 사용자 승인 대기 중. 첫 예약 실행은 아직 확인하지 않았다.
+
+### 2026-09-21 첫 판본 발행 완료 (v0.2.1)
+
+- 위 대기 기록 이후 사용자가 첫 발행용 최근 7일 확대를 승인했다. `news --days 7`을 추가했고, 매일 06:15 KST 자동 수집은 기존 24시간 기준을 유지한다.
+- 실제 수집 기간: 2026-09-14 05:34:29 ~ 2026-09-21 05:34:29 KST. 공식 출처 6곳에서 후보 24건, 실패 0곳, Anthropic 발행 시각 미확인 8건 보류. 피드·HTML의 기존 확인 개수 제한은 유지하므로 7일 전체 뉴스의 전수 조사를 뜻하지 않는다.
+- 공식 원문을 직접 읽어 OpenAI 5건·Google 3건·xAI 2건을 선별하고 한국어 요약·중요성을 대조했다. 고객 사례는 제공사 설명으로 표시하고, 성능 우위·가상 성과 수치는 제외했으며 DevFest는 예정 행사로 구분했다. 기사별 출처 URL과 원문 RSS/JSON-LD 발행 시각은 [공개 데이터](../../data/today.json)에 보존했다.
+- 검토 시각은 2026-09-21 05:36:52 KST. `publish_news.py`로 10건을 발행했고, 같은 입력으로 재실행해 파일을 다시 쓰지 않는 것을 확인했다. 24시간·7일 허용, 범위 밖 기사·임의 기간·보류가 있는 빈 판본 거부 등 `check_content.py` 검사 통과. Claude의 읽기 전용 검토에서 발행을 막는 문제는 없었으며 실제 검토 시각 적용과 제한된 수집 범위를 재확인했다.
+- `npm run build` 통과. 커밋 `317907f`를 푸시·배포한 뒤 05:40 KST [운영 Today](https://hanstree-agenttutor-jgwu.vercel.app/today)에서 390·768·1280px 화면을 확인했다. 기사 10건의 제목·요약·해설·원문 링크·발행 시각이 공개 데이터와 일치하며, 7일 판본 안내·보류 상태·키보드 펼치기·가로 넘침 없음도 확인했다.
+- 완료 조건 3개 모두 충족. 첫 GitHub 예약 실행 자체는 아직 확인하지 않았으며, 이번에는 수동 수집·검토 발행 경로를 실제 실행했다.
