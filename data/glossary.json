@@ -1,0 +1,638 @@
+{
+  "reviewed_at": "2026-09-20T01:03:07.237Z",
+  "updated_at": "2026-09-20T01:03:07.237Z",
+  "terms": [
+    {
+      "id": "agent",
+      "term": "Agent",
+      "korean": "에이전트",
+      "aliases": [
+        "AI 에이전트",
+        "지능형 에이전트",
+        "AI Agent"
+      ],
+      "category": "기본 개념",
+      "definition": "목표를 달성하기 위해 환경을 관찰하고, 언어 모델을 통해 스스로 다음 행동을 추론하며, 도구를 호출하여 자율적으로 작업을 완수하는 소프트웨어 시스템.",
+      "example": "날씨와 사용자의 예산에 맞춰 실시간으로 대안 식당과 일정을 유연하게 조정하는 가이드 프로그램.",
+      "related_ids": [
+        "workflow",
+        "tool",
+        "prompt",
+        "context",
+        "sub-agent"
+      ],
+      "links": [
+        {
+          "label": "Learn: Agent 기본",
+          "href": "/learn/agent-basics"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic: Building effective agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents"
+        },
+        {
+          "name": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "llm",
+      "term": "LLM",
+      "korean": "대규모 언어 모델",
+      "aliases": [
+        "Large Language Model",
+        "언어 모델",
+        "거대 언어 모델"
+      ],
+      "category": "기본 개념",
+      "definition": "방대한 텍스트 코퍼스를 사전 학습하여 주어진 입력 문맥 다음에 올 토큰의 확률 분포를 계산하고, 샘플링 설정에 따라 토큰을 순차적으로 생성하는 거대 인공신경망 모델.",
+      "example": "단순 최고 확률 선택(argmax)뿐 아니라 온도(Temperature)와 Top-p 등의 샘플링 전략을 통해 확률 분포로부터 자연스러운 응답을 생성하는 언어 모델.",
+      "related_ids": [
+        "token",
+        "model",
+        "prompt",
+        "context-window"
+      ],
+      "links": [
+        {
+          "label": "Learn: LLM",
+          "href": "/learn/llm"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Hugging Face LLM Course Chapter 1",
+          "url": "https://huggingface.co/learn/llm-course/chapter1/1"
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "term": "Prompt",
+      "korean": "프롬프트",
+      "aliases": [
+        "지시문",
+        "프롬프트 지침"
+      ],
+      "category": "기본 개념",
+      "definition": "언어 모델에게 수행할 작업의 목표, 역할, 배경 맥락, 제약 사항, 출력 형식을 전달하는 텍스트 입력 지시문.",
+      "example": "\"이 코드를 3줄로 요약하고, 보안 취약점 2가지를 번호 매겨 지적해줘\"와 같이 구체적인 규칙을 담은 지시.",
+      "related_ids": [
+        "context",
+        "token",
+        "llm"
+      ],
+      "links": [
+        {
+          "label": "Learn: Prompt",
+          "href": "/learn/prompt"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google: Prompt design strategies",
+          "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies"
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "term": "Context",
+      "korean": "컨텍스트",
+      "aliases": [
+        "문맥",
+        "입력 맥락",
+        "인-컨텍스트"
+      ],
+      "category": "기본 개념",
+      "definition": "모델이 현재 추론과 결정을 내릴 때 직접 참고하고 주의를 집중할 수 있는 모든 입력 정보(시스템 지시문, 대화 기록, 도구 출력 등)의 총합.",
+      "example": "연구원이 현재 문제를 해결하기 위해 책상 위에 펼쳐둔 참고 서류들과 작업 메모 모음.",
+      "related_ids": [
+        "context-window",
+        "context-management",
+        "memory",
+        "token"
+      ],
+      "links": [
+        {
+          "label": "Learn: Context",
+          "href": "/learn/context"
+        },
+        {
+          "label": "Engineering: Context Management",
+          "href": "/agent-engineering/context-management"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic: Context engineering",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "term": "Memory",
+      "korean": "메모리",
+      "aliases": [
+        "기억",
+        "장기 기억",
+        "영구 메모리"
+      ],
+      "category": "기본 개념",
+      "definition": "세션이 종료되거나 컨텍스트가 초기화되어도 사용자의 선호도, 프로젝트 지침, 핵심 작업 결과를 영구적 또는 장기적으로 보존하여 다음 세션에서 재사용하는 지속성 체계.",
+      "example": "단골 고객의 알레르기 성분과 취향을 기록해 두었다가 다음 방문 때 자동으로 반영하는 카페 장부.",
+      "related_ids": [
+        "context",
+        "context-management",
+        "rag"
+      ],
+      "links": [
+        {
+          "label": "Learn: Memory",
+          "href": "/learn/memory"
+        },
+        {
+          "label": "Engineering: Memory",
+          "href": "/agent-engineering/memory"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Memory documentation",
+          "url": "https://code.claude.com/docs/en/memory.md"
+        }
+      ]
+    },
+    {
+      "id": "token",
+      "term": "Token",
+      "korean": "토큰",
+      "aliases": [
+        "텍스트 조각",
+        "토큰 단위"
+      ],
+      "category": "기본 개념",
+      "definition": "언어 모델이 텍스트를 처리하고 생성할 때 사용하는 가장 작은 텍스트 조각 단위. 단어의 일부, 전체 단어, 또는 개별 문자/문장부호에 해당함.",
+      "example": "토큰 분할은 모델과 토크나이저 어휘 사전(Vocabulary)에 따라 달라지며, 특정 단어나 한국어 음절의 토큰 수 역시 고정되어 있지 않고 모델 아키텍처에 종속적임.",
+      "related_ids": [
+        "llm",
+        "context-window",
+        "prompt"
+      ],
+      "links": [
+        {
+          "label": "Learn: LLM",
+          "href": "/learn/llm"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google Machine Learning Glossary: Token",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "tool",
+      "term": "Tool",
+      "korean": "도구",
+      "aliases": [
+        "함수 호출",
+        "Function Calling",
+        "Tool Use"
+      ],
+      "category": "구성 요소",
+      "definition": "언어 모델이 텍스트 생성을 넘어 파일 입출력, 웹 검색, 데이터베이스 쿼리 등 외부 시스템과 직접 상호작용할 수 있도록 제공되는 함수 인터페이스.",
+      "example": "컴퓨터의 파일을 읽어오는 `read_file(path)` 함수나 웹 검색을 수행하는 `search_web(query)` 함수.",
+      "related_ids": [
+        "skill",
+        "mcp",
+        "hook",
+        "agent"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Tools",
+          "href": "/agent-engineering/tools"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Features overview",
+          "url": "https://code.claude.com/docs/en/features-overview.md"
+        }
+      ]
+    },
+    {
+      "id": "skill",
+      "term": "Skill",
+      "korean": "스킬",
+      "aliases": [
+        "Agent Skill",
+        "작업 지침 모듈"
+      ],
+      "category": "구성 요소",
+      "definition": "에이전트에게 특정 도메인의 작업 절차, 코딩 스타일, 검증 규칙을 주입하여 일관된 품질을 달성하도록 돕는 재사용 가능한 지침 패키지(SKILL.md 기반).",
+      "example": "보안 감사 시 필수 점검 목록과 취약점 분석 순서를 정의해 둔 `security-audit` 스킬.",
+      "related_ids": [
+        "tool",
+        "plugin",
+        "hook",
+        "command"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Skills",
+          "href": "/agent-engineering/skills"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Agent Skills Specification",
+          "url": "https://agentskills.io/specification"
+        }
+      ]
+    },
+    {
+      "id": "hook",
+      "term": "Hook",
+      "korean": "훅",
+      "aliases": [
+        "이벤트 훅",
+        "가드레일 인터셉터"
+      ],
+      "category": "구성 요소",
+      "definition": "에이전트의 생명주기(세션 시작, 도구 호출 전후 등) 이벤트에 반응하여 자동 실행되는 핸들러. 호스트 환경에 따라 쉘 명령어, HTTP 요청, 또는 LLM 프롬프트 검증을 수행하며 실제 강제력은 이벤트 종류와 호스트 런타임에 종속됨.",
+      "example": "도구가 위험한 시스템 명령을 실행하기 직전에 확인하거나, 파일 저장 직후 자동으로 코드 포매터를 구동하는 핸들러.",
+      "related_ids": [
+        "command",
+        "tool",
+        "plugin"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Hooks",
+          "href": "/agent-engineering/hooks"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Hooks documentation",
+          "url": "https://code.claude.com/docs/en/hooks.md"
+        }
+      ]
+    },
+    {
+      "id": "plugin",
+      "term": "Plugin",
+      "korean": "플러그인",
+      "aliases": [
+        "확장팩",
+        "에이전트 플러그인"
+      ],
+      "category": "구성 요소",
+      "definition": "관련 스킬, 훅, MCP 서버 설정, 슬래시 커맨드를 하나의 단위로 패키징하여 설치, 버전 관리, 팀 공유가 가능하도록 만든 통합 배포 패키지.",
+      "example": "Git 워크플로우를 위한 커밋 도우미 스킬과 커밋 전 린트 훅을 한 번에 설치하는 통합 플러그인.",
+      "related_ids": [
+        "skill",
+        "hook",
+        "mcp",
+        "command"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Plugins",
+          "href": "/agent-engineering/plugins"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Plugins documentation",
+          "url": "https://code.claude.com/docs/en/plugins.md"
+        }
+      ]
+    },
+    {
+      "id": "mcp",
+      "term": "MCP",
+      "korean": "모델 컨텍스트 프로토콜",
+      "aliases": [
+        "Model Context Protocol"
+      ],
+      "category": "구성 요소",
+      "definition": "AI 애플리케이션(Host)과 외부 데이터 소스 및 도구(Server) 간의 통신 방식을 표준화한 JSON-RPC 2.0 기반 오픈 연결 프로토콜.",
+      "example": "로컬 SQLite DB나 GitHub 저장소를 표준 MCP 서버로 띄워 여러 AI 도구에서 공통 연결하는 구성.",
+      "related_ids": [
+        "tool",
+        "plugin",
+        "context"
+      ],
+      "links": [
+        {
+          "label": "Engineering: MCP",
+          "href": "/agent-engineering/mcp"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Model Context Protocol Documentation",
+          "url": "https://modelcontextprotocol.io/llms.txt"
+        }
+      ]
+    },
+    {
+      "id": "command",
+      "term": "Command",
+      "korean": "커맨드",
+      "aliases": [
+        "슬래시 명령어",
+        "Slash Command"
+      ],
+      "category": "제품·실행",
+      "definition": "사용자가 대화 입력창에서 접두사(/)를 붙여 직접 명시적으로 호출하는 지시어로, 즉시 특정 루틴이나 제어 모드를 발동시키는 기능.",
+      "example": "프로젝트 지침을 초기화하는 `/init`, 코드 검토 모드를 시작하는 `/review`.",
+      "related_ids": [
+        "cli",
+        "hook",
+        "skill"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Commands",
+          "href": "/agent-engineering/commands"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Skills and Slash Commands",
+          "url": "https://code.claude.com/docs/en/skills.md"
+        }
+      ]
+    },
+    {
+      "id": "cli",
+      "term": "CLI",
+      "korean": "명령줄 인터페이스",
+      "aliases": [
+        "Command Line Interface",
+        "터미널 도구"
+      ],
+      "category": "제품·실행",
+      "definition": "그래픽 화면(GUI) 대신 텍스트 터미널 환경에서 명령어 입력을 통해 시스템과 상호작용하고 프로그램을 구동하는 인터페이스.",
+      "example": "터미널에서 `claude`, `codex`, `gemini`를 실행하여 로컬 디렉토리 파일을 직접 편집하는 도구들.",
+      "related_ids": [
+        "command",
+        "model",
+        "agent"
+      ],
+      "links": [
+        {
+          "label": "명령어 가이드: Codex CLI",
+          "href": "/docs/codex"
+        },
+        {
+          "label": "명령어 가이드: Claude Code",
+          "href": "/docs/claude"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "term": "Model",
+      "korean": "모델",
+      "aliases": [
+        "AI 모델",
+        "파운데이션 모델",
+        "Foundation Model"
+      ],
+      "category": "제품·실행",
+      "definition": "데이터를 통해 학습되어 특정 입력(프롬프트, 이미지 등)을 받아 추론 연산을 거쳐 결과 텍스트나 예측값을 산출하는 완성된 인공지능 가중치 집합체.",
+      "example": "Claude Sonnet, Gemini Pro, GPT-4o 등 독립적으로 버저닝되고 호스팅되는 추론 엔진.",
+      "related_ids": [
+        "llm",
+        "token",
+        "agent"
+      ],
+      "links": [
+        {
+          "label": "Learn: LLM",
+          "href": "/learn/llm"
+        },
+        {
+          "label": "Agents 비교",
+          "href": "/agents"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google Machine Learning Glossary: Model",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "sub-agent",
+      "term": "Sub Agent",
+      "korean": "서브 에이전트",
+      "aliases": [
+        "하위 에이전트",
+        "보조 에이전트",
+        "Child Agent"
+      ],
+      "category": "구조·운영",
+      "definition": "메인 에이전트가 특정 하위 작업(자료 조사, 단위 테스트 작성 등)을 독립된 컨텍스트와 한정된 권한을 가진 보조 에이전트에게 위임하고 결과만 취합받는 아키텍처.",
+      "example": "메인 에이전트가 코드 수정을 진행하는 동안, 읽기 전용 도구만 가진 서브 에이전트에게 관련 문서를 조사해오도록 시키는 형태.",
+      "related_ids": [
+        "agent",
+        "agent-pattern",
+        "context-management"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Sub Agents",
+          "href": "/agent-engineering/sub-agents"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Sub-agents documentation",
+          "url": "https://code.claude.com/docs/en/sub-agents.md"
+        }
+      ]
+    },
+    {
+      "id": "agent-pattern",
+      "term": "Agent Pattern",
+      "korean": "에이전트 패턴",
+      "aliases": [
+        "에이전트 설계 패턴",
+        "Agentic Architecture"
+      ],
+      "category": "구조·운영",
+      "definition": "에이전트 시스템을 구축할 때 반복되는 복잡성을 다루기 위해 검증된 구조적 제어 양식 (체이닝, 라우팅, 병렬화, 오케스트레이터-워커, 평가자-최적화자 등).",
+      "example": "초안 생성 모델과 평가 모델을 분리하여 품질 기준을 충족할 때까지 피드백 루프를 도는 '평가자-최적화자' 패턴.",
+      "related_ids": [
+        "workflow",
+        "agent",
+        "sub-agent"
+      ],
+      "links": [
+        {
+          "label": "Learn: Agent Pattern",
+          "href": "/learn/agent-pattern"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic: Building effective agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents"
+        }
+      ]
+    },
+    {
+      "id": "context-management",
+      "term": "Context Management",
+      "korean": "컨텍스트 관리",
+      "aliases": [
+        "컨텍스트 엔지니어링",
+        "Context Window Optimization"
+      ],
+      "category": "구조·운영",
+      "definition": "제한된 컨텍스트 윈도우 내에서 추론 정확도와 응답 속도를 유지하기 위해, 런타임에 필요한 정보만 선별하고, 오래된 대화를 압축하며, 불필요한 토큰을 트리밍하는 최적화 기법.",
+      "example": "이전 10턴의 도구 호출 로그를 '파일 A 수정 완료'라는 한 줄 요약으로 대체하여 토큰 여유를 확보하는 압축 기법.",
+      "related_ids": [
+        "context",
+        "context-window",
+        "memory",
+        "token"
+      ],
+      "links": [
+        {
+          "label": "Engineering: Context Management",
+          "href": "/agent-engineering/context-management"
+        },
+        {
+          "label": "Learn: Context",
+          "href": "/learn/context"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic: Context engineering",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "term": "Workflow",
+      "korean": "워크플로우",
+      "aliases": [
+        "정형화된 작업 흐름",
+        "Pipeline"
+      ],
+      "category": "구조·운영",
+      "definition": "사전에 정의된 고정된 실행 단계와 제어 흐름을 따르는 시스템. 에이전트에 비해 실행 경로가 예측 가능하고 검증이 용이하나, 파이프라인 내부에 LLM 호출이 포함된 경우 모든 결과 출력이 완전 결정론적인 것은 아님.",
+      "example": "입력 검증 -> 번역 API 호출 -> 데이터베이스 저장 순서로 무조건 고정되어 실행되는 처리 파이프라인.",
+      "related_ids": [
+        "agent",
+        "agent-pattern",
+        "tool"
+      ],
+      "links": [
+        {
+          "label": "Learn: Agent 기본",
+          "href": "/learn/agent-basics"
+        },
+        {
+          "label": "Learn: Agent Pattern",
+          "href": "/learn/agent-pattern"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Anthropic: Building effective agents",
+          "url": "https://www.anthropic.com/engineering/building-effective-agents"
+        }
+      ]
+    },
+    {
+      "id": "rag",
+      "term": "RAG",
+      "korean": "검색 증강 생성",
+      "aliases": [
+        "Retrieval-Augmented Generation",
+        "검색 기반 생성"
+      ],
+      "category": "기본 개념",
+      "definition": "모델의 사전 학습된 지식에만 의존하지 않고 관련 외부 문서를 검색하여 컨텍스트에 근거 자료(Grounding Evidence)로 주입하는 기법. 환각을 줄이고 출처를 제시하지만 모델의 오독이나 검색 누락으로 인한 오류를 100% 배제하지는 못함.",
+      "example": "회사 내부 인사 규정 문서를 검색하여 해당 규정 조항을 프롬프트에 첨부한 후 연차 일수를 계산하게 하는 시스템.",
+      "related_ids": [
+        "context",
+        "memory",
+        "llm",
+        "tool"
+      ],
+      "links": [
+        {
+          "label": "Learn: Context",
+          "href": "/learn/context"
+        },
+        {
+          "label": "Learn: Memory",
+          "href": "/learn/memory"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google Machine Learning Glossary",
+          "url": "https://developers.google.com/machine-learning/glossary"
+        }
+      ]
+    },
+    {
+      "id": "context-window",
+      "term": "Context Window",
+      "korean": "컨텍스트 윈도우",
+      "aliases": [
+        "컨텍스트 창",
+        "최대 입력 토큰 한계"
+      ],
+      "category": "기본 개념",
+      "definition": "언어 모델이 한 번의 추론(입력과 출력의 합)에서 물리적으로 수용하고 기억할 수 있는 최대 토큰 수의 상한선.",
+      "example": "128k, 200k, 100만 토큰 등 모델 아키텍처에 정의된 물리적 상한선으로, 실제 수용 가능한 정보량은 텍스트 밀도와 토크나이저 분할 방식에 따라 달라짐.",
+      "related_ids": [
+        "context",
+        "token",
+        "context-management",
+        "llm"
+      ],
+      "links": [
+        {
+          "label": "Learn: Context",
+          "href": "/learn/context"
+        },
+        {
+          "label": "Engineering: Context Management",
+          "href": "/agent-engineering/context-management"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Claude Code: Context Window",
+          "url": "https://code.claude.com/docs/en/context-window.md"
+        }
+      ]
+    }
+  ]
+}

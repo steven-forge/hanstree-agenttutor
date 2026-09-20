@@ -1,0 +1,82 @@
+name: Update Content
+
+on:
+  schedule:
+    - cron: '15 21 * * *'  # 06:15 Asia/Seoul (UTC 21:15 previous day)
+  workflow_dispatch:
+    inputs:
+      force_docs:
+        description: '모든 문서 출처 강제 점검 (--force)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-content
+  cancel-in-progress: false
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Collect news candidates
+        id: collect_news
+        run: python3 scripts/collect_content.py news
+        continue-on-error: true
+
+      - name: Check document sources
+        id: collect_docs
+        env:
+          FORCE_DOCS: ${{ inputs.force_docs == true && 'true' || 'false' }}
+        run: |
+          if [ "$FORCE_DOCS" = "true" ]; then
+            python3 scripts/collect_content.py documents --force
+          else
+            python3 scripts/collect_content.py documents
+          fi
+        continue-on-error: true
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
+            git add data/today-candidates.json data/content-health.json .source-cache/content.json
+            git commit -m "chore(content): 뉴스 후보 및 문서 출처 점검 갱신"
+            git pull --rebase origin master
+            git push origin master
+          else
+            echo "No changes detected in candidates, health, or cache. Skipping push."
+          fi
+
+      - name: Check collection step outcome
+        run: |
+          if [ "${{ steps.collect_news.outcome }}" = "failure" ] || [ "${{ steps.collect_docs.outcome }}" = "failure" ]; then
+            echo "Error: One or more content collection tasks encountered total failure."
+            exit 1
+          fi

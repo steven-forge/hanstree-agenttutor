@@ -1,18 +1,53 @@
 import Link from "next/link";
-import docs from "../data/docs.json";
+import { TOP_NAV_LINKS, NAV_GROUPS, resolveCurrentPath } from "./nav";
 
-export default function SiteHeader({ activeSlug }: { activeSlug?: string }) {
-  return <header className="site-header">
-    <Link className="site-brand" href="/"><span aria-hidden="true">A</span>AgentTutor</Link>
-    <nav className="header-links" aria-label="상단 메뉴">
-      <Link href="/docs/hanstree">Documentation</Link>
-    </nav>
-    <details className="mobile-nav">
-      <summary aria-label="문서 메뉴 열기">메뉴</summary>
-      <nav aria-label="모바일 문서 목록">
-        <Link aria-current={!activeSlug ? "page" : undefined} href="/">Overview</Link>
-        {docs.documents.map((doc) => <Link aria-current={doc.slug === activeSlug ? "page" : undefined} href={`/docs/${doc.slug}`} key={doc.slug}>{doc.title}</Link>)}
+export default function SiteHeader({ activeSlug, currentPath }: { activeSlug?: string; currentPath?: string }) {
+  const current = resolveCurrentPath(activeSlug, currentPath);
+
+  return (
+    <header className="site-header">
+      <Link className="site-brand" href="/" aria-label="AgentTutor 홈으로 이동">
+        <span aria-hidden="true">A</span>AgentTutor
+      </Link>
+      <nav className="header-links" aria-label="상단 메뉴">
+        {TOP_NAV_LINKS.map((link) => {
+          const isSelected = link.href.startsWith("/docs")
+            ? current.startsWith("/docs")
+            : current === link.href || (link.href !== "/" && current.startsWith(link.href));
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isSelected ? "page" : undefined}
+              className={isSelected ? "header-link-active" : undefined}
+            >
+              {link.title}
+            </Link>
+          );
+        })}
       </nav>
-    </details>
-  </header>;
+      <details key={current} className="mobile-nav">
+        <summary aria-label="전체 메뉴 열기">메뉴</summary>
+        <nav aria-label="모바일 전체 메뉴">
+          <Link aria-current={current === "/" ? "page" : undefined} href="/">
+            Overview (홈)
+          </Link>
+          {NAV_GROUPS.map((group) => (
+            <div key={group.title} className="mobile-nav-group">
+              <p className="mobile-group-title">{group.title}</p>
+              {group.items.map((item) => (
+                <Link
+                  key={item.href}
+                  aria-current={item.href === current ? "page" : undefined}
+                  href={item.href}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </nav>
+      </details>
+    </header>
+  );
 }
