@@ -466,6 +466,19 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
             if m:
                 date_str = m.group(1).strip()
 
+        if not date_str:
+            # 본문에 날짜만 표시된 경우("Sep 18, 2026"): 시각 불명이므로 날짜만 넘겨 아래 날짜 전용 경로가 처리.
+            m = re.search(
+                r'<div\b[^>]*class=["\'][^"\']*\bbody-3\b[^"\']*\bagate\b[^"\']*["\'][^>]*>\s*'
+                r'([A-Z][a-z]{2} \d{1,2}, \d{4})\s*</div>',
+                art_html,
+            )
+            if m:
+                try:
+                    date_str = datetime.strptime(m.group(1), "%b %d, %Y").strftime("%Y-%m-%d")
+                except ValueError:
+                    pass
+
         if not date_str or not title:
             held_count += 1
             continue
