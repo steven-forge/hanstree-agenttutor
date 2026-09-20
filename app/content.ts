@@ -110,7 +110,7 @@ export type TodayArticle = {
   id: string;
   title: string;
   summary?: string;
-  why_it_matters?: string;
+  why_it_matters: string;
   source_summary?: string;
   source_id: string;
   source_name: string;

@@ -157,6 +157,36 @@ def clean_html_text(raw_html: str) -> str:
     return re.sub(r"\s+", " ", no_tags).strip()
 
 
+def build_beginner_explanation(title: str, source_id: str, source_summary: str = "") -> str:
+    """제목·공식 설명의 주제만 분류해 원문 밖의 사실을 만들지 않는 한국어 해설을 만든다."""
+    if source_id in {"codex-releases", "gemini-releases"}:
+        return "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다."
+
+    topics = [
+        (("security", "safety", "secure", "cyber", "privacy", "risk", "scam", "protect", "trust"),
+         "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."),
+        (("policy", "government", "regulation", "law", "legal", "governance", "public sector"),
+         "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다."),
+        (("health", "medical", "biology", "drug", "science", "research", "quantum", "math"),
+         "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다."),
+        (("education", "student", "teacher", "learn", "youth", "teen", "children", "older adult"),
+         "AI를 배우고 사용하는 사람이 넓어질수록 쉬운 교육과 연령에 맞는 보호 장치가 중요해집니다. 초보자는 사용법뿐 아니라 개인정보와 잘못된 답을 확인하는 방법도 함께 익혀야 합니다."),
+        (("image", "video", "voice", "speech", "music", "film", "fashion", "creative", "design"),
+         "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다."),
+        (("finance", "financial", "econom", "cost", "price", "business", "enterprise", "company", "customer", "workforce", "productivity", "ipo"),
+         "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."),
+        (("model", "gpt", "claude", "gemini", "grok", "reasoning", "intelligence"),
+         "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."),
+        (("agent", "api", "developer", "coding", "code", "workflow", "mcp", "tool", "automation"),
+         "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다."),
+    ]
+    for text in (title.lower(), source_summary.lower()):
+        for keywords, explanation in topics:
+            if any(keyword in text for keyword in keywords):
+                return explanation
+    return "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다."
+
+
 class ContentTextExtractor(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -230,16 +260,32 @@ def classify_date(dt: datetime, window_start: datetime, window_end: datetime) ->
 
 
 def make_candidate(title: str, source_id: str, source_name: str, canonical_url: str, summary_raw: str, date_fields: dict) -> dict:
+    source_summary = clean_html_text(summary_raw)[:SUMMARY_MAX]
     return {
         "id": url_id(canonical_url),
         "title": title,
         "source_id": source_id,
         "source_name": source_name,
         "source_url": canonical_url,
-        "source_summary": clean_html_text(summary_raw)[:SUMMARY_MAX],
+        "source_summary": source_summary,
+        "why_it_matters": build_beginner_explanation(title, source_id, source_summary),
         "fetched_at": datetime.now(KST).isoformat(timespec="seconds"),
         **date_fields,
     }
+
+
+def ensure_beginner_explanations(articles: list[dict]) -> bool:
+    """누락된 해설만 보강하고 편집자가 쓴 기존 해설은 보존한다."""
+    changed = False
+    for article in articles:
+        if isinstance(article, dict) and not str(article.get("why_it_matters") or "").strip():
+            article["why_it_matters"] = build_beginner_explanation(
+                str(article.get("title") or ""),
+                str(article.get("source_id") or ""),
+                str(article.get("source_summary") or ""),
+            )
+            changed = True
+    return changed
 
 
 def archive_keys(articles: list) -> tuple[set, set]:
@@ -566,6 +612,7 @@ def collect_news() -> int:
              "reviewed_at": None, "articles": [], **read_json(TODAY_PATH)}
     if not isinstance(today["articles"], list):
         raise ValueError("data/today.json의 articles가 배열이 아닙니다. 공개 archive를 보호하기 위해 중단합니다.")
+    explanations_changed = ensure_beginner_explanations(today["articles"])
     known = archive_keys(today["articles"])
 
     sources_def = [
@@ -632,7 +679,8 @@ def collect_news() -> int:
         all_candidates.extend(items)
 
     # archive 및 동일 실행 내부의 id/정규화 URL 중복을 제거하며 새 항목만 누적
-    candidates_list, archive_changed = merge_archive(today, all_candidates)
+    candidates_list, merged_changed = merge_archive(today, all_candidates)
+    archive_changed = explanations_changed or merged_changed
     candidates_list.sort(key=article_sort_key)
     if archive_changed:
         today.update(edition_date=edition_date, window_start=window_start.isoformat(),

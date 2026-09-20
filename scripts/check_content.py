@@ -4,6 +4,7 @@
 from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -16,6 +17,8 @@ from collect_content import (
     parse_release_page,
     classify_date,
     merge_archive,
+    build_beginner_explanation,
+    ensure_beginner_explanations,
     article_sort_key,
     new_stats,
     ALLOWED_HOSTS,
@@ -86,6 +89,7 @@ def test_rss_validation():
     assert len(cands) == 1
     assert cands[0]["source_url"] == "https://openai.com/news/valid-item"
     assert cands[0]["date_precision"] == "time" and cands[0]["source_summary"] == "Valid content"
+    assert re.search(r"[가-힣]", cands[0]["why_it_matters"]), "신규 후보에는 한국어 초보자 해설이 필요합니다"
     assert stats["coverage_limited"] is True, "피드가 60일 시작에 닿지 않으면 한계를 기록해야 합니다"
 
     # 4. Already in archive (id 또는 정규화 URL) -> skipped, not re-added
@@ -142,6 +146,10 @@ def test_archive_merge_and_sort():
     assert [a["id"] for a in today["articles"]] == ["t1", "t2", "aaa", "d1", "d2"]
     assert next(a for a in today["articles"] if a["id"] == "aaa") == snapshot, "기존 편집 필드는 덮어쓰면 안 됩니다"
 
+    assert ensure_beginner_explanations(today["articles"]) is True
+    assert next(a for a in today["articles"] if a["id"] == "aaa")["why_it_matters"] == "편집 해설", "기존 해설은 보존해야 합니다"
+    assert ensure_beginner_explanations(today["articles"]) is False, "해설 보강은 재실행해도 파일을 바꾸지 않아야 합니다"
+
     # 재실행: 추가 0건·변화 없음 → today.json을 다시 쓰지 않는다
     added, changed = merge_archive(today, new_items)
     assert added == [] and changed is False
@@ -156,6 +164,7 @@ def test_today_archive_integrity():
     assert len(set(urls)) == len(urls), "today.json에 중복 정규화 URL이 있습니다"
     for a in articles:
         validate_url(a["source_url"])
+        assert re.search(r"[가-힣]", a.get("why_it_matters", "")), f"{a['id']}: 한국어 초보자 해설 필요"
         if a.get("date_precision") == "day":
             assert "published_at" not in a, f"{a['id']}: day 정밀도 항목에 시각이 있습니다"
             datetime.strptime(a["published_on"], "%Y-%m-%d")
@@ -178,6 +187,7 @@ def test_canonicalization_and_allowlist():
     assert "source=rss" not in canonical
     assert "reference=keep_this" in canonical
     assert "source_id=123" in canonical
+    assert "새 버전" in build_beginner_explanation("1.0.0", "codex-releases")
 
 
 def test_publisher_validation():

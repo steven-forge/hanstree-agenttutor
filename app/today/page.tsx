@@ -169,16 +169,14 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       </p>
                     ) : null}
 
-                    {article.why_it_matters && (
-                      <details style={{ margin: "14px 0", background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
-                        <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.88rem" }}>
-                          왜 중요한가요? (초보자 해설)
-                        </summary>
-                        <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
-                          {article.why_it_matters}
-                        </p>
-                      </details>
-                    )}
+                    <details style={{ margin: "14px 0", background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
+                      <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.88rem" }}>
+                        왜 중요한가요? (초보자 해설)
+                      </summary>
+                      <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                        {article.why_it_matters}
+                      </p>
+                    </details>
 
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px", paddingTop: "12px", borderTop: "1px solid var(--line)" }}>
                       <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
