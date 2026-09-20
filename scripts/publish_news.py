@@ -93,11 +93,14 @@ def validate_reviewed_edition(reviewed: dict, candidates_data: dict, health_data
     except Exception as error:
         raise ValueError(f"window_end 시각 검증 실패: {error}")
 
-    # Window exact 24 hours and not future
+    # Window exact 1 day (24 hours) or 7 days, and not future
     if w_end > now_utc + timedelta(minutes=5):
         raise ValueError(f"window_end 시각({reviewed['window_end']})은 현재 시각보다 미래일 수 없습니다.")
-    if abs((w_end - w_start).total_seconds() - 86400) > 1:
-        raise ValueError("수집 윈도우 기간은 정확히 24시간이어야 합니다.")
+    window_duration = (w_end - w_start).total_seconds()
+    is_1_day = abs(window_duration - 86400) <= 1
+    is_7_days = abs(window_duration - 7 * 86400) <= 1
+    if not (is_1_day or is_7_days):
+        raise ValueError("수집 윈도우 기간은 정확히 1일(24시간) 또는 7일이어야 합니다.")
     if coll_dt != w_end:
         raise ValueError("수집 시각과 수집 기간의 종료 시각이 일치해야 합니다.")
 

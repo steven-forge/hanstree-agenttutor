@@ -16,7 +16,7 @@ AgentTutor의 뉴스 브리핑(`/today`)과 학습 자료 출처 점검은 **자
 
 | 파일 경로 | 관리 주체 | 설명 |
 |---|---|---|
-| `data/today-candidates.json` | 자동 수집기 (`collect_content.py news`) | 6개 공식 출처에서 최근 24시간 내 수집된 기사 후보 목록과 출처별 수집 상태 |
+| `data/today-candidates.json` | 수집기 (`collect_content.py news [--days 1\|7]`) | 6개 공식 출처에서 최근 24시간(기본) 또는 7일(수동) 내 수집된 기사 후보 목록과 출처별 수집 상태 |
 | `data/today.json` | 발행 스크립트 (`publish_news.py`) | 웹 서비스(`/today`)에 실제 노출되는 오늘의 10대 뉴스 공개본 (단일 최신 스냅샷) |
 | `data/content-health.json` | 자동 점검기 (`collect_content.py`) | 뉴스 수집 상태(`news`) 및 학습 자료 4개 메뉴 출처 점검 상태(`documents`) |
 | `.source-cache/content.json` | 자동 수집기/점검기 | HTTP ETag, Last-Modified 헤더 및 콘텐츠 정규화 해시 캐시 (전문 본문 저장 안 함) |
@@ -27,9 +27,24 @@ AgentTutor의 뉴스 브리핑(`/today`)과 학습 자료 출처 점검은 **자
 
 ### 3.1 뉴스 후보 수집
 ```bash
+# 기본: 최근 24시간 수집 (일일 자동 실행과 동일)
 python3 scripts/collect_content.py news
+# 또는
+python3 scripts/collect_content.py news --days 1
+
+# 첫 발행 또는 필요 시: 최근 7일 수집 (2026-09-21 승인)
+python3 scripts/collect_content.py news --days 7
 ```
-- **동작**: 6개 공식 뉴스 출처(OpenAI, Google AI, Codex, Gemini CLI, Anthropic, xAI)에서 최근 24시간 이내 발행된 기사를 수집합니다.
+- **수집 기간 옵션 (`--days 1|7`)**:
+  - 기본값은 1(최근 24시간)이며, 일일 자동 실행(GitHub Actions)은 기존 24시간 수집 원칙을 그대로 유지합니다.
+  - 2026-09-21 승인으로 첫 뉴스 발행을 위한 최근 7일 확대 수집(`--days 7`)을 지원합니다.
+  - CLI 및 함수 호출 시 1 또는 7 이외의 일수는 거부되며, 임의 날짜 주입은 불가합니다.
+- **캐시 및 조건부 요청(304) 정책**:
+  - 24시간 수집(`--days 1`): 기존 캐시(`window_days == 1`)가 존재할 때만 ETag/Last-Modified 조건부 요청(304)을 사용합니다.
+  - 7일 수집(`--days 7`): 과거 6일 치 후보 누락을 방지하기 위해 조건부 요청(304)을 우회하고 피드를 항상 전체 재조회합니다.
+  - 수집된 후보 캐시(`cached_items`)는 20개 상한을 제거하고 파싱된 전체 항목을 저장합니다.
+  - 학습 자료 문서 출처 점검(`documents`) 캐시에는 일절 영향을 주지 않습니다.
+- **동작**: 6개 공식 뉴스 출처(OpenAI, Google AI, Codex, Gemini CLI, Anthropic, xAI)에서 지정 기간 이내 발행된 기사를 수집합니다.
 - **한정된 수집 범위 (Bounded Coverage)**:
   - HTML 뉴스 출처당 최대 8개의 기사 링크만 추출하여 분석합니다.
   - Atom 릴리스 피드당 최신 10개의 엔트리만 검토하며, 프리릴리즈 및 구버전 릴리스는 API 요청 전 사전 필터링합니다.
@@ -94,7 +109,9 @@ python3 scripts/publish_news.py <프로젝트-내-reviewed-edition.json>
 ```
 
 #### 스키마 및 검증 규칙
-1. **시간 일치**: `window_start`, `window_end`, `collected_at`은 `data/today-candidates.json`의 값과 정확히 일치해야 합니다.
+1. **시간 및 윈도우 일치**:
+   - `window_start`, `window_end`, `collected_at`은 `data/today-candidates.json`의 값과 정확히 일치해야 합니다.
+   - 수집 윈도우 기간(`window_end - window_start`)은 정확히 1일(24시간) 또는 7일만 허용되며, 2일 등 임의 기간은 거부됩니다.
 2. **발행일 일치**: `edition_date`는 `window_end`의 KST 날짜(`YYYY-MM-DD`)와 일치해야 합니다.
 3. **검토 시각**: `reviewed_at`은 검토자가 작업을 마친 실제 시각(ISO 8601, 시간대 포함)이며, `collected_at` 이후여야 하고 현재 시각보다 미래일 수 없습니다.
 4. **기사 매칭 및 타임존**:
@@ -124,8 +141,8 @@ git push origin master
 
 ## 5. 예외 상황 처리 지침
 
-### 5.1 최근 24시간 내 후보가 0건인 경우
-- 피드 응답이 정상이고 보류(`held`)나 실패(`failed`) 출처가 전혀 없으며 실제로 최근 24시간 내 발행된 뉴스가 없는 경우에만 수집기 상태가 `ok`가 됩니다.
+### 5.1 최근 24시간(또는 7일) 수집 기간 내 후보가 0건인 경우
+- 피드 응답이 정상이고 보류(`held`)나 실패(`failed`) 출처가 전혀 없으며 실제로 해당 수집 윈도우 기간 내 발행된 뉴스가 없는 경우에만 수집기 상태가 `ok`가 됩니다.
 - **빈 에디션 발행**: 후보가 0건이고 수집 상태가 `ok`이며 보류/실패 출처가 0개일 때에만 `articles: []` 상태의 빈 에디션 발행이 허용됩니다.
 - **보류/장애 상태에서의 0건**: 메타데이터 불확실성으로 보류(`held`)된 항목이 있거나 일부 출처가 실패(`partial`)한 경우에는 빈 에디션을 발행할 수 없으며, 기존의 최신 공개본이 안전하게 보존됩니다.
 

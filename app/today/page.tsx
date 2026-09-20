@@ -39,6 +39,12 @@ export default function TodayPage() {
   const isReviewedEmpty = isReviewed && count === 0;
   const hasNoCandidates = !isReviewed && newsHealth.status !== "failed" && Boolean(newsHealth.checked_at) && newsHealth.candidate_count === 0;
 
+  const is7DayEdition = Boolean(
+    window_start &&
+    window_end &&
+    Math.abs(Date.parse(window_end) - Date.parse(window_start) - 7 * 24 * 60 * 60 * 1000) <= 1000
+  );
+
   const headlineTitle = count > 0 && count < 10 ? `오늘의 ${count}대 뉴스` : "오늘의 10대 뉴스";
   const publishedCountText = isReviewed ? `${count}건 발행` : "발행 대기";
 
@@ -90,6 +96,12 @@ export default function TodayPage() {
               </div>
             </header>
 
+            {is7DayEdition && (
+              <div className="health-notice" style={{ marginTop: "24px" }}>
+                <strong>판본 안내:</strong> 최근 7일 주요 뉴스를 선별한 판본이며 기사별 실제 발행일은 아래 표시됩니다.
+              </div>
+            )}
+
             {isNewerCollection && (
               <div className="health-notice" style={{ marginTop: "24px" }}>
                 <strong>판본 안내:</strong> 최근 검토 완료된 판본입니다. 더 새로운 수집 결과가 있으며 공개본은 검토 후 교체합니다.
@@ -123,7 +135,7 @@ export default function TodayPage() {
                 <p>
                   {isReviewedEmpty
                     ? "금일 수집된 후보 중 발행 기준(중요도 및 기술적 연관성)을 충족하는 주요 뉴스가 없습니다."
-                    : hasNoCandidates ? "최근 수집 결과 중 발행 시각과 최근 24시간 조건이 확인된 후보가 없습니다. 시각이 불명확한 항목과 수집 오류는 아래에 따로 표시하며, 개수를 맞추기 위해 기사를 만들지 않습니다."
+                    : hasNoCandidates ? "최근 수집 결과 중 발행 시각과 표시된 수집 기간 조건이 확인된 후보가 없습니다. 시각이 불명확한 항목과 수집 오류는 아래에 따로 표시하며, 개수를 맞추기 위해 기사를 만들지 않습니다."
                     : "뉴스 수집기 실행 대기 중이거나 편집자의 사실 확인 검토가 진행 중입니다. 검토 완료 후 실제 기사가 공개됩니다."}
                 </p>
                 <div style={{ marginTop: "16px" }}>
@@ -273,7 +285,7 @@ export default function TodayPage() {
           <footer className="home-foot" style={{ marginTop: "48px" }}>
             <span>공개본 수집 시각: {collected_at ? formatKstTime(collected_at) : "아직 공개본 없음"}</span>
             <span>검토 시각: {reviewed_at ? formatKstTime(reviewed_at) : "대기 중"}</span>
-            <span>한국 표준시(KST) 기준 24시간 수집 원칙</span>
+            <span>한국 표준시(KST) 기준 기본 자동 24시간 수집 원칙 (수동 7일 수집 지원)</span>
           </footer>
         </div>
 

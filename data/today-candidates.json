@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-21T05:18:23.104528+09:00",
-  "window_start": "2026-09-20T05:18:23.104528+09:00",
-  "window_end": "2026-09-21T05:18:23.104528+09:00",
+  "collected_at": "2026-09-21T05:34:29.662171+09:00",
+  "window_start": "2026-09-14T05:34:29.662171+09:00",
+  "window_end": "2026-09-21T05:34:29.662171+09:00",
   "edition_date": "2026-09-21",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 11,
       "held_count": 0
     },
     {
@@ -17,7 +17,7 @@
       "name": "Google AI",
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
-      "count": 0,
+      "count": 9,
       "held_count": 0
     },
     {
@@ -25,7 +25,7 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases.atom",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0
     },
     {
@@ -33,7 +33,7 @@
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0
     },
     {
@@ -49,9 +49,226 @@
       "name": "xAI News",
       "url": "https://x.ai/news",
       "status": "ok",
-      "count": 0,
+      "count": 2,
       "held_count": 0
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "id": "028ae8f2158c4c5c",
+      "title": "0.155.1",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.155.1",
+      "published_at": "2026-09-18T20:03:04+00:00",
+      "evidence": "## Bug Fixes - New local TUI sessions now leave reasoning summaries disabled by default, fixing request rejection by providers that do not support them. Explicit reasoning-summary settings remain respected. (#46467) ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.155.0...rust-v0.155.1 - #46467 Restore none as the TUI reasoning summary default (@celia-oai)"
+    },
+    {
+      "id": "2ad49dd9b65fe3ae",
+      "title": "New experts join Google’s AI & Economy team",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench",
+      "published_at": "2026-09-18T14:00:00+00:00",
+      "evidence": "We are expanding our AI & Economy team with world-class academic advisors, fellows, and core internal researchers."
+    },
+    {
+      "id": "332bec2b752a921d",
+      "title": "Co-creating the future of fashion with Google",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week",
+      "published_at": "2026-09-18T13:00:00+00:00",
+      "evidence": "Google worked side-by-side with designers Jane Wade and Sergio Hudson to custom-design Google Flow tools to prep for NYFW."
+    },
+    {
+      "id": "a00923bf4ddda715",
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/australian-youth-safety-blueprint",
+      "published_at": "2026-09-18T12:00:00+00:00",
+      "evidence": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
+    },
+    {
+      "id": "ce5508c16c0a4e20",
+      "title": "Introducing Grok Voice Transcribe 2.0",
+      "source_id": "xai-news",
+      "source_name": "xAI News",
+      "source_url": "https://x.ai/news/grok-voice-transcribe-2",
+      "published_at": "2026-09-18T00:00:00+00:00",
+      "evidence": "Announcing SpaceXAI's newest speech-to-text model, with unparalleled accuracy and cost effectiveness."
+    },
+    {
+      "id": "57bb3f72439b837e",
+      "title": "Making global data easier to explore",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform",
+      "published_at": "2026-09-17T20:00:00+00:00",
+      "evidence": "Google and the UN system have launched the UN System Data Commons, a new open platform making global statistics accessible and easy to search."
+    },
+    {
+      "id": "d22acfa5d0cc1d09",
+      "title": "How Cooley is accelerating IPO work with ChatGPT",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/cooley-gopublic",
+      "published_at": "2026-09-17T12:00:00+00:00",
+      "evidence": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
+    },
+    {
+      "id": "192794312f979cbd",
+      "title": "Introducing Astra for Law",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/astra-for-law",
+      "published_at": "2026-09-17T00:00:00+00:00",
+      "evidence": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
+    },
+    {
+      "id": "f3899afd4d6a0a2d",
+      "title": "Our framework for reporting model misalignment",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "published_at": "2026-09-16T17:00:00+00:00",
+      "evidence": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior."
+    },
+    {
+      "id": "b0366f9850a9d166",
+      "title": "Helping older adults use AI in everyday life",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "published_at": "2026-09-16T16:00:00+00:00",
+      "evidence": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely."
+    },
+    {
+      "id": "6ac27c68838b29ee",
+      "title": "Reimagining advertising with AI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "published_at": "2026-09-16T13:00:00+00:00",
+      "evidence": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify."
+    },
+    {
+      "id": "27cd99b1dbe34420",
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/hex-gpt-6-astra",
+      "published_at": "2026-09-16T12:00:00+00:00",
+      "evidence": "GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share."
+    },
+    {
+      "id": "4410122683c56925",
+      "title": "How to connect AI usage to business value",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "published_at": "2026-09-16T12:00:00+00:00",
+      "evidence": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes."
+    },
+    {
+      "id": "7d2872733a614740",
+      "title": "How workers are unlocking new ways of working",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/unlocking-new-ways-of-working",
+      "published_at": "2026-09-16T09:00:00+00:00",
+      "evidence": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work."
+    },
+    {
+      "id": "e3779e8809a662a0",
+      "title": "Memory in Grok Build",
+      "source_id": "xai-news",
+      "source_name": "xAI News",
+      "source_url": "https://x.ai/news/grok-build-memory",
+      "published_at": "2026-09-16T00:00:00+00:00",
+      "evidence": "Grok Build now carries conventions, decisions, and project facts from one session to the next. Notes are written in the background as you work and read back when you return to the project."
+    },
+    {
+      "id": "f01b0db479c6b0a8",
+      "title": "Release v0.60.0",
+      "source_id": "gemini-releases",
+      "source_name": "Gemini CLI Releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0",
+      "published_at": "2026-09-15T20:31:02+00:00",
+      "evidence": "## What's Changed * fix(core): improve destination validation and connection routing in web fetch utilities by @diegogodinezr in https://github.com/google-gemini/gemini-cli/pull/29120 * fix(core): enforce RFC 9207 issuer identification in MCP OAuth flow by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29117 * chore(release): bump version to 0.60.0-nightly.20260901.g0bd1d4397 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29162 * Changelog for v0.58.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29161 * fix(cli): isolate temporary directory for macOS Seatbelt sandbox by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29171 * feat(extensions): harden path resolution and boundary validation in extension loader by @diegogodinezr in https://github.com/google-gemini/gemini-cli/pull/29169 * Changelog for v0.59.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29159 * fix(core): sanitize and remove hardcoded Google CrUX API key in chrome-devtools-mcp by @amelidev in https://github.com/google-gemini/gemini-cli/pull/29158 * fix(extensions): prompt for consent on environment changes and sanitize runtime-altering environment variables by @amelidev in https://github.com/google-gemini/gemini-cli/pull/28863 * fix(core): enhance workspace path boundary checks and symlink resolution in command safety and file discovery by @jesussamuel-byte in https://github.com/google-gemini/gemini-cli/pull/29170 * fix(config): enforce strict permission and ownership checks on system-wide configuration paths by @jesussamuel-byte in https://github.com/google-gemini/gemini-cli/pull/29115 * fix(core): mitigate NTFS 8.3 short name (SFN) path by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/29116 * fix(cli): isolate settings directory in sandbox containers by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29216 * fix(c"
+    },
+    {
+      "id": "dfe2f7f06070ffbc",
+      "title": "AI for Societal Impact",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact",
+      "published_at": "2026-09-15T16:00:00+00:00",
+      "evidence": "Explore this collection to see how experts and local leaders are using AI breakthroughs to ensure everyone can share the opportunity of AI."
+    },
+    {
+      "id": "419a0d7bd8653188",
+      "title": "Building AI to accelerate science and improve lives",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people",
+      "published_at": "2026-09-15T16:00:00+00:00",
+      "evidence": "The true measure of AI is who it helps. Here’s how it’s impacting lives today. We're focused on key areas where advanced technology can help make extraordinary progress …"
+    },
+    {
+      "id": "7a00acf92df0c96e",
+      "title": "AI for everyone in every language",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
+      "published_at": "2026-09-15T16:00:00+00:00",
+      "evidence": "We’re moving beyond traditional text translation to build models that understand the world’s rich, living languages exactly as they are expressed."
+    },
+    {
+      "id": "64730bcdfc3a3522",
+      "title": "New insights from Google’s AI & Economy ATLAS",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026",
+      "published_at": "2026-09-15T13:00:00+00:00",
+      "evidence": "We’ve translated ATLAS’s millions of global data points into an interactive, open-access experience."
+    },
+    {
+      "id": "ff082bc32dcf39bf",
+      "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch",
+      "published_at": "2026-09-14T19:00:00+00:00",
+      "evidence": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology & Society."
+    },
+    {
+      "id": "fd1baec08311b505",
+      "title": "DevFest is back",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026",
+      "published_at": "2026-09-14T16:00:00+00:00",
+      "evidence": "DevFest 2026 is back and here’s how you can connect with one of the more than 800 global events to build, secure, and scale in the agentic AI era."
+    },
+    {
+      "id": "7f82d995c515e5ba",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/fyxer",
+      "published_at": "2026-09-14T12:00:00+00:00",
+      "evidence": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
+    },
+    {
+      "id": "968c32634dc2a1cb",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "published_at": "2026-09-14T00:00:00+00:00",
+      "evidence": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    }
+  ]
 }

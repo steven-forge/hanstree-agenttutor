@@ -515,10 +515,12 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
     return candidates, held_count, excluded_count
 
 
-def collect_news() -> int:
+def collect_news(days: int = 1) -> int:
+    if days not in (1, 7):
+        raise ValueError("수집 기간(days)은 1 또는 7만 허용됩니다.")
     now_kst = datetime.now(KST)
     window_end = now_kst
-    window_start = now_kst - timedelta(hours=24)
+    window_start = now_kst - timedelta(days=days)
     edition_date = window_end.strftime("%Y-%m-%d")
     collected_at = now_kst.isoformat()
 
@@ -546,8 +548,8 @@ def collect_news() -> int:
         cached = news_cache.get(sid, {})
         cached_items = cached.get("cached_items", [])
 
-        # Only use conditional request if previous parsed items exist in cache
-        use_conditional = bool(cached_items) and "held_count" in cached
+        # news 조건부 요청은 days==1 및 cached.window_days==1일 때만 허용 (7일은 항상 피드 재조회)
+        use_conditional = (days == 1) and (cached.get("window_days") == 1) and bool(cached_items) and ("held_count" in cached)
         etag = cached.get("etag") if use_conditional else None
         last_mod = cached.get("last_modified") if use_conditional else None
 
@@ -570,8 +572,9 @@ def collect_news() -> int:
                         "etag": headers.get("etag"),
                         "last_modified": headers.get("last-modified"),
                         "last_checked": collected_at,
+                        "window_days": days,
                         "held_count": held_count,
-                        "cached_items": items[:20]
+                        "cached_items": items
                     }
             elif stype == "atom":
                 status, headers, body = fetch_url(surl, etag=etag, last_modified=last_mod)
@@ -587,14 +590,16 @@ def collect_news() -> int:
                         "etag": headers.get("etag"),
                         "last_modified": headers.get("last-modified"),
                         "last_checked": collected_at,
+                        "window_days": days,
                         "held_count": held_count,
-                        "cached_items": items[:20]
+                        "cached_items": items
                     }
             elif stype == "html":
                 items, held_count, _ = parse_html_news(surl, sid, sname, window_start, window_end)
                 news_cache[sid] = {
                     "last_checked": collected_at,
-                    "cached_items": items[:20]
+                    "window_days": days,
+                    "cached_items": items
                 }
         except Exception as error:
             error_msg = str(error)
@@ -872,14 +877,15 @@ def main():
     parser = argparse.ArgumentParser(description="AgentTutor 뉴스 및 문서 출처 수집·점검 도구")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    subparsers.add_parser("news", help="최신 뉴스 후보를 수집하고 헬스 정보를 갱신합니다.")
+    news_parser = subparsers.add_parser("news", help="최신 뉴스 후보를 수집하고 헬스 정보를 갱신합니다.")
+    news_parser.add_argument("--days", type=int, choices=[1, 7], default=1, help="수집 기간 일수 (1 또는 7, 기본값: 1)")
 
     doc_parser = subparsers.add_parser("documents", help="학습 자료 출처의 변경 사항을 점검합니다.")
     doc_parser.add_argument("--force", action="store_true", help="점검 주기와 관계없이 모든 출처를 강제 점검합니다.")
 
     args = parser.parse_args()
     if args.command == "news":
-        sys.exit(collect_news())
+        sys.exit(collect_news(days=args.days))
     elif args.command == "documents":
         sys.exit(collect_documents(force=args.force))
 

@@ -222,6 +222,39 @@ def test_publisher_validation():
     except ValueError:
         pass
 
+    # 4. 7일 수집 윈도우 허용, 7일 범위 밖 기사 거부, 2일 등 임의 기간 거부 검증
+    w_start_7d = now - timedelta(days=7)
+    art_7d = dict(reviewed["articles"][0], published_at=(now - timedelta(days=3)).isoformat())
+    cand_7d = dict(base_candidates["candidates"][0], published_at=(now - timedelta(days=3)).isoformat())
+    cands_7d = dict(base_candidates, window_start=w_start_7d.isoformat(), candidates=[cand_7d])
+    rev_7d = dict(reviewed, window_start=w_start_7d.isoformat(), articles=[art_7d])
+    validate_reviewed_edition(rev_7d, cands_7d, base_health, current_today)
+
+    outside_7d = json.loads(json.dumps(rev_7d))
+    outside_7d["articles"][0]["published_at"] = (now - timedelta(days=8)).isoformat()
+    cands_outside_7d = dict(cands_7d, candidates=[dict(cand_7d, published_at=(now - timedelta(days=8)).isoformat())])
+    try:
+        validate_reviewed_edition(outside_7d, cands_outside_7d, base_health, current_today)
+        assert False, "Expected ValueError for article published outside 7-day window"
+    except ValueError:
+        pass
+
+    arbitrary_2d = json.loads(json.dumps(reviewed))
+    arbitrary_2d["window_start"] = (now - timedelta(days=2)).isoformat()
+    cands_2d = dict(base_candidates, window_start=arbitrary_2d["window_start"])
+    try:
+        validate_reviewed_edition(arbitrary_2d, cands_2d, base_health, current_today)
+        assert False, "Expected ValueError on arbitrary 2-day window"
+    except ValueError:
+        pass
+
+    from collect_content import collect_news
+    try:
+        collect_news(days=2)
+        assert False, "Expected ValueError on collect_news(days=2)"
+    except ValueError:
+        pass
+
 
 def test_dataset_integrity():
     learn_path = ROOT / "data" / "learn.json"

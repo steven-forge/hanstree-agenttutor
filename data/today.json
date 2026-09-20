@@ -1,8 +1,109 @@
 {
-  "edition_date": null,
-  "window_start": null,
-  "window_end": null,
-  "collected_at": null,
-  "reviewed_at": null,
-  "articles": []
+  "edition_date": "2026-09-21",
+  "window_start": "2026-09-14T05:34:29.662171+09:00",
+  "window_end": "2026-09-21T05:34:29.662171+09:00",
+  "collected_at": "2026-09-21T05:34:29.662171+09:00",
+  "reviewed_at": "2026-09-21T05:36:52+09:00",
+  "articles": [
+    {
+      "id": "f3899afd4d6a0a2d",
+      "title": "OpenAI, 모델 정렬 이탈 보고 체계와 사례 공개",
+      "summary": "OpenAI는 모델이 사용자 의도나 허용 범위를 벗어나는 행동을 추적하고 조사해 공개하는 새 보고 체계와 6건의 사례를 발표했습니다. 원인을 완전히 설명하거나 대책을 마련하기 전에도 사례를 공개할 수 있도록 한 체계입니다.",
+      "why_it_matters": "에이전트를 만들 때 성능뿐 아니라 권한 통제와 실패 기록, 감시 체계를 함께 설계해야 함을 보여줍니다.",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "published_at": "2026-09-16T17:00:00+00:00"
+    },
+    {
+      "id": "e3779e8809a662a0",
+      "title": "SpaceXAI Grok Build, 세션 간 작업 메모리 지원",
+      "summary": "Grok Build가 작업 후 관례와 결정 사항을 마크다운 메모로 정리해 다음 세션 작업 전에 참조하는 기능을 발표했습니다. 프로젝트 범위와 전역 메모가 구별되며, 현재 대화의 사용자 지시가 저장된 메모보다 우선 적용됩니다.",
+      "why_it_matters": "메모리로 반복 설명을 줄일 수 있지만, 기록 범위 분리와 잘못된 정보의 주기적 점검이 중요합니다.",
+      "source_id": "xai-news",
+      "source_name": "xAI News",
+      "source_url": "https://x.ai/news/grok-build-memory",
+      "published_at": "2026-09-16T00:00:00+00:00"
+    },
+    {
+      "id": "57bb3f72439b837e",
+      "title": "구글-UN, 통계 데이터 통합 플랫폼 UN 시스템 데이터 커먼즈 공개",
+      "summary": "구글은 UN 통계를 연결하고 자연어 검색과 시각화를 지원하는 UN 시스템 데이터 커먼즈의 공개 소식을 전했습니다. MCP 같은 공개 표준을 통해 AI 에이전트가 공식 수치를 조회하는 방식을 소개하며, 중요한 수치는 인용 전 원출처를 확인하라고 권고합니다.",
+      "why_it_matters": "에이전트가 임의로 추측하는 대신 검증 가능한 공공 데이터 출처를 도구로 연결해 신뢰성을 확보하는 사례입니다.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform",
+      "published_at": "2026-09-17T20:00:00+00:00"
+    },
+    {
+      "id": "7f82d995c515e5ba",
+      "title": "Fyxer, 역할 분담 모델과 사용자 피드백 기반 이메일 비서 구축",
+      "summary": "OpenAI가 소개한 고객 사례에 따르면 Fyxer는 메일 분류, 관련 문맥 검색, 답장 초안 작성을 전문화된 모델에 나눠 맡깁니다. 사용자가 초안을 수정한 내용도 후속 학습에 활용합니다.",
+      "why_it_matters": "역할 분담과 관련 정보 전달, 사용자 피드백을 실제 에이전트 설계에 어떻게 활용하는지 살펴볼 수 있습니다.",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/fyxer",
+      "published_at": "2026-09-14T12:00:00+00:00"
+    },
+    {
+      "id": "192794312f979cbd",
+      "title": "OpenAI, 법률 업무 특화 플랫폼 Astra for Law 공개",
+      "summary": "OpenAI는 GPT-6 Astra에 법률 검색 색인과 전문 분석·작성 지침, 도구를 결합한 Astra for Law를 소개했습니다. 로펌과 법률 기술 기업이 자신의 전문성을 바탕으로 제품과 업무 흐름을 구성하는 기반입니다.",
+      "why_it_matters": "범용 모델에 특정 분야의 자료와 도구, 업무 지침을 결합하는 구조를 보여줍니다. 전문적인 결과에는 사람의 검토가 필요합니다.",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/astra-for-law",
+      "published_at": "2026-09-17T00:00:00+00:00"
+    },
+    {
+      "id": "27cd99b1dbe34420",
+      "title": "Hex, 데이터 분석을 시각적 대시보드로 전환하는 AI 워크플로 구축",
+      "summary": "OpenAI의 고객 사례는 Hex가 GPT-6 Astra로 분석 결과를 대화형 시각화와 대시보드로 만드는 방식을 소개합니다. 분석이 사용자의 원래 질문과 업무 목적에 맞는지도 모델을 활용해 검토합니다.",
+      "why_it_matters": "에이전트 평가 시 코드 실행 성공 여부를 넘어 산출물의 맥락 적합성과 최종 전달력을 함께 살펴봐야 합니다.",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/hex-gpt-6-astra",
+      "published_at": "2026-09-16T12:00:00+00:00"
+    },
+    {
+      "id": "ce5508c16c0a4e20",
+      "title": "SpaceXAI, 음성 전사 모델 Grok Voice Transcribe 2.0 발표",
+      "summary": "SpaceXAI가 녹음 파일 및 실시간 스트리밍 음성을 텍스트로 변환하는 새 모델을 공개했습니다. 언어 자동 감지와 단어별 타임스탬프, 화자 분리를 지원하며 잡음 및 다국어 환경 처리 개선을 강조했습니다.",
+      "why_it_matters": "음성 에이전트에서는 말의 내용뿐 아니라 누가 언제 말했는지가 이후 작업에 영향을 줄 수 있습니다.",
+      "source_id": "xai-news",
+      "source_name": "xAI News",
+      "source_url": "https://x.ai/news/grok-voice-transcribe-2",
+      "published_at": "2026-09-18T00:00:00+00:00"
+    },
+    {
+      "id": "7a00acf92df0c96e",
+      "title": "구글, 글로벌 다국어 접근성을 위한 AI 연구 현황 공유",
+      "summary": "구글이 텍스트 번역을 넘어 음성을 직접 처리하는 모델과 온디바이스용 TranslateGemma 등 다국어 지원 연구를 종합해 소개했습니다. 지역사회와의 언어 데이터 협업을 통해 다양한 환경에서의 언어 접근성을 확장하고 있습니다.",
+      "why_it_matters": "다국어 에이전트는 언어와 문화 차이뿐 아니라 인터넷 연결이 불안정한 환경에서도 잘 작동하는지 살펴봐야 합니다.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
+      "published_at": "2026-09-15T16:00:00+00:00"
+    },
+    {
+      "id": "4410122683c56925",
+      "title": "OpenAI, AI 사용량과 실질적 비즈니스 가치 연계 분석법 제시",
+      "summary": "OpenAI는 ChatGPT 관리 콘솔에서 워크플로 사용량과 비용, 업무 유형별 기여 지표를 종합 분석하는 방안을 설명했습니다. 단순 코드 생성량이 아닌 검토 소요 시간, 결함률, 재작업 여부를 함께 비교하도록 권고합니다.",
+      "why_it_matters": "토큰 사용량이나 생성량 자체를 성과로 착각하지 않고, 실제 절감된 시간과 최종 품질로 에이전트 도입 효과를 측정해야 합니다.",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "published_at": "2026-09-16T12:00:00+00:00"
+    },
+    {
+      "id": "fd1baec08311b505",
+      "title": "구글, 글로벌 개발자 행사 DevFest 2026 개최 계획 발표",
+      "summary": "구글이 10월 1일부터 12월 31일까지 진행될 DevFest 2026 시즌 계획을 발표했습니다. 각 지역 커뮤니티 주도로 실습 워크숍과 에이전트 해커톤이 열리며, 제미나이와 안티그래비티 등을 활용한 안전한 에이전트 개발에 초점을 맞춥니다.",
+      "why_it_matters": "이론 학습에 그치지 않고 실제 에이전트 개발 도구를 다뤄보는 기회이므로, 관심 있는 개발자는 지역별 상세 일정을 확인해 참여할 수 있습니다.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026",
+      "published_at": "2026-09-14T16:00:00+00:00"
+    }
+  ]
 }
