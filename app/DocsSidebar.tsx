@@ -17,7 +17,7 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
         </Link>
       </nav>
       {NAV_GROUPS.map((group) => (
-        <details key={group.title} className="sidebar-group" open={group.title === "Today"}>
+        <details key={group.title} className="sidebar-group" open={group.items.some((item) => item.href === current)}>
           <summary>{group.title}</summary>
           <nav aria-label={`${group.title} navigation`}>
             {group.items.map((item) => {
