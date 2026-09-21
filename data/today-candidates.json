@@ -1,19 +1,20 @@
 {
-  "collected_at": "2026-09-21T21:12:17.409840+09:00",
-  "window_start": "2026-07-23T21:12:17.409840+09:00",
-  "window_end": "2026-09-21T21:12:17.409840+09:00",
-  "edition_date": "2026-09-21",
+  "collected_at": "2026-09-22T06:25:55.323420+09:00",
+  "window_start": "2026-07-24T06:25:55.323420+09:00",
+  "window_end": "2026-09-22T06:25:55.323420+09:00",
+  "edition_date": "2026-09-22",
   "sources": [
     {
       "id": "openai-news",
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 109,
-      "coverage_limited": false
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "Retry-After 대기시간 초과 (9245.0초)"
     },
     {
       "id": "google-ai",
@@ -33,7 +34,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 153,
+      "excluded_count": 154,
       "skipped_count": 20,
       "coverage_limited": false
     },
@@ -63,12 +64,13 @@
       "id": "grok-releases",
       "name": "Grok Releases",
       "url": "https://docs.x.ai/developers/release-notes",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
-      "coverage_limited": false
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "Retry-After 대기시간 초과 (9223.0초)"
     },
     {
       "id": "anthropic-news",
@@ -85,12 +87,13 @@
       "id": "xai-news",
       "name": "xAI News",
       "url": "https://x.ai/news",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 60,
-      "skipped_count": 22,
-      "coverage_limited": false
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "Retry-After 대기시간 초과 (9221.0초)"
     }
   ],
   "new_count": 0,
