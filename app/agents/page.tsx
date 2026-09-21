@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
-import { agentDocs, agentsMetadata, isDocFreshnessWarning, getAgentReviewStatus } from "../content";
+import { agentDocs, agentsMetadata, isDocFreshnessWarning } from "../content";
 
 export const metadata: Metadata = {
   title: "주요 AI Agent 비교 · AgentTutor",
@@ -14,9 +14,6 @@ type AllowedForm = (typeof ALLOWED_FORMS)[number];
 
 const ALLOWED_TOOLS = ["MCP", "IDE", "Terminal"] as const;
 type AllowedTool = (typeof ALLOWED_TOOLS)[number];
-
-const ALLOWED_STATUSES = ["공식 확인", "조건부", "확인 필요"] as const;
-type AllowedStatus = (typeof ALLOWED_STATUSES)[number];
 
 function normalizeForm(param?: string): AllowedForm | "" {
   if (!param) return "";
@@ -30,47 +27,19 @@ function normalizeTool(param?: string): AllowedTool | "" {
   return match ?? "";
 }
 
-function normalizeStatus(param?: string): AllowedStatus | "" {
-  if (!param) return "";
-  const trimmed = param.trim().toLowerCase();
-  if (
-    trimmed === "공식 확인" ||
-    trimmed === "공식확인" ||
-    trimmed === "공식지원확인" ||
-    trimmed === "confirmed" ||
-    trimmed === "official"
-  ) {
-    return "공식 확인";
-  }
-  if (trimmed === "조건부" || trimmed === "conditional") {
-    return "조건부";
-  }
-  if (
-    trimmed === "확인 필요" ||
-    trimmed === "확인필요" ||
-    trimmed === "warning" ||
-    trimmed === "needs_review"
-  ) {
-    return "확인 필요";
-  }
-  return "";
-}
-
 export default async function AgentsIndexPage({
   searchParams
 }: {
-  searchParams?: Promise<{ form?: string | string[]; tool?: string | string[]; status?: string | string[] }>;
+  searchParams?: Promise<{ form?: string | string[]; tool?: string | string[] }>;
 }) {
   const params = searchParams ? await searchParams : {};
   const rawForm = Array.isArray(params.form) ? params.form[0] : params.form;
   const rawTool = Array.isArray(params.tool) ? params.tool[0] : params.tool;
-  const rawStatus = Array.isArray(params.status) ? params.status[0] : params.status;
 
   const selectedForm = normalizeForm(rawForm);
   const selectedTool = normalizeTool(rawTool);
-  const selectedStatus = normalizeStatus(rawStatus);
 
-  const hasActiveFilter = Boolean(selectedForm || selectedTool || selectedStatus);
+  const hasActiveFilter = Boolean(selectedForm || selectedTool);
   const hasVerificationWarning = agentDocs.some((doc) => isDocFreshnessWarning(doc));
   const reviewedDate = agentsMetadata.reviewed_at ? agentsMetadata.reviewed_at.split("T")[0] : "2026-09-20";
 
@@ -85,11 +54,6 @@ export default async function AgentsIndexPage({
     if (selectedTool) {
       const matchTool = agent.tool_modes && agent.tool_modes.includes(selectedTool);
       if (!matchTool) return false;
-    }
-
-    if (selectedStatus) {
-      const currentReviewStatus = getAgentReviewStatus(agent);
-      if (currentReviewStatus !== selectedStatus) return false;
     }
 
     return true;
@@ -122,7 +86,7 @@ export default async function AgentsIndexPage({
             <div className="section-head">
               <div>
                 <h2>에이전트 목록형 비교</h2>
-                <p className="section-note">조밀한 목록에서 주요 사양, 도구 연동 방식, 검토 상태를 비교합니다.</p>
+                <p className="section-note">조밀한 목록에서 주요 사양, 도구 연동 방식, 핵심 강점을 비교합니다.</p>
               </div>
             </div>
 
@@ -168,23 +132,6 @@ export default async function AgentsIndexPage({
                 </select>
               </div>
 
-              <div className="filter-field">
-                <label htmlFor="filter-status" className="filter-label">
-                  검토 상태
-                </label>
-                <select
-                  id="filter-status"
-                  name="status"
-                  defaultValue={selectedStatus}
-                  className="filter-select"
-                >
-                  <option value="">검토 상태: 전체</option>
-                  <option value="공식 확인">공식 확인</option>
-                  <option value="조건부">조건부</option>
-                  <option value="확인 필요">확인 필요</option>
-                </select>
-              </div>
-
               <div className="filter-actions">
                 <button type="submit" className="filter-submit-btn">
                   필터 적용
@@ -214,7 +161,6 @@ export default async function AgentsIndexPage({
                       <th scope="col">에이전트 · 개발사</th>
                       <th scope="col">제공 형태</th>
                       <th scope="col">도구 방식</th>
-                      <th scope="col">검토 상태</th>
                       <th scope="col">핵심 강점 & 적합한 상황</th>
                       <th scope="col">공식 출처 · 검토일</th>
                       <th scope="col">상세</th>
@@ -222,7 +168,6 @@ export default async function AgentsIndexPage({
                   </thead>
                   <tbody>
                     {filteredAgents.map((agent) => {
-                      const reviewStatus = getAgentReviewStatus(agent);
                       return (
                         <tr key={agent.slug} className="agent-table-row">
                           <td>
@@ -266,20 +211,6 @@ export default async function AgentsIndexPage({
                                 <span style={{ color: "var(--muted)", fontSize: "0.8rem" }}>-</span>
                               )}
                             </div>
-                          </td>
-                          <td>
-                            <span
-                              className={
-                                reviewStatus === "공식 확인"
-                                  ? "status-confirmed"
-                                  : reviewStatus === "조건부"
-                                  ? "status-conditional"
-                                  : "status-unconfirmed"
-                              }
-                              style={{ fontSize: "0.72rem", padding: "2px 7px" }}
-                            >
-                              {reviewStatus}
-                            </span>
                           </td>
                           <td style={{ fontSize: "0.88rem", color: "#374151" }}>
                             {agent.tagline}

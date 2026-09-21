@@ -179,13 +179,12 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .filter-count { font-size: .84rem; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
 
 .agents-table-wrap table { min-width: 860px; width: 100%; table-layout: fixed; }
-.agents-table th:nth-child(1), .agents-table td:nth-child(1) { width: 15%; }
-.agents-table th:nth-child(2), .agents-table td:nth-child(2) { width: 18%; }
+.agents-table th:nth-child(1), .agents-table td:nth-child(1) { width: 16%; }
+.agents-table th:nth-child(2), .agents-table td:nth-child(2) { width: 20%; }
 .agents-table th:nth-child(3), .agents-table td:nth-child(3) { width: 12%; }
-.agents-table th:nth-child(4), .agents-table td:nth-child(4) { width: 12%; }
-.agents-table th:nth-child(5), .agents-table td:nth-child(5) { width: 25%; }
-.agents-table th:nth-child(6), .agents-table td:nth-child(6) { width: 11%; }
-.agents-table th:nth-child(7), .agents-table td:nth-child(7) { width: 7%; }
+.agents-table th:nth-child(4), .agents-table td:nth-child(4) { width: 32%; }
+.agents-table th:nth-child(5), .agents-table td:nth-child(5) { width: 12%; }
+.agents-table th:nth-child(6), .agents-table td:nth-child(6) { width: 8%; }
 .agent-table-row { position: relative; transition: background-color .15s ease; cursor: pointer; }
 .agent-table-row:hover { background-color: var(--wash); }
 .agent-row-link { color: var(--ink); text-decoration: none; font-size: .95rem; font-weight: 750; }
