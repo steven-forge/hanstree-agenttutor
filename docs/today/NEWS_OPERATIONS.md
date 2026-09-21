@@ -1,6 +1,30 @@
 # Today 뉴스 및 문서 출처 운영 지침 (NEWS OPERATIONS)
 
-## 0. v0.4.0 Releases 분리 및 한국어 릴리스 요약 (현재 운영 기준)
+## 0. v0.5.0 Claude Code·Grok Releases 추가 (현재 운영 기준)
+
+- **화면 및 출처 분리**:
+  - `AI 뉴스레터`(`/today`): 일반 뉴스 전용. 4개 release source(`codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases`)를 기사 수, 페이징, 목록, 출처 점검 상태, 안내 문구에서 완전히 제외한다.
+  - `Releases`(`/releases`): 개발 도구 릴리스 전용. 4개 release source(`codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases`)만 최신순 10개씩 페이징 노출한다. 소개 문구는 Codex, Claude Code, Gemini CLI, Grok을 모두 명시한다.
+- **공식 출처 및 60일 실측**:
+  - `claude-releases`: `https://github.com/anthropics/claude-code/releases`, GitHub API `anthropics/claude-code`, 최근 60일 49건 실측.
+  - `grok-releases`: `https://docs.x.ai/developers/release-notes`, 공식 HTML, 최근 60일 8건 실측. (Markdown URL은 날짜가 빠지므로 제외)
+  - 총 예상 신규 릴리스: 57건 (Claude 49건 + Grok 8건).
+- **수집 및 파싱 기준**:
+  - **Claude Code**: 기존 `parse_github_releases`를 그대로 재사용해 source config 한 줄을 추가한다. 버전형 제목은 `Claude Code vX 버전 출시`로 생성하고, 기존 3분류(new_features, bug_fixes, chores) 요약·번역·archive 보강을 그대로 활용한다.
+  - **Grok**: Python stdlib `HTMLParser`로 `<main>` 안의 월 `h2`, 날짜 div(예: `September 17`), 항목 `h3 id=...`, 설명 `p`/`li`를 파싱한다. script/style 데이터는 무시한다. 페이지 최신 연도는 `window_end`의 KST 연도이며, `December 2025` 같은 명시 연도 제목을 지원한다. 날짜는 원문에 시각이 없으므로 `published_on`/`date_precision: day`로 보존한다.
+  - **URL 정규화 (Fragment 보존)**: Grok 항목 URL은 `https://docs.x.ai/developers/release-notes#<h3-id>`이며, `canonicalize_url`은 이 경로에 한해 fragment를 보존하여 항목별 식별과 중복 제거를 지원한다. 다른 URL fragment 정책은 변경하지 않는다.
+  - **Grok 요약 및 분류**: 항목 설명은 기본 `new_features`로 최대 3개·420바이트 요약 후 한국어 번역한다. 제목에 retirement/deprecation/deprecated가 있으면 `chores`로 분류한다. `bug_fixes`는 공식 본문에 해당 내용이 없으므로 비운다. `release_notes_ko`는 항상 포함한다.
+  - **후보 생성 및 무결성**: 신규 Grok 후보도 `make_candidate`를 사용해 한국어 제목, 원문 요약, 초보자 해설을 갖추며, 번역 실패 시 해당 출처 실패 경로로 처리하고 영문만 공개하지 않는다. 공식 URL, 날짜, 제목, 설명이 불완전한 항목은 보류(`held_count`) 처리하며, 60일보다 오래된 항목에 도달하면 `coverage_limited=false`로 기록한다.
+  - **Source Config**: `Grok Releases`, URL `https://docs.x.ai/developers/release-notes`, type `xai_releases`를 추가하고 fetch status 및 content type을 확인한 후 parser로 넘긴다.
+  - **Archive 보강**: archive 보강 집계와 초보자 해설 release 판정도 4개 source(`RELEASE_SOURCE_IDS`)를 사용한다.
+- **데이터 보강 운영 명령**:
+  ```bash
+  python3 scripts/collect_content.py news
+  ```
+
+## 0.1 v0.4.0 Releases 분리 및 한국어 릴리스 요약 (역사 기록)
+
+아래 내용은 v0.4.0 기준 역사 기록이다. 충돌하면 위의 v0.5.0 구역이 우선한다.
 
 - **화면 및 출처 분리**:
   - `AI 뉴스레터`(`/today`): 일반 뉴스 전용. `codex-releases`와 `gemini-releases`를 기사 수, 페이징, 목록, 출처 점검 상태, 안내 문구에서 완전히 제외한다.

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const PAGE_SIZE = 10;
-const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases"]);
+const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases", "claude-releases", "grok-releases"]);
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
@@ -94,7 +94,7 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
               <p className="eyebrow">RELEASES</p>
               <h1>릴리스 요약</h1>
               <p className="lead">
-                최근 60일간 공식 출처에서 수집한 Codex 및 Gemini CLI의 최신 릴리스 소식과 변경 사항 요약을 최신순으로 제공합니다.
+                최근 60일간 공식 출처에서 수집한 Codex, Claude Code, Gemini CLI, Grok의 최신 릴리스 소식과 변경 사항 요약을 최신순으로 제공합니다.
               </p>
               <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 <span className="date">

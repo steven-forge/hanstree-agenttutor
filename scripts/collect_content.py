@@ -34,6 +34,7 @@ SUMMARY_MAX = 500
 MAX_RELEASE_PAGES = 20
 RELEASES_PER_PAGE = 30
 PRERELEASE_RE = re.compile(r'(?i)\b(alpha|beta|rc|preview|nightly)\b|[.-](alpha|beta|rc|preview|nightly)')
+RELEASE_SOURCE_IDS = {"codex-releases", "gemini-releases", "claude-releases", "grok-releases"}
 
 ALLOWED_HOSTS = {
     "openai.com", "www.openai.com", "learn.chatgpt.com", "developers.openai.com",
@@ -96,7 +97,9 @@ def canonicalize_url(url: str) -> str:
     filtered = [(k, v) for k, v in q_pairs if not (k.lower().startswith("utm_") or k.lower() in KNOWN_TRACKING_PARAMS)]
     new_query = urllib.parse.urlencode(filtered)
     path = parsed.path.rstrip("/") if parsed.path != "/" else "/"
-    return urllib.parse.urlunsplit((parsed.scheme.lower(), (parsed.hostname or "").lower(), path, new_query, ""))
+    hostname = (parsed.hostname or "").lower()
+    fragment = parsed.fragment if (hostname == "docs.x.ai" and path == "/developers/release-notes") else ""
+    return urllib.parse.urlunsplit((parsed.scheme.lower(), hostname, path, new_query, fragment))
 
 
 def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES, allowed_hosts=ALLOWED_HOSTS) -> tuple[int, dict, bytes]:
@@ -210,10 +213,17 @@ def translation_from_response(status: int, body: bytes) -> str:
 def translated_release_title(title: str, source_id: str) -> str | None:
     if not re.fullmatch(r"(?i)(?:release\s+)?v?\d[\w.-]*", title.strip()):
         return None
-    product = "Codex" if source_id == "codex-releases" else "Gemini CLI" if source_id == "gemini-releases" else None
+    product = (
+        "Codex" if source_id == "codex-releases"
+        else "Gemini CLI" if source_id == "gemini-releases"
+        else "Claude Code" if source_id == "claude-releases"
+        else None
+    )
     if not product:
         return None
     version = re.sub(r"(?i)^release\s+", "", title.strip())
+    if source_id == "claude-releases" and not version.lower().startswith("v"):
+        version = f"v{version}"
     return f"{product} {version} 버전 출시"
 
 
@@ -360,7 +370,7 @@ def build_release_notes_ko(body: str) -> dict[str, str]:
 
 def build_beginner_explanation(title: str, source_id: str, source_summary: str = "") -> str:
     """제목·공식 설명의 주제만 분류해 원문 밖의 사실을 만들지 않는 한국어 해설을 만든다."""
-    if source_id in {"codex-releases", "gemini-releases"}:
+    if source_id in RELEASE_SOURCE_IDS:
         return "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다."
 
     topics = [
@@ -675,6 +685,243 @@ def parse_github_releases(owner_repo: str, source_id: str, source_name: str, win
     return candidates, stats
 
 
+MONTH_MAP = {
+    "january": 1, "jan": 1,
+    "february": 2, "feb": 2,
+    "march": 3, "mar": 3,
+    "april": 4, "apr": 4,
+    "may": 5,
+    "june": 6, "jun": 6,
+    "july": 7, "jul": 7,
+    "august": 8, "aug": 8,
+    "september": 9, "sep": 9, "sept": 9,
+    "october": 10, "oct": 10,
+    "november": 11, "nov": 11,
+    "december": 12, "dec": 12,
+}
+
+
+def build_grok_release_notes_ko(title: str, descriptions: list[str]) -> dict[str, str]:
+    summary_en = build_release_summary_en(descriptions)
+    if not summary_en:
+        return {}
+    if needs_korean_translation(summary_en):
+        summary_ko = translate_to_korean(summary_en)
+    else:
+        summary_ko = summary_en
+    is_chore = bool(re.search(r"(?i)\b(retirement|deprecation|deprecated)\b", title))
+    cat = "chores" if is_chore else "new_features"
+    return {cat: summary_ko}
+
+
+class GrokReleaseParser(HTMLParser):
+    def __init__(self, window_end: datetime):
+        super().__init__()
+        self.window_end = window_end
+        self.current_year = window_end.astimezone(KST).year
+        self.current_month = None
+        self.current_date = None
+        self.main_depth = 0
+        self.ignore_depth = 0
+        self.current_tag = None
+        self.text_parts = []
+        self.item_title = ""
+        self.item_h3_id = ""
+        self.item_date = None
+        self.item_descriptions = []
+        self.raw_items = []
+        self.ignored_tags = {"script", "style", "noscript"}
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            self.ignore_depth += 1
+            return
+        if t == "main":
+            self.main_depth += 1
+            return
+        if self.main_depth == 0 or self.ignore_depth > 0:
+            return
+
+        if t == "h2":
+            self.current_tag = "h2"
+            self.text_parts = []
+        elif t == "h3":
+            self.flush_item()
+            self.current_tag = "h3"
+            self.text_parts = []
+            attr_dict = dict(attrs)
+            self.item_h3_id = attr_dict.get("id") or ""
+            self.item_date = self.current_date
+        elif t in ("p", "li"):
+            if self.item_h3_id or self.item_title:
+                self.current_tag = t
+                self.text_parts = []
+        elif t == "div":
+            self.current_tag = "div"
+            self.text_parts = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            if self.ignore_depth > 0:
+                self.ignore_depth -= 1
+            return
+        if t == "main":
+            if self.main_depth > 0:
+                self.main_depth -= 1
+            self.flush_item()
+            return
+        if self.main_depth == 0 or self.ignore_depth > 0:
+            return
+
+        if t == "h2" and self.current_tag == "h2":
+            text = clean_html_text("".join(self.text_parts)).strip()
+            ym = re.search(r"\b(20\d\d)\b", text)
+            if ym:
+                self.current_year = int(ym.group(1))
+            mm = re.search(r"(?i)\b(january|february|march|april|may|june|july|august|september|october|november|december)\b", text)
+            if mm:
+                self.current_month = MONTH_MAP[mm.group(1).lower()]
+            self.current_tag = None
+            self.text_parts = []
+        elif t == "div" and self.current_tag == "div":
+            text = clean_html_text("".join(self.text_parts)).strip()
+            parsed = self.parse_date_text(text)
+            if parsed:
+                self.current_date = parsed
+                if (self.item_h3_id or self.item_title) and self.item_date is None:
+                    self.item_date = parsed
+            self.current_tag = None
+            self.text_parts = []
+        elif t == "h3" and self.current_tag == "h3":
+            self.item_title = clean_html_text("".join(self.text_parts)).strip()
+            self.current_tag = None
+            self.text_parts = []
+        elif t in ("p", "li") and self.current_tag == t:
+            desc = clean_html_text("".join(self.text_parts)).strip()
+            if desc:
+                self.item_descriptions.append(desc)
+            self.current_tag = None
+            self.text_parts = []
+
+    def handle_data(self, data):
+        if self.ignore_depth > 0 or self.main_depth == 0:
+            return
+        if self.current_tag is not None:
+            self.text_parts.append(data)
+
+    def parse_date_text(self, text: str) -> datetime | None:
+        if not text:
+            return None
+        m = re.match(r"(?i)^(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s*,?\s*(\d{4}))?$", text)
+        if m:
+            month = MONTH_MAP[m.group(1).lower()]
+            day = int(m.group(2))
+            year = int(m.group(3)) if m.group(3) else self.current_year
+            try:
+                return datetime(year, month, day)
+            except ValueError:
+                return None
+        m_day = re.match(r"^(\d{1,2})(?:st|nd|rd|th)?$", text)
+        if m_day and self.current_month:
+            day = int(m_day.group(1))
+            try:
+                return datetime(self.current_year, self.current_month, day)
+            except ValueError:
+                return None
+        m_rev = re.match(r"(?i)^(\d{1,2})(?:st|nd|rd|th)?\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(?:\s*,?\s*(\d{4}))?$", text)
+        if m_rev:
+            day = int(m_rev.group(1))
+            month = MONTH_MAP[m_rev.group(2).lower()]
+            year = int(m_rev.group(3)) if m_rev.group(3) else self.current_year
+            try:
+                return datetime(year, month, day)
+            except ValueError:
+                return None
+        m_iso = re.match(r"^(\d{4})-(\d{2})-(\d{2})$", text)
+        if m_iso:
+            try:
+                return datetime(int(m_iso.group(1)), int(m_iso.group(2)), int(m_iso.group(3)))
+            except ValueError:
+                return None
+        return None
+
+    def flush_item(self):
+        if self.item_h3_id or self.item_title:
+            self.raw_items.append({
+                "title": self.item_title,
+                "h3_id": self.item_h3_id,
+                "date": self.item_date,
+                "descriptions": list(self.item_descriptions),
+            })
+        self.item_title = ""
+        self.item_h3_id = ""
+        self.item_date = None
+        self.item_descriptions = []
+
+    def close(self):
+        self.flush_item()
+        super().close()
+
+
+def parse_xai_releases(html_bytes: bytes, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, archive_by_url: dict = None) -> tuple[list[dict], dict]:
+    candidates = []
+    stats = new_stats()
+    reached_start = False
+
+    html_text = html_bytes.decode("utf-8", errors="replace")
+    parser = GrokReleaseParser(window_end)
+    if "<main" not in html_text.lower():
+        parser.main_depth = 1
+    parser.feed(html_text)
+    parser.close()
+
+    if not parser.raw_items:
+        raise RuntimeError(f"{source_name}: 릴리스 항목을 추출할 수 없습니다 (형식 변경 의심).")
+
+    for item in parser.raw_items:
+        title = item["title"].strip()
+        h3_id = item["h3_id"].strip()
+        date = item["date"]
+        descriptions = item["descriptions"]
+
+        if not title or not h3_id or date is None or not descriptions:
+            stats["held_count"] += 1
+            continue
+
+        item_url = f"https://docs.x.ai/developers/release-notes#{h3_id}"
+        try:
+            validate_url(item_url)
+        except ValueError:
+            stats["held_count"] += 1
+            continue
+
+        state, date_fields = classify_date(date, window_start, window_end)
+        if state == "old":
+            reached_start = True
+            continue
+        if state == "future":
+            stats["excluded_count"] += 1
+            continue
+
+        canonical_url = canonicalize_url(item_url)
+        if url_id(canonical_url) in known[0] or canonical_url in known[1]:
+            stats["skipped_count"] += 1
+            if archive_by_url:
+                target = archive_by_url.get(canonical_url) or archive_by_url.get(url_id(canonical_url))
+                if target is not None and target.get("release_notes_ko") is None:
+                    target["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
+            continue
+
+        cand = make_candidate(title, source_id, source_name, canonical_url, "\n".join(descriptions), date_fields)
+        cand["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
+        candidates.append(cand)
+
+    stats["coverage_limited"] = not reached_start
+    return candidates, stats
+
+
 def parse_html_news(index_url: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, old_urls: set = None) -> tuple[list[dict], dict]:
     """old_urls: 이전 실행에서 60일 시작보다 오래된 것으로 확정된 URL 캐시(제자리 갱신). 오래된 기사는 다시 범위에 들어오지 않는다."""
     candidates = []
@@ -833,21 +1080,23 @@ def collect_news() -> int:
 
     archive_release_lookup = {}
     for a in today["articles"]:
-        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"}:
+        if isinstance(a, dict) and a.get("source_id") in RELEASE_SOURCE_IDS:
             if "source_url" in a:
                 archive_release_lookup[canonicalize_url(a["source_url"])] = a
             if "id" in a:
                 archive_release_lookup[a["id"]] = a
     releases_missing_before = sum(
         1 for a in today["articles"]
-        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"} and a.get("release_notes_ko") is None
+        if isinstance(a, dict) and a.get("source_id") in RELEASE_SOURCE_IDS and a.get("release_notes_ko") is None
     )
 
     sources_def = [
         {"id": "openai-news", "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "type": "rss"},
         {"id": "google-ai", "name": "Google AI", "url": "https://blog.google/innovation-and-ai/technology/ai/rss/", "type": "rss"},
         {"id": "codex-releases", "name": "Codex Releases", "url": "https://github.com/openai/codex/releases", "type": "releases", "repo": "openai/codex"},
+        {"id": "claude-releases", "name": "Claude Code Releases", "url": "https://github.com/anthropics/claude-code/releases", "type": "releases", "repo": "anthropics/claude-code"},
         {"id": "gemini-releases", "name": "Gemini CLI Releases", "url": "https://github.com/google-gemini/gemini-cli/releases", "type": "releases", "repo": "google-gemini/gemini-cli"},
+        {"id": "grok-releases", "name": "Grok Releases", "url": "https://docs.x.ai/developers/release-notes", "type": "xai_releases"},
         {"id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html"},
         {"id": "xai-news", "name": "xAI News", "url": "https://x.ai/news", "type": "html"},
     ]
@@ -876,6 +1125,14 @@ def collect_news() -> int:
                 items, stats = parse_rss_feed(body, sid, sname, window_start, window_end, known)
             elif stype == "releases":
                 items, stats = parse_github_releases(sdef["repo"], sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
+            elif stype == "xai_releases":
+                status, headers, body = fetch_url(surl)
+                if status != 200:
+                    raise RuntimeError(f"HTTP {status}: {surl}")
+                ctype = headers.get("content-type", "")
+                if "text/html" not in ctype and not body.lstrip().startswith((b"<!DOCTYPE", b"<html")):
+                    raise RuntimeError(f"예상치 못한 Content-Type: {ctype}")
+                items, stats = parse_xai_releases(body, sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
             elif stype == "html":
                 old_urls = set(news_cache.get(sid, {}).get("old_urls", []))
                 items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls)
@@ -908,7 +1165,7 @@ def collect_news() -> int:
 
     releases_missing_after = sum(
         1 for a in today["articles"]
-        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"} and a.get("release_notes_ko") is None
+        if isinstance(a, dict) and a.get("source_id") in RELEASE_SOURCE_IDS and a.get("release_notes_ko") is None
     )
     releases_enriched = (releases_missing_after < releases_missing_before)
 

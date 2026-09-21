@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-21T20:05:22.981563+09:00",
-  "window_start": "2026-07-23T20:05:22.981563+09:00",
-  "window_end": "2026-09-21T20:05:22.981563+09:00",
+  "collected_at": "2026-09-21T21:12:17.409840+09:00",
+  "window_start": "2026-07-23T21:12:17.409840+09:00",
+  "window_end": "2026-09-21T21:12:17.409840+09:00",
   "edition_date": "2026-09-21",
   "sources": [
     {
@@ -38,6 +38,17 @@
       "coverage_limited": false
     },
     {
+      "id": "claude-releases",
+      "name": "Claude Code Releases",
+      "url": "https://github.com/anthropics/claude-code/releases",
+      "status": "ok",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 49,
+      "coverage_limited": false
+    },
+    {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
@@ -46,6 +57,17 @@
       "held_count": 0,
       "excluded_count": 66,
       "skipped_count": 10,
+      "coverage_limited": false
+    },
+    {
+      "id": "grok-releases",
+      "name": "Grok Releases",
+      "url": "https://docs.x.ai/developers/release-notes",
+      "status": "ok",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -72,6 +94,6 @@
     }
   ],
   "new_count": 0,
-  "archive_count": 192,
+  "archive_count": 249,
   "candidates": []
 }

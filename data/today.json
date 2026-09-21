@@ -6,6 +6,23 @@
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
+      "id": "369721da4af03abe",
+      "title": "v2.1.278",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.278",
+      "source_summary": "## What's changed - Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier overhead (`CLAUDE_CODE_AUTO_MODE_SERVER=0` opts out on Bedrock, Vertex, Foundry and gateways); warns on billed fallback. See https://code.claude.com/docs/en/auto-mode-classifier-billing - Added an `Auto mode server` row to `/status` showing whether this session's auto mode classifier runs on the ser",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-19T03:10:40+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.278 버전 출시",
+      "source_summary_ko": "## 변경 사항 - Claude API 및 Enterprise 사용자, 그리고 Bedrock, Vertex, Foundry 및 게이트웨이에서 auto 모드가 분류기 오버헤드 비용이 청구되지 않는 서버 측 분류기를 기본으로 사용하도록 변경(`CLAUDE_CODE_AUTO_MODE_SERVER=0`으로 Bedrock, Vertex, Foundry 및 게이트웨이에서 비활성화 가능); 과금되는 폴백 발생 시 경고 표시. https://code.claude.com/docs/en/auto-mode-classifier-billing 참조 - 이번 세션의 auto 모드 분류기가 서버에서 실행되는지 여부를 보여주는 `Auto mode server` 행을 `/status`에 추가",
+      "release_notes_ko": {
+        "chores": "Claude API 및 Enterprise 사용자, 그리고 Bedrock, Vertex, Foundry 및 게이트웨이에서 auto 모드가 분류기 오버헤드 비용이 청구되지 않는 서버 측 분류기를 기본으로 사용하도록 변경(`CLAUDE_CODE_AUTO_MODE_SERVER=0`으로 Bedrock, Vertex, Foundry 및 게이트웨이에서 비활성화 가능); 과금되는 폴백 발생 시 경고 표시. https://code.claude.com/docs/en/auto-mode-classifier-billing 참조"
+      }
+    },
+    {
       "id": "028ae8f2158c4c5c",
       "title": "0.155.1",
       "title_ko": "Codex 0.155.1 버전 출시",
@@ -20,6 +37,23 @@
       "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
       "release_notes_ko": {
         "bug_fixes": "새로운 로컬 TUI 세션은 이제 추론 요약을 기본적으로 비활성화 상태로 유지하며, 이를 지원하지 않는 제공업체의 요청 거절을 수정합니다. 명백한 추론 - 요약 설정은 그대로 유지됩니다."
+      }
+    },
+    {
+      "id": "01cd6a498d377caf",
+      "title": "v2.1.277",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.277",
+      "source_summary": "## What's changed - Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under \"Project instructions\" in `/config` (not yet on Bedrock, Vertex or Foundry) - Added `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` for Claude apps gateways whose only egress is a forward proxy: every outbound request hands the proxy the hostname instead of resolving it locally - Added an optional `headers:` map on Claude apps gateway upstreams, to send static headers to ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-18T18:06:32+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.277 버전 출시",
+      "source_summary_ko": "## 변경 사항 - AGENTS.md 지원 추가: CLAUDE.md가 없는 프로젝트에서 Claude Code가 대신 AGENTS.md를 읽음; `/config`의 \"Project instructions\"에서 변경 가능(Bedrock, Vertex, Foundry는 아직 미지원) - 유일한 송신(egress) 경로가 포워드 프록시인 Claude 앱 게이트웨이를 위한 `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` 추가: 모든 아웃바운드 요청이 로컬에서 호스트를 확인하는 대신 프록시에 호스트 이름을 전달함 - 정적 헤더를 전송하기 위해 Claude 앱 게이트웨이 업스트림에 선택적 `headers:` 맵 추가",
+      "release_notes_ko": {
+        "chores": "AGENTS.md 지원 추가: CLAUDE.md가 없는 프로젝트에서 Claude Code가 대신 AGENTS.md를 읽음; `/config`의 \"Project instructions\"에서 변경 가능(Bedrock, Vertex, Foundry는 아직 미지원)\n유일한 송신(egress) 경로가 포워드 프록시인 Claude 앱 게이트웨이를 위한 `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` 추가: 모든 아웃바운드 요청이 로컬에서 확인하는 대신 프록시에 호스트 이름을 전달함"
       }
     },
     {
@@ -65,6 +99,23 @@
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
     },
     {
+      "id": "8f9e2f8ba8bd1533",
+      "title": "v2.1.276",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.276",
+      "source_summary": "## What's changed - Fixed every request failing with `400 … Input tag 'advisor_20260301'` when `ANTHROPIC_BASE_URL` points at a proxy or gateway (2.1.275 regression)",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-18T02:12:26+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.276 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `ANTHROPIC_BASE_URL`이 프록시 또는 게이트웨이를 가리킬 때 모든 요청이 `400 … Input tag 'advisor_20260301'` 오류로 실패하던 문제 수정(2.1.275 회귀 버그)",
+      "release_notes_ko": {
+        "chores": "`ANTHROPIC_BASE_URL`이 프록시 또는 게이트웨이를 가리킬 때 모든 요청이 `400 … Input tag 'advisor_20260301'` 오류로 실패하던 문제 수정(2.1.275 회귀 버그)"
+      }
+    },
+    {
       "id": "ce5508c16c0a4e20",
       "title": "SpaceXAI, 음성 전사 모델 Grok Voice Transcribe 2.0 발표",
       "summary": "SpaceXAI가 녹음 파일 및 실시간 스트리밍 음성을 텍스트로 변환하는 새 모델을 공개했습니다. 언어 자동 감지와 단어별 타임스탬프, 화자 분리를 지원하며 잡음 및 다국어 환경 처리 개선을 강조했습니다.",
@@ -91,6 +142,23 @@
         "new_features": "`/experimental` 을 통해 지원되는 빌드에 실시간 성적표 및 마이크 컨트롤이 포함된 실험적 `/voice` 대화가 추가되었습니다.\n이제 TUI는 성공적인 턴 후 상태 행 및 완료 타임스탬프에 실시간 추론 요약을 표시합니다.\n상담원 개요에 작업 숨기기, 보관 및 삭제, 작업 트리 소유권 세부 정보 추가, 깨끗하게 관리되는 작업 트리 삭제 확인을 추가했습니다.",
         "bug_fixes": "이제 턴이 시작되기 전에 압축에 실패하더라도 허용된 프롬프트가 저장됩니다.\n누락된 tmux 크기, 대화록 뷰포트 복원 및 스레드 전환 후 표시되는 오래된 기록을 수정했습니다.\nMCP 서버는 이제 만료된 OAuth 자격 증명을 정확하게 보고하고 토큰 새로 고침이 실패할 때 재연결 지침을 제공합니다.",
         "chores": "일치하는 버전을 사용하고 SDK 게시 전에 런타임 자산을 확인하여 안정적인 CLI 릴리스로 Python SDK 및 런타임 게시를 정렬했습니다."
+      }
+    },
+    {
+      "id": "733392711551a1c3",
+      "title": "v2.1.275",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
+      "source_summary": "## What's changed - Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and `/status` shows it - Added a send-now key (ctrl+enter, or ctrl+x ctrl+s) that interrupts the current turn and sends all queued messages at once; sent and queued messages show in gray until the model receives them - Added a startup warning when a configured `otelHeadersHelper` fails, so sessions that silently export no telemetry are noticed ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-17T22:33:17+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.275 버전 출시",
+      "source_summary_ko": "## 변경 사항 - Claude 앱 게이트웨이 로그인 시 로그인된 계정 표시 추가: 게이트웨이가 계정명을 지정하면 자격 증명이 저장되기 전에 확인하며 `/status`에 표시됨 - 현재 턴을 중단하고 대기 중인 모든 메시지를 한 번에 전송하는 즉시 전송 키(Ctrl+Enter 또는 Ctrl+X Ctrl+S) 추가; 전송 및 대기 중인 메시지는 모델이 수신할 때까지 회색으로 표시됨 - 설정된 `otelHeadersHelper` 실패 시 시작 경고 추가로 원격 분석 데이터가 전송되지 않는 세션을 인지할 수 있도록 개선",
+      "release_notes_ko": {
+        "chores": "Claude 앱 게이트웨이 로그인 시 로그인된 계정 표시 추가: 게이트웨이가 계정명을 지정하면 자격 증명이 저장되기 전에 확인하며 `/status`에 표시됨\n현재 턴을 중단하고 대기 중인 모든 메시지를 한 번에 전송하는 즉시 전송 키(Ctrl+Enter 또는 Ctrl+X Ctrl+S) 추가; 전송 및 대기 중인 메시지는 모델이 수신할 때까지 회색으로 표시됨"
       }
     },
     {
@@ -132,6 +200,23 @@
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
     },
     {
+      "id": "5744b97e5a176886",
+      "title": "v2.1.274",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
+      "source_summary": "## What's changed - Added a visible warning when memory usage is critical, with steps to free memory or restart safely - Added `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` to bound how long the first non-interactive turn waits for connecting MCP servers (`0` = don't wait) - Added `effort` attribute to the `claude_code.llm_request` OpenTelemetry trace span, matching the `api_request` event - Added `claude_code.managed_settings_resolved` OTel event: managed-settings sources and policy helper state; redacted ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-17T00:12:02+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.274 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 메모리 사용량이 위험 수준일 때 시각적 경고 및 메모리 확보 또는 안전한 재시작 단계 안내 추가 - 첫 번째 비대화형 턴에서 MCP 서버 연결 대기 시간을 제한하는 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` 추가(`0` = 대기 안 함) - `api_request` 이벤트와 일치하도록 `claude_code.llm_request` OpenTelemetry 추적 스팬에 `effort` 속성 추가 - `claude_code.managed_settings_resolved` OTel 이벤트 추가: 관리형 설정 소스 및 정책 헬퍼 상태 기록",
+      "release_notes_ko": {
+        "chores": "메모리 사용량이 위험 수준일 때 시각적 경고 및 메모리 확보 또는 안전한 재시작 단계 안내 추가\n첫 번째 비대화형 턴에서 MCP 서버 연결 대기 시간을 제한하는 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` 추가(`0` = 대기 안 함)\n`api_request` 이벤트와 일치하도록 `claude_code.llm_request` OpenTelemetry 추적 스팬에 `effort` 속성 추가"
+      }
+    },
+    {
       "id": "192794312f979cbd",
       "title": "OpenAI, 법률 업무 특화 플랫폼 Astra for Law 공개",
       "summary": "OpenAI는 GPT-6 Astra에 법률 검색 색인과 전문 분석·작성 지침, 도구를 결합한 Astra for Law를 소개했습니다. 로펌과 법률 기술 기업이 자신의 전문성을 바탕으로 제품과 업무 흐름을 구성하는 기반입니다.",
@@ -164,6 +249,23 @@
       "published_at": "2026-09-16T16:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "AI를 배우고 사용하는 사람이 넓어질수록 쉬운 교육과 연령에 맞는 보호 장치가 중요해집니다. 초보자는 사용법뿐 아니라 개인정보와 잘못된 답을 확인하는 방법도 함께 익혀야 합니다."
+    },
+    {
+      "id": "33a8da1b15651f68",
+      "title": "Grok Voice Transcribe 2.0",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-voice-transcribe-20",
+      "source_summary": "grok-voice-transcribe-2.0 is now available. Use grok-voice-transcribe-1.0 or grok-voice-transcribe-2.0; the default is grok-voice-transcribe-1.0. See the Speech to Text docs.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_on": "2026-09-17",
+      "date_precision": "day",
+      "title_ko": "Grok Voice Transcribe 2.0 출시",
+      "source_summary_ko": "grok-voice-transcribe-2.0을 이제 사용할 수 있습니다. grok-voice-transcribe-1.0 또는 grok-voice-transcribe-2.0을 사용할 수 있으며 기본값은 grok-voice-transcribe-1.0입니다. Speech to Text 문서를 참조하세요.",
+      "release_notes_ko": {
+        "new_features": "grok-voice-transcribe-2.0을 이제 사용할 수 있습니다. grok-voice-transcribe-1.0 또는 grok-voice-transcribe-2.0을 사용할 수 있으며 기본값은 grok-voice-transcribe-1.0입니다. Speech to Text 문서를 참조하세요."
+      }
     },
     {
       "id": "a3c8e138d995ff55",
@@ -257,6 +359,23 @@
       }
     },
     {
+      "id": "6726c9df5fadbf36",
+      "title": "v2.1.273",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
+      "source_summary": "## What's changed - Added `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction` and `x-claude-code-context-compacted` request headers for LLM gateways; opt in with `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` - Added a notification when an MCP server disconnects mid-session and automatic reconnection gives up, pointing at `/mcp` - Added forking a session started with `claude --remote-control` or `/remote-control` from the Claude app; t",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-15T20:23:03+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.273 버전 출시",
+      "source_summary_ko": "## 변경 사항 - LLM 게이트웨이를 위한 `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`, `x-claude-code-context-compacted` 요청 헤더 추가 (`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`로 활성화) - 세션 중간에 MCP 서버 연결이 끊어지고 자동 재연결이 중단되었을 때 `/mcp`를 안내하는 알림 추가 - Claude 앱에서 `claude --remote-control` 또는 `/remote-control`로 시작된 세션을 포크하는 기능 추가",
+      "release_notes_ko": {
+        "chores": "LLM 게이트웨이를 위한 `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`, `x-claude-code-context-compacted` 요청 헤더 추가 (`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`로 활성화)\n세션 중간에 MCP 서버 연결이 끊어지고 자동 재연결이 중단되었을 때 `/mcp`를 안내하는 알림 추가"
+      }
+    },
+    {
       "id": "419a0d7bd8653188",
       "title": "Building AI to accelerate science and improve lives",
       "title_ko": "과학을 가속화하고 삶을 개선하는 AI 구축",
@@ -309,6 +428,40 @@
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
     },
     {
+      "id": "3f132fb2c563cba4",
+      "title": "v2.1.272",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-15T00:42:25+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.272 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "ba3341f9799b1e8e",
+      "title": "v2.1.271",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
+      "source_summary": "## What's changed - Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or `/fast` typed in the session applies where your organization allows it - Added mouse support to the `/config` panel in fullscreen mode: the wheel scrolls the settings list, a click on a setting's value changes it, and the row under the pointer is highlighted - Added `claude self-hosted-runner --drain-marker-file `: when that file exists at a SIGTERM drain, the runne",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-14T22:12:54+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.271 버전 출시",
+      "source_summary_ko": "## 변경 사항 - Claude Code 원격 세션(클라우드 및 자체 호스팅 러너)에 고속 모드(fast mode) 추가: 조직에서 허용하는 경우 호스트의 fast-mode 설정 또는 세션에서 입력한 `/fast` 적용 - 전체 화면 모드에서 `/config` 패널에 마우스 지원 추가: 휠로 설정 목록 스크롤, 설정 값 클릭 시 변경, 포인터 아래 행 강조 표시 - `claude self-hosted-runner --drain-marker-file ` 추가: SIGTERM 드레인 시 해당 파일이 존재하면 러너 종료 처리",
+      "release_notes_ko": {
+        "chores": "Claude Code 원격 세션(클라우드 및 자체 호스팅 러너)에 고속 모드(fast mode) 추가: 조직에서 허용하는 경우 호스트의 fast-mode 설정 또는 세션에서 입력한 `/fast` 적용\n전체 화면 모드에서 `/config` 패널에 마우스 지원 추가: 휠로 설정 목록 스크롤, 설정 값 클릭 시 변경, 포인터 아래 행 강조 표시"
+      }
+    },
+    {
       "id": "ff082bc32dcf39bf",
       "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
       "title_ko": "우주비행사 Christina Koch와 Google의 James Manyika가 나누는 우주, 기술, 발견에 대한 대화",
@@ -357,6 +510,40 @@
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
     },
     {
+      "id": "2a68cabb6c20de64",
+      "title": "v2.1.270",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.270",
+      "source_summary": "## What's changed - Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-12T19:45:44+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.270 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 세션이 일정 시간 실행된 후 Bash에서 읽기 전용 git 명령어가 예기치 않게 권한을 요청하던 문제 수정(2.1.269 회귀 버그)",
+      "release_notes_ko": {
+        "chores": "세션이 일정 시간 실행된 후 Bash에서 읽기 전용 git 명령어가 예기치 않게 권한을 요청하던 문제 수정(2.1.269 회귀 버그)"
+      }
+    },
+    {
+      "id": "861b32064a74b3b8",
+      "title": "v2.1.269",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.269",
+      "source_summary": "## What's changed - Added `claude plugin eval`: run a plugin's eval suite against Claude Code and get scored, reproducible results (JSON + HTML report); see `claude plugin eval --help` - Added `/output-style [name]` to list and switch output styles, including over Remote Control and in cloud and other headless sessions - Added a diff of the files a Bash command changed to the Bash tool result when the Bash tool handles file edits (setting `bashEditDiffEnabled`) - Added `OTEL_METRICS_INCLUDE_REPO",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-11T19:17:55+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.269 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `claude plugin eval` 추가: Claude Code에 대해 플러그인의 평가 제품군을 실행하고 점수화된 재현 가능한 결과(JSON + HTML 보고서) 생성 (`claude plugin eval --help` 참조) - Remote Control 및 클라우드 등 기타 헤드리스 세션을 포함하여 출력 스타일을 나열하고 전환하는 `/output-style [name]` 추가 - Bash 도구가 파일 편집을 처리할 때 변경된 파일 diff를 Bash 도구 결과에 추가(`bashEditDiffEnabled` 설정) - `OTEL_METRICS_INCLUDE_REPO` 추가",
+      "release_notes_ko": {
+        "chores": "`claude plugin eval` 추가: Claude Code에 대해 플러그인의 평가 제품군을 실행하고 점수화된 재현 가능한 결과(JSON + HTML 보고서) 생성 (`claude plugin eval --help` 참조)\nRemote Control 및 클라우드 등 기타 헤드리스 세션을 포함하여 출력 스타일을 나열하고 전환하는 `/output-style [name]` 추가"
+      }
+    },
+    {
       "id": "4aeb82da9975e2f5",
       "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
       "title_ko": "Cognition, GPT-6 Astra로 Devin이 자체 작업을 테스트하도록 지원",
@@ -383,6 +570,23 @@
       "published_at": "2026-09-11T10:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
+    },
+    {
+      "id": "98ebc4a5c5a6d754",
+      "title": "v2.1.268",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.268",
+      "source_summary": "## What's changed - Added to the Claude apps gateway: with `pricing:` set in `gateway.yaml`, signed-in Claude Code clients receive the same rates through managed settings, so `/cost` and telemetry match the spend meter - Added a startup warning for gateways when `access_control.allow_cidrs` is empty, and a one-time warning the first time a request arrives from a public address - Added the `gatewayInternalNetworks` managed setting, letting administrators allow `/login` to a Claude apps gateway on",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-10T20:30:54+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.268 버전 출시",
+      "source_summary_ko": "## 변경 사항 - Claude 앱 게이트웨이 개선: `gateway.yaml`에 `pricing:`이 설정된 경우 로그인된 Claude Code 클라이언트가 관리형 설정을 통해 동일한 요율을 수신하여 `/cost` 및 원격 분석이 지출 측정기와 일치함 - 게이트웨이의 `access_control.allow_cidrs`가 비어 있을 때 시작 경고 추가 및 공용 주소에서 요청이 처음 도착할 때 일회성 경고 추가 - 관리자가 특정 네트워크에서 Claude 앱 게이트웨이로의 `/login`을 허용할 수 있는 `gatewayInternalNetworks` 관리형 설정 추가",
+      "release_notes_ko": {
+        "chores": "Claude 앱 게이트웨이 개선: `gateway.yaml`에 `pricing:`이 설정된 경우 로그인된 Claude Code 클라이언트가 관리형 설정을 통해 동일한 요율을 수신하여 `/cost` 및 원격 분석이 지출 측정기와 일치함\n게이트웨이의 `access_control.allow_cidrs`가 비어 있을 때 시작 경고 추가 및 공용 주소에서 요청이 처음 도착할 때 일회성 경고 추가"
+      }
     },
     {
       "id": "94bf6e711cee1f89",
@@ -519,6 +723,23 @@
       }
     },
     {
+      "id": "5ba86673e5548e8f",
+      "title": "v2.1.267",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.267",
+      "source_summary": "## What's changed - Added `maxEffortLevel` setting (top-level or per model under `modelSettings`): caps the effort level on every provider, including Bedrock, Vertex and Foundry; users can still pick a lower level - Added `--system-prompt-snapshot off` to render the system prompt fresh on every request instead of reusing the conversation's recorded prompt (for iterating on prompt text) - Fixed Cowork scheduled tasks in the cloud failing at startup for organizations whose managed settings require",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-09T19:58:14+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.267 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `maxEffortLevel` 설정 추가(최상위 또는 `modelSettings`의 모델별 설정): Bedrock, Vertex 및 Foundry를 포함한 모든 제공자에서 노력 수준(effort level)의 상한을 설정하며 사용자는 여전히 더 낮은 수준 선택 가능 - 프롬프트 텍스트 반복 작업을 위해 대화에 기록된 프롬프트를 재사용하는 대신 매 요청마다 시스템 프롬프트를 새로 렌더링하는 `--system-prompt-snapshot off` 추가 - 관리형 설정이 필요한 조직에서 클라우드의 Cowork 예약 작업이 시작 시 실패하던 문제 수정",
+      "release_notes_ko": {
+        "chores": "`maxEffortLevel` 설정 추가(최상위 또는 `modelSettings`의 모델별 설정): Bedrock, Vertex 및 Foundry를 포함한 모든 제공자에서 노력 수준(effort level)의 상한을 설정하며 사용자는 여전히 더 낮은 수준 선택 가능\n프롬프트 텍스트 반복 작업을 위해 대화에 기록된 프롬프트를 재사용하는 대신 매 요청마다 시스템 프롬프트를 새로 렌더링하는 `--system-prompt-snapshot off` 추가"
+      }
+    },
+    {
       "id": "3eb3e9557eb7038e",
       "title": "Paul Christiano joins OpenAI Foundation Board",
       "title_ko": "Paul Christiano, OpenAI Foundation 이사회 합류",
@@ -589,6 +810,23 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "9f6c5c8aa766c6f7",
+      "title": "v2.1.266",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.266",
+      "source_summary": "## What's changed - Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented `CLAUDE_CODE_USE_GATEWAY` environment variable, previously ignored unless `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` were both set, began forcing Cloud-gateway sign-in on its own in 2.1.265, so configurations that set it alongside an API key, `apiKeyHelper`, or custom auth headers failed every request with \"Not signed in to the Cloud gateway\". The variable on its own is ignored again; no ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-08T23:55:14+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.266 버전 출시",
+      "source_summary_ko": "## 변경 사항 - LLM 게이트웨이 및 프록시 설정에 영향을 주던 2.1.265 회귀 버그 수정: 이전에 `ANTHROPIC_BASE_URL`과 `ANTHROPIC_AUTH_TOKEN`이 둘 다 설정되지 않으면 무시되던 문서화되지 않은 `CLAUDE_CODE_USE_GATEWAY` 환경 변수가 2.1.265에서 단독으로 클라우드 게이트웨이 로그인을 강제하기 시작하여, API 키, `apiKeyHelper` 또는 사용자 지정 인증 헤더와 함께 설정된 구성에서 모든 요청이 \"Not signed in to the Cloud gateway\" 오류로 실패하던 문제였습니다. 이제 해당 변수는 단독으로는 다시 무시됩니다.",
+      "release_notes_ko": {
+        "chores": "LLM 게이트웨이 및 프록시 설정에 영향을 주던 2.1.265 회귀 버그 수정: 이전에 `ANTHROPIC_BASE_URL`과 `ANTHROPIC_AUTH_TOKEN`이 둘 다 설정되지 않으면 무시되던 문서화되지 않은 `CLAUDE_CODE_USE_GATEWAY` 환경 변수가 2.1.265에서 단독으로 클라우드 게이트웨이 로그인을 강제하여, API 키, `apiKeyHelper` 또는 사용자 지정 인증 헤더와 함께 설정된 구성에서 모든 요청이 \"Not signed in to the Cloud gateway\" 오류로 실패하던 문제 수정"
+      }
+    },
+    {
       "id": "961d0084bebb53ba",
       "title": "Release v0.59.0",
       "title_ko": "Gemini CLI v0.59.0 버전 출시",
@@ -604,6 +842,23 @@
       "release_notes_ko": {
         "bug_fixes": "fix (core): MCP OAuth 메타데이터 검색 및 인증에서 SSRF 방지\nfix (core): 장애 종료 작업 영역 신뢰를 적용하고 제한 모드에서 mcpServers 필터링",
         "chores": "V0.58.0-preview.0에 대한 변경 로그\nchore (release): 0.59.0-nightly.20260825.g812f7a2bc로 범프 버전"
+      }
+    },
+    {
+      "id": "03061493556813e5",
+      "title": "v2.1.265",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.265",
+      "source_summary": "## What's changed - Added `user.email` and `user.groups` to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions - Added support for pointing `--plugin-dir` at a folder of plugins: each child folder with a manifest loads, and children added or removed while running are picked up - Added a 1 GB cap on tool results saved to disk; the in-conversation preview says when a saved file was truncated - Fixed resuming a foreground-spawned subagent changing",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-08T20:37:31+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.265 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 터미널 세션과 마찬가지로 Claude Desktop 및 Cowork가 Claude 앱 게이트웨이를 통해 전송하는 원격 측정(telemetry)에 `user.email` 및 `user.groups` 추가 - 플러그인 폴더를 가리키는 `--plugin-dir` 지원 추가: 매니페스트가 있는 각 하위 폴더가 로드되며, 실행 중에 추가되거나 제거된 하위 폴더도 감지됨 - 디스크에 저장되는 도구 결과에 1GB 상한 추가; 저장된 파일이 잘렸을 때 대화 내 미리보기에 표시 - 포그라운드에서 생성된 서브에이전트를 재개할 때 동작이 변경되던 문제 수정",
+      "release_notes_ko": {
+        "chores": "터미널 세션과 마찬가지로 Claude Desktop 및 Cowork가 Claude 앱 게이트웨이를 통해 전송하는 원격 측정(telemetry)에 `user.email` 및 `user.groups` 추가\n플러그인 폴더를 가리키는 `--plugin-dir` 지원 추가: 매니페스트가 있는 각 하위 폴더가 로드되며 실행 중에 추가되거나 제거된 하위 폴더도 감지됨\n디스크에 저장되는 도구 결과에 1GB 상한 추가; 저장된 파일이 잘렸을 때 대화 내 미리보기에 표시"
       }
     },
     {
@@ -747,6 +1002,23 @@
       "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다."
     },
     {
+      "id": "254d61d6d41ff4c5",
+      "title": "v2.1.263",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-06T02:54:20+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.263 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
       "id": "cf565721454d59f8",
       "title": "0.153.4",
       "title_ko": "Codex 0.153.4 버전 출시",
@@ -761,6 +1033,23 @@
       "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
       "release_notes_ko": {
         "bug_fixes": "번들 모델 선택기에서 Astra의 가시성을 수정하고 모델이 명시적으로 구성되지 않은 경우 번들 기본값으로 설정했습니다.\n도구가 세션에서 사용 가능한 경우에만 비동기 질문을 사용하도록 Astra의 지침을 업데이트했습니다."
+      }
+    },
+    {
+      "id": "7c76a455bae5923b",
+      "title": "v2.1.261",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
+      "source_summary": "## What's changed - Added an \"Organization policy\" line to `/status` and `claude doctor` that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through - Added `bashOutputMaxChars` and `taskOutputMaxChars` settings to raise how much command and background-task output Claude receives inline before it is saved to a file, up to 128K characters - Added `--append-subagent-system-prompt-file` to read the subagent system prompt from a file, for prompts to",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-04T19:58:10+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.261 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 프록시가 엔드포인트를 통과시키지 못하는 등 조직 정책을 로드할 수 없는 이유를 표시하는 \"Organization policy\" 항목을 `/status` 및 `claude doctor`에 추가 - Claude가 명령어 및 백그라운드 작업 출력을 파일로 저장하기 전 인라인으로 수신하는 문자 수를 최대 128K자까지 늘리는 `bashOutputMaxChars` 및 `taskOutputMaxChars` 설정 추가 - 파일에서 서브에이전트 시스템 프롬프트를 읽어오는 `--append-subagent-system-prompt-file` 추가",
+      "release_notes_ko": {
+        "chores": "프록시가 엔드포인트를 통과시키지 못하는 등 조직 정책을 로드할 수 없는 이유를 표시하는 \"Organization policy\" 행을 `/status` 및 `claude doctor`에 추가\nClaude가 명령어 및 백그라운드 작업 출력을 파일로 저장하기 전 인라인으로 수신하는 문자 수를 최대 128K자까지 늘리는 `bashOutputMaxChars` 및 `taskOutputMaxChars` 설정 추가"
       }
     },
     {
@@ -810,6 +1099,23 @@
       "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
       "release_notes_ko": {
         "bug_fixes": "GPT-6-Astra Fast 등급 설명을 '1.5배' 대신 '2배속, 사용량 증가' 로 수정했습니다. ”이렇게 하면 요청이 실행되는 방식이 아니라 표시된 텍스트만 변경됩니다."
+      }
+    },
+    {
+      "id": "93601d11e4db33a8",
+      "title": "v2.1.260",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.260",
+      "source_summary": "## What's changed - Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with `/diff` - Added a likely cause for prompt-cache misses (e.g. tool definitions or system prompt changed, idle past the TTL) to `/cost` and the status line's `prompt_cache` field - Added `/reload-plugins` to headless sessions, so it appears in the Claude Code Desktop and SDK command lists - Added a text form of `/advisor` (`/advisor`, `/adv",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-03T23:48:12+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.260 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 전체 화면 모드에서 대화 옆에 열려 Claude가 편집할 때 커밋되지 않은 변경 사항을 보여주는 diff 패널 추가(`/diff`로 전환) - 프롬프트 캐시 미스의 예상 원인(예: 도구 정의 또는 시스템 프롬프트 변경, TTL 경과 유휴 상태)을 `/cost` 및 상태 표시줄의 `prompt_cache` 필드에 추가 - 헤드리스 세션에 `/reload-plugins`를 추가하여 Claude Code Desktop 및 SDK 명령 목록에 표시 - 텍스트 형식의 `/advisor`(`/advisor`, `/adv) 추가",
+      "release_notes_ko": {
+        "chores": "전체 화면 모드에서 대화 옆에 열려 Claude가 편집할 때 커밋되지 않은 변경 사항을 보여주는 diff 패널 추가(`/diff`로 전환)\n프롬프트 캐시 미스의 예상 원인(예: 도구 정의 또는 시스템 프롬프트 변경, TTL 경과 유휴 상태)을 `/cost` 및 상태 표시줄의 `prompt_cache` 필드에 추가"
       }
     },
     {
@@ -946,6 +1252,23 @@
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
     },
     {
+      "id": "0e371a11c328c372",
+      "title": "v2.1.259",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.259",
+      "source_summary": "## What's changed - Added `managedMcpServers` managed setting: organizations can provide HTTP/SSE MCP servers to every user (same entry shape as `.mcp.json`); entries that name a command to run are skipped - Added `--permission-prompts none` for unattended headless hosts: anything that would prompt is denied automatically while the active permission mode (including auto mode) keeps deciding - Added recognition of `glab mr create/merge/close/reopen/note/update` so GitLab merge requests show as `M",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-02T22:33:51+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.259 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `managedMcpServers` 관리형 설정 추가: 조직에서 모든 사용자에게 HTTP/SSE MCP 서버 제공 가능(`.mcp.json`과 동일한 항목 형식, 실행할 명령을 지정하는 항목은 건너뜀) - 무인 헤드리스 호스트를 위한 `--permission-prompts none` 추가: 확인 메시지가 필요한 모든 항목은 자동 거부되며 활성 권한 모드(auto 모드 포함)는 계속 결정을 수행함 - GitLab 병합 요청이 인식되도록 `glab mr create/merge/close/reopen/note/update` 인식 추가",
+      "release_notes_ko": {
+        "chores": "`managedMcpServers` 관리형 설정 추가: 조직에서 모든 사용자에게 HTTP/SSE MCP 서버 제공 가능(`.mcp.json`과 동일한 항목 형식, 실행할 명령을 지정하는 항목은 건너뜀)\n무인 헤드리스 호스트를 위한 `--permission-prompts none` 추가: 확인 메시지가 필요한 항목은 자동 거부되며 활성 권한 모드(auto 모드 포함)는 계속 결정 수행"
+      }
+    },
+    {
       "id": "445c9f3e3d31d266",
       "title": "Proactive cyber defense for governments and enterprises",
       "title_ko": "정부 및 기업을 위한 선제적 사이버 방어",
@@ -972,6 +1295,23 @@
       "published_at": "2026-09-02T12:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
+    },
+    {
+      "id": "23cf4e186c350d83",
+      "title": "v2.1.258",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.258",
+      "source_summary": "## What's changed - Fixed Claude Code failing to launch on macOS 12 (Monterey), a regression introduced in 2.1.255 - Fixed remote and scheduled sessions failing with \"user messages must have non-empty content\" after a re-sent permission approval could not be applied",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-01T22:33:20+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.258 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 2.1.255에서 발생했던 macOS 12(Monterey)에서 Claude Code가 실행되지 않던 회귀 버그 수정 - 재전송된 권한 승인을 적용할 수 없을 때 원격 및 예약 세션이 \"user messages must have non-empty content\" 오류로 실패하던 문제 수정",
+      "release_notes_ko": {
+        "chores": "2.1.255에서 발생했던 macOS 12(Monterey)에서 Claude Code가 실행되지 않던 회귀 버그 수정\n재전송된 권한 승인을 적용할 수 없을 때 원격 및 예약 세션이 \"user messages must have non-empty content\" 오류로 실패하던 문제 수정"
+      }
     },
     {
       "id": "f490c97781fc0cfa",
@@ -1023,6 +1363,23 @@
       "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다."
     },
     {
+      "id": "7728fa2f91b704b5",
+      "title": "v2.1.257",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.257",
+      "source_summary": "## What's changed - Added Claude Fable 5.1 (`claude-fable-5-1`), now the default Fable model — 1M context, $10/$50 per Mtok with $0.25/Mtok cache reads - Added \"Time format\" (`timeFormat`) and `timeZone` settings: 12-hour, 24-hour, 24-hour UTC, or a strftime pattern for the turn-end clock and transcript-view timestamps - Added a Containment Escape rule to auto mode so cloud metadata-credential fetches, egress evasion, and cross-tenant reach are no longer auto-approved unless your environment mar",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-09-01T17:53:52+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.257 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 이제 기본 Fable 모델인 Claude Fable 5.1(`claude-fable-5-1`) 추가 — 100만 토큰 컨텍스트, 100만 토큰당 $10/$50, 캐시 읽기 100만 토큰당 $0.25 - 턴 종료 시계 및 대화록 보기 타임스탬프를 위한 \"시간 형식\"(`timeFormat`) 및 `timeZone` 설정 추가: 12시간, 24시간, 24시간 UTC 또는 strftime 패턴 지원 - 클라우드 메타데이터 자격 증명 가져오기, 송신 우회 및 테넌트 간 접근이 자동으로 승인되지 않도록 auto 모드에 격리 탈출(Containment Escape) 규칙 추가",
+      "release_notes_ko": {
+        "chores": "이제 기본 Fable 모델인 Claude Fable 5.1(`claude-fable-5-1`) 추가 — 100만 토큰 컨텍스트, 100만 토큰당 $10/$50, 캐시 읽기 100만 토큰당 $0.25\n턴 종료 시계 및 대화록 보기 타임스탬프를 위한 \"시간 형식\"(`timeFormat`) 및 `timeZone` 설정 추가: 12시간, 24시간, 24시간 UTC 또는 strftime 패턴"
+      }
+    },
+    {
       "id": "b0cbef382238cdd5",
       "title": "How AI-native companies turn workflows into operating capability",
       "title_ko": "AI 네이티브 기업이 워크플로를 운영 역량으로 전환하는 방법",
@@ -1049,6 +1406,23 @@
       "published_at": "2026-09-01T16:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다."
+    },
+    {
+      "id": "b8b9597b8c73dd6a",
+      "title": "grok-imagine-image-quality retirement on November 2",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-imagine-image-quality-retirement-on-november-2",
+      "source_summary": "On November 2, 2026, grok-imagine-image-quality is retired. Requests to the slug will be served by grok-imagine-image-2.0 with quality set to low, with no change to the request or response shape and at a lower per-image price. grok-imagine-image (1.0) is not affected. See the migration guide.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_on": "2026-09-02",
+      "date_precision": "day",
+      "title_ko": "grok-imagine-image-quality 11월 2일 지원 종료",
+      "source_summary_ko": "2026년 11월 2일에 grok-imagine-image-quality가 지원 종료(retired)됩니다. 해당 슬러그로 들어오는 요청은 요청이나 응답 형식 변경 없이 더 저렴한 이미지당 가격으로 품질(quality)이 low로 설정된 grok-imagine-image-2.0에서 처리됩니다. grok-imagine-image(1.0)는 영향을 받지 않습니다. 마이그레이션 가이드를 참조하세요.",
+      "release_notes_ko": {
+        "chores": "2026년 11월 2일에 grok-imagine-image-quality가 지원 종료(retired)됩니다. 해당 슬러그로 들어오는 요청은 요청이나 응답 형식 변경 없이 더 저렴한 이미지당 가격으로 품질(quality)이 low로 설정된 grok-imagine-image-2.0에서 처리됩니다. grok-imagine-image(1.0)는 영향을 받지 않습니다. 마이그레이션 가이드를 참조하세요."
+      }
     },
     {
       "id": "f2694bfa96c49e91",
@@ -1124,6 +1498,23 @@
       "published_at": "2026-09-01T00:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
+    },
+    {
+      "id": "c2db1cf2bc94be3c",
+      "title": "v2.1.252",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.252",
+      "source_summary": "## What's changed - Fixed Bash commands failing with \"task output swap refused (tasks dir moved or linked)\" on some Macs - Fixed \"always allow\" not saving in a project that has no .claude/settings.local.json yet - Fixed Remote Control sessions hosted by Claude Desktop or VS Code stalling for minutes after a tool finished when the connection to claude.ai was degraded - Fixed background task notifications with very large failure output (for example git errors on a full disk) making the conversatio",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-31T19:46:55+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.252 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 일부 Mac에서 Bash 명령이 \"task output swap refused (tasks dir moved or linked)\" 오류로 실패하던 문제 수정 - 아직 .claude/settings.local.json이 없는 프로젝트에서 \"항상 허용\"이 저장되지 않던 문제 수정 - claude.ai와의 연결이 저하되었을 때 Claude Desktop 또는 VS Code에서 호스팅되는 Remote Control 세션이 도구 완료 후 몇 분 동안 멈추던 문제 수정 - 매우 큰 실패 출력(예: 디스크가 꽉 찼을 때의 git 오류)이 포함된 백그라운드 작업 알림으로 인한 문제 수정",
+      "release_notes_ko": {
+        "chores": "일부 Mac에서 Bash 명령이 \"task output swap refused (tasks dir moved or linked)\" 오류로 실패하던 문제 수정\n아직 .claude/settings.local.json이 없는 프로젝트에서 \"항상 허용\"이 저장되지 않던 문제 수정\nclaude.ai와의 연결이 저하되었을 때 Claude Desktop 또는 VS Code에서 호스팅되는 Remote Control 세션이 도구 완료 후 몇 분 동안 멈추던 문제 수정"
+      }
     },
     {
       "id": "b085c7f1762bfee8",
@@ -1229,6 +1620,23 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "2180229dc69461fd",
+      "title": "v2.1.251",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
+      "source_summary": "## What's changed - Added `PreModelSwitch` and `PostModelSwitch` hook events (block, confirm, or annotate a model switch); `SessionStart` resume hooks now receive session staleness and the estimated re-cache cost - Added live streaming of a foreground subagent's tool calls and results to Remote Control clients (background subagents, the default, still show status only) - Added a Spend limit bar to `/usage` and a `rate_limits.spend_limit` status line field for developers behind a Claude apps gate",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-28T18:19:32+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.251 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `PreModelSwitch` 및 `PostModelSwitch` 훅 이벤트 추가(모델 전환 차단, 확인 또는 주석 달기); 이제 `SessionStart` 재개 훅이 세션 비활성 기간과 예상 재캐시 비용을 수신함 - Remote Control 클라이언트에 포그라운드 서브에이전트의 도구 호출 및 결과 실시간 스트리밍 추가(기본값인 백그라운드 서브에이전트는 계속 상태만 표시) - Claude 앱 게이트웨이를 사용하는 개발자를 위해 `/usage`에 지출 한도 표시줄 및 상태 표시줄 `rate_limits.spend_limit` 필드 추가",
+      "release_notes_ko": {
+        "chores": "`PreModelSwitch` 및 `PostModelSwitch` 훅 이벤트 추가(모델 전환 차단, 확인 또는 주석 달기); 이제 `SessionStart` 재개 훅이 세션 비활성 기간과 예상 재캐시 비용을 수신함\nRemote Control 클라이언트에 포그라운드 서브에이전트의 도구 호출 및 결과 실시간 스트리밍 추가(기본값인 백그라운드 서브에이전트는 계속 상태만 표시)"
+      }
+    },
+    {
       "id": "b42ac281ecaf56c0",
       "title": "Our decision on Cursor following its acquisition by SpaceX",
       "title_ko": "SpaceX의 Cursor 인수에 따른 당사의 결정",
@@ -1257,6 +1665,40 @@
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
     },
     {
+      "id": "bfbd56339d1454ea",
+      "title": "v2.1.250",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-28T00:49:16+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.250 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "ca3eff0a8509d6f2",
+      "title": "v2.1.248",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.248",
+      "source_summary": "## What's changed - Added `--restricted` (or `CLAUDE_CODE_RESTRICTED=1`): removes the built-in tools that run commands or code and `WebFetch` (unless named in `--tools`), keeps file tools inside the working directory, refuses `bypassPermissions`, and ignores user, project and local settings files - Added `experimental.cacheTtl` (`\"5m\"` or `\"1h\"`) to agent frontmatter: a per-agent prompt cache TTL used when no subagent TTL setting is configured - Added `claude self-hosted-runner --client-label ` ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-27T22:12:20+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.248 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `--restricted`(또는 `CLAUDE_CODE_RESTRICTED=1`) 추가: 명령어나 코드를 실행하는 기본 내장 도구 및 `WebFetch`를 제거(`--tools`에 명시되지 않은 경우), 파일 도구의 동작을 작업 디렉터리 내부로 제한, `bypassPermissions`를 거부하고 사용자, 프로젝트 및 로컬 설정 파일을 무시함 - 에이전트 프런트매터에 `experimental.cacheTtl`(`\"5m\"` 또는 `\"1h\"`) 추가: 서브에이전트 TTL 설정이 지정되지 않았을 때 사용되는 에이전트별 프롬프트 캐시 TTL - `claude self-hosted-runner --client-label ` 추가",
+      "release_notes_ko": {
+        "chores": "`--restricted`(또는 `CLAUDE_CODE_RESTRICTED=1`) 추가: 명령어나 코드를 실행하는 기본 내장 도구 및 `WebFetch`를 제거(`--tools`에 명시되지 않은 경우), 파일 도구의 동작을 작업 디렉터리 내부로 제한, `bypassPermissions`를 거부하고 사용자, 프로젝트 및 로컬 설정 파일을 무시함"
+      }
+    },
+    {
       "id": "a7db6e12c1ae453b",
       "title": "3 new ways to plan and book travel in Search",
       "title_ko": "Google 검색에서 여행을 계획하고 예약하는 3가지 새로운 방법",
@@ -1269,6 +1711,23 @@
       "published_at": "2026-08-27T16:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다."
+    },
+    {
+      "id": "14ebdafeb717ac2c",
+      "title": "Imagine image API updates",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#imagine-image-api-updates",
+      "source_summary": "Auto quality. The quality parameter on grok-imagine-image-2.0 now accepts auto, and the default when quality is omitted has moved from medium to auto. Auto currently uses low for image generation and medium for image editing. Images are billed at the quality they are served at. Pass low or medium explicitly to pin a specific quality. See Image Generation. Five reference images. Image editing now accepts up to 5 source images per request (was 3). See Multi-Image Editing. New aspect ratios. Image ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_on": "2026-08-28",
+      "date_precision": "day",
+      "title_ko": "Imagine 이미지 API 업데이트",
+      "source_summary_ko": "자동 화질: grok-imagine-image-2.0의 quality 매개변수가 이제 auto를 지원하며, quality를 생략했을 때의 기본값이 medium에서 auto로 변경되었습니다. auto는 현재 이미지 생성 시에는 low를, 이미지 편집 시에는 medium을 사용합니다. 이미지는 제공된 화질에 따라 요금이 청구됩니다. 특정 화질로 고정하려면 명시적으로 low 또는 medium을 전달하세요. 자세한 내용은 Image Generation을 참조하세요. 참조 이미지 5장 지원: 이미지 편집 시 요청당 최대 5장의 소스 이미지를 지원합니다(기존 3장). 자세한 내용은 Multi-Image Editing을 참조하세요. 새로운 화면비: 이미지",
+      "release_notes_ko": {
+        "new_features": "자동 화질: grok-imagine-image-2.0의 quality 매개변수가 이제 auto를 지원하며, quality를 생략했을 때의 기본값이 medium에서 auto로 변경되었습니다. auto는 현재 이미지 생성 시에는 low를, 이미지 편집 시에는 medium을 사용합니다. 이미지는 제공된 화질에 따라 요금이 청구됩니다. 특정 화질로 고정하려면 명시적으로 low 또는 medium을 전달하세요. 자세한 내용은 Image Generation을 참조하세요."
+      }
     },
     {
       "id": "5c8d75ef9c12c059",
@@ -1313,6 +1772,23 @@
       "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
       "release_notes_ko": {
         "bug_fixes": "이제 원격 압축은 기본적으로 보유된 이미지를 토큰 예산으로 계산하여 필요에 따라 오래된 이미지를 트리밍합니다."
+      }
+    },
+    {
+      "id": "b7b96dd0ccd56642",
+      "title": "v2.1.247",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
+      "source_summary": "## What's changed - Added the `SendFeedback` tool: when something goes wrong in a session, Claude can draft a feedback report for you to review and send from `/feedback` (turn off with the `feedbackDrafts` setting) - Added `{id, text, cooldownSessions, priority}` entries, `tipsFile`, and `label` to `spinnerTipsOverride`, so organizations can rotate their own tips alongside the built-in ones - Added a tip on Bash permission prompts pointing to auto mode, with a one-keystroke \"Yes, and switch to a",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-26T23:06:39+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.247 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `SendFeedback` 도구 추가: 세션에서 문제가 발생했을 때 Claude가 검토 및 전송할 수 있는 피드백 보고서 초안을 `/feedback`에서 작성함(`feedbackDrafts` 설정으로 비활성화 가능) - `spinnerTipsOverride`에 `{id, text, cooldownSessions, priority}` 항목, `tipsFile`, `label`을 추가하여 조직이 기본 팁과 함께 자체 팁을 순환 표시할 수 있도록 지원 - Bash 권한 확인 프롬프트에 auto 모드를 안내하는 팁과 한 번의 키 입력으로 가능한 \"Yes, and switch to a",
+      "release_notes_ko": {
+        "chores": "`SendFeedback` 도구 추가: 세션에서 문제가 발생했을 때 Claude가 사용자가 검토하고 `/feedback`에서 전송할 수 있는 피드백 보고서 초안을 작성함(`feedbackDrafts` 설정으로 비활성화 가능)\n조직이 기본 팁과 함께 자체 팁을 순환 표시할 수 있도록 `spinnerTipsOverride`에 `{id, text, cooldownSessions, priority}` 항목, `tipsFile`, `label` 추가"
       }
     },
     {
@@ -1446,6 +1922,23 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "7b1fa515c92a7efc",
+      "title": "v2.1.246",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.246",
+      "source_summary": "## What's changed - Added a startup warning for Bash allow rules with a wildcard before the subcommand (e.g. `Bash(git * main)`), since they also match options inserted before the subcommand - Added an Auto mode tab to `/permissions` for viewing and editing auto mode classifier rules - Added the turn's completion time to the end-of-turn duration line, e.g. `✻ Sautéed for 23s · done 6:05 PM` - Fixed fullscreen mode showing a blank transcript after resizing the terminal and jumping to the bottom u",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-25T22:31:52+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.246 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 하위 명령어 앞에 와일드카드가 있는 Bash 허용 규칙(예: `Bash(git * main)`)이 하위 명령어 앞에 삽입된 옵션과도 일치할 수 있으므로 시작 시 경고 추가 - auto 모드 분류기 규칙을 확인하고 편집할 수 있는 Auto 모드 탭을 `/permissions`에 추가 - 턴 종료 소요 시간 줄에 턴 완료 시각 추가(예: `✻ Sautéed for 23s · done 6:05 PM`) - 터미널 크기 조정 후 맨 아래로 이동 시 전체 화면 모드에서 빈 대화 기록이 표시되던 문제 수정",
+      "release_notes_ko": {
+        "chores": "하위 명령어 앞에 와일드카드가 있는 Bash 허용 규칙(예: `Bash(git * main)`)이 하위 명령어 앞에 삽입된 옵션과도 일치할 수 있으므로 시작 시 경고 추가\nauto 모드 분류기 규칙을 확인하고 편집할 수 있는 Auto 모드 탭을 `/permissions`에 추가\n턴 종료 소요 시간 줄에 턴 완료 시각 추가(예: `✻ Sautéed for 23s · done 6:05 PM`)"
+      }
+    },
+    {
       "id": "2776a34d5c8a01b1",
       "title": "Release v0.57.0",
       "title_ko": "Gemini CLI v0.57.0 버전 출시",
@@ -1505,6 +1998,23 @@
       "published_at": "2026-08-25T07:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
+    },
+    {
+      "id": "d01d94a1b000c188",
+      "title": "v2.1.245",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.245",
+      "source_summary": "## What's changed - Fixed a crash on startup on Linux distributions that ship glibc 2.44 (for example Arch Linux, CachyOS and Fedora Rawhide)",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-25T05:13:24+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.245 버전 출시",
+      "source_summary_ko": "## 변경 사항 - glibc 2.44를 포함하는 Linux 배포판(예: Arch Linux, CachyOS, Fedora Rawhide)에서 시작 시 충돌이 발생하던 문제 수정",
+      "release_notes_ko": {
+        "chores": "glibc 2.44를 포함하는 Linux 배포판(예: Arch Linux, CachyOS, Fedora Rawhide)에서 시작 시 충돌이 발생하던 문제 수정"
+      }
     },
     {
       "id": "33eae878317d27dc",
@@ -1578,6 +2088,57 @@
       "release_notes_ko": {}
     },
     {
+      "id": "3b44ef5086f0454c",
+      "title": "v2.1.241",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.241",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-23T00:52:16+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.241 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "922161a7fd90f8e5",
+      "title": "v2.1.240",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.240",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-22T14:45:30+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.240 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "31d0f6b1d6dddfa7",
+      "title": "v2.1.239",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
+      "source_summary": "## What's changed - Cost estimates (`/cost`, status line, `--max-budget-usd`) now include the 1.1× US-only-inference premium for data-residency workspaces - Added the one-time fullscreen renderer offer on Bedrock, Vertex, Foundry and other previously excluded setups; new installs there now start in fullscreen - Added `/claude-api upgrade` to migrate Python projects from `anthropic` 0.x to 1.x, and updated the skill's Python reference for 1.x (timeouts use `anthropic.Timeout`, not `httpx.Timeout`",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:54:59+09:00",
+      "published_at": "2026-08-21T19:54:23+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.239 버전 출시",
+      "source_summary_ko": "## 변경 사항 - 예상 비용(`/cost`, 상태 표시줄, `--max-budget-usd`)에 데이터 레지던시 워크스페이스를 위한 1.1배 미국 내 추론 할증료 반영 - Bedrock, Vertex, Foundry 및 이전에 제외되었던 기타 환경에 일회성 전체 화면 렌더러 제안 추가; 이제 해당 환경의 신규 설치 시 전체 화면으로 시작됨 - Python 프로젝트를 `anthropic` 0.x에서 1.x로 마이그레이션하기 위한 `/claude-api upgrade` 추가 및 1.x용 스킬의 Python 참조 업데이트(타임아웃에 `httpx.Timeout` 대신 `anthropic.Timeout` 사용)",
+      "release_notes_ko": {
+        "chores": "예상 비용(`/cost`, 상태 표시줄, `--max-budget-usd`)에 데이터 레지던시 워크스페이스를 위한 1.1배 미국 내 추론 할증료 반영\nBedrock, Vertex, Foundry 및 이전에 제외되었던 기타 환경에 일회성 전체 화면 렌더러 제안 추가; 이제 해당 환경의 신규 설치 시 전체 화면으로 시작됨"
+      }
+    },
+    {
       "id": "f2610a1bfd1fbf1f",
       "title": "Grok 4.6 on Gemini Enterprise Agent Platform",
       "title_ko": "Gemini Enterprise Agent Platform에서 Grok 4.6 지원",
@@ -1610,6 +2171,23 @@
       }
     },
     {
+      "id": "9b452026d55c4675",
+      "title": "v2.1.238",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
+      "source_summary": "## What's changed - Added a `keybindingFlavor` setting: set it to `\"readline\"` to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default (`\"classic\"`) is unchanged - Plugin marketplaces: `headersHelper` on a url marketplace or a catalog entry runs a command that mints HTTP headers (e.g. a short-lived token) for catalog and same-origin archive fetches - A catalog entry's `headersHelper` runs only when you install or update that plugin, after its command is shown",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_at": "2026-08-20T20:33:51+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.238 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `keybindingFlavor` 설정 추가: Bash처럼 프롬프트에서 Ctrl+W 입력 시 이전 공백까지 삭제되도록 `\"readline\"`으로 설정 가능(기본값인 `\"classic\"`은 변경 없음) - 플러그인 마켓플레이스: URL 마켓플레이스 또는 카탈로그 항목의 `headersHelper`가 카탈로그 및 동일 출처 아카이브 가져오기를 위한 HTTP 헤더(예: 단기 토큰)를 발급하는 명령 실행 - 카탈로그 항목의 `headersHelper`는 명령어가 표시된 후 해당 플러그인을 설치하거나 업데이트할 때만 실행됨",
+      "release_notes_ko": {
+        "chores": "`keybindingFlavor` 설정 추가: Bash처럼 프롬프트에서 Ctrl+W 입력 시 이전 공백까지 삭제되도록 `\"readline\"`으로 설정 가능(기본값 `\"classic\"`은 유지)\n플러그인 마켓플레이스: URL 마켓플레이스 또는 카탈로그 항목의 `headersHelper`가 카탈로그 및 동일 출처 아카이브 가져오기를 위한 HTTP 헤더(예: 단기 토큰)를 발급하는 명령 실행"
+      }
+    },
+    {
       "id": "68bd2e32c09542cb",
       "title": "Introducing Intelligence Age",
       "title_ko": "지능 시대(Intelligence Age) 블로그 소개",
@@ -1624,6 +2202,23 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "09d0c8e5c7031ff7",
+      "title": "v2.1.237",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "source_summary": "## What's changed - Fixed prompt caching for sessions using an LLM gateway or custom base URL - Added a built-in \"Concise\" output style: Claude leads with results and skips preamble and narration, while doing the work just as thoroughly. Select it under Output style in /config.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_at": "2026-08-20T00:54:41+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.237 버전 출시",
+      "source_summary_ko": "## 변경 사항 - LLM 게이트웨이나 커스텀 기본 URL을 사용하는 세션의 프롬프트 캐싱 문제 수정 - 내장 \"Concise\" 출력 스타일 추가: Claude가 서론이나 부가 설명을 건너뛰고 결과 중심으로 응답하면서도 작업을 동일하게 철저히 수행함. `/config`의 Output style에서 선택 가능",
+      "release_notes_ko": {
+        "chores": "LLM 게이트웨이나 커스텀 기본 URL을 사용하는 세션의 프롬프트 캐싱 문제 수정\n내장 \"Concise\" 출력 스타일 추가: Claude가 서론이나 부가 설명을 건너뛰고 결과 중심으로 응답하면서도 작업을 동일하게 철저히 수행함. `/config`의 Output style에서 선택 가능"
+      }
+    },
+    {
       "id": "ad89fb510e3c78c2",
       "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
       "title_ko": "Stampli, ChatGPT Work를 사용하여 출시 소요 시간 68% 단축",
@@ -1636,6 +2231,23 @@
       "published_at": "2026-08-20T00:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
+    },
+    {
+      "id": "e2ea6ef4c9fbfceb",
+      "title": "v2.1.236",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
+      "source_summary": "## What's changed - Added `ANTHROPIC_DEFAULT_MODEL` environment variable: sets the model new sessions start on, while a `/model` pick still overrides it and persists across restarts (unlike `ANTHROPIC_MODEL`) - Added `notify_when_idle` to cross-session `SendMessage`: ask another Claude Code session on this machine to send one notice when it next goes idle — opt-in, one-shot, no polling (macOS and Linux) - Sandbox: on macOS, wildcard read-deny rules (e.g. `**/.env`) now take precedence inside all",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:55:00+09:00",
+      "published_at": "2026-08-19T20:02:05+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.236 버전 출시",
+      "source_summary_ko": "## 변경 사항 - `ANTHROPIC_DEFAULT_MODEL` 환경 변수 추가: 새 세션이 시작될 모델을 설정하며, `/model` 선택 시 이를 재정의하고 재시작 후에도 유지됨(`ANTHROPIC_MODEL`과 다름) - 세션 간 `SendMessage`에 `notify_when_idle` 추가: 현재 머신의 다른 Claude Code 세션이 다음번에 유휴(idle) 상태가 될 때 한 번 알림을 보내도록 요청 — 선택적(opt-in), 일회성, 폴링 없음(macOS 및 Linux) - 샌드박스: macOS에서 와일드카드 읽기 거부 규칙(예: `**/.env`)이 내부 전체에서 우선 적용됨",
+      "release_notes_ko": {
+        "chores": "`ANTHROPIC_DEFAULT_MODEL` 환경 변수 추가: 새 세션이 시작될 모델을 설정하며, `/model` 선택 시 이를 재정의하고 재시작 후에도 유지됨(`ANTHROPIC_MODEL`과 다름)\n세션 간 `SendMessage`에 `notify_when_idle` 추가: 현재 머신의 다른 Claude Code 세션이 다음번에 유휴(idle) 상태가 될 때 한 번 알림을 보내도록 요청 — 선택적(opt-in), 일회성, 폴링 없음(macOS 및 Linux)"
+      }
     },
     {
       "id": "18c6c8112b90962b",
@@ -1755,6 +2367,24 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "8803993ba68a72b7",
+      "title": "v2.1.235",
+      "title_ko": "Claude Code v2.1.235 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.235",
+      "source_summary": "## What's changed - Added an optional `spellcheck` setting that underlines misspelled words in the prompt input as you type, using your installed `aspell`, `hunspell`, or `ispell` - Fixed whole-prompt-cache invalidation when a language server disconnected or reconnected mid-session - Fixed nested markdown list items misaligning at depth 3+ and added a hanging indent to wrapped list items in the terminal UI - Fixed prompt input highlights (slash commands, keywords, mentions) appearing shifted by ",
+      "source_summary_ko": "## 변경 사항 - 입력 시 설치된 `aspell`, `hunspell` 또는 `ispell`을 사용하여 프롬프트 입력창에서 철자가 틀린 단어에 밑줄을 긋는 선택적 `spellcheck` 설정 추가 - 세션 중간에 언어 서버의 연결이 끊어지거나 재연결될 때 전체 프롬프트 캐시가 무효화되던 문제 수정 - 터미널 UI에서 3단계 이상의 중첩된 마크다운 목록 항목의 정렬이 어긋나는 문제를 수정하고 줄바꿈된 목록 항목에 내어쓰기 추가",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-18T20:38:54+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "설치된 aspell, hunspell 또는 ispell을 사용하여 입력할 때 프롬프트 입력에서 철자가 틀린 단어에 밑줄을 긋는 선택적 spellcheck 설정 추가",
+        "bug_fixes": "언어 서버의 연결이 끊어지거나 세션 중간에 다시 연결될 때 전체 프롬프트 캐시가 무효화되는 현상 수정\n터미널 UI에서 중첩된 마크다운 목록 항목이 깊이 3 이상에서 잘못 정렬되는 문제를 수정하고 줄바꿈된 목록 항목에 내어쓰기 추가"
+      }
+    },
+    {
       "id": "f0aa91974e0ad6ca",
       "title": "Strengthening democratic oversight in national security",
       "title_ko": "국가 안보 분야의 민주적 감시 강화",
@@ -1839,6 +2469,23 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "0754e13e69e8f4d3",
+      "title": "v2.1.234",
+      "title_ko": "Claude Code v2.1.234 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "source_summary": "## What's changed - Added the optional `CLAUDE_CODE_PROJECT_DIR_NAME` environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript directory - Added the `selection:clear` keybinding action, so a key can be bound to clear an in-app text selection; also works in the agents view - Added a GitLab merge request badge to the footer and statusline: repos with a GitLab remote and an authenticated glab CLI show MR !N with draft/pending",
+      "source_summary_ko": "## 변경 사항 - 선택적 `CLAUDE_CODE_PROJECT_DIR_NAME` 환경 변수 추가: 각 세션에 고유한 구성 디렉터리를 부여하는 호스트가 프로젝트별 트랜스크립트 디렉터리의 짧은 이름을 선택 가능 - 인앱 텍스트 선택을 지우는 단축키를 바인딩할 수 있는 `selection:clear` 키바인딩 작업 추가 - 푸터 및 상태 표시줄에 GitLab 병합 요청(MR) 배지 추가: GitLab 원격 저장소와 인증된 glab CLI가 있는 저장소는 초안/대기 상태와 함께 MR !N을 표시함",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-17T20:20:58+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "선택적 CLAUDE_CODE_PROJECT_DIR_NAME 환경 변수 추가: 각 세션에 고유한 구성 디렉터리를 제공하는 호스트는 프로젝트별 기록 디렉터리의 짧은 이름을 선택할 수 있습니다.\n선택 항목을 지울 수 있는 키를 바인딩할 수 있도록 selection:clear 키 바인딩 작업 추가; 에이전트 보기에서도 작동합니다.\n바닥글과 상태 표시줄에 GitLab 병합 요청 배지 추가"
+      }
+    },
+    {
       "id": "3aca82d56d54fd7c",
       "title": "Get closer to the game with Gemini and Pixel",
       "title_ko": "Gemini와 Pixel로 축구 경기를 더욱 생생하게 즐기는 방법",
@@ -1895,6 +2542,23 @@
       "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다."
     },
     {
+      "id": "b56da077d21ad4f4",
+      "title": "v2.1.233",
+      "title_ko": "Claude Code v2.1.233 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "source_summary": "## What's changed - Added GitLab merge request URL support to the `--worktree` flag and the `claude agents` view (where MRs display as `!N`) - Added an opt-in `forward_user_identity` apps gateway setting on Anthropic upstreams that sends the signed-in user's identity as headers, so a proxy behind the gateway can attribute spend per user - Added opt-in memory cgroup support for Bash tool commands on Linux (`CLAUDE_CODE_TOOL_MEMORY_LIMIT`) so a runaway build can't stall the session - Added `CLAUDE",
+      "source_summary_ko": "## 변경 사항 - `--worktree` 플래그 및 `claude agents` 뷰에 GitLab 병합 요청(MR) URL 지원 추가(MR이 `!N`으로 표시됨) - 게이트웨이 뒤의 프록시가 사용자별 지출을 귀속할 수 있도록 로그인한 사용자의 ID를 헤더로 전송하는 선택적 `forward_user_identity` 앱 게이트웨이 설정 추가 - 폭주하는 빌드가 세션을 중단시키지 않도록 Linux에서 Bash 도구 명령어에 대한 선택적 메모리 cgroup 지원 추가(`CLAUDE_CODE_TOOL_MEMORY_LIMIT`)",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-14T22:20:57+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "--worktree 플래그 및 claude agents 뷰에 GitLab 병합 요청 URL 지원 추가(MR이 !N으로 표시됨)\n게이트웨이 뒤의 프록시가 사용자별 지출을 추적할 수 있도록 로그인한 사용자의 신원을 헤더로 보내는 Anthropic 업스트림의 선택적 forward_user_identity 앱 게이트웨이 설정 추가\n제어 불능 빌드가 세션을 지연시키지 않도록 Linux의 Bash 도구 명령에 대한 선택적 메모리 cgroup 지원(CLAUDE_CODE_TOOL_MEMORY_LIMIT) 추가"
+      }
+    },
+    {
       "id": "2a68d8196b36b7f0",
       "title": "Grok 4.6 in GitHub Copilot",
       "title_ko": "GitHub Copilot에 Grok 4.6 도입",
@@ -1907,6 +2571,24 @@
       "published_at": "2026-08-14T00:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
+    },
+    {
+      "id": "6d9f931d3f4a007e",
+      "title": "v2.1.232",
+      "title_ko": "Claude Code v2.1.232 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
+      "source_summary": "## What's changed - Subagent forking is now on by default: a `subagent_type: \"fork\"` subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by default - Type `@` in the prompt to mention another Claude session by name; Claude then uses `SendMessage` to reach that session directly - `SendMessage` now delivers to a bare name that exactly matches one live session, instead of asking to confirm with a ref first - Inter",
+      "source_summary_ko": "## 변경 사항 - 서브에이전트 포크가 기본적으로 켜짐: `subagent_type: \"fork\"` 서브에이전트는 전체 대화 및 프롬프트 캐시를 상속하며, 대화형 세션에서 팀원이 아닌 에이전트 생성은 기본적으로 백그라운드에서 실행됨 - 프롬프트에 `@`를 입력하여 다른 Claude 세션을 이름으로 멘션 가능; Claude는 `SendMessage`를 사용하여 해당 세션에 직접 접근 - `SendMessage`가 하나의 활성 세션과 정확히 일치하는 단독 이름으로 직접 전달됨",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-13T23:29:59+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "서브에이전트 포크 기능이 이제 기본적으로 켜집니다: subagent_type: 'fork' 서브에이전트는 전체 대화 및 프롬프트 캐시를 상속하며 대화형 세션의 비팀원 에이전트 생성이 이제 기본적으로 백그라운드에서 실행됩니다.\n프롬프트에 @를 입력하여 이름으로 다른 Claude 세션을 멘션할 수 있으며, Claude는 SendMessage를 사용하여 해당 세션에 직접 연결합니다.",
+        "chores": "SendMessage는 이제 참조로 먼저 확인을 요청하는 대신 하나의 라이브 세션과 정확히 일치하는 기본 이름으로 전달합니다."
+      }
     },
     {
       "id": "e546c9507c4bdece",
@@ -1979,6 +2661,41 @@
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
     },
     {
+      "id": "5971a4b7feb6a1ab",
+      "title": "v2.1.231",
+      "title_ko": "Claude Code v2.1.231 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
+      "source_summary": "## What's changed - Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack",
+      "source_summary_ko": "## 변경 사항 - Slack과 같이 사전 등록된 OAuth 클라이언트를 사용하는 서버에서 리디렉션 URI 불일치로 인해 MCP OAuth 로그인이 실패하던 문제 수정",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-13T08:38:50+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "bug_fixes": "Slack과 같이 사전 등록된 OAuth 클라이언트를 사용하는 서버의 리디렉션 URI 불일치로 인해 MCP OAuth 로그인이 실패하는 문제 수정"
+      }
+    },
+    {
+      "id": "20cf339db543fe6b",
+      "title": "v2.1.229",
+      "title_ko": "Claude Code v2.1.229 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
+      "source_summary": "## What's changed - Documented `claude remote-control --continue` for resuming the most recent Remote Control session - Added server-supplied Claude Code hook support for self-hosted runner sessions, matching managed-environment behavior - Added SSE keepalive pings to gateway streaming responses during long thinking pauses, preventing idle-timeout disconnects on Vertex and Bedrock upstreams - Added plugin marketplace `command` sources: a local command (e.g. an IDE) prints the plugin directory, w",
+      "source_summary_ko": "## 변경 사항 - 가장 최근의 원격 제어 세션을 재개하기 위한 `claude remote-control --continue` 문서화 - 관리형 환경 동작과 일치하도록 자체 호스팅 러너 세션에 대해 서버 제공 Claude Code 훅 지원 추가 - 긴 생각 일시정지 중 게이트웨이 스트리밍 응답에 SSE keepalive ping 추가(Vertex 및 Bedrock 업스트림의 유휴 시간 초과 연결 끊김 방지) - 플러그인 마켓플레이스 `command` 소스 추가",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-12T20:56:22+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "관리 환경 동작과 일치하는 자체 호스팅 러너 세션에 대한 서버 제공 Claude Code 훅 지원 추가\n긴 생각 일시 중지 동안 게이트웨이 스트리밍 응답에 SSE 연결 유지 ping을 추가하여 Vertex 및 Bedrock 업스트림에서 유휴 시간 초과 연결 해제 방지\n플러그인 마켓플레이스 명령 소스 추가",
+        "chores": "가장 최근의 원격 제어 세션을 다시 시작하기 위한 claude remote-control --continue 문서화"
+      }
+    },
+    {
       "id": "e063daae6225e156",
       "title": "From assistance to execution: How enterprises put AI to work",
       "title_ko": "단순 지원에서 실행으로: 기업이 AI를 업무에 적용하는 방법",
@@ -2040,6 +2757,40 @@
       }
     },
     {
+      "id": "03604cccd7e9402d",
+      "title": "v2.1.228",
+      "title_ko": "Claude Code v2.1.228 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
+      "source_summary": "## What's changed - Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error - Fixed `git` / Git Bash not being found on Windows when Claude Code is launched from a parent folder of the git installation - Fixed `/tui` reverting the session to an earlier model when `/model` had been changed since the last response - Fixed cross-session messaging sometimes starting without an inbox in the first session after install or upgrad",
+      "source_summary_ko": "## 변경 사항 - 드문 내부 레이아웃 오류 후 프로세스는 계속 실행 중임에도 대화형 세션에서 다시 그리기가 완전히 중단될 수 있던 문제 수정 - git 설치 폴더의 상위 폴더에서 Claude Code를 실행할 때 Windows에서 `git` / Git Bash를 찾지 못하던 문제 수정 - 마지막 응답 이후 `/model`이 변경되었을 때 `/tui`가 세션을 이전 모델로 되돌리던 문제 수정 - 설치 또는 업그레이드 후 첫 번째 세션에서 수신함 없이 세션 간 메시징이 시작되던 문제 수정",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-11T19:50:59+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "bug_fixes": "드문 내부 레이아웃 오류 후 프로세스가 계속 실행되는 동안 대화형 세션이 완전히 다시 그려지지 않는 문제 수정\ngit 설치 상위 폴더에서 Claude Code를 시작할 때 Windows에서 git/Git Bash를 찾을 수 없는 문제 수정\n마지막 응답 이후 /model이 변경되었을 때 /tui가 세션을 이전 모델로 되돌리는 문제 수정\n설치 또는 업그레이드 후 첫 번째 세션에서 수신함 없이 세션 간 메시징이 시작되는 문제 수정"
+      }
+    },
+    {
+      "id": "6f544b8412fc82df",
+      "title": "Grok 4.6",
+      "title_ko": "Grok 4.6 출시",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-46",
+      "source_summary": "Grok 4.6, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API. It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output) below 200k prompt tokens, and $4 / $1 / $12 above. Reasoning effort supports low, medium, high (default), and xhigh. See the Grok 4.6 overview and the announcement.",
+      "source_summary_ko": "코딩, 에이전트 작업 및 지식 작업을 위한 xAI의 최첨단 모델인 Grok 4.6이 이제 xAI API에서 제공됩니다. 50만 토큰 컨텍스트 창, 텍스트 및 이미지 입력(출력은 텍스트 전용)을 지원하며 텍스트 출력 제한이 없습니다. 가격은 20만 프롬프트 토큰 미만일 때 100만 토큰당 $2(입력) / $0.50(캐시 입력) / $6(출력)이며, 20만 초과 시 $4 / $1 / $12입니다. 추론 강도는 low, medium, high(기본값), xhigh를 지원합니다. 자세한 내용은 Grok 4.6 개요 및 공지사항을 참조하세요.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:07+09:00",
+      "published_on": "2026-08-12",
+      "date_precision": "day",
+      "release_notes_ko": {
+        "new_features": "코딩, 에이전트 작업 및 지식 작업을 위한 프론티어 모델인 Grok 4.6을 이제 xAI API에서 사용할 수 있습니다. 500k 컨텍스트 창, 텍스트 전용 출력이 있는 텍스트 및 이미지 입력, 텍스트 출력 제한이 없습니다. 가격은 200k 프롬프트 토큰 미만의 경우 1M 토큰당 $2/$0.50/$6(입력/캐시된 입력/출력)이고 이상은 $4/$1/$12입니다. 추론 노력은 low, medium, high(기본값) 및 xhigh를 지원합니다."
+      }
+    },
+    {
       "id": "5d3aff0aba5d0b8a",
       "title": "Daybreak models are now available on AWS",
       "title_ko": "이제 AWS에서 Daybreak 모델 사용 가능",
@@ -2082,6 +2833,24 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "172e2c60926f55b8",
+      "title": "v2.1.227",
+      "title_ko": "Claude Code v2.1.227 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
+      "source_summary": "## What's changed - Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage credits for Fable - Fixed every Bash command failing under `claude-code-action` with `allowed_non_write_users` on GitHub-hosted runners - Fixed `/tui` bringing back a conversation that had been rewound to before its first message - Improved slash-command menu: blue now marks only the selected row",
+      "source_summary_ko": "## 변경 사항 - 세션이 만료된 로그인 토큰으로 시작되었을 때 사용자의 구독 등급 없이 기능 플래그가 평가되어 Max 플랜 사용자에게 Fable용 사용 크레딧 활성화를 잘못 안내하던 문제 수정 - GitHub 호스팅 러너에서 `allowed_non_write_users`가 설정된 `claude-code-action` 환경에서 모든 Bash 명령이 실패하던 문제 수정 - 첫 번째 메시지 이전으로 되감긴 대화를 `/tui`가 다시 불러오던 문제 수정 - 슬래시 명령 메뉴 개선: 이제 파란색으로 선택된 행만 표시됩니다.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-10T22:56:53+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "bug_fixes": "만료된 로그인 토큰으로 세션이 시작될 때 사용자의 구독 등급 없이 기능 플래그가 평가되는 문제 수정(Max 요금제 사용자에게 Fable 크레딧 활성화를 잘못 프롬프트하는 현상 해결)\nGitHub 호스팅 러너에서 allowed_non_write_users가 설정된 claude-code-action 아래에서 모든 Bash 명령이 실패하던 문제 수정\n첫 번째 메시지 이전으로 되감긴 대화를 /tui가 다시 가져오던 문제 수정",
+        "chores": "슬래시 명령 메뉴 개선: 이제 파란색이 선택한 행만 표시합니다."
+      }
+    },
+    {
       "id": "5367cc95a8fd9817",
       "title": "What building an AI-native finance function taught me",
       "title_ko": "AI 네이티브 재무 부서를 구축하며 배운 점",
@@ -2094,6 +2863,23 @@
       "published_at": "2026-08-10T17:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
+    },
+    {
+      "id": "e2d5fc3e49361221",
+      "title": "Grok Bot",
+      "title_ko": "Grok Bot 출시",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-bot",
+      "source_summary": "Grok Bot is now available. Durable AI teammates that work on a persistent cloud computer, with messaging, approvals, connectors, and routines. See the Grok Bot overview and Get started.",
+      "source_summary_ko": "Grok Bot을 이제 사용할 수 있습니다. 메시징, 승인, 커넥터, 루틴 기능을 갖추고 영구 클라우드 컴퓨터에서 작동하는 지속 가능한 AI 팀원입니다. 자세한 내용은 Grok Bot 개요 및 시작 가이드를 참조하세요.",
+      "fetched_at": "2026-09-21T20:44:07+09:00",
+      "published_on": "2026-08-11",
+      "date_precision": "day",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "release_notes_ko": {
+        "new_features": "Grok Bot을 이제 사용할 수 있습니다. 메시징, 승인, 커넥터 및 루틴을 갖춘 지속적인 클라우드 컴퓨터에서 작동하는 내구성 있는 AI 팀원입니다. Grok Bot 개요 및 시작하기를 참조하세요."
+      }
     },
     {
       "id": "3d196224ab27a2df",
@@ -2194,6 +2980,41 @@
       "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다."
     },
     {
+      "id": "1242fad9bc008487",
+      "title": "v2.1.226",
+      "title_ko": "Claude Code v2.1.226 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-08T02:48:05+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "d66881daaf67c3a3",
+      "title": "v2.1.225",
+      "title_ko": "Claude Code v2.1.225 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
+      "source_summary": "## What's changed - Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.225) - Added a workspace trust prompt to `claude agents` for untrusted directories, matching the behavior of `claude` - Fixed a transient 401 replacing a long-lived `CLAUDE_CODE_OAUTH_TOKEN` with a stored login's short-lived token, breaking headless sessions until restart - Fixed MCP OAuth server",
+      "source_summary_ko": "## 변경 사항 - Claude Code 사용량 경고에 게이트웨이 지출 한도 지원 추가; 한도 도달 메시지에 이제 한도, 재설정 시간, 운영자 메시지가 표시됨(게이트웨이 버전 2.1.225 필요) - `claude` 동작과 일치하도록 신뢰할 수 없는 디렉터리에 대해 `claude agents`에 워크스페이스 신뢰 프롬프트 추가 - 일시적인 401 오류로 인해 수명이 긴 `CLAUDE_CODE_OAUTH_TOKEN`이 저장된 로그인의 수명이 짧은 토큰으로 대체되어 재시작 전까지 헤드리스 세션이 중단되던 문제 수정 - MCP OAuth 서버 오류 수정",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-08T01:09:26+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "Claude Code의 사용량 경고에 게이트웨이 지출 한도 지원 추가; 한도 도달 메시지에 이제 한도, 재설정 시간 및 운영자 메시지가 표시됨(버전 2.1.225의 게이트웨이 필요)\n신뢰할 수 없는 디렉터리에 대한 claude agents에 작업 공간 신뢰 프롬프트 추가, claude 동작과 일치",
+        "bug_fixes": "일시적인 401 오류로 인해 오래 지속되는 CLAUDE_CODE_OAUTH_TOKEN이 저장된 로그인의 단기 토큰으로 대체되어 재시작할 때까지 헤드리스 세션이 중단되는 문제 수정\nMCP OAuth 서버 문제 수정"
+      }
+    },
+    {
       "id": "e66cc71d0943fe40",
       "title": "Responding to the next frontier of critical cyber capabilities",
       "title_ko": "중대한 사이버 역량의 차세대 프론티어에 대한 대응",
@@ -2237,6 +3058,23 @@
       "release_notes_ko": {
         "bug_fixes": "수정 (패치): cherry-pick 56f9688 to release/v0.54.0-pr-28700 to patch version v0.54.0 and create version 0.54.1\n버전 충돌 수정/되돌리기",
         "chores": "집안일: 0.54.2로 범프 버전"
+      }
+    },
+    {
+      "id": "557818547b5e5732",
+      "title": "v2.1.224",
+      "title_ko": "Claude Code v2.1.224 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
+      "source_summary": "## What's changed - Added self-hosted environments: `claude self-hosted-runner` turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterprise plans - Added `archive` plugin source: install plugins from a zip over HTTPS without git or npm, with optional SHA-256 pinning - Added a cancel-and-confirm step when removing an unavailable paste changes a command's text - Added `ANTHROPIC_BEDROCK_REGION_PREFIX` env var for Bedrock to prefe",
+      "source_summary_ko": "## 변경 사항 - 셀프 호스팅 환경 추가: Team 및 Enterprise 플랜에서 `claude self-hosted-runner`를 통해 자체 머신이나 컨테이너를 Claude Code 웹, 모바일, 데스크톱 세션을 실행할 수 있는 공간으로 전환 - `archive` 플러그인 소스 추가: git 또는 npm 없이 선택적 SHA-256 고정을 통해 HTTPS로 zip에서 플러그인 설치 - 사용할 수 없는 붙여넣기를 제거할 때 명령어 텍스트가 변경되는 경우 취소 및 확인 단계 추가 - Bedrock용 `ANTHROPIC_BEDROCK_REGION_PREFIX` 환경 변수 추가",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-07T04:00:59+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "자체 호스팅 환경 추가: Team 및 Enterprise 플랜에서 자체 시스템이나 컨테이너를 Claude Code 세션을 실행할 수 있는 환경으로 전환하는 claude self-hosted-runner 제공\narchive 플러그인 소스 추가: 선택적 SHA-256 고정을 통해 git이나 npm 없이 HTTPS를 통한 zip 파일에서 플러그인 설치\n사용할 수 없는 붙여넣기 내용 제거로 인해 명령 텍스트가 변경될 때 취소 및 확인 단계 추가\nBedrock 리전 우선 설정을 위한 ANTHROPIC_BEDROCK_REGION_PREFIX 환경 변수 추가"
       }
     },
     {
@@ -2334,6 +3172,24 @@
       }
     },
     {
+      "id": "cc413b5db0d3de90",
+      "title": "v2.1.223",
+      "title_ko": "Claude Code v2.1.223 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
+      "source_summary": "## What's changed - Added owner wildcard entries (`\"owner/*\"`) to the `strictKnownMarketplaces` and `blockedMarketplaces` managed settings for allowing or blocking all marketplace repos under a GitHub org - Added a warning when workflow agents, forked skills, slash commands, or resumed background agents' requested subagent model is restricted and the parent model runs instead - Added a `/teleport` hint in cloud sessions showing how to continue locally with `claude --teleport ` - Fixed a Bash per",
+      "source_summary_ko": "## 변경 사항 - GitHub 조직 산하의 모든 마켓플레이스 저장소를 허용하거나 차단하기 위해 `strictKnownMarketplaces` 및 `blockedMarketplaces` 관리형 설정에 소유자 와일드카드 항목(`\"owner/*\"`) 추가 - 워크플로 에이전트, 포크된 스킬, 슬래시 명령어 또는 재개된 백그라운드 에이전트의 요청 서브에이전트 모델이 제한되어 상위 모델이 대신 실행될 때의 경고 추가 - 클라우드 세션에서 `claude --teleport `를 통해 로컬에서 계속 작업하는 방법을 안내하는 `/teleport` 힌트 추가 - Bash 권한 버그 수정",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-06T00:52:37+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "GitHub 조직 아래의 모든 마켓플레이스 리포지토리를 허용하거나 차단하기 위해 strictKnownMarketplaces 및 blockedMarketplaces 관리 설정에 소유자 와일드카드 항목('owner/*') 추가\n요청된 서브에이전트 모델이 제한되어 상위 모델이 대신 실행될 때 경고 추가\nclaude --teleport를 사용하여 로컬에서 계속 진행하는 방법을 보여주는 클라우드 세션의 /teleport 힌트 추가",
+        "bug_fixes": "Bash 권한 버그 수정"
+      }
+    },
+    {
       "id": "3763c3e63f841c3b",
       "title": "From asking to doing: How the world is putting ChatGPT to work",
       "title_ko": "질문에서 실행으로: 전 세계가 ChatGPT를 업무에 활용하는 방법",
@@ -2365,6 +3221,23 @@
       }
     },
     {
+      "id": "8118f11844b1fac6",
+      "title": "v2.1.222",
+      "title_ko": "Claude Code v2.1.222 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
+      "source_summary": "## What's changed - Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session type - Fixed PreToolUse auto-allow hooks bypassing tool restrictions in background agent tasks (summaries, compaction, renames) - Fixed `/usage-credits` on Team and Enterprise showing \"you've already sent a usage credit request\" for members whose earlier request was dismissed, blocking them fro",
+      "source_summary_ko": "## 변경 사항 - 워크트리 격리 세션 및 해당 하위 에이전트가 메인 체크아웃에 대해 파괴적인 git 명령을 실행할 수 있던 문제 수정. 이제 모든 세션 유형에서 파일 편집 및 Bash에 격리가 적용됩니다. - 백그라운드 에이전트 작업(요약, 압축, 이름 변경)에서 PreToolUse 자동 허용 훅이 도구 제한을 우회하던 문제 수정 - Team 및 Enterprise에서 이전 요청이 기각된 멤버에게 \"이미 사용 크레딧 요청을 보냈습니다\"가 표시되어 재요청이 차단되던 `/usage-credits` 문제 수정",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-04T22:39:55+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "bug_fixes": "워크트리 격리 세션 및 서브에이전트가 메인 체크아웃에 대해 파괴적인 git 명령을 실행할 수 있던 문제 수정; 이제 모든 세션 유형의 파일 편집 및 Bash에 격리가 적용됨\n백그라운드 에이전트 작업(요약, 압축, 이름 변경)에서 PreToolUse 자동 허용 훅이 도구 제한을 우회하던 문제 수정\nTeam 및 Enterprise 플랜에서 이전 요청이 기각된 멤버의 /usage-credits 요청이 차단되던 문제 수정"
+      }
+    },
+    {
       "id": "c99ec862b4e71599",
       "title": "Third-party cyber evaluations involving OpenAI models",
       "title_ko": "OpenAI 모델과 관련된 제3자 사이버 보안 평가",
@@ -2377,6 +3250,23 @@
       "published_at": "2026-08-04T19:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
+    },
+    {
+      "id": "ba2a3cbea388e94b",
+      "title": "v2.1.221",
+      "title_ko": "Claude Code v2.1.221 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
+      "source_summary": "## What's changed - [VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with `Ctrl+Alt+F` or the \"Claude Code: Toggle Focus view\" command - Added `mode: \"mask\"` for sandbox credential files on Linux and WSL — sandboxed commands read a sentinel copy (the whole file, or just the spans captured by an `extract` regex) while the sandbox proxy substitutes the real value on egress; on macOS file masking",
+      "source_summary_ko": "## 변경 사항 - [VSCode] 확장 가능한 턴별 요약 뒤로 도구 활동을 숨기고 실행 중인 도구 표시기를 제공하는 채팅 메뉴 토글인 포커스 뷰 추가(`Ctrl+Alt+F` 또는 \"Claude Code: Toggle Focus view\" 명령어로 전환) - Linux 및 WSL의 샌드박스 자격 증명 파일에 대한 `mode: \"mask\"` 추가 — 샌드박스 명령은 센티널 사본(전체 파일 또는 `extract` 정규식으로 캡처된 범위)을 읽고 샌드박스 프록시가 외부 전송 시 실제 값으로 대체합니다. macOS의 경우 파일 마스킹이 적용됩니다.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-08-04T00:14:23+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "[VSCode] 확장 가능한 턴별 요약 뒤에 도구 활동을 숨기는 포커스 뷰 추가(Ctrl+Alt+F 또는 'Claude Code: Toggle Focus view' 명령으로 전환)\nLinux 및 WSL에서 샌드박스 자격 증명 파일에 대한 mode: 'mask' 추가"
+      }
     },
     {
       "id": "129511f54188e7df",
@@ -2550,6 +3440,23 @@
       "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다."
     },
     {
+      "id": "3e6752ad5e97a494",
+      "title": "grok-imagine-video-1.5 modalities",
+      "title_ko": "grok-imagine-video-1.5 지원 모달리티 확대",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-imagine-video-15-modalities",
+      "source_summary": "grok-imagine-video-1.5 now supports text-to-video, image-to-video, and reference-to-video (including optional preset voices), with native 1080p for T2V and I2V. Text-to-video on this model runs as text-to-image then image-to-video under the hood. See Video Generation, Image-to-Video, and Reference-to-Video.",
+      "source_summary_ko": "grok-imagine-video-1.5에서 이제 텍스트-비디오, 이미지-비디오, 레퍼런스-비디오(선택적 프리셋 음성 포함)를 지원하며, T2V 및 I2V에 대해 네이티브 1080p 해상도를 제공합니다. 이 모델의 텍스트-비디오는 내부적으로 텍스트-이미지 변환 후 이미지-비디오 변환으로 실행됩니다. 자세한 내용은 Video Generation, Image-to-Video 및 Reference-to-Video를 참조하세요.",
+      "fetched_at": "2026-09-21T20:44:07+09:00",
+      "published_on": "2026-07-31",
+      "date_precision": "day",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "release_notes_ko": {
+        "new_features": "grok-imagine-video-1.5는 이제 텍스트-비디오, 이미지-비디오 및 참조-비디오 (선택적 사전 설정 음성 포함)를 지원하며 T2V 및 I2V용 기본 1080p를 지원합니다. 이 모델의 텍스트-비디오는 내부적으로 텍스트-이미지 후 이미지-비디오로 실행됩니다. 비디오 생성, 이미지-비디오 및 참조-비디오를 참조하십시오."
+      }
+    },
+    {
       "id": "dca7adc62d79fe1c",
       "title": "Advancing the price-performance frontier with GPT-5.6",
       "title_ko": "GPT-5.6을 통한 가격 대비 성능의 한계 확장",
@@ -2686,6 +3593,23 @@
       "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다."
     },
     {
+      "id": "b9cd264b1ec1210e",
+      "title": "Grok Voice Think Fast 2.0 is available",
+      "title_ko": "Grok Voice Think Fast 2.0 사용 가능",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#grok-voice-think-fast-20-is-available",
+      "source_summary": "grok-voice-think-fast-2.0 is now available with Speech to Speech. grok-voice-latest will route to this model starting August 5, 2026. To get started, see the Speech to Speech docs. For more details, see our announcement.",
+      "source_summary_ko": "이제 Speech to Speech 기능을 갖춘 grok-voice-think-fast-2.0을 사용할 수 있습니다. grok-voice-latest는 2026년 8월 5일부터 이 모델로 라우팅됩니다. 시작하려면 Speech to Speech 문서를 참조하세요. 자세한 내용은 공식 발표를 참조하세요.",
+      "fetched_at": "2026-09-21T20:44:07+09:00",
+      "published_on": "2026-07-29",
+      "date_precision": "day",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "release_notes_ko": {
+        "new_features": "grok-voice-think-fast-2.0은 이제 Speech to Speech와 함께 제공됩니다. grok-voice-latest는 2026년 8월 5일부터 이 모델로 라우팅됩니다. 시작하려면 Speech to Speech 문서를 참조하세요."
+      }
+    },
+    {
       "id": "17328a0f00ee174e",
       "title": "Grok 4.5 in GitHub Copilot",
       "title_ko": "GitHub Copilot에 Grok 4.5 도입",
@@ -2728,6 +3652,40 @@
       "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다."
     },
     {
+      "id": "e40bf69062289e77",
+      "title": "v2.1.220",
+      "title_ko": "Claude Code v2.1.220 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
+      "source_summary": "## What's changed - Bug fixes and reliability improvements",
+      "source_summary_ko": "## 변경 사항 - 버그 수정 및 안정성 향상",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-07-25T01:35:55+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "chores": "버그 수정 및 안정성 향상"
+      }
+    },
+    {
+      "id": "228dddec5b6b8ab4",
+      "title": "v2.1.219",
+      "title_ko": "Claude Code v2.1.219 버전 출시",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219",
+      "source_summary": "## What's changed - Added Claude Opus 5 (`claude-opus-5`), now the default Opus model — 1M context, fast mode at $10/$50 per Mtok - Added `sandbox.network.strictAllowlist` setting to deny non-allowlisted hosts for sandboxed commands without prompting - Added `DirectoryAdded` hook that fires after `/add-dir` or the SDK `register_repo_root` control request registers a new working directory mid-session - Added `mcp_server_errors` to the headless stream-json init event, listing `--mcp-config` entrie",
+      "source_summary_ko": "## 변경 사항 - 이제 기본 Opus 모델인 Claude Opus 5(`claude-opus-5`) 추가 — 1M 컨텍스트, Mtok당 $10/$50의 고속 모드 - 확인 메시지 없이 샌드박스 명령어에 대해 허용 목록에 없는 호스트를 거부하는 `sandbox.network.strictAllowlist` 설정 추가 - 세션 중간에 `/add-dir` 또는 SDK `register_repo_root` 제어 요청으로 새 작업 디렉터리가 등록된 후 실행되는 `DirectoryAdded` 훅 추가 - 헤드리스 stream-json init 이벤트에 `--mcp-config` 항목을 나열하는 `mcp_server_errors` 추가",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-21T20:44:06+09:00",
+      "published_at": "2026-07-24T17:14:23+00:00",
+      "date_precision": "time",
+      "release_notes_ko": {
+        "new_features": "기본 Opus 모델인 Claude Opus 5(claude-opus-5) 추가 — 1M 컨텍스트, 백만 토큰당 $10/$50의 빠른 모드\n확인 프롬프트 없이 샌드박스 명령에 대해 허용 목록에 없는 호스트를 거부하는 sandbox.network.strictAllowlist 설정 추가\n세션 중간에 /add-dir 또는 SDK register_repo_root 제어 요청으로 새 작업 디렉터리가 등록된 후 실행되는 DirectoryAdded 훅 추가"
+      }
+    },
+    {
       "id": "ff9a5c1479e9780e",
       "title": "Grok in Google Workspace",
       "title_ko": "Google Workspace에서의 Grok 지원",
@@ -2768,6 +3726,23 @@
       "published_at": "2026-07-23T00:00:00+00:00",
       "date_precision": "time",
       "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다."
+    },
+    {
+      "id": "7ddec5f16af6d263",
+      "title": "Adjustable VAD threshold for Speech to Text",
+      "title_ko": "음성 인식(Speech to Text)을 위한 조정 가능한 VAD 임계값",
+      "source_id": "grok-releases",
+      "source_name": "Grok Releases",
+      "source_url": "https://docs.x.ai/developers/release-notes#adjustable-vad-threshold-for-speech-to-text",
+      "source_summary": "Speech to Text now accepts a vad_threshold parameter (streaming query param and batch multipart field) to tune the voice-activity gate that skips non-speech audio. Lower values transcribe quieter or noisier speech — useful for narrowband telephony — and 0 disables the gate. See the Speech to Text docs.",
+      "source_summary_ko": "음성 인식(Speech to Text)에서 음성이 아닌 오디오를 건너뛰는 음성 활동 감지(VAD) 게이트를 조정할 수 있는 vad_threshold 매개변수(스트리밍 쿼리 매개변수 및 일괄 멀티파트 필드)를 지원합니다. 값을 낮추면 더 작거나 소음이 많은 음성을 전사할 수 있어 협대역 전화 통신에 유용하며, 0으로 설정하면 게이트가 비활성화됩니다. 자세한 내용은 Speech to Text 문서를 참조하세요.",
+      "fetched_at": "2026-09-21T20:44:07+09:00",
+      "published_on": "2026-07-23",
+      "date_precision": "day",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "release_notes_ko": {
+        "new_features": "음성 인식(Speech to Text)에서 음성이 아닌 오디오를 건너뛰는 음성 활동 게이트를 조정하기 위한 vad_threshold 매개변수를 지원합니다. 낮은 값을 사용하면 더 조용하거나 시끄러운 음성을 전사할 수 있으며(협대역 전화에 유용), 0은 게이트를 비활성화합니다."
+      }
     }
   ]
 }

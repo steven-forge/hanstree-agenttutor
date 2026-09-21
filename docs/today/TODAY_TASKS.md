@@ -19,7 +19,43 @@
 - [x] 정상 데이터 보존 규칙 적용
 - [x] Anthropic의 오래된 날짜 전용 기사를 보류 대신 수집 범위 밖으로 판정
 
-## v0.4.0 Releases 분리 및 한국어 릴리스 요약
+## v0.5.0 Claude Code·Grok Releases 추가
+
+기준: [TODAY_PLAN.md](./TODAY_PLAN.md) v0.5.0 구역, [NEWS_OPERATIONS.md](./NEWS_OPERATIONS.md) 0장. 구현·확인이 끝난 항목만 체크한다.
+
+### 구현 작업
+- [x] docs/today/ 문서 3종(PLAN, TASKS, OPERATIONS)에 v0.5.0 운영 기준과 공식 출처·57건 예상(Claude 49건, Grok 8건)·작업 목록 추가
+- [x] 제품 버전 0.5.0 상향 (package.json, package-lock.json)
+- [x] release source id 4개 확장 (codex-releases, gemini-releases, claude-releases, grok-releases)
+- [x] app/today/page.tsx에서 4개 release source 제외 (기사 수·페이징·목록·출처 상태)
+- [x] app/releases/page.tsx 4개 release source 페이징 및 소개 문구(Codex, Claude Code, Gemini CLI, Grok) 갱신
+- [x] scripts/collect_content.py에 RELEASE_SOURCE_IDS 상수 정의 및 기존 반복 set 교체
+- [x] Claude Code GitHub release(anthropics/claude-code) parse_github_releases 재사용 및 버전형 제목('Claude Code vX 버전 출시') 생성
+- [x] Grok 공식 HTML(https://docs.x.ai/developers/release-notes) HTMLParser 파싱 구현 (월 h2, 날짜 div, h3 id/title, p/li 설명, script/style 무시, 연도 처리, day 정밀도)
+- [x] canonicalize_url에서 docs.x.ai release-notes 경로의 URL fragment 보존
+- [x] Grok 설명 new_features/chores 분류, 최대 3개·420바이트 요약 및 번역, bug_fixes 비움, release_notes_ko 항상 포함
+- [x] Grok 후보 make_candidate 생성, 번역 실패 시 출처 실패 처리 및 영문 비공개
+- [x] Grok 불완전 항목 보류(held_count) 및 60일 도달 시 coverage_limited=false 처리
+- [x] source config에 Grok Releases(xai_releases) 추가 및 fetch status/content type 검증 연결
+- [x] archive 보강 집계와 초보자 해설 release 판정에 4개 release source 적용
+
+### 확인 작업
+- [x] 실제 60일 릴리스 수집 실행 (Claude 49건, Grok 8건, 전체 릴리스 87건·뉴스 162건, 8개 출처 정상)
+- [x] 프로덕션 빌드 통과 및 `/today`, `/releases` 경로 생성 확인 (`npm run build`)
+- [ ] 배포 후 `/today` 및 `/releases` 화면 표시와 4개 릴리스 출처 동작 확인
+
+### v0.5.0 구현 기록
+- 2026-09-21, v0.5.0:
+  - `package.json` 및 `package-lock.json` 버전을 0.5.0으로 상향했다.
+  - release source id를 `codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases` 4개로 확장했다.
+  - `/today`에서 4개 release source를 기사 수, 페이징, 목록, 출처 점검 상태에서 완전히 제외했다.
+  - `/releases`에서 4개 release source만 최신순 10개씩 페이징하고, 소개 문구에 Codex, Claude Code, Gemini CLI, Grok을 명시했다.
+  - `scripts/collect_content.py`에 `RELEASE_SOURCE_IDS` 상수를 선언하고 중복 set들을 일원화했다.
+  - Claude Code는 `parse_github_releases`를 그대로 재사용해 source config에 추가하고, `Claude Code vX 버전 출시` 제목 생성과 3분류 요약·번역을 연동했다.
+  - Grok은 공식 HTML(`https://docs.x.ai/developers/release-notes`)을 Python stdlib `HTMLParser`로 파싱하여 월 h2(명시 연도 지원), 날짜 div, h3 id/title, p/li 설명을 읽도록 구현했다. `canonicalize_url`에서 `#<h3-id>` fragment를 보존하도록 하고, 3개·420바이트 상한 및 번역, new_features/chores 분류, 불완전 항목 보류, 60일 도달 시 `coverage_limited=false` 등을 구현했다.
+  - archive 보강 집계와 초보자 해설 release 판정에도 4개 source를 적용했다.
+
+## v0.4.0 Releases 분리 및 한국어 릴리스 요약 (역사 기록)
 
 기준: [TODAY_PLAN.md](./TODAY_PLAN.md) v0.4.0 구역, [NEWS_OPERATIONS.md](./NEWS_OPERATIONS.md) 0장. 구현·확인이 끝난 항목만 체크한다.
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const PAGE_SIZE = 10;
-const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases"]);
+const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases", "claude-releases", "grok-releases"]);
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
