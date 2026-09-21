@@ -17,8 +17,8 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
         </Link>
       </nav>
       {NAV_GROUPS.map((group) => (
-        <section key={group.title} className="sidebar-group">
-          <p>{group.title}</p>
+        <details key={group.title} className="sidebar-group" open={group.title === "Today"}>
+          <summary>{group.title}</summary>
           <nav aria-label={`${group.title} 목록`}>
             {group.items.map((item) => {
               const isSelected = item.href === current;
@@ -34,7 +34,7 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
               );
             })}
           </nav>
-        </section>
+        </details>
       ))}
       <footer>
         <span>공식 출처를 주기적으로 확인합니다.</span>
