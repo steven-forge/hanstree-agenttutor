@@ -12,6 +12,12 @@ export const metadata: Metadata = {
 
 const PAGE_SIZE = 10;
 const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases", "claude-releases", "grok-releases"]);
+const RELEASE_AGENTS = [
+  { id: "codex", label: "Codex", sourceId: "codex-releases" },
+  { id: "claude", label: "Claude", sourceId: "claude-releases" },
+  { id: "gemini", label: "Gemini", sourceId: "gemini-releases" },
+  { id: "grok", label: "Grok", sourceId: "grok-releases" }
+] as const;
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
@@ -32,12 +38,17 @@ function formatKstTime(isoString: string | null | undefined): string {
   }
 }
 
-export default async function ReleasesPage({ searchParams }: { searchParams: Promise<{ page?: string | string[] }> }) {
-  const { page } = await searchParams;
+export default async function ReleasesPage({ searchParams }: { searchParams: Promise<{ page?: string | string[]; agent?: string | string[] }> }) {
+  const params = await searchParams;
+  const { page } = params;
   const { edition_date, window_start, window_end, collected_at, reviewed_at, articles } = todayData;
   const { news: newsHealth } = contentHealth;
 
-  const releaseArticles = (articles || []).filter((a) => RELEASE_SOURCE_IDS.has(a.source_id));
+  const selectedAgent = typeof params.agent === "string" && RELEASE_AGENTS.some((agent) => agent.id === params.agent) ? params.agent : "all";
+  const selectedSourceId = RELEASE_AGENTS.find((agent) => agent.id === selectedAgent)?.sourceId;
+  const releaseArticles = (articles || []).filter(
+    (a) => RELEASE_SOURCE_IDS.has(a.source_id) && (!selectedSourceId || a.source_id === selectedSourceId)
+  );
   const releaseHealthSources = (newsHealth.sources || []).filter((s) => RELEASE_SOURCE_IDS.has(s.id || ""));
   const releaseCandidateCount = releaseHealthSources.reduce((acc, s) => acc + (s.count ?? 0), 0);
   const releaseFailedCount = releaseHealthSources.filter((s) => s.status === "failed").length;
@@ -56,7 +67,13 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
   // 생략=1, 양의 정수 문자열만 유효, 그 외(배열·0·음수·소수·문자)는 0으로 무효 처리
   const pageNum = page === undefined ? 1 : typeof page === "string" && /^[1-9]\d*$/.test(page) ? Number(page) : 0;
   const pageOutOfRange = pageNum < 1 || pageNum > totalPages;
-  const pageHref = (n: number) => (n === 1 ? "/releases" : `/releases?page=${n}`);
+  const pageHref = (n: number) => {
+    const query = new URLSearchParams();
+    if (n > 1) query.set("page", String(n));
+    if (selectedAgent !== "all") query.set("agent", selectedAgent);
+    const search = query.toString();
+    return search ? `/releases?${search}` : "/releases";
+  };
   const pageStart = (pageNum - 1) * PAGE_SIZE;
   const hasArticles = count > 0;
   const isReviewed = Boolean(reviewed_at);
@@ -107,6 +124,27 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                   60일 수집 기간 · {formatKstTime(window_start || latestCollection.window_start)} ~ {formatKstTime(window_end || latestCollection.window_end)}
                 </span>
               </div>
+              <nav aria-label="릴리스 에이전트 필터" style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "20px" }}>
+                <Link
+                  href="/releases"
+                  className="tag-link"
+                  aria-current={selectedAgent === "all" ? "page" : undefined}
+                  style={selectedAgent === "all" ? { fontWeight: 800, background: "var(--blue)", color: "white" } : undefined}
+                >
+                  전체
+                </Link>
+                {RELEASE_AGENTS.map((agent) => (
+                  <Link
+                    key={agent.id}
+                    href={`/releases?agent=${agent.id}`}
+                    className="tag-link"
+                    aria-current={selectedAgent === agent.id ? "page" : undefined}
+                    style={selectedAgent === agent.id ? { fontWeight: 800, background: "var(--blue)", color: "white" } : undefined}
+                  >
+                    {agent.label}
+                  </Link>
+                ))}
+              </nav>
             </header>
 
             {releaseStatus === "not_collected" && (
