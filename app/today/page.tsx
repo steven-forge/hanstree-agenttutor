@@ -289,6 +289,10 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                             <span
                               className={s.status === "ok" ? "status-confirmed" : "status-unconfirmed"}
                               style={{ fontSize: "0.74rem" }}
+                              {...(s.status === "failed" && {
+                                title: s.error || "실패 사유가 기록되지 않았습니다.",
+                                "aria-label": `수집 실패: ${s.error || "실패 사유가 기록되지 않았습니다."}`,
+                              })}
                             >
                               {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : "수집 실패"}
                             </span>
