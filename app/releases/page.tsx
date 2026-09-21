@@ -124,27 +124,6 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                   60일 수집 기간 · {formatKstTime(window_start || latestCollection.window_start)} ~ {formatKstTime(window_end || latestCollection.window_end)}
                 </span>
               </div>
-              <nav aria-label="릴리스 에이전트 필터" style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "20px" }}>
-                <Link
-                  href="/releases"
-                  className="tag-link"
-                  aria-current={selectedAgent === "all" ? "page" : undefined}
-                  style={selectedAgent === "all" ? { fontWeight: 800, background: "var(--blue)", color: "white" } : undefined}
-                >
-                  전체
-                </Link>
-                {RELEASE_AGENTS.map((agent) => (
-                  <Link
-                    key={agent.id}
-                    href={`/releases?agent=${agent.id}`}
-                    className="tag-link"
-                    aria-current={selectedAgent === agent.id ? "page" : undefined}
-                    style={selectedAgent === agent.id ? { fontWeight: 800, background: "var(--blue)", color: "white" } : undefined}
-                  >
-                    {agent.label}
-                  </Link>
-                ))}
-              </nav>
             </header>
 
             {releaseStatus === "not_collected" && (
@@ -166,8 +145,28 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
               </div>
             )}
 
+            <nav className="releases-tabs" aria-label="릴리스 에이전트 필터">
+              <Link
+                href="/releases"
+                className={`releases-tab${selectedAgent === "all" ? " active" : ""}`}
+                aria-current={selectedAgent === "all" ? "page" : undefined}
+              >
+                전체
+              </Link>
+              {RELEASE_AGENTS.map((agent) => (
+                <Link
+                  key={agent.id}
+                  href={`/releases?agent=${agent.id}`}
+                  className={`releases-tab${selectedAgent === agent.id ? " active" : ""}`}
+                  aria-current={selectedAgent === agent.id ? "page" : undefined}
+                >
+                  {agent.label}
+                </Link>
+              ))}
+            </nav>
+
             {!hasArticles ? (
-              <div className="empty-state" style={{ marginTop: "32px" }}>
+              <div id="releases" className="empty-state" style={{ marginTop: "28px" }}>
                 <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)" }}>
                   {isReviewedEmpty ? "조건에 맞는 주요 릴리스가 없습니다." : hasNoCandidates ? "현재 발행 가능한 릴리스 후보는 0건입니다." : "아직 검토되지 않았습니다."}
                 </p>
@@ -184,7 +183,7 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                 </div>
               </div>
             ) : pageOutOfRange ? (
-              <div id="releases" className="empty-state" style={{ marginTop: "32px" }}>
+              <div id="releases" className="empty-state" style={{ marginTop: "28px" }}>
                 <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)" }}>해당 페이지에 릴리스가 없습니다.</p>
                 <div style={{ marginTop: "16px" }}>
                   <Link href="/releases" className="tag-link" style={{ padding: "6px 14px", fontSize: "0.85rem" }}>
@@ -193,7 +192,7 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                 </div>
               </div>
             ) : (
-              <div id="releases" style={{ display: "grid", gap: "20px", marginTop: "32px" }}>
+              <div id="releases" style={{ display: "grid", gap: "20px", marginTop: "28px" }}>
                 <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지</p>
                 {releaseArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
                   <article key={article.id} className="card" style={{ padding: "24px" }}>
