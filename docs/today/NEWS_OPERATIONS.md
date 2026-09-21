@@ -10,7 +10,7 @@
   - `grok-releases`: `https://docs.x.ai/developers/release-notes`, 공식 HTML, 최근 60일 8건 실측. (Markdown URL은 날짜가 빠지므로 제외)
   - 총 예상 신규 릴리스: 57건 (Claude 49건 + Grok 8건).
 - **수집 및 파싱 기준**:
-  - **Claude Code**: 기존 `parse_github_releases`를 그대로 재사용해 source config 한 줄을 추가한다. 버전형 제목은 `Claude Code vX 버전 출시`로 생성하고, 기존 3분류(new_features, bug_fixes, chores) 요약·번역·archive 보강을 그대로 활용한다.
+  - **Claude Code**: 기존 `parse_github_releases`를 그대로 재사용해 source config 한 줄을 추가한다. 버전형 제목은 `Claude Code vX 버전 출시`로 생성한다. `What's changed`의 `Added`·`New`·`Introduced`는 New Features, `Fixed`·`Resolved`는 Bug Fixes, 나머지는 Chores로 분류한다.
   - **Grok**: Python stdlib `HTMLParser`로 `<main>` 안의 월 `h2`, 날짜 div(예: `September 17`), 항목 `h3 id=...`, 설명 `p`/`li`를 파싱한다. script/style 데이터는 무시한다. 페이지 최신 연도는 `window_end`의 KST 연도이며, `December 2025` 같은 명시 연도 제목을 지원한다. 날짜는 원문에 시각이 없으므로 `published_on`/`date_precision: day`로 보존한다.
   - **URL 정규화 (Fragment 보존)**: Grok 항목 URL은 `https://docs.x.ai/developers/release-notes#<h3-id>`이며, `canonicalize_url`은 이 경로에 한해 fragment를 보존하여 항목별 식별과 중복 제거를 지원한다. 다른 URL fragment 정책은 변경하지 않는다.
   - **Grok 요약 및 분류**: 항목 설명은 기본 `new_features`로 최대 3개·420바이트 요약 후 한국어 번역한다. 제목에 retirement/deprecation/deprecated가 있으면 `chores`로 분류한다. `bug_fixes`는 공식 본문에 해당 내용이 없으므로 비운다. `release_notes_ko`는 항상 포함한다.

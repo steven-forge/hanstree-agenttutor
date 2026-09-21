@@ -261,6 +261,16 @@ def clean_release_bullet(line: str) -> str:
     return s
 
 
+def release_bullet_category(bullet: str) -> str:
+    """릴리스 불릿의 관용 접두어를 화면의 세 분류로 맞춘다."""
+    normalized = re.sub(r"^\[[^\]]+\]\s*", "", bullet).strip()
+    if re.match(r"(?i)^(?:feat(?:ure)?(?:\([^)]+\))?[:/\s]|feat/|added?\b|new\b|introduced?\b)", normalized):
+        return "new_features"
+    if re.match(r"(?i)^(?:fix(?:up)?(?:\([^)]+\))?[:/\s]|fix/|fixed?\b|resolved?\b)", normalized):
+        return "bug_fixes"
+    return "chores"
+
+
 def extract_release_categories(body: str) -> dict[str, list[str]]:
     """GitHub release 원문 body에서 new_features, bug_fixes, chores 항목을 추출한다."""
     sections: dict[str, list[str]] = {"new_features": [], "bug_fixes": [], "chores": []}
@@ -303,21 +313,13 @@ def extract_release_categories(body: str) -> dict[str, list[str]]:
         return sections
 
     # 2. 명시적 제목이 없으면 What's Changed 또는 bullet들을 conventional prefix로 분류
-    feat_re = re.compile(r"^(?:feat(?:ure)?(?:\([^)]+\))?[:/\s]|feat/)", re.IGNORECASE)
-    fix_re = re.compile(r"^(?:fix(?:up)?(?:\([^)]+\))?[:/\s]|fix/)", re.IGNORECASE)
-
     for line in lines:
         if not re.match(r"^\s*[-*+]\s+", line):
             continue
         bullet = clean_release_bullet(line)
         if not bullet:
             continue
-        if feat_re.match(bullet):
-            sections["new_features"].append(bullet)
-        elif fix_re.match(bullet):
-            sections["bug_fixes"].append(bullet)
-        else:
-            sections["chores"].append(bullet)
+        sections[release_bullet_category(bullet)].append(bullet)
 
     return sections
 

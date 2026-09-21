@@ -30,6 +30,7 @@
 - **Claude Code**:
   - 기존 `parse_github_releases`를 그대로 재사용하고 source config 한 줄 추가 (`id: claude-releases`, `name: Claude Code Releases`, `repo: anthropics/claude-code`).
   - 버전형 제목은 `Claude Code vX 버전 출시`로 생성한다.
+  - `What's changed` 불릿은 `Added`·`New`·`Introduced`를 New Features, `Fixed`·`Resolved`를 Bug Fixes, 나머지를 Chores로 분류한다.
   - 기존 3분류(new_features, bug_fixes, chores) 추출·번역·archive 보강을 그대로 사용한다.
 - **Grok**:
   - Python stdlib `HTMLParser`로 공식 HTML만 파싱한다.

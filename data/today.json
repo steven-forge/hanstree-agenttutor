@@ -53,7 +53,7 @@
       "title_ko": "Claude Code v2.1.277 버전 출시",
       "source_summary_ko": "## 변경 사항 - AGENTS.md 지원 추가: CLAUDE.md가 없는 프로젝트에서 Claude Code가 대신 AGENTS.md를 읽음; `/config`의 \"Project instructions\"에서 변경 가능(Bedrock, Vertex, Foundry는 아직 미지원) - 유일한 송신(egress) 경로가 포워드 프록시인 Claude 앱 게이트웨이를 위한 `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` 추가: 모든 아웃바운드 요청이 로컬에서 호스트를 확인하는 대신 프록시에 호스트 이름을 전달함 - 정적 헤더를 전송하기 위해 Claude 앱 게이트웨이 업스트림에 선택적 `headers:` 맵 추가",
       "release_notes_ko": {
-        "chores": "AGENTS.md 지원 추가: CLAUDE.md가 없는 프로젝트에서 Claude Code가 대신 AGENTS.md를 읽음; `/config`의 \"Project instructions\"에서 변경 가능(Bedrock, Vertex, Foundry는 아직 미지원)\n유일한 송신(egress) 경로가 포워드 프록시인 Claude 앱 게이트웨이를 위한 `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` 추가: 모든 아웃바운드 요청이 로컬에서 확인하는 대신 프록시에 호스트 이름을 전달함"
+        "new_features": "AGENTS.md 지원 추가: CLAUDE.md가 없는 프로젝트에서 Claude Code가 대신 AGENTS.md를 읽음; `/config`의 \"Project instructions\"에서 변경 가능(Bedrock, Vertex, Foundry는 아직 미지원)\n유일한 송신(egress) 경로가 포워드 프록시인 Claude 앱 게이트웨이를 위한 `CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1` 추가: 모든 아웃바운드 요청이 로컬에서 확인하는 대신 프록시에 호스트 이름을 전달함"
       }
     },
     {
@@ -112,7 +112,7 @@
       "title_ko": "Claude Code v2.1.276 버전 출시",
       "source_summary_ko": "## 변경 사항 - `ANTHROPIC_BASE_URL`이 프록시 또는 게이트웨이를 가리킬 때 모든 요청이 `400 … Input tag 'advisor_20260301'` 오류로 실패하던 문제 수정(2.1.275 회귀 버그)",
       "release_notes_ko": {
-        "chores": "`ANTHROPIC_BASE_URL`이 프록시 또는 게이트웨이를 가리킬 때 모든 요청이 `400 … Input tag 'advisor_20260301'` 오류로 실패하던 문제 수정(2.1.275 회귀 버그)"
+        "bug_fixes": "`ANTHROPIC_BASE_URL`이 프록시 또는 게이트웨이를 가리킬 때 모든 요청이 `400 … Input tag 'advisor_20260301'` 오류로 실패하던 문제 수정(2.1.275 회귀 버그)"
       }
     },
     {
@@ -158,7 +158,7 @@
       "title_ko": "Claude Code v2.1.275 버전 출시",
       "source_summary_ko": "## 변경 사항 - Claude 앱 게이트웨이 로그인 시 로그인된 계정 표시 추가: 게이트웨이가 계정명을 지정하면 자격 증명이 저장되기 전에 확인하며 `/status`에 표시됨 - 현재 턴을 중단하고 대기 중인 모든 메시지를 한 번에 전송하는 즉시 전송 키(Ctrl+Enter 또는 Ctrl+X Ctrl+S) 추가; 전송 및 대기 중인 메시지는 모델이 수신할 때까지 회색으로 표시됨 - 설정된 `otelHeadersHelper` 실패 시 시작 경고 추가로 원격 분석 데이터가 전송되지 않는 세션을 인지할 수 있도록 개선",
       "release_notes_ko": {
-        "chores": "Claude 앱 게이트웨이 로그인 시 로그인된 계정 표시 추가: 게이트웨이가 계정명을 지정하면 자격 증명이 저장되기 전에 확인하며 `/status`에 표시됨\n현재 턴을 중단하고 대기 중인 모든 메시지를 한 번에 전송하는 즉시 전송 키(Ctrl+Enter 또는 Ctrl+X Ctrl+S) 추가; 전송 및 대기 중인 메시지는 모델이 수신할 때까지 회색으로 표시됨"
+        "new_features": "Claude 앱 게이트웨이 로그인 시 로그인된 계정 표시 추가: 게이트웨이가 계정명을 지정하면 자격 증명이 저장되기 전에 확인하며 `/status`에 표시됨\n현재 턴을 중단하고 대기 중인 모든 메시지를 한 번에 전송하는 즉시 전송 키(Ctrl+Enter 또는 Ctrl+X Ctrl+S) 추가; 전송 및 대기 중인 메시지는 모델이 수신할 때까지 회색으로 표시됨"
       }
     },
     {
@@ -213,7 +213,7 @@
       "title_ko": "Claude Code v2.1.274 버전 출시",
       "source_summary_ko": "## 변경 사항 - 메모리 사용량이 위험 수준일 때 시각적 경고 및 메모리 확보 또는 안전한 재시작 단계 안내 추가 - 첫 번째 비대화형 턴에서 MCP 서버 연결 대기 시간을 제한하는 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` 추가(`0` = 대기 안 함) - `api_request` 이벤트와 일치하도록 `claude_code.llm_request` OpenTelemetry 추적 스팬에 `effort` 속성 추가 - `claude_code.managed_settings_resolved` OTel 이벤트 추가: 관리형 설정 소스 및 정책 헬퍼 상태 기록",
       "release_notes_ko": {
-        "chores": "메모리 사용량이 위험 수준일 때 시각적 경고 및 메모리 확보 또는 안전한 재시작 단계 안내 추가\n첫 번째 비대화형 턴에서 MCP 서버 연결 대기 시간을 제한하는 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` 추가(`0` = 대기 안 함)\n`api_request` 이벤트와 일치하도록 `claude_code.llm_request` OpenTelemetry 추적 스팬에 `effort` 속성 추가"
+        "new_features": "메모리 사용량이 위험 수준일 때 시각적 경고 및 메모리 확보 또는 안전한 재시작 단계 안내 추가\n첫 번째 비대화형 턴에서 MCP 서버 연결 대기 시간을 제한하는 `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` 추가(`0` = 대기 안 함)\n`api_request` 이벤트와 일치하도록 `claude_code.llm_request` OpenTelemetry 추적 스팬에 `effort` 속성 추가"
       }
     },
     {
@@ -372,7 +372,7 @@
       "title_ko": "Claude Code v2.1.273 버전 출시",
       "source_summary_ko": "## 변경 사항 - LLM 게이트웨이를 위한 `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`, `x-claude-code-context-compacted` 요청 헤더 추가 (`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`로 활성화) - 세션 중간에 MCP 서버 연결이 끊어지고 자동 재연결이 중단되었을 때 `/mcp`를 안내하는 알림 추가 - Claude 앱에서 `claude --remote-control` 또는 `/remote-control`로 시작된 세션을 포크하는 기능 추가",
       "release_notes_ko": {
-        "chores": "LLM 게이트웨이를 위한 `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`, `x-claude-code-context-compacted` 요청 헤더 추가 (`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`로 활성화)\n세션 중간에 MCP 서버 연결이 끊어지고 자동 재연결이 중단되었을 때 `/mcp`를 안내하는 알림 추가"
+        "new_features": "LLM 게이트웨이를 위한 `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction`, `x-claude-code-context-compacted` 요청 헤더 추가 (`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`로 활성화)\n세션 중간에 MCP 서버 연결이 끊어지고 자동 재연결이 중단되었을 때 `/mcp`를 안내하는 알림 추가"
       }
     },
     {
@@ -458,7 +458,7 @@
       "title_ko": "Claude Code v2.1.271 버전 출시",
       "source_summary_ko": "## 변경 사항 - Claude Code 원격 세션(클라우드 및 자체 호스팅 러너)에 고속 모드(fast mode) 추가: 조직에서 허용하는 경우 호스트의 fast-mode 설정 또는 세션에서 입력한 `/fast` 적용 - 전체 화면 모드에서 `/config` 패널에 마우스 지원 추가: 휠로 설정 목록 스크롤, 설정 값 클릭 시 변경, 포인터 아래 행 강조 표시 - `claude self-hosted-runner --drain-marker-file ` 추가: SIGTERM 드레인 시 해당 파일이 존재하면 러너 종료 처리",
       "release_notes_ko": {
-        "chores": "Claude Code 원격 세션(클라우드 및 자체 호스팅 러너)에 고속 모드(fast mode) 추가: 조직에서 허용하는 경우 호스트의 fast-mode 설정 또는 세션에서 입력한 `/fast` 적용\n전체 화면 모드에서 `/config` 패널에 마우스 지원 추가: 휠로 설정 목록 스크롤, 설정 값 클릭 시 변경, 포인터 아래 행 강조 표시"
+        "new_features": "Claude Code 원격 세션(클라우드 및 자체 호스팅 러너)에 고속 모드(fast mode) 추가: 조직에서 허용하는 경우 호스트의 fast-mode 설정 또는 세션에서 입력한 `/fast` 적용\n전체 화면 모드에서 `/config` 패널에 마우스 지원 추가: 휠로 설정 목록 스크롤, 설정 값 클릭 시 변경, 포인터 아래 행 강조 표시"
       }
     },
     {
@@ -523,7 +523,7 @@
       "title_ko": "Claude Code v2.1.270 버전 출시",
       "source_summary_ko": "## 변경 사항 - 세션이 일정 시간 실행된 후 Bash에서 읽기 전용 git 명령어가 예기치 않게 권한을 요청하던 문제 수정(2.1.269 회귀 버그)",
       "release_notes_ko": {
-        "chores": "세션이 일정 시간 실행된 후 Bash에서 읽기 전용 git 명령어가 예기치 않게 권한을 요청하던 문제 수정(2.1.269 회귀 버그)"
+        "bug_fixes": "세션이 일정 시간 실행된 후 Bash에서 읽기 전용 git 명령어가 예기치 않게 권한을 요청하던 문제 수정(2.1.269 회귀 버그)"
       }
     },
     {
@@ -540,7 +540,7 @@
       "title_ko": "Claude Code v2.1.269 버전 출시",
       "source_summary_ko": "## 변경 사항 - `claude plugin eval` 추가: Claude Code에 대해 플러그인의 평가 제품군을 실행하고 점수화된 재현 가능한 결과(JSON + HTML 보고서) 생성 (`claude plugin eval --help` 참조) - Remote Control 및 클라우드 등 기타 헤드리스 세션을 포함하여 출력 스타일을 나열하고 전환하는 `/output-style [name]` 추가 - Bash 도구가 파일 편집을 처리할 때 변경된 파일 diff를 Bash 도구 결과에 추가(`bashEditDiffEnabled` 설정) - `OTEL_METRICS_INCLUDE_REPO` 추가",
       "release_notes_ko": {
-        "chores": "`claude plugin eval` 추가: Claude Code에 대해 플러그인의 평가 제품군을 실행하고 점수화된 재현 가능한 결과(JSON + HTML 보고서) 생성 (`claude plugin eval --help` 참조)\nRemote Control 및 클라우드 등 기타 헤드리스 세션을 포함하여 출력 스타일을 나열하고 전환하는 `/output-style [name]` 추가"
+        "new_features": "`claude plugin eval` 추가: Claude Code에 대해 플러그인의 평가 제품군을 실행하고 점수화된 재현 가능한 결과(JSON + HTML 보고서) 생성 (`claude plugin eval --help` 참조)\nRemote Control 및 클라우드 등 기타 헤드리스 세션을 포함하여 출력 스타일을 나열하고 전환하는 `/output-style [name]` 추가"
       }
     },
     {
@@ -585,7 +585,7 @@
       "title_ko": "Claude Code v2.1.268 버전 출시",
       "source_summary_ko": "## 변경 사항 - Claude 앱 게이트웨이 개선: `gateway.yaml`에 `pricing:`이 설정된 경우 로그인된 Claude Code 클라이언트가 관리형 설정을 통해 동일한 요율을 수신하여 `/cost` 및 원격 분석이 지출 측정기와 일치함 - 게이트웨이의 `access_control.allow_cidrs`가 비어 있을 때 시작 경고 추가 및 공용 주소에서 요청이 처음 도착할 때 일회성 경고 추가 - 관리자가 특정 네트워크에서 Claude 앱 게이트웨이로의 `/login`을 허용할 수 있는 `gatewayInternalNetworks` 관리형 설정 추가",
       "release_notes_ko": {
-        "chores": "Claude 앱 게이트웨이 개선: `gateway.yaml`에 `pricing:`이 설정된 경우 로그인된 Claude Code 클라이언트가 관리형 설정을 통해 동일한 요율을 수신하여 `/cost` 및 원격 분석이 지출 측정기와 일치함\n게이트웨이의 `access_control.allow_cidrs`가 비어 있을 때 시작 경고 추가 및 공용 주소에서 요청이 처음 도착할 때 일회성 경고 추가"
+        "new_features": "Claude 앱 게이트웨이 개선: `gateway.yaml`에 `pricing:`이 설정된 경우 로그인된 Claude Code 클라이언트가 관리형 설정을 통해 동일한 요율을 수신하여 `/cost` 및 원격 분석이 지출 측정기와 일치함\n게이트웨이의 `access_control.allow_cidrs`가 비어 있을 때 시작 경고 추가 및 공용 주소에서 요청이 처음 도착할 때 일회성 경고 추가"
       }
     },
     {
@@ -736,7 +736,7 @@
       "title_ko": "Claude Code v2.1.267 버전 출시",
       "source_summary_ko": "## 변경 사항 - `maxEffortLevel` 설정 추가(최상위 또는 `modelSettings`의 모델별 설정): Bedrock, Vertex 및 Foundry를 포함한 모든 제공자에서 노력 수준(effort level)의 상한을 설정하며 사용자는 여전히 더 낮은 수준 선택 가능 - 프롬프트 텍스트 반복 작업을 위해 대화에 기록된 프롬프트를 재사용하는 대신 매 요청마다 시스템 프롬프트를 새로 렌더링하는 `--system-prompt-snapshot off` 추가 - 관리형 설정이 필요한 조직에서 클라우드의 Cowork 예약 작업이 시작 시 실패하던 문제 수정",
       "release_notes_ko": {
-        "chores": "`maxEffortLevel` 설정 추가(최상위 또는 `modelSettings`의 모델별 설정): Bedrock, Vertex 및 Foundry를 포함한 모든 제공자에서 노력 수준(effort level)의 상한을 설정하며 사용자는 여전히 더 낮은 수준 선택 가능\n프롬프트 텍스트 반복 작업을 위해 대화에 기록된 프롬프트를 재사용하는 대신 매 요청마다 시스템 프롬프트를 새로 렌더링하는 `--system-prompt-snapshot off` 추가"
+        "new_features": "`maxEffortLevel` 설정 추가(최상위 또는 `modelSettings`의 모델별 설정): Bedrock, Vertex 및 Foundry를 포함한 모든 제공자에서 노력 수준(effort level)의 상한을 설정하며 사용자는 여전히 더 낮은 수준 선택 가능\n프롬프트 텍스트 반복 작업을 위해 대화에 기록된 프롬프트를 재사용하는 대신 매 요청마다 시스템 프롬프트를 새로 렌더링하는 `--system-prompt-snapshot off` 추가"
       }
     },
     {
@@ -823,7 +823,7 @@
       "title_ko": "Claude Code v2.1.266 버전 출시",
       "source_summary_ko": "## 변경 사항 - LLM 게이트웨이 및 프록시 설정에 영향을 주던 2.1.265 회귀 버그 수정: 이전에 `ANTHROPIC_BASE_URL`과 `ANTHROPIC_AUTH_TOKEN`이 둘 다 설정되지 않으면 무시되던 문서화되지 않은 `CLAUDE_CODE_USE_GATEWAY` 환경 변수가 2.1.265에서 단독으로 클라우드 게이트웨이 로그인을 강제하기 시작하여, API 키, `apiKeyHelper` 또는 사용자 지정 인증 헤더와 함께 설정된 구성에서 모든 요청이 \"Not signed in to the Cloud gateway\" 오류로 실패하던 문제였습니다. 이제 해당 변수는 단독으로는 다시 무시됩니다.",
       "release_notes_ko": {
-        "chores": "LLM 게이트웨이 및 프록시 설정에 영향을 주던 2.1.265 회귀 버그 수정: 이전에 `ANTHROPIC_BASE_URL`과 `ANTHROPIC_AUTH_TOKEN`이 둘 다 설정되지 않으면 무시되던 문서화되지 않은 `CLAUDE_CODE_USE_GATEWAY` 환경 변수가 2.1.265에서 단독으로 클라우드 게이트웨이 로그인을 강제하여, API 키, `apiKeyHelper` 또는 사용자 지정 인증 헤더와 함께 설정된 구성에서 모든 요청이 \"Not signed in to the Cloud gateway\" 오류로 실패하던 문제 수정"
+        "bug_fixes": "LLM 게이트웨이 및 프록시 설정에 영향을 주던 2.1.265 회귀 버그 수정: 이전에 `ANTHROPIC_BASE_URL`과 `ANTHROPIC_AUTH_TOKEN`이 둘 다 설정되지 않으면 무시되던 문서화되지 않은 `CLAUDE_CODE_USE_GATEWAY` 환경 변수가 2.1.265에서 단독으로 클라우드 게이트웨이 로그인을 강제하여, API 키, `apiKeyHelper` 또는 사용자 지정 인증 헤더와 함께 설정된 구성에서 모든 요청이 \"Not signed in to the Cloud gateway\" 오류로 실패하던 문제 수정"
       }
     },
     {
@@ -858,7 +858,7 @@
       "title_ko": "Claude Code v2.1.265 버전 출시",
       "source_summary_ko": "## 변경 사항 - 터미널 세션과 마찬가지로 Claude Desktop 및 Cowork가 Claude 앱 게이트웨이를 통해 전송하는 원격 측정(telemetry)에 `user.email` 및 `user.groups` 추가 - 플러그인 폴더를 가리키는 `--plugin-dir` 지원 추가: 매니페스트가 있는 각 하위 폴더가 로드되며, 실행 중에 추가되거나 제거된 하위 폴더도 감지됨 - 디스크에 저장되는 도구 결과에 1GB 상한 추가; 저장된 파일이 잘렸을 때 대화 내 미리보기에 표시 - 포그라운드에서 생성된 서브에이전트를 재개할 때 동작이 변경되던 문제 수정",
       "release_notes_ko": {
-        "chores": "터미널 세션과 마찬가지로 Claude Desktop 및 Cowork가 Claude 앱 게이트웨이를 통해 전송하는 원격 측정(telemetry)에 `user.email` 및 `user.groups` 추가\n플러그인 폴더를 가리키는 `--plugin-dir` 지원 추가: 매니페스트가 있는 각 하위 폴더가 로드되며 실행 중에 추가되거나 제거된 하위 폴더도 감지됨\n디스크에 저장되는 도구 결과에 1GB 상한 추가; 저장된 파일이 잘렸을 때 대화 내 미리보기에 표시"
+        "new_features": "터미널 세션과 마찬가지로 Claude Desktop 및 Cowork가 Claude 앱 게이트웨이를 통해 전송하는 원격 측정(telemetry)에 `user.email` 및 `user.groups` 추가\n플러그인 폴더를 가리키는 `--plugin-dir` 지원 추가: 매니페스트가 있는 각 하위 폴더가 로드되며 실행 중에 추가되거나 제거된 하위 폴더도 감지됨\n디스크에 저장되는 도구 결과에 1GB 상한 추가; 저장된 파일이 잘렸을 때 대화 내 미리보기에 표시"
       }
     },
     {
@@ -1049,7 +1049,7 @@
       "title_ko": "Claude Code v2.1.261 버전 출시",
       "source_summary_ko": "## 변경 사항 - 프록시가 엔드포인트를 통과시키지 못하는 등 조직 정책을 로드할 수 없는 이유를 표시하는 \"Organization policy\" 항목을 `/status` 및 `claude doctor`에 추가 - Claude가 명령어 및 백그라운드 작업 출력을 파일로 저장하기 전 인라인으로 수신하는 문자 수를 최대 128K자까지 늘리는 `bashOutputMaxChars` 및 `taskOutputMaxChars` 설정 추가 - 파일에서 서브에이전트 시스템 프롬프트를 읽어오는 `--append-subagent-system-prompt-file` 추가",
       "release_notes_ko": {
-        "chores": "프록시가 엔드포인트를 통과시키지 못하는 등 조직 정책을 로드할 수 없는 이유를 표시하는 \"Organization policy\" 행을 `/status` 및 `claude doctor`에 추가\nClaude가 명령어 및 백그라운드 작업 출력을 파일로 저장하기 전 인라인으로 수신하는 문자 수를 최대 128K자까지 늘리는 `bashOutputMaxChars` 및 `taskOutputMaxChars` 설정 추가"
+        "new_features": "프록시가 엔드포인트를 통과시키지 못하는 등 조직 정책을 로드할 수 없는 이유를 표시하는 \"Organization policy\" 행을 `/status` 및 `claude doctor`에 추가\nClaude가 명령어 및 백그라운드 작업 출력을 파일로 저장하기 전 인라인으로 수신하는 문자 수를 최대 128K자까지 늘리는 `bashOutputMaxChars` 및 `taskOutputMaxChars` 설정 추가"
       }
     },
     {
@@ -1115,7 +1115,7 @@
       "title_ko": "Claude Code v2.1.260 버전 출시",
       "source_summary_ko": "## 변경 사항 - 전체 화면 모드에서 대화 옆에 열려 Claude가 편집할 때 커밋되지 않은 변경 사항을 보여주는 diff 패널 추가(`/diff`로 전환) - 프롬프트 캐시 미스의 예상 원인(예: 도구 정의 또는 시스템 프롬프트 변경, TTL 경과 유휴 상태)을 `/cost` 및 상태 표시줄의 `prompt_cache` 필드에 추가 - 헤드리스 세션에 `/reload-plugins`를 추가하여 Claude Code Desktop 및 SDK 명령 목록에 표시 - 텍스트 형식의 `/advisor`(`/advisor`, `/adv) 추가",
       "release_notes_ko": {
-        "chores": "전체 화면 모드에서 대화 옆에 열려 Claude가 편집할 때 커밋되지 않은 변경 사항을 보여주는 diff 패널 추가(`/diff`로 전환)\n프롬프트 캐시 미스의 예상 원인(예: 도구 정의 또는 시스템 프롬프트 변경, TTL 경과 유휴 상태)을 `/cost` 및 상태 표시줄의 `prompt_cache` 필드에 추가"
+        "new_features": "전체 화면 모드에서 대화 옆에 열려 Claude가 편집할 때 커밋되지 않은 변경 사항을 보여주는 diff 패널 추가(`/diff`로 전환)\n프롬프트 캐시 미스의 예상 원인(예: 도구 정의 또는 시스템 프롬프트 변경, TTL 경과 유휴 상태)을 `/cost` 및 상태 표시줄의 `prompt_cache` 필드에 추가"
       }
     },
     {
@@ -1265,7 +1265,7 @@
       "title_ko": "Claude Code v2.1.259 버전 출시",
       "source_summary_ko": "## 변경 사항 - `managedMcpServers` 관리형 설정 추가: 조직에서 모든 사용자에게 HTTP/SSE MCP 서버 제공 가능(`.mcp.json`과 동일한 항목 형식, 실행할 명령을 지정하는 항목은 건너뜀) - 무인 헤드리스 호스트를 위한 `--permission-prompts none` 추가: 확인 메시지가 필요한 모든 항목은 자동 거부되며 활성 권한 모드(auto 모드 포함)는 계속 결정을 수행함 - GitLab 병합 요청이 인식되도록 `glab mr create/merge/close/reopen/note/update` 인식 추가",
       "release_notes_ko": {
-        "chores": "`managedMcpServers` 관리형 설정 추가: 조직에서 모든 사용자에게 HTTP/SSE MCP 서버 제공 가능(`.mcp.json`과 동일한 항목 형식, 실행할 명령을 지정하는 항목은 건너뜀)\n무인 헤드리스 호스트를 위한 `--permission-prompts none` 추가: 확인 메시지가 필요한 항목은 자동 거부되며 활성 권한 모드(auto 모드 포함)는 계속 결정 수행"
+        "new_features": "`managedMcpServers` 관리형 설정 추가: 조직에서 모든 사용자에게 HTTP/SSE MCP 서버 제공 가능(`.mcp.json`과 동일한 항목 형식, 실행할 명령을 지정하는 항목은 건너뜀)\n무인 헤드리스 호스트를 위한 `--permission-prompts none` 추가: 확인 메시지가 필요한 항목은 자동 거부되며 활성 권한 모드(auto 모드 포함)는 계속 결정 수행"
       }
     },
     {
@@ -1310,7 +1310,7 @@
       "title_ko": "Claude Code v2.1.258 버전 출시",
       "source_summary_ko": "## 변경 사항 - 2.1.255에서 발생했던 macOS 12(Monterey)에서 Claude Code가 실행되지 않던 회귀 버그 수정 - 재전송된 권한 승인을 적용할 수 없을 때 원격 및 예약 세션이 \"user messages must have non-empty content\" 오류로 실패하던 문제 수정",
       "release_notes_ko": {
-        "chores": "2.1.255에서 발생했던 macOS 12(Monterey)에서 Claude Code가 실행되지 않던 회귀 버그 수정\n재전송된 권한 승인을 적용할 수 없을 때 원격 및 예약 세션이 \"user messages must have non-empty content\" 오류로 실패하던 문제 수정"
+        "bug_fixes": "2.1.255에서 발생했던 macOS 12(Monterey)에서 Claude Code가 실행되지 않던 회귀 버그 수정\n재전송된 권한 승인을 적용할 수 없을 때 원격 및 예약 세션이 \"user messages must have non-empty content\" 오류로 실패하던 문제 수정"
       }
     },
     {
@@ -1376,7 +1376,7 @@
       "title_ko": "Claude Code v2.1.257 버전 출시",
       "source_summary_ko": "## 변경 사항 - 이제 기본 Fable 모델인 Claude Fable 5.1(`claude-fable-5-1`) 추가 — 100만 토큰 컨텍스트, 100만 토큰당 $10/$50, 캐시 읽기 100만 토큰당 $0.25 - 턴 종료 시계 및 대화록 보기 타임스탬프를 위한 \"시간 형식\"(`timeFormat`) 및 `timeZone` 설정 추가: 12시간, 24시간, 24시간 UTC 또는 strftime 패턴 지원 - 클라우드 메타데이터 자격 증명 가져오기, 송신 우회 및 테넌트 간 접근이 자동으로 승인되지 않도록 auto 모드에 격리 탈출(Containment Escape) 규칙 추가",
       "release_notes_ko": {
-        "chores": "이제 기본 Fable 모델인 Claude Fable 5.1(`claude-fable-5-1`) 추가 — 100만 토큰 컨텍스트, 100만 토큰당 $10/$50, 캐시 읽기 100만 토큰당 $0.25\n턴 종료 시계 및 대화록 보기 타임스탬프를 위한 \"시간 형식\"(`timeFormat`) 및 `timeZone` 설정 추가: 12시간, 24시간, 24시간 UTC 또는 strftime 패턴"
+        "new_features": "이제 기본 Fable 모델인 Claude Fable 5.1(`claude-fable-5-1`) 추가 — 100만 토큰 컨텍스트, 100만 토큰당 $10/$50, 캐시 읽기 100만 토큰당 $0.25\n턴 종료 시계 및 대화록 보기 타임스탬프를 위한 \"시간 형식\"(`timeFormat`) 및 `timeZone` 설정 추가: 12시간, 24시간, 24시간 UTC 또는 strftime 패턴"
       }
     },
     {
@@ -1513,7 +1513,7 @@
       "title_ko": "Claude Code v2.1.252 버전 출시",
       "source_summary_ko": "## 변경 사항 - 일부 Mac에서 Bash 명령이 \"task output swap refused (tasks dir moved or linked)\" 오류로 실패하던 문제 수정 - 아직 .claude/settings.local.json이 없는 프로젝트에서 \"항상 허용\"이 저장되지 않던 문제 수정 - claude.ai와의 연결이 저하되었을 때 Claude Desktop 또는 VS Code에서 호스팅되는 Remote Control 세션이 도구 완료 후 몇 분 동안 멈추던 문제 수정 - 매우 큰 실패 출력(예: 디스크가 꽉 찼을 때의 git 오류)이 포함된 백그라운드 작업 알림으로 인한 문제 수정",
       "release_notes_ko": {
-        "chores": "일부 Mac에서 Bash 명령이 \"task output swap refused (tasks dir moved or linked)\" 오류로 실패하던 문제 수정\n아직 .claude/settings.local.json이 없는 프로젝트에서 \"항상 허용\"이 저장되지 않던 문제 수정\nclaude.ai와의 연결이 저하되었을 때 Claude Desktop 또는 VS Code에서 호스팅되는 Remote Control 세션이 도구 완료 후 몇 분 동안 멈추던 문제 수정"
+        "bug_fixes": "일부 Mac에서 Bash 명령이 \"task output swap refused (tasks dir moved or linked)\" 오류로 실패하던 문제 수정\n아직 .claude/settings.local.json이 없는 프로젝트에서 \"항상 허용\"이 저장되지 않던 문제 수정\nclaude.ai와의 연결이 저하되었을 때 Claude Desktop 또는 VS Code에서 호스팅되는 Remote Control 세션이 도구 완료 후 몇 분 동안 멈추던 문제 수정"
       }
     },
     {
@@ -1633,7 +1633,7 @@
       "title_ko": "Claude Code v2.1.251 버전 출시",
       "source_summary_ko": "## 변경 사항 - `PreModelSwitch` 및 `PostModelSwitch` 훅 이벤트 추가(모델 전환 차단, 확인 또는 주석 달기); 이제 `SessionStart` 재개 훅이 세션 비활성 기간과 예상 재캐시 비용을 수신함 - Remote Control 클라이언트에 포그라운드 서브에이전트의 도구 호출 및 결과 실시간 스트리밍 추가(기본값인 백그라운드 서브에이전트는 계속 상태만 표시) - Claude 앱 게이트웨이를 사용하는 개발자를 위해 `/usage`에 지출 한도 표시줄 및 상태 표시줄 `rate_limits.spend_limit` 필드 추가",
       "release_notes_ko": {
-        "chores": "`PreModelSwitch` 및 `PostModelSwitch` 훅 이벤트 추가(모델 전환 차단, 확인 또는 주석 달기); 이제 `SessionStart` 재개 훅이 세션 비활성 기간과 예상 재캐시 비용을 수신함\nRemote Control 클라이언트에 포그라운드 서브에이전트의 도구 호출 및 결과 실시간 스트리밍 추가(기본값인 백그라운드 서브에이전트는 계속 상태만 표시)"
+        "new_features": "`PreModelSwitch` 및 `PostModelSwitch` 훅 이벤트 추가(모델 전환 차단, 확인 또는 주석 달기); 이제 `SessionStart` 재개 훅이 세션 비활성 기간과 예상 재캐시 비용을 수신함\nRemote Control 클라이언트에 포그라운드 서브에이전트의 도구 호출 및 결과 실시간 스트리밍 추가(기본값인 백그라운드 서브에이전트는 계속 상태만 표시)"
       }
     },
     {
@@ -1695,7 +1695,7 @@
       "title_ko": "Claude Code v2.1.248 버전 출시",
       "source_summary_ko": "## 변경 사항 - `--restricted`(또는 `CLAUDE_CODE_RESTRICTED=1`) 추가: 명령어나 코드를 실행하는 기본 내장 도구 및 `WebFetch`를 제거(`--tools`에 명시되지 않은 경우), 파일 도구의 동작을 작업 디렉터리 내부로 제한, `bypassPermissions`를 거부하고 사용자, 프로젝트 및 로컬 설정 파일을 무시함 - 에이전트 프런트매터에 `experimental.cacheTtl`(`\"5m\"` 또는 `\"1h\"`) 추가: 서브에이전트 TTL 설정이 지정되지 않았을 때 사용되는 에이전트별 프롬프트 캐시 TTL - `claude self-hosted-runner --client-label ` 추가",
       "release_notes_ko": {
-        "chores": "`--restricted`(또는 `CLAUDE_CODE_RESTRICTED=1`) 추가: 명령어나 코드를 실행하는 기본 내장 도구 및 `WebFetch`를 제거(`--tools`에 명시되지 않은 경우), 파일 도구의 동작을 작업 디렉터리 내부로 제한, `bypassPermissions`를 거부하고 사용자, 프로젝트 및 로컬 설정 파일을 무시함"
+        "new_features": "`--restricted`(또는 `CLAUDE_CODE_RESTRICTED=1`) 추가: 명령어나 코드를 실행하는 기본 내장 도구 및 `WebFetch`를 제거(`--tools`에 명시되지 않은 경우), 파일 도구의 동작을 작업 디렉터리 내부로 제한, `bypassPermissions`를 거부하고 사용자, 프로젝트 및 로컬 설정 파일을 무시함"
       }
     },
     {
@@ -1788,7 +1788,7 @@
       "title_ko": "Claude Code v2.1.247 버전 출시",
       "source_summary_ko": "## 변경 사항 - `SendFeedback` 도구 추가: 세션에서 문제가 발생했을 때 Claude가 검토 및 전송할 수 있는 피드백 보고서 초안을 `/feedback`에서 작성함(`feedbackDrafts` 설정으로 비활성화 가능) - `spinnerTipsOverride`에 `{id, text, cooldownSessions, priority}` 항목, `tipsFile`, `label`을 추가하여 조직이 기본 팁과 함께 자체 팁을 순환 표시할 수 있도록 지원 - Bash 권한 확인 프롬프트에 auto 모드를 안내하는 팁과 한 번의 키 입력으로 가능한 \"Yes, and switch to a",
       "release_notes_ko": {
-        "chores": "`SendFeedback` 도구 추가: 세션에서 문제가 발생했을 때 Claude가 사용자가 검토하고 `/feedback`에서 전송할 수 있는 피드백 보고서 초안을 작성함(`feedbackDrafts` 설정으로 비활성화 가능)\n조직이 기본 팁과 함께 자체 팁을 순환 표시할 수 있도록 `spinnerTipsOverride`에 `{id, text, cooldownSessions, priority}` 항목, `tipsFile`, `label` 추가"
+        "new_features": "`SendFeedback` 도구 추가: 세션에서 문제가 발생했을 때 Claude가 사용자가 검토하고 `/feedback`에서 전송할 수 있는 피드백 보고서 초안을 작성함(`feedbackDrafts` 설정으로 비활성화 가능)\n조직이 기본 팁과 함께 자체 팁을 순환 표시할 수 있도록 `spinnerTipsOverride`에 `{id, text, cooldownSessions, priority}` 항목, `tipsFile`, `label` 추가"
       }
     },
     {
@@ -1935,7 +1935,7 @@
       "title_ko": "Claude Code v2.1.246 버전 출시",
       "source_summary_ko": "## 변경 사항 - 하위 명령어 앞에 와일드카드가 있는 Bash 허용 규칙(예: `Bash(git * main)`)이 하위 명령어 앞에 삽입된 옵션과도 일치할 수 있으므로 시작 시 경고 추가 - auto 모드 분류기 규칙을 확인하고 편집할 수 있는 Auto 모드 탭을 `/permissions`에 추가 - 턴 종료 소요 시간 줄에 턴 완료 시각 추가(예: `✻ Sautéed for 23s · done 6:05 PM`) - 터미널 크기 조정 후 맨 아래로 이동 시 전체 화면 모드에서 빈 대화 기록이 표시되던 문제 수정",
       "release_notes_ko": {
-        "chores": "하위 명령어 앞에 와일드카드가 있는 Bash 허용 규칙(예: `Bash(git * main)`)이 하위 명령어 앞에 삽입된 옵션과도 일치할 수 있으므로 시작 시 경고 추가\nauto 모드 분류기 규칙을 확인하고 편집할 수 있는 Auto 모드 탭을 `/permissions`에 추가\n턴 종료 소요 시간 줄에 턴 완료 시각 추가(예: `✻ Sautéed for 23s · done 6:05 PM`)"
+        "new_features": "하위 명령어 앞에 와일드카드가 있는 Bash 허용 규칙(예: `Bash(git * main)`)이 하위 명령어 앞에 삽입된 옵션과도 일치할 수 있으므로 시작 시 경고 추가\nauto 모드 분류기 규칙을 확인하고 편집할 수 있는 Auto 모드 탭을 `/permissions`에 추가\n턴 종료 소요 시간 줄에 턴 완료 시각 추가(예: `✻ Sautéed for 23s · done 6:05 PM`)"
       }
     },
     {
@@ -2013,7 +2013,7 @@
       "title_ko": "Claude Code v2.1.245 버전 출시",
       "source_summary_ko": "## 변경 사항 - glibc 2.44를 포함하는 Linux 배포판(예: Arch Linux, CachyOS, Fedora Rawhide)에서 시작 시 충돌이 발생하던 문제 수정",
       "release_notes_ko": {
-        "chores": "glibc 2.44를 포함하는 Linux 배포판(예: Arch Linux, CachyOS, Fedora Rawhide)에서 시작 시 충돌이 발생하던 문제 수정"
+        "bug_fixes": "glibc 2.44를 포함하는 Linux 배포판(예: Arch Linux, CachyOS, Fedora Rawhide)에서 시작 시 충돌이 발생하던 문제 수정"
       }
     },
     {
@@ -2135,7 +2135,8 @@
       "title_ko": "Claude Code v2.1.239 버전 출시",
       "source_summary_ko": "## 변경 사항 - 예상 비용(`/cost`, 상태 표시줄, `--max-budget-usd`)에 데이터 레지던시 워크스페이스를 위한 1.1배 미국 내 추론 할증료 반영 - Bedrock, Vertex, Foundry 및 이전에 제외되었던 기타 환경에 일회성 전체 화면 렌더러 제안 추가; 이제 해당 환경의 신규 설치 시 전체 화면으로 시작됨 - Python 프로젝트를 `anthropic` 0.x에서 1.x로 마이그레이션하기 위한 `/claude-api upgrade` 추가 및 1.x용 스킬의 Python 참조 업데이트(타임아웃에 `httpx.Timeout` 대신 `anthropic.Timeout` 사용)",
       "release_notes_ko": {
-        "chores": "예상 비용(`/cost`, 상태 표시줄, `--max-budget-usd`)에 데이터 레지던시 워크스페이스를 위한 1.1배 미국 내 추론 할증료 반영\nBedrock, Vertex, Foundry 및 이전에 제외되었던 기타 환경에 일회성 전체 화면 렌더러 제안 추가; 이제 해당 환경의 신규 설치 시 전체 화면으로 시작됨"
+        "chores": "예상 비용(`/cost`, 상태 표시줄, `--max-budget-usd`)에 데이터 레지던시 워크스페이스를 위한 1.1배 미국 내 추론 할증료 반영",
+        "new_features": "Bedrock, Vertex, Foundry 및 이전에 제외되었던 기타 환경에 일회성 전체 화면 렌더러 제안 추가; 이제 해당 환경의 신규 설치 시 전체 화면으로 시작됨"
       }
     },
     {
@@ -2184,7 +2185,8 @@
       "title_ko": "Claude Code v2.1.238 버전 출시",
       "source_summary_ko": "## 변경 사항 - `keybindingFlavor` 설정 추가: Bash처럼 프롬프트에서 Ctrl+W 입력 시 이전 공백까지 삭제되도록 `\"readline\"`으로 설정 가능(기본값인 `\"classic\"`은 변경 없음) - 플러그인 마켓플레이스: URL 마켓플레이스 또는 카탈로그 항목의 `headersHelper`가 카탈로그 및 동일 출처 아카이브 가져오기를 위한 HTTP 헤더(예: 단기 토큰)를 발급하는 명령 실행 - 카탈로그 항목의 `headersHelper`는 명령어가 표시된 후 해당 플러그인을 설치하거나 업데이트할 때만 실행됨",
       "release_notes_ko": {
-        "chores": "`keybindingFlavor` 설정 추가: Bash처럼 프롬프트에서 Ctrl+W 입력 시 이전 공백까지 삭제되도록 `\"readline\"`으로 설정 가능(기본값 `\"classic\"`은 유지)\n플러그인 마켓플레이스: URL 마켓플레이스 또는 카탈로그 항목의 `headersHelper`가 카탈로그 및 동일 출처 아카이브 가져오기를 위한 HTTP 헤더(예: 단기 토큰)를 발급하는 명령 실행"
+        "new_features": "`keybindingFlavor` 설정 추가: Bash처럼 프롬프트에서 Ctrl+W 입력 시 이전 공백까지 삭제되도록 `\"readline\"`으로 설정 가능(기본값 `\"classic\"`은 유지)",
+        "chores": "플러그인 마켓플레이스: URL 마켓플레이스 또는 카탈로그 항목의 `headersHelper`가 카탈로그 및 동일 출처 아카이브 가져오기를 위한 HTTP 헤더(예: 단기 토큰)를 발급하는 명령 실행"
       }
     },
     {
@@ -2215,7 +2217,8 @@
       "title_ko": "Claude Code v2.1.237 버전 출시",
       "source_summary_ko": "## 변경 사항 - LLM 게이트웨이나 커스텀 기본 URL을 사용하는 세션의 프롬프트 캐싱 문제 수정 - 내장 \"Concise\" 출력 스타일 추가: Claude가 서론이나 부가 설명을 건너뛰고 결과 중심으로 응답하면서도 작업을 동일하게 철저히 수행함. `/config`의 Output style에서 선택 가능",
       "release_notes_ko": {
-        "chores": "LLM 게이트웨이나 커스텀 기본 URL을 사용하는 세션의 프롬프트 캐싱 문제 수정\n내장 \"Concise\" 출력 스타일 추가: Claude가 서론이나 부가 설명을 건너뛰고 결과 중심으로 응답하면서도 작업을 동일하게 철저히 수행함. `/config`의 Output style에서 선택 가능"
+        "bug_fixes": "LLM 게이트웨이나 커스텀 기본 URL을 사용하는 세션의 프롬프트 캐싱 문제 수정",
+        "new_features": "내장 \"Concise\" 출력 스타일 추가: Claude가 서론이나 부가 설명을 건너뛰고 결과 중심으로 응답하면서도 작업을 동일하게 철저히 수행함. `/config`의 Output style에서 선택 가능"
       }
     },
     {
@@ -2246,7 +2249,7 @@
       "title_ko": "Claude Code v2.1.236 버전 출시",
       "source_summary_ko": "## 변경 사항 - `ANTHROPIC_DEFAULT_MODEL` 환경 변수 추가: 새 세션이 시작될 모델을 설정하며, `/model` 선택 시 이를 재정의하고 재시작 후에도 유지됨(`ANTHROPIC_MODEL`과 다름) - 세션 간 `SendMessage`에 `notify_when_idle` 추가: 현재 머신의 다른 Claude Code 세션이 다음번에 유휴(idle) 상태가 될 때 한 번 알림을 보내도록 요청 — 선택적(opt-in), 일회성, 폴링 없음(macOS 및 Linux) - 샌드박스: macOS에서 와일드카드 읽기 거부 규칙(예: `**/.env`)이 내부 전체에서 우선 적용됨",
       "release_notes_ko": {
-        "chores": "`ANTHROPIC_DEFAULT_MODEL` 환경 변수 추가: 새 세션이 시작될 모델을 설정하며, `/model` 선택 시 이를 재정의하고 재시작 후에도 유지됨(`ANTHROPIC_MODEL`과 다름)\n세션 간 `SendMessage`에 `notify_when_idle` 추가: 현재 머신의 다른 Claude Code 세션이 다음번에 유휴(idle) 상태가 될 때 한 번 알림을 보내도록 요청 — 선택적(opt-in), 일회성, 폴링 없음(macOS 및 Linux)"
+        "new_features": "`ANTHROPIC_DEFAULT_MODEL` 환경 변수 추가: 새 세션이 시작될 모델을 설정하며, `/model` 선택 시 이를 재정의하고 재시작 후에도 유지됨(`ANTHROPIC_MODEL`과 다름)\n세션 간 `SendMessage`에 `notify_when_idle` 추가: 현재 머신의 다른 Claude Code 세션이 다음번에 유휴(idle) 상태가 될 때 한 번 알림을 보내도록 요청 — 선택적(opt-in), 일회성, 폴링 없음(macOS 및 Linux)"
       }
     },
     {

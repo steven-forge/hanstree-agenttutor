@@ -31,6 +31,7 @@
 - [x] app/releases/page.tsx 4개 release source 페이징 및 소개 문구(Codex, Claude Code, Gemini CLI, Grok) 갱신
 - [x] scripts/collect_content.py에 RELEASE_SOURCE_IDS 상수 정의 및 기존 반복 set 교체
 - [x] Claude Code GitHub release(anthropics/claude-code) parse_github_releases 재사용 및 버전형 제목('Claude Code vX 버전 출시') 생성
+- [x] Claude `What's changed`의 Added·New·Introduced / Fixed·Resolved / 나머지를 New Features / Bug Fixes / Chores로 분류
 - [x] Grok 공식 HTML(https://docs.x.ai/developers/release-notes) HTMLParser 파싱 구현 (월 h2, 날짜 div, h3 id/title, p/li 설명, script/style 무시, 연도 처리, day 정밀도)
 - [x] canonicalize_url에서 docs.x.ai release-notes 경로의 URL fragment 보존
 - [x] Grok 설명 new_features/chores 분류, 최대 3개·420바이트 요약 및 번역, bug_fixes 비움, release_notes_ko 항상 포함
@@ -52,6 +53,7 @@
   - `/releases`에서 4개 release source만 최신순 10개씩 페이징하고, 소개 문구에 Codex, Claude Code, Gemini CLI, Grok을 명시했다.
   - `scripts/collect_content.py`에 `RELEASE_SOURCE_IDS` 상수를 선언하고 중복 set들을 일원화했다.
   - Claude Code는 `parse_github_releases`를 그대로 재사용해 source config에 추가하고, `Claude Code vX 버전 출시` 제목 생성과 3분류 요약·번역을 연동했다.
+  - Claude `What's changed`의 접두어를 세 분류로 나누고, 기존 한국어 요약 27건을 재번역 없이 올바른 구역으로 이동했다.
   - Grok은 공식 HTML(`https://docs.x.ai/developers/release-notes`)을 Python stdlib `HTMLParser`로 파싱하여 월 h2(명시 연도 지원), 날짜 div, h3 id/title, p/li 설명을 읽도록 구현했다. `canonicalize_url`에서 `#<h3-id>` fragment를 보존하도록 하고, 3개·420바이트 상한 및 번역, new_features/chores 분류, 불완전 항목 보류, 60일 도달 시 `coverage_limited=false` 등을 구현했다.
   - archive 보강 집계와 초보자 해설 release 판정에도 4개 source를 적용했다.
 
