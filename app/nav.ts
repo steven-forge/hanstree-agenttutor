@@ -23,7 +23,8 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Today",
     href: "/today",
     items: [
-      { title: "AI 뉴스레터", href: "/today" }
+      { title: "AI 뉴스레터", href: "/today" },
+      { title: "Releases", href: "/releases" }
     ]
   },
   {

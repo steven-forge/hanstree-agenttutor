@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const PAGE_SIZE = 10;
+const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases"]);
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
@@ -36,7 +37,21 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
   const { edition_date, window_start, window_end, collected_at, reviewed_at, articles } = todayData;
   const { news: newsHealth } = contentHealth;
 
-  const count = articles ? articles.length : 0;
+  const filteredArticles = (articles || []).filter((a) => !RELEASE_SOURCE_IDS.has(a.source_id));
+  const filteredHealthSources = (newsHealth.sources || []).filter((s) => !RELEASE_SOURCE_IDS.has(s.id || ""));
+  const newsCandidateCount = filteredHealthSources.reduce((acc, s) => acc + (s.count ?? 0), 0);
+  const newsFailedCount = filteredHealthSources.filter((s) => s.status === "failed").length;
+  const newsHasHeld = filteredHealthSources.some((s) => (s.held_count ?? 0) > 0);
+  const newsStatus =
+    filteredHealthSources.length === 0
+      ? "not_collected"
+      : newsFailedCount === filteredHealthSources.length
+      ? "failed"
+      : newsFailedCount > 0 || newsHasHeld
+      ? "partial"
+      : "ok";
+
+  const count = filteredArticles.length;
   const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
   // 생략=1, 양의 정수 문자열만 유효, 그 외(배열·0·음수·소수·문자)는 0으로 무효 처리
   const pageNum = page === undefined ? 1 : typeof page === "string" && /^[1-9]\d*$/.test(page) ? Number(page) : 0;
@@ -46,7 +61,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
   const hasArticles = count > 0;
   const isReviewed = Boolean(reviewed_at);
   const isReviewedEmpty = isReviewed && count === 0;
-  const hasNoCandidates = !isReviewed && newsHealth.status !== "failed" && Boolean(newsHealth.checked_at) && newsHealth.candidate_count === 0;
+  const hasNoCandidates = !isReviewed && newsStatus !== "failed" && Boolean(newsHealth.checked_at) && newsCandidateCount === 0;
 
   const publishedCountText = `총 ${count}건`;
 
@@ -60,11 +75,11 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
             <div>
               <span>
                 수집 상태 ·{" "}
-                {newsHealth.status === "not_collected"
+                {newsStatus === "not_collected"
                   ? "수집 대기 중"
-                  : newsHealth.status === "ok"
+                  : newsStatus === "ok"
                   ? "정상 수집"
-                  : newsHealth.status === "partial"
+                  : newsStatus === "partial"
                   ? "부분 수집 (일부 출처 지연·확인 보류)"
                   : "수집 오류 (이전 판본 유지)"}
               </span>
@@ -79,7 +94,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               <p className="eyebrow">AI NEWSLETTER</p>
               <h1>AI 뉴스레터</h1>
               <p className="lead">
-                최근 60일간 공식 출처에서 수집한 AI·Agent 관련 발표와 릴리스를 최신순으로 모아 보여줍니다.
+                최근 60일간 공식 출처에서 수집한 AI·Agent 관련 소식과 주요 발표를 최신순으로 모아 보여줍니다.
               </p>
               <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 <span className="date">
@@ -94,20 +109,20 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               </div>
             </header>
 
-            {newsHealth.status === "not_collected" && (
+            {newsStatus === "not_collected" && (
               <div className="health-notice" style={{ marginTop: "24px" }}>
                 <strong>안내:</strong> 뉴스 자동 수집 및 검토가 아직 실행되지 않아 초기 대기 상태입니다.
                 일일 수집기 실행 후 편집자의 사실 확인 검토를 거쳐 실제 발행된 기사만 공개됩니다.
               </div>
             )}
 
-            {newsHealth.status === "partial" && (
+            {newsStatus === "partial" && (
               <div className="health-notice" style={{ marginTop: "24px" }}>
                 <strong>주의:</strong> 일부 출처에 수집 오류 또는 발행 시각이 불명확한 항목이 있습니다. 확인이 끝나지 않은 기사는 공개하지 않으며, 아래에 보류 건수를 표시합니다.
               </div>
             )}
 
-            {newsHealth.status === "failed" && (
+            {newsStatus === "failed" && (
               <div className="health-notice" style={{ marginTop: "24px", borderColor: "#fecaca", background: "#fef2f2", color: "#991b1b" }}>
                 <strong>오류:</strong> 금일 뉴스 수집에 오류가 발생하여 이전 정상 검토본을 유지하거나 대기 중입니다.
               </div>
@@ -142,7 +157,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
             ) : (
               <div id="articles" style={{ display: "grid", gap: "20px", marginTop: "32px" }}>
                 <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지</p>
-                {articles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
+                {filteredArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
                   <article key={article.id} className="card" style={{ padding: "24px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
                       <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--blue)" }}>
@@ -226,32 +241,32 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                 </div>
                 <div className="card" style={{ padding: "14px 18px" }}>
                   <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>수집 후보</span>
-                  <strong style={{ fontSize: "0.95rem" }}>{newsHealth.candidate_count}건</strong>
+                  <strong style={{ fontSize: "0.95rem" }}>{newsCandidateCount}건</strong>
                 </div>
                 <div className="card" style={{ padding: "14px 18px" }}>
                   <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>수집 전체 상태</span>
                   <span
                     className={
-                      newsHealth.status === "ok"
+                      newsStatus === "ok"
                         ? "status-confirmed"
-                        : newsHealth.status === "partial"
+                        : newsStatus === "partial"
                         ? "status-conditional"
                         : "status-unconfirmed"
                     }
                     style={{ fontSize: "0.75rem", marginTop: "4px" }}
                   >
-                    {newsHealth.status === "ok"
+                    {newsStatus === "ok"
                       ? "정상 (ok)"
-                      : newsHealth.status === "partial"
+                      : newsStatus === "partial"
                       ? "부분 수집 (partial)"
-                      : newsHealth.status === "not_collected"
+                      : newsStatus === "not_collected"
                       ? "수집 대기 (not_collected)"
                       : "오류 (failed)"}
                   </span>
                 </div>
               </div>
 
-              {newsHealth.sources && newsHealth.sources.length > 0 && (
+              {filteredHealthSources && filteredHealthSources.length > 0 && (
                 <div className="table-wrap" tabIndex={0} role="region" aria-label="출처별 점검 상태 표" style={{ marginTop: "20px" }}>
                   <table>
                     <thead>
@@ -263,7 +278,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       </tr>
                     </thead>
                     <tbody>
-                      {newsHealth.sources.map((s) => (
+                      {filteredHealthSources.map((s) => (
                         <tr key={s.id || s.url}>
                           <td>
                             <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", fontWeight: 600, textDecoration: "none" }}>

@@ -1,8 +1,31 @@
 # Today 뉴스 및 문서 출처 운영 지침 (NEWS OPERATIONS)
 
-## 0. v0.3.0 AI 뉴스레터 개편 (현재 운영 기준)
+## 0. v0.4.0 Releases 분리 및 한국어 릴리스 요약 (현재 운영 기준)
 
-아래 1~6장은 v0.2.x(24시간/7일 단일 스냅샷, 수집·발행 완전 분리) 기준의 **역사 기록**이다. 충돌하면 이 장이 우선하며, 구현 완료 전까지 실제 동작은 1~6장과 같다. 구현 항목은 [TODAY_TASKS.md](./TODAY_TASKS.md) 참고.
+- **화면 및 출처 분리**:
+  - `AI 뉴스레터`(`/today`): 일반 뉴스 전용. `codex-releases`와 `gemini-releases`를 기사 수, 페이징, 목록, 출처 점검 상태, 안내 문구에서 완전히 제외한다.
+  - `Releases`(`/releases`): 개발 도구 릴리스 전용. `codex-releases`와 `gemini-releases`만 최신순 10개씩 페이징 노출한다.
+- **데이터 저장**: 별도 DB나 파일 분리 없이 기존 `data/today.json` 누적 아카이브를 공유하고 화면에서 `source_id`로 분리한다.
+- **릴리스 노트 요약 필드 (`release_notes_ko`)**:
+  - `TodayArticle`에 `release_notes_ko?: { new_features?: string; bug_fixes?: string; chores?: string }` 선택 필드를 지원한다.
+  - Releases 카드에는 제품명, 한국어 제목, 발행 시각, 세 구역(`새 기능 · New Features`, `버그 수정 · Bug Fixes`, `기타 작업 · Chores`), 원문 새 탭 링크를 표시한다. 항목이 없거나 비어 있으면 `공식 릴리스 노트에 별도 항목 없음`으로 표시한다.
+- **수집 및 번역 규칙**:
+  - GitHub release 원문 body에서 명시적 Markdown 제목(`New Features`/`Features`, `Bug Fixes`/`Fixes`, `Chores`)을 우선 추출한다.
+  - 명시적 제목이 없거나 `What's Changed`인 경우 conventional prefix(`feat`->New Features, `fix`->Bug Fixes, `chore`·`docs`·`refactor`·`test`·`ci`·`build`·`perf`·`style` 및 기타->Chores)로 분류한다.
+  - Full Changelog, compare 링크, 작성자·PR URL 장식은 제거한다.
+  - 분류별 최대 3개 핵심 bullet, 합계 420바이트 이하 영어 요약으로 만들어 기존 `translate_to_korean`을 분류별 1회 호출한다.
+  - 신규 릴리스 후보에는 `release_notes_ko`가 필수이며 내용이 없어도 `{}` 빈 객체를 저장한다.
+  - 기존 archive 릴리스 기사는 GitHub API 순회 시 URL로 찾아 full body에서 `release_notes_ko`를 보강하고 `today.json`에 저장한다. 기존 필드는 온전히 보존한다.
+  - 번역 실패 시 해당 출처는 수집 실패 처리하며 영문 요약을 공개하지 않는다.
+- **데이터 보강 운영 명령**:
+  - 기존 릴리스 기사에 한국어 릴리스 요약을 채우기 위해 팀장은 아래 명령을 실행한다:
+    ```bash
+    python3 scripts/collect_content.py news
+    ```
+
+## 0.1 v0.3.0 AI 뉴스레터 개편 (역사 기록)
+
+아래 내용은 v0.3.0 기준 역사 기록이다. 충돌하면 위의 v0.4.0 구역이 우선한다.
 
 - **화면 이름**: `AI 뉴스레터`(경로 `/today`).
 - **수집 범위**: 수집 시각 기준 고정 60일 rolling window(달력 두 달 아님). 기본 `news`가 60일이며 GitHub Actions 예약 수집(06:15 KST)도 60일로 실행한다. 6개 공식 출처가 제공하는 목록·피드·API 범위 안의 전체 항목이 대상이고, 출처가 이력을 제한(피드 항목 수, 목록 개수 등)하면 `data/content-health.json`의 해당 출처 상태에 한계를 기록한다. 1장의 "HTML 출처당 8개·Atom 10개" 제한은 이 범위에 맞게 재검토한다.

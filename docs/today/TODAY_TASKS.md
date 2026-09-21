@@ -19,7 +19,39 @@
 - [x] 정상 데이터 보존 규칙 적용
 - [x] Anthropic의 오래된 날짜 전용 기사를 보류 대신 수집 범위 밖으로 판정
 
-## v0.3.0 AI 뉴스레터 개편
+## v0.4.0 Releases 분리 및 한국어 릴리스 요약
+
+기준: [TODAY_PLAN.md](./TODAY_PLAN.md) v0.4.0 구역, [NEWS_OPERATIONS.md](./NEWS_OPERATIONS.md) 0장. 구현·확인이 끝난 항목만 체크한다.
+
+### 구현 작업
+- [x] docs/today/ 문서 3종(PLAN, TASKS, OPERATIONS)에 v0.4.0 운영 기준과 작업 기록
+- [x] app/nav.ts Today 그룹에 Releases 링크 추가
+- [x] app/content.ts TodayArticle에 release_notes_ko 선택 필드 추가
+- [x] app/today/page.tsx에서 codex-releases, gemini-releases 제외 (기사 수·페이징·목록·출처 상태·안내 문구)
+- [x] app/releases/page.tsx 신설 (최신순 10개 페이징, 3분류 릴리스 노트 요약 카드, 빈 상태, 접근성)
+- [x] scripts/collect_content.py GitHub release body 3분류(new_features, bug_fixes, chores) 추출 구현
+- [x] Markdown 명시적 제목 우선 및 What's Changed conventional prefix 분류 구현
+- [x] 장식(Full Changelog, compare, author, PR URL) 제외 및 최대 3개 bullet 420바이트 상한 번역(ponytail 주석)
+- [x] 신규 release candidate에 release_notes_ko 필수 추가 및 빈 객체({}) 저장
+- [x] 기존 archive release 기사 GitHub Releases API 순회 중 URL로 찾아 full body에서 보강
+- [x] 기존 known release 보강 시 archive 변경 감지 및 today.json 저장 연결
+- [x] 번역 실패 시 해당 release source 기존 수집 실패 경로 유지 및 영문 요약 비공개
+- [x] 제품 버전 0.4.0 상향 (package.json, package-lock.json)
+
+### 확인 작업
+- [x] 기존 릴리스 30건 `release_notes_ko` 보강 및 한국어 포함 여부 확인
+- [x] 프로덕션 빌드에서 `/today`, `/releases` 경로 생성 확인
+- [ ] 배포 후 `/today` 뉴스 162건·`/releases` 릴리스 30건 분리와 화면 표시 확인
+
+### v0.4.0 구현 기록
+- 2026-09-21, v0.4.0:
+  - `data/today.json` 단일 아카이브를 재사용하고 `source_id`를 기반으로 `/today`(AI 뉴스레터)와 `/releases`(릴리스 요약)를 분리했다.
+  - `/today`에서 `codex-releases`와 `gemini-releases`를 기사 수, 페이징, 목록, 출처 상태, 안내 문구에서 완전히 제외했다.
+  - `/releases` 화면을 신규 생성하여 두 release source만 최신순 10개씩 페이징하고, `새 기능 · New Features`, `버그 수정 · Bug Fixes`, `기타 작업 · Chores` 3개 구역의 한국어 요약을 표시하도록 구현했다.
+  - `scripts/collect_content.py`에 GitHub release body 3분류 추출 로직을 구현했다. 명시적 Markdown 제목 우선, What's Changed conventional prefix 분류, 장식(compare 링크, 작성자, PR URL) 제거, 분류별 최대 3개 bullet 및 420바이트 상한 적용(MyMemory 단일 호출 보장), 번역 실패 시 실패 처리 등을 연결했다.
+  - 신규 릴리스 후보에 `release_notes_ko` 필수 생성(빈 객체 `{}` 보장) 및 기존 archive 릴리스 기사 GitHub Releases API 순회 중 URL 매칭 보강과 `today.json` 저장 변경 감지를 구현했다.
+
+## v0.3.0 AI 뉴스레터 개편 (역사 기록)
 
 기준: [TODAY_PLAN.md](./TODAY_PLAN.md) v0.3.0 구역, [NEWS_OPERATIONS.md](./NEWS_OPERATIONS.md) 0장. 구현·확인이 끝난 항목만 체크한다. 위의 v0.2.x 항목과 구현·확인 기록은 역사 기록이다.
 

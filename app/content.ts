@@ -121,6 +121,11 @@ export type TodayArticle = {
   published_on?: string;
   date_precision?: "time" | "day";
   fetched_at?: string;
+  release_notes_ko?: {
+    new_features?: string;
+    bug_fixes?: string;
+    chores?: string;
+  };
 };
 
 export type TodayData = {

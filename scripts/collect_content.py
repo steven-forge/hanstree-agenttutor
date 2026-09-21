@@ -217,6 +217,147 @@ def translated_release_title(title: str, source_id: str) -> str | None:
     return f"{product} {version} 버전 출시"
 
 
+def clean_release_bullet(line: str) -> str:
+    """릴리스 본문 불릿에서 compare 링크, 작성자, PR 번호 등 장식을 제거한다."""
+    s = line.strip()
+    if not s:
+        return ""
+    s = re.sub(r"^[-*+]\s+", "", s).strip()
+    if not s:
+        return ""
+
+    # Full Changelog 또는 compare 전용 줄 제외
+    if re.search(r"(?i)\b(?:full\s+changelog|compare)\b", s) and re.search(r"https?://github\.com/\S+/compare/\S+", s):
+        return ""
+    if re.fullmatch(r"(?i)(?:\*{0,2}full\s+changelog\*{0,2}:?\s*)?https?://\S+", s):
+        return ""
+
+    # compare 링크 및 작성자/PR 장식 제거
+    s = re.sub(r"https?://github\.com/\S+/compare/\S+", "", s)
+    s = re.sub(r"(?i)\bby\s+@[\w-]+(?:\s+in\s+https?://\S+)?", "", s)
+    s = re.sub(r"(?i)\bin\s+https?://github\.com/\S+/(?:pull|issues)/\d+", "", s)
+    s = re.sub(r"https?://github\.com/\S+/(?:pull|issues)/\d+", "", s)
+    s = re.sub(r"\(@[\w-]+\)", "", s)
+    s = re.sub(r"(?<=\s)@[\w-]+", "", s)
+    s = re.sub(r"\[\s*#\d+\s*\]\([^)]+\)", "", s)
+    s = re.sub(r"\(\s*#\d+(?:\s*,\s*#\d+)*\s*\)", "", s)
+    s = re.sub(r"\[\s*#\d+(?:\s*,\s*#\d+)*\s*\]", "", s)
+    s = re.sub(r"#\d+\b", "", s)
+    s = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s)
+    s = re.sub(r"\(\s*\)", "", s)
+    s = re.sub(r"\[\s*\]", "", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[\s,–—\-]+$", "", s).strip()
+    return s
+
+
+def extract_release_categories(body: str) -> dict[str, list[str]]:
+    """GitHub release 원문 body에서 new_features, bug_fixes, chores 항목을 추출한다."""
+    sections: dict[str, list[str]] = {"new_features": [], "bug_fixes": [], "chores": []}
+    if not body or not body.strip():
+        return sections
+
+    lines = body.splitlines()
+
+    # 1. 명시적 Markdown 제목 (Features, Bug Fixes, Chores) 우선 검사
+    explicit_headings = {}
+    current_head = None
+    head_re = re.compile(r"^(#{1,6})\s+(.+)$")
+
+    for line in lines:
+        m = head_re.match(line.strip())
+        if m:
+            title = re.sub(r"[*_`]", "", m.group(2)).strip().lower()
+            if re.search(r"\b(new\s+features?|features?)\b", title):
+                current_head = "new_features"
+                explicit_headings["new_features"] = True
+            elif re.search(r"\b(bug\s+fixes?|fixes?)\b", title):
+                current_head = "bug_fixes"
+                explicit_headings["bug_fixes"] = True
+            elif re.search(r"\b(chores?|maintenance)\b", title):
+                current_head = "chores"
+                explicit_headings["chores"] = True
+            elif re.search(r"\b(what['’]?s\s+changed|changelog|changes)\b", title):
+                current_head = "whats_changed"
+            else:
+                current_head = "other"
+            continue
+
+        if current_head in ("new_features", "bug_fixes", "chores"):
+            bullet = clean_release_bullet(line)
+            if bullet:
+                sections[current_head].append(bullet)
+
+    # 명시적 제목이 하나라도 있고 항목이 추출되었으면 반환
+    if any(explicit_headings.get(k) for k in ("new_features", "bug_fixes", "chores")):
+        return sections
+
+    # 2. 명시적 제목이 없으면 What's Changed 또는 bullet들을 conventional prefix로 분류
+    feat_re = re.compile(r"^(?:feat(?:ure)?(?:\([^)]+\))?[:/\s]|feat/)", re.IGNORECASE)
+    fix_re = re.compile(r"^(?:fix(?:up)?(?:\([^)]+\))?[:/\s]|fix/)", re.IGNORECASE)
+
+    for line in lines:
+        if not re.match(r"^\s*[-*+]\s+", line):
+            continue
+        bullet = clean_release_bullet(line)
+        if not bullet:
+            continue
+        if feat_re.match(bullet):
+            sections["new_features"].append(bullet)
+        elif fix_re.match(bullet):
+            sections["bug_fixes"].append(bullet)
+        else:
+            sections["chores"].append(bullet)
+
+    return sections
+
+
+def build_release_summary_en(bullets: list[str]) -> str:
+    """분류별 최대 3개 bullet, 합계 420바이트 이내의 영어 요약 문자열을 만든다."""
+    # ponytail: 분류별 최대 3개 bullet 및 420바이트 상한 (MyMemory 500바이트 단일 번역 호출 보장). 초과 시 축약.
+    selected = []
+    current_bytes = 0
+    for b in bullets:
+        if len(selected) >= 3:
+            break
+        text = b.strip()
+        if not text:
+            continue
+        sep_len = 1 if selected else 0
+        b_bytes = len(text.encode("utf-8"))
+        if current_bytes + sep_len + b_bytes <= 420:
+            selected.append(text)
+            current_bytes += sep_len + b_bytes
+        else:
+            if not selected:
+                truncated = text
+                while truncated and len(truncated.encode("utf-8")) > 420:
+                    truncated = truncated[:-1]
+                truncated = truncated.strip()
+                if truncated:
+                    selected.append(truncated)
+            break
+    return "\n".join(selected)
+
+
+def build_release_notes_ko(body: str) -> dict[str, str]:
+    """GitHub release body에서 3분류 요약을 추출하고 한국어로 번역하여 release_notes_ko를 생성한다."""
+    categories = extract_release_categories(body)
+    notes_ko: dict[str, str] = {}
+    for cat in ("new_features", "bug_fixes", "chores"):
+        bullets = categories.get(cat, [])
+        if not bullets:
+            continue
+        summary_en = build_release_summary_en(bullets)
+        if not summary_en:
+            continue
+        if needs_korean_translation(summary_en):
+            notes_ko[cat] = translate_to_korean(summary_en)
+        else:
+            notes_ko[cat] = summary_en
+    return notes_ko
+
+
 def build_beginner_explanation(title: str, source_id: str, source_summary: str = "") -> str:
     """제목·공식 설명의 주제만 분류해 원문 밖의 사실을 만들지 않는 한국어 해설을 만든다."""
     if source_id in {"codex-releases", "gemini-releases"}:
@@ -459,7 +600,7 @@ def parse_rss_feed(xml_bytes: bytes, source_id: str, source_name: str, window_st
     return candidates, stats
 
 
-def parse_release_page(releases: list, owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple, candidates: list, stats: dict) -> bool:
+def parse_release_page(releases: list, owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple, candidates: list, stats: dict, archive_by_url: dict = None) -> bool:
     """Releases API 한 페이지를 처리한다. 60일 시작보다 오래된 release를 만나면 True."""
     reached_start = False
     expected_prefix = f"/{owner_repo}/releases/tag/"
@@ -498,13 +639,20 @@ def parse_release_page(releases: list, owner_repo: str, source_id: str, source_n
         canonical_url = canonicalize_url(href)
         if url_id(canonical_url) in known[0] or canonical_url in known[1]:
             stats["skipped_count"] += 1
+            # 기존 archive의 release 기사 중 release_notes_ko가 없는 항목 보강
+            if archive_by_url:
+                target = archive_by_url.get(canonical_url) or archive_by_url.get(url_id(canonical_url))
+                if target is not None and target.get("release_notes_ko") is None:
+                    target["release_notes_ko"] = build_release_notes_ko(rel.get("body") or "")
             continue
 
-        candidates.append(make_candidate(title, source_id, source_name, canonical_url, rel.get("body") or "", date_fields))
+        cand = make_candidate(title, source_id, source_name, canonical_url, rel.get("body") or "", date_fields)
+        cand["release_notes_ko"] = build_release_notes_ko(rel.get("body") or "")
+        candidates.append(cand)
     return reached_start
 
 
-def parse_github_releases(owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN) -> tuple[list[dict], dict]:
+def parse_github_releases(owner_repo: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, archive_by_url: dict = None) -> tuple[list[dict], dict]:
     candidates = []
     stats = new_stats()
     stats["coverage_limited"] = True  # 60일 시작 또는 목록 끝에 닿으면 해제
@@ -521,7 +669,7 @@ def parse_github_releases(owner_repo: str, source_id: str, source_name: str, win
                 raise RuntimeError("Releases 항목이 없습니다. 빈 수집 성공으로 처리하지 않습니다.")
             stats["coverage_limited"] = False
             break
-        if parse_release_page(releases, owner_repo, source_id, source_name, window_start, window_end, known, candidates, stats):
+        if parse_release_page(releases, owner_repo, source_id, source_name, window_start, window_end, known, candidates, stats, archive_by_url=archive_by_url):
             stats["coverage_limited"] = False
             break
     return candidates, stats
@@ -683,6 +831,18 @@ def collect_news() -> int:
     explanations_changed = ensure_beginner_explanations(today["articles"])
     known = archive_keys(today["articles"])
 
+    archive_release_lookup = {}
+    for a in today["articles"]:
+        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"}:
+            if "source_url" in a:
+                archive_release_lookup[canonicalize_url(a["source_url"])] = a
+            if "id" in a:
+                archive_release_lookup[a["id"]] = a
+    releases_missing_before = sum(
+        1 for a in today["articles"]
+        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"} and a.get("release_notes_ko") is None
+    )
+
     sources_def = [
         {"id": "openai-news", "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "type": "rss"},
         {"id": "google-ai", "name": "Google AI", "url": "https://blog.google/innovation-and-ai/technology/ai/rss/", "type": "rss"},
@@ -715,7 +875,7 @@ def collect_news() -> int:
                     raise RuntimeError(f"HTTP {status}: {surl}")
                 items, stats = parse_rss_feed(body, sid, sname, window_start, window_end, known)
             elif stype == "releases":
-                items, stats = parse_github_releases(sdef["repo"], sid, sname, window_start, window_end, known)
+                items, stats = parse_github_releases(sdef["repo"], sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
             elif stype == "html":
                 old_urls = set(news_cache.get(sid, {}).get("old_urls", []))
                 items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls)
@@ -746,9 +906,15 @@ def collect_news() -> int:
         sources_health.append(source_report)
         all_candidates.extend(items)
 
+    releases_missing_after = sum(
+        1 for a in today["articles"]
+        if isinstance(a, dict) and a.get("source_id") in {"codex-releases", "gemini-releases"} and a.get("release_notes_ko") is None
+    )
+    releases_enriched = (releases_missing_after < releases_missing_before)
+
     # archive 및 동일 실행 내부의 id/정규화 URL 중복을 제거하며 새 항목만 누적
     candidates_list, merged_changed = merge_archive(today, all_candidates)
-    archive_changed = explanations_changed or merged_changed
+    archive_changed = explanations_changed or merged_changed or releases_enriched
     candidates_list.sort(key=article_sort_key)
     if archive_changed:
         today.update(edition_date=edition_date, window_start=window_start.isoformat(),

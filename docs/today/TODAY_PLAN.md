@@ -6,11 +6,39 @@
 
 ## 메뉴
 
-- AI 뉴스레터 (구 오늘의 10대 뉴스)
+- AI 뉴스레터 (경로 `/today`)
+- Releases (경로 `/releases`, 신규 추가)
 
-## v0.3.0 AI 뉴스레터 개편
+## v0.4.0 Releases 분리 및 한국어 릴리스 요약
 
-이 구역이 현재 운영 기준이며, 아래 v0.2.x 구역과 충돌하면 이 구역이 우선한다. 소스·데이터 변경은 [TODAY_TASKS.md](./TODAY_TASKS.md)의 v0.3.0 항목 기준으로 이후에 진행한다.
+이 구역이 현재 최신 운영 기준이며, 아래 v0.3.0 및 v0.2.x 구역과 충돌하면 이 구역이 우선한다. 소스·데이터 변경은 [TODAY_TASKS.md](./TODAY_TASKS.md)의 v0.4.0 항목 기준으로 진행한다.
+
+### 범위 및 원칙
+- Codex Releases(`codex-releases`)와 Gemini CLI Releases(`gemini-releases`)를 AI 뉴스레터(`/today`)에서 제외한다.
+- 별도 Releases 목록 화면(`/releases`)을 신설한다.
+- 별도 데이터 파일이나 DB는 추가하지 않는다. 기존 `data/today.json` 누적 아카이브를 재사용하고 화면에서 `source_id`로 분리한다.
+- release source id는 `codex-releases`, `gemini-releases` 두 개뿐이다.
+- `/today`의 기사 수·페이징·목록·출처 상태·안내 문구에서 두 release source를 완전히 제외한다.
+- `/releases`는 release source만 최신순으로 10개씩 페이징한다. 기존 `/today`의 레이아웃·접근성·빈 페이지 처리·원문 새 탭 패턴을 재사용한다.
+- `app/nav.ts`의 Today 그룹에 `Releases` 링크를 추가한다.
+- `TodayArticle`에 `release_notes_ko?: { new_features?: string; bug_fixes?: string; chores?: string }` 선택 필드를 추가한다.
+- Releases 카드에는 제품, 한국어 제목, 발행 시각, 세 구역(`New Features` / `새 기능`, `Bug Fixes` / `버그 수정`, `Chores` / `기타 작업`), 원문 링크를 표시한다. 항목 값이 없으면 `공식 릴리스 노트에 별도 항목 없음`으로 표시한다.
+- 페이지 메타와 안내 문구는 쉬운 한국어로 작성한다.
+
+### 수집기 및 요약 기준
+- `scripts/collect_content.py`의 GitHub release 원문 body에서 세 분류를 추출한다.
+- 명시적 Markdown 제목 `New Features`/`Features`, `Bug Fixes`/`Fixes`, `Chores`를 우선한다.
+- `What's Changed`의 bullet은 conventional prefix로 분류한다: `feat`는 New Features, `fix`는 Bug Fixes, `chore`·`docs`·`refactor`·`test`·`ci`·`build`·`perf`·`style` 및 나머지 운영 항목은 Chores.
+- Full Changelog, 단순 compare 링크, 작성자·PR URL 장식은 요약에서 제외한다.
+- 분류별 최대 3개 핵심 bullet을 선택하고 합계 420바이트 이내의 영어 요약 문자열로 만든 뒤, 기존 `translate_to_korean`을 분류별 한 번만 호출해 `release_notes_ko`에 저장한다. (알려진 상한이므로 ponytail 주석 기록)
+- 신규 release candidate에는 `release_notes_ko`를 필수로 넣는다. 세 분류가 모두 비어도 빈 객체(`{}`)를 저장한다.
+- 기존 archive의 release 기사 중 `release_notes_ko`가 없는 항목은 GitHub Releases API 순회 중 URL로 찾아 full body에서 보강하며, 기존 기사·번역·편집 필드는 보존한다.
+- 기존 known release 보강으로 archive 객체가 바뀐 경우에도 `today.json`이 저장되도록 변경 감지를 연결한다.
+- 번역 실패 시 해당 release source는 기존 수집 실패 경로를 따르며 영문 요약을 공개하지 않는다.
+
+## v0.3.0 AI 뉴스레터 개편 (역사 기록)
+
+이 구역은 v0.3.0 기준 역사 기록이다. 소스·데이터 변경은 [TODAY_TASKS.md](./TODAY_TASKS.md)를 참고한다.
 
 ### 범위
 - 화면 타이틀·메뉴명을 `AI 뉴스레터`로 바꾼다. 경로는 `/today` 그대로다.
