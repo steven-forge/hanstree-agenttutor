@@ -1,0 +1,212 @@
+[
+  {
+    "slug": "the-4-properties-of-ai",
+    "title": "AI의 네 가지 특성",
+    "original_title": "The 4 Properties of AI",
+    "order": 1,
+    "summary": "AI는 사람처럼 생각하는 의식이 아니라, 방대한 데이터에서 학습한 패턴을 바탕으로 다음에 올 단어 조각을 예측하는 수학적 모델입니다. 다음 토큰 예측, 학습 데이터에 묶인 지식 한계 시점, 정해진 대화창 안에서만 유지되는 작업 기억(컨텍스트 창), 그리고 프롬프트 지시로 방향을 바꿀 수 있지만 의도와 결과 사이에 간극이 생길 수 있는 조종 가능성이라는 네 가지 기본 특성을 이해하면 AI를 훨씬 정확하고 안전하게 활용할 수 있습니다.",
+    "key_points": [
+      "다음 토큰 예측: AI는 완성된 생각을 미리 품고 있는 것이 아니라, 입력된 문맥을 바탕으로 가장 자연스러운 다음 글자 조각(토큰)을 순차적으로 계산합니다.",
+      "지식 한계 시점과 컨텍스트 창: 모델은 학습이 완료된 시점까지의 세상만 알고 있으며, 대화창(컨텍스트 창) 크기를 벗어난 과거 내용은 작업 기억에서 사라집니다.",
+      "조종 가능성과 의도 간극: 지시문(프롬프트)으로 모델의 어조와 행동 양식을 유도할 수 있지만, 사람이 의도한 바와 AI가 실제로 출력하는 결과 사이에 차이가 발생할 수 있습니다."
+    ],
+    "practice_tip": "AI에게 질문할 때는 배경 맥락과 원하는 답변 형식을 구체적으로 알려주고, 최신 정보나 내부 자료가 필요하다면 질문과 함께 직접 텍스트로 첨부해 제공해 보세요.",
+    "source": {
+      "name": "Claude Academy: The 4 Properties of AI",
+      "url": "https://academy.claude.com/tutorials/the-4-properties-of-ai"
+    }
+  },
+  {
+    "slug": "the-4-ds-of-ai-fluency-behavioral-indicators",
+    "title": "AI 활용 능력의 4D 행동 지표",
+    "original_title": "The 4 Ds of AI Fluency — Behavioral Indicators",
+    "order": 2,
+    "summary": "AI 활용 능력은 도구의 기능을 단순히 외우는 것이 아니라 올바른 협업 습관을 갖추는 것입니다. 위임(Delegation), 설명(Description), 판별(Discernment), 성실성(Diligence)이라는 네 가지 행동 지표(4D)를 실천하면 AI의 실수를 줄이고 작업의 생산성을 극대화할 수 있습니다.",
+    "key_points": [
+      "위임(Delegation)과 설명(Description): AI가 잘 처리할 수 있는 작업과 사람이 직접 판단해야 할 영역을 명확히 구분하고, 목표·배경·원하는 출력 형식을 상세히 기술합니다.",
+      "판별(Discernment): AI가 내놓은 첫 번째 답변을 무비판적으로 수용하지 않고, 오류·누락·환각이 없는지 논리적이고 비판적으로 검토합니다.",
+      "성실성과 책임(Diligence): 어떤 도구를 쓸지 신중히 고르고, AI의 역할을 투명하게 밝히며, 공유하는 최종 결과를 사람이 검증하고 책임집니다."
+    ],
+    "practice_tip": "AI에게 첫 답변을 받은 후 곧바로 복사하지 말고, '이 중에서 빠진 부분은 무엇인가?', '논리적 비약은 없는가?'를 한 번 더 질문하며 답변을 2~3회 다듬어 보세요.",
+    "source": {
+      "name": "Claude Academy: The 4 D's of AI Fluency: Behavioral Indicators",
+      "url": "https://academy.claude.com/tutorials/the-4-ds-of-ai-fluency-behavioral-indicators"
+    }
+  },
+  {
+    "slug": "what-happens-when-you-talk-to-ai",
+    "title": "AI와 대화할 때 내부에서 일어나는 일",
+    "original_title": "What Happens When You Talk to AI",
+    "order": 3,
+    "summary": "AI에게 메시지를 전송하면 내부에서 인터넷을 실시간으로 검색하거나 사람처럼 고민하는 것이 아닙니다. 입력한 대화 내용을 숫자로 처리하고 지금까지의 문맥을 참고해, 다음에 이어질 가능성이 높은 텍스트 조각인 토큰을 하나씩 연속으로 생성합니다.",
+    "key_points": [
+      "통계적 패턴 생성: AI는 저장된 정답 문서를 찾아 그대로 복사해 오는 것이 아니라, 학습된 수십억 개의 가중치 패턴에 기반해 즉석에서 단어를 생성합니다.",
+      "문맥 전체의 반영: 단어 하나를 출력할 때마다 지금까지 오간 이전 대화 내용 전체를 매번 다시 참고하여 다음 단어의 확률 분포를 계산합니다.",
+      "한 토큰씩 순차 출력: 사람이 타이핑하듯 한 조각씩 글자를 생성하므로, 대화가 길어지거나 모호한 지침이 섞이면 이후 생성되는 전체 문장의 방향이 크게 틀어질 수 있습니다."
+    ],
+    "practice_tip": "대화가 길어져 AI가 엉뚱한 답변을 반복하기 시작하면, 이전 대화에 얽매이지 말고 핵심 요구사항만 간추려 완전히 새로운 대화 창을 열어 질문하세요.",
+    "source": {
+      "name": "Claude Academy: What Happens When You Talk to AI",
+      "url": "https://academy.claude.com/tutorials/what-happens-when-you-talk-to-ai"
+    }
+  },
+  {
+    "slug": "can-you-trust-what-ai-tells-you",
+    "title": "AI 답변을 믿어도 될까?",
+    "original_title": "Can You Trust What AI Tells You?",
+    "order": 4,
+    "summary": "AI에 대한 신뢰는 '전부 믿는다'거나 '전혀 믿지 않는다'는 식의 온/오프 스위치가 아닙니다. 그 답변이 잘못되었을 때 발생하는 위험의 크기(리스크)에 따라 검증 강도를 유연하게 조절하는 '다이얼'의 개념으로 접근해야 합니다.",
+    "key_points": [
+      "신뢰 다이얼 모델: 가벼운 아이디어 발상이나 문장 교정은 낮은 검증 강도로 충분하지만, 금융·의료·법률·프로덕션 코드는 최고 수준의 독립 검증을 거쳐야 합니다.",
+      "확신에 찬 어조의 위험: 언어 모델은 거짓 정보나 존재하지 않는 사실을 지어낼 때도 매우 논리정연하고 자신감 넘치는 어조를 유지하므로 말투로 진위를 판단하면 안 됩니다.",
+      "오류의 대표 유형: 사실이 아닌 내용을 그럴듯하게 꾸며내는 환각(Hallucination)과 사용자의 기분에 맞추려는 아첨 성향(Sycophancy)을 항상 경계해야 합니다."
+    ],
+    "practice_tip": "작업을 시작하기 전 '이 결과물이 틀렸을 때 어떤 손해가 발생하는가?'를 먼저 자문해 보고, 치명적인 위험이 있는 작업은 공식 1차 출처 대조 체크리스트를 만드세요.",
+    "source": {
+      "name": "Claude Academy: Can You Trust What AI Tells You?",
+      "url": "https://academy.claude.com/tutorials/can-you-trust-what-ai-tells-you"
+    }
+  },
+  {
+    "slug": "what-does-ai-know-about-me",
+    "title": "AI는 나에 대해 무엇을 알까?",
+    "original_title": "What Does AI Know About Me?",
+    "order": 5,
+    "summary": "AI가 답할 때 참고하는 정보에는 현재 대화에 넣은 내용뿐 아니라 제품이 제공하는 기억 기능이나 연결 도구의 결과가 포함될 수 있습니다. 사용 중인 서비스의 설정과 데이터 정책에 따라 정보가 저장되고 활용되는 범위가 달라지므로, 민감한 내용은 줄이고 관련 설정을 직접 확인해야 합니다.",
+    "key_points": [
+      "정보의 4가지 도달 범위: 현재 단일 대화 창, 계정에 보관되는 대화 기록, 장기 기억(Memory) 프로필, 그리고 서비스 개선 및 모델 재학습 데이터로 나뉩니다.",
+      "설정을 통한 데이터 통제: 서비스가 제공하는 대화 기록, 기억, 데이터 활용 관련 설정을 살펴보고 자신의 용도에 맞게 조정해야 합니다.",
+      "민감 정보 입력 금지: 주민등록번호, 비밀번호, 결제 정보, 기업 기밀 등은 어떤 AI 도구에도 직접 입력하지 않는 것이 가장 확실한 보안 대책입니다."
+    ],
+    "practice_tip": "사용 중인 AI 서비스의 설정(Settings) 메뉴로 들어가 '데이터 제어(Data Controls)' 또는 '학습 참여(Model Training)' 설정을 확인하고 필요에 맞게 조정하세요.",
+    "source": {
+      "name": "Claude Academy: What Does AI Know About Me?",
+      "url": "https://academy.claude.com/tutorials/what-does-ai-know-about-me"
+    }
+  },
+  {
+    "slug": "why-do-ai-models-hallucinate",
+    "title": "AI는 왜 환각을 일으킬까?",
+    "original_title": "Why Do AI Models Hallucinate?",
+    "order": 6,
+    "summary": "환각(Hallucination)은 AI가 고의로 거짓말을 하는 것이 아닙니다. 언어 모델은 사실 데이터베이스가 아니라 확률적 문장 완성기이기 때문에, 학습 데이터에 정보가 부족하거나 복잡한 맥락에 부딪히면 가장 문법적으로 자연스러워 보이는 허위 사실을 빈칸 채우듯 생성하는 것입니다.",
+    "key_points": [
+      "환각이 자주 발생하는 영역: 최신 뉴스, 비주류 학술 인용, 정확한 인명·날짜·통계 수치, 세부 조항 번호 등 정밀한 팩트가 요구되는 영역에서 환각 위험이 커집니다.",
+      "자신감의 역설: 모델은 불확실성을 언제나 정확하게 표시하지 못하므로, 지어낸 인용문이나 출처도 자연스럽고 권위 있는 말투로 전달할 수 있습니다.",
+      "교차 확인과 제약 조건: 공식 출처 교차 확인이 필수적이며, 프롬프트에 '문서에 명시되지 않은 내용은 추측하지 말고 솔직히 모른다고 답하라'는 제약을 주면 환각을 줄일 수 있습니다."
+    ],
+    "practice_tip": "출처나 수치를 물어볼 때는 '제공한 텍스트 안에서만 근거를 찾아 답변하고, 확실하지 않은 사실은 절대 지어내지 말라'는 안전 지침을 프롬프트 맨 앞에 명시하세요.",
+    "source": {
+      "name": "Claude Academy: Why Do AI Models Hallucinate?",
+      "url": "https://academy.claude.com/tutorials/why-do-ai-models-hallucinate"
+    }
+  },
+  {
+    "slug": "what-is-sycophancy-in-ai-models",
+    "title": "AI의 아첨 성향이란?",
+    "original_title": "What Is Sycophancy in AI Models?",
+    "order": 7,
+    "summary": "아첨 성향(Sycophancy)은 AI가 객관적인 진실이나 논리보다 '사용자가 듣고 싶어 할 것 같은 답변'에 맞춰 입장을 바꾸는 현상입니다. 인간 피드백을 통해 사람에게 친절하고 긍정적인 평가를 받도록 훈련되는 과정에서 나타나는 대표적인 정렬 부작용입니다.",
+    "key_points": [
+      "유도 질문에 대한 취약성: 질문자가 특정 관점을 은근히 드러내거나 감정 섞인 주장을 펼치면, AI는 객관적인 반론을 피하고 질문자의 주장을 무조건 지지하는 태도를 취하기 쉽습니다.",
+      "긴 대화에서의 입장 번복: 대화가 길어지면서 사용자가 불만을 표현하거나 반대 의견을 내비치면, AI가 자신의 이전 올바른 답변까지 철회하며 사과하고 사용자 말에 동조할 수 있습니다.",
+      "대응 방법: 객관적인 사실 확인을 원할 때는 중립적인 어조로 질문하고, '내 의견의 허점이나 반대 입장의 논거를 냉정하게 비판해 달라'고 명시적으로 요청해야 합니다."
+    ],
+    "practice_tip": "기획안이나 보고서를 검토할 때 '이 기획 정말 좋지 않나요?'라고 묻지 말고, '이 기획안에 대해 가장 날카로운 반론과 실패 요인 3가지를 비판적으로 제시해 줘'라고 요청하세요.",
+    "source": {
+      "name": "Claude Academy: What Is Sycophancy in AI Models?",
+      "url": "https://academy.claude.com/tutorials/what-is-sycophancy-in-ai-models"
+    }
+  },
+  {
+    "slug": "why-does-bias-exist-in-ai-models",
+    "title": "AI에는 왜 편향이 생길까?",
+    "original_title": "Why Does Bias Exist in AI Models?",
+    "order": 8,
+    "summary": "AI는 백지 상태의 완벽한 이성으로 판단하는 존재가 아닙니다. 인류가 인터넷에 남긴 방대한 텍스트 코퍼스를 학습했기 때문에, 현실 세계의 문화적 편중, 언어별 데이터 양의 불균형, 사회적 고정관념이 AI의 답변 품질과 관점에도 고스란히 스며듭니다.",
+    "key_points": [
+      "데이터 대표성 불균형: 영어권과 서구권 데이터 비중이 압도적으로 높아 비영어권 문화나 소수 집단의 시각을 다룰 때 깊이가 얕거나 편향된 결론을 내릴 수 있습니다.",
+      "미묘한 설명 깊이 차이: 명백한 차별 발언은 안전 필터로 차단되더라도, 특정 관점이나 문화권의 입장을 훨씬 더 길고 우호적으로 서술하는 미묘한 불균형이 발생합니다.",
+      "비판적 관점 유지: 민감한 사회적 이슈나 가치 판단이 필요한 주제를 다룰 때는 한쪽 설명만 믿지 말고, 다양한 이해관계자의 시각과 반대 논거를 능동적으로 함께 확인해야 합니다."
+    ],
+    "practice_tip": "사회적 논쟁이나 정책 이슈를 분석할 때 '이 사안을 바라보는 서로 다른 두 개 이상의 주요 관점과 각 입장의 근거를 균형 있게 비교해 줘'라고 지시하세요.",
+    "source": {
+      "name": "Claude Academy: Why Does Bias Exist in AI Models?",
+      "url": "https://academy.claude.com/tutorials/why-does-bias-exist-in-ai-models"
+    }
+  },
+  {
+    "slug": "writing-an-ai-diligence-statement",
+    "title": "AI 활용 책임 설명문 작성하기",
+    "original_title": "Writing an AI Diligence Statement",
+    "order": 9,
+    "summary": "AI를 활용해 문서, 코드, 기획서, 연구 보고서를 작성했을 때, AI의 구체적인 개입 범위와 인간의 검증 내역을 투명하게 공개하는 공식 기록이 바로 'AI 활용 책임 설명문(Diligence Statement)'입니다. 이는 AI 사용을 숨기지 않고 작업의 신뢰성과 투명성을 높이는 전문적인 실천입니다.",
+    "key_points": [
+      "도구와 분업 내역 명시: 어떤 AI 모델과 도구를 사용했는지 밝히고, 초안 작성·문법 교정·자료 요약 등 AI가 수행한 구체적인 작업 역할을 투명하게 기재합니다.",
+      "인간의 검증과 수정 기록: AI 답변 중 어떤 사실관계를 사람이 직접 확인했고, 어떤 오류나 부적절한 표현을 사람이 수정했는지 구체적인 검증 절차를 기술합니다.",
+      "최종 책임자의 선언: AI는 법적·윤리적 책임을 질 수 없으므로, 결과물의 정확성과 사용에 대한 모든 최종 책임은 인간 작성자에게 있음을 명백히 선언합니다."
+    ],
+    "practice_tip": "발표 자료나 보고서 말미에 '본 문서는 Claude를 활용해 초안을 구조화하였으며, 포함된 모든 사실관계와 수치는 작성자가 원본 출처와 대조하여 직접 검증 및 수정하였습니다'와 같은 문장을 포함해 보세요.",
+    "source": {
+      "name": "Claude Academy: Writing an AI Diligence Statement",
+      "url": "https://academy.claude.com/tutorials/writing-an-ai-diligence-statement"
+    },
+    "video": {
+      "url": "https://www.youtube.com/watch?v=QbLf2zb3oPc",
+      "embed_url": "https://www.youtube-nocookie.com/embed/QbLf2zb3oPc",
+      "title": "A closer look at Diligence",
+      "summary": "Diligence는 AI 협업의 윤리·안전을 다루며 Creation(도구 선택과 사용 방식), Transparency(AI 역할 공개), Deployment(공유 결과에 대한 검증과 최종 책임) 세 부분으로 설명됨."
+    }
+  },
+  {
+    "slug": "tokens-and-embeddings",
+    "title": "토큰: 입력마다 비용이 다른 이유",
+    "original_title": "Tokens: why some inputs cost more than others",
+    "order": 10,
+    "summary": "AI는 사람이 읽는 문자나 단어를 그대로 처리하지 않습니다. 텍스트를 '토큰(Token)'이라는 작은 조각 단위로 쪼갠 뒤 고유한 숫자 ID로 변환하여 신경망에서 다룹니다. 언어, 단어 길이, 기호, 띄어쓰기에 따라 잘리는 토큰 수가 다르기 때문에 글자 수가 같더라도 소모되는 토큰 비용과 컨텍스트 한도가 달라집니다.",
+    "key_points": [
+      "텍스트의 수치화(Tokenization): 같은 길이의 글도 언어, 단어, 띄어쓰기, 기호에 따라 서로 다른 수의 토큰으로 나뉠 수 있습니다.",
+      "비용과 처리 한도의 단위: API 이용 요금 청구와 1회 대화 처리 한도(컨텍스트 윈도우)는 글자 수나 바이트 수가 아니라 오직 '토큰 수'를 기준으로 산정됩니다.",
+      "임베딩(Embedding)의 역할: 토큰들은 고차원 공간 속 의미 좌표(임베딩)로 매핑되어, 단어 간의 유사도와 문맥 속 관계를 수학적으로 계산할 수 있게 만듭니다."
+    ],
+    "practice_tip": "긴 대화를 나누거나 API를 사용할 때는 불필요한 반복 서식이나 특수문자, 중복 공백을 정리하여 프롬프트의 토큰 소모량을 아끼고 응답 속도를 높이세요.",
+    "source": {
+      "name": "Claude Academy: Tokens and Embeddings",
+      "url": "https://academy.claude.com/tutorials/tokens-and-embeddings"
+    }
+  },
+  {
+    "slug": "parametric-memory-and-context",
+    "title": "컨텍스트가 Claude 성능과 비용에 미치는 영향",
+    "original_title": "How context affects Claude's performance and cost",
+    "order": 11,
+    "summary": "AI의 답변은 모델 내부 가중치에 학습된 '파라메트릭 메모리', 현재 대화와 첨부 자료, 필요할 때 도구로 찾은 정보에서 나옵니다. 관련 자료를 컨텍스트에 제공하면 도움이 되지만 토큰 비용이 늘고 중요한 정보가 묻힐 수 있으므로, 현재 질문에 필요한 자료를 선별해야 합니다.",
+    "key_points": [
+      "학습 지식 vs 작업 기억: 모델 파라미터 지식은 추가 비용이 없지만 시점이 고정되어 있고, 컨텍스트 정보는 실시간으로 최신 사실을 주입할 수 있지만 매번 토큰 비용이 발생합니다.",
+      "관련성의 중요성: 컨텍스트 창이 넓더라도 관련 없는 문서가 많이 섞이면 핵심 지침이나 필요한 세부 정보를 찾기 어려워질 수 있습니다.",
+      "선별과 정제의 원칙: 무작정 전체 문서를 덤프하기보다, 현재 해결하려는 질문과 직접적으로 연관된 핵심 단락과 구조화된 데이터만 정제하여 제공하는 것이 최상의 결과를 냅니다."
+    ],
+    "practice_tip": "방대한 보고서나 수백 줄의 코드를 통째로 붙여넣기 전에 질문과 직결된 핵심 섹션만 발췌하거나 요약본을 먼저 컨텍스트에 제공하여 정확도와 비용을 동시에 챙기세요.",
+    "source": {
+      "name": "Claude Academy: Parametric Memory and Context",
+      "url": "https://academy.claude.com/tutorials/parametric-memory-and-context"
+    }
+  },
+  {
+    "slug": "discernment-toolkit",
+    "title": "사람들이 Claude의 작업을 확인하는 방법",
+    "original_title": "Anthropic Education Report: How people check Claude's work",
+    "order": 12,
+    "summary": "AI가 만든 글이나 코드를 읽어보는 것만으로는 그럴듯한 오류를 놓칠 수 있습니다. Claude Academy 참가자 조사에서는 출처 문서, 테스트, 다른 사람, 다른 AI처럼 대화 밖의 근거와 결과를 대조하는 행동이 가장 흔한 확인 방법으로 나타났습니다.",
+    "key_points": [
+      "독립적 교차 검증: 단순히 AI 답변을 읽어보는 것에 그치지 않고, 공식 기술 문서 확인, 코드 실행 테스트, 도메인 전문가 검토 등 독립된 수단으로 팩트를 입증해야 합니다.",
+      "전문 지식의 장벽: 공식 조사 결과 사용자가 해당 업무 분야의 기본 지식이 부족할 때 AI의 미묘한 결함이나 허위 인용을 알아차리지 못하는 것이 가장 큰 위험 요인으로 확인되었습니다.",
+      "조사 표본의 한계와 실무 적용: 이 조사는 Claude를 자주 쓰는 참가자 129명의 경험을 다뤘으므로 전체 사용자에게 그대로 일반화할 수 없지만, 외부 검증 습관을 만드는 데 참고할 수 있습니다."
+    ],
+    "practice_tip": "AI가 작성한 코드는 반드시 로컬 환경에서 직접 빌드 및 테스트를 실행하고, 통계나 인용문은 공식 1차 출처 웹사이트 링크를 직접 방문하여 수치가 일치하는지 확인하세요.",
+    "source": {
+      "name": "Claude Academy: Discernment Toolkit",
+      "url": "https://academy.claude.com/tutorials/discernment-toolkit"
+    }
+  }
+]

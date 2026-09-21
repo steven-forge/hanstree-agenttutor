@@ -236,3 +236,10 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.sidebar-item-group { display: grid; gap: 2px; }
+.sidebar-nested { display: grid; gap: 2px; padding-left: 14px; }
+.mobile-nav-nested { display: grid; gap: 2px; padding-left: 14px; }
+.video-responsive { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; }
+.video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+

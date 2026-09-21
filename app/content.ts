@@ -5,6 +5,7 @@ import rawGlossary from "../data/glossary.json";
 import rawToday from "../data/today.json";
 import rawHealth from "../data/content-health.json";
 import rawDocs from "../data/docs.json";
+import rawAiBehavior from "../data/ai-behavior.json";
 
 export type Source = {
   name: string;
@@ -35,6 +36,23 @@ export type LearnDoc = {
   sources: Source[];
   reviewed_at: string;
   updated_at: string;
+};
+
+export type AIBehaviorDoc = {
+  slug: string;
+  title: string;
+  original_title: string;
+  order: number;
+  summary: string;
+  key_points: string[];
+  practice_tip: string;
+  source: Source;
+  video?: {
+    url: string;
+    embed_url: string;
+    title: string;
+    summary: string;
+  };
 };
 
 export type AgentEngineeringDoc = {
@@ -178,6 +196,7 @@ export const glossaryTerms = (rawGlossary as unknown as { terms: GlossaryTerm[] 
 export const todayData = rawToday as unknown as TodayData;
 export const contentHealth = rawHealth as unknown as ContentHealthData;
 export const commandDocs = (rawDocs as unknown as { documents: { slug: string; title: string; description: string }[] }).documents;
+export const aiBehaviorDocs = rawAiBehavior as AIBehaviorDoc[];
 
 export function isDocFreshnessWarning(
   doc: { reviewed_at: string; sources: Source[] },

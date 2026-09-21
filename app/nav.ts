@@ -1,6 +1,7 @@
 export type NavItem = {
   title: string;
   href: string;
+  children?: NavItem[];
 };
 
 export type NavGroup = {
@@ -37,7 +38,25 @@ export const NAV_GROUPS: NavGroup[] = [
       { title: "3. Prompt", href: "/learn/prompt" },
       { title: "4. Context", href: "/learn/context" },
       { title: "5. Memory", href: "/learn/memory" },
-      { title: "6. Agent Pattern", href: "/learn/agent-pattern" }
+      { title: "6. Agent Pattern", href: "/learn/agent-pattern" },
+      {
+        title: "AI의 작동 방식 이해하기",
+        href: "/learn#ai-behavior",
+        children: [
+          { title: "1. AI의 네 가지 특성", href: "/learn/ai-behavior/the-4-properties-of-ai" },
+          { title: "2. AI 활용 능력의 4D 행동 지표", href: "/learn/ai-behavior/the-4-ds-of-ai-fluency-behavioral-indicators" },
+          { title: "3. AI와 대화할 때 내부에서 일어나는 일", href: "/learn/ai-behavior/what-happens-when-you-talk-to-ai" },
+          { title: "4. AI 답변을 믿어도 될까?", href: "/learn/ai-behavior/can-you-trust-what-ai-tells-you" },
+          { title: "5. AI는 나에 대해 무엇을 알까?", href: "/learn/ai-behavior/what-does-ai-know-about-me" },
+          { title: "6. AI는 왜 환각을 일으킬까?", href: "/learn/ai-behavior/why-do-ai-models-hallucinate" },
+          { title: "7. AI의 아첨 성향이란?", href: "/learn/ai-behavior/what-is-sycophancy-in-ai-models" },
+          { title: "8. AI에는 왜 편향이 생길까?", href: "/learn/ai-behavior/why-does-bias-exist-in-ai-models" },
+          { title: "9. AI 활용 책임 설명문 작성하기", href: "/learn/ai-behavior/writing-an-ai-diligence-statement" },
+          { title: "10. 토큰: 입력마다 비용이 다른 이유", href: "/learn/ai-behavior/tokens-and-embeddings" },
+          { title: "11. 컨텍스트가 Claude 성능과 비용에 미치는 영향", href: "/learn/ai-behavior/parametric-memory-and-context" },
+          { title: "12. 사람들이 Claude의 작업을 확인하는 방법", href: "/learn/ai-behavior/discernment-toolkit" }
+        ]
+      }
     ]
   },
   {

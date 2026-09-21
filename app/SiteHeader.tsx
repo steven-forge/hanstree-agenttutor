@@ -36,13 +36,27 @@ export default function SiteHeader({ activeSlug, currentPath }: { activeSlug?: s
             <div key={group.title} className="mobile-nav-group">
               <p className="mobile-group-title">{group.title}</p>
               {group.items.map((item) => (
-                <Link
-                  key={item.href}
-                  aria-current={item.href === current ? "page" : undefined}
-                  href={item.href}
-                >
-                  {item.title}
-                </Link>
+                <div key={item.title}>
+                  <Link
+                    aria-current={item.href === current ? "page" : undefined}
+                    href={item.href}
+                  >
+                    {item.title}
+                  </Link>
+                  {item.children && (
+                    <div className="mobile-nav-nested">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          aria-current={child.href === current ? "page" : undefined}
+                          href={child.href}
+                        >
+                          {child.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           ))}

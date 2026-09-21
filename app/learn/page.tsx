@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
-import { learnDocs } from "../content";
+import { learnDocs, aiBehaviorDocs } from "../content";
 
 export const metadata: Metadata = {
-  title: "Agent 기초 개념 학습 · AgentTutor",
-  description: "Agent를 처음 배우는 분들을 위한 6단계 순차 기초 학습 로드맵"
+  title: "AI Agent 기초와 작동 원리 학습 · AgentTutor",
+  description: "AI Agent 기초 6단계와 AI의 작동 방식을 배우는 12개 초보자용 학습 주제"
 };
 
 export default function LearnIndexPage() {
   const sortedDocs = [...learnDocs].sort((a, b) => a.order - b.order);
+  const sortedAiBehaviorDocs = [...aiBehaviorDocs].sort((a, b) => a.order - b.order);
 
   return (
     <>
@@ -74,8 +75,59 @@ export default function LearnIndexPage() {
             </div>
           </section>
 
+          <section style={{ marginTop: "54px" }} id="ai-behavior" aria-label="AI의 작동 방식 이해하기">
+            <div className="section-head">
+              <div>
+                <h2>AI의 작동 방식 이해하기</h2>
+                <p className="section-note">Claude Academy 공식 튜토리얼을 기반으로 AI 초보자가 꼭 알아야 할 작동 원리와 핵심 개념 12가지를 설명합니다.</p>
+              </div>
+              <span className="badge">12개 주제</span>
+            </div>
+
+            <div style={{ display: "grid", gap: "16px", marginTop: "20px" }}>
+              {sortedAiBehaviorDocs.map((doc) => (
+                <Link
+                  key={doc.slug}
+                  href={`/learn/ai-behavior/${doc.slug}`}
+                  className="card"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    textDecoration: "none",
+                    padding: "20px 24px",
+                    transition: "border-color .15s, box-shadow .15s"
+                  }}
+                >
+                  <div style={{ maxWidth: "720px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>
+                      <span className="badge" style={{ margin: 0 }}>
+                        주제 {doc.order}
+                      </span>
+                      <strong style={{ fontSize: "1.15rem", color: "var(--ink)" }}>{doc.title}</strong>
+                      {doc.video && (
+                        <span className="status-new" style={{ fontSize: "0.72rem" }}>
+                          영상 포함
+                        </span>
+                      )}
+                    </div>
+                    <p style={{ margin: 0, color: "var(--muted)", fontSize: "0.9rem", lineHeight: "1.6" }}>
+                      {doc.summary}
+                    </p>
+                    <p style={{ margin: "6px 0 0", color: "#9ca3af", fontSize: "0.78rem" }}>
+                      원문: {doc.original_title}
+                    </p>
+                  </div>
+                  <b style={{ color: "var(--blue)", fontSize: "0.9rem", flexShrink: 0, marginLeft: "16px" }}>
+                    살펴보기 →
+                  </b>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           <footer className="home-foot" style={{ marginTop: "48px" }}>
-            <span>기준일: 2026-09-20 KST</span>
+            <span>기준일: 2026-09-22 KST</span>
             <Link href="/glossary" style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>
               관련 용어사전 확인하기 →
             </Link>
@@ -86,7 +138,8 @@ export default function LearnIndexPage() {
           <p>이 페이지에서</p>
           <nav aria-label="페이지 목차">
             <a href="#overview">개요</a>
-            <a href="#curriculum">커리큘럼</a>
+            <a href="#curriculum">커리큘럼 (6단계)</a>
+            <a href="#ai-behavior">AI의 작동 방식 이해하기</a>
           </nav>
         </aside>
       </div>
