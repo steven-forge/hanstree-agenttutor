@@ -78,6 +78,8 @@ export type AgentDoc = {
   id: string;
   slug: string;
   title: string;
+  provider: string;
+  tool_modes: ("MCP" | "IDE" | "Terminal")[];
   tagline: string;
   suitable_for: string[];
   workflow_and_strengths: string[];
@@ -202,4 +204,23 @@ export function isDocFreshnessWarning(
     }
     return false;
   });
+}
+
+export type AgentReviewStatus = "공식 확인" | "조건부" | "확인 필요";
+
+export function getAgentReviewStatus(
+  doc: AgentDoc,
+  docSources: ContentHealthSource[] = contentHealth.documents.sources,
+  referenceDateIso: string = contentHealth.documents.checked_at || new Date().toISOString()
+): AgentReviewStatus {
+  if (
+    isDocFreshnessWarning(doc, docSources, referenceDateIso) ||
+    doc.form_factors.some((factor) => factor.status === "미확인")
+  ) {
+    return "확인 필요";
+  }
+  if (doc.form_factors.some((f) => f.status === "조건부")) {
+    return "조건부";
+  }
+  return "공식 확인";
 }

@@ -6,6 +6,10 @@
       "id": "claude",
       "slug": "claude",
       "title": "Claude",
+      "provider": "Anthropic",
+      "tool_modes": [
+        "Terminal"
+      ],
       "tagline": "Anthropic의 AI 에이전트로 복잡한 추론, 코드 수정 및 개발 도구(Claude Code CLI) 지원",
       "suitable_for": [
         "정밀한 코드 리팩토링 및 다중 파일 수정 작업",
@@ -63,6 +67,11 @@
       "id": "codex",
       "slug": "codex",
       "title": "Codex",
+      "provider": "OpenAI",
+      "tool_modes": [
+        "Terminal",
+        "MCP"
+      ],
       "tagline": "OpenAI 생태계 기반의 코드 작성·검토 에이전트로 CLI 및 Codex SDK/App Server 연동 지원",
       "suitable_for": [
         "대화형 코드 작성 보조 및 슬래시 커맨드 기반의 프로젝트 관리",
@@ -132,6 +141,10 @@
       "id": "gemini",
       "slug": "gemini",
       "title": "Gemini",
+      "provider": "Google",
+      "tool_modes": [
+        "Terminal"
+      ],
       "tagline": "Google의 멀티모달 AI 에이전트로 대용량 컨텍스트 처리, Gemini API 및 Gemini CLI 지원",
       "suitable_for": [
         "대규모 소스코드 및 긴 기술 문서의 일괄 참조 및 구조 분석",
@@ -193,6 +206,10 @@
       "id": "grok",
       "slug": "grok",
       "title": "Grok",
+      "provider": "xAI",
+      "tool_modes": [
+        "Terminal"
+      ],
       "tagline": "xAI의 대규모 언어 모델 기반 에이전트로 실시간 정보 접근, xAI REST API 및 공식 Grok CLI 지원",
       "suitable_for": [
         "실시간 정보 검색 및 최신 웹/데이터 기반 기술 리서치",
