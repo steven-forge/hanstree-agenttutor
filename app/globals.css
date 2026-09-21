@@ -41,11 +41,14 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 
 .docs-shell { display: grid; grid-template-columns: 256px minmax(0, 1fr) 220px; min-height: calc(100vh - 56px); }
 .docs-sidebar { position: sticky; top: 56px; height: calc(100vh - 56px); padding: 32px 20px; overflow-y: auto; border-right: 1px solid var(--line); display: flex; flex-direction: column; }
-.docs-sidebar > p, .sidebar-group > summary { margin: 20px 10px 8px; color: #374151; font-size: 13px; font-weight: 750; }
-.sidebar-group > summary { cursor: pointer; list-style: none; }
+.docs-sidebar > p { margin: 20px 10px 8px; color: #374151; font-size: 13px; font-weight: 750; }
+.sidebar-group { margin-top: 6px; }
+.sidebar-group > summary { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 7px 10px; margin: 0 0 2px; border-radius: 6px; color: #374151; font-size: 13px; font-weight: 750; cursor: pointer; list-style: none; user-select: none; transition: background-color .15s, color .15s; }
 .sidebar-group > summary::-webkit-details-marker { display: none; }
-.sidebar-group > summary::before { content: "▸"; display: inline-block; width: 16px; color: var(--muted); transition: transform .15s; }
-.sidebar-group[open] > summary::before { transform: rotate(90deg); }
+.sidebar-group > summary:hover, .sidebar-group > summary:focus, .sidebar-group > summary:focus-visible { background: var(--wash); color: var(--ink); }
+.sidebar-group > summary::after { content: ""; display: inline-block; width: 6px; height: 6px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .15s ease; flex-shrink: 0; }
+.sidebar-group[open] > summary::after { transform: rotate(45deg); }
+.sidebar-group > summary:hover::after, .sidebar-group > summary:focus::after, .sidebar-group > summary:focus-visible::after { border-color: var(--ink); }
 .page-outline > p { margin: 0 10px 12px; color: #374151; font-size: 13px; font-weight: 750; }
 .docs-sidebar nav, .page-outline nav { display: grid; gap: 2px; }
 .docs-sidebar nav a { padding: 7px 10px; border-radius: 6px; color: #6b7280; font-size: 14px; text-decoration: none; }
