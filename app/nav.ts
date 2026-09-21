@@ -20,7 +20,7 @@ export const TOP_NAV_LINKS: NavItem[] = [
 
 export const NAV_GROUPS: NavGroup[] = [
   {
-    title: "Today",
+    title: "News",
     href: "/today",
     items: [
       { title: "AI Newsletter", href: "/today" },
