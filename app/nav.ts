@@ -14,7 +14,7 @@ export const TOP_NAV_LINKS: NavItem[] = [
   { title: "Learn", href: "/learn" },
   { title: "Agent Engineering", href: "/agent-engineering" },
   { title: "Agents", href: "/agents" },
-  { title: "명령어 문서", href: "/docs/hanstree" },
+  { title: "CLI Docs", href: "/docs/hanstree" },
   { title: "Glossary", href: "/glossary" }
 ];
 
@@ -23,16 +23,16 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Today",
     href: "/today",
     items: [
-      { title: "AI 뉴스레터", href: "/today" },
+      { title: "AI Newsletter", href: "/today" },
       { title: "Releases", href: "/releases" }
     ]
   },
   {
-    title: "Learn (기초 개념)",
+    title: "Learn",
     href: "/learn",
     items: [
-      { title: "학습 로드맵 개요", href: "/learn" },
-      { title: "1. Agent 기본", href: "/learn/agent-basics" },
+      { title: "Roadmap", href: "/learn" },
+      { title: "1. Agent Basics", href: "/learn/agent-basics" },
       { title: "2. LLM", href: "/learn/llm" },
       { title: "3. Prompt", href: "/learn/prompt" },
       { title: "4. Context", href: "/learn/context" },
@@ -44,7 +44,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Agent Engineering",
     href: "/agent-engineering",
     items: [
-      { title: "엔지니어링 개요", href: "/agent-engineering" },
+      { title: "Overview", href: "/agent-engineering" },
       { title: "Skills", href: "/agent-engineering/skills" },
       { title: "Hooks", href: "/agent-engineering/hooks" },
       { title: "Tools", href: "/agent-engineering/tools" },
@@ -57,10 +57,10 @@ export const NAV_GROUPS: NavGroup[] = [
     ]
   },
   {
-    title: "Agents (제품 비교)",
+    title: "Agents",
     href: "/agents",
     items: [
-      { title: "에이전트 비교 개요", href: "/agents" },
+      { title: "Comparison", href: "/agents" },
       { title: "Claude", href: "/agents/claude" },
       { title: "Codex", href: "/agents/codex" },
       { title: "Gemini", href: "/agents/gemini" },
@@ -68,7 +68,7 @@ export const NAV_GROUPS: NavGroup[] = [
     ]
   },
   {
-    title: "명령어 문서",
+    title: "CLI Docs",
     href: "/docs/hanstree",
     items: [
       { title: "Hanstree", href: "/docs/hanstree" },
@@ -83,7 +83,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Glossary",
     href: "/glossary",
     items: [
-      { title: "용어사전", href: "/glossary" }
+      { title: "Glossary", href: "/glossary" }
     ]
   }
 ];

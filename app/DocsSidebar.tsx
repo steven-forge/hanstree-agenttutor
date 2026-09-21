@@ -7,7 +7,7 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
 
   return (
     <aside className="docs-sidebar">
-      <nav aria-label="개요">
+      <nav aria-label="Overview">
         <Link
           aria-current={current === "/" ? "page" : undefined}
           className={current === "/" ? "selected" : ""}
@@ -19,7 +19,7 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
       {NAV_GROUPS.map((group) => (
         <details key={group.title} className="sidebar-group" open={group.title === "Today"}>
           <summary>{group.title}</summary>
-          <nav aria-label={`${group.title} 목록`}>
+          <nav aria-label={`${group.title} navigation`}>
             {group.items.map((item) => {
               const isSelected = item.href === current;
               return (
