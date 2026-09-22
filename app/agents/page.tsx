@@ -8,7 +8,7 @@ import { agentDocs, agentsMetadata, isDocFreshnessWarning } from "../content";
 
 export const metadata: Metadata = {
   title: "AI 모델 비교 · AgentTutor",
-  description: "Claude, Codex, Gemini, Grok의 모델을 골라 API 비용, 컨텍스트, 최대 출력, 캐시와 특징을 비교합니다."
+  description: "Claude, Codex, Gemini, Grok의 모델을 골라 API 비용, 컨텍스트, 최대 출력, 캐시, 입력 유형과 모델 ID를 비교합니다."
 };
 
 const ALLOWED_FORMS = ["App", "CLI", "API"] as const;

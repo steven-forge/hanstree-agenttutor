@@ -4,6 +4,7 @@
   "agents": [
     {
       "agent_slug": "claude",
+      "input_modalities": "텍스트 · 이미지",
       "models": [
         {
           "id": "claude-fable-5-1",
@@ -20,16 +21,16 @@
           "price_note": "캐시 쓰기는 별도 비용."
         },
         {
-          "id": "claude-opus-5",
-          "name": "Claude Opus 5",
-          "input_cost": 5,
-          "output_cost": 25,
-          "cache_read_cost": 0.5,
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "input_cost": 4,
+          "output_cost": 20,
+          "cache_read_cost": 0.2,
           "context_window": "1M",
           "max_output": "128K",
-          "key_feature": "복잡한 코딩·기업 작업",
+          "key_feature": "장기 코딩·지식 작업",
           "sources": [
-            { "name": "Claude Opus 5 개요", "url": "https://platform.claude.com/docs/en/models/opus-5/overview" }
+            { "name": "Claude Opus 5.5 개요", "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview" }
           ],
           "price_note": "캐시 쓰기는 별도 비용."
         },
@@ -65,6 +66,7 @@
     },
     {
       "agent_slug": "codex",
+      "input_modalities": "텍스트 · 이미지",
       "models": [
         {
           "id": "gpt-6-astra",
@@ -145,6 +147,7 @@
     },
     {
       "agent_slug": "gemini",
+      "input_modalities": "텍스트 · 이미지 · 오디오 · 동영상 · PDF",
       "models": [
         {
           "id": "gemini-3.1-pro-preview",
@@ -225,6 +228,7 @@
     },
     {
       "agent_slug": "grok",
+      "input_modalities": "텍스트 · 이미지",
       "models": [
         {
           "id": "grok-4.7",

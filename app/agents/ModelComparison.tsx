@@ -16,7 +16,7 @@ type AgentModel = {
   price_note: string;
 };
 
-type AgentModelGroup = { agent_slug: string; models: AgentModel[] };
+type AgentModelGroup = { agent_slug: string; input_modalities: string; models: AgentModel[] };
 
 const MAX_SELECTED = 5;
 
@@ -36,12 +36,12 @@ export default function ModelComparison({
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const modelsById = useMemo(() => {
-    const map = new Map<string, { model: AgentModel; agent: AgentDoc }>();
+    const map = new Map<string, { model: AgentModel; agent: AgentDoc; input_modalities: string }>();
     for (const group of modelGroups) {
       const agent = agents.find((a) => a.slug === group.agent_slug);
       if (!agent) continue;
       for (const model of group.models.slice(0, MAX_SELECTED)) {
-        map.set(model.id, { model, agent });
+        map.set(model.id, { model, agent, input_modalities: group.input_modalities });
       }
     }
     return map;
@@ -49,7 +49,7 @@ export default function ModelComparison({
 
   const selectedModels = selectedIds
     .map((id) => modelsById.get(id))
-    .filter((entry): entry is { model: AgentModel; agent: AgentDoc } => Boolean(entry));
+    .filter((entry): entry is { model: AgentModel; agent: AgentDoc; input_modalities: string } => Boolean(entry));
 
   const limitReached = selectedIds.length >= MAX_SELECTED;
 
@@ -121,6 +121,9 @@ export default function ModelComparison({
           </div>
         ) : (
           <div className="model-compare-wrap" tabIndex={0} role="region" aria-label="선택한 모델 비교표">
+            <p className="section-note" style={{ marginBottom: "8px" }}>
+              API 모델 ID·입력 유형은 API 스펙 기준이며, 실제 앱 UI에서 파일 업로드가 되는지 여부와는 다를 수 있습니다.
+            </p>
             <table className="model-compare-table">
               <thead>
                 <tr>
@@ -133,6 +136,18 @@ export default function ModelComparison({
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <th scope="row">API 모델 ID</th>
+                  {selectedModels.map(({ model }) => (
+                    <td key={model.id}><code>{model.id}</code></td>
+                  ))}
+                </tr>
+                <tr>
+                  <th scope="row">모델 문서상 입력 유형</th>
+                  {selectedModels.map(({ model, input_modalities }) => (
+                    <td key={model.id}>{input_modalities}</td>
+                  ))}
+                </tr>
                 <tr>
                   <th scope="row">입력 토큰 비용 (1M당)</th>
                   {selectedModels.map(({ model }) => (
