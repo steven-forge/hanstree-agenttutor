@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-23",
   "targets": {
     "codex": {
       "commands": [
@@ -645,6 +645,7 @@
         "/ultraplan",
         "/ultrareview",
         "/undo",
+        "/update-config",
         "/upgrade",
         "/usage",
         "/usage-credits",
@@ -1036,6 +1037,7 @@
         "/tui": "슬래시 명령",
         "/ultraplan": "슬래시 명령",
         "/ultrareview": "슬래시 명령",
+        "/update-config": "슬래시 명령",
         "/usage-credits": "슬래시 명령",
         "/extra-usage": "슬래시 명령",
         "/vim": "슬래시 명령",
@@ -1087,7 +1089,15 @@
         "claude Code filters the": "CLI 명령",
         "claude Code shows": "CLI 명령"
       },
-      "auto_managed": []
+      "auto_managed": [
+        {
+          "command": "/update-config",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-09-23"
+        }
+      ]
     },
     "gemini": {
       "commands": [
