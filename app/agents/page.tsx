@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
+import ModelComparison from "./ModelComparison";
+import agentModelData from "../../data/agent-models.json";
 import { agentDocs, agentsMetadata, isDocFreshnessWarning } from "../content";
 
 export const metadata: Metadata = {
-  title: "주요 AI Agent 비교 · AgentTutor",
-  description: "Claude, Codex, Gemini, Grok의 사용 형태, 강점, 공식 지원 상태 객관적 비교"
+  title: "AI 모델 비교 · AgentTutor",
+  description: "Claude, Codex, Gemini, Grok의 모델을 골라 API 비용, 컨텍스트, 최대 출력, 캐시와 특징을 비교합니다."
 };
 
 const ALLOWED_FORMS = ["App", "CLI", "API"] as const;
@@ -67,10 +69,9 @@ export default async function AgentsIndexPage({
         <div className="doc-main" role="main">
           <header className="home-hero" id="overview">
             <p className="brand-kicker">AGENT COMPARISON</p>
-            <h1>주요 AI Agent 비교</h1>
+            <h1>AI 모델 비교</h1>
             <p>
-              Claude, Codex, Gemini, Grok의 실제 작업 방식과 지원 형태(App/CLI/API)를 동일한 기준으로 비교합니다.
-              근거 없는 성능 수치나 가격 추정을 배제하고, 공식 확인된 사실과 사용 맥락을 중심으로 정리했습니다.
+              Claude, Codex, Gemini, Grok의 모델을 최대 5개 골라 API 요금과 주요 사양을 비교하세요.
             </p>
           </header>
 
@@ -81,12 +82,11 @@ export default async function AgentsIndexPage({
             </div>
           )}
 
-          {/* Comparison List Section */}
-          <section style={{ marginTop: "36px" }} id="comparison-list">
+          <section style={{ marginTop: "36px" }} id="model-comparison">
             <div className="section-head">
               <div>
-                <h2>에이전트 목록형 비교</h2>
-                <p className="section-note">조밀한 목록에서 주요 사양, 도구 연동 방식, 핵심 강점을 비교합니다.</p>
+                <h2>에이전트별 모델 선택</h2>
+                <p className="section-note">모델을 선택하면 아래에 비교표가 바로 나타납니다.</p>
               </div>
             </div>
 
@@ -149,108 +149,12 @@ export default async function AgentsIndexPage({
             </div>
 
             {filteredAgents.length > 0 ? (
-              <div
-                className="table-wrap agents-table-wrap"
-                tabIndex={0}
-                role="region"
-                aria-label="에이전트 비교 목록"
-              >
-                <table className="agents-table">
-                  <thead>
-                    <tr>
-                      <th scope="col">에이전트 · 개발사</th>
-                      <th scope="col">제공 형태</th>
-                      <th scope="col">도구 방식</th>
-                      <th scope="col">핵심 강점 & 적합한 상황</th>
-                      <th scope="col">공식 출처 · 검토일</th>
-                      <th scope="col">상세</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredAgents.map((agent) => {
-                      return (
-                        <tr key={agent.slug} className="agent-table-row">
-                          <td>
-                            <Link href={`/agents/${agent.slug}`} className="agent-row-link">
-                              <strong>{agent.title}</strong>
-                            </Link>
-                            <span className="agent-provider-tag">{agent.provider}</span>
-                          </td>
-                          <td>
-                            <div className="agent-badges-wrap">
-                              {agent.form_factors.map((f) => (
-                                <span
-                                  key={f.type}
-                                  className={
-                                    f.status === "공식지원확인"
-                                      ? "status-confirmed"
-                                      : f.status.startsWith("조건부")
-                                      ? "status-conditional"
-                                      : "status-unconfirmed"
-                                  }
-                                  style={{ fontSize: "0.72rem", padding: "1px 6px" }}
-                                >
-                                  {f.type}: {f.status}
-                                </span>
-                              ))}
-                            </div>
-                          </td>
-                          <td>
-                            <div className="agent-badges-wrap">
-                              {agent.tool_modes && agent.tool_modes.length > 0 ? (
-                                agent.tool_modes.map((mode) => (
-                                  <span
-                                    key={mode}
-                                    className="badge-concept"
-                                    style={{ fontSize: "0.72rem", padding: "1px 6px" }}
-                                  >
-                                    {mode}
-                                  </span>
-                                ))
-                              ) : (
-                                <span style={{ color: "var(--muted)", fontSize: "0.8rem" }}>-</span>
-                              )}
-                            </div>
-                          </td>
-                          <td style={{ fontSize: "0.88rem", color: "#374151" }}>
-                            {agent.tagline}
-                          </td>
-                          <td style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-                            <div>
-                              {agent.sources.length > 0 && (
-                                <a
-                                  href={agent.sources[0].url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}
-                                  aria-label={`${agent.title} 공식 출처 (${agent.sources[0].name})`}
-                                >
-                                  공식 문서 ↗
-                                </a>
-                              )}
-                            </div>
-                            <time
-                              dateTime={agent.reviewed_at}
-                              style={{ display: "block", marginTop: "2px" }}
-                            >
-                              {agent.reviewed_at.split("T")[0]}
-                            </time>
-                          </td>
-                          <td>
-                            <Link
-                              href={`/agents/${agent.slug}`}
-                              className="agent-detail-btn"
-                              aria-label={`${agent.title} 상세 보기`}
-                            >
-                              상세 보기 →
-                            </Link>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+              <ModelComparison
+                key={`${selectedForm}-${selectedTool}`}
+                agents={filteredAgents}
+                modelGroups={agentModelData.agents.filter((g) => filteredAgents.some((a) => a.slug === g.agent_slug))}
+                unitNote={agentModelData.unit_note}
+              />
             ) : (
               <div className="empty-state" role="status" aria-live="polite" style={{ marginTop: "24px" }}>
                 <p>
@@ -269,8 +173,8 @@ export default async function AgentsIndexPage({
           </section>
 
           <footer className="home-foot" style={{ marginTop: "48px" }}>
-            <span>기준일: {reviewedDate} KST (공식 문서 기준 점검)</span>
-            <span>미확인 상태는 미지원을 의미하지 않습니다.</span>
+            <span>모델 가격·사양: 2026-09-23 KST 공식 문서 확인</span>
+            <span>가격은 사용 조건에 따라 달라질 수 있습니다.</span>
           </footer>
         </div>
 
@@ -278,7 +182,7 @@ export default async function AgentsIndexPage({
           <p>이 페이지에서</p>
           <nav aria-label="페이지 목차">
             <a href="#overview">개요</a>
-            <a href="#comparison-list">에이전트 목록형 비교</a>
+            <a href="#model-comparison">모델 선택 비교</a>
           </nav>
         </aside>
       </div>

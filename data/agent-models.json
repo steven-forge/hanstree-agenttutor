@@ -1,0 +1,143 @@
+{
+  "checked_at": "2026-09-23",
+  "unit_note": "2026-09-23 확인 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
+  "agents": [
+    {
+      "agent_slug": "claude",
+      "models": [
+        {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "input_cost": 5,
+          "output_cost": 25,
+          "cache_read_cost": 0.5,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "복잡한 코딩·기업 작업",
+          "sources": [
+            { "name": "Claude Opus 5 개요", "url": "https://platform.claude.com/docs/en/models/opus-5/overview" }
+          ],
+          "price_note": "캐시 쓰기는 별도 비용."
+        },
+        {
+          "id": "claude-sonnet-5",
+          "name": "Claude Sonnet 5",
+          "input_cost": 2,
+          "output_cost": 10,
+          "cache_read_cost": 0.2,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "빠른 코딩·도구 사용",
+          "sources": [
+            { "name": "Claude Sonnet 5 개요", "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview" }
+          ],
+          "price_note": "캐시 쓰기는 별도 비용."
+        }
+      ]
+    },
+    {
+      "agent_slug": "codex",
+      "models": [
+        {
+          "id": "gpt-5.6-sol",
+          "name": "GPT-5.6 Sol",
+          "input_cost": 4,
+          "output_cost": 20,
+          "cache_read_cost": 0.4,
+          "context_window": "1,050,000",
+          "max_output": "128K",
+          "key_feature": "복잡한 코딩·에이전트 작업",
+          "sources": [
+            { "name": "GPT-5.6 Sol 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol" },
+            { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
+          ],
+          "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배. 현재 가격은 2026-11-21까지 한시 적용."
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
+          "input_cost": 0.2,
+          "output_cost": 1.2,
+          "cache_read_cost": 0.02,
+          "context_window": "1,050,000",
+          "max_output": "128K",
+          "key_feature": "반복·대량의 명확한 작업",
+          "sources": [
+            { "name": "GPT-5.6 Luna 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna" },
+            { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
+          ],
+          "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
+        }
+      ]
+    },
+    {
+      "agent_slug": "gemini",
+      "models": [
+        {
+          "id": "gemini-3.1-pro-preview",
+          "name": "Gemini 3.1 Pro Preview",
+          "input_cost": 2,
+          "output_cost": 12,
+          "cache_read_cost": 0.2,
+          "context_window": "1,048,576",
+          "max_output": "65,536",
+          "key_feature": "복잡한 추론·멀티모달·코딩",
+          "sources": [
+            { "name": "Gemini 3.1 Pro Preview 모델 문서", "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview" },
+            { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+          ],
+          "price_note": "입력 200K 초과 시 입력 $4·출력 $18·캐시 읽기 $0.40. 캐시 저장 비용 별도."
+        },
+        {
+          "id": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
+          "input_cost": 0.75,
+          "output_cost": 3.75,
+          "cache_read_cost": 0.075,
+          "context_window": "1,048,576",
+          "max_output": "65,536",
+          "key_feature": "장기 코딩·에이전트 작업·멀티모달",
+          "sources": [
+            { "name": "Gemini 3.8 Flash 모델 문서", "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash" },
+            { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+          ],
+          "price_note": "2026-12-31까지 한시 가격, 캐시 저장 비용 별도."
+        }
+      ]
+    },
+    {
+      "agent_slug": "grok",
+      "models": [
+        {
+          "id": "grok-4.7",
+          "name": "Grok 4.7",
+          "input_cost": 2,
+          "output_cost": 6,
+          "cache_read_cost": 0.5,
+          "context_window": "500K",
+          "max_output": "공식 문서상 텍스트 출력 제한 없음",
+          "key_feature": "코딩·도구 호출·웹/X 검색",
+          "sources": [
+            { "name": "Grok 4.7 문서", "url": "https://docs.x.ai/developers/grok-4-7" },
+            { "name": "Grok 4.7 출시 기록", "url": "https://docs.x.ai/developers/release-notes" }
+          ],
+          "price_note": "입력 200K 이상 장문 요금은 입력 $4·출력 $12·캐시 읽기 $1."
+        },
+        {
+          "id": "grok-4.3",
+          "name": "Grok 4.3",
+          "input_cost": 1.25,
+          "output_cost": 2.5,
+          "cache_read_cost": 0.2,
+          "context_window": "1M",
+          "max_output": "공식 미표기",
+          "key_feature": "도구 호출·지시 따르기",
+          "sources": [
+            { "name": "Grok 4.3 모델 문서", "url": "https://docs.x.ai/developers/models/grok-4.3" }
+          ],
+          "price_note": "입력 200K 이상 장문 요금은 입력 $2.50·출력 $5·캐시 읽기 $0.40."
+        }
+      ]
+    }
+  ]
+}
