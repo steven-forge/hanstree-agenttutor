@@ -1,21 +1,20 @@
 {
   "news": {
-    "checked_at": "2026-09-22T06:25:55.323420+09:00",
+    "checked_at": "2026-09-23T06:24:14.048281+09:00",
     "status": "partial",
-    "candidate_count": 0,
-    "archive_count": 249,
+    "candidate_count": 12,
+    "archive_count": 261,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
-        "status": "failed",
-        "count": 0,
+        "status": "ok",
+        "count": 8,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "Retry-After 대기시간 초과 (9245.0초)"
+        "skipped_count": 109,
+        "coverage_limited": false
       },
       {
         "id": "google-ai",
@@ -33,9 +32,9 @@
         "name": "Codex Releases",
         "url": "https://github.com/openai/codex/releases",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
-        "excluded_count": 154,
+        "excluded_count": 161,
         "skipped_count": 20,
         "coverage_limited": false
       },
@@ -44,10 +43,10 @@
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 49,
+        "skipped_count": 48,
         "coverage_limited": false
       },
       {
@@ -57,7 +56,7 @@
         "status": "ok",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 66,
+        "excluded_count": 67,
         "skipped_count": 10,
         "coverage_limited": false
       },
@@ -71,7 +70,7 @@
         "excluded_count": 0,
         "skipped_count": 0,
         "coverage_limited": false,
-        "error": "Retry-After 대기시간 초과 (9223.0초)"
+        "error": "한국어 번역에 실패했습니다."
       },
       {
         "id": "anthropic-news",
@@ -88,18 +87,17 @@
         "id": "xai-news",
         "name": "xAI News",
         "url": "https://x.ai/news",
-        "status": "failed",
-        "count": 0,
+        "status": "ok",
+        "count": 2,
         "held_count": 0,
-        "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "Retry-After 대기시간 초과 (9221.0초)"
+        "excluded_count": 60,
+        "skipped_count": 22,
+        "coverage_limited": false
       }
     ]
   },
   "documents": {
-    "checked_at": "2026-09-22T06:26:19.366483+09:00",
+    "checked_at": "2026-09-23T06:25:07.216458+09:00",
     "sources": [
       {
         "url": "https://agentskills.io/specification",
