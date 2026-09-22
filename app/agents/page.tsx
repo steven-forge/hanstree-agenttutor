@@ -8,7 +8,7 @@ import { agentDocs, agentsMetadata, isDocFreshnessWarning } from "../content";
 
 export const metadata: Metadata = {
   title: "AI 모델 비교 · AgentTutor",
-  description: "Claude, Codex, Gemini, Grok 모델의 별도 크레딧 없는 최소 이용 비용과 API 요금, 주요 사양을 비교합니다."
+  description: "Claude, Codex, Gemini, Grok, DeepSeek, Muse 모델의 별도 크레딧 없는 최소 이용 비용과 API 요금, 주요 사양을 비교합니다."
 };
 
 const ALLOWED_FORMS = ["App", "CLI", "API"] as const;
@@ -71,7 +71,7 @@ export default async function AgentsIndexPage({
             <p className="brand-kicker">AGENT COMPARISON</p>
             <h1>AI 모델 비교</h1>
             <p>
-              Claude, Codex, Gemini, Grok의 모델을 최대 5개 골라 최소 이용 비용, API 요금과 주요 사양을 비교하세요.
+              Claude, Codex, Gemini, Grok, DeepSeek, Muse의 모델을 최대 5개 골라 최소 이용 비용, API 요금과 주요 사양을 비교하세요.
             </p>
           </header>
 

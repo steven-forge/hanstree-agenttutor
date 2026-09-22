@@ -83,7 +83,9 @@ export const NAV_GROUPS: NavGroup[] = [
       { title: "Claude", href: "/agents/claude" },
       { title: "Codex", href: "/agents/codex" },
       { title: "Gemini", href: "/agents/gemini" },
-      { title: "Grok", href: "/agents/grok" }
+      { title: "Grok", href: "/agents/grok" },
+      { title: "DeepSeek", href: "/agents/deepseek" },
+      { title: "Muse", href: "/agents/muse" }
     ]
   },
   {

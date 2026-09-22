@@ -9,6 +9,8 @@
         {
           "id": "claude-fable-5-1",
           "name": "Claude Fable 5.1",
+          "released_at": "2026-09-01",
+          "release_source": "https://www.anthropic.com/claude/fable",
           "minimum_access": "Max 월 $100부터 · 포함 사용량 내 크레딧 불필요 (Pro는 별도 크레딧)",
           "access_source": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
           "input_cost": 10,
@@ -25,6 +27,8 @@
         {
           "id": "claude-opus-5-5",
           "name": "Claude Opus 5.5",
+          "released_at": "2026-09-22",
+          "release_source": "https://support.claude.com/en/articles/12138966-release-notes",
           "minimum_access": "Pro 월 $20부터 · 포함 사용량 내",
           "access_source": "https://claude.com/pricing",
           "input_cost": 4,
@@ -95,6 +99,8 @@
         {
           "id": "gpt-6-astra",
           "name": "GPT-6 Astra",
+          "released_at": "2026-09-03",
+          "release_source": "https://openai.com/index/safety-overview-gpt-6-astra/",
           "minimum_access": "Codex Plus 월 $20부터 · 포함 사용량 내",
           "access_source": "https://learn.chatgpt.com/docs/pricing",
           "input_cost": 10,
@@ -112,6 +118,8 @@
         {
           "id": "gpt-6-sol",
           "name": "GPT-6 Sol",
+          "released_at": "2026-09-22",
+          "release_source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
           "minimum_access": "Codex Plus 월 $20부터 · 포함 사용량 내",
           "access_source": "https://learn.chatgpt.com/docs/pricing",
           "input_cost": 2,
@@ -129,6 +137,8 @@
         {
           "id": "gpt-6-luna",
           "name": "GPT-6 Luna",
+          "released_at": "2026-09-22",
+          "release_source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
           "minimum_access": "Codex 무료 $0 · 데스크톱 앱에서 제한적으로 제공",
           "access_source": "https://learn.chatgpt.com/docs/pricing",
           "input_cost": 0.1,
@@ -203,6 +213,8 @@
         {
           "id": "gemini-3.8-flash",
           "name": "Gemini 3.8 Flash",
+          "released_at": "2026-09-02",
+          "release_source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
           "minimum_access": "Gemini API 무료 티어 $0 · 사용량 제한",
           "access_source": "https://ai.google.dev/gemini-api/docs/pricing",
           "input_cost": 0.75,
@@ -277,6 +289,8 @@
         {
           "id": "grok-4.7",
           "name": "Grok 4.7",
+          "released_at": "2026-09-21",
+          "release_source": "https://x.ai/news/grok-4-7",
           "minimum_access": "Grok Build 무료 $0 · 사용량 제한",
           "access_source": "https://x.ai/news/grok-4-7",
           "input_cost": 2,
@@ -338,6 +352,149 @@
             { "name": "Grok 4.3 모델 문서", "url": "https://docs.x.ai/developers/models/grok-4.3" }
           ],
           "price_note": "입력 200K 이상 장문 요금은 입력 $2.50·출력 $5·캐시 읽기 $0.40."
+        }
+      ]
+    },
+    {
+      "agent_slug": "deepseek",
+      "input_modalities": "텍스트",
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro 0813",
+          "minimum_access": "앱의 해당 버전 무료 이용 여부 미확인 · API 종량제",
+          "access_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "input_cost": 1.32,
+          "output_cost": 3.96,
+          "cache_read_cost": 0.044,
+          "context_window": "1M",
+          "max_output": "384K",
+          "key_feature": "심화 추론·장문 컨텍스트",
+          "sources": [
+            { "name": "DeepSeek API Pricing", "url": "https://api-docs.deepseek.com/quick_start/pricing/" },
+            { "name": "DeepSeek API Updates", "url": "https://api-docs.deepseek.com/updates/" }
+          ],
+          "price_note": "피크(월~금 UTC 01~04시, 06~10시) 요금 기준. 비피크 시간대는 입력·출력·캐시 비용 모두 절반. 텍스트 입력만 지원."
+        },
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek V4.1 Flash",
+          "released_at": "2026-09-10",
+          "release_source": "https://api-docs.deepseek.com/updates/",
+          "minimum_access": "앱의 해당 버전 무료 이용 여부 미확인 · API 종량제",
+          "access_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "input_cost": 0.3,
+          "output_cost": 1.2,
+          "cache_read_cost": 0.006,
+          "context_window": "1M",
+          "max_output": "384K",
+          "key_feature": "경량·저비용 작업",
+          "input_modalities": "텍스트 · 이미지",
+          "sources": [
+            { "name": "DeepSeek API Pricing", "url": "https://api-docs.deepseek.com/quick_start/pricing/" },
+            { "name": "DeepSeek API Updates", "url": "https://api-docs.deepseek.com/updates/" }
+          ],
+          "price_note": "피크(월~금 UTC 01~04시, 06~10시) 요금 기준. 비피크 시간대는 입력·출력·캐시 비용 모두 절반."
+        }
+      ]
+    },
+    {
+      "agent_slug": "muse",
+      "input_modalities": "텍스트 · 이미지 · 동영상 · PDF",
+      "models": [
+        {
+          "id": "muse-spark-1.3",
+          "name": "Muse Spark 1.3 (Standard)",
+          "released_at": "2026-09-02",
+          "release_source": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+          "minimum_access": "앱에서 이 API 모델 ID 선택 여부 미확인 · API 종량제",
+          "access_source": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_cost": 1.25,
+          "output_cost": 4.25,
+          "cache_read_cost": 0.15,
+          "context_window": "1,048,576",
+          "max_output": "공식 미표기",
+          "key_feature": "도구 사용·장기 작업·코딩에 최적화된 최신 모델",
+          "input_modalities": "텍스트 · 이미지 · 동영상 · PDF · 오디오(제한적)",
+          "sources": [
+            { "name": "Muse Models Documentation", "url": "https://dev.meta.ai/docs/models" },
+            { "name": "Muse Pricing & Rate Limits", "url": "https://dev.meta.ai/docs/pricing-rate-limits" }
+          ],
+          "price_note": "Standard 모델로 입력·출력 데이터는 Meta의 학습에 사용되지 않음. 캐시 쓰기 비용은 공식 문서에 명시되지 않음."
+        },
+        {
+          "id": "muse-spark-1.3-contributor",
+          "name": "Muse Spark 1.3 (Contributor)",
+          "released_at": "2026-09-02",
+          "release_source": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+          "minimum_access": "앱에서 이 API 모델 ID 선택 여부 미확인 · API 종량제",
+          "access_source": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_cost": 0.1,
+          "output_cost": 0.2,
+          "cache_read_cost": 0.002,
+          "context_window": "1,048,576",
+          "max_output": "공식 미표기",
+          "key_feature": "1.3과 동일 성능·저비용, 학습 데이터 제공 조건",
+          "input_modalities": "텍스트 · 이미지 · 동영상 · PDF · 오디오(제한적)",
+          "sources": [
+            { "name": "Muse Models Documentation", "url": "https://dev.meta.ai/docs/models" },
+            { "name": "Muse Pricing & Rate Limits", "url": "https://dev.meta.ai/docs/pricing-rate-limits" }
+          ],
+          "price_note": "Contributor 모델로 입력·출력 데이터가 Meta의 향후 모델 학습에 사용될 수 있음. 캐시 쓰기 비용은 공식 문서에 명시되지 않음."
+        },
+        {
+          "id": "muse-spark-1.2",
+          "name": "Muse Spark 1.2 (Standard)",
+          "minimum_access": "앱에서 이 API 모델 ID 선택 여부 미확인 · API 종량제",
+          "access_source": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_cost": 1.25,
+          "output_cost": 4.25,
+          "cache_read_cost": 0.15,
+          "context_window": "1,048,576",
+          "max_output": "공식 미표기",
+          "key_feature": "오디오 입력을 지원하는 표준 모델",
+          "input_modalities": "텍스트 · 이미지 · 동영상 · PDF · 오디오",
+          "sources": [
+            { "name": "Muse Models Documentation", "url": "https://dev.meta.ai/docs/models" },
+            { "name": "Muse Pricing & Rate Limits", "url": "https://dev.meta.ai/docs/pricing-rate-limits" }
+          ],
+          "price_note": "Standard 모델로 입력·출력 데이터는 Meta의 학습에 사용되지 않음. 캐시 쓰기 비용은 공식 문서에 명시되지 않음."
+        },
+        {
+          "id": "muse-spark-1.2-contributor",
+          "name": "Muse Spark 1.2 (Contributor)",
+          "minimum_access": "앱에서 이 API 모델 ID 선택 여부 미확인 · API 종량제",
+          "access_source": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_cost": 0.1,
+          "output_cost": 0.2,
+          "cache_read_cost": 0.002,
+          "context_window": "1,048,576",
+          "max_output": "공식 미표기",
+          "key_feature": "1.2와 동일 성능·저비용, 학습 데이터 제공 조건",
+          "input_modalities": "텍스트 · 이미지 · 동영상 · PDF · 오디오",
+          "sources": [
+            { "name": "Muse Models Documentation", "url": "https://dev.meta.ai/docs/models" },
+            { "name": "Muse Pricing & Rate Limits", "url": "https://dev.meta.ai/docs/pricing-rate-limits" }
+          ],
+          "price_note": "Contributor 모델로 입력·출력 데이터가 Meta의 향후 모델 학습에 사용될 수 있음. 캐시 쓰기 비용은 공식 문서에 명시되지 않음."
+        },
+        {
+          "id": "muse-spark-1.1",
+          "name": "Muse Spark 1.1 (Standard)",
+          "minimum_access": "앱에서 이 API 모델 ID 선택 여부 미확인 · API 종량제",
+          "access_source": "https://dev.meta.ai/docs/pricing-rate-limits",
+          "input_cost": 1.25,
+          "output_cost": 4.25,
+          "cache_read_cost": 0.15,
+          "context_window": "1,048,576",
+          "max_output": "공식 미표기",
+          "key_feature": "이전 세대 표준 모델",
+          "input_modalities": "텍스트 · 이미지 · 동영상 · PDF · 오디오",
+          "sources": [
+            { "name": "Muse Models Documentation", "url": "https://dev.meta.ai/docs/models" },
+            { "name": "Muse Pricing & Rate Limits", "url": "https://dev.meta.ai/docs/pricing-rate-limits" }
+          ],
+          "price_note": "Standard 모델로 입력·출력 데이터는 Meta의 학습에 사용되지 않음. Contributor 버전은 공식 문서에서 확인되지 않음. 캐시 쓰기 비용은 공식 문서에 명시되지 않음."
         }
       ]
     }

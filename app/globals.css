@@ -202,8 +202,9 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .model-picker-item.is-selected { background: var(--blue-soft); }
 .model-picker-item.is-disabled { cursor: not-allowed; opacity: .5; }
 .model-picker-item input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; }
-.model-picker-item strong { display: block; font-size: .9rem; }
+.model-picker-item strong { display: inline; font-size: .9rem; }
 .model-picker-cost { display: block; font-size: .78rem; color: var(--muted); margin-top: 2px; }
+.new-badge { display: inline-block; margin-left: 6px; padding: 1px 6px; font-size: .68rem; font-weight: 700; color: #fff; background: #dc2626; border-radius: 4px; vertical-align: middle; }
 
 .model-compare-wrap { width: 100%; overflow-x: auto; }
 .model-compare-wrap:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
