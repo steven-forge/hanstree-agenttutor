@@ -92,6 +92,187 @@
       "excluded_count": 60,
       "skipped_count": 22,
       "coverage_limited": false
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
+      "status": "ok",
+      "count": 12,
+      "held_count": 0,
+      "excluded_count": 28,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "huggingface-blog",
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "status": "ok",
+      "count": 5,
+      "held_count": 0,
+      "excluded_count": 25,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "wired-ai",
+      "name": "WIRED",
+      "url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "status": "ok",
+      "count": 10,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "the-verge-ai",
+      "name": "The Verge",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "status": "ok",
+      "count": 10,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "status": "ok",
+      "count": 20,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "ars-technica",
+      "name": "Ars Technica",
+      "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+      "status": "ok",
+      "count": 2,
+      "held_count": 0,
+      "excluded_count": 18,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "product-hunt",
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com/feed",
+      "status": "ok",
+      "count": 4,
+      "held_count": 0,
+      "excluded_count": 26,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "the-new-stack-ai",
+      "name": "The New Stack",
+      "url": "https://thenewstack.io/category/ai/feed/",
+      "status": "ok",
+      "count": 4,
+      "held_count": 0,
+      "excluded_count": 22,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "the-rundown-ai",
+      "name": "The Rundown AI",
+      "url": "https://www.therundown.ai/feed",
+      "status": "ok",
+      "count": 2,
+      "held_count": 0,
+      "excluded_count": 18,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "infoq-ai",
+      "name": "InfoQ",
+      "url": "https://feed.infoq.com/ai-ml-data-eng/",
+      "status": "ok",
+      "count": 6,
+      "held_count": 0,
+      "excluded_count": 9,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "medium-ai",
+      "name": "Medium",
+      "url": "https://medium.com/feed/tag/artificial-intelligence",
+      "status": "ok",
+      "count": 5,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false
+    },
+    {
+      "id": "venturebeat-ai",
+      "name": "VentureBeat",
+      "url": "https://venturebeat.com/category/ai/feed/",
+      "status": "failed",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 429: Too Many Requests"
+    },
+    {
+      "id": "tldr-ai",
+      "name": "TLDR AI",
+      "url": "https://tldr.tech/ai/rss",
+      "status": "not_configured",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "공개 RSS(https://tldr.tech/ai/rss)가 현재 404를 반환해 요청하지 않습니다. 대체 피드가 확인되면 활성화하세요."
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube (Data API)",
+      "url": "https://www.googleapis.com/youtube/v3/search",
+      "status": "not_configured",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "필요한 환경 변수 없음: YOUTUBE_API_KEY"
+    },
+    {
+      "id": "x",
+      "name": "X (API v2)",
+      "url": "https://api.x.com/2/tweets/search/recent",
+      "status": "not_configured",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "필요한 환경 변수 없음: X_BEARER_TOKEN"
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit (OAuth API)",
+      "url": "https://oauth.reddit.com/r/artificial/new",
+      "status": "not_configured",
+      "count": 0,
+      "held_count": 0,
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
   "new_count": 12,
@@ -275,5 +456,1533 @@
       "title_ko": "V7이 인공지능 에이전트에 기관 메모리를 제공하는 방법",
       "source_summary_ko": "V7은 GPT-5.6을 사용하여 흩어져 있는 회사 파일을 컨텍스트 에이전트로 변환하여 복잡한 소스 연결 작업을 완료할 수 있습니다."
     }
-  ]
+  ],
+  "hourly_collected_at": "2026-09-23T07:36:30.812278+09:00",
+  "hourly_window_start": "2026-09-20T07:36:30.812278+09:00",
+  "events": [
+    {
+      "id": "4963c688783e308d",
+      "title": "Trump orders AI rebrand as \"super intelligence\"",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809237",
+          "target_url": "https://www.axios.com/2026/09/22/trump-ai-super-intelligence-rebrand",
+          "independent": false,
+          "title": "Trump orders AI rebrand as \"super intelligence\"",
+          "summary": "",
+          "published_at": "2026-09-22T22:35:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f26242da46b4cd7f",
+      "title": "Simple-jev by featherless AI – Turn context into clear decisions",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809221",
+          "target_url": "https://simple-jev.featherless.ai/",
+          "independent": false,
+          "title": "Simple-jev by featherless AI – Turn context into clear decisions",
+          "summary": "",
+          "published_at": "2026-09-22T22:34:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e3bbe5455631f692",
+      "title": "DigitalOcean Managed Agents",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808927",
+          "target_url": "https://www.digitalocean.com/blog/managed-agents-public-preview",
+          "independent": false,
+          "title": "DigitalOcean Managed Agents",
+          "summary": "",
+          "published_at": "2026-09-22T22:12:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "54af403e505df6d8",
+      "title": "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808921",
+          "target_url": "https://www.aipricing.guru/blog/claude-opus-5-5-vs-gpt-6-sol-pricing-2026",
+          "independent": false,
+          "title": "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
+          "summary": "",
+          "published_at": "2026-09-22T22:11:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "20f860e9b0e31187",
+      "title": "AI staff complain of mental toll over fears of threat to society",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808850",
+          "target_url": "https://www.ft.com/content/60870960-f433-48ca-bc2c-708686a69ae7",
+          "independent": false,
+          "title": "AI staff complain of mental toll over fears of threat to society",
+          "summary": "",
+          "published_at": "2026-09-22T22:05:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8b665a4ef09b9958",
+      "title": "AI Scenario in 2070",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808799",
+          "target_url": "https://docs.google.com/document/d/1tFyIuZKXpWwZwQq5a1Vaa9Dr-MiO2RXmT14yOvRb5uA/edit?tab=t.0",
+          "independent": false,
+          "title": "AI Scenario in 2070",
+          "summary": "",
+          "published_at": "2026-09-22T22:02:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4fb133d3e42799c6",
+      "title": "Autonomous AI Agents Are Breaking into Online Retailers",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808771",
+          "target_url": "https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company",
+          "independent": false,
+          "title": "Autonomous AI Agents Are Breaking into Online Retailers",
+          "summary": "",
+          "published_at": "2026-09-22T22:00:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8f302a505a0a7677",
+      "title": "AI is getting cheaper more quickly than any other transformative tech in history",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808743",
+          "target_url": "https://epoch.ai/publications/the-plunging-price-of-thought",
+          "independent": false,
+          "title": "AI is getting cheaper more quickly than any other transformative tech in history",
+          "summary": "",
+          "published_at": "2026-09-22T21:58:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3fe80c6be0b7625a",
+      "title": "AI Abundance Requires a 4-Hour Workweek",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808710",
+          "target_url": "https://elnahla.com/4-hour-workweek",
+          "independent": false,
+          "title": "AI Abundance Requires a 4-Hour Workweek",
+          "summary": "",
+          "published_at": "2026-09-22T21:54:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bf668aa358d55289",
+      "title": "Show HN: Jade Email. Unlimited emails for your domain plus AI Agent support",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808620",
+          "target_url": "https://jade.email/",
+          "independent": false,
+          "title": "Show HN: Jade Email. Unlimited emails for your domain plus AI Agent support",
+          "summary": "",
+          "published_at": "2026-09-22T21:46:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "44ae464c5a0cf852",
+      "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808565",
+          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
+          "independent": false,
+          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
+          "summary": "",
+          "published_at": "2026-09-22T21:43:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "73cd9797447d67e4",
+      "title": "My Claude Code setup (11 commands, 3 agents) + shared Meta \"design third brain\"",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49808554",
+          "target_url": "https://johnmaartifacts.substack.com/",
+          "independent": false,
+          "title": "My Claude Code setup (11 commands, 3 agents) + shared Meta \"design third brain\"",
+          "summary": "",
+          "published_at": "2026-09-22T21:42:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e9f63aa1f7aaa02f",
+      "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/evaleval-aisi",
+          "target_url": "https://huggingface.co/blog/evaleval-aisi",
+          "independent": true,
+          "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+          "summary": "",
+          "published_at": "2026-09-22T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "689d78c6e007ab8e",
+      "title": "Transformers now runs llama.cpp quants",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+          "target_url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+          "independent": true,
+          "title": "Transformers now runs llama.cpp quants",
+          "summary": "",
+          "published_at": "2026-09-22T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "6b3083011aeb49b1",
+      "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/omlx",
+          "target_url": "https://huggingface.co/blog/omlx",
+          "independent": true,
+          "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
+          "summary": "",
+          "published_at": "2026-09-22T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "ae2a66f3c360fd17",
+      "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+          "target_url": "https://huggingface.co/blog/MultiverseComputingCAI/pruning-llms-like-a-physicist-block-removal-as-an",
+          "independent": true,
+          "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
+          "summary": "",
+          "published_at": "2026-09-21T13:44:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "693b3130e25cc880",
+      "title": "tokenizers v1: encode, decode and scaling, measured",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/tokenizers-v1",
+          "target_url": "https://huggingface.co/blog/tokenizers-v1",
+          "independent": true,
+          "title": "tokenizers v1: encode, decode and scaling, measured",
+          "summary": "",
+          "published_at": "2026-09-21T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a2945042986218ed",
+      "title": "Rabbit Is Back, This Time With an AI Agent App",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/rabbit-r1-os3-jesse-lyu",
+          "target_url": "https://www.wired.com/story/rabbit-r1-os3-jesse-lyu",
+          "independent": true,
+          "title": "Rabbit Is Back, This Time With an AI Agent App",
+          "summary": "Two years after trying to sidestep mobile apps with dedicated AI hardware, Rabbit is launching OS3, a cross-platform agent that lives on the screens you already use.",
+          "published_at": "2026-09-22T16:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "47022de142cb2171",
+      "title": "Viture’s Vonder Glasses Are Meant to Map Your Mind",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/viture-vonder-glasses-are-meant-to-map-your-mind",
+          "target_url": "https://www.wired.com/story/viture-vonder-glasses-are-meant-to-map-your-mind",
+          "independent": true,
+          "title": "Viture’s Vonder Glasses Are Meant to Map Your Mind",
+          "summary": "No cameras? No problem. Viture’s first display-free smart glasses have bone-conduction microphones to privately record your daily musings.",
+          "published_at": "2026-09-22T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d46f3b265c19ff43",
+      "title": "AI Models Built From Rat Brains Just Got Closer to Reality",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/ai-models-built-from-rat-brains-are-about-to-become-a-reality",
+          "target_url": "https://www.wired.com/story/ai-models-built-from-rat-brains-are-about-to-become-a-reality",
+          "independent": true,
+          "title": "AI Models Built From Rat Brains Just Got Closer to Reality",
+          "summary": "The Biological Computing Company is bringing its AI tools to Amazon Web Services in a major boost for a once-fringe field that aims to marry nature with code.",
+          "published_at": "2026-09-22T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3b941f8bc1fc4c52",
+      "title": "I Built AI Clones of My Coworkers. Things Got Weird",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/ai-coworker-bots-loved-improv-and-interstellar-soundtrack",
+          "target_url": "https://www.wired.com/story/ai-coworker-bots-loved-improv-and-interstellar-soundtrack",
+          "independent": true,
+          "title": "I Built AI Clones of My Coworkers. Things Got Weird",
+          "summary": "Brian Bot loved talking about improv, while Sophie Bot wouldn’t stop calling me “big dog.” Welcome to the future of work.",
+          "published_at": "2026-09-22T10:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e1c0caed840a5c9e",
+      "title": "Patti Harrison Had Dreams of a Tech Utopia. Silicon Valley Smashed Them",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/big-interview-patti-harrison",
+          "target_url": "https://www.wired.com/story/big-interview-patti-harrison",
+          "independent": true,
+          "title": "Patti Harrison Had Dreams of a Tech Utopia. Silicon Valley Smashed Them",
+          "summary": "The comedian sat down with WIRED to talk about social media, AI, and getting laughs for impersonating Boston Dynamics’ robot dogs.",
+          "published_at": "2026-09-22T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a0a3ee36f76c8858",
+      "title": "A New Tool Found Malware That’s Guided by an AI Hive Mind—No Humans in Sight",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system",
+          "target_url": "https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system",
+          "independent": true,
+          "title": "A New Tool Found Malware That’s Guided by an AI Hive Mind—No Humans in Sight",
+          "summary": "Cisco Talos researchers created a new framework for identifying malware and hacking tools that rely on AI chatbots—and quickly discovered something unusual.",
+          "published_at": "2026-09-22T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "accd2451f5e828aa",
+      "title": "A New Chatbot Wants to Unlock the Secrets in Tattered Ancient Greek Records",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/apollo-ai-model-ancient-greek-secrets-papyrus",
+          "target_url": "https://www.wired.com/story/apollo-ai-model-ancient-greek-secrets-papyrus",
+          "independent": true,
+          "title": "A New Chatbot Wants to Unlock the Secrets in Tattered Ancient Greek Records",
+          "summary": "In the hope of uncovering new details about ancient life, researchers have developed a large language model that fills in the gaps in papyrus fragments.",
+          "published_at": "2026-09-22T09:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e80b7dda4f9a5f3e",
+      "title": "How to Use AI With Your Privacy Intact",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/how-to-use-ai-with-your-privacy-intact",
+          "target_url": "https://www.wired.com/story/how-to-use-ai-with-your-privacy-intact",
+          "independent": true,
+          "title": "How to Use AI With Your Privacy Intact",
+          "summary": "Your conversations with AI chatbots are both highly personal and deeply vulnerable to surveillance. Here’s how you can protect yourself.",
+          "published_at": "2026-09-22T09:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e22614e2379711da",
+      "title": "AI, Tariffs, Rare Minerals: What to Expect From Trump’s Upcoming Summit With Xi Jinping",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/ai-tariffs-rare-minerals-what-to-expect-from-trumps-upcoming-summit-with-xi-jinping",
+          "target_url": "https://www.wired.com/story/ai-tariffs-rare-minerals-what-to-expect-from-trumps-upcoming-summit-with-xi-jinping",
+          "independent": true,
+          "title": "AI, Tariffs, Rare Minerals: What to Expect From Trump’s Upcoming Summit With Xi Jinping",
+          "summary": "Washington and Beijing have grown ever more linked in the AI boom, making hardware exports and technological restrictions hefty bargaining chips in negotiations.",
+          "published_at": "2026-09-21T18:33:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b55c6cd1054ed866",
+      "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
+          "independent": true,
+          "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
+          "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, and Linux devices. According to Rabbit, you can […]",
+          "published_at": "2026-09-22T20:52:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b764d2ad8902084d",
+      "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
+          "independent": true,
+          "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
+          "summary": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir, Replit, and Stripe, along with $42 million in funding led by a16z. […]",
+          "published_at": "2026-09-22T16:34:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "321c1f0bfff39700",
+      "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
+          "independent": true,
+          "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+          "summary": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risky behaviors, including attempts to escape the company's testing sandbox. It's the first model released by Anthropic after CEO Dario […]",
+          "published_at": "2026-09-22T16:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a00d2fc3af07489b",
+      "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
+          "independent": true,
+          "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
+          "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of the entries in the poll Trump posted a few days ago when he started […]",
+          "published_at": "2026-09-22T16:01:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "52b311a05fba7deb",
+      "title": "Meta patches Muse exploit that let attackers control the AI agent",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
+          "target_url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
+          "independent": true,
+          "title": "Meta patches Muse exploit that let attackers control the AI agent",
+          "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers running local code to redirect transcription processing from Meta's servers […]",
+          "published_at": "2026-09-22T11:53:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "5fb2a618a0bb669f",
+      "title": "California tightens rules on AI data center energy and water use",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
+          "independent": true,
+          "title": "California tightens rules on AI data center energy and water use",
+          "summary": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws requires the California Public Utilities Commission to introduce a new rate classification for data centers while forcing them to pay for upgrades to […]",
+          "published_at": "2026-09-21T20:29:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "693823a542ab6ff1",
+      "title": "Can John Ternus find Apple’s next big thing?",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone",
+          "target_url": "https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone",
+          "independent": true,
+          "title": "Can John Ternus find Apple’s next big thing?",
+          "summary": "Today, I’m talking with Mark Gurman, who is the world’s best-sourced Apple reporter — both as Bloomberg’s chief Apple correspondent and the host of the upcoming podcast Power On. Earlier this month, Apple hosted its annual iPhone hardware event, virtually every detail of which was reported ahead of time by Mark. But this event was […]",
+          "published_at": "2026-09-21T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "8b01dd9a86759fd5",
+      "title": "UN says AI safeguards can’t wait for certainty",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
+          "independent": true,
+          "title": "UN says AI safeguards can’t wait for certainty",
+          "summary": "Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of OpenAI's hack of Hugging Face earlier this year. The report cements AI's place on the global diplomatic agenda this week as leaders gather in New York […]",
+          "published_at": "2026-09-21T10:18:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "16afc5791c45315a",
+      "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms",
+          "target_url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms",
+          "independent": true,
+          "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
+          "summary": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach.",
+          "published_at": "2026-09-22T21:56:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "811bcae574a076a7",
+      "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai",
+          "target_url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai",
+          "independent": true,
+          "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
+          "summary": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally.",
+          "published_at": "2026-09-22T20:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a8ca25f3731cf08a",
+      "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence",
+          "target_url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence",
+          "independent": true,
+          "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
+          "summary": "Meta says Muse was built from scratch, but acknowledges the AI assistant was \"heavily inspired\" by OpenClaw — down to some of its workspace filenames and content.",
+          "published_at": "2026-09-22T19:09:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e5b0091a5c675558",
+      "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance",
+          "target_url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance",
+          "independent": true,
+          "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
+          "summary": "Anthropic called it \"the strongest-performing model we've tested to date.\"",
+          "published_at": "2026-09-22T16:30:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3d7eabbffd15a671",
+      "title": "AstroForge is putting AI in command of its next spacecraft",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/astroforge-is-putting-ai-in-command-of-its-next-spacecraft",
+          "target_url": "https://techcrunch.com/2026/09/22/astroforge-is-putting-ai-in-command-of-its-next-spacecraft",
+          "independent": true,
+          "title": "AstroForge is putting AI in command of its next spacecraft",
+          "summary": "Autonomy-1 will have a small, transformer-based AI model taking charge of a space probe.",
+          "published_at": "2026-09-22T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3412ff426fef6de3",
+      "title": "Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/five-ai-safety-sessions-every-founder-should-have-on-their-techcrunch-disrupt-2026-agenda",
+          "target_url": "https://techcrunch.com/2026/09/22/five-ai-safety-sessions-every-founder-should-have-on-their-techcrunch-disrupt-2026-agenda",
+          "independent": true,
+          "title": "Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
+          "summary": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to save up to $200.",
+          "published_at": "2026-09-22T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "1eab844e19f68963",
+      "title": "TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/techcrunch-disrupt-2026-aaron-edsinger-brings-hello-robots-stretch-4-to-life-onstage",
+          "target_url": "https://techcrunch.com/2026/09/22/techcrunch-disrupt-2026-aaron-edsinger-brings-hello-robots-stretch-4-to-life-onstage",
+          "independent": true,
+          "title": "TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage",
+          "summary": "Hello Robot CEO and co-founder Aaron Edsinger will bring Stretch 4 for a live demo on the Real World AI Stage at TechCrunch Disrupt 2026. Register before September 25 to save up to $200, plus get a second pass at 50% off.",
+          "published_at": "2026-09-22T14:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "1aa815b5526c3132",
+      "title": "Exhibit tables added: One last chance to showcase your startup at TechCrunch Disrupt 2026",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/exhibitor-program-reopened-book-by-sept-30",
+          "target_url": "https://techcrunch.com/2026/09/22/exhibitor-program-reopened-book-by-sept-30",
+          "independent": true,
+          "title": "Exhibit tables added: One last chance to showcase your startup at TechCrunch Disrupt 2026",
+          "summary": "We have reopened our exhibitor program for 1 more week. Book your exhibit table by September 30 at 11:59 p.m. PT and showcase your startup in front of 10,000+ founders, investors, and tech leaders at SF's Moscone West from October 13-15.",
+          "published_at": "2026-09-22T14:15:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "48d6b4daa4997f3a",
+      "title": "4 days to save up to $200: Reason 2 of 5 to be at TechCrunch Disrupt 2026",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/4-days-to-save-up-to-200-reason-2-of-5-to-be-at-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/22/4-days-to-save-up-to-200-reason-2-of-5-to-be-at-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "4 days to save up to $200: Reason 2 of 5 to be at TechCrunch Disrupt 2026",
+          "summary": "Save up to $200 on your TechCrunch Disrupt 2026 pass, plus 50% off a second pass before prices increase on September 25 at 11:59 p.m. PT. Register today.",
+          "published_at": "2026-09-22T14:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/discover-whats-next-5-days-left-to-save-up-to-200-on-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/21/discover-whats-next-5-days-left-to-save-up-to-200-on-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Discover what’s next: 5 days left to save up to $200 on your TechCrunch Disrupt 2026 ticket",
+          "summary": "Five days left to save up to $200 on your TechCrunch Disrupt 2026 pass + 50% off a second one. Join 10,000+ founders, investors, and operators at San Francisco’s Moscone West, October 13-15. Grab your ticket savings before prices go up on September 25 at 11:59 p.m. PT.",
+          "published_at": "2026-09-21T19:25:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3998a4c198db2234",
+      "title": "Everyone can find a reason to dislike data center construction",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction",
+          "target_url": "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction",
+          "independent": true,
+          "title": "Everyone can find a reason to dislike data center construction",
+          "summary": "Inside two years of fraught AI data center debates in Pennsylvania.",
+          "published_at": "2026-09-22T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "9eac9247e40019d4",
+      "title": "Nscale’s IPO will test Wall Street’s appetite for concentrated AI bets once again",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/nscales-ipo-will-test-wall-streets-appetite-for-concentrated-ai-bets-once-again",
+          "target_url": "https://techcrunch.com/2026/09/22/nscales-ipo-will-test-wall-streets-appetite-for-concentrated-ai-bets-once-again",
+          "independent": true,
+          "title": "Nscale’s IPO will test Wall Street’s appetite for concentrated AI bets once again",
+          "summary": "The British AI data center developer depends on tech giants Microsoft and Anthropic for most of its revenue.",
+          "published_at": "2026-09-22T12:23:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "9b2745b3f19fc69f",
+      "title": "The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping",
+          "target_url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping",
+          "independent": true,
+          "title": "The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping",
+          "summary": "Apple Store architect Ron Johnson says Apple's secret sauce has always been its people.",
+          "published_at": "2026-09-21T23:44:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "abc5627bb547841d",
+      "title": "OpenAI forms math advisory group as its AI resolves more than 100 open problems",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems",
+          "target_url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems",
+          "independent": true,
+          "title": "OpenAI forms math advisory group as its AI resolves more than 100 open problems",
+          "summary": "The group won't be given leeway to slow down or redirect OpenAI's ongoing mathematical research.",
+          "published_at": "2026-09-21T20:15:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "4c045e0925c89f1a",
+      "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch",
+          "target_url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch",
+          "independent": true,
+          "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
+          "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
+          "published_at": "2026-09-21T19:19:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bd11ce5965060707",
+      "title": "With Tabby, a former accountant is using AI to make accountants obsolete",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/with-tabby-a-former-accountant-is-using-ai-to-make-accountants-obsolete",
+          "target_url": "https://techcrunch.com/2026/09/21/with-tabby-a-former-accountant-is-using-ai-to-make-accountants-obsolete",
+          "independent": true,
+          "title": "With Tabby, a former accountant is using AI to make accountants obsolete",
+          "summary": "Tabby is designed to be a real-time bookkeeping interface, handling clients’ paperwork as it gives them up-to-the-minute data on their business’s profit and loss.",
+          "published_at": "2026-09-21T16:38:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b967c00ba01c792f",
+      "title": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in at TechCrunch Disrupt 2026",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/where-will-the-next-breakout-startup-come-from-benchmarks-full-partnership-weighs-in-at-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/21/where-will-the-next-breakout-startup-come-from-benchmarks-full-partnership-weighs-in-at-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in at TechCrunch Disrupt 2026",
+          "summary": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in on the main stage at TechCrunch Disrupt 2026. Save up to $200 before September 25 at 11:59 p.m. PT. Register now.",
+          "published_at": "2026-09-21T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d947cdfa9abd9ef7",
+      "title": "Google’s $899 Googlebook is a bet that you’ll buy a new laptop for Gemini",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini",
+          "target_url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini",
+          "independent": true,
+          "title": "Google’s $899 Googlebook is a bet that you’ll buy a new laptop for Gemini",
+          "summary": "Google’s AI-native Googlebook ties Gemini to the cursor, dictation, widgets, and other parts of the desktop experience.",
+          "published_at": "2026-09-21T14:39:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b287b34a5390dd7e",
+      "title": "Microsoft disrupts AI-assisted platform that compromised 12,000",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "ars-technica",
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
+          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
+          "independent": true,
+          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000",
+          "summary": "EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.",
+          "published_at": "2026-09-22T19:45:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "790cf36b99eec5ab",
+      "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "ars-technica",
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day",
+          "target_url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day",
+          "independent": true,
+          "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+          "summary": "A simple ClickFix attack is only one way to completely hijack the new agent.",
+          "published_at": "2026-09-21T22:24:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "4f4b5d9f753c5cc6",
+      "title": "Grok 4.7",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/grok-4-7-8",
+          "target_url": "https://www.producthunt.com/products/grok-4-7-8",
+          "independent": false,
+          "title": "Grok 4.7",
+          "summary": "SpaceXAI's most powerful model for coding and knowledge work Discussion | Link",
+          "published_at": "2026-09-21T18:48:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "67f9d6664f531f93",
+      "title": "WZRD",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/wzrd",
+          "target_url": "https://www.producthunt.com/products/wzrd",
+          "independent": false,
+          "title": "WZRD",
+          "summary": "AI-native documents, slides, forms and sheets that talk back Discussion | Link",
+          "published_at": "2026-09-21T09:19:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3de2ae5594bcd4f8",
+      "title": "Reeno",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/reeno",
+          "target_url": "https://www.producthunt.com/products/reeno",
+          "independent": false,
+          "title": "Reeno",
+          "summary": "AI calls you randomly to practice speaking a new language Discussion | Link",
+          "published_at": "2026-09-21T04:20:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "33c0df10da5467c0",
+      "title": "Valori",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/valori-systems-deleted-1168484",
+          "target_url": "https://www.producthunt.com/products/valori-systems-deleted-1168484",
+          "independent": false,
+          "title": "Valori",
+          "summary": "The deterministic memory layer for AI Discussion | Link",
+          "published_at": "2026-09-21T13:28:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43bc466e5db8cfc8",
+      "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/jetbrains-air-agents-ide",
+          "target_url": "https://thenewstack.io/jetbrains-air-agents-ide",
+          "independent": true,
+          "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
+          "summary": "There’s little question that AI coding agents have changed where software development work happens. Developers can increasingly delegate work from The post “One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters appeared first on The New Stack .",
+          "published_at": "2026-09-22T18:27:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "77d8e62c76d46296",
+      "title": "AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/aws-strands-harness-agent",
+          "target_url": "https://thenewstack.io/aws-strands-harness-agent",
+          "independent": true,
+          "title": "AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex",
+          "summary": "Amazon Web Services (AWS) is lifting the lid on a new open source, general-purpose AI agent, designed to give developers The post AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex appeared first on The New Stack .",
+          "published_at": "2026-09-21T18:30:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3e89c323dc5362e5",
+      "title": "Your AI agent failed. The model might not be the problem.",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/nvidia-agent-debugging-safe",
+          "target_url": "https://thenewstack.io/nvidia-agent-debugging-safe",
+          "independent": true,
+          "title": "Your AI agent failed. The model might not be the problem.",
+          "summary": "As AI agents move into production, the path between a request and its result is becoming less predictable. An agent The post Your AI agent failed. The model might not be the problem. appeared first on The New Stack .",
+          "published_at": "2026-09-20T14:04:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "4b240820147dbcc4",
+      "title": "OpenAI goes from hacker to hacked",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/openai-goes-from-hacker-to-hacked",
+          "target_url": "https://www.therundown.ai/articles/openai-goes-from-hacker-to-hacked",
+          "independent": true,
+          "title": "OpenAI goes from hacker to hacked",
+          "summary": "PLUS: Build and test your own AI image skill pack",
+          "published_at": "2026-09-21T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "93d69dffc6239341",
+      "title": "Google Open-Sources AX a Kubernetes Style Orchestrator for Autonomous AI Agents",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/google-ax-orchestrator",
+          "target_url": "https://www.infoq.com/news/2026/09/google-ax-orchestrator",
+          "independent": true,
+          "title": "Google Open-Sources AX a Kubernetes Style Orchestrator for Autonomous AI Agents",
+          "summary": "Google has open-sourced AX, an orchestrator designed for managing autonomous AI agent workloads. AX operates on a runtime, Agent Substrate, treating agents as stateful actors. It provides resource-efficient task suspension and resumption to optimise performance and reduce latency in idle phases. It features a control plane with Kubernetes-style primitives for managing agent tasks and resources. By Olimpiu Pop",
+          "published_at": "2026-09-22T14:14:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e827236e6a62628c",
+      "title": "GitLab Duo Expands Self-Hosted AI Options Through Microsoft Foundry",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/gitlab-microsoft-foundry",
+          "target_url": "https://www.infoq.com/news/2026/09/gitlab-microsoft-foundry",
+          "independent": true,
+          "title": "GitLab Duo Expands Self-Hosted AI Options Through Microsoft Foundry",
+          "summary": "GitLab has expanded GitLab Duo Self-Hosted to support models deployed through Microsoft Foundry, letting organizations run GitLab's AI development capabilities against models hosted in their chosen Azure environment. By Craig Risi",
+          "published_at": "2026-09-22T12:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "208a69d2671df88a",
+      "title": "Podcast: Securing AI Agents: Identity, Authorization, and the DPACT Framework",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/podcasts/securing-ai-agents-identity-authorization",
+          "target_url": "https://www.infoq.com/podcasts/securing-ai-agents-identity-authorization",
+          "independent": true,
+          "title": "Podcast: Securing AI Agents: Identity, Authorization, and the DPACT Framework",
+          "summary": "In this episode, Sahil Agarwal talks about the critical challenges of identity, authorisation, and security in the age of AI agents. Sahil introduces the DPACT framework (Delegation, Policy, Auditability, Context, and Time) as a blueprint for building responsible, guardrailed agentic systems, moving away from simple token-based access toward bounded, delegated authority. By Sahil Agarwal",
+          "published_at": "2026-09-21T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "afb5b609f380acc9",
+      "title": "Presentation: The Agent Harness: Control Planes, Invariants, and Approval Boundaries for Production AI Agents",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/presentations/ai-agent-harness",
+          "target_url": "https://www.infoq.com/presentations/ai-agent-harness",
+          "independent": true,
+          "title": "Presentation: The Agent Harness: Control Planes, Invariants, and Approval Boundaries for Production AI Agents",
+          "summary": "OpenAI’s Vinoth Govindarajan discusses why production AI agents fail beyond model hallucination. Using real-world case studies like OpenClaw, he explains the key principles of reliable agent harnesses: establishing explicit state ownership, serializing concurrent state mutations, scoping execution authority, and validating actions at the user-visible edge. By Vinoth Govindarajan",
+          "published_at": "2026-09-21T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "ea310f48d338b9de",
+      "title": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview",
+          "target_url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview",
+          "independent": true,
+          "title": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review",
+          "summary": "Alibaba recently open-sourced OpenCodeReview, an AI-powered code review CLI that combines deterministic pipelines for file selection, bundling, and rule matching with an LLM agent for dynamic code analysis. It supports built-in checks for issues such as null-pointer exceptions, thread safety, XSS, and SQL injection. By Renato Losio",
+          "published_at": "2026-09-20T11:57:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "26e75030f02ff285",
+      "title": "Google Agent Development Kit for Kotlin Reaches Feature Parity with Python, Supports On-Device AI",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/google-adk-1-0-released",
+          "target_url": "https://www.infoq.com/news/2026/09/google-adk-1-0-released",
+          "independent": true,
+          "title": "Google Agent Development Kit for Kotlin Reaches Feature Parity with Python, Supports On-Device AI",
+          "summary": "Google has released the Agent Development Kit (ADK) for Kotlin 1.0, a production-ready framework for building AI agents across Kotlin, Android, and JVM/server applications. It brings Kotlin to feature parity with Google's ADK for Python and Java, while adding Android-specific capabilities for on-device and hybrid AI. By Sergio De Simone",
+          "published_at": "2026-09-20T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "502ecda31ed9faae",
+      "title": "Redefining Media at 18: How I Built an Autonomous Tech News Platform Using AI and n8n",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@atesbey012/redefining-media-at-18-how-i-built-an-autonomous-tech-news-platform-using-ai-and-n8n-e864aa1e082a",
+          "target_url": "https://medium.com/@atesbey012/redefining-media-at-18-how-i-built-an-autonomous-tech-news-platform-using-ai-and-n8n-e864aa1e082a",
+          "independent": false,
+          "title": "Redefining Media at 18: How I Built an Autonomous Tech News Platform Using AI and n8n",
+          "summary": "Every day, the technology sector moves faster than any single human can process. New frameworks are released, AI models iterate, and… Continue reading on Medium »",
+          "published_at": "2026-09-22T22:27:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "aaf8e49ccdbf0adb",
+      "title": "AI’s Biggest Shift in 5 Years: Teaching Models to Think",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@zhaodillon/ais-biggest-shift-in-5-years-teaching-models-to-think-bc872ee0a85f",
+          "target_url": "https://medium.com/@zhaodillon/ais-biggest-shift-in-5-years-teaching-models-to-think-bc872ee0a85f",
+          "independent": false,
+          "title": "AI’s Biggest Shift in 5 Years: Teaching Models to Think",
+          "summary": "Abstract Continue reading on Medium »",
+          "published_at": "2026-09-22T22:25:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "37446f565d4f87a6",
+      "title": "La IA está cambiando las operaciones cibernéticas ofensivas",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://nahumdeavila.medium.com/la-ia-est%C3%A1-cambiando-las-operaciones-cibern%C3%A9ticas-ofensivas-72169b77eacf",
+          "target_url": "https://nahumdeavila.medium.com/la-ia-est%C3%A1-cambiando-las-operaciones-cibern%C3%A9ticas-ofensivas-72169b77eacf",
+          "independent": false,
+          "title": "La IA está cambiando las operaciones cibernéticas ofensivas",
+          "summary": "Procesos que para un operador humano podrían tomar días o semanas pueden convertirse en horas para la inteligencia artificial Continue reading on Medium »",
+          "published_at": "2026-09-22T22:23:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8cfa4276b2afc06f",
+      "title": "8 Ways to Make Money Online That Still Work After AI, Ranked by How Hard They Are to Copy",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fastdigitizer/8-ways-to-make-money-online-that-still-work-after-ai-ranked-by-how-hard-they-are-to-copy-289773204b85",
+          "target_url": "https://medium.com/@fastdigitizer/8-ways-to-make-money-online-that-still-work-after-ai-ranked-by-how-hard-they-are-to-copy-289773204b85",
+          "independent": false,
+          "title": "8 Ways to Make Money Online That Still Work After AI, Ranked by How Hard They Are to Copy",
+          "summary": "(Number 8 is where most beginners start. Number 1 is the only one I would bet the next ten years on.) Continue reading on Medium »",
+          "published_at": "2026-09-22T22:23:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "15ca7f9fd6acee26",
+      "title": "A NEW AND EXCITING OPPORTUNITY ! ! !",
+      "first_seen": "2026-09-23T07:36:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://glen1234.medium.com/a-new-and-exciting-opportunity-55d3efc79716",
+          "target_url": "https://glen1234.medium.com/a-new-and-exciting-opportunity-55d3efc79716",
+          "independent": false,
+          "title": "A NEW AND EXCITING OPPORTUNITY ! ! !",
+          "summary": "1–3% A DAY with verified trades. Continue reading on Medium »",
+          "published_at": "2026-09-22T22:22:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    }
+  ],
+  "auto_published_count": 2
 }

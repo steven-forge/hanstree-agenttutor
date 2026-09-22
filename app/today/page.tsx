@@ -94,7 +94,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               <p className="eyebrow">AI NEWSLETTER</p>
               <h1>AI 뉴스레터</h1>
               <p className="lead">
-                최근 60일간 공식 출처에서 수집한 AI·Agent 관련 소식과 주요 발표를 최신순으로 모아 보여줍니다.
+                최근 60일간 공식 출처에서 수집한 AI·Agent 관련 소식과, 외부 매체 매시간 수집에서 서로 독립된 출처 2곳 이상이 확인된 뉴스를 최신순으로 모아 보여줍니다.
               </p>
               <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 <span className="date">
@@ -193,18 +193,41 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       </p>
                     </details>
 
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "12px", paddingTop: "12px", borderTop: "1px solid var(--line)" }}>
-                      <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
-                        출처: <strong>{article.source_name}</strong>
-                      </span>
-                      <a
-                        href={article.source_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ fontSize: "0.85rem", color: "var(--blue)", fontWeight: 700, textDecoration: "none" }}
-                      >
-                        원문 기사 읽기 (새 탭) ↗
-                      </a>
+                    <div style={{ marginTop: "12px", paddingTop: "12px", borderTop: "1px solid var(--line)" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+                        <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
+                          출처: <strong>{article.source_name}</strong>
+                          {article.importance && (
+                            <span
+                              className={article.importance === "high" ? "status-confirmed" : "status-conditional"}
+                              style={{ marginLeft: "8px", fontSize: "0.72rem" }}
+                              title="서로 독립된 매체 2곳 이상에서 확인되면 보통, 3곳 이상이면 높음"
+                            >
+                              중요도 {article.importance === "high" ? "높음" : "보통"} · 독립 출처 {article.independent_source_count ?? 0}곳
+                            </span>
+                          )}
+                        </span>
+                        <a
+                          href={article.source_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ fontSize: "0.85rem", color: "var(--blue)", fontWeight: 700, textDecoration: "none" }}
+                        >
+                          원문 기사 읽기 (새 탭) ↗
+                        </a>
+                      </div>
+                      {article.sources && article.sources.length > 1 && (
+                        <ul aria-label="확인된 출처" style={{ margin: "8px 0 0", padding: 0, listStyle: "none", display: "flex", flexWrap: "wrap", gap: "4px 14px", fontSize: "0.8rem" }}>
+                          {article.sources.map((s) => (
+                            <li key={`${s.source_id}:${s.url}`}>
+                              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--blue)", textDecoration: "none" }}>
+                                {s.name} ↗
+                              </a>
+                              {!s.independent && <span style={{ color: "var(--muted)" }}> (커뮤니티·재인용)</span>}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </article>
                 ))}
@@ -287,14 +310,15 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                           </td>
                           <td>
                             <span
-                              className={s.status === "ok" ? "status-confirmed" : "status-unconfirmed"}
+                              className={s.status === "ok" ? "status-confirmed" : s.status === "not_configured" ? "status-conditional" : "status-unconfirmed"}
                               style={{ fontSize: "0.74rem" }}
                               {...(s.status === "failed" && {
                                 title: s.error || "실패 사유가 기록되지 않았습니다.",
                                 "aria-label": `수집 실패: ${s.error || "실패 사유가 기록되지 않았습니다."}`,
                               })}
+                              {...(s.status === "not_configured" && { title: s.error || "공식 API 환경변수가 설정되지 않아 호출하지 않았습니다." })}
                             >
-                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : "수집 실패"}
+                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : s.status === "not_configured" ? "미설정" : "수집 실패"}
                             </span>
                           </td>
                           <td>{s.count ?? 0}건</td>

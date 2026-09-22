@@ -168,7 +168,8 @@ def test_today_archive_integrity():
     assert len(set(ids)) == len(ids), "today.json에 중복 id가 있습니다"
     assert len(set(urls)) == len(urls), "today.json에 중복 정규화 URL이 있습니다"
     for a in articles:
-        validate_url(a["source_url"])
+        # 매시간 외부 매체 자동 게시 기사(sources 보유)는 허용 호스트 밖 링크라 HTTPS·형식만 검사한다.
+        validate_url(a["source_url"], None if a.get("sources") else ALLOWED_HOSTS)
         assert re.search(r"[가-힣]", a.get("why_it_matters", "")), f"{a['id']}: 한국어 초보자 해설 필요"
         if needs_korean_translation(a.get("title", "")):
             assert re.search(r"[가-힣]", a.get("title_ko", "")), f"{a['id']}: 한국어 제목 번역 필요"

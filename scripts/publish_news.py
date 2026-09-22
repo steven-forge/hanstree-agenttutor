@@ -84,7 +84,7 @@ def validate_reviewed_edition(reviewed: dict, current_today: dict) -> None:
         seen_ids.add(art_id)
 
         try:
-            validate_url(art["source_url"])
+            validate_url(art["source_url"], None)  # 호스트는 아래에서 archive의 URL과 일치해야 하므로 허용 목록 대신 형식만 검사
         except ValueError as error:
             raise ValueError(f"기사 '{art_id}'의 출처 URL 검증 실패: {error}")
 

@@ -76,6 +76,7 @@ class SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
 
 
 def validate_url(url: str, allowed_hosts=ALLOWED_HOSTS) -> None:
+    """allowed_hosts=None은 네트워크 요청이 아닌 링크(외부 매체 기사 URL) 검사에만 쓴다. fetch_url은 None을 거부한다."""
     parsed = urllib.parse.urlsplit(url)
     if parsed.scheme.lower() != "https":
         raise ValueError(f"HTTPS 프로토콜만 허용됩니다: {url}")
@@ -84,7 +85,9 @@ def validate_url(url: str, allowed_hosts=ALLOWED_HOSTS) -> None:
     if parsed.port and parsed.port != 443:
         raise ValueError(f"비정상 포트는 허용되지 않습니다: {url}")
     hostname = (parsed.hostname or "").lower()
-    if hostname not in allowed_hosts:
+    if not hostname:
+        raise ValueError(f"호스트가 없는 URL입니다: {url}")
+    if allowed_hosts is not None and hostname not in allowed_hosts:
         raise ValueError(f"허용되지 않은 호스트입니다: {hostname}")
 
 
@@ -102,7 +105,9 @@ def canonicalize_url(url: str) -> str:
     return urllib.parse.urlunsplit((parsed.scheme.lower(), hostname, path, new_query, fragment))
 
 
-def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES, allowed_hosts=ALLOWED_HOSTS) -> tuple[int, dict, bytes]:
+def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries: int = 2, max_bytes: int = MAX_BYTES, allowed_hosts=ALLOWED_HOSTS, extra_headers: dict = None, data: bytes = None) -> tuple[int, dict, bytes]:
+    if allowed_hosts is None:
+        raise ValueError("네트워크 요청에는 명시적 허용 호스트가 필요합니다.")
     validate_url(url, allowed_hosts)
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; AgentTutor/0.2; +https://hanstree-agenttutor-jgwu.vercel.app)",
@@ -113,9 +118,11 @@ def fetch_url(url: str, etag: str = None, last_modified: str = None, max_retries
         headers["If-None-Match"] = etag
     if last_modified:
         headers["If-Modified-Since"] = last_modified
+    if extra_headers:
+        headers.update(extra_headers)  # API 인증은 헤더로만 전달한다. URL·오류 메시지에 비밀값이 남지 않는다.
 
     opener = urllib.request.build_opener(SafeRedirectHandler(allowed_hosts))
-    request = urllib.request.Request(url, headers=headers)
+    request = urllib.request.Request(url, data=data, headers=headers)
 
     attempts = 0
     while True:
@@ -443,6 +450,25 @@ NO_KNOWN = (frozenset(), frozenset())
 
 def new_stats() -> dict:
     return {"held_count": 0, "excluded_count": 0, "skipped_count": 0, "coverage_limited": False}
+
+
+def merge_source_reports(previous: list, current: list) -> list:
+    """공식(일 1회)·외부(매시간) 수집이 같은 목록을 나눠 쓴다. 같은 id는 제자리 교체, 새 id는 뒤에 붙여 순서를 안정시킨다."""
+    by_id = {s.get("id"): s for s in current if isinstance(s, dict)}
+    merged = [by_id.pop(s.get("id"), s) for s in previous if isinstance(s, dict)]
+    return merged + [s for s in current if isinstance(s, dict) and s.get("id") in by_id]
+
+
+def news_status(sources: list) -> str:
+    active = [s for s in sources if isinstance(s, dict) and s.get("status") != "not_configured"]
+    if not active:
+        return "not_collected"
+    failed = [s for s in active if s.get("status") == "failed"]
+    if len(failed) == len(active):
+        return "failed"
+    if failed or any((s.get("held_count") or 0) > 0 for s in active):
+        return "partial"
+    return "ok"
 
 
 def url_id(canonical_url: str) -> str:
@@ -1180,20 +1206,17 @@ def collect_news() -> int:
                      window_end=window_end.isoformat(), collected_at=collected_at)
         write_json(TODAY_PATH, today)
 
-    if failed_sources == len(sources_def):
-        news_status = "failed"
-    elif failed_sources > 0 or any(s["held_count"] > 0 for s in sources_health):
-        news_status = "partial"
-    else:
-        news_status = "ok"
+    official_status = news_status(sources_health)
 
-    # Save candidates
+    # Save candidates. 매시간 외부 수집의 events·출처 보고는 보존한다.
+    previous_candidates = read_json(CANDIDATES_PATH)
     candidates_data = {
+        **previous_candidates,
         "collected_at": collected_at,
         "window_start": window_start.isoformat(),
         "window_end": window_end.isoformat(),
         "edition_date": edition_date,
-        "sources": sources_health,
+        "sources": merge_source_reports(previous_candidates.get("sources") or [], sources_health),
         "new_count": len(candidates_list),
         "archive_count": len(today["articles"]),
         "candidates": candidates_list
@@ -1202,12 +1225,14 @@ def collect_news() -> int:
 
     # Update content health (news section only)
     current_health = read_json(HEALTH_PATH)
+    merged_sources = merge_source_reports((current_health.get("news") or {}).get("sources") or [], sources_health)
     current_health["news"] = {
+        **(current_health.get("news") or {}),
         "checked_at": collected_at,
-        "status": news_status,
+        "status": news_status(merged_sources),
         "candidate_count": len(candidates_list),
         "archive_count": len(today["articles"]),
-        "sources": sources_health
+        "sources": merged_sources
     }
     if "documents" not in current_health:
         current_health["documents"] = {"checked_at": None, "sources": []}
@@ -1217,7 +1242,7 @@ def collect_news() -> int:
     source_cache["updated_at"] = collected_at
     write_json(SOURCE_CACHE_PATH, source_cache)
 
-    print(f"[뉴스 수집 완료] 상태: {news_status}, 최근 {WINDOW_DAYS}일 신규: {len(candidates_list)}건, archive: {len(today['articles'])}건, 실패 출처: {failed_sources}/{len(sources_def)}")
+    print(f"[뉴스 수집 완료] 상태: {official_status}, 최근 {WINDOW_DAYS}일 신규: {len(candidates_list)}건, archive: {len(today['articles'])}건, 실패 출처: {failed_sources}/{len(sources_def)}")
     for s in sources_health:
         info = f"  - {s['name']}: {s['status']} (신규 {s['count']}건, 기존 건너뜀 {s['skipped_count']}건, 보류 {s['held_count']}건)"
         if s["coverage_limited"]:
@@ -1226,7 +1251,7 @@ def collect_news() -> int:
             info += f" [오류: {s['error']}]"
         print(info)
 
-    if news_status == "failed":
+    if official_status == "failed":
         return 1
     return 0
 

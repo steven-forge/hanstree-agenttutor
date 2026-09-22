@@ -146,6 +146,16 @@ export type TodayArticle = {
     bug_fixes?: string;
     chores?: string;
   };
+  // 매시간 외부 매체 수집이 채우는 필드. 독립 출처 2곳 이상이면 normal, 3곳 이상이면 high.
+  importance?: "normal" | "high";
+  independent_source_count?: number;
+  sources?: {
+    source_id: string;
+    name: string;
+    url: string;
+    target_url?: string;
+    independent: boolean;
+  }[];
 };
 
 export type TodayData = {
@@ -177,6 +187,8 @@ export type ContentHealthData = {
     checked_at: string | null;
     status: "not_collected" | "ok" | "partial" | "failed";
     candidate_count: number;
+    archive_count?: number;
+    pending_event_count?: number;
     sources: ContentHealthSource[];
   };
   documents: {

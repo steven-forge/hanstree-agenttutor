@@ -1,5 +1,15 @@
 # Today 뉴스 및 문서 출처 운영 지침 (NEWS OPERATIONS)
 
+## -1. 외부 뉴스 매시간 자동 수집 (`scripts/collect_hourly_news.py`, 현재 운영 기준)
+
+- **주기**: GitHub Actions `.github/workflows/update-content.yml`이 매시 정각(UTC `0 * * * *`)에 `scripts/collect_hourly_news.py`를 실행한다. 06:15 KST(UTC 21:15) 실행에서는 기존 공식 뉴스/문서 수집(`collect_content.py news`/`documents`)도 함께 실행되고, `workflow_dispatch` 수동 실행은 세 단계를 모두 실행한다.
+- **출처 목록**: `data/news-sources.json` 한 파일에 출처 URL·독립 여부·필요 환경 변수를 정의한다. `window_hours`(기본 72시간)와 `publish.min_independent`(기본 2), `publish.high_importance_at`(기본 3)도 이 파일에서 조정한다.
+- **자동 게시 조건**: 같은 사건을 다루는 서로 다른 등록 도메인의 독립 출처가 2곳 이상 모이면 자동으로 `data/today.json`에 게시된다. 독립 출처가 3곳 이상이면 `importance: "high"`로 표시된다. 독립 출처가 1곳뿐이거나 커뮤니티·소셜 신호만 있으면 `data/today-candidates.json`의 `events`에 후보로 남는다.
+- **API 키 없는 출처(`not_configured`)**: YouTube·X·Reddit처럼 `required_env`가 정의된 출처는 해당 환경 변수가 GitHub Actions Secrets에 없으면 네트워크 요청 없이 `status: "not_configured"`로 보고된다. TLDR AI는 공개 RSS(`https://tldr.tech/ai/rss`)가 현재 404를 반환해 `not_configured_reason`을 지정해 두었고, 같은 방식으로 요청 없이 `not_configured` + 사유가 `data/content-health.json`·`data/today-candidates.json`의 source report에 남는다.
+- **실패 감지**: 워크플로 마지막 단계가 뉴스/문서/시간별 수집 세 스텝의 outcome을 확인해 하나라도 `failure`(모든 출처 실패)면 워크플로 자체를 실패로 표시한다. 부분 실패(`partial`)는 워크플로를 막지 않는다.
+- **동시 실행 방지**: 기존 `concurrency: group: update-content`가 일일·시간별 실행 모두에 적용되어 겹쳐 실행되지 않는다.
+- **커밋 대상**: 시간별 실행도 `data/today.json`, `data/today-candidates.json`, `data/content-health.json`, `.source-cache/content.json` 변경분을 빌드 후 커밋·푸시한다(기존 커밋 단계 그대로 재사용).
+
 ## 0. v0.5.0 Claude Code·Grok Releases 추가 (현재 운영 기준)
 
 - **화면 및 출처 분리**:
