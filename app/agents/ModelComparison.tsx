@@ -12,6 +12,8 @@ type AgentModel = {
   context_window: string;
   max_output: string;
   key_feature: string;
+  minimum_access: string;
+  access_source: string;
   sources: Source[];
   price_note: string;
 };
@@ -124,6 +126,9 @@ export default function ModelComparison({
             <p className="section-note" style={{ marginBottom: "8px" }}>
               API 모델 ID·입력 유형은 API 스펙 기준이며, 실제 앱 UI에서 파일 업로드가 되는지 여부와는 다를 수 있습니다.
             </p>
+            <p className="section-note" style={{ marginBottom: "8px" }}>
+              최소 이용 비용은 별도 크레딧 구매 없이 이용 가능한 구독·무료 티어 기준입니다. 포함 사용량 초과 시 추가 과금될 수 있으며, API 종량제와 앱 구독은 별개입니다.
+            </p>
             <table className="model-compare-table">
               <thead>
                 <tr>
@@ -146,6 +151,15 @@ export default function ModelComparison({
                   <th scope="row">모델 문서상 입력 유형</th>
                   {selectedModels.map(({ model, input_modalities }) => (
                     <td key={model.id}>{input_modalities}</td>
+                  ))}
+                </tr>
+                <tr>
+                  <th scope="row">별도 크레딧 없는 최소 이용 비용</th>
+                  {selectedModels.map(({ model }) => (
+                    <td key={model.id}>
+                      {model.minimum_access}<br />
+                      <a href={model.access_source} target="_blank" rel="noopener noreferrer">요금제 근거 ↗</a>
+                    </td>
                   ))}
                 </tr>
                 <tr>

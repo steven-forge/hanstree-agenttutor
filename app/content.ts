@@ -134,6 +134,8 @@ export type TodayArticle = {
   why_it_matters: string;
   source_summary?: string;
   source_summary_ko?: string;
+  // 원문 <article>/<main> 전체 본문에서 만든 추출형 3문장 요약일 때만 "article_full_text_3line"
+  source_summary_provenance?: "article_full_text_3line";
   source_id: string;
   source_name: string;
   source_url: string;

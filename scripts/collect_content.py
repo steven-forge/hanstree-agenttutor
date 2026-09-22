@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+NEWS_SOURCES_PATH = DATA_DIR / "news-sources.json"
 CANDIDATES_PATH = DATA_DIR / "today-candidates.json"
 HEALTH_PATH = DATA_DIR / "content-health.json"
 TODAY_PATH = DATA_DIR / "today.json"
@@ -47,6 +48,16 @@ ALLOWED_HOSTS = {
     "github.com", "api.github.com"
 }
 TRANSLATION_HOST = "api.mymemory.translated.net"
+
+
+def registered_hosts_for_source(source_id: str) -> frozenset[str]:
+    """source_id에 등록된 호스트만 허용한다. data/news-sources.json에 등록된 외부 출처는 그 hosts,
+    그 외(공식 6개 출처)는 ALLOWED_HOSTS로 제한한다. URL 자체의 hostname을 허용 목록으로 쓰지 않는다."""
+    config = read_json(NEWS_SOURCES_PATH)
+    for sdef in config.get("sources") or []:
+        if isinstance(sdef, dict) and sdef.get("id") == source_id:
+            return frozenset(str(h).lower() for h in sdef.get("hosts") or [])
+    return ALLOWED_HOSTS
 
 
 def read_json(path: Path) -> dict:
@@ -445,6 +456,213 @@ def normalize_content(content_bytes: bytes, content_type: str = "") -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+class ArticleBodyExtractor(HTMLParser):
+    """<article> 또는 <main> 안의 p/h2/li 텍스트만 모은다(script/nav/header/footer/aside 등 제외). 둘 다 없으면 blocks가 비어 추출 실패로 처리된다."""
+
+    def __init__(self):
+        super().__init__()
+        self.ignored_tags = {"script", "style", "nav", "header", "footer", "aside", "noscript"}
+        self.ignore_depth = 0
+        self.scope_depth = 0
+        self.capture_tag = None
+        self.buffer: list[str] = []
+        self.blocks: list[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            self.ignore_depth += 1
+            return
+        if t in ("article", "main"):
+            self.scope_depth += 1
+            return
+        if self.scope_depth == 0 or self.ignore_depth > 0:
+            return
+        if t in ("p", "h2", "li"):
+            self.capture_tag = t
+            self.buffer = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            if self.ignore_depth > 0:
+                self.ignore_depth -= 1
+            return
+        if t in ("article", "main"):
+            if self.scope_depth > 0:
+                self.scope_depth -= 1
+            return
+        if t in ("p", "h2", "li") and self.capture_tag == t:
+            text = clean_html_text("".join(self.buffer)).strip()
+            if text:
+                self.blocks.append(text)
+            self.capture_tag = None
+            self.buffer = []
+
+    def handle_data(self, data):
+        if self.ignore_depth > 0 or self.scope_depth == 0 or self.capture_tag is None:
+            return
+        self.buffer.append(data)
+
+
+# ponytail: <article>/<main>이 없는 페이지 전용 fallback. 오탐 위험 때문에 FALLBACK_HOSTS에 등록된 호스트에만 적용한다.
+FALLBACK_HOSTS = frozenset({"x.ai", "www.x.ai"})
+FALLBACK_MIN_BLOCK_LEN = 60
+
+
+class FallbackBodyExtractor(HTMLParser):
+    """<article>/<main> 태그가 없는 페이지에서 nav/header/footer/aside/script/style 밖의 긴 p/h2/li 단락만 모은다."""
+
+    def __init__(self):
+        super().__init__()
+        self.ignored_tags = {"script", "style", "nav", "header", "footer", "aside", "noscript"}
+        self.ignore_depth = 0
+        self.capture_tag = None
+        self.buffer: list[str] = []
+        self.blocks: list[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            self.ignore_depth += 1
+            return
+        if self.ignore_depth > 0:
+            return
+        if t in ("p", "h2", "li"):
+            self.capture_tag = t
+            self.buffer = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t in self.ignored_tags:
+            if self.ignore_depth > 0:
+                self.ignore_depth -= 1
+            return
+        if t in ("p", "h2", "li") and self.capture_tag == t:
+            text = clean_html_text("".join(self.buffer)).strip()
+            if len(text) >= FALLBACK_MIN_BLOCK_LEN:
+                self.blocks.append(text)
+            self.capture_tag = None
+            self.buffer = []
+
+    def handle_data(self, data):
+        if self.ignore_depth > 0 or self.capture_tag is None:
+            return
+        self.buffer.append(data)
+
+
+SENTENCE_SPLIT_RE = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9"\'])')
+SENTENCE_END_RE = re.compile(r'[.!?]["\')”’]?$')
+MIN_SUMMARY_TEXT_LEN = 200
+SUMMARY_WORD_RE = re.compile(r"[A-Za-z']+")
+SUMMARY_STOPWORDS = frozenset({
+    "the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with", "by", "at", "from", "as", "is", "are",
+    "was", "were", "be", "been", "being", "its", "it", "this", "that", "these", "those", "here", "there", "how",
+    "why", "what", "which", "who", "new", "now", "your", "you", "we", "they", "our", "can", "could", "will",
+    "would", "should", "has", "have", "had", "into", "than", "more", "most", "about", "after", "over", "up",
+    "out", "not", "just", "also", "but", "if", "so", "such", "when", "while", "all", "any", "each", "other",
+})
+
+
+def split_sentences(text: str) -> list[str]:
+    return [s.strip() for s in SENTENCE_SPLIT_RE.split(text) if s.strip()]
+
+
+def score_sentences(sentences: list[str]) -> list[tuple[int, float, str]]:
+    """단어 빈도 기반 추출형 점수. 마침 페이지 서두 3문장을 그대로 베끼지 않고 본문 전체에서 고른다."""
+    freq: dict[str, int] = {}
+    for sentence in sentences:
+        for word in SUMMARY_WORD_RE.findall(sentence.lower()):
+            if len(word) < 3 or word in SUMMARY_STOPWORDS:
+                continue
+            freq[word] = freq.get(word, 0) + 1
+    if not freq:
+        return []
+    max_freq = max(freq.values())
+    scored = []
+    for idx, sentence in enumerate(sentences):
+        words = [w for w in SUMMARY_WORD_RE.findall(sentence.lower()) if len(w) >= 3 and w not in SUMMARY_STOPWORDS]
+        if not words:
+            continue
+        score = sum(freq.get(w, 0) / max_freq for w in words) / len(words)
+        scored.append((idx, score, sentence))
+    return scored
+
+
+def extractive_summary_sentences(blocks: list[str], max_sentences: int = 3) -> list[str] | None:
+    """완전한 문장(종결 부호로 끝나고 단어 6개 이상)만 후보로 삼아 제목 조각·메뉴 문구가 섞이지 않게 한다."""
+    text = " ".join(blocks)
+    if len(text) < MIN_SUMMARY_TEXT_LEN:
+        return None
+    sentences = [
+        s for s in split_sentences(text)
+        if 40 <= len(s) <= 400 and SENTENCE_END_RE.search(s) and len(SUMMARY_WORD_RE.findall(s)) >= 6
+    ]
+    if len(sentences) < max_sentences:
+        return None
+    scored = score_sentences(sentences)
+    if len(scored) < max_sentences:
+        return None
+    top = sorted(scored, key=lambda t: t[1], reverse=True)[:max_sentences]
+    top.sort(key=lambda t: t[0])
+    return [sentence for _, _, sentence in top]
+
+
+def dedupe_blocks(blocks: list[str]) -> list[str]:
+    """<article>과 <main>이 같은 본문을 중복 노출하는 경우 등, 동일 블록 반복을 제거한다(순서 보존)."""
+    seen = set()
+    deduped = []
+    for block in blocks:
+        if block in seen:
+            continue
+        seen.add(block)
+        deduped.append(block)
+    return deduped
+
+
+def build_full_text_summary_ko(source_url: str, source_id: str, prefetched_html: str | None = None) -> str | None:
+    """원문 <article>/<main> 본문(aside 제외) 전체에서 완전한 문장만 후보로 삼아 추출형 3문장을 골라 한국어로 번역한다.
+    <article>/<main>이 없으면 FALLBACK_HOSTS에 등록된 호스트에 한해 nav/header/footer/aside 밖의 긴 p/h2/li로
+    대체 추출한다. 호출 측이 이미 원문을 받아온 경우(prefetched_html)에는 다시 요청하지 않는다. SSRF 방지를 위해
+    URL 자신의 hostname이 아니라 source_id에 등록된 호스트(registered_hosts_for_source)만 요청·리다이렉트를 허용한다.
+    등록되지 않은 호스트나 본문이 요약에 부적합하면(길이 부족, 완전한 문장 3개 미만 등) provenance를 설정하지
+    않도록 None을 반환(원래 설명 보존)."""
+    try:
+        if prefetched_html is not None:
+            html_text = prefetched_html
+        else:
+            allowed_hosts = registered_hosts_for_source(source_id)
+            hostname = (urllib.parse.urlsplit(source_url).hostname or "").lower()
+            if not hostname or hostname not in allowed_hosts:
+                return None
+            status, headers, body = fetch_url(source_url, allowed_hosts=allowed_hosts, max_retries=1)
+            if status != 200:
+                return None
+            ctype = headers.get("content-type", "")
+            if "text/html" not in ctype and not body.lstrip().startswith((b"<!DOCTYPE", b"<html")):
+                return None
+            html_text = body.decode("utf-8", errors="replace")
+
+        extractor = ArticleBodyExtractor()
+        extractor.feed(html_text)
+        blocks = dedupe_blocks(extractor.blocks)
+        if not blocks:
+            hostname = (urllib.parse.urlsplit(source_url).hostname or "").lower()
+            if hostname in FALLBACK_HOSTS:
+                fallback = FallbackBodyExtractor()
+                fallback.feed(html_text)
+                blocks = dedupe_blocks(fallback.blocks)
+        sentences_en = extractive_summary_sentences(blocks)
+        if not sentences_en:
+            return None
+        translated = [translate_to_korean(s) if needs_korean_translation(s) else s for s in sentences_en]
+        if len(translated) != 3:
+            return None
+        return "\n".join(translated)
+    except Exception:
+        return None
+
+
 NO_KNOWN = (frozenset(), frozenset())
 
 
@@ -498,7 +716,7 @@ def classify_date(dt: datetime, window_start: datetime, window_end: datetime) ->
     return "ok", {"published_at": dt.astimezone(timezone.utc).isoformat(), "date_precision": "time"}
 
 
-def make_candidate(title: str, source_id: str, source_name: str, canonical_url: str, summary_raw: str, date_fields: dict) -> dict:
+def make_candidate(title: str, source_id: str, source_name: str, canonical_url: str, summary_raw: str, date_fields: dict, article_html: str | None = None) -> dict:
     source_summary = clean_html_text(summary_raw)[:SUMMARY_MAX]
     candidate = {
         "id": url_id(canonical_url),
@@ -518,6 +736,11 @@ def make_candidate(title: str, source_id: str, source_name: str, canonical_url: 
         candidate["title_ko"] = translate_to_korean(title)
     if needs_korean_translation(source_summary):
         candidate["source_summary_ko"] = translate_to_korean(source_summary)
+    if source_id not in RELEASE_SOURCE_IDS:
+        full_summary = build_full_text_summary_ko(canonical_url, source_id, prefetched_html=article_html)
+        if full_summary:
+            candidate["source_summary_ko"] = full_summary
+            candidate["source_summary_provenance"] = "article_full_text_3line"
     return candidate
 
 
@@ -1082,7 +1305,7 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
         if not desc_m:
             desc_m = re.search(r'<meta\b[^>]*name=["\']description["\'][^>]*content=["\']([^"\']+)["\']', art_html, re.I)
 
-        candidates.append(make_candidate(title, source_id, source_name, art_url, desc_m.group(1) if desc_m else "", date_fields))
+        candidates.append(make_candidate(title, source_id, source_name, art_url, desc_m.group(1) if desc_m else "", date_fields, article_html=art_html))
 
     # 목록에 60일 시작 이전 기사가 하나도 없으면 목록 노출 개수가 이력을 제한한 것으로 기록
     stats["coverage_limited"] = not reached_start
@@ -1450,6 +1673,62 @@ def collect_documents(force: bool = False) -> int:
     return 0
 
 
+def backfill_summaries(days: int = 3) -> int:
+    """최근 N일(기본/상한 3일) 발행 기사 중 편집자 summary가 없는 기사의 source_summary_ko를 원문 3줄 요약으로 갱신한다.
+    release, 오래된 기사, 편집자 summary는 건드리지 않는다. 실패한 기사는 오류를 출력하고 기존 설명을 유지한다."""
+    days = min(max(1, days), 3)
+    now_kst = datetime.now(KST)
+    window_start = now_kst - timedelta(hours=24 * days)
+
+    today = read_json(TODAY_PATH)
+    articles = today.get("articles")
+    if not isinstance(articles, list):
+        raise ValueError("data/today.json의 articles가 배열이 아닙니다.")
+
+    checked = updated = failed = 0
+    for article in articles:
+        if not isinstance(article, dict) or article.get("source_id") in RELEASE_SOURCE_IDS:
+            continue
+        if str(article.get("summary") or "").strip():
+            continue  # 편집자 요약 보존
+        if article.get("source_summary_provenance") == "article_full_text_3line":
+            continue  # 이미 검토한 3줄 요약은 재수집 시 덮어쓰지 않는다
+
+        published = None
+        if article.get("published_at"):
+            published = parse_iso(article["published_at"])
+        elif article.get("published_on"):
+            try:
+                published = datetime.strptime(article["published_on"], "%Y-%m-%d").replace(tzinfo=KST)
+            except ValueError:
+                published = None
+        if published is None or published < window_start:
+            continue
+
+        source_url = article.get("source_url")
+        source_id = article.get("source_id")
+        if not isinstance(source_url, str) or not source_url or not isinstance(source_id, str) or not source_id:
+            continue
+
+        checked += 1
+        summary = build_full_text_summary_ko(source_url, source_id)
+        if not summary:
+            print(f"[backfill-summaries 실패] source_id={source_id}: 본문에서 3줄 요약을 만들 수 없습니다. 기존 설명을 유지합니다.", file=sys.stderr)
+            failed += 1
+            continue
+        if article.get("source_summary_ko") == summary and article.get("source_summary_provenance") == "article_full_text_3line":
+            continue  # 동일 결과면 파일을 건드리지 않는다 (멱등)
+        article["source_summary_ko"] = summary
+        article["source_summary_provenance"] = "article_full_text_3line"
+        updated += 1
+
+    if updated:
+        write_json(TODAY_PATH, today)
+
+    print(f"[backfill-summaries 완료] 대상일수: {days}, 점검 {checked}건, 갱신 {updated}건, 실패 {failed}건")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="AgentTutor 뉴스 및 문서 출처 수집·점검 도구")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -1459,11 +1738,16 @@ def main():
     doc_parser = subparsers.add_parser("documents", help="학습 자료 출처의 변경 사항을 점검합니다.")
     doc_parser.add_argument("--force", action="store_true", help="점검 주기와 관계없이 모든 출처를 강제 점검합니다.")
 
+    backfill_parser = subparsers.add_parser("backfill-summaries", help="최근 발행 기사의 출처 설명을 원문 3줄 요약으로 갱신합니다.")
+    backfill_parser.add_argument("--days", type=int, default=3, help="최근 N일 이내 발행 기사만 대상으로 합니다 (기본/상한 3).")
+
     args = parser.parse_args()
     if args.command == "news":
         sys.exit(collect_news())
     elif args.command == "documents":
         sys.exit(collect_documents(force=args.force))
+    elif args.command == "backfill-summaries":
+        sys.exit(backfill_summaries(args.days))
 
 
 if __name__ == "__main__":

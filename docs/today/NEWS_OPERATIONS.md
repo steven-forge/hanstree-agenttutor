@@ -1,5 +1,11 @@
 # Today 뉴스 및 문서 출처 운영 지침 (NEWS OPERATIONS)
 
+## -0.5. 출처 제공 설명 → 원문 3줄 요약 (일반 뉴스 전용, release 제외)
+
+일반 뉴스 후보(`make_candidate` 경로: RSS·HTML 공식 뉴스)와 외부 매체 자동 게시(`collect_hourly_news.py`의 `build_article` 경로) 모두, 편집자 `summary`가 없으면 `source_url`의 `<article>` 또는 `<main>` 안 `p`/`h2`/`li` 본문(`nav`/`header`/`footer`/`aside`/`script`/`style`는 전역 제외) 전체를 읽어 단어 빈도 기반 추출형 3문장을 뽑고 기존 `translate_to_korean`으로 번역해 `source_summary_ko`(줄바꿈으로 구분)와 `source_summary_provenance: "article_full_text_3line"`을 채운다. `<article>`/`<main>`이 모두 없는 페이지는 `FALLBACK_HOSTS`(현재 `x.ai`, `www.x.ai`)에 한해 `nav`/`header`/`footer`/`aside`/`script`/`style` 밖의 60자 이상 `p`/`h2`/`li`만 모으는 대체 추출기(`FallbackBodyExtractor`)를 쓴다. 문장 후보는 40~400자이면서 종결 부호(`.`/`!`/`?`, 뒤에 따옴표 허용)로 끝나고 단어 6개 이상인 것만 채택해 제목 조각·메뉴 문구·끊긴 인용이 섞이지 않게 하며, 본문 전체 길이가 200자 미만이면 요약을 시도하지 않는다. 새 요청은 SSRF 방지를 위해 `source_url` 자신의 hostname을 허용 목록으로 쓰지 않고, `source_id`로 `registered_hosts_for_source`가 돌려주는 사전 등록 호스트(공식 6개 출처는 `ALLOWED_HOSTS`, 외부 매체는 `data/news-sources.json`의 해당 출처 `hosts`)에 속할 때만 요청하며 리다이렉트도 같은 등록 호스트로만 제한한다. hostname이 등록되지 않았거나 본문을 못 찾거나(둘이 같은 본문을 중복 노출하면 동일 블록은 제거), 조건을 만족하는 문장이 3개 미만이거나 번역이 실패하면 조용히 `None`을 반환해 `source_summary_provenance`를 설정하지 않고 기존 요약·해당 출처 수집을 막지 않는다(한 출처 실패가 시간별 수집 전체를 중단시키지 않음). OpenAI 뉴스 원문 서버가 이 런타임의 수집 요청에 HTTP 403을 반환하는 경우도 같은 방식으로 처리되며, 우회하지 않고 기존 출처 제공 설명을 그대로 둔다. 4개 release source(`RELEASE_SOURCE_IDS`)는 뉴스레터가 아니므로 대상에서 제외한다. 화면(`/today`)은 `source_summary_provenance`가 이 값일 때만 "원문 3줄 요약" 라벨과 줄바꿈을 보여주고, 그 외에는 기존 "출처 제공 설명"을 유지한다. 이미 공개된 `data/today.json`의 과거 기사를 갱신하려면 `python3 scripts/collect_content.py backfill-summaries --days N`(기본/상한 3)을 실행한다. 이 명령은 최근 N일 이내 발행되었고 편집자 `summary`와 release가 아닌 기사만 대상으로 하며, 실패한 기사는 오류를 출력하고 기존 설명을 그대로 두고, 결과가 같으면 파일을 변경하지 않는다.
+
+재실행 시 `article_full_text_3line`이 이미 있는 기사는 덮어쓰지 않는다. 2026-09-23에는 최근 3일의 일반 기사 12건을 원문 확인 후 한국어 3줄로 검토했다.
+
 ## -1. 외부 뉴스 매시간 자동 수집 (`scripts/collect_hourly_news.py`, 현재 운영 기준)
 
 - **주기**: GitHub Actions `.github/workflows/update-content.yml`이 매시 정각(UTC `0 * * * *`)에 `scripts/collect_hourly_news.py`를 실행한다. 06:15 KST(UTC 21:15) 실행에서는 기존 공식 뉴스/문서 수집(`collect_content.py news`/`documents`)도 함께 실행되고, `workflow_dispatch` 수동 실행은 세 단계를 모두 실행한다.
@@ -13,7 +19,7 @@
 ## 0. v0.5.0 Claude Code·Grok Releases 추가 (현재 운영 기준)
 
 - **화면 및 출처 분리**:
-  - `AI 뉴스레터`(`/today`): 일반 뉴스 전용. 4개 release source(`codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases`)를 기사 수, 페이징, 목록, 출처 점검 상태, 안내 문구에서 완전히 제외한다.
+  - `뉴스레터`(`/today`): 일반 뉴스 전용. 4개 release source(`codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases`)를 기사 수, 페이징, 목록, 출처 점검 상태, 안내 문구에서 완전히 제외한다.
   - `Releases`(`/releases`): 개발 도구 릴리스 전용. 4개 release source(`codex-releases`, `gemini-releases`, `claude-releases`, `grok-releases`)만 최신순 10개씩 페이징 노출한다. 소개 문구는 Codex, Claude Code, Gemini CLI, Grok을 모두 명시한다.
 - **공식 출처 및 60일 실측**:
   - `claude-releases`: `https://github.com/anthropics/claude-code/releases`, GitHub API `anthropics/claude-code`, 최근 60일 49건 실측.

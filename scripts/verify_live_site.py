@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_BASE_URL = "https://hanstree-agenttutor-jgwu.vercel.app"
 CORE_CHECKS = [
     ("/", "AI Agent 학습과 실무를"),
-    ("/today", "AI 뉴스레터"),
+    ("/today", "뉴스레터"),
     ("/releases", "릴리스 요약"),
     ("/learn", "Agent 기초 개념 학습"),
     ("/agent-engineering", "Agent 엔지니어링"),

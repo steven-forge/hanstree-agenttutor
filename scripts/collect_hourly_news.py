@@ -21,9 +21,9 @@ import xml.etree.ElementTree as ET
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from collect_content import (  # noqa: E402
     CANDIDATES_PATH, DATA_DIR, HEALTH_PATH, KST, RELEASE_SOURCE_IDS, ROOT, SUMMARY_MAX, TODAY_PATH,
-    build_beginner_explanation, canonicalize_url, classify_date, clean_html_text, fetch_url, merge_archive,
-    merge_source_reports, needs_korean_translation, new_stats, news_status, parse_iso, read_json,
-    translate_to_korean, url_id, validate_url, write_json,
+    build_beginner_explanation, build_full_text_summary_ko, canonicalize_url, classify_date, clean_html_text,
+    fetch_url, merge_archive, merge_source_reports, needs_korean_translation, new_stats, news_status, parse_iso,
+    read_json, translate_to_korean, url_id, validate_url, write_json,
 )
 
 SOURCES_PATH = DATA_DIR / "news-sources.json"
@@ -363,6 +363,10 @@ def build_article(event: dict, count: int, high_at: int, now: datetime) -> dict:
         article["title_ko"] = translate_to_korean(article["title"])
     if needs_korean_translation(summary):
         article["source_summary_ko"] = translate_to_korean(summary)
+    full_summary = build_full_text_summary_ko(primary["url"], primary["source_id"])
+    if full_summary:
+        article["source_summary_ko"] = full_summary
+        article["source_summary_provenance"] = "article_full_text_3line"
     return article
 
 

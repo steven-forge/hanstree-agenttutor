@@ -178,7 +178,7 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                 </p>
                 <div style={{ marginTop: "16px" }}>
                   <Link href="/today" className="tag-link" style={{ padding: "6px 14px", fontSize: "0.85rem" }}>
-                    AI 뉴스레터 보러 가기 →
+                    뉴스레터 보러 가기 →
                   </Link>
                 </div>
               </div>

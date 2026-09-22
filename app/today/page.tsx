@@ -6,7 +6,7 @@ import { todayData, contentHealth } from "../content";
 import latestCollection from "../../data/today-candidates.json";
 
 export const metadata: Metadata = {
-  title: "AI 뉴스레터 · AgentTutor",
+  title: "뉴스레터 · AgentTutor",
   description: "최근 60일간 수집한 AI 및 Agent 관련 공식 뉴스를 최신순으로 모아 보는 뉴스레터"
 };
 
@@ -91,8 +91,8 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
 
           <div className="legacy-content" style={{ padding: 0 }}>
             <header className="hero" id="overview">
-              <p className="eyebrow">AI NEWSLETTER</p>
-              <h1>AI 뉴스레터</h1>
+              <p className="eyebrow">NEWSLETTER</p>
+              <h1>뉴스레터</h1>
               <p className="lead">
                 최근 60일간 공식 출처에서 수집한 AI·Agent 관련 소식과, 외부 매체 매시간 수집에서 서로 독립된 출처 2곳 이상이 확인된 뉴스를 최신순으로 모아 보여줍니다.
               </p>
@@ -178,9 +178,11 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       </p>
                     ) : article.source_summary ? (
                       <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
-                        <strong style={{ fontSize: "0.8rem", color: "var(--muted)" }}>출처 제공 설명</strong>
+                        <strong style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+                          {article.source_summary_provenance === "article_full_text_3line" ? "원문 3줄 요약" : "출처 제공 설명"}
+                        </strong>
                         <br />
-                        {article.source_summary_ko || article.source_summary}
+                        <span style={{ whiteSpace: "pre-line" }}>{article.source_summary_ko || article.source_summary}</span>
                       </p>
                     ) : null}
 
