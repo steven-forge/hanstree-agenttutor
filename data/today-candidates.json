@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 12,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "excluded_count": 29,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -112,7 +112,7 @@
       "count": 5,
       "held_count": 0,
       "excluded_count": 25,
-      "skipped_count": 0,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -156,7 +156,7 @@
       "count": 2,
       "held_count": 0,
       "excluded_count": 18,
-      "skipped_count": 0,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -167,7 +167,7 @@
       "count": 4,
       "held_count": 0,
       "excluded_count": 26,
-      "skipped_count": 0,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -178,7 +178,7 @@
       "count": 4,
       "held_count": 0,
       "excluded_count": 22,
-      "skipped_count": 0,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -189,7 +189,7 @@
       "count": 2,
       "held_count": 0,
       "excluded_count": 18,
-      "skipped_count": 0,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -200,7 +200,7 @@
       "count": 6,
       "held_count": 0,
       "excluded_count": 9,
-      "skipped_count": 0,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -457,8 +457,8 @@
       "source_summary_ko": "V7은 GPT-5.6을 사용하여 흩어져 있는 회사 파일을 컨텍스트 에이전트로 변환하여 복잡한 소스 연결 작업을 완료할 수 있습니다."
     }
   ],
-  "hourly_collected_at": "2026-09-23T07:36:30.812278+09:00",
-  "hourly_window_start": "2026-09-20T07:36:30.812278+09:00",
+  "hourly_collected_at": "2026-09-23T08:01:02.421736+09:00",
+  "hourly_window_start": "2026-09-20T08:01:02.421736+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -474,6 +474,17 @@
           "title": "Trump orders AI rebrand as \"super intelligence\"",
           "summary": "",
           "published_at": "2026-09-22T22:35:56+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809314",
+          "target_url": "https://www.washingtonpost.com/technology/2026/09/22/trump-says-hes-renaming-ai-super-intelligence",
+          "independent": false,
+          "title": "Trump Renames Artificial Intelligence to Super Intelligence",
+          "summary": "",
+          "published_at": "2026-09-22T22:43:49+00:00",
           "date_precision": "time"
         }
       ],
@@ -1982,7 +1993,154 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b3edf01bc0753ef",
+      "title": "Artificial Intelligence in Research",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809436",
+          "target_url": "https://tmodrzyk.github.io/blog/2026/artificial-intelligence-in-research",
+          "independent": false,
+          "title": "Artificial Intelligence in Research",
+          "summary": "",
+          "published_at": "2026-09-22T22:57:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "92b7478288c67d61",
+      "title": "A Taxonomy for Navigating the Global Landscape of AI Regulation (2025)",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809325",
+          "target_url": "https://dl.acm.org/doi/10.1145/3715275.3732059",
+          "independent": false,
+          "title": "A Taxonomy for Navigating the Global Landscape of AI Regulation (2025)",
+          "summary": "",
+          "published_at": "2026-09-22T22:44:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a0994e326a65217b",
+      "title": "Building the Next AI Together",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@youth_k/building-the-next-ai-together-7c739ee6c592",
+          "target_url": "https://medium.com/@youth_k/building-the-next-ai-together-7c739ee6c592",
+          "independent": false,
+          "title": "Building the Next AI Together",
+          "summary": "DSCC as a Distributed AI Research Laboratory Continue reading on Medium »",
+          "published_at": "2026-09-22T23:00:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "05dac7ec43ff90bb",
+      "title": "21 Predictions That Could Redefine Human Life in the Next Few Years",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://krgoswami.medium.com/21-predictions-that-could-redefine-human-life-in-the-next-few-years-d8a0558b9ab2",
+          "target_url": "https://krgoswami.medium.com/21-predictions-that-could-redefine-human-life-in-the-next-few-years-d8a0558b9ab2",
+          "independent": false,
+          "title": "21 Predictions That Could Redefine Human Life in the Next Few Years",
+          "summary": "From AI teachers and driverless vehicles to brain-controlled devices and human settlements beyond Earth, the future may change not only… Continue reading on Medium »",
+          "published_at": "2026-09-22T22:56:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1433115c119cf86e",
+      "title": "How to Use AI to Start Freelancing With No Experience",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@delvarddjhalyndji111/how-to-use-ai-to-start-freelancing-with-no-experience-46284849c80d",
+          "target_url": "https://medium.com/@delvarddjhalyndji111/how-to-use-ai-to-start-freelancing-with-no-experience-46284849c80d",
+          "independent": false,
+          "title": "How to Use AI to Start Freelancing With No Experience",
+          "summary": "Starting freelancing without professional experience can feel overwhelming. Continue reading on Medium »",
+          "published_at": "2026-09-22T22:53:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "71b61825e35de322",
+      "title": "Being Found by AI Isn’t Enough If It Gets Your Business Wrong",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sasutton82/being-found-by-ai-isnt-enough-if-it-gets-your-business-wrong-7dca6e04540a",
+          "target_url": "https://medium.com/@sasutton82/being-found-by-ai-isnt-enough-if-it-gets-your-business-wrong-7dca6e04540a",
+          "independent": false,
+          "title": "Being Found by AI Isn’t Enough If It Gets Your Business Wrong",
+          "summary": "AI visibility tells you whether your business appears. But what happens after it appears may matter even more. Continue reading on Medium »",
+          "published_at": "2026-09-22T22:50:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0e2ad03f7cd01ea",
+      "title": "Trust Signals, Navigation Tools, and Unseen Crossroads in AI’s Ethical Horizon",
+      "first_seen": "2026-09-23T08:01:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@curiousmind1786/trust-signals-navigation-tools-and-unseen-crossroads-in-ais-ethical-horizon-9bc468af9dca",
+          "target_url": "https://medium.com/@curiousmind1786/trust-signals-navigation-tools-and-unseen-crossroads-in-ais-ethical-horizon-9bc468af9dca",
+          "independent": false,
+          "title": "Trust Signals, Navigation Tools, and Unseen Crossroads in AI’s Ethical Horizon",
+          "summary": "As AI blends into ever more aspects of daily life and enterprise, its promise walks a tightrope balanced against profound risks. Continue reading on Medium »",
+          "published_at": "2026-09-22T22:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 2
+  "auto_published_count": 0
 }
