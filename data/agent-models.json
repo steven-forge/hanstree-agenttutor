@@ -6,6 +6,20 @@
       "agent_slug": "claude",
       "models": [
         {
+          "id": "claude-fable-5-1",
+          "name": "Claude Fable 5.1",
+          "input_cost": 10,
+          "output_cost": 50,
+          "cache_read_cost": 0.25,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "장기 에이전트·깊은 추론",
+          "sources": [
+            { "name": "Claude Fable 5.1 개요", "url": "https://platform.claude.com/docs/en/models/fable-5-1/overview" }
+          ],
+          "price_note": "캐시 쓰기는 별도 비용."
+        },
+        {
           "id": "claude-opus-5",
           "name": "Claude Opus 5",
           "input_cost": 5,
@@ -32,12 +46,71 @@
             { "name": "Claude Sonnet 5 개요", "url": "https://platform.claude.com/docs/en/models/sonnet-5/overview" }
           ],
           "price_note": "캐시 쓰기는 별도 비용."
+        },
+        {
+          "id": "claude-haiku-4-5",
+          "name": "Claude Haiku 4.5",
+          "input_cost": 1,
+          "output_cost": 5,
+          "cache_read_cost": 0.1,
+          "context_window": "200K",
+          "max_output": "64K",
+          "key_feature": "빠르고 저렴한 작업",
+          "sources": [
+            { "name": "Claude Haiku 4.5 개요", "url": "https://platform.claude.com/docs/en/models/haiku-4-5/overview" }
+          ],
+          "price_note": "캐시 쓰기는 별도 비용."
         }
       ]
     },
     {
       "agent_slug": "codex",
       "models": [
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "input_cost": 10,
+          "output_cost": 50,
+          "cache_read_cost": 1,
+          "context_window": "1,050,000",
+          "max_output": "128K",
+          "key_feature": "고난도 코딩·연구·컴퓨터 사용",
+          "sources": [
+            { "name": "GPT-6 Astra 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-6-astra" },
+            { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
+          ],
+          "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
+        },
+        {
+          "id": "gpt-6-sol",
+          "name": "GPT-6 Sol",
+          "input_cost": 2,
+          "output_cost": 10,
+          "cache_read_cost": 0.2,
+          "context_window": "1,050,000",
+          "max_output": "128K",
+          "key_feature": "복잡한 코딩·에이전트",
+          "sources": [
+            { "name": "GPT-6 Sol 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-6-sol" },
+            { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
+          ],
+          "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
+        },
+        {
+          "id": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "input_cost": 0.1,
+          "output_cost": 0.5,
+          "cache_read_cost": 0.01,
+          "context_window": "1,050,000",
+          "max_output": "128K",
+          "key_feature": "명확한 반복 작업",
+          "sources": [
+            { "name": "GPT-6 Luna 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-6-luna" },
+            { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
+          ],
+          "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
+        },
         {
           "id": "gpt-5.6-sol",
           "name": "GPT-5.6 Sol",
@@ -54,16 +127,16 @@
           "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배. 현재 가격은 2026-11-21까지 한시 적용."
         },
         {
-          "id": "gpt-5.6-luna",
-          "name": "GPT-5.6 Luna",
-          "input_cost": 0.2,
-          "output_cost": 1.2,
-          "cache_read_cost": 0.02,
+          "id": "gpt-5.6-terra",
+          "name": "GPT-5.6 Terra",
+          "input_cost": 2,
+          "output_cost": 12,
+          "cache_read_cost": 0.2,
           "context_window": "1,050,000",
           "max_output": "128K",
-          "key_feature": "반복·대량의 명확한 작업",
+          "key_feature": "비용·지능 균형",
           "sources": [
-            { "name": "GPT-5.6 Luna 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna" },
+            { "name": "GPT-5.6 Terra 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra" },
             { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
           ],
           "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
@@ -102,6 +175,51 @@
             { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
           ],
           "price_note": "2026-12-31까지 한시 가격, 캐시 저장 비용 별도."
+        },
+        {
+          "id": "gemini-3.7-flash",
+          "name": "Gemini 3.7 Flash",
+          "input_cost": 0.75,
+          "output_cost": 3.75,
+          "cache_read_cost": 0.075,
+          "context_window": "1,048,576",
+          "max_output": "65,536",
+          "key_feature": "일상 코딩·도구 사용",
+          "sources": [
+            { "name": "Gemini 3.7 Flash 모델 문서", "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash" },
+            { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+          ],
+          "price_note": "2026-12-31까지 한시 가격, 캐시 저장 비용 별도."
+        },
+        {
+          "id": "gemini-3.6-flash",
+          "name": "Gemini 3.6 Flash",
+          "input_cost": 0.75,
+          "output_cost": 3.75,
+          "cache_read_cost": 0.075,
+          "context_window": "1,048,576",
+          "max_output": "65,536",
+          "key_feature": "속도·멀티모달",
+          "sources": [
+            { "name": "Gemini 3.6 Flash 모델 문서", "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.6-flash" },
+            { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+          ],
+          "price_note": "2026-12-31까지 한시 가격, 캐시 저장 비용 별도."
+        },
+        {
+          "id": "gemini-3.5-flash",
+          "name": "Gemini 3.5 Flash",
+          "input_cost": 1.5,
+          "output_cost": 9,
+          "cache_read_cost": 0.15,
+          "context_window": "1,048,576",
+          "max_output": "65,536",
+          "key_feature": "대량의 기본 작업",
+          "sources": [
+            { "name": "Gemini 3.5 Flash 모델 문서", "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash" },
+            { "name": "Gemini API 가격", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+          ],
+          "price_note": "일반 가격 적용, 캐시 저장 비용 별도."
         }
       ]
     },
@@ -122,6 +240,34 @@
             { "name": "Grok 4.7 출시 기록", "url": "https://docs.x.ai/developers/release-notes" }
           ],
           "price_note": "입력 200K 이상 장문 요금은 입력 $4·출력 $12·캐시 읽기 $1."
+        },
+        {
+          "id": "grok-4.6",
+          "name": "Grok 4.6",
+          "input_cost": 2,
+          "output_cost": 6,
+          "cache_read_cost": 0.5,
+          "context_window": "500K",
+          "max_output": "공식 미표기",
+          "key_feature": "코딩·에이전트",
+          "sources": [
+            { "name": "Grok 4.6 모델 문서", "url": "https://docs.x.ai/developers/models/grok-4.6" }
+          ],
+          "price_note": "입력 200K 이상 장문 요금은 입력 $4·출력 $12·캐시 읽기 $1."
+        },
+        {
+          "id": "grok-4.5",
+          "name": "Grok 4.5",
+          "input_cost": 2,
+          "output_cost": 6,
+          "cache_read_cost": 0.3,
+          "context_window": "500K",
+          "max_output": "공식 미표기",
+          "key_feature": "코딩·에이전트 소프트웨어",
+          "sources": [
+            { "name": "Grok 4.5 모델 문서", "url": "https://docs.x.ai/developers/models/grok-4.5" }
+          ],
+          "price_note": "입력 200K 이상 장문 요금은 입력 $4·출력 $12·캐시 읽기 $0.60."
         },
         {
           "id": "grok-4.3",

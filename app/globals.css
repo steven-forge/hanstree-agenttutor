@@ -178,7 +178,20 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #bfdbfe; outline-off
 .filter-reset-link:hover { border-color: var(--blue); color: var(--blue); }
 .filter-count { font-size: .84rem; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
 
+.agents-table-wrap table { min-width: 860px; width: 100%; table-layout: fixed; }
+.agents-table th:nth-child(1), .agents-table td:nth-child(1) { width: 16%; }
+.agents-table th:nth-child(2), .agents-table td:nth-child(2) { width: 20%; }
+.agents-table th:nth-child(3), .agents-table td:nth-child(3) { width: 12%; }
+.agents-table th:nth-child(4), .agents-table td:nth-child(4) { width: 40%; }
+.agents-table th:nth-child(5), .agents-table td:nth-child(5) { width: 12%; }
+.agent-table-row { position: relative; transition: background-color .15s ease; cursor: pointer; }
+.agent-table-row:hover { background-color: var(--wash); }
+.agent-row-link { color: var(--ink); text-decoration: none; font-size: .95rem; font-weight: 750; }
+.agent-row-link:hover { color: var(--blue); }
+.agent-row-link::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; }
+.agent-table-row a:not(.agent-row-link) { position: relative; z-index: 2; }
 .agent-provider-tag { display: block; margin-top: 2px; font-size: .76rem; color: var(--muted); font-weight: 500; }
+.agent-badges-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
 
 .model-picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 16px; }
 .model-picker-fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 0; }

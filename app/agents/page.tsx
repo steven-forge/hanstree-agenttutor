@@ -86,7 +86,7 @@ export default async function AgentsIndexPage({
             <div className="section-head">
               <div>
                 <h2>에이전트별 모델 선택</h2>
-                <p className="section-note">모델을 선택하면 아래에 비교표가 바로 나타납니다.</p>
+                <p className="section-note">에이전트별 주력 모델을 최대 5개씩 표시합니다. 모델을 선택하면 아래에 비교표가 바로 나타납니다.</p>
               </div>
             </div>
 
@@ -183,6 +183,7 @@ export default async function AgentsIndexPage({
           <nav aria-label="페이지 목차">
             <a href="#overview">개요</a>
             <a href="#model-comparison">모델 선택 비교</a>
+            <a href="#agent-overview-table">에이전트 목록형 비교</a>
           </nav>
         </aside>
       </div>

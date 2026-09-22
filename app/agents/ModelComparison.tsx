@@ -40,7 +40,7 @@ export default function ModelComparison({
     for (const group of modelGroups) {
       const agent = agents.find((a) => a.slug === group.agent_slug);
       if (!agent) continue;
-      for (const model of group.models) {
+      for (const model of group.models.slice(0, MAX_SELECTED)) {
         map.set(model.id, { model, agent });
       }
     }
@@ -80,7 +80,7 @@ export default function ModelComparison({
                 <a href={`/agents/${agent.slug}`}>{agent.title}</a> <span className="agent-provider-tag">{agent.provider}</span>
               </legend>
               <div className="model-picker-list">
-                {group.models.map((model) => {
+                {group.models.slice(0, MAX_SELECTED).map((model) => {
                   const checked = selectedIds.includes(model.id);
                   const disabled = !checked && limitReached;
                   return (
@@ -214,6 +214,70 @@ export default function ModelComparison({
             </table>
           </div>
         )}
+      </div>
+
+      <div style={{ marginTop: "36px" }} id="agent-overview-table">
+        <h3 style={{ margin: "0 0 10px" }}>에이전트 목록형 비교</h3>
+        <div className="table-wrap agents-table-wrap" tabIndex={0} role="region" aria-label="에이전트 비교 목록">
+          <table className="agents-table">
+            <thead>
+              <tr>
+                <th scope="col">에이전트 · 개발사</th>
+                <th scope="col">제공 형태</th>
+                <th scope="col">도구 방식</th>
+                <th scope="col">핵심 강점 &amp; 적합한 상황</th>
+                <th scope="col">공식 출처 · 검토일</th>
+              </tr>
+            </thead>
+            <tbody>
+              {agents.map((agent) => (
+                <tr key={agent.slug} className="agent-table-row">
+                  <td>
+                    <a href={`/agents/${agent.slug}`} className="agent-row-link"><strong>{agent.title}</strong></a>
+                    <span className="agent-provider-tag">{agent.provider}</span>
+                  </td>
+                  <td>
+                    <div className="agent-badges-wrap">
+                      {agent.form_factors.map((f) => (
+                        <span
+                          key={f.type}
+                          className={f.status === "공식지원확인" ? "status-confirmed" : f.status.startsWith("조건부") ? "status-conditional" : "status-unconfirmed"}
+                          style={{ fontSize: "0.72rem", padding: "1px 6px" }}
+                        >
+                          {f.type}: {f.status}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="agent-badges-wrap">
+                      {agent.tool_modes && agent.tool_modes.length > 0 ? agent.tool_modes.map((mode) => (
+                        <span key={mode} className="badge-concept" style={{ fontSize: "0.72rem", padding: "1px 6px" }}>{mode}</span>
+                      )) : <span style={{ color: "var(--muted)", fontSize: "0.8rem" }}>-</span>}
+                    </div>
+                  </td>
+                  <td style={{ fontSize: "0.88rem", color: "#374151" }}>{agent.tagline}</td>
+                  <td style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
+                    <div>
+                      {agent.sources.length > 0 && (
+                        <a
+                          href={agent.sources[0].url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}
+                          aria-label={`${agent.title} 공식 출처 (${agent.sources[0].name})`}
+                        >공식 문서 ↗</a>
+                      )}
+                    </div>
+                    <time dateTime={agent.reviewed_at} style={{ display: "block", marginTop: "2px" }}>
+                      {agent.reviewed_at.split("T")[0]}
+                    </time>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
