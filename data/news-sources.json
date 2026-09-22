@@ -12,7 +12,7 @@
   ],
   "sources": [
     {"id": "hacker-news", "name": "Hacker News", "type": "hn_api", "url": "https://hacker-news.firebaseio.com/v0/newstories.json", "hosts": ["hacker-news.firebaseio.com"], "enabled": true, "priority": "primary", "independent": false, "keyword_filter": true, "max_items": 40},
-    {"id": "huggingface-blog", "name": "Hugging Face Blog", "type": "feed", "url": "https://huggingface.co/blog/feed.xml", "hosts": ["huggingface.co"], "enabled": true, "priority": "primary", "independent": true, "max_items": 30},
+    {"id": "huggingface-blog", "name": "Hugging Face Blog", "type": "feed", "url": "https://huggingface.co/blog/feed.xml", "hosts": ["huggingface.co"], "enabled": true, "priority": "primary", "independent": false, "max_items": 30},
     {"id": "wired-ai", "name": "WIRED", "type": "feed", "url": "https://www.wired.com/feed/tag/ai/latest/rss", "hosts": ["www.wired.com"], "enabled": true, "priority": "primary", "independent": true, "max_items": 30},
     {"id": "the-verge-ai", "name": "The Verge", "type": "feed", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "hosts": ["www.theverge.com"], "enabled": true, "priority": "primary", "independent": true, "max_items": 30},
     {"id": "techcrunch-ai", "name": "TechCrunch", "type": "feed", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "hosts": ["techcrunch.com"], "enabled": true, "priority": "primary", "independent": true, "max_items": 30},
