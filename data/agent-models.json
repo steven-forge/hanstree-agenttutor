@@ -35,6 +35,20 @@
           "price_note": "캐시 쓰기는 별도 비용."
         },
         {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5 (이전 모델)",
+          "input_cost": 5,
+          "output_cost": 25,
+          "cache_read_cost": 0.5,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "복잡한 코딩·기업 작업",
+          "sources": [
+            { "name": "Claude Opus 5 개요", "url": "https://platform.claude.com/docs/en/models/opus-5/overview" }
+          ],
+          "price_note": "이전 모델(legacy)로 분류. 캐시 쓰기는 별도 비용."
+        },
+        {
           "id": "claude-sonnet-5",
           "name": "Claude Sonnet 5",
           "input_cost": 2,
