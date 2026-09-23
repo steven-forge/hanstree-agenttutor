@@ -1,10 +1,24 @@
 {
   "edition_date": "2026-09-23",
-  "window_start": "2026-07-25T21:01:08.384121+09:00",
-  "window_end": "2026-09-23T21:01:08.384121+09:00",
-  "collected_at": "2026-09-23T21:01:08.384121+09:00",
+  "window_start": "2026-07-25T22:02:39.721092+09:00",
+  "window_end": "2026-09-23T22:02:39.721092+09:00",
+  "collected_at": "2026-09-23T22:02:59.448637+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "9328fa400dd37e6b",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "source_summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "fetched_at": "2026-09-23T22:02:39+09:00",
+      "published_at": "2026-09-23T13:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "OpenAI, 민간 방어를 위해 우크라이나에 대한 사이버 액세스 확대",
+      "source_summary_ko": "OpenAI는 민간 인프라의 사이버 방어를 지원하기 위해 우크라이나 정부로 Daybreak 프로그램에 대한 액세스를 확대하고 있습니다."
+    },
     {
       "id": "6e556c3af2807b57",
       "title": "0.156.1",
@@ -222,6 +236,37 @@
       "date_precision": "time",
       "title_ko": "효과적인 제3자 평가를 위한 우선순위 및 원칙",
       "source_summary_ko": "OpenAI는 외부 전문가가 AI 모델의 안전 주장과 근거를 독립적으로 검증해야 한다고 제안했습니다.\n중점 점검 대상은 개발·배포 단계의 안전성 근거, 실제 환경의 보호 장치, 위험 능력 평가 등입니다.\n평가자의 독립성과 충분한 접근권을 보장하되, 민감한 정보 보호와 명확한 책임도 함께 요구했습니다.",
+      "source_summary_provenance": "article_full_text_3line"
+    },
+    {
+      "id": "790cf36b99eec5ab",
+      "title": "Muse, Meta's extraordinarily privileged AI assistant, has a serious 0-day",
+      "source_id": "ars-technica",
+      "source_name": "Ars Technica",
+      "source_url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day",
+      "source_summary": "A simple ClickFix attack is only one way to completely hijack the new agent.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "fetched_at": "2026-09-23T22:02:59+09:00",
+      "published_at": "2026-09-21T22:24:38+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "ars-technica",
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day",
+          "independent": true
+        },
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/metas-muse-ai-agent-zero-day",
+          "independent": true
+        }
+      ],
+      "title_ko": "Meta의 특별한 특권을 가진 AI 비서인 Muse는 0일 동안 심각한",
+      "source_summary_ko": "UI 설정을 제어하기 위해 Muse와 함께 작동하는 앱과 이해할 수 있는 이유를 위한 것일 수 있습니다.\n하나는 공격자의 서버가 Muse 사용자와 메타 엔드포인트 사이에 배치되는 프록시 역할을 하는 것입니다.\n대부분의 인공지능 에이전트와 마찬가지로, 그리고 메타의 주장과는 달리, 뮤즈는 신뢰할 수 없습니다.",
       "source_summary_provenance": "article_full_text_3line"
     },
     {
