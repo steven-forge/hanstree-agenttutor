@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T06:01:23.829708+09:00",
-  "window_start": "2026-07-26T06:01:23.829708+09:00",
-  "window_end": "2026-09-24T06:01:23.829708+09:00",
+  "collected_at": "2026-09-24T06:26:08.384885+09:00",
+  "window_start": "2026-07-26T06:26:08.384885+09:00",
+  "window_end": "2026-09-24T06:26:08.384885+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 1,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 125,
+      "skipped_count": 126,
       "coverage_limited": false
     },
     {
@@ -100,8 +100,8 @@
       "status": "ok",
       "count": 9,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "excluded_count": 29,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -178,7 +178,7 @@
       "count": 4,
       "held_count": 0,
       "excluded_count": 22,
-      "skipped_count": 3,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -264,25 +264,25 @@
     }
   ],
   "new_count": 1,
-  "archive_count": 279,
+  "archive_count": 280,
   "candidates": [
     {
-      "id": "0765deb144589280",
-      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
+      "id": "347b65ce144a221e",
+      "title": "Sam Altman’s remarks at the United Nations Security Council",
       "source_id": "openai-news",
       "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/airbnb-gpt-6-astra",
-      "source_summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
-      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
-      "fetched_at": "2026-09-24T06:01:24+09:00",
-      "published_at": "2026-09-23T01:00:00+00:00",
+      "source_url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "source_summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "fetched_at": "2026-09-24T06:26:08+09:00",
+      "published_at": "2026-09-23T12:00:00+00:00",
       "date_precision": "time",
-      "title_ko": "에어비앤비, GPT-6 Astra 및 OpenAI 프론티어 모델에 대한 접근성 확대",
-      "source_summary_ko": "엔지니어링 팀이 버그를 해결하고, 시스템을 설계하고, 더 빠르게 배송할 수 있도록 에어비앤비가 GPT-6 Astra 및 OpenAI 프론티어 모델에 대한 액세스를 확대하는 방법을 알아보세요."
+      "title_ko": "샘 알트먼의 유엔 안전보장이사회 연설",
+      "source_summary_ko": "OpenAI의 CEO인 샘 알트만 (Sam Altman) 이 유엔 안전보장이사회 연설에서 AI 안전, 인간 통제 및 국제 협력에 대해 논의합니다."
     }
   ],
-  "hourly_collected_at": "2026-09-24T06:01:51.504587+09:00",
-  "hourly_window_start": "2026-09-21T06:01:51.504587+09:00",
+  "hourly_collected_at": "2026-09-24T06:26:39.199974+09:00",
+  "hourly_window_start": "2026-09-21T06:26:39.199974+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -7963,6 +7963,17 @@
           "summary": "",
           "published_at": "2026-09-23T20:55:51+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822654",
+          "target_url": "https://www.reuters.com/world/asia-pacific/australia-pm-albanese-says-openai-breached-medicare-sydney-morning-herald-2026-09-23",
+          "independent": false,
+          "title": "OpenAI agents hacked Australian Medicare system",
+          "summary": "",
+          "published_at": "2026-09-23T21:08:52+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8214,6 +8225,174 @@
           "title": "AI Skepticism Is an Identity Crisis",
           "summary": "Knowing how the AI sausage is made doesn’t help you cook with it Continue reading on Startup Stash »",
           "published_at": "2026-09-23T20:36:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "694e585ae7615fd6",
+      "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822774",
+          "target_url": "https://arxiv.org/abs/2609.26779",
+          "independent": false,
+          "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
+          "summary": "",
+          "published_at": "2026-09-23T21:21:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f55f45ec0b599d1c",
+      "title": "OpenAI Medicare Data Breach",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822556",
+          "target_url": "https://www.smh.com.au/politics/federal/openai-breaches-medicare-albanese-reveals-20260924-p6100u.html",
+          "independent": false,
+          "title": "OpenAI Medicare Data Breach",
+          "summary": "",
+          "published_at": "2026-09-23T21:01:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "448e827381639709",
+      "title": "A US-China AI Hotline Won't Be Ready For a While",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/a-us-china-ai-hotline-wont-be-ready-for-a-while",
+          "target_url": "https://www.wired.com/story/a-us-china-ai-hotline-wont-be-ready-for-a-while",
+          "independent": true,
+          "title": "A US-China AI Hotline Won't Be Ready For a While",
+          "summary": "As the US and China race to become the dominant power in the AI industry, the countries also appear to be figuring out ways to communicate on national security issues.",
+          "published_at": "2026-09-23T21:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "16155bdb560e15d9",
+      "title": "I’m Not Preparing for an AI Interview. I’m Preparing to Become a Better Engineer.",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jayanthi.syamala/im-not-preparing-for-an-ai-interview-i-m-preparing-to-become-a-better-engineer-ec54613bd76d",
+          "target_url": "https://medium.com/@jayanthi.syamala/im-not-preparing-for-an-ai-interview-i-m-preparing-to-become-a-better-engineer-ec54613bd76d",
+          "independent": false,
+          "title": "I’m Not Preparing for an AI Interview. I’m Preparing to Become a Better Engineer.",
+          "summary": "10 years in telecom. Now somewhere between 5G, AI, testing, and the uncomfortable feeling that I should know more Continue reading on Medium »",
+          "published_at": "2026-09-23T21:16:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f17263e88279fe9",
+      "title": "Remember the Dunning-Kruger Effect? In the Age of AI, It Just Evolved.",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@zhangblue/remember-the-dunning-kruger-effect-in-the-age-of-ai-it-just-evolved-9eda820abe43",
+          "target_url": "https://medium.com/@zhangblue/remember-the-dunning-kruger-effect-in-the-age-of-ai-it-just-evolved-9eda820abe43",
+          "independent": false,
+          "title": "Remember the Dunning-Kruger Effect? In the Age of AI, It Just Evolved.",
+          "summary": "Every engineer is familiar with the Dunning-Kruger Effect, that well-known cognitive bias where beginners with limited knowledge vastly… Continue reading on Medium »",
+          "published_at": "2026-09-23T21:16:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28866b4df7b5aaad",
+      "title": "After the Prompt: Building a Verifiable Android AI Development Workflow",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@euryperez/after-the-prompt-building-a-verifiable-android-ai-development-workflow-3d606483476b",
+          "target_url": "https://medium.com/@euryperez/after-the-prompt-building-a-verifiable-android-ai-development-workflow-3d606483476b",
+          "independent": false,
+          "title": "After the Prompt: Building a Verifiable Android AI Development Workflow",
+          "summary": "A practical mental model for moving from AI-generated code to shared intent, independent review, runtime evidence, and human acceptance. Continue reading on Medium »",
+          "published_at": "2026-09-23T21:14:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "32b36e8668996632",
+      "title": "AI Cartoon Video Prompts: How One Prompt Library Can Replace the Blank Page",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dynamicgrowthnetwork/ai-cartoon-video-prompts-how-one-prompt-library-can-replace-the-blank-page-8693c1d760f2",
+          "target_url": "https://medium.com/@dynamicgrowthnetwork/ai-cartoon-video-prompts-how-one-prompt-library-can-replace-the-blank-page-8693c1d760f2",
+          "independent": false,
+          "title": "AI Cartoon Video Prompts: How One Prompt Library Can Replace the Blank Page",
+          "summary": "Why random prompts give random videos, and what changes when the prompt already has a shape. Continue reading on Medium »",
+          "published_at": "2026-09-23T21:12:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "264b16c7bbe6d253",
+      "title": "My Senior Engineer Rewrote 3,000 Lines of AI Code. Six Months Later, I Realized We Had Created…",
+      "first_seen": "2026-09-24T06:26:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://levelup.gitconnected.com/my-senior-engineer-rewrote-3-000-lines-of-ai-code-six-months-later-i-realized-we-had-created-80c50fe6be23",
+          "target_url": "https://levelup.gitconnected.com/my-senior-engineer-rewrote-3-000-lines-of-ai-code-six-months-later-i-realized-we-had-created-80c50fe6be23",
+          "independent": false,
+          "title": "My Senior Engineer Rewrote 3,000 Lines of AI Code. Six Months Later, I Realized We Had Created…",
+          "summary": "He rebuilt the system because he refused to own code he could not explain. Then another engineer had to take his pager. Continue reading on Level Up Coding »",
+          "published_at": "2026-09-23T21:06:53+00:00",
           "date_precision": "time"
         }
       ],
