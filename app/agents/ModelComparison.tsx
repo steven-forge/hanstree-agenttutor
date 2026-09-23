@@ -266,10 +266,9 @@ export default function ModelComparison({
                         checked={checked}
                         disabled={disabled}
                         onChange={() => toggleModel(model.id)}
-                        aria-describedby={`model-cost-${model.id}`}
                       />
-                      <span>
-                        <strong>{model.name}</strong>
+                      <span className="model-picker-name">
+                        <span className="model-picker-name-text" title={model.name}>{model.name}</span>
                         {isNewModel(model.released_at) && (
                           <span
                             className="new-badge"
@@ -278,9 +277,6 @@ export default function ModelComparison({
                             NEW
                           </span>
                         )}
-                        <span id={`model-cost-${model.id}`} className="model-picker-cost">
-                          입력 {formatUsd(model.input_cost)} · 출력 {formatUsd(model.output_cost)} / 1M
-                        </span>
                       </span>
                     </label>
                   );
