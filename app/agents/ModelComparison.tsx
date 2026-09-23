@@ -44,6 +44,7 @@ type CompareRow = {
 type AgentModelGroup = { agent_slug: string; input_modalities: string; models: AgentModel[] };
 
 const MAX_SELECTED = 5;
+const MAX_LISTED = 6;
 
 function formatUsd(value: number): string {
   return `$${value}`;
@@ -166,7 +167,7 @@ export default function ModelComparison({
     for (const group of modelGroups) {
       const agent = agents.find((a) => a.slug === group.agent_slug);
       if (!agent) continue;
-      for (const model of group.models.slice(0, MAX_SELECTED)) {
+      for (const model of group.models.slice(0, MAX_LISTED)) {
         map.set(model.id, { model, agent, input_modalities: model.input_modalities ?? group.input_modalities });
       }
     }
@@ -253,7 +254,7 @@ export default function ModelComparison({
                 <a href={`/agents/${agent.slug}`}>{agent.title}</a> <span className="agent-provider-tag">{agent.provider}</span>
               </legend>
               <div className="model-picker-list">
-                {group.models.slice(0, MAX_SELECTED).map((model) => {
+                {group.models.slice(0, MAX_LISTED).map((model) => {
                   const checked = selectedIds.includes(model.id);
                   const disabled = !checked && limitReached;
                   return (
