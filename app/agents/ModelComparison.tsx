@@ -268,15 +268,24 @@ export default function ModelComparison({
                         disabled={disabled}
                         onChange={() => toggleModel(model.id)}
                       />
-                      <span className="model-picker-name">
-                        <span className="model-picker-name-text" title={model.name}>{model.name}</span>
-                        {isNewModel(model.released_at) && (
-                          <span
-                            className="new-badge"
-                            title={`${model.released_at} 출시${model.release_source ? ` · ${model.release_source}` : ""}`}
-                          >
-                            NEW
-                          </span>
+                      <span className="model-picker-name-wrap">
+                        <span className="model-picker-name">
+                          <span className="model-picker-name-text" title={model.name}>{model.name}</span>
+                          {isNewModel(model.released_at) && (
+                            <span
+                              className="new-badge"
+                              title={`${model.released_at} 출시${model.release_source ? ` · ${model.release_source}` : ""}`}
+                            >
+                              NEW
+                            </span>
+                          )}
+                        </span>
+                        {model.released_at ? (
+                          <time dateTime={model.released_at} className="model-picker-release-date">
+                            {`출시일 ${model.released_at}`}
+                          </time>
+                        ) : (
+                          <span className="model-picker-release-date">출시일 미확인</span>
                         )}
                       </span>
                     </label>
