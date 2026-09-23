@@ -1,8 +1,8 @@
 {
   "news": {
-    "checked_at": "2026-09-24T06:26:39.199974+09:00",
+    "checked_at": "2026-09-24T07:01:24.864900+09:00",
     "status": "partial",
-    "candidate_count": 1,
+    "candidate_count": 0,
     "archive_count": 280,
     "sources": [
       {
@@ -10,10 +10,10 @@
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 126,
+        "skipped_count": 127,
         "coverage_limited": false
       },
       {
@@ -99,10 +99,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 9,
+        "count": 13,
         "held_count": 0,
-        "excluded_count": 29,
-        "skipped_count": 6,
+        "excluded_count": 27,
+        "skipped_count": 1,
         "coverage_limited": false
       },
       {
@@ -124,7 +124,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 9,
+        "skipped_count": 10,
         "coverage_limited": false
       },
       {
@@ -165,10 +165,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 8,
+        "count": 6,
         "held_count": 0,
-        "excluded_count": 22,
-        "skipped_count": 8,
+        "excluded_count": 24,
+        "skipped_count": 6,
         "coverage_limited": false
       },
       {
@@ -264,7 +264,7 @@
         "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
       }
     ],
-    "pending_event_count": 376
+    "pending_event_count": 391
   },
   "documents": {
     "checked_at": "2026-09-24T06:26:34.253318+09:00",

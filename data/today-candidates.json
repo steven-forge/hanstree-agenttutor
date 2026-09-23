@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T06:26:08.384885+09:00",
-  "window_start": "2026-07-26T06:26:08.384885+09:00",
-  "window_end": "2026-09-24T06:26:08.384885+09:00",
+  "collected_at": "2026-09-24T07:00:56.172080+09:00",
+  "window_start": "2026-07-26T07:00:56.172080+09:00",
+  "window_end": "2026-09-24T07:00:56.172080+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -9,10 +9,10 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 126,
+      "skipped_count": 127,
       "coverage_limited": false
     },
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 6,
+      "excluded_count": 27,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -263,26 +263,11 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 280,
-  "candidates": [
-    {
-      "id": "347b65ce144a221e",
-      "title": "Sam Altman’s remarks at the United Nations Security Council",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/sam-altman-un-security-council-remarks",
-      "source_summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
-      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
-      "fetched_at": "2026-09-24T06:26:08+09:00",
-      "published_at": "2026-09-23T12:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "샘 알트먼의 유엔 안전보장이사회 연설",
-      "source_summary_ko": "OpenAI의 CEO인 샘 알트만 (Sam Altman) 이 유엔 안전보장이사회 연설에서 AI 안전, 인간 통제 및 국제 협력에 대해 논의합니다."
-    }
-  ],
-  "hourly_collected_at": "2026-09-24T06:26:39.199974+09:00",
-  "hourly_window_start": "2026-09-21T06:26:39.199974+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-24T07:01:24.864900+09:00",
+  "hourly_window_start": "2026-09-21T07:01:24.864900+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -7974,6 +7959,28 @@
           "summary": "",
           "published_at": "2026-09-23T21:08:52+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822973",
+          "target_url": "https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman",
+          "independent": false,
+          "title": "OpenAI agent hacked Medicare, Albanese expressed 'extreme concern' to Sam Altman",
+          "summary": "",
+          "published_at": "2026-09-23T21:41:26+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822950",
+          "target_url": "https://www.rnz.co.nz/news/world/1551084/openai-hacked-medicare-portal-australia-prime-minister-anthony-albanese-says",
+          "independent": false,
+          "title": "OpenAI Hacked Medicare Portal, Australia Prime Minister Anthony Albanese Says",
+          "summary": "",
+          "published_at": "2026-09-23T21:39:50+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8393,6 +8400,321 @@
           "title": "My Senior Engineer Rewrote 3,000 Lines of AI Code. Six Months Later, I Realized We Had Created…",
           "summary": "He rebuilt the system because he refused to own code he could not explain. Then another engineer had to take his pager. Continue reading on Level Up Coding »",
           "published_at": "2026-09-23T21:06:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "537199df11eeb99d",
+      "title": "Letter: AI should learn to let humanity grow",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823123",
+          "target_url": "https://gilroydispatch.com/letter-ai-should-learn-to-let-humanity-grow",
+          "independent": false,
+          "title": "Letter: AI should learn to let humanity grow",
+          "summary": "",
+          "published_at": "2026-09-23T21:55:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "efaf21b50ef6cec4",
+      "title": "Claude Opus 5.5: Things People Created",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823070",
+          "target_url": "https://favtutor.com/claude-opus-5-5-real-examples",
+          "independent": false,
+          "title": "Claude Opus 5.5: Things People Created",
+          "summary": "",
+          "published_at": "2026-09-23T21:50:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "028804ee0a7121aa",
+      "title": "OpenAI 'agent' hacked Australia's health service",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823062",
+          "target_url": "https://www.ft.com/content/56133ef4-377b-4e35-a939-f199ceb64507",
+          "independent": false,
+          "title": "OpenAI 'agent' hacked Australia's health service",
+          "summary": "",
+          "published_at": "2026-09-23T21:49:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d8a2c3a272120d1f",
+      "title": "The last IMO problem AI could not solve [video]",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823038",
+          "target_url": "https://www.youtube.com/watch?v=Nbwv5wHQoj0",
+          "independent": false,
+          "title": "The last IMO problem AI could not solve [video]",
+          "summary": "",
+          "published_at": "2026-09-23T21:47:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5e07d7d650b6dd99",
+      "title": "Surprise, Meta's latest AI gimmick is just underpaid humans",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822903",
+          "target_url": "https://www.avclub.com/meta-muse-ai-human-labor",
+          "independent": false,
+          "title": "Surprise, Meta's latest AI gimmick is just underpaid humans",
+          "summary": "",
+          "published_at": "2026-09-23T21:34:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e9f704e805a80fd8",
+      "title": "Cassis: Context Maintenance for Analytics Agents",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822887",
+          "target_url": "https://getcassis.com/product",
+          "independent": false,
+          "title": "Cassis: Context Maintenance for Analytics Agents",
+          "summary": "",
+          "published_at": "2026-09-23T21:34:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fd3c16c79a8085a1",
+      "title": "Claude's Load-Bearing Seams",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822864",
+          "target_url": "https://madradavid.com/claudes-load-bearing-seams",
+          "independent": false,
+          "title": "Claude's Load-Bearing Seams",
+          "summary": "",
+          "published_at": "2026-09-23T21:31:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "856f8e8527e23ab7",
+      "title": "AI Agent Goal Hijack: How Attackers Turn an Agent's Own Tools Against It",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822862",
+          "target_url": "https://darkmarc.substack.com/p/hijacking-ai-agents-how-an-agents",
+          "independent": false,
+          "title": "AI Agent Goal Hijack: How Attackers Turn an Agent's Own Tools Against It",
+          "summary": "",
+          "published_at": "2026-09-23T21:30:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f2d02e470399e883",
+      "title": "An 'AI freeze' could make big AI companies bigger and hurt smaller firms",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822860",
+          "target_url": "https://www.npr.org/2026/09/23/nx-s1-5973306/ai-slowdown-debate-openai-anthropic",
+          "independent": false,
+          "title": "An 'AI freeze' could make big AI companies bigger and hurt smaller firms",
+          "summary": "",
+          "published_at": "2026-09-23T21:30:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3c07691e4a009478",
+      "title": "My Wedding Invitations Became an Experiment in AI Memory",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822844",
+          "target_url": "https://pureooze.com/blog/posts/2026-09-22-my-wedding-invitations-became-an-experiment-in-ai-memory",
+          "independent": false,
+          "title": "My Wedding Invitations Became an Experiment in AI Memory",
+          "summary": "",
+          "published_at": "2026-09-23T21:28:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "df76eac0b5fca025",
+      "title": "The Chess Machine That Fooled Napoleon (Except It Probably Didn’t)",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@Theforgottenarchive/the-chess-machine-that-fooled-napoleon-except-it-probably-didnt-cf9389b58c09",
+          "target_url": "https://medium.com/@Theforgottenarchive/the-chess-machine-that-fooled-napoleon-except-it-probably-didnt-cf9389b58c09",
+          "independent": false,
+          "title": "The Chess Machine That Fooled Napoleon (Except It Probably Didn’t)",
+          "summary": "The Chess Machine That Fooled Napoleon (Except It Probably Didn’t) Continue reading on Medium »",
+          "published_at": "2026-09-23T21:48:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2483ee6079de090f",
+      "title": "AI Marketing Agent: Build On-Brand Personalization Campaigns From a Sentence",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://jonathan-personyze.medium.com/ai-marketing-agent-build-on-brand-personalization-campaigns-from-a-sentence-1708fb7cbc11",
+          "target_url": "https://jonathan-personyze.medium.com/ai-marketing-agent-build-on-brand-personalization-campaigns-from-a-sentence-1708fb7cbc11",
+          "independent": false,
+          "title": "AI Marketing Agent: Build On-Brand Personalization Campaigns From a Sentence",
+          "summary": "Most “AI” in marketing tools writes you a subject line. An AI agent is a different thing: it doesn’t hand back a suggestion, it does the… Continue reading on Medium »",
+          "published_at": "2026-09-23T21:47:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ee290ef70a0abd69",
+      "title": "My MakesYouFluent Reviews After 3 Months: I Started With French Music (And Things Got Out of Hand)",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@avan01125/my-makesyoufluent-reviews-after-3-months-i-started-with-french-music-and-things-got-out-of-hand-f5af4106169e",
+          "target_url": "https://medium.com/@avan01125/my-makesyoufluent-reviews-after-3-months-i-started-with-french-music-and-things-got-out-of-hand-f5af4106169e",
+          "independent": false,
+          "title": "My MakesYouFluent Reviews After 3 Months: I Started With French Music (And Things Got Out of Hand)",
+          "summary": "I didn’t start learning French because I had some grand plan to become bilingual. Continue reading on Medium »",
+          "published_at": "2026-09-23T21:47:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "26194971c7f206ab",
+      "title": "# Nano Banana 2.5 and the “Spicy Mayo” Arena Blind Test: An In-Depth Technical Analysis",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@yoxi957/nano-banana-2-5-and-the-spicy-mayo-arena-blind-test-an-in-depth-technical-analysis-d021647095b6",
+          "target_url": "https://medium.com/@yoxi957/nano-banana-2-5-and-the-spicy-mayo-arena-blind-test-an-in-depth-technical-analysis-d021647095b6",
+          "independent": false,
+          "title": "# Nano Banana 2.5 and the “Spicy Mayo” Arena Blind Test: An In-Depth Technical Analysis",
+          "summary": "**TL;DR:** The unreleased test model codenamed **“Spicy Mayo”** on Image Arena has become a key signal for tracking Google DeepMind’s… Continue reading on Medium »",
+          "published_at": "2026-09-23T21:43:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1bf5e3fa7627a7e9",
+      "title": "Old Instincts, New Agents",
+      "first_seen": "2026-09-24T07:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@krithikanithyanandam/old-instincts-new-agents-6b7d9e187fea",
+          "target_url": "https://medium.com/@krithikanithyanandam/old-instincts-new-agents-6b7d9e187fea",
+          "independent": false,
+          "title": "Old Instincts, New Agents",
+          "summary": "Jev made me think about an old instinct Continue reading on Medium »",
+          "published_at": "2026-09-23T21:33:38+00:00",
           "date_precision": "time"
         }
       ],
