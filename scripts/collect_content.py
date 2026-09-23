@@ -36,6 +36,21 @@ MAX_RELEASE_PAGES = 20
 RELEASES_PER_PAGE = 30
 PRERELEASE_RE = re.compile(r'(?i)\b(alpha|beta|rc|preview|nightly)\b|[.-](alpha|beta|rc|preview|nightly)')
 RELEASE_SOURCE_IDS = {"codex-releases", "gemini-releases", "claude-releases", "grok-releases"}
+OFFICIAL_NEWS_SOURCE_IDS = {"openai-news", "google-ai", "anthropic-news", "xai-news"}
+# 뉴스룸 추천 카드가 /news/ 대신 모델 전용 슬러그로 연결되는 경우(/claude-opus-5-5, /claude-sonnet-5, /claude-fable-and-mythos-5-1). 같은 호스트·단일 경로 세그먼트만.
+MODEL_SLUG_RE = re.compile(r'^/claude-[a-z]+(?:-and-[a-z]+)?(?:-\d+)+$')
+# 수집 규칙보다 넓은 감지용: 'claude'와 숫자가 든 단일 세그먼트. 수집 규칙에 안 걸리면 보류로 드러낸다.
+MODEL_LINK_RE = re.compile(r'^/[a-z0-9-]*claude[a-z0-9-]*\d[a-z0-9-]*$')
+# ponytail: 보수적 출시 판정. 모델명+버전이 제목에 있고, 출시 동사가 있거나 URL이 모델 전용 슬러그일 때만 high.
+MODEL_NAME_RE = re.compile(r'(?i)\b(claude|gpt|gemini|grok)[\s-]?(opus|sonnet|haiku|fable|mythos|pro|flash|ultra|nano|mini)?[\s-]?\d')
+LAUNCH_TITLE_RE = re.compile(r'(?i)^(introducing|announcing|meet)\b|\b(now available|launch(es|ed|ing)?|releas(e|es|ed|ing))\b')
+
+
+def is_model_launch(title: str, canonical_url: str) -> bool:
+    if not MODEL_NAME_RE.search(title):
+        return False
+    path = urllib.parse.urlsplit(canonical_url).path.rstrip("/")
+    return bool(LAUNCH_TITLE_RE.search(title) or MODEL_SLUG_RE.match(path))
 
 ALLOWED_HOSTS = {
     "openai.com", "www.openai.com", "learn.chatgpt.com", "developers.openai.com",
@@ -729,6 +744,9 @@ def make_candidate(title: str, source_id: str, source_name: str, canonical_url: 
         "fetched_at": datetime.now(KST).isoformat(timespec="seconds"),
         **date_fields,
     }
+    # 공식 원문만으로 확인된 새 모델 출시는 독립 매체 수와 무관하게 높음. 신규 후보에만 붙고 기존 기사는 merge_archive가 건드리지 않는다.
+    if source_id in OFFICIAL_NEWS_SOURCE_IDS and is_model_launch(title, canonical_url):
+        candidate["importance"] = "high"
     release_title = translated_release_title(title, source_id)
     if release_title:
         candidate["title_ko"] = release_title
@@ -1191,20 +1209,42 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
 
     article_urls = []
     seen = set()
+    unrecognized_model_links = []
     for raw in raw_links:
         joined = urllib.parse.urljoin(index_url, raw)
         p = urllib.parse.urlsplit(joined)
         if (p.hostname or "").lower() != base_host:
             continue
         clean_path = p.path.rstrip("/")
-        if clean_path != "/news" and clean_path.startswith("/news/"):
+        is_news = clean_path != "/news" and clean_path.startswith("/news/")
+        if is_news or (source_id == "anthropic-news" and MODEL_SLUG_RE.match(clean_path)):
             c_url = canonicalize_url(joined)
             if c_url not in seen:
                 seen.add(c_url)
                 article_urls.append(c_url)
+        elif source_id == "anthropic-news" and MODEL_LINK_RE.match(clean_path) and clean_path not in unrecognized_model_links:
+            unrecognized_model_links.append(clean_path)
 
     if not article_urls:
         raise RuntimeError(f"{source_name}: HTML 기사 목록을 추출할 수 없습니다 (형식 변경 의심).")
+
+    # 목록 카드 <a href=...>…<time>Sep 1, 2026</time>…</a>의 공식 날짜를 URL별로 보관. 원문에 정확한 일자가 없을 때만 fallback(정밀도 day).
+    index_dates = {}
+    for href, inner in re.findall(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>', html_text, re.I):
+        t = re.search(r'<time\b[^>]*>\s*([A-Z][a-z]+ \d{1,2}, \d{4})\s*</time>', inner)
+        if not t:
+            continue
+        for fmt in ("%b %d, %Y", "%B %d, %Y"):
+            try:
+                index_dates.setdefault(canonicalize_url(urllib.parse.urljoin(index_url, href)), datetime.strptime(t.group(1), fmt).strftime("%Y-%m-%d"))
+                break
+            except ValueError:
+                continue
+
+    # 모델 전용 링크처럼 보이는데 수집 규칙에 안 걸리면 count=0을 정상으로 오인하지 않도록 보류로 드러낸다.
+    if unrecognized_model_links:
+        stats["held_count"] += len(unrecognized_model_links)
+        stats["unrecognized_model_links"] = unrecognized_model_links
 
     old_urls.intersection_update(article_urls)
     for art_url in article_urls:
@@ -1274,6 +1314,15 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
             if m:
                 date_str = m.group(1).strip()
 
+        if not date_str and source_id == "anthropic-news" and MODEL_SLUG_RE.match(urllib.parse.urlsplit(art_url).path.rstrip("/")):
+            # 모델 발표 랜딩은 발행 날짜를 <p class="eyebrow">September 22, 2026</p>로 표시한다.
+            m = re.search(r'<p\b[^>]*class=["\'][^"\']*\beyebrow\b[^"\']*["\'][^>]*>\s*([A-Z][a-z]+ \d{1,2}, \d{4})\s*</p>', art_html)
+            if m:
+                try:
+                    date_str = datetime.strptime(m.group(1), "%B %d, %Y").strftime("%Y-%m-%d")
+                except ValueError:
+                    pass
+
         if not date_str:
             # 본문에 날짜만 표시된 경우("Sep 18, 2026"): 시각 불명이므로 날짜만 넘겨 아래 날짜 전용 경로가 처리.
             m = re.search(
@@ -1286,6 +1335,10 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
                     date_str = datetime.strptime(m.group(1), "%b %d, %Y").strftime("%Y-%m-%d")
                 except ValueError:
                     pass
+
+        if not date_str:
+            # 원문에 "September 2026"처럼 월만 있는 경우: 추측하지 않고 목록 카드의 공식 <time> 날짜를 쓴다.
+            date_str = index_dates.get(art_url)
 
         # 날짜·발행 메타데이터를 전혀 확인할 수 없으면 보류. 별도 큐 없이 다음 60일 실행에서 다시 확인한다.
         pub_dt = parse_iso(date_str)
@@ -1470,6 +1523,8 @@ def collect_news() -> int:
         info = f"  - {s['name']}: {s['status']} (신규 {s['count']}건, 기존 건너뜀 {s['skipped_count']}건, 보류 {s['held_count']}건)"
         if s["coverage_limited"]:
             info += " [출처 제공 범위가 60일에 못 미침]"
+        if s.get("unrecognized_model_links"):
+            info += f" [수집 규칙에 없는 모델 링크: {', '.join(s['unrecognized_model_links'])}]"
         if "error" in s:
             info += f" [오류: {s['error']}]"
         print(info)

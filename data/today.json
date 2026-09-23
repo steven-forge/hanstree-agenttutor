@@ -1,8 +1,8 @@
 {
   "edition_date": "2026-09-23",
-  "window_start": "2026-07-25T06:24:14.048281+09:00",
-  "window_end": "2026-09-23T06:24:14.048281+09:00",
-  "collected_at": "2026-09-23T07:36:30.812278+09:00",
+  "window_start": "2026-07-25T09:19:33.472912+09:00",
+  "window_end": "2026-09-23T09:19:33.472912+09:00",
+  "collected_at": "2026-09-23T09:19:33.472912+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -105,7 +105,7 @@
         }
       ],
       "independent_source_count": 2,
-      "importance": "normal"
+      "importance": "high"
     },
     {
       "id": "23966244d47d35ba",
@@ -125,6 +125,20 @@
         "bug_fixes": "트리 내 철자로 판단되는 심볼릭 경로를 통한 고정된 쓰기: 쓰기 랜드가 있는 프롬프트 이름 및 'acceptEdits` 는 규칙 및 자동 모드가 더 이상 외부에서 하나의 랜딩을 승인하지 않도록 허용합니다.\n안전 검사가 검토를 거부할 때 자동 모드에서 작업을 반복해서 재시도하는 문제가 수정되었습니다. 이제 재시도해도 도움이 되지 않는다는 점에 유의하여 작업이 한 번만 거부됩니다.",
         "chores": "자체 호스팅된 러너: '--configure-git` 아래에 서명하지 못하는 수정된 수명 주기 훅 커밋\nWindows: `~/.claude/session-env', 'image-cache` 또는 기타 정리된 폴더를 재배치하는 데 사용되는 디렉토리 심볼릭 링크 또는 접속을 삭제하는 백그라운드 정리 수정"
       }
+    },
+    {
+      "id": "3fcefd9c665fb2c2",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "source_summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "fetched_at": "2026-09-23T09:15:02+09:00",
+      "published_at": "2026-09-22T12:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "GPT ‑ 6 Astra로 연구 시간과 비용을 병렬로 절반으로 줄이기",
+      "source_summary_ko": "GPT ‑ 6 Astra를 통해 Parallel의 에이전트는 이전 모델에 비해 절반의 시간과 절반의 비용으로 노동 시장 데이터를 연구하고 합성할 수 있었습니다."
     },
     {
       "id": "03d2992c5a1bb0eb",
@@ -155,6 +169,43 @@
       "title_ko": "효과적인 제3자 평가를 위한 우선순위 및 원칙",
       "source_summary_ko": "OpenAI는 외부 전문가가 AI 모델의 안전 주장과 근거를 독립적으로 검증해야 한다고 제안했습니다.\n중점 점검 대상은 개발·배포 단계의 안전성 근거, 실제 환경의 보호 장치, 위험 능력 평가 등입니다.\n평가자의 독립성과 충분한 접근권을 보장하되, 민감한 정보 보호와 명확한 책임도 함께 요구했습니다.",
       "source_summary_provenance": "article_full_text_3line"
+    },
+    {
+      "id": "0dd3bed5c7dd1c27",
+      "title": "Introducing Claude Opus 5.5",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/claude-opus-5-5",
+      "source_summary": "Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-23T09:15:28+09:00",
+      "published_on": "2026-09-22",
+      "date_precision": "day",
+      "importance": "high",
+      "title_ko": "Claude Opus 5.5 소개",
+      "source_summary_ko": "Opus 5.5는 Opus 5에서 크게 향상된 단계입니다.\n또한 Opus 5.5는 Opus 5보다 30% 이상 빠르게 출력을 생성합니다.\nAnthropic은 일반적인 작업에서 Opus 5보다 실행 비용이 약 40% 낮다고 설명합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "sources": [
+        {
+          "source_id": "anthropic-news",
+          "name": "Anthropic News",
+          "url": "https://www.anthropic.com/claude-opus-5-5",
+          "independent": false
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance",
+          "independent": true
+        }
+      ],
+      "independent_source_count": 2
     },
     {
       "id": "08ffdb24bebd9aa2",
@@ -264,6 +315,7 @@
       "fetched_at": "2026-09-23T06:25:03+09:00",
       "published_at": "2026-09-21T00:00:00+00:00",
       "date_precision": "time",
+      "importance": "high",
       "title_ko": "Grok 4.7 소개",
       "source_summary_ko": "SpaceXAI는 코딩과 지식 업무용 Grok 4.7을 공개하며, 더 긴 작업 수행과 자체 결과 검토 능력을 강조했습니다.\n새 대형 기반 모델과 강화된 안전장치를 적용했고, API 기본 요금은 입력 100만 토큰당 2달러·출력 6달러입니다.\nGrok Build와 Cursor, API에서 제공되며 Grok Build에서는 무료로 시험할 수 있습니다.",
       "source_summary_provenance": "article_full_text_3line"
@@ -1807,6 +1859,22 @@
       "published_on": "2026-09-01",
       "date_precision": "day",
       "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다."
+    },
+    {
+      "id": "e7232d52f37fd859",
+      "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "source_summary": "Our most advanced models for coding and knowledge work. Their research capabilities also offer an early glimpse of how AI models will contribute to scientific progress.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-23T09:20:00+09:00",
+      "published_on": "2026-09-01",
+      "date_precision": "day",
+      "importance": "high",
+      "title_ko": "Claude Fable 5.1 및 Claude Mythos 5.1 소개",
+      "source_summary_ko": "Claude Fable 5.1과 Mythos 5.1은 코딩과 지식 업무를 위한 새 모델로 발표됐습니다.\n두 모델은 같은 기반이지만 안전장치가 달라 Fable은 일반 제공되고 Mythos는 검증된 기관에서만 사용할 수 있습니다.\nAnthropic은 Fable 5.1의 가격·데이터 보존·안전장치를 개선했다고 설명합니다.",
+      "source_summary_provenance": "article_full_text_3line"
     },
     {
       "id": "0b5a688ac44522d6",

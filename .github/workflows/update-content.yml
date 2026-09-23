@@ -44,7 +44,6 @@ jobs:
 
       - name: Collect news (60-day window, merged into data/today.json)
         id: collect_news
-        if: github.event.schedule == '15 21 * * *' || github.event_name == 'workflow_dispatch'
         run: python3 scripts/collect_content.py news
         continue-on-error: true
 
@@ -63,6 +62,11 @@ jobs:
 
       - name: Collect hourly news (external sources, auto-publish)
         id: collect_hourly
+        env:
+          YOUTUBE_API_KEY: ${{ vars.ENABLE_YOUTUBE_NEWS == 'true' && secrets.YOUTUBE_API_KEY || '' }}
+          X_BEARER_TOKEN: ${{ vars.ENABLE_X_NEWS == 'true' && secrets.X_BEARER_TOKEN || '' }}
+          REDDIT_CLIENT_ID: ${{ vars.ENABLE_REDDIT_NEWS == 'true' && secrets.REDDIT_CLIENT_ID || '' }}
+          REDDIT_CLIENT_SECRET: ${{ vars.ENABLE_REDDIT_NEWS == 'true' && secrets.REDDIT_CLIENT_SECRET || '' }}
         run: python3 scripts/collect_hourly_news.py
         continue-on-error: true
 

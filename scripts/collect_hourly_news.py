@@ -81,6 +81,20 @@ def title_tokens(title: str) -> set[str]:
     return {TOKEN_STEMS.get(token, token) for token in tokens}
 
 
+MODEL_VERSION_RE = re.compile(r"\b(?:(?:claude\s+)?(opus|sonnet|haiku)|(gpt|gemini|grok|claude))[\s-]+(\d+(?:[.-]\d+)*)\b", re.I)
+LAUNCH_VERB_RE = re.compile(r"\b(?:introduc\w*|announc\w*|launch\w*|releas\w*|unveil\w*|debut\w*|arriv\w*|is here|now available)\b", re.I)
+OTHER_EVENT_RE = re.compile(r"\b(?:patch\w*|updat\w*|fix\w*|review\w*|analys\w*|benchmark\w*|vs\.?|versus)\b", re.I)
+LAUNCH_STAGE_RE = re.compile(r"\b(?:beta|preview\w*|early access|general availability|ga|bedrock|vertex|azure)\b", re.I)
+
+
+def model_ids(title: str) -> set[tuple[str, str]]:
+    return {(family or other, version.replace("-", ".")) for family, other, version in MODEL_VERSION_RE.findall(title)}
+
+
+def is_launch_title(title: str) -> bool:
+    return bool(LAUNCH_VERB_RE.search(title) and not OTHER_EVENT_RE.search(title))
+
+
 def event_key(title: str) -> set[str]:
     """고유명사·숫자 토큰(대문자 시작 또는 숫자 포함)을 사건 키로 쓴다. 2개 미만이면 전체 토큰."""
     salient = set()
@@ -92,6 +106,14 @@ def event_key(title: str) -> set[str]:
 
 def same_event(title_a: str, title_b: str) -> bool:
     # ponytail: 서로 다른 사건의 같은 제품 기사는 합치지 않는다. 짧게 표현된 동일 사건은 후보로 남을 수 있다.
+    models_a, models_b = model_ids(title_a), model_ids(title_b)
+    if models_a and models_b:
+        if models_a != models_b or is_launch_title(title_a) != is_launch_title(title_b):
+            return False
+        if {s.lower() for s in LAUNCH_STAGE_RE.findall(title_a)} != {s.lower() for s in LAUNCH_STAGE_RE.findall(title_b)}:
+            return False
+        if len(models_a) == 1 and is_launch_title(title_a):
+            return True
     if len(event_key(title_a) & event_key(title_b)) < 2:
         return False
     tokens_a, tokens_b = title_tokens(title_a), title_tokens(title_b)
@@ -106,6 +128,11 @@ def independent_count(sources: list[dict]) -> int:
 
 def importance_for(count: int, high_at: int) -> str:
     return "high" if count >= high_at else "normal"
+
+
+def merged_importance(previous: str, count: int, high_at: int) -> str:
+    """공식 발표가 부여한 high는 이후 독립 출처 수 재계산으로 낮아지지 않는다."""
+    return "high" if previous == "high" or importance_for(count, high_at) == "high" else "normal"
 
 
 def public_source(item: dict) -> dict:
@@ -469,7 +496,7 @@ def collect_hourly() -> int:
             sources_list.append(public_source(item) if kind == "article" else event_source(item))
             if kind == "article":
                 count = independent_count(sources_list)
-                obj["independent_source_count"], obj["importance"] = count, importance_for(count, high_at)
+                obj["independent_source_count"], obj["importance"] = count, merged_importance(obj.get("importance"), count, high_at)
                 updated_articles += 1
         for u in (item["url"], item["target_url"]):
             known[u] = hit
@@ -489,7 +516,7 @@ def collect_hourly() -> int:
                 changed = True
         if changed:
             count = independent_count(sources_list)
-            article["independent_source_count"], article["importance"] = count, importance_for(count, high_at)
+            article["independent_source_count"], article["importance"] = count, merged_importance(article.get("importance"), count, high_at)
             updated_articles += 1
     events = pending_events
 
@@ -547,6 +574,17 @@ def self_check() -> None:
     assert same_event("OpenAI launches GPT-6 with new reasoning mode", "GPT-6 is here: what OpenAI's new model can do")
     assert not same_event("OpenAI launches GPT-6", "OpenAI launches new safety team")
     assert same_event("Anthropic Releases Claude 5 Agent SDK", "Anthropic's Claude 5 Agent SDK arrives for developers")
+    assert same_event(
+        "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+        "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
+    )
+    assert not same_event(
+        "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
+        "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
+    )
+    assert not same_event("Anthropic launches Claude Opus 5.5", "Anthropic patches Claude Opus 5.5")
+    assert not same_event("Anthropic launches Claude Opus 5.5 beta", "Anthropic launches Claude Opus 5.5 general availability")
+    assert merged_importance("high", 1, 3) == "high" and merged_importance("normal", 1, 3) == "normal"
     sources = [
         {"source_id": "techcrunch-ai", "url": "https://techcrunch.com/a", "independent": True},
         {"source_id": "hacker-news", "url": "https://news.ycombinator.com/item?id=1", "target_url": "https://techcrunch.com/a", "independent": False},

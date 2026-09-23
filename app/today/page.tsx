@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 
 const PAGE_SIZE = 10;
 const RELEASE_SOURCE_IDS = new Set(["codex-releases", "gemini-releases", "claude-releases", "grok-releases"]);
+const OFFICIAL_NEWS_SOURCE_IDS = new Set(["openai-news", "google-ai", "anthropic-news", "xai-news"]);
 
 function formatKstTime(isoString: string | null | undefined): string {
   if (!isoString) return "미정";
@@ -203,9 +204,14 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                             <span
                               className={article.importance === "high" ? "status-confirmed" : "status-conditional"}
                               style={{ marginLeft: "8px", fontSize: "0.72rem" }}
-                              title="서로 독립된 매체 2곳 이상에서 확인되면 보통, 3곳 이상이면 높음"
+                              title={
+                                OFFICIAL_NEWS_SOURCE_IDS.has(article.source_id) && article.importance === "high"
+                                  ? "공식 출처 원문으로 확인된 새 모델 출시는 높음"
+                                  : "서로 독립된 매체 2곳 이상에서 확인되면 보통, 3곳 이상이면 높음"
+                              }
                             >
-                              중요도 {article.importance === "high" ? "높음" : "보통"} · 독립 출처 {article.independent_source_count ?? 0}곳
+                              중요도 {article.importance === "high" ? "높음" : "보통"} ·{" "}
+                              {article.independent_source_count == null ? "공식 발표" : `독립 출처 ${article.independent_source_count}곳`}
                             </span>
                           )}
                         </span>

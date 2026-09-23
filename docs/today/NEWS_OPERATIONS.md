@@ -8,10 +8,16 @@
 
 ## -1. 외부 뉴스 매시간 자동 수집 (`scripts/collect_hourly_news.py`, 현재 운영 기준)
 
-- **주기**: GitHub Actions `.github/workflows/update-content.yml`이 매시 정각(UTC `0 * * * *`)에 `scripts/collect_hourly_news.py`를 실행한다. 06:15 KST(UTC 21:15) 실행에서는 기존 공식 뉴스/문서 수집(`collect_content.py news`/`documents`)도 함께 실행되고, `workflow_dispatch` 수동 실행은 세 단계를 모두 실행한다.
+- **주기**: GitHub Actions `.github/workflows/update-content.yml`이 매시 정각(UTC `0 * * * *`)에 공식 뉴스 수집(`collect_content.py news`)과 외부 뉴스 매시간 자동 수집(`scripts/collect_hourly_news.py`)을 이 순서로 매번 함께 실행해, 같은 모델을 다루는 외부 보도가 먼저 게시된 공식 기사에 이어 붙는다. 06:15 KST(UTC 21:15) 실행에서만 문서 출처 점검(`collect_content.py documents`)이 추가로 실행되고, `workflow_dispatch` 수동 실행은 세 단계를 모두 실행한다.
 - **출처 목록**: `data/news-sources.json` 한 파일에 출처 URL·독립 여부·필요 환경 변수를 정의한다. `window_hours`(기본 72시간)와 `publish.min_independent`(기본 2), `publish.high_importance_at`(기본 3)도 이 파일에서 조정한다.
-- **자동 게시 조건**: 같은 사건을 다루는 서로 다른 등록 도메인의 독립 출처가 2곳 이상 모이면 자동으로 `data/today.json`에 게시된다. 독립 출처가 3곳 이상이면 `importance: "high"`로 표시된다. 독립 출처가 1곳뿐이거나 커뮤니티·소셜 신호만 있으면 `data/today-candidates.json`의 `events`에 후보로 남는다.
-- **API 키 없는 출처(`not_configured`)**: YouTube·X·Reddit처럼 `required_env`가 정의된 출처는 해당 환경 변수가 GitHub Actions Secrets에 없으면 네트워크 요청 없이 `status: "not_configured"`로 보고된다. TLDR AI는 공개 RSS(`https://tldr.tech/ai/rss`)가 현재 404를 반환해 `not_configured_reason`을 지정해 두었고, 같은 방식으로 요청 없이 `not_configured` + 사유가 `data/content-health.json`·`data/today-candidates.json`의 source report에 남는다.
+- **자동 게시 조건**: 같은 사건을 다루는 서로 다른 등록 도메인의 독립 출처가 2곳 이상 모이면 자동으로 `data/today.json`에 게시된다. 독립 출처가 3곳 이상이면 `importance: "high"`로 표시된다. 공식 원문으로 확인된 새 모델 출시는 독립 출처 수와 무관하게 중요도 높음으로 게시한다. 독립 출처가 1곳뿐이거나 커뮤니티·소셜 신호만 있으면 `data/today-candidates.json`의 `events`에 후보로 남는다.
+- **API 키 없는 출처(`not_configured`)**: YouTube·X·Reddit처럼 `required_env`가 정의된 출처는 해당 환경 변수가 수집기에 전달되지 않으면 네트워크 요청 없이 `status: "not_configured"`로 보고된다.
+- **공식 API 연동 opt-in 설정 (기본값: 세 출처 모두 호출 보류)**: `update-content.yml`의 `Collect hourly news` 스텝은 `YOUTUBE_API_KEY`·`X_BEARER_TOKEN`·`REDDIT_CLIENT_ID`·`REDDIT_CLIENT_SECRET`을 각각 repository Variable `ENABLE_YOUTUBE_NEWS`·`ENABLE_X_NEWS`·`ENABLE_REDDIT_NEWS`가 문자열 `true`일 때만 같은 이름의 repository Secret에서 전달하고, 그 외에는 빈 문자열을 전달해 기존 `not_configured` 보호가 그대로 동작한다. 실제로 값을 켜려면 순서대로 진행한다:
+  1. 출처별 공식 이용 권한·요금·쿼터를 먼저 확인한다: [YouTube Data API Search](https://developers.google.com/youtube/v3/docs/search/list)(일일 쿼터 소모), [X API 최근 검색](https://docs.x.com/x-api/posts/search/quickstart/recent-search)(승인된 앱·토큰 필요), Reddit([Responsible Builder Policy](https://support.reddithelp.com/hc/en-us/articles/42728983564564-Responsible-Builder-Policy), [Data API Terms](https://redditinc.com/policies/data-api-terms))는 명시적 승인과 상업적 이용 조건이 붙을 수 있다. 정확한 유료 요금은 계정 조건마다 달라 여기서 추정하지 않는다.
+  2. 필요한 만큼만 GitHub repository Secret([공식 문서](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets))에 `YOUTUBE_API_KEY`·`X_BEARER_TOKEN`·`REDDIT_CLIENT_ID`·`REDDIT_CLIENT_SECRET` 중 해당 값을 등록한다.
+  3. 해당 출처의 repository Variable(`ENABLE_YOUTUBE_NEWS`/`ENABLE_X_NEWS`/`ENABLE_REDDIT_NEWS`)을 `true`로 설정한다.
+  4. 다음 정시 수집 이후 `data/content-health.json`에서 해당 출처 상태가 `not_configured`를 벗어났는지 확인한다.
+  활성화 전까지는 승인·계정 신청이나 실제 API 요청을 하지 않는다.
 - **실패 감지**: 워크플로 마지막 단계가 뉴스/문서/시간별 수집 세 스텝의 outcome을 확인해 하나라도 `failure`(모든 출처 실패)면 워크플로 자체를 실패로 표시한다. 부분 실패(`partial`)는 워크플로를 막지 않는다.
 - **동시 실행 방지**: 기존 `concurrency: group: update-content`가 일일·시간별 실행 모두에 적용되어 겹쳐 실행되지 않는다.
 - **커밋 대상**: 시간별 실행도 `data/today.json`, `data/today-candidates.json`, `data/content-health.json`, `.source-cache/content.json` 변경분을 빌드 후 커밋·푸시한다(기존 커밋 단계 그대로 재사용).
