@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T12:00:49.114600+09:00",
-  "window_start": "2026-07-25T12:00:49.114600+09:00",
-  "window_end": "2026-09-23T12:00:49.114600+09:00",
+  "collected_at": "2026-09-23T13:00:48.706459+09:00",
+  "window_start": "2026-07-25T13:00:48.706459+09:00",
+  "window_end": "2026-09-23T13:00:48.706459+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -31,10 +31,10 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
-      "excluded_count": 159,
-      "skipped_count": 21,
+      "excluded_count": 160,
+      "skipped_count": 22,
       "coverage_limited": false
     },
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 3,
+      "excluded_count": 28,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -263,29 +263,11 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 267,
-  "candidates": [
-    {
-      "id": "6e556c3af2807b57",
-      "title": "0.156.1",
-      "source_id": "codex-releases",
-      "source_name": "Codex Releases",
-      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.156.1",
-      "source_summary": "## New Features - Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. (#47405) ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.156.0...rust-v0.156.1 - #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog (#47332) @imac-oai",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-23T12:00:52+09:00",
-      "published_at": "2026-09-23T02:41:36+00:00",
-      "date_precision": "time",
-      "title_ko": "Codex 0.156.1 버전 출시",
-      "source_summary_ko": "# # 새로운 기능 - 모델 선택기에서 GPT-6 SOL 또는 GPT-6 LUNA를 선택합니다. 속도 제한 스위치 프롬프트는 이제 GPT-6 Luna를 권장합니다. (# 47405) # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.156.0... rust-v0.156.1 - # 47405 [핫픽스 0.156.0] 모델 카탈로그에 GPT-6 Sol 및 Luna 추가 (# 47332) @ imac-oai",
-      "release_notes_ko": {
-        "new_features": "모델 선택기에서 GPT-6 SOL 또는 GPT-6 LUNA를 선택합니다. 속도 제한 스위치 프롬프트는 이제 GPT-6 Luna를 권장합니다."
-      }
-    }
-  ],
-  "hourly_collected_at": "2026-09-23T12:01:17.184891+09:00",
-  "hourly_window_start": "2026-09-20T12:01:17.184891+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-23T13:01:06.743595+09:00",
+  "hourly_window_start": "2026-09-20T13:01:06.743595+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1016,6 +998,17 @@
           "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
           "summary": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach.",
           "published_at": "2026-09-22T21:56:43+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811361",
+          "target_url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms",
+          "independent": false,
+          "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
+          "summary": "",
+          "published_at": "2026-09-23T03:38:12+00:00",
           "date_precision": "time"
         }
       ],
@@ -2749,6 +2742,195 @@
           "title": "Architecture of the Maison Co-existence AI (Kopu System)",
           "summary": "DOOR2— Technical Design of the Three‑Device Structure Supporting a Shared‑Living Community Continue reading on Maison Momokana｜World Architecture »",
           "published_at": "2026-09-23T02:57:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3fce409b873553bd",
+      "title": "United Nations: AI Agents, Misalignment and the Risk of Losing Human Control [pdf]",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811485",
+          "target_url": "https://www.un.org/independent-international-scientific-panel-ai/sites/default/files/2026-09/Thematic%20Brief_AI%20Agents%2C%20Misalignment%20and%20the%20Risk%20of%20Losing%20Human%20Control_Evidence%20from%20the%20OpenAI-Hugging%20Face%20Incident_Independent%20International%20Scientific%20Panel%20on%20AI_Advance%20Unedited%20Version%201_21%20Sept%202026.pdf",
+          "independent": false,
+          "title": "United Nations: AI Agents, Misalignment and the Risk of Losing Human Control [pdf]",
+          "summary": "",
+          "published_at": "2026-09-23T04:00:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "37638ed31356dd25",
+      "title": "A Machine Beat Me at Chess. I'm Still Rooting for AI",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811408",
+          "target_url": "https://www.thenextmove.org/p/a-machine-beat-me-at-chess-im-still",
+          "independent": false,
+          "title": "A Machine Beat Me at Chess. I'm Still Rooting for AI",
+          "summary": "",
+          "published_at": "2026-09-23T03:46:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28ff5331519addf7",
+      "title": "Specs cut defects in AI-generated code from 148 to 23 across five models",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811333",
+          "target_url": "https://arxiv.org/abs/2609.23270",
+          "independent": false,
+          "title": "Specs cut defects in AI-generated code from 148 to 23 across five models",
+          "summary": "",
+          "published_at": "2026-09-23T03:33:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b767e0b4a2dbacc",
+      "title": "RGPU – Use a remote Nvidia GPU from PyTorch on a machine that has none",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811294",
+          "target_url": "https://rgpu.dev",
+          "independent": false,
+          "title": "RGPU – Use a remote Nvidia GPU from PyTorch on a machine that has none",
+          "summary": "",
+          "published_at": "2026-09-23T03:27:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "27558c835469076d",
+      "title": "Emergent Collusion in Long-Horizon LLM Agent Interaction",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811171",
+          "target_url": "https://arxiv.org/abs/2609.24967",
+          "independent": false,
+          "title": "Emergent Collusion in Long-Horizon LLM Agent Interaction",
+          "summary": "",
+          "published_at": "2026-09-23T03:07:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a009f1a2bdf65066",
+      "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mirandaherreramoreno/m%C3%A1s-all%C3%A1-del-c%C3%B3digo-c%C3%B3mo-las-ramas-de-la-inteligencia-artificial-transforman-nuestra-vida-c22db7a5bca9",
+          "target_url": "https://medium.com/@mirandaherreramoreno/m%C3%A1s-all%C3%A1-del-c%C3%B3digo-c%C3%B3mo-las-ramas-de-la-inteligencia-artificial-transforman-nuestra-vida-c22db7a5bca9",
+          "independent": false,
+          "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
+          "summary": "Introducción Continue reading on Medium »",
+          "published_at": "2026-09-23T03:43:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4ee68eb0a95b0f8",
+      "title": "The Man Who Invented Selenium Also Built Its Replacement",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/cloudqa/the-man-who-invented-selenium-also-built-its-replacement-d5da40d43aa0",
+          "target_url": "https://medium.com/cloudqa/the-man-who-invented-selenium-also-built-its-replacement-d5da40d43aa0",
+          "independent": false,
+          "title": "The Man Who Invented Selenium Also Built Its Replacement",
+          "summary": "There’s a specific kind of credibility that comes from someone destroying their own creation. Continue reading on CloudQA »",
+          "published_at": "2026-09-23T03:43:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5252751e46073709",
+      "title": "Get Discovered on AI Search",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aiseoandgeo/get-discovered-on-ai-search-eb6cbf7a58dc",
+          "target_url": "https://medium.com/@aiseoandgeo/get-discovered-on-ai-search-eb6cbf7a58dc",
+          "independent": false,
+          "title": "Get Discovered on AI Search",
+          "summary": "Your audience is searching beyond Google. AI-powered platforms like ChatGPT, Gemini, Claude and Perplexity are changing how people… Continue reading on Medium »",
+          "published_at": "2026-09-23T03:41:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c88c06fe1723f70",
+      "title": "THE REFLECTION WE GIVE BACK",
+      "first_seen": "2026-09-23T13:01:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@augustusbragancadelucena/the-reflection-we-give-back-eac4eac1c20c",
+          "target_url": "https://medium.com/@augustusbragancadelucena/the-reflection-we-give-back-eac4eac1c20c",
+          "independent": false,
+          "title": "THE REFLECTION WE GIVE BACK",
+          "summary": "Human Responsibility in the Construction of Artificial Intelligence Continue reading on Medium »",
+          "published_at": "2026-09-23T03:37:06+00:00",
           "date_precision": "time"
         }
       ],
