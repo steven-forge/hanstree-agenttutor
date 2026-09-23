@@ -1,10 +1,29 @@
 {
   "edition_date": "2026-09-24",
-  "window_start": "2026-07-26T04:01:04.324982+09:00",
-  "window_end": "2026-09-24T04:01:04.324982+09:00",
-  "collected_at": "2026-09-24T04:01:04.324982+09:00",
+  "window_start": "2026-07-26T05:01:06.251221+09:00",
+  "window_end": "2026-09-24T05:01:06.251221+09:00",
+  "collected_at": "2026-09-24T05:01:06.251221+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "6eff16a1336643fb",
+      "title": "v2.1.281",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
+      "source_summary": "## What's changed - Added Claude apps gateway support for newer Claude Desktop keys in `desktop` policy blocks, including `blockReadsOutsideWorkingDirectories` and `disableBypassPermissionsMode` - Added `assume_role` on Claude apps gateway Bedrock upstreams: the gateway calls Bedrock as an IAM role it assumes through STS, in another AWS account if needed, optionally one session per developer - Added `guardrail: {id, version}` on Claude apps gateway Bedrock upstreams to apply an Amazon Bedrock gu",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-24T05:01:36+09:00",
+      "published_at": "2026-09-23T19:19:15+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.281 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - 'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude 데스크톱 키에 대한 Claude 앱 게이트웨이 지원 추가 - Claude 앱 게이트웨이에 `assume_role` 추가 Bedrock upstreams: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock를 호출하고, 필요한 경우 다른 AWS 계정에서 선택적으로 개발자당 하나의 세션 추가 - Claude 앱에 `guardrail: {id, version}` 추가 amazon Bedrock gu를 적용하기 위한 게이트웨이 베드락 업스트림",
+      "release_notes_ko": {
+        "new_features": "'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude Desktop 키에 대한 Claude 앱 게이트웨이 지원 추가\nClaude 앱 게이트웨이에 `assume_role` 추가 Bedrock 업스트림: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock을 호출하고, 필요한 경우 다른 AWS 계정에서 개발자당 하나의 세션을 선택적으로 호출합니다.",
+        "bug_fixes": "API 요청을 다시 시도하는 동안 세션을 종료할 수 있는 충돌 (\"복구할 수 없는 인터페이스 오류\") 이 수정되었습니다.\n모델이 분리할 수 없는 도구 호출과 출력 제한 잘라내기를 번갈아 할 때 `--max-turns` 를 무시하고 무기한 재시도할 수 있는 턴을 수정했습니다.",
+        "chores": "Windows: `$ TMPDIR/…` 에 쓰는 Bash 명령이 \"Permission denied\" 로 실패하는 문제 수정\nWindows: 동시에 업데이트하는 Claude Code 세션이 서로의 `claude.exe' 백업을 삭제할 수 있으며 `claude.exe` 가 남지 않는 레이스를 수정했습니다.\nClaude Desktop 로그인 및 사용 제한 오류 메시지가 터미널 명령 대신 앱을 가리키도록 개선되었습니다."
+      }
+    },
     {
       "id": "8772414765b134fe",
       "title": "Google Beam expands with new regions, partners, and customers",
@@ -89,6 +108,20 @@
       "date_precision": "time",
       "title_ko": "인비데오가 GPT ‑ 6 Astra로 컬러 그레이딩을 3배 향상시키는 방법",
       "source_summary_ko": "GPT ‑ 6 Astra를 사용하여 invideo는 더 정밀하게 편집을 계획하고, 색상 보정 및 3배 그레이딩을 개선하며, 하루에 50개의 사용자 정의 효과를 생성합니다."
+    },
+    {
+      "id": "3d7b9aab56c8f4fe",
+      "title": "Introducing MentalHealthBench",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-mentalhealthbench",
+      "source_summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "fetched_at": "2026-09-24T05:01:06+09:00",
+      "published_at": "2026-09-23T10:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "MentalHealthBench 소개",
+      "source_summary_ko": "MentalHealthBench는 현실적인 정신 건강 대화에서 유용하고 안전한 AI 반응을 평가하기 위한 전문가의 정보에 입각한 벤치마크입니다."
     },
     {
       "id": "6e556c3af2807b57",

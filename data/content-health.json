@@ -1,19 +1,19 @@
 {
   "news": {
-    "checked_at": "2026-09-24T04:01:42.158409+09:00",
+    "checked_at": "2026-09-24T05:01:45.735948+09:00",
     "status": "partial",
-    "candidate_count": 5,
-    "archive_count": 276,
+    "candidate_count": 2,
+    "archive_count": 278,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 3,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 121,
+        "skipped_count": 124,
         "coverage_limited": false
       },
       {
@@ -21,10 +21,10 @@
         "name": "Google AI",
         "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 19,
+        "skipped_count": 20,
         "coverage_limited": true
       },
       {
@@ -34,7 +34,7 @@
         "status": "ok",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 164,
+        "excluded_count": 165,
         "skipped_count": 22,
         "coverage_limited": false
       },
@@ -43,7 +43,7 @@
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 48,
@@ -77,10 +77,10 @@
         "name": "Anthropic News",
         "url": "https://www.anthropic.com/news",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 1,
-        "skipped_count": 11,
+        "skipped_count": 12,
         "coverage_limited": false
       },
       {
@@ -99,9 +99,9 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 11,
+        "count": 10,
         "held_count": 0,
-        "excluded_count": 25,
+        "excluded_count": 30,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -113,7 +113,7 @@
         "count": 6,
         "held_count": 0,
         "excluded_count": 24,
-        "skipped_count": 5,
+        "skipped_count": 6,
         "coverage_limited": false
       },
       {
@@ -124,7 +124,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 8,
+        "skipped_count": 10,
         "coverage_limited": false
       },
       {
@@ -135,7 +135,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 7,
+        "skipped_count": 10,
         "coverage_limited": false
       },
       {
@@ -146,7 +146,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 20,
+        "skipped_count": 19,
         "coverage_limited": false
       },
       {
@@ -165,10 +165,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 8,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 22,
-        "skipped_count": 8,
+        "excluded_count": 23,
+        "skipped_count": 7,
         "coverage_limited": false
       },
       {
@@ -264,7 +264,7 @@
         "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
       }
     ],
-    "pending_event_count": 338
+    "pending_event_count": 353
   },
   "documents": {
     "checked_at": "2026-09-23T06:25:07.216458+09:00",

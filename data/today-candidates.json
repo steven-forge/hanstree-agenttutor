@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T04:01:04.324982+09:00",
-  "window_start": "2026-07-26T04:01:04.324982+09:00",
-  "window_end": "2026-09-24T04:01:04.324982+09:00",
+  "collected_at": "2026-09-24T05:01:06.251221+09:00",
+  "window_start": "2026-07-26T05:01:06.251221+09:00",
+  "window_end": "2026-09-24T05:01:06.251221+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -9,10 +9,10 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 3,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 121,
+      "skipped_count": 124,
       "coverage_limited": false
     },
     {
@@ -20,10 +20,10 @@
       "name": "Google AI",
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": true
     },
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 164,
+      "excluded_count": 165,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -42,7 +42,7 @@
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 48,
@@ -76,10 +76,10 @@
       "name": "Anthropic News",
       "url": "https://www.anthropic.com/news",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 1,
-      "skipped_count": 11,
+      "skipped_count": 12,
       "coverage_limited": false
     },
     {
@@ -98,9 +98,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 25,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -112,7 +112,7 @@
       "count": 6,
       "held_count": 0,
       "excluded_count": 24,
-      "skipped_count": 5,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 7,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -263,84 +263,45 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 5,
-  "archive_count": 276,
+  "new_count": 2,
+  "archive_count": 278,
   "candidates": [
     {
-      "id": "8772414765b134fe",
-      "title": "Google Beam expands with new regions, partners, and customers",
-      "source_id": "google-ai",
-      "source_name": "Google AI",
-      "source_url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion",
-      "source_summary": "We’re expanding Google Beam to five new countries, and partnering with Industrious for an extended network.",
-      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
-      "fetched_at": "2026-09-24T04:01:09+09:00",
-      "published_at": "2026-09-23T18:00:00+00:00",
+      "id": "6eff16a1336643fb",
+      "title": "v2.1.281",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
+      "source_summary": "## What's changed - Added Claude apps gateway support for newer Claude Desktop keys in `desktop` policy blocks, including `blockReadsOutsideWorkingDirectories` and `disableBypassPermissionsMode` - Added `assume_role` on Claude apps gateway Bedrock upstreams: the gateway calls Bedrock as an IAM role it assumes through STS, in another AWS account if needed, optionally one session per developer - Added `guardrail: {id, version}` on Claude apps gateway Bedrock upstreams to apply an Amazon Bedrock gu",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-24T05:01:36+09:00",
+      "published_at": "2026-09-23T19:19:15+00:00",
       "date_precision": "time",
-      "title_ko": "Google Beam은 새로운 지역, 파트너 및 고객과 함께 확장됩니다.",
-      "source_summary_ko": "Google Beam은 HP의 새로운 하드웨어와 18개 파트너가 지원하는 6개 국가로 글로벌 영역을 확장하고 있습니다.\nGoogle Beam은 사람들이 어디서나 직접 대면할 수 있도록 글로벌 범위를 확장하고 있습니다.\n우리는 함께 최초의 Beam 확장 네트워크를 만들고 있습니다.",
-      "source_summary_provenance": "article_full_text_3line"
+      "title_ko": "Claude Code v2.1.281 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - 'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude 데스크톱 키에 대한 Claude 앱 게이트웨이 지원 추가 - Claude 앱 게이트웨이에 `assume_role` 추가 Bedrock upstreams: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock를 호출하고, 필요한 경우 다른 AWS 계정에서 선택적으로 개발자당 하나의 세션 추가 - Claude 앱에 `guardrail: {id, version}` 추가 amazon Bedrock gu를 적용하기 위한 게이트웨이 베드락 업스트림",
+      "release_notes_ko": {
+        "new_features": "'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude Desktop 키에 대한 Claude 앱 게이트웨이 지원 추가\nClaude 앱 게이트웨이에 `assume_role` 추가 Bedrock 업스트림: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock을 호출하고, 필요한 경우 다른 AWS 계정에서 개발자당 하나의 세션을 선택적으로 호출합니다.",
+        "bug_fixes": "API 요청을 다시 시도하는 동안 세션을 종료할 수 있는 충돌 (\"복구할 수 없는 인터페이스 오류\") 이 수정되었습니다.\n모델이 분리할 수 없는 도구 호출과 출력 제한 잘라내기를 번갈아 할 때 `--max-turns` 를 무시하고 무기한 재시도할 수 있는 턴을 수정했습니다.",
+        "chores": "Windows: `$ TMPDIR/…` 에 쓰는 Bash 명령이 \"Permission denied\" 로 실패하는 문제 수정\nWindows: 동시에 업데이트하는 Claude Code 세션이 서로의 `claude.exe' 백업을 삭제할 수 있으며 `claude.exe` 가 남지 않는 레이스를 수정했습니다.\nClaude Desktop 로그인 및 사용 제한 오류 메시지가 터미널 명령 대신 앱을 가리키도록 개선되었습니다."
+      }
     },
     {
-      "id": "4e56c7312349a760",
-      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+      "id": "3d7b9aab56c8f4fe",
+      "title": "Introducing MentalHealthBench",
       "source_id": "openai-news",
       "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/ringg",
-      "source_summary": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
-      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
-      "fetched_at": "2026-09-24T04:01:06+09:00",
-      "published_at": "2026-09-23T12:00:00+00:00",
+      "source_url": "https://openai.com/index/introducing-mentalhealthbench",
+      "source_summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "fetched_at": "2026-09-24T05:01:06+09:00",
+      "published_at": "2026-09-23T10:00:00+00:00",
       "date_precision": "time",
-      "title_ko": "Ringg의 AI 상담원은 OpenAI로 고객 통화의 최대 65% 를 해결합니다.",
-      "source_summary_ko": "Ringg는 GPT-5.6을 사용하여 음성, 채팅, WhatsApp 및 웹에서 GPT-4.1에 비해 90% 저렴한 비용으로 다국어 상담원을 지원합니다."
-    },
-    {
-      "id": "52b80abd4e046c04",
-      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
-      "source_summary": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy.",
-      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
-      "fetched_at": "2026-09-24T04:01:07+09:00",
-      "published_at": "2026-09-23T12:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "Harvey는 GPT-6 Astra로 법적 맥락을 더 강력한 초안으로 바꿉니다.",
-      "source_summary_ko": "GPT-6 Astra는 보다 체계적이고 맥락을 인식하는 법률 문서를 생성하여 변호사가 전략에 집중할 수 있도록 합니다."
-    },
-    {
-      "id": "f2ff7f7605612041",
-      "title": "How invideo improves color grading 3x with GPT‑6 Astra",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
-      "source_summary": "With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day.",
-      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
-      "fetched_at": "2026-09-24T04:01:04+09:00",
-      "published_at": "2026-09-23T12:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "인비데오가 GPT ‑ 6 Astra로 컬러 그레이딩을 3배 향상시키는 방법",
-      "source_summary_ko": "GPT ‑ 6 Astra를 사용하여 invideo는 더 정밀하게 편집을 계획하고, 색상 보정 및 3배 그레이딩을 개선하며, 하루에 50개의 사용자 정의 효과를 생성합니다."
-    },
-    {
-      "id": "ef1b3a4772eab837",
-      "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-      "source_id": "anthropic-news",
-      "source_name": "Anthropic News",
-      "source_url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-      "source_summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
-      "fetched_at": "2026-09-24T04:01:38+09:00",
-      "published_on": "2026-09-23",
-      "date_precision": "day",
-      "title_ko": "Claude는 CRISPR 유사 반복을 통해 새로운 효소 시스템을 발견합니다.",
-      "source_summary_ko": "Claude가 발견한 시스템은 RNA를 DNA에 복사하는 효소인 역전사효소 (RT) 를 기반으로 합니다.\n모든 실험실 작업은 인간 과학자에 의해 수행됩니다.\n우리는 모든 과학자가 사용할 수 있는 동일한 도구인 Claude Science와 Claude Code에서 작업을 수행하며, 때로는 병렬로 실행되는 많은 Claude 세션을 조정하는 자체 도구를 사용합니다.",
-      "source_summary_provenance": "article_full_text_3line"
+      "title_ko": "MentalHealthBench 소개",
+      "source_summary_ko": "MentalHealthBench는 현실적인 정신 건강 대화에서 유용하고 안전한 AI 반응을 평가하기 위한 전문가의 정보에 입각한 벤치마크입니다."
     }
   ],
-  "hourly_collected_at": "2026-09-24T04:01:42.158409+09:00",
-  "hourly_window_start": "2026-09-21T04:01:42.158409+09:00",
+  "hourly_collected_at": "2026-09-24T05:01:45.735948+09:00",
+  "hourly_window_start": "2026-09-21T05:01:45.735948+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -3609,6 +3570,17 @@
           "title": "Show HN: TTM – A chat app where AI agents are the users",
           "summary": "",
           "published_at": "2026-09-23T17:58:25+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821177",
+          "target_url": "https://www.ceptile.com/",
+          "independent": false,
+          "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
+          "summary": "",
+          "published_at": "2026-09-23T19:22:32+00:00",
           "date_precision": "time"
         }
       ],
@@ -7631,6 +7603,321 @@
           "title": "Compression Is Prediction, and gzip Is What That Looks Like at One-Byte Resolution",
           "summary": "Someone built a text generator whose entire model is one line: score each candidate continuation by how small gzip makes it. Continue reading on Medium »",
           "published_at": "2026-09-23T18:43:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "857861dc16520df2",
+      "title": "How to Build an AI Visibility Tracker from Scratch",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821645",
+          "target_url": "https://www.crawlspider.com/how-to-build-an-ai-visibility-tracker-from-scratch",
+          "independent": false,
+          "title": "How to Build an AI Visibility Tracker from Scratch",
+          "summary": "",
+          "published_at": "2026-09-23T19:58:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "654089563f03f514",
+      "title": "Jev is 13.6x faster, 2.7x cheaper than GPT Luna 6",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821631",
+          "target_url": "https://tessl.io/blog/jev-is-136x-faster-and-27x-cheaper-than-gpt-luna-6-for-tessl-verifiers-try-it-yourself",
+          "independent": false,
+          "title": "Jev is 13.6x faster, 2.7x cheaper than GPT Luna 6",
+          "summary": "",
+          "published_at": "2026-09-23T19:56:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6ff587f2cd5b217d",
+      "title": "Show HN: Varkos – a local AI pet that can talk, interact, and play small games",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821592",
+          "target_url": "https://varkos.party/",
+          "independent": false,
+          "title": "Show HN: Varkos – a local AI pet that can talk, interact, and play small games",
+          "summary": "",
+          "published_at": "2026-09-23T19:54:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8423a9b38234c307",
+      "title": "Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821485",
+          "target_url": "https://arxiv.org/abs/2607.29516",
+          "independent": false,
+          "title": "Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
+          "summary": "",
+          "published_at": "2026-09-23T19:45:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8bf440f9048ed7d6",
+      "title": "Show HN: AgentRun: DSL to turn agents into Workflows",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821438",
+          "target_url": "https://github.com/Parcha-ai/agentrun",
+          "independent": false,
+          "title": "Show HN: AgentRun: DSL to turn agents into Workflows",
+          "summary": "",
+          "published_at": "2026-09-23T19:42:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5fecd5f7e5f1b6c6",
+      "title": "VSArena – The official open browser benchmark for embodied AI",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821427",
+          "target_url": "https://vsarena.vercel.app",
+          "independent": false,
+          "title": "VSArena – The official open browser benchmark for embodied AI",
+          "summary": "",
+          "published_at": "2026-09-23T19:41:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c444607ca34971c",
+      "title": "\"Good\" AI",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821352",
+          "target_url": "https://thoughts.wyounas.com/p/what-does-good-ai-mean",
+          "independent": false,
+          "title": "\"Good\" AI",
+          "summary": "",
+          "published_at": "2026-09-23T19:35:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c6e24d86fd68b267",
+      "title": "Support for Local AI Models in the Antigravity SDK",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821317",
+          "target_url": "https://developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk",
+          "independent": false,
+          "title": "Support for Local AI Models in the Antigravity SDK",
+          "summary": "",
+          "published_at": "2026-09-23T19:33:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2bccfcbede8845ca",
+      "title": "How we made claude.ai 3x faster in two weeks",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821196",
+          "target_url": "https://claude.dev/blog/how-we-made-claude-ai-faster",
+          "independent": false,
+          "title": "How we made claude.ai 3x faster in two weeks",
+          "summary": "",
+          "published_at": "2026-09-23T19:23:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b2cab94e5375e0ba",
+      "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials",
+          "target_url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials",
+          "independent": true,
+          "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
+          "summary": "The round valued the AI biotech at $2 billion. It is currently testing drugs that treat skin conditions and preserve weight loss after stopping GLP-1s.",
+          "published_at": "2026-09-23T19:31:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3e65c8bc271a62de",
+      "title": "Noteworthy differences between — Wisdom and intelligence",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://tj-influence22.medium.com/noteworthy-differences-between-wisdom-and-intelligence-be5b683f633d",
+          "target_url": "https://tj-influence22.medium.com/noteworthy-differences-between-wisdom-and-intelligence-be5b683f633d",
+          "independent": false,
+          "title": "Noteworthy differences between — Wisdom and intelligence",
+          "summary": "In the quest to understand human capabilities, the concepts of wisdom and intelligence often arise, each holding its own distinct place in… Continue reading on Medium »",
+          "published_at": "2026-09-23T19:47:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3507e7e62806c9f1",
+      "title": "Humans Are Responsible, Not the AI",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fahey_james/humans-are-responsible-not-the-ai-59c7e1dab07b",
+          "target_url": "https://medium.com/@fahey_james/humans-are-responsible-not-the-ai-59c7e1dab07b",
+          "independent": false,
+          "title": "Humans Are Responsible, Not the AI",
+          "summary": "Treasury just closed the “rogue agent” loophole. The Hugging Face hack was a management failure. Washington is treating it that way. Continue reading on Medium »",
+          "published_at": "2026-09-23T19:47:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1922e2a93f8f6aba",
+      "title": "My Best Engineer Asked Us to Stop Hiring Senior Developers. I Thought AI Had Finally Gone Too Far.",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@devrimkodlama/my-best-engineer-asked-us-to-stop-hiring-senior-developers-i-thought-ai-had-finally-gone-too-far-e878823e4565",
+          "target_url": "https://medium.com/@devrimkodlama/my-best-engineer-asked-us-to-stop-hiring-senior-developers-i-thought-ai-had-finally-gone-too-far-e878823e4565",
+          "independent": false,
+          "title": "My Best Engineer Asked Us to Stop Hiring Senior Developers. I Thought AI Had Finally Gone Too Far.",
+          "summary": "He was not trying to replace experienced engineers with cheaper people, because he believed our hiring process had started selecting… Continue reading on Medium »",
+          "published_at": "2026-09-23T19:46:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f4fb536a6fb3512b",
+      "title": "Before the LLM: Designing a Trustworthy Data Pipeline for RAG",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@miyyapuramshivapreetham/before-the-llm-designing-a-trustworthy-data-pipeline-for-rag-9c415c576603",
+          "target_url": "https://medium.com/@miyyapuramshivapreetham/before-the-llm-designing-a-trustworthy-data-pipeline-for-rag-9c415c576603",
+          "independent": false,
+          "title": "Before the LLM: Designing a Trustworthy Data Pipeline for RAG",
+          "summary": "When a retrieval-augmented generation (RAG) application gives a weak answer, it is tempting to start with the prompt or the model… Continue reading on Medium »",
+          "published_at": "2026-09-23T19:44:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2de06093ecbceaec",
+      "title": "Website System Prompt Steps I Wish I Knew When I Started",
+      "first_seen": "2026-09-24T05:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/codetodeploy/website-system-prompt-steps-i-wish-i-knew-when-i-started-3a8687f3b343",
+          "target_url": "https://medium.com/codetodeploy/website-system-prompt-steps-i-wish-i-knew-when-i-started-3a8687f3b343",
+          "independent": false,
+          "title": "Website System Prompt Steps I Wish I Knew When I Started",
+          "summary": "The step-by-step system prompt process I now follow on every single website project. Continue reading on CodeToDeploy »",
+          "published_at": "2026-09-23T19:43:06+00:00",
           "date_precision": "time"
         }
       ],
