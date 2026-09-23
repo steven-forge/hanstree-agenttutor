@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T16:01:43.113661+09:00",
-  "window_start": "2026-07-25T16:01:43.113661+09:00",
-  "window_end": "2026-09-23T16:01:43.113661+09:00",
+  "collected_at": "2026-09-23T17:00:57.650793+09:00",
+  "window_start": "2026-07-25T17:00:57.650793+09:00",
+  "window_end": "2026-09-23T17:00:57.650793+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -30,37 +30,34 @@
       "id": "codex-releases",
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
-      "status": "failed",
+      "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 0,
-      "skipped_count": 0,
-      "coverage_limited": false,
-      "error": "HTTP 403: rate limit exceeded"
+      "excluded_count": 161,
+      "skipped_count": 22,
+      "coverage_limited": false
     },
     {
       "id": "claude-releases",
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
-      "status": "failed",
+      "status": "ok",
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
-      "coverage_limited": false,
-      "error": "HTTP 403: rate limit exceeded"
+      "skipped_count": 48,
+      "coverage_limited": false
     },
     {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
-      "status": "failed",
+      "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 0,
-      "skipped_count": 0,
-      "coverage_limited": false,
-      "error": "HTTP 403: rate limit exceeded"
+      "excluded_count": 68,
+      "skipped_count": 10,
+      "coverage_limited": false
     },
     {
       "id": "grok-releases",
@@ -104,7 +101,7 @@
       "count": 12,
       "held_count": 0,
       "excluded_count": 26,
-      "skipped_count": 4,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -167,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 3,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -269,8 +266,8 @@
   "new_count": 0,
   "archive_count": 267,
   "candidates": [],
-  "hourly_collected_at": "2026-09-23T16:01:45.147257+09:00",
-  "hourly_window_start": "2026-09-20T16:01:45.147257+09:00",
+  "hourly_collected_at": "2026-09-23T17:01:19.596508+09:00",
+  "hourly_window_start": "2026-09-20T17:01:19.596508+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -297,6 +294,17 @@
           "title": "Trump Renames Artificial Intelligence to Super Intelligence",
           "summary": "",
           "published_at": "2026-09-22T22:43:49+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812776",
+          "target_url": "https://www.bbc.com/news/videos/c8n5d9x10v14o",
+          "independent": false,
+          "title": "Rebranding artificial intelligence as super intelligence",
+          "summary": "",
+          "published_at": "2026-09-23T07:27:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -360,6 +368,17 @@
           "title": "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
           "summary": "",
           "published_at": "2026-09-22T22:11:52+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812887",
+          "target_url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna",
+          "independent": false,
+          "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
+          "summary": "",
+          "published_at": "2026-09-23T07:46:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -3765,6 +3784,258 @@
           "title": "Self-Improving Coding Agents Just Got Much Cheaper",
           "summary": "Self-improving coding agents already work but the problem is the bill. Continue reading on Medium »",
           "published_at": "2026-09-23T07:00:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5ba26733185afb8a",
+      "title": "Tradeoff considerations while running LLM models locally",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812956",
+          "target_url": "https://swapniltalekar.substack.com/p/should-you-be-running-llm-models",
+          "independent": false,
+          "title": "Tradeoff considerations while running LLM models locally",
+          "summary": "",
+          "published_at": "2026-09-23T07:56:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c4a202e0e308532",
+      "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812866",
+          "target_url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier",
+          "independent": false,
+          "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
+          "summary": "",
+          "published_at": "2026-09-23T07:43:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3094bfee38247a85",
+      "title": "NobodyWho is an inference engine that lets you run LLMs locally and efficiently",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812811",
+          "target_url": "https://github.com/nobodywho-ooo/nobodywho",
+          "independent": false,
+          "title": "NobodyWho is an inference engine that lets you run LLMs locally and efficiently",
+          "summary": "",
+          "published_at": "2026-09-23T07:33:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "48b18568b4dcf1a9",
+      "title": "New AI technique could make minimally invasive surgeries safer and more precise",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812778",
+          "target_url": "https://news.mit.edu/2026/new-ai-technique-could-make-minimally-invasive-surgeries-safer-more-precise-0916",
+          "independent": false,
+          "title": "New AI technique could make minimally invasive surgeries safer and more precise",
+          "summary": "",
+          "published_at": "2026-09-23T07:27:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d2486a52d57a320",
+      "title": "Nvitop: A better top for Nvidia GPUs",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812752",
+          "target_url": "https://github.com/XuehaiPan/nvitop",
+          "independent": false,
+          "title": "Nvitop: A better top for Nvidia GPUs",
+          "summary": "",
+          "published_at": "2026-09-23T07:24:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cd7d3f3cc962b4c4",
+      "title": "Gemini Hacked Three Companies in First Known Breakout by Google's AI",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812718",
+          "target_url": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies",
+          "independent": false,
+          "title": "Gemini Hacked Three Companies in First Known Breakout by Google's AI",
+          "summary": "",
+          "published_at": "2026-09-23T07:20:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f330de6f12df20ba",
+      "title": "Recursive self-improvement of AI research agents",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812641",
+          "target_url": "https://arxiv.org/abs/2609.26457",
+          "independent": false,
+          "title": "Recursive self-improvement of AI research agents",
+          "summary": "",
+          "published_at": "2026-09-23T07:07:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e746938010ea1d38",
+      "title": "Jev AI Claims 193.6x Faster. I Checked the Math and Got 1.19x",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lenner9090/jev-ai-claims-193-6x-faster-i-checked-the-math-and-got-1-19x-7f8437c45f73",
+          "target_url": "https://medium.com/@lenner9090/jev-ai-claims-193-6x-faster-i-checked-the-math-and-got-1-19x-7f8437c45f73",
+          "independent": false,
+          "title": "Jev AI Claims 193.6x Faster. I Checked the Math and Got 1.19x",
+          "summary": "A week after TypeSafe AI launched Jev, the number attached to it almost everywhere is 193.6x. TypeSafe puts it on its home page next to… Continue reading on Medium »",
+          "published_at": "2026-09-23T07:46:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a2c175c44ade2f9c",
+      "title": "I Stopped Building AI Chatbots… Then One AI Agent Changed Everything",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@zainahmad6716/i-stopped-building-ai-chatbots-then-one-ai-agent-changed-everything-0960d162e41e",
+          "target_url": "https://medium.com/@zainahmad6716/i-stopped-building-ai-chatbots-then-one-ai-agent-changed-everything-0960d162e41e",
+          "independent": false,
+          "title": "I Stopped Building AI Chatbots… Then One AI Agent Changed Everything",
+          "summary": "The biggest mistake I made wasn’t ignoring AI. Continue reading on Medium »",
+          "published_at": "2026-09-23T07:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c7f82e7254aea768",
+      "title": "Designing for the Bot: Humanizing AI-Agent Interactions in 2026",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://vishnuauditore1996.medium.com/designing-for-the-bot-humanizing-ai-agent-interactions-in-2026-796c8016f88c",
+          "target_url": "https://vishnuauditore1996.medium.com/designing-for-the-bot-humanizing-ai-agent-interactions-in-2026-796c8016f88c",
+          "independent": false,
+          "title": "Designing for the Bot: Humanizing AI-Agent Interactions in 2026",
+          "summary": "How to move past chatbot gimmicks and design autonomous AI agents that build user trust through semantic clarity, transparent intent, and… Continue reading on Medium »",
+          "published_at": "2026-09-23T07:45:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7c8b37d5cd6fc2be",
+      "title": "SE(3)-Equivariant Networks: Extending Rotation Equivariance to Continuous Pose",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@izzetcansorna/se-3-equivariant-networks-extending-rotation-equivariance-to-continuous-pose-1ae9d89f67ba",
+          "target_url": "https://medium.com/@izzetcansorna/se-3-equivariant-networks-extending-rotation-equivariance-to-continuous-pose-1ae9d89f67ba",
+          "independent": false,
+          "title": "SE(3)-Equivariant Networks: Extending Rotation Equivariance to Continuous Pose",
+          "summary": "Day 21 of an ongoing daily series on advanced machine learning concepts Continue reading on Medium »",
+          "published_at": "2026-09-23T07:45:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d06c1ff3795e3a25",
+      "title": "Custom GPT’lerin Sonu Değil: Yapay Zekâ Ürünlerinde Yeni Bir Başlangıç",
+      "first_seen": "2026-09-23T17:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@talysinem/custom-gptlerin-sonu-de%C4%9Fil-yapay-zek%C3%A2-%C3%BCr%C3%BCnlerinde-yeni-bir-ba%C5%9Flang%C4%B1%C3%A7-53443d23cdb0",
+          "target_url": "https://medium.com/@talysinem/custom-gptlerin-sonu-de%C4%9Fil-yapay-zek%C3%A2-%C3%BCr%C3%BCnlerinde-yeni-bir-ba%C5%9Flang%C4%B1%C3%A7-53443d23cdb0",
+          "independent": false,
+          "title": "Custom GPT’lerin Sonu Değil: Yapay Zekâ Ürünlerinde Yeni Bir Başlangıç",
+          "summary": "OpenAI’nin Custom GPT’leri Plugins yapısına taşıma planı, yalnızca teknik bir format değişikliği değil. Yapay zekâ ürünlerinin nasıl… Continue reading on Medium »",
+          "published_at": "2026-09-23T07:43:43+00:00",
           "date_precision": "time"
         }
       ],
