@@ -1,6 +1,6 @@
 {
   "news": {
-    "checked_at": "2026-09-23T15:01:29.418867+09:00",
+    "checked_at": "2026-09-23T16:01:45.147257+09:00",
     "status": "partial",
     "candidate_count": 0,
     "archive_count": 267,
@@ -31,34 +31,37 @@
         "id": "codex-releases",
         "name": "Codex Releases",
         "url": "https://github.com/openai/codex/releases",
-        "status": "ok",
+        "status": "failed",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 161,
-        "skipped_count": 22,
-        "coverage_limited": false
+        "excluded_count": 0,
+        "skipped_count": 0,
+        "coverage_limited": false,
+        "error": "HTTP 403: rate limit exceeded"
       },
       {
         "id": "claude-releases",
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
-        "status": "ok",
+        "status": "failed",
         "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 48,
-        "coverage_limited": false
+        "skipped_count": 0,
+        "coverage_limited": false,
+        "error": "HTTP 403: rate limit exceeded"
       },
       {
         "id": "gemini-releases",
         "name": "Gemini CLI Releases",
         "url": "https://github.com/google-gemini/gemini-cli/releases",
-        "status": "ok",
+        "status": "failed",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 68,
-        "skipped_count": 10,
-        "coverage_limited": false
+        "excluded_count": 0,
+        "skipped_count": 0,
+        "coverage_limited": false,
+        "error": "HTTP 403: rate limit exceeded"
       },
       {
         "id": "grok-releases",
@@ -99,10 +102,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 9,
+        "count": 12,
         "held_count": 0,
-        "excluded_count": 30,
-        "skipped_count": 3,
+        "excluded_count": 26,
+        "skipped_count": 4,
         "coverage_limited": false
       },
       {
@@ -165,10 +168,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 6,
+        "count": 9,
         "held_count": 0,
-        "excluded_count": 24,
-        "skipped_count": 6,
+        "excluded_count": 21,
+        "skipped_count": 3,
         "coverage_limited": false
       },
       {
@@ -264,7 +267,7 @@
         "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
       }
     ],
-    "pending_event_count": 147
+    "pending_event_count": 163
   },
   "documents": {
     "checked_at": "2026-09-23T06:25:07.216458+09:00",

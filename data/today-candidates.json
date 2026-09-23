@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T15:01:09.358918+09:00",
-  "window_start": "2026-07-25T15:01:09.358918+09:00",
-  "window_end": "2026-09-23T15:01:09.358918+09:00",
+  "collected_at": "2026-09-23T16:01:43.113661+09:00",
+  "window_start": "2026-07-25T16:01:43.113661+09:00",
+  "window_end": "2026-09-23T16:01:43.113661+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -30,34 +30,37 @@
       "id": "codex-releases",
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 161,
-      "skipped_count": 22,
-      "coverage_limited": false
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "claude-releases",
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 48,
-      "coverage_limited": false
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 68,
-      "skipped_count": 10,
-      "coverage_limited": false
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "grok-releases",
@@ -98,10 +101,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 3,
+      "excluded_count": 26,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -164,10 +167,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 21,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -266,8 +269,8 @@
   "new_count": 0,
   "archive_count": 267,
   "candidates": [],
-  "hourly_collected_at": "2026-09-23T15:01:29.418867+09:00",
-  "hourly_window_start": "2026-09-20T15:01:29.418867+09:00",
+  "hourly_collected_at": "2026-09-23T16:01:45.147257+09:00",
+  "hourly_window_start": "2026-09-20T16:01:45.147257+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -567,6 +570,17 @@
           "title": "Transformers now runs llama.cpp quants",
           "summary": "",
           "published_at": "2026-09-22T00:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812339",
+          "target_url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+          "independent": false,
+          "title": "Transformers now runs llama.cpp quants",
+          "summary": "",
+          "published_at": "2026-09-23T06:18:18+00:00",
           "date_precision": "time"
         }
       ],
@@ -1356,6 +1370,17 @@
           "title": "Microsoft disrupts AI-assisted platform that compromised 12,000",
           "summary": "EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.",
           "published_at": "2026-09-22T19:45:47+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812609",
+          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
+          "independent": false,
+          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
+          "summary": "",
+          "published_at": "2026-09-23T07:01:18+00:00",
           "date_precision": "time"
         }
       ],
@@ -3184,6 +3209,17 @@
           "summary": "",
           "published_at": "2026-09-23T05:55:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812465",
+          "target_url": "https://github.com/sshah03/use-citations",
+          "independent": false,
+          "title": "Show HN: use-citations – Claude Code skill for citation backed answers",
+          "summary": "",
+          "published_at": "2026-09-23T06:37:39+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3393,6 +3429,342 @@
           "title": "Are Professionals Training AI to Replace Themselves?",
           "summary": "In today’s workplace, artificial intelligence is no longer a distant disruption. It is embedded in the daily workflows of professionals… Continue reading on Medium »",
           "published_at": "2026-09-23T05:42:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8139c5b6b0c54a15",
+      "title": "Claude Code Hooks Explained: The Deterministic Layer Around Your Agent",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812522",
+          "target_url": "https://blakecrosley.com/blog/claude-code-hooks-explained",
+          "independent": false,
+          "title": "Claude Code Hooks Explained: The Deterministic Layer Around Your Agent",
+          "summary": "",
+          "published_at": "2026-09-23T06:47:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b97efa3f0b2e603f",
+      "title": "Which AI model should your team use for Ansible",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812391",
+          "target_url": "https://steampunk.si/spotter/ai-leaderboard",
+          "independent": false,
+          "title": "Which AI model should your team use for Ansible",
+          "summary": "",
+          "published_at": "2026-09-23T06:25:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "49946666e01d58f7",
+      "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812270",
+          "target_url": "https://www.ceptile.com/",
+          "independent": false,
+          "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
+          "summary": "",
+          "published_at": "2026-09-23T06:10:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c35196b76ebb3ee",
+      "title": "Claude Opus 5.5 – Pelican Game",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812241",
+          "target_url": "https://claude-opus-5-5.riba2534.cn/",
+          "independent": false,
+          "title": "Claude Opus 5.5 – Pelican Game",
+          "summary": "",
+          "published_at": "2026-09-23T06:07:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9354deea21a2172e",
+      "title": "Mastering LLM Inference Optimization",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812210",
+          "target_url": "https://machinelearningmastery.com/the-roadmap-to-mastering-llm-inference-optimization",
+          "independent": false,
+          "title": "Mastering LLM Inference Optimization",
+          "summary": "",
+          "published_at": "2026-09-23T06:02:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9368d48638603107",
+      "title": "Solid",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/solid-3",
+          "target_url": "https://www.producthunt.com/products/solid-3",
+          "independent": false,
+          "title": "Solid",
+          "summary": "Agents with their own computers, accounts, and budgets. Discussion | Link",
+          "published_at": "2026-09-21T06:01:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c030711668b9bc73",
+      "title": "Claude Opus 5.5",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/claude-fable-5-1",
+          "target_url": "https://www.producthunt.com/products/claude-fable-5-1",
+          "independent": false,
+          "title": "Claude Opus 5.5",
+          "summary": "Anthropic's first model in their new Claude 5.5 family Discussion | Link",
+          "published_at": "2026-09-22T16:36:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3e4acbbb33f95be2",
+      "title": "Koreshield",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/koreshield",
+          "target_url": "https://www.producthunt.com/products/koreshield",
+          "independent": false,
+          "title": "Koreshield",
+          "summary": "Security and evidence for AI support agents Discussion | Link",
+          "published_at": "2026-09-22T12:47:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "61073d0500b34fd6",
+      "title": "Linguo Translate",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/linguo-translate-for-macos",
+          "target_url": "https://www.producthunt.com/products/linguo-translate-for-macos",
+          "independent": false,
+          "title": "Linguo Translate",
+          "summary": "Offline & AI Translation for macOS Discussion | Link",
+          "published_at": "2026-09-21T17:44:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bdd1084588668c68",
+      "title": "ToneBird",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/tonebird",
+          "target_url": "https://www.producthunt.com/products/tonebird",
+          "independent": false,
+          "title": "ToneBird",
+          "summary": "AI reply assistant that remembers your relationships Discussion | Link",
+          "published_at": "2026-09-22T00:23:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ceb849a6465ce414",
+      "title": "Jev State",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/jev-state",
+          "target_url": "https://www.producthunt.com/products/jev-state",
+          "independent": false,
+          "title": "Jev State",
+          "summary": "Turn AI conversations into tests and runnable code Discussion | Link",
+          "published_at": "2026-09-22T18:53:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "66ccfc8a799c952d",
+      "title": "OpenAI’s new chip promises faster AI",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@corpoupdates/openais-new-chip-promises-faster-ai-3f11b3c158d2",
+          "target_url": "https://medium.com/@corpoupdates/openais-new-chip-promises-faster-ai-3f11b3c158d2",
+          "independent": false,
+          "title": "OpenAI’s new chip promises faster AI",
+          "summary": "OpenAI Reveals First Results for Its Custom AI Chip, Jalapeño Continue reading on Medium »",
+          "published_at": "2026-09-23T07:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "890e5154d870ec4c",
+      "title": "MLOps for Teams Without an ML Team: What Deployment Infrastructure You Actually Need",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@shahzad_3157/mlops-for-teams-without-an-ml-team-what-deployment-infrastructure-you-actually-need-8c05ef936e62",
+          "target_url": "https://medium.com/@shahzad_3157/mlops-for-teams-without-an-ml-team-what-deployment-infrastructure-you-actually-need-8c05ef936e62",
+          "independent": false,
+          "title": "MLOps for Teams Without an ML Team: What Deployment Infrastructure You Actually Need",
+          "summary": "MLOps gets introduced to most product teams the same way: a model that worked beautifully in a notebook starts behaving strangely once… Continue reading on Medium »",
+          "published_at": "2026-09-23T07:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ed1f2aff7dfe8f2b",
+      "title": "Google Cloud brings Gemini AI to legal work",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@corpoupdates/google-cloud-brings-gemini-ai-to-legal-work-6d037fa157b5",
+          "target_url": "https://medium.com/@corpoupdates/google-cloud-brings-gemini-ai-to-legal-work-6d037fa157b5",
+          "independent": false,
+          "title": "Google Cloud brings Gemini AI to legal work",
+          "summary": "Google Cloud Launches Gemini Enterprise for Legal to Automate Law-Firm Work Continue reading on Medium »",
+          "published_at": "2026-09-23T07:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "764620c2759c7426",
+      "title": "An AI Agent’s Memory Can Carry Yesterday’s Mistake into Tomorrow",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ai_93276/an-ai-agents-memory-can-carry-yesterday-s-mistake-into-tomorrow-76c7185ddf9b",
+          "target_url": "https://medium.com/@ai_93276/an-ai-agents-memory-can-carry-yesterday-s-mistake-into-tomorrow-76c7185ddf9b",
+          "independent": false,
+          "title": "An AI Agent’s Memory Can Carry Yesterday’s Mistake into Tomorrow",
+          "summary": "A handover note can outlive the judgement that produced it. An uncertain assumption becomes a statement of fact. A temporary workaround… Continue reading on Medium »",
+          "published_at": "2026-09-23T07:01:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e4b61d65e25321b2",
+      "title": "Self-Improving Coding Agents Just Got Much Cheaper",
+      "first_seen": "2026-09-23T16:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://agentnativedev.medium.com/self-improving-coding-agents-just-got-much-cheaper-1eb0587353e6",
+          "target_url": "https://agentnativedev.medium.com/self-improving-coding-agents-just-got-much-cheaper-1eb0587353e6",
+          "independent": false,
+          "title": "Self-Improving Coding Agents Just Got Much Cheaper",
+          "summary": "Self-improving coding agents already work but the problem is the bill. Continue reading on Medium »",
+          "published_at": "2026-09-23T07:00:19+00:00",
           "date_precision": "time"
         }
       ],
