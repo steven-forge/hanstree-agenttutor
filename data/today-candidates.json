@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 8,
+      "excluded_count": 30,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -164,9 +164,9 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 4,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 26,
+      "excluded_count": 22,
       "skipped_count": 4,
       "coverage_limited": false
     },
@@ -457,8 +457,8 @@
       "source_summary_ko": "V7은 GPT-5.6을 사용하여 흩어져 있는 회사 파일을 컨텍스트 에이전트로 변환하여 복잡한 소스 연결 작업을 완료할 수 있습니다."
     }
   ],
-  "hourly_collected_at": "2026-09-23T08:01:02.421736+09:00",
-  "hourly_window_start": "2026-09-20T08:01:02.421736+09:00",
+  "hourly_collected_at": "2026-09-23T09:01:00.954367+09:00",
+  "hourly_window_start": "2026-09-20T09:01:00.954367+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2134,6 +2134,279 @@
           "title": "Trust Signals, Navigation Tools, and Unseen Crossroads in AI’s Ethical Horizon",
           "summary": "As AI blends into ever more aspects of daily life and enterprise, its promise walks a tightrope balanced against profound risks. Continue reading on Medium »",
           "published_at": "2026-09-22T22:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "87ea82b3d53e6d4a",
+      "title": "The new CC, an AI agent built for families",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809806",
+          "target_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups",
+          "independent": false,
+          "title": "The new CC, an AI agent built for families",
+          "summary": "",
+          "published_at": "2026-09-22T23:46:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d27636f792bc10cf",
+      "title": "The ruble markup on AI tokens",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809698",
+          "target_url": "https://infertrail.com/blog/ruble-markup-ai-tokens",
+          "independent": false,
+          "title": "The ruble markup on AI tokens",
+          "summary": "",
+          "published_at": "2026-09-22T23:30:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d1922e5d05435d67",
+      "title": "The 'AI Safety' Movement Is Making AI Less Safe",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49809567",
+          "target_url": "https://reason.com/2026/09/22/the-ai-safety-movement-is-making-ai-less-safe",
+          "independent": false,
+          "title": "The 'AI Safety' Movement Is Making AI Less Safe",
+          "summary": "",
+          "published_at": "2026-09-22T23:11:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3520c157c4e138eb",
+      "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4",
+          "target_url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4",
+          "independent": true,
+          "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
+          "summary": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater.",
+          "published_at": "2026-09-22T23:21:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "111ee0867253cb95",
+      "title": "Plane Agents",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/planehq",
+          "target_url": "https://www.producthunt.com/products/planehq",
+          "independent": false,
+          "title": "Plane Agents",
+          "summary": "Assign work to AI agents, like any teammate Discussion | Link",
+          "published_at": "2026-09-21T15:36:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f3c176b7dee466a9",
+      "title": "ResumeContext",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/resumecontext",
+          "target_url": "https://www.producthunt.com/products/resumecontext",
+          "independent": false,
+          "title": "ResumeContext",
+          "summary": "Shared memory for coding agents. Discussion | Link",
+          "published_at": "2026-09-21T10:42:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ed52f431e276f6c5",
+      "title": "Fez",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/fez-2",
+          "target_url": "https://www.producthunt.com/products/fez-2",
+          "independent": false,
+          "title": "Fez",
+          "summary": "AI agents that work as a team and make decisions together Discussion | Link",
+          "published_at": "2026-09-21T18:50:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89072180c88f70f5",
+      "title": "Hola AI",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/hola-ai",
+          "target_url": "https://www.producthunt.com/products/hola-ai",
+          "independent": false,
+          "title": "Hola AI",
+          "summary": "An AI voicemail assistant that answers calls when you can’t. Discussion | Link",
+          "published_at": "2026-09-21T21:42:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "67fe1a5d16635894",
+      "title": "How to Spot a Fake AI Trading Bot Before It Costs You Money",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jorgai_team/how-to-spot-a-fake-ai-trading-bot-before-it-costs-you-money-ae3b688f0c60",
+          "target_url": "https://medium.com/@jorgai_team/how-to-spot-a-fake-ai-trading-bot-before-it-costs-you-money-ae3b688f0c60",
+          "independent": false,
+          "title": "How to Spot a Fake AI Trading Bot Before It Costs You Money",
+          "summary": "I build AI trading software for a living. Here is the checklist I would use on any tool, including mine. Continue reading on Medium »",
+          "published_at": "2026-09-22T23:51:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c712569972198adc",
+      "title": "The Human-Agentic Workforce: What Comes After AI Automation",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@worthy_ruby_zebra_941/the-human-agentic-workforce-what-comes-after-ai-automation-2c4002a8566c",
+          "target_url": "https://medium.com/@worthy_ruby_zebra_941/the-human-agentic-workforce-what-comes-after-ai-automation-2c4002a8566c",
+          "independent": false,
+          "title": "The Human-Agentic Workforce: What Comes After AI Automation",
+          "summary": "AI is moving beyond simple automation. Continue reading on Medium »",
+          "published_at": "2026-09-22T23:50:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a29d17ac3bc91f9b",
+      "title": "Modeling Crop Patterns and Yields Under Input and Climate Shocks",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@brian-curry-research/modeling-crop-patterns-and-yields-under-input-and-climate-shocks-63d3351ee514",
+          "target_url": "https://medium.com/@brian-curry-research/modeling-crop-patterns-and-yields-under-input-and-climate-shocks-63d3351ee514",
+          "independent": false,
+          "title": "Modeling Crop Patterns and Yields Under Input and Climate Shocks",
+          "summary": "Testing hybrid crop models, agent-based crop switching, causal discovery, and conformal intervals against known ground truth, using… Continue reading on Medium »",
+          "published_at": "2026-09-22T23:49:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "617a806fa1bdb064",
+      "title": "We designed the handoff; nobody designed the return",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/design-bootcamp/we-designed-the-handoff-nobody-designed-the-return-eec9957ae60f",
+          "target_url": "https://medium.com/design-bootcamp/we-designed-the-handoff-nobody-designed-the-return-eec9957ae60f",
+          "independent": false,
+          "title": "We designed the handoff; nobody designed the return",
+          "summary": "When an AI agent finishes, people need to see what ran, what was verified, and what still needs their permission. Continue reading on Bootcamp »",
+          "published_at": "2026-09-22T23:49:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b978a4870bfadc18",
+      "title": "Jev vs LLMs: Do AI Agents Really Need a Language Model for Every Decision?",
+      "first_seen": "2026-09-23T09:01:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://ravjot03.medium.com/jev-vs-llms-do-ai-agents-really-need-a-language-model-for-every-decision-fbf9240a28e3",
+          "target_url": "https://ravjot03.medium.com/jev-vs-llms-do-ai-agents-really-need-a-language-model-for-every-decision-fbf9240a28e3",
+          "independent": false,
+          "title": "Jev vs LLMs: Do AI Agents Really Need a Language Model for Every Decision?",
+          "summary": "TypeSafe AI’s new “System One” model raises an interesting question about how we are building AI agents: should the model that writes the… Continue reading on Medium »",
+          "published_at": "2026-09-22T23:46:01+00:00",
           "date_precision": "time"
         }
       ],
