@@ -179,20 +179,20 @@
           "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배. 현재 가격은 2026-11-21까지 한시 적용."
         },
         {
-          "id": "gpt-5.6-terra",
-          "name": "GPT-5.6 Terra",
+          "id": "gpt-5.6-luna",
+          "name": "GPT-5.6 Luna",
           "released_at": "2026-07-09",
           "release_source": "https://developers.openai.com/api/docs/changelog",
           "minimum_access": "Codex Plus 월 $20부터 · 포함 사용량 내",
           "access_source": "https://learn.chatgpt.com/docs/pricing",
-          "input_cost": 2,
-          "output_cost": 12,
-          "cache_read_cost": 0.2,
+          "input_cost": 0.2,
+          "output_cost": 1.2,
+          "cache_read_cost": 0.02,
           "context_window": "1,050,000",
           "max_output": "128K",
-          "key_feature": "비용·지능 균형",
+          "key_feature": "저비용·대량 작업",
           "sources": [
-            { "name": "GPT-5.6 Terra 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra" },
+            { "name": "GPT-5.6 Luna 모델 문서", "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna" },
             { "name": "Codex 모델 안내", "url": "https://learn.chatgpt.com/docs/models" }
           ],
           "price_note": "입력 272K 초과 시 요청 전체에 입력 2배·출력 1.5배."
