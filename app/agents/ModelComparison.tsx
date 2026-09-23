@@ -305,8 +305,8 @@ export default function ModelComparison({
               최소 이용 비용은 별도 크레딧 구매 없이 이용 가능한 구독·무료 티어 기준입니다. 포함 사용량 초과 시 추가 과금될 수 있으며, API 종량제와 앱 구독은 별개입니다.
             </p>
 
-            <fieldset className="model-picker-fieldset" style={{ marginBottom: "12px" }}>
-              <legend className="model-picker-legend">표시할 비교 항목</legend>
+            <details className="model-picker-fieldset" style={{ marginBottom: "12px" }}>
+              <summary className="model-picker-legend">표시할 비교 항목</summary>
               <div className="model-picker-list">
                 {COMPARE_ROWS.map((row) => (
                   <label key={row.key} className="model-picker-item">
@@ -320,7 +320,7 @@ export default function ModelComparison({
                   </label>
                 ))}
               </div>
-            </fieldset>
+            </details>
 
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginBottom: "10px" }}>
               <button type="button" className="filter-submit-btn" onClick={copyMarkdown}>
