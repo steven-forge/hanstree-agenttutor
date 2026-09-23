@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T18:00:55.786582+09:00",
-  "window_start": "2026-07-25T18:00:55.786582+09:00",
-  "window_end": "2026-09-23T18:00:55.786582+09:00",
+  "collected_at": "2026-09-23T19:00:54.720773+09:00",
+  "window_start": "2026-07-25T19:00:54.720773+09:00",
+  "window_end": "2026-09-23T19:00:54.720773+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 6,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 0,
+      "excluded_count": 30,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 20,
-      "skipped_count": 10,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -197,10 +197,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 6,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 9,
-      "skipped_count": 6,
+      "excluded_count": 10,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -266,8 +266,8 @@
   "new_count": 0,
   "archive_count": 267,
   "candidates": [],
-  "hourly_collected_at": "2026-09-23T18:01:16.783402+09:00",
-  "hourly_window_start": "2026-09-20T18:01:16.783402+09:00",
+  "hourly_collected_at": "2026-09-23T19:01:12.753675+09:00",
+  "hourly_window_start": "2026-09-20T19:01:12.753675+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1705,27 +1705,6 @@
           "title": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review",
           "summary": "Alibaba recently open-sourced OpenCodeReview, an AI-powered code review CLI that combines deterministic pipelines for file selection, bundling, and rule matching with an LLM agent for dynamic code analysis. It supports built-in checks for issues such as null-pointer exceptions, thread safety, XSS, and SQL injection. By Renato Losio",
           "published_at": "2026-09-20T11:57:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "26e75030f02ff285",
-      "title": "Google Agent Development Kit for Kotlin Reaches Feature Parity with Python, Supports On-Device AI",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/google-adk-1-0-released",
-          "target_url": "https://www.infoq.com/news/2026/09/google-adk-1-0-released",
-          "independent": true,
-          "title": "Google Agent Development Kit for Kotlin Reaches Feature Parity with Python, Supports On-Device AI",
-          "summary": "Google has released the Agent Development Kit (ADK) for Kotlin 1.0, a production-ready framework for building AI agents across Kotlin, Android, and JVM/server applications. It brings Kotlin to feature parity with Google's ADK for Python and Java, while adding Android-specific capabilities for on-device and hybrid AI. By Sergio De Simone",
-          "published_at": "2026-09-20T10:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -3250,6 +3229,17 @@
           "summary": "",
           "published_at": "2026-09-23T06:37:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813512",
+          "target_url": "https://github.com/kvitapp/kvit-plugins",
+          "independent": false,
+          "title": "Show HN: What's Next – make Claude Code respond with choice, not prose",
+          "summary": "",
+          "published_at": "2026-09-23T09:25:07+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -4257,6 +4247,279 @@
           "title": "When Xiaomi Drops an Open-Source AI That Shakes Up Big Tech: A Deep Dive into MiMo-V2.6",
           "summary": "If you still think Xiaomi is just about value-for-money smartphones or smart rice cookers, we need to talk. They just rolled out their… Continue reading on Medium »",
           "published_at": "2026-09-23T08:39:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "296d90df691bf513",
+      "title": "What Is an AI Software Factory? Lessons from 3 Client Deployments",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813704",
+          "target_url": "https://camplight.net/ai/ai-software-factory",
+          "independent": false,
+          "title": "What Is an AI Software Factory? Lessons from 3 Client Deployments",
+          "summary": "",
+          "published_at": "2026-09-23T09:57:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "baed9c9d689859ba",
+      "title": "PostMCP – Turn any OpenAPI spec into a context-optimized MCP server",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813617",
+          "target_url": "https://github.com/braveram/postmcp",
+          "independent": false,
+          "title": "PostMCP – Turn any OpenAPI spec into a context-optimized MCP server",
+          "summary": "",
+          "published_at": "2026-09-23T09:41:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0f1735e4b4cf04f4",
+      "title": "Trained KV cache bank turns any LLM into Jev like Model",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813610",
+          "target_url": "https://gambler-relay-us-west1.leo-fish.ts.net/demo",
+          "independent": false,
+          "title": "Trained KV cache bank turns any LLM into Jev like Model",
+          "summary": "",
+          "published_at": "2026-09-23T09:40:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c8268083de11c8f6",
+      "title": "Show HN: Codex Reset – A tracker for public Codex reset signals",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813571",
+          "target_url": "https://codexreset.live",
+          "independent": false,
+          "title": "Show HN: Codex Reset – A tracker for public Codex reset signals",
+          "summary": "",
+          "published_at": "2026-09-23T09:32:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5545755d69a2a87",
+      "title": "Claude Microfactory",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813561",
+          "target_url": "https://claude.ai/artifact/7nCPrrWTcQsWFfkXFRHDLR",
+          "independent": false,
+          "title": "Claude Microfactory",
+          "summary": "",
+          "published_at": "2026-09-23T09:30:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "80aca5e64109bc69",
+      "title": "Nemotron-H: A Family of Accurate, Efficient Hybrid Mamba-Transformer Models",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813524",
+          "target_url": "https://research.nvidia.com/labs/adlr/nemotronh",
+          "independent": false,
+          "title": "Nemotron-H: A Family of Accurate, Efficient Hybrid Mamba-Transformer Models",
+          "summary": "",
+          "published_at": "2026-09-23T09:25:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ae650fcd937e7f48",
+      "title": "Enables Nvidia DLSS Frame Generation (DLSS-G) on RTX 30-series and RTX 20-series",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813499",
+          "target_url": "https://github.com/sdli1995/dlssg_for_sm86",
+          "independent": false,
+          "title": "Enables Nvidia DLSS Frame Generation (DLSS-G) on RTX 30-series and RTX 20-series",
+          "summary": "",
+          "published_at": "2026-09-23T09:23:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e23a4e993d4e30e1",
+      "title": "Positive emotions toward AI outweigh negative ones in 34 out of 37 countries",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813430",
+          "target_url": "https://news.gallup.com/poll/714593/optimism-globally-widespread-despite-uneven.aspx",
+          "independent": false,
+          "title": "Positive emotions toward AI outweigh negative ones in 34 out of 37 countries",
+          "summary": "",
+          "published_at": "2026-09-23T09:11:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b48fa09a9e4a8ba",
+      "title": "Anthropic Froze the Biggest IPO Ever Over Leaks, Mutiny, and One Bill",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://levelup.gitconnected.com/anthropic-ipo-delayed-november-2026-876517798d9f",
+          "target_url": "https://levelup.gitconnected.com/anthropic-ipo-delayed-november-2026-876517798d9f",
+          "independent": false,
+          "title": "Anthropic Froze the Biggest IPO Ever Over Leaks, Mutiny, and One Bill",
+          "summary": "Leaked models, resigning scientists, and the single $1.25 billion bill that forced Anthropic to delay its $2 trillion debut. Continue reading on Level Up Coding »",
+          "published_at": "2026-09-23T09:36:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "35b71c2504c05cf3",
+      "title": "AI on Your Own Servers: Adding an LLM to Internal Systems — amBrain",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@info_610/ai-on-your-own-servers-adding-an-llm-to-internal-systems-ambrain-d39eae3aff24",
+          "target_url": "https://medium.com/@info_610/ai-on-your-own-servers-adding-an-llm-to-internal-systems-ambrain-d39eae3aff24",
+          "independent": false,
+          "title": "AI on Your Own Servers: Adding an LLM to Internal Systems — amBrain",
+          "summary": "A company can run a large language model on servers it controls and connect it to its support tickets, documents and internal tools… Continue reading on Medium »",
+          "published_at": "2026-09-23T09:36:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "67943d9bd5f32363",
+      "title": "Ganesha’s Condition",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arkycookie/ganeshas-condition-73dfbb3fbab7",
+          "target_url": "https://medium.com/@arkycookie/ganeshas-condition-73dfbb3fbab7",
+          "independent": false,
+          "title": "Ganesha’s Condition",
+          "summary": "What a 5,000-year-old scribing contract reveals about AI, Taranto, and Druckenmiller. Continue reading on Medium »",
+          "published_at": "2026-09-23T09:33:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9e7d6c2ecec8c23f",
+      "title": "As AI Accelerates, Are Your Enterprise Systems Ready?",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@xcelore/as-ai-accelerates-are-your-enterprise-systems-ready-4320864fddce",
+          "target_url": "https://medium.com/@xcelore/as-ai-accelerates-are-your-enterprise-systems-ready-4320864fddce",
+          "independent": false,
+          "title": "As AI Accelerates, Are Your Enterprise Systems Ready?",
+          "summary": "AI is moving quickly from experiments into real business systems. What started as chatbots, copilots, and small proofs of concept is now… Continue reading on Medium »",
+          "published_at": "2026-09-23T09:31:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e4bf72902ff60677",
+      "title": "ZERO-FRICTION BUSINESS: How Web 4.0 Reshapes Buyers, Marketing, and Check Sizes (Rm → 0)",
+      "first_seen": "2026-09-23T19:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@olga_shut/zero-friction-business-how-web-4-0-reshapes-buyers-marketing-and-check-sizes-rm-0-a058f61bcfda",
+          "target_url": "https://medium.com/@olga_shut/zero-friction-business-how-web-4-0-reshapes-buyers-marketing-and-check-sizes-rm-0-a058f61bcfda",
+          "independent": false,
+          "title": "ZERO-FRICTION BUSINESS: How Web 4.0 Reshapes Buyers, Marketing, and Check Sizes (Rm → 0)",
+          "summary": "Digital noise has reached the point of thermal breakdown. Users learned to blind-spot banners in 0.3 seconds, lead-gen funnels burn out in… Continue reading on Medium »",
+          "published_at": "2026-09-23T09:30:34+00:00",
           "date_precision": "time"
         }
       ],
