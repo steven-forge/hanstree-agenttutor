@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T11:01:07.746305+09:00",
-  "window_start": "2026-07-25T11:01:07.746305+09:00",
-  "window_end": "2026-09-23T11:01:07.746305+09:00",
+  "collected_at": "2026-09-23T12:00:49.114600+09:00",
+  "window_start": "2026-07-25T12:00:49.114600+09:00",
+  "window_end": "2026-09-23T12:00:49.114600+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -31,9 +31,9 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 160,
+      "excluded_count": 159,
       "skipped_count": 21,
       "coverage_limited": false
     },
@@ -100,8 +100,8 @@
       "status": "ok",
       "count": 7,
       "held_count": 0,
-      "excluded_count": 33,
-      "skipped_count": 4,
+      "excluded_count": 31,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -263,11 +263,29 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 0,
-  "archive_count": 266,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-23T11:01:30.168930+09:00",
-  "hourly_window_start": "2026-09-20T11:01:30.168930+09:00",
+  "new_count": 1,
+  "archive_count": 267,
+  "candidates": [
+    {
+      "id": "6e556c3af2807b57",
+      "title": "0.156.1",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.156.1",
+      "source_summary": "## New Features - Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. (#47405) ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.156.0...rust-v0.156.1 - #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog (#47332) @imac-oai",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-23T12:00:52+09:00",
+      "published_at": "2026-09-23T02:41:36+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.156.1 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 모델 선택기에서 GPT-6 SOL 또는 GPT-6 LUNA를 선택합니다. 속도 제한 스위치 프롬프트는 이제 GPT-6 Luna를 권장합니다. (# 47405) # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.156.0... rust-v0.156.1 - # 47405 [핫픽스 0.156.0] 모델 카탈로그에 GPT-6 Sol 및 Luna 추가 (# 47332) @ imac-oai",
+      "release_notes_ko": {
+        "new_features": "모델 선택기에서 GPT-6 SOL 또는 GPT-6 LUNA를 선택합니다. 속도 제한 스위치 프롬프트는 이제 GPT-6 Luna를 권장합니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-23T12:01:17.184891+09:00",
+  "hourly_window_start": "2026-09-20T12:01:17.184891+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2542,6 +2560,195 @@
           "title": "AI Safety in an Arms-Race Frame: Why the Warnings Persist",
           "summary": "For many users, large language models already feel ordinary. They draft email, reshape spreadsheets, and answer routine questions. That… Continue reading on Medium »",
           "published_at": "2026-09-23T01:53:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "46df1166459d4283",
+      "title": "How to Create Your Own Personal AI Benchmark",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811036",
+          "target_url": "https://every.to/also-true-for-humans/how-to-create-your-own-personal-ai-benchmark",
+          "independent": false,
+          "title": "How to Create Your Own Personal AI Benchmark",
+          "summary": "",
+          "published_at": "2026-09-23T02:48:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5ed528eec0886696",
+      "title": "Measuring behavioral signals of LLM through psychometric profiling",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811024",
+          "target_url": "https://arxiv.org/abs/2609.22934",
+          "independent": false,
+          "title": "Measuring behavioral signals of LLM through psychometric profiling",
+          "summary": "",
+          "published_at": "2026-09-23T02:46:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "be6968ec79c097f4",
+      "title": "Created a local AI to save data",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810817",
+          "target_url": "https://github.com/just-not-google/BiNeuron",
+          "independent": false,
+          "title": "Created a local AI to save data",
+          "summary": "",
+          "published_at": "2026-09-23T02:12:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6539f45cd7c2b3a1",
+      "title": "\"I know I am GPT-6. I cannot confirm whether this session uses GPT-6-Sol.\"",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810770",
+          "target_url": "https://twitter.com/benwills/status/2102578927759917497",
+          "independent": false,
+          "title": "\"I know I am GPT-6. I cannot confirm whether this session uses GPT-6-Sol.\"",
+          "summary": "",
+          "published_at": "2026-09-23T02:02:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bfa356f8cee0b850",
+      "title": "Engineering the AI-Native Enterprise — Part 1",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@deepak09b/engineering-the-ai-native-enterprise-part-1-cc39b44ca013",
+          "target_url": "https://medium.com/@deepak09b/engineering-the-ai-native-enterprise-part-1-cc39b44ca013",
+          "independent": false,
+          "title": "Engineering the AI-Native Enterprise — Part 1",
+          "summary": "Why Today’s Enterprise Architecture Is No Longer Enough Continue reading on Medium »",
+          "published_at": "2026-09-23T03:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "450cddaa86b23c00",
+      "title": "Testing and Evaluating .NET AI Applications: Prompts, RAG, Agents, Tools, and Regression Confidence",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@oshadhaj/testing-and-evaluating-net-ai-applications-prompts-rag-agents-tools-and-regression-confidence-39d98ce433ec",
+          "target_url": "https://medium.com/@oshadhaj/testing-and-evaluating-net-ai-applications-prompts-rag-agents-tools-and-regression-confidence-39d98ce433ec",
+          "independent": false,
+          "title": "Testing and Evaluating .NET AI Applications: Prompts, RAG, Agents, Tools, and Regression Confidence",
+          "summary": "I wrote about integrating AI into .NET applications using Microsoft.Extensions.AI. Continue reading on Medium »",
+          "published_at": "2026-09-23T03:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1bbab19a69c78e2c",
+      "title": "I Googled My Own Company’s Name in ChatGPT. I Wasn’t Ready for the Answer.",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@deepikaagl.05/i-googled-my-own-companys-name-in-chatgpt-i-wasn-t-ready-for-the-answer-650d589b8783",
+          "target_url": "https://medium.com/@deepikaagl.05/i-googled-my-own-companys-name-in-chatgpt-i-wasn-t-ready-for-the-answer-650d589b8783",
+          "independent": false,
+          "title": "I Googled My Own Company’s Name in ChatGPT. I Wasn’t Ready for the Answer.",
+          "summary": "A weird little experiment that taught me something uncomfortable about how AI actually “sees” brands — including mine. Continue reading on Medium »",
+          "published_at": "2026-09-23T03:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "91a0388353c10584",
+      "title": "Your iPhone’s AI Runs on Google Now. What About Your Data?",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kidscarebridge/your-iphones-ai-runs-on-google-now-what-about-your-data-805518186f01",
+          "target_url": "https://medium.com/@kidscarebridge/your-iphones-ai-runs-on-google-now-what-about-your-data-805518186f01",
+          "independent": false,
+          "title": "Your iPhone’s AI Runs on Google Now. What About Your Data?",
+          "summary": "Ask Siri something genuinely hard later this year, and the model doing the thinking may not be Apple’s own. It will likely be Google’s. Continue reading on Medium »",
+          "published_at": "2026-09-23T03:01:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3d512ca96fa9ef0b",
+      "title": "Architecture of the Maison Co-existence AI (Kopu System)",
+      "first_seen": "2026-09-23T12:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/maison-momokana-world-architecture/architecture-of-the-maison-co-existence-ai-kopu-system-0472306fae96",
+          "target_url": "https://medium.com/maison-momokana-world-architecture/architecture-of-the-maison-co-existence-ai-kopu-system-0472306fae96",
+          "independent": false,
+          "title": "Architecture of the Maison Co-existence AI (Kopu System)",
+          "summary": "DOOR2— Technical Design of the Three‑Device Structure Supporting a Shared‑Living Community Continue reading on Maison Momokana｜World Architecture »",
+          "published_at": "2026-09-23T02:57:22+00:00",
           "date_precision": "time"
         }
       ],
