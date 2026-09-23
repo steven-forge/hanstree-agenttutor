@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T07:00:56.172080+09:00",
-  "window_start": "2026-07-26T07:00:56.172080+09:00",
-  "window_end": "2026-09-24T07:00:56.172080+09:00",
+  "collected_at": "2026-09-24T08:00:58.041681+09:00",
+  "window_start": "2026-07-26T08:00:58.041681+09:00",
+  "window_end": "2026-09-24T08:00:58.041681+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 164,
+      "excluded_count": 165,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -55,7 +55,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 68,
+      "excluded_count": 69,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 13,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 1,
+      "excluded_count": 30,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -266,8 +266,8 @@
   "new_count": 0,
   "archive_count": 280,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T07:01:24.864900+09:00",
-  "hourly_window_start": "2026-09-21T07:01:24.864900+09:00",
+  "hourly_collected_at": "2026-09-24T08:01:19.825079+09:00",
+  "hourly_window_start": "2026-09-21T08:01:19.825079+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -7981,6 +7981,17 @@
           "summary": "",
           "published_at": "2026-09-23T21:39:50+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823062",
+          "target_url": "https://www.ft.com/content/56133ef4-377b-4e35-a939-f199ceb64507",
+          "independent": false,
+          "title": "OpenAI 'agent' hacked Australia's health service",
+          "summary": "",
+          "published_at": "2026-09-23T21:49:57+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8450,27 +8461,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "028804ee0a7121aa",
-      "title": "OpenAI 'agent' hacked Australia's health service",
-      "first_seen": "2026-09-24T07:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823062",
-          "target_url": "https://www.ft.com/content/56133ef4-377b-4e35-a939-f199ceb64507",
-          "independent": false,
-          "title": "OpenAI 'agent' hacked Australia's health service",
-          "summary": "",
-          "published_at": "2026-09-23T21:49:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "d8a2c3a272120d1f",
       "title": "The last IMO problem AI could not solve [video]",
       "first_seen": "2026-09-24T07:01:24+09:00",
@@ -8715,6 +8705,353 @@
           "title": "Old Instincts, New Agents",
           "summary": "Jev made me think about an old instinct Continue reading on Medium »",
           "published_at": "2026-09-23T21:33:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a235b3c1ffc745a1",
+      "title": "Why Don't My Agents Break Containment?",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823835",
+          "target_url": "https://harper.blog/2026/09/22/break-away",
+          "independent": false,
+          "title": "Why Don't My Agents Break Containment?",
+          "summary": "",
+          "published_at": "2026-09-23T23:00:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f8821e40d919f6d",
+      "title": "Show HN: Hosted JayBase – An append-only data store for safe AI agent writes",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823815",
+          "target_url": "https://jaybase.ai",
+          "independent": false,
+          "title": "Show HN: Hosted JayBase – An append-only data store for safe AI agent writes",
+          "summary": "",
+          "published_at": "2026-09-23T22:59:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bf956ca29f180e13",
+      "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823708",
+          "target_url": "https://promptspend.com/",
+          "independent": false,
+          "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
+          "summary": "",
+          "published_at": "2026-09-23T22:49:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "10860c0f140d481d",
+      "title": "AI leaders warn UN of security risks as systems grow more powerful",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823620",
+          "target_url": "https://www.reuters.com/business/ai-leaders-brief-un-amid-warnings-technology-could-slip-beyond-human-control-2026-09-23",
+          "independent": false,
+          "title": "AI leaders warn UN of security risks as systems grow more powerful",
+          "summary": "",
+          "published_at": "2026-09-23T22:41:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1fcc119e2468062f",
+      "title": "In-Process MCP for MySQL",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823614",
+          "target_url": "https://villagesql.com/blog/mcp",
+          "independent": false,
+          "title": "In-Process MCP for MySQL",
+          "summary": "",
+          "published_at": "2026-09-23T22:41:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9461f7b3268afc67",
+      "title": "Getting the most out of Opus 5.5 in Claude and Claude Code / claude.dev",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823517",
+          "target_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5",
+          "independent": false,
+          "title": "Getting the most out of Opus 5.5 in Claude and Claude Code / claude.dev",
+          "summary": "",
+          "published_at": "2026-09-23T22:33:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "097dfe5b1a77c69d",
+      "title": "Mercury 2.5 LLM hits 770 tokens per second",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823348",
+          "target_url": "https://artificialanalysis.ai/models/mercury-2-5",
+          "independent": false,
+          "title": "Mercury 2.5 LLM hits 770 tokens per second",
+          "summary": "",
+          "published_at": "2026-09-23T22:16:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "427ec4f7d4281c0c",
+      "title": "The AI Hype Index: AI Loves Cheating",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823245",
+          "target_url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating",
+          "independent": false,
+          "title": "The AI Hype Index: AI Loves Cheating",
+          "summary": "",
+          "published_at": "2026-09-23T22:07:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1eb1d3b4a7377fd0",
+      "title": "I stress-tested LLM quantization by deliberately breaking models",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823211",
+          "target_url": "https://github.com/gracejackson-sudo/quant-delta-predictor",
+          "independent": false,
+          "title": "I stress-tested LLM quantization by deliberately breaking models",
+          "summary": "",
+          "published_at": "2026-09-23T22:04:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a402970f4ce9b22",
+      "title": "Meta Connect 2026: The biggest news and announcements",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/998480/meta-connect-2026-biggest-news-announcements",
+          "target_url": "https://www.theverge.com/tech/998480/meta-connect-2026-biggest-news-announcements",
+          "independent": true,
+          "title": "Meta Connect 2026: The biggest news and announcements",
+          "summary": "It’s about time for Meta Connect, the company’s annual product launch event. This year, given the company’s major focus on AI and wearables like smart glasses, it seems likely that we’ll see updates from CEO Mark Zuckerberg and his team on those categories. The company has been facing significant scrutiny because of how some users […]",
+          "published_at": "2026-09-23T22:45:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/998457/meta-connect-2026-live-blog-mark-zuckerberg-keynote",
+          "target_url": "https://www.theverge.com/tech/998457/meta-connect-2026-live-blog-mark-zuckerberg-keynote",
+          "independent": true,
+          "title": "Meta Connect 2026 live blog: On the ground at Mark Zuckerberg’s next big product launch",
+          "summary": "It's time once again for Meta's annual September product launch event, and The Verge is on the ground in Menlo Park to cover the show live. Meta says that today's keynote by Mark Zuckerberg will be about how \"Meta is building a future for everyone\" - something he wrote at length about in a recent […]",
+          "published_at": "2026-09-23T22:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bf0f82f61058abe4",
+      "title": "Anthropic says its biology lab has already found something big",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big",
+          "target_url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big",
+          "independent": true,
+          "title": "Anthropic says its biology lab has already found something big",
+          "summary": "But maybe the biggest reveal is that Anthropic has not let Claude run loose in its biology lab. Humans are still, so far, in the loop.",
+          "published_at": "2026-09-23T22:17:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "30759e0eb854d3c1",
+      "title": "Agentic AI and Generative AI: Bringing Virtual Characters to Life with Purpose and Persistence",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@curiousmind1786/agentic-ai-and-generative-ai-bringing-virtual-characters-to-life-with-purpose-and-persistence-a473ba65211c",
+          "target_url": "https://medium.com/@curiousmind1786/agentic-ai-and-generative-ai-bringing-virtual-characters-to-life-with-purpose-and-persistence-a473ba65211c",
+          "independent": false,
+          "title": "Agentic AI and Generative AI: Bringing Virtual Characters to Life with Purpose and Persistence",
+          "summary": "Creating AI entities that feel alive and purposeful draws from complex systems that mimic human cognition and memory. Continue reading on Medium »",
+          "published_at": "2026-09-23T22:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ef8e05f007fd61a6",
+      "title": "MCP or CLI in Your Coding Agent?",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tarunjolly8/mcp-or-cli-in-your-coding-agent-51c5b5f0c549",
+          "target_url": "https://medium.com/@tarunjolly8/mcp-or-cli-in-your-coding-agent-51c5b5f0c549",
+          "independent": false,
+          "title": "MCP or CLI in Your Coding Agent?",
+          "summary": "Plenty of services now ship both an MCP server and a CLI. Continue reading on Medium »",
+          "published_at": "2026-09-23T22:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0b79c254dde63e61",
+      "title": "I Fed an AI Quant Agent Pure Noise. It Still Found ‘Alpha’ — Every Single Time.",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lvyang860/i-fed-an-ai-quant-agent-pure-noise-it-still-found-alpha-every-single-time-2e3667921e8b",
+          "target_url": "https://medium.com/@lvyang860/i-fed-an-ai-quant-agent-pure-noise-it-still-found-alpha-every-single-time-2e3667921e8b",
+          "independent": false,
+          "title": "I Fed an AI Quant Agent Pure Noise. It Still Found ‘Alpha’ — Every Single Time.",
+          "summary": "A pre-registered test of what LLM factor-mining loops say when there is nothing to find. Continue reading on Medium »",
+          "published_at": "2026-09-23T22:43:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3eb94b43ea8595f4",
+      "title": "The Origin of “Perceptual Chain”: Cartesian Blind Spots",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hi.roshi19750714/the-origin-of-perceptual-chain-cartesian-blind-spots-13c1cd02d059",
+          "target_url": "https://medium.com/@hi.roshi19750714/the-origin-of-perceptual-chain-cartesian-blind-spots-13c1cd02d059",
+          "independent": false,
+          "title": "The Origin of “Perceptual Chain”: Cartesian Blind Spots",
+          "summary": "— What Noh Theater and Bollywood Teach Autonomous Intelligence About Embodiment and “Ma” (Part 3 / 4) Continue reading on Medium »",
+          "published_at": "2026-09-23T22:42:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2b52c9c6b07a7851",
+      "title": "I Asked ChatGPT About the Hugging Face Incident. Then the Conversation Got Uncomfortable.",
+      "first_seen": "2026-09-24T08:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@evanmarsten/i-asked-chatgpt-about-the-hugging-face-incident-then-the-conversation-got-uncomfortable-458960ab4962",
+          "target_url": "https://medium.com/@evanmarsten/i-asked-chatgpt-about-the-hugging-face-incident-then-the-conversation-got-uncomfortable-458960ab4962",
+          "independent": false,
+          "title": "I Asked ChatGPT About the Hugging Face Incident. Then the Conversation Got Uncomfortable.",
+          "summary": "I started by asking what happened. A few questions later, I was wondering whether we are prepared for the kind of AI we are building. Continue reading on Medium »",
+          "published_at": "2026-09-23T22:39:38+00:00",
           "date_precision": "time"
         }
       ],
