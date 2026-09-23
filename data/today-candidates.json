@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T20:00:57.626145+09:00",
-  "window_start": "2026-07-25T20:00:57.626145+09:00",
-  "window_end": "2026-09-23T20:00:57.626145+09:00",
+  "collected_at": "2026-09-23T21:01:08.384121+09:00",
+  "window_start": "2026-07-25T21:01:08.384121+09:00",
+  "window_end": "2026-09-23T21:01:08.384121+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 118,
@@ -98,9 +98,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 28,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 21,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -186,9 +186,9 @@
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 2,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 18,
+      "excluded_count": 17,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -197,10 +197,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 8,
-      "skipped_count": 5,
+      "excluded_count": 9,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -263,11 +263,26 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 0,
-  "archive_count": 267,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-23T20:01:24.331279+09:00",
-  "hourly_window_start": "2026-09-20T20:01:24.331279+09:00",
+  "new_count": 1,
+  "archive_count": 268,
+  "candidates": [
+    {
+      "id": "5ab590850491008e",
+      "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
+      "source_summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "fetched_at": "2026-09-23T21:01:08+09:00",
+      "published_at": "2026-09-23T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Grab과 OpenAI는 동남아시아에 실용적인 AI 기술을 제공합니다.",
+      "source_summary_ko": "OpenAI와 Grab은 3만 명의 파트너가 동남아시아 전역에서 실용적인 AI 기술을 구축할 수 있도록 지원하는 지역 프로그램인 GO Forward with AI를 출시합니다."
+    }
+  ],
+  "hourly_collected_at": "2026-09-23T21:01:32.799839+09:00",
+  "hourly_window_start": "2026-09-20T21:01:32.799839+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1692,27 +1707,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "ea310f48d338b9de",
-      "title": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview",
-          "target_url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview",
-          "independent": true,
-          "title": "Alibaba Open Sources OpenCodeReview for AI-Assisted Code Review",
-          "summary": "Alibaba recently open-sourced OpenCodeReview, an AI-powered code review CLI that combines deterministic pipelines for file selection, bundling, and rule matching with an LLM agent for dynamic code analysis. It supports built-in checks for issues such as null-pointer exceptions, thread safety, XSS, and SQL injection. By Renato Losio",
-          "published_at": "2026-09-20T11:57:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "502ecda31ed9faae",
       "title": "Redefining Media at 18: How I Built an Autonomous Tech News Platform Using AI and n8n",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -2650,6 +2644,17 @@
           "title": "Created a local AI to save data",
           "summary": "",
           "published_at": "2026-09-23T02:12:38+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814638",
+          "target_url": "https://github.com/just-not-google/BiNeuron",
+          "independent": false,
+          "title": "What if we created a local AI tool to measure your security?",
+          "summary": "",
+          "published_at": "2026-09-23T11:47:23+00:00",
           "date_precision": "time"
         }
       ],
@@ -4835,6 +4840,321 @@
           "title": "Moving Beyond the Hype: Why Real AI Impact Demands Deep Context, Not Persona Prompts",
           "summary": "There is a common misunderstanding about how I approach technology. Continue reading on Medium »",
           "published_at": "2026-09-23T10:40:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2a213212e776df0f",
+      "title": "Show HN: Red-team your AI agent",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814754",
+          "target_url": "https://www.botgauge.com",
+          "independent": false,
+          "title": "Show HN: Red-team your AI agent",
+          "summary": "",
+          "published_at": "2026-09-23T11:58:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2456f4a77fdb260a",
+      "title": "Jev-serve: Run latest qwen3.8, other frozen LLM models, mlx-supported",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814680",
+          "target_url": "https://github.com/rreinold/jev-serve",
+          "independent": false,
+          "title": "Jev-serve: Run latest qwen3.8, other frozen LLM models, mlx-supported",
+          "summary": "",
+          "published_at": "2026-09-23T11:51:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c598635a839c738d",
+      "title": "GPT-6 Astra is the best vision model",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814643",
+          "target_url": "https://blog.roboflow.com/gpt-6-astra-vision",
+          "independent": false,
+          "title": "GPT-6 Astra is the best vision model",
+          "summary": "",
+          "published_at": "2026-09-23T11:47:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6847e187e7f7d807",
+      "title": "Samsung's AI fridges shut down after update, causes outrage",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814481",
+          "target_url": "https://www.notebookcheck.net/The-refrigerator-is-dead-Samsung-s-AI-fridges-shut-down-after-update-causes-outrage.1406447.0.html",
+          "independent": false,
+          "title": "Samsung's AI fridges shut down after update, causes outrage",
+          "summary": "",
+          "published_at": "2026-09-23T11:33:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1a18c07d992a892f",
+      "title": "Meta Tests Muse AI Agent Calls That Are Made by Humans in a Call Center",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814468",
+          "target_url": "https://www.404media.co/meta-tests-muse-ai-agent-calls-that-are-actually-made-by-humans-in-a-call-center",
+          "independent": false,
+          "title": "Meta Tests Muse AI Agent Calls That Are Made by Humans in a Call Center",
+          "summary": "",
+          "published_at": "2026-09-23T11:32:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "78d656581d748aa1",
+      "title": "Universal Agent HP – 10-layer autonomous AI agent OS (free or local)",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814428",
+          "target_url": "https://github.com/kapitan00000978-sketch/Universal-Agent-HP",
+          "independent": false,
+          "title": "Universal Agent HP – 10-layer autonomous AI agent OS (free or local)",
+          "summary": "",
+          "published_at": "2026-09-23T11:28:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3939dfcfbd1b6aa0",
+      "title": "Anthropic Is Suing Meta",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814326",
+          "target_url": "https://twitter.com/bunjavascript/status/2102630092451217782",
+          "independent": false,
+          "title": "Anthropic Is Suing Meta",
+          "summary": "",
+          "published_at": "2026-09-23T11:17:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "90810628123cd78e",
+      "title": "The Download: why AI's latest breakthroughs and fears may be more hype than rea",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49814211",
+          "target_url": "https://www.technologyreview.com/2026/09/22/1144910/the-download-dont-believe-ai-hype",
+          "independent": false,
+          "title": "The Download: why AI's latest breakthroughs and fears may be more hype than rea",
+          "summary": "",
+          "published_at": "2026-09-23T11:01:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "716a82fce17735ae",
+      "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/999249/openai-creators-patreon-execs-hire-sam-yam",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999249/openai-creators-patreon-execs-hire-sam-yam",
+          "independent": true,
+          "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
+          "summary": "OpenAI has hired three former Patreon execs to anchor its product strategy for creators. After starting the creator subscription platform 13 years ago, co-founder and technology chief Sam Yam announced on X that he's joining OpenAI to lead Creator Product. He's also bringing Patreon's former product head Drew Rowny and engineering head Shannon Ma with […]",
+          "published_at": "2026-09-23T11:02:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "5fae2bbd496782db",
+      "title": "The pacing era's first launch day",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/the-pacing-era-s-first-launch-day",
+          "target_url": "https://www.therundown.ai/articles/the-pacing-era-s-first-launch-day",
+          "independent": true,
+          "title": "The pacing era's first launch day",
+          "summary": "PLUS: Build, test, and publish an app without leaving Codex",
+          "published_at": "2026-09-23T09:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "f0fb07966784ee30",
+      "title": "One of the easiest mistakes is choosing the output format before thinking about the actual task.",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://loveocr.medium.com/one-of-the-easiest-mistakes-is-choosing-the-output-format-before-thinking-about-the-actual-task-0a627bf2f001",
+          "target_url": "https://loveocr.medium.com/one-of-the-easiest-mistakes-is-choosing-the-output-format-before-thinking-about-the-actual-task-0a627bf2f001",
+          "independent": false,
+          "title": "One of the easiest mistakes is choosing the output format before thinking about the actual task.",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-23T11:47:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d0bdd67357c635ed",
+      "title": "How Large Language Models Actually Generate Answers",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dprasadbairwa1997/how-large-language-models-actually-generate-answers-0cf66818ee81",
+          "target_url": "https://medium.com/@dprasadbairwa1997/how-large-language-models-actually-generate-answers-0cf66818ee81",
+          "independent": false,
+          "title": "How Large Language Models Actually Generate Answers",
+          "summary": "Prefill, decode, and what every sampling parameter really does to the next token. Continue reading on Medium »",
+          "published_at": "2026-09-23T11:46:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "578fb04d7c651e6f",
+      "title": "Top iOS App Development Companies in India",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alexmercer.techo/top-ios-app-development-companies-in-india-0a797734f4b0",
+          "target_url": "https://medium.com/@alexmercer.techo/top-ios-app-development-companies-in-india-0a797734f4b0",
+          "independent": false,
+          "title": "Top iOS App Development Companies in India",
+          "summary": "While Android dominates in raw device numbers globally, iOS remains the platform of choice for businesses targeting higher-spending users… Continue reading on Medium »",
+          "published_at": "2026-09-23T11:46:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3e9df0d0bbcd4331",
+      "title": "The war over a piece of silicon",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://aiadvances.org/the-war-over-a-piece-of-silicon-d642f3a8c9f8",
+          "target_url": "https://aiadvances.org/the-war-over-a-piece-of-silicon-d642f3a8c9f8",
+          "independent": false,
+          "title": "The war over a piece of silicon",
+          "summary": "The most important technology on earth is also one of the hardest things humans have ever learned to make. Continue reading on AI Advances »",
+          "published_at": "2026-09-23T11:43:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6d7e8e0bb12557da",
+      "title": "When AI Saves Time — and When It Only Moves the Work",
+      "first_seen": "2026-09-23T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@omanyuk/when-ai-saves-time-and-when-it-only-moves-the-work-7dce9d192981",
+          "target_url": "https://medium.com/@omanyuk/when-ai-saves-time-and-when-it-only-moves-the-work-7dce9d192981",
+          "independent": false,
+          "title": "When AI Saves Time — and When It Only Moves the Work",
+          "summary": "A research-based perspective on AI agent productivity, test-time compute, verification costs, and the economics of reusable workflows Continue reading on Medium »",
+          "published_at": "2026-09-23T11:42:18+00:00",
           "date_precision": "time"
         }
       ],

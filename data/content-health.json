@@ -1,16 +1,16 @@
 {
   "news": {
-    "checked_at": "2026-09-23T20:01:24.331279+09:00",
+    "checked_at": "2026-09-23T21:01:32.799839+09:00",
     "status": "partial",
-    "candidate_count": 0,
-    "archive_count": 267,
+    "candidate_count": 1,
+    "archive_count": 268,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 118,
@@ -99,9 +99,9 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 8,
+        "count": 9,
         "held_count": 0,
-        "excluded_count": 28,
+        "excluded_count": 30,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -124,7 +124,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 9,
+        "skipped_count": 10,
         "coverage_limited": false
       },
       {
@@ -135,7 +135,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 10,
+        "skipped_count": 9,
         "coverage_limited": false
       },
       {
@@ -165,10 +165,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 8,
+        "count": 9,
         "held_count": 0,
-        "excluded_count": 22,
-        "skipped_count": 8,
+        "excluded_count": 21,
+        "skipped_count": 9,
         "coverage_limited": false
       },
       {
@@ -187,9 +187,9 @@
         "name": "The Rundown AI",
         "url": "https://www.therundown.ai/feed",
         "status": "ok",
-        "count": 2,
+        "count": 3,
         "held_count": 0,
-        "excluded_count": 18,
+        "excluded_count": 17,
         "skipped_count": 2,
         "coverage_limited": false
       },
@@ -198,10 +198,10 @@
         "name": "InfoQ",
         "url": "https://feed.infoq.com/ai-ml-data-eng/",
         "status": "ok",
-        "count": 7,
+        "count": 6,
         "held_count": 0,
-        "excluded_count": 8,
-        "skipped_count": 5,
+        "excluded_count": 9,
+        "skipped_count": 6,
         "coverage_limited": false
       },
       {
@@ -264,7 +264,7 @@
         "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
       }
     ],
-    "pending_event_count": 212
+    "pending_event_count": 226
   },
   "documents": {
     "checked_at": "2026-09-23T06:25:07.216458+09:00",
