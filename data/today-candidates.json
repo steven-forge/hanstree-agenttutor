@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T05:01:06.251221+09:00",
-  "window_start": "2026-07-26T05:01:06.251221+09:00",
-  "window_end": "2026-09-24T05:01:06.251221+09:00",
+  "collected_at": "2026-09-24T06:01:23.829708+09:00",
+  "window_start": "2026-07-26T06:01:23.829708+09:00",
+  "window_end": "2026-09-24T06:01:23.829708+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 1,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 124,
+      "skipped_count": 125,
       "coverage_limited": false
     },
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 165,
+      "excluded_count": 164,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -42,10 +42,10 @@
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 48,
+      "skipped_count": 49,
       "coverage_limited": false
     },
     {
@@ -98,9 +98,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 30,
+      "excluded_count": 28,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -175,9 +175,9 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 3,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 23,
+      "excluded_count": 22,
       "skipped_count": 3,
       "coverage_limited": false
     },
@@ -263,45 +263,26 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 2,
-  "archive_count": 278,
+  "new_count": 1,
+  "archive_count": 279,
   "candidates": [
     {
-      "id": "6eff16a1336643fb",
-      "title": "v2.1.281",
-      "source_id": "claude-releases",
-      "source_name": "Claude Code Releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
-      "source_summary": "## What's changed - Added Claude apps gateway support for newer Claude Desktop keys in `desktop` policy blocks, including `blockReadsOutsideWorkingDirectories` and `disableBypassPermissionsMode` - Added `assume_role` on Claude apps gateway Bedrock upstreams: the gateway calls Bedrock as an IAM role it assumes through STS, in another AWS account if needed, optionally one session per developer - Added `guardrail: {id, version}` on Claude apps gateway Bedrock upstreams to apply an Amazon Bedrock gu",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-24T05:01:36+09:00",
-      "published_at": "2026-09-23T19:19:15+00:00",
-      "date_precision": "time",
-      "title_ko": "Claude Code v2.1.281 버전 출시",
-      "source_summary_ko": "# # 변경 사항 - 'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude 데스크톱 키에 대한 Claude 앱 게이트웨이 지원 추가 - Claude 앱 게이트웨이에 `assume_role` 추가 Bedrock upstreams: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock를 호출하고, 필요한 경우 다른 AWS 계정에서 선택적으로 개발자당 하나의 세션 추가 - Claude 앱에 `guardrail: {id, version}` 추가 amazon Bedrock gu를 적용하기 위한 게이트웨이 베드락 업스트림",
-      "release_notes_ko": {
-        "new_features": "'blockReadsOutsideWorkingDirectories' 및 'disableBypassPermissionsMode' 를 포함하여 `desktop` 정책 블록에 새로운 Claude Desktop 키에 대한 Claude 앱 게이트웨이 지원 추가\nClaude 앱 게이트웨이에 `assume_role` 추가 Bedrock 업스트림: 게이트웨이는 STS를 통해 가정하는 IAM 역할로 Bedrock을 호출하고, 필요한 경우 다른 AWS 계정에서 개발자당 하나의 세션을 선택적으로 호출합니다.",
-        "bug_fixes": "API 요청을 다시 시도하는 동안 세션을 종료할 수 있는 충돌 (\"복구할 수 없는 인터페이스 오류\") 이 수정되었습니다.\n모델이 분리할 수 없는 도구 호출과 출력 제한 잘라내기를 번갈아 할 때 `--max-turns` 를 무시하고 무기한 재시도할 수 있는 턴을 수정했습니다.",
-        "chores": "Windows: `$ TMPDIR/…` 에 쓰는 Bash 명령이 \"Permission denied\" 로 실패하는 문제 수정\nWindows: 동시에 업데이트하는 Claude Code 세션이 서로의 `claude.exe' 백업을 삭제할 수 있으며 `claude.exe` 가 남지 않는 레이스를 수정했습니다.\nClaude Desktop 로그인 및 사용 제한 오류 메시지가 터미널 명령 대신 앱을 가리키도록 개선되었습니다."
-      }
-    },
-    {
-      "id": "3d7b9aab56c8f4fe",
-      "title": "Introducing MentalHealthBench",
+      "id": "0765deb144589280",
+      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
       "source_id": "openai-news",
       "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/introducing-mentalhealthbench",
-      "source_summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations.",
-      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
-      "fetched_at": "2026-09-24T05:01:06+09:00",
-      "published_at": "2026-09-23T10:00:00+00:00",
+      "source_url": "https://openai.com/index/airbnb-gpt-6-astra",
+      "source_summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-24T06:01:24+09:00",
+      "published_at": "2026-09-23T01:00:00+00:00",
       "date_precision": "time",
-      "title_ko": "MentalHealthBench 소개",
-      "source_summary_ko": "MentalHealthBench는 현실적인 정신 건강 대화에서 유용하고 안전한 AI 반응을 평가하기 위한 전문가의 정보에 입각한 벤치마크입니다."
+      "title_ko": "에어비앤비, GPT-6 Astra 및 OpenAI 프론티어 모델에 대한 접근성 확대",
+      "source_summary_ko": "엔지니어링 팀이 버그를 해결하고, 시스템을 설계하고, 더 빠르게 배송할 수 있도록 에어비앤비가 GPT-6 Astra 및 OpenAI 프론티어 모델에 대한 액세스를 확대하는 방법을 알아보세요."
     }
   ],
-  "hourly_collected_at": "2026-09-24T05:01:45.735948+09:00",
-  "hourly_window_start": "2026-09-21T05:01:45.735948+09:00",
+  "hourly_collected_at": "2026-09-24T06:01:51.504587+09:00",
+  "hourly_window_start": "2026-09-21T06:01:51.504587+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -7918,6 +7899,321 @@
           "title": "Website System Prompt Steps I Wish I Knew When I Started",
           "summary": "The step-by-step system prompt process I now follow on every single website project. Continue reading on CodeToDeploy »",
           "published_at": "2026-09-23T19:43:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "adac8d2da8573528",
+      "title": "AI Goes to War: Ukraine AI Autonomous Drone Guidance",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822510",
+          "target_url": "https://jeffreylminch.substack.com/p/ai-goes-to-war-ukraine-ai-autonomous",
+          "independent": false,
+          "title": "AI Goes to War: Ukraine AI Autonomous Drone Guidance",
+          "summary": "",
+          "published_at": "2026-09-23T20:59:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4d67e56151249f4f",
+      "title": "CorridorKey – free neural net based green screen keys",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822494",
+          "target_url": "https://github.com/nikopueringer/CorridorKey",
+          "independent": false,
+          "title": "CorridorKey – free neural net based green screen keys",
+          "summary": "",
+          "published_at": "2026-09-23T20:58:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "02280242a073b1f4",
+      "title": "OpenAI hacked Australian Medicare portal",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822457",
+          "target_url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
+          "independent": false,
+          "title": "OpenAI hacked Australian Medicare portal",
+          "summary": "",
+          "published_at": "2026-09-23T20:55:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "38f5a5ebd5e2e458",
+      "title": "Dwarkesh Patels's popular but misleading account of Hugging Face incident",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822445",
+          "target_url": "https://garymarcus.substack.com/p/dwarkesh-patelss-wildly-popular-but",
+          "independent": false,
+          "title": "Dwarkesh Patels's popular but misleading account of Hugging Face incident",
+          "summary": "",
+          "published_at": "2026-09-23T20:54:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24381cad37ad4f76",
+      "title": "After AI models escaped testing environments,Irregular seeks $1.5B valuation",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822442",
+          "target_url": "https://www.calcalistech.com/ctechnews/article/13p5khsib",
+          "independent": false,
+          "title": "After AI models escaped testing environments,Irregular seeks $1.5B valuation",
+          "summary": "",
+          "published_at": "2026-09-23T20:54:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4199df10885fb466",
+      "title": "Agent Etna – Automated staging environment and regression compiler for AI agents",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822181",
+          "target_url": "https://www.agentetna.com/",
+          "independent": false,
+          "title": "Agent Etna – Automated staging environment and regression compiler for AI agents",
+          "summary": "",
+          "published_at": "2026-09-23T20:35:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6e532292dfa33db4",
+      "title": "AI can never produce sublime art",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822154",
+          "target_url": "https://hilariusbookbinder.substack.com/p/ai-can-never-produce-sublime-art",
+          "independent": false,
+          "title": "AI can never produce sublime art",
+          "summary": "",
+          "published_at": "2026-09-23T20:33:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "04f352b210857514",
+      "title": "An LLM Beat NetHack",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822109",
+          "target_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension",
+          "independent": false,
+          "title": "An LLM Beat NetHack",
+          "summary": "",
+          "published_at": "2026-09-23T20:30:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0db0a5afd4daec5",
+      "title": "The Most Important Market in AI Is the Middle",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49822063",
+          "target_url": "https://tomtunguz.com/the-most-important-market-in-ai-is-the-middle",
+          "independent": false,
+          "title": "The Most Important Market in AI Is the Middle",
+          "summary": "",
+          "published_at": "2026-09-23T20:28:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dbb0f2d9b0aea483",
+      "title": "“Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/xiaomi-mimo-vs-6-open-source",
+          "target_url": "https://thenewstack.io/xiaomi-mimo-vs-6-open-source",
+          "independent": true,
+          "title": "“Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6",
+          "summary": "New models are coming out thick and fast, almost on a weekly cadence, ranging from the powerful proprietary systems coming The post “Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6 appeared first on The New Stack .",
+          "published_at": "2026-09-23T20:00:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0fd9912b8af2d6af",
+      "title": "Comfy Router isn’t just simplifying pipelines – it’s routing the future of civilization.",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ai_domez/comfy-router-isnt-just-simplifying-pipelines-it-s-routing-the-future-of-civilization-0f52dfbdf41c",
+          "target_url": "https://medium.com/@ai_domez/comfy-router-isnt-just-simplifying-pipelines-it-s-routing-the-future-of-civilization-0f52dfbdf41c",
+          "independent": false,
+          "title": "Comfy Router isn’t just simplifying pipelines – it’s routing the future of civilization.",
+          "summary": "One integration. All frontier models. Image, video, 3D, audio – flowing through a single computational artery. Continue reading on Medium »",
+          "published_at": "2026-09-23T20:46:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7d31a2f0ecae784c",
+      "title": "Partitioning in Apache Spark: How to Control Parallelism and Improve Performance",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@geekycodes/partitioning-in-apache-spark-how-to-control-parallelism-and-improve-performance-559684db7904",
+          "target_url": "https://medium.com/@geekycodes/partitioning-in-apache-spark-how-to-control-parallelism-and-improve-performance-559684db7904",
+          "independent": false,
+          "title": "Partitioning in Apache Spark: How to Control Parallelism and Improve Performance",
+          "summary": "If you’ve followed this Apache Spark series so far, you’ve already learned about Spark Architecture, Driver vs Executor, DAGs, Stages… Continue reading on Medium »",
+          "published_at": "2026-09-23T20:45:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6d9826f90fb2b47d",
+      "title": "️ AI & Elections in 2026",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://wealthwithai.medium.com/%EF%B8%8F-ai-elections-in-2026-1a54fefa5cd6",
+          "target_url": "https://wealthwithai.medium.com/%EF%B8%8F-ai-elections-in-2026-1a54fefa5cd6",
+          "independent": false,
+          "title": "️ AI & Elections in 2026",
+          "summary": "Artificial intelligence is changing the digital election landscape — from data analysis and content creation to social media and deepfakes. Continue reading on Medium »",
+          "published_at": "2026-09-23T20:44:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "87b8b35a59521bbb",
+      "title": "Typed decisions without generation: what we learned integrating Laya, testing SemIf, and reading…",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sponge-theory.ai/typed-decisions-without-generation-what-we-learned-integrating-laya-testing-semif-and-reading-638d06ed046b",
+          "target_url": "https://medium.com/@sponge-theory.ai/typed-decisions-without-generation-what-we-learned-integrating-laya-testing-semif-and-reading-638d06ed046b",
+          "independent": false,
+          "title": "Typed decisions without generation: what we learned integrating Laya, testing SemIf, and reading…",
+          "summary": "Three ways to get a choice, a score or a yes/no with probabilities out of a document, no text generation involved. Measured on the same… Continue reading on Medium »",
+          "published_at": "2026-09-23T20:41:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c5a22cf9b21386e2",
+      "title": "AI Skepticism Is an Identity Crisis",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://blog.startupstash.com/ai-skepticism-is-an-identity-crisis-9127e1891959",
+          "target_url": "https://blog.startupstash.com/ai-skepticism-is-an-identity-crisis-9127e1891959",
+          "independent": false,
+          "title": "AI Skepticism Is an Identity Crisis",
+          "summary": "Knowing how the AI sausage is made doesn’t help you cook with it Continue reading on Startup Stash »",
+          "published_at": "2026-09-23T20:36:01+00:00",
           "date_precision": "time"
         }
       ],
