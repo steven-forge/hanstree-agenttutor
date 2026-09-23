@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T09:19:33.472912+09:00",
-  "window_start": "2026-07-25T09:19:33.472912+09:00",
-  "window_end": "2026-09-23T09:19:33.472912+09:00",
+  "collected_at": "2026-09-23T10:01:31.533655+09:00",
+  "window_start": "2026-07-25T10:01:31.533655+09:00",
+  "window_end": "2026-09-23T10:01:31.533655+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 161,
+      "excluded_count": 160,
       "skipped_count": 21,
       "coverage_limited": false
     },
@@ -76,10 +76,10 @@
       "name": "Anthropic News",
       "url": "https://www.anthropic.com/news",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 1,
-      "skipped_count": 11,
+      "skipped_count": 12,
       "coverage_limited": false
     },
     {
@@ -100,8 +100,8 @@
       "status": "ok",
       "count": 7,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 4,
+      "excluded_count": 30,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 3,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -263,28 +263,11 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 266,
-  "candidates": [
-    {
-      "id": "e7232d52f37fd859",
-      "title": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
-      "source_id": "anthropic-news",
-      "source_name": "Anthropic News",
-      "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
-      "source_summary": "Our most advanced models for coding and knowledge work. Their research capabilities also offer an early glimpse of how AI models will contribute to scientific progress.",
-      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
-      "fetched_at": "2026-09-23T09:20:00+09:00",
-      "published_on": "2026-09-01",
-      "date_precision": "day",
-      "importance": "high",
-      "title_ko": "Claude Fable 5.1 및 Claude Mythos 5.1 소개",
-      "source_summary_ko": "Claude Fable 5.1과 Claude Mythos 5.1을 소개합니다.\nClaude Fable 5.1이 가장 먼저 찾았습니다.\nClaude Fable 5.1 및 Claude Mythos 5.1 시스템 카드.",
-      "source_summary_provenance": "article_full_text_3line"
-    }
-  ],
-  "hourly_collected_at": "2026-09-23T09:17:26.063247+09:00",
-  "hourly_window_start": "2026-09-20T09:17:26.063247+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-23T10:02:00.521089+09:00",
+  "hourly_window_start": "2026-09-20T10:02:00.521089+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -899,6 +882,17 @@
           "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
           "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of the entries in the poll Trump posted a few days ago when he started […]",
           "published_at": "2026-09-22T16:01:10+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810231",
+          "target_url": "https://www.reuters.com/legal/government/trump-says-us-will-henceforth-call-ai-super-intelligence-2026-09-22",
+          "independent": false,
+          "title": "Trump says US will henceforth call AI 'super intelligence'",
+          "summary": "",
+          "published_at": "2026-09-23T00:46:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -2212,6 +2206,174 @@
           "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
           "summary": "Earlier this month OpenAI introduced GPT-6 Astra and called it the most intelligent and aligned model in the world. Today the company… Continue reading on Medium »",
           "published_at": "2026-09-23T00:08:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0d30b55e5ce520e2",
+      "title": "Naming AI agents after Seinfeld characters helps bots join the team – report",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810295",
+          "target_url": "https://www.theregister.com/ai-and-ml/2026/09/22/security-firm-finds-naming-ai-agents-after-seinfeld-characters-helps-bots-join-the-team/5298424",
+          "independent": false,
+          "title": "Naming AI agents after Seinfeld characters helps bots join the team – report",
+          "summary": "",
+          "published_at": "2026-09-23T00:54:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7c0e9c328d706f2d",
+      "title": "Z.ai uploading local code repos to overseas cloud without consent",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810164",
+          "target_url": "https://www.reuters.com/legal/litigation/chinas-zai-disables-ai-coding-assistant-features-after-security-issue-2026-09-21",
+          "independent": false,
+          "title": "Z.ai uploading local code repos to overseas cloud without consent",
+          "summary": "",
+          "published_at": "2026-09-23T00:38:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d79d9d8c8318276a",
+      "title": "I'm sick of Claudisms, & what will happen next in AI-boosted software dev",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49810083",
+          "target_url": "https://www.polso.info/im-sick-of-claudisms-future-ai-software-development",
+          "independent": false,
+          "title": "I'm sick of Claudisms, & what will happen next in AI-boosted software dev",
+          "summary": "",
+          "published_at": "2026-09-23T00:28:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5816cea2e38d369",
+      "title": "Dimensionality Reduction Explained: PCA, Manifold Learning, and Production ML Design",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@deepakcse2k5/dimensionality-reduction-explained-pca-manifold-learning-and-production-ml-design-67c048839357",
+          "target_url": "https://medium.com/@deepakcse2k5/dimensionality-reduction-explained-pca-manifold-learning-and-production-ml-design-67c048839357",
+          "independent": false,
+          "title": "Dimensionality Reduction Explained: PCA, Manifold Learning, and Production ML Design",
+          "summary": "From the curse of dimensionality to PCA, SVD, Kernel PCA, LLE, t-SNE, and production-ready ML systems Continue reading on Medium »",
+          "published_at": "2026-09-23T01:00:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f44b40870a9c88a",
+      "title": "The One Feature That Actually Makes an AI Companion Feel Real",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@gm1990199/the-one-feature-that-actually-makes-an-ai-companion-feel-real-56288d15c737",
+          "target_url": "https://medium.com/@gm1990199/the-one-feature-that-actually-makes-an-ai-companion-feel-real-56288d15c737",
+          "independent": false,
+          "title": "The One Feature That Actually Makes an AI Companion Feel Real",
+          "summary": "Ask people what they want from an AI companion and you’ll hear a lot about personality, conversation quality, maybe voice. Continue reading on Medium »",
+          "published_at": "2026-09-23T00:58:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "40e9bad2777b0113",
+      "title": "Scaling AI Without Scaling Risk",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nishisugavanam/scaling-ai-without-scaling-risk-619cb770372e",
+          "target_url": "https://medium.com/@nishisugavanam/scaling-ai-without-scaling-risk-619cb770372e",
+          "independent": false,
+          "title": "Scaling AI Without Scaling Risk",
+          "summary": "A Practical Governance Framework for Enterprise Adoption Continue reading on Medium »",
+          "published_at": "2026-09-23T00:54:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a443ec01d91d530b",
+      "title": "Beyond RAG: What It Takes to Build Reliable Grounding and Retrieval for Enterprise AI",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@swathi.iruvanti/beyond-rag-what-it-takes-to-build-reliable-grounding-and-retrieval-for-enterprise-ai-61463b3ce110",
+          "target_url": "https://medium.com/@swathi.iruvanti/beyond-rag-what-it-takes-to-build-reliable-grounding-and-retrieval-for-enterprise-ai-61463b3ce110",
+          "independent": false,
+          "title": "Beyond RAG: What It Takes to Build Reliable Grounding and Retrieval for Enterprise AI",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-23T00:50:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d42aad41ddbe6b4a",
+      "title": "One Person, One Personal AI — Part 2",
+      "first_seen": "2026-09-23T10:02:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@esd1002/one-person-one-personal-ai-part-2-33918c6b3c29",
+          "target_url": "https://medium.com/@esd1002/one-person-one-personal-ai-part-2-33918c6b3c29",
+          "independent": false,
+          "title": "One Person, One Personal AI — Part 2",
+          "summary": "I’m Japanese, and I don’t write English fluently. The ideas in this article are mine. Continue reading on Medium »",
+          "published_at": "2026-09-23T00:47:51+00:00",
           "date_precision": "time"
         }
       ],
