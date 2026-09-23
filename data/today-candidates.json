@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-23T17:00:57.650793+09:00",
-  "window_start": "2026-07-25T17:00:57.650793+09:00",
-  "window_end": "2026-09-23T17:00:57.650793+09:00",
+  "collected_at": "2026-09-23T18:00:55.786582+09:00",
+  "window_start": "2026-07-25T18:00:55.786582+09:00",
+  "window_end": "2026-09-23T18:00:55.786582+09:00",
   "edition_date": "2026-09-23",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 12,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 3,
+      "excluded_count": 31,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 20,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -266,8 +266,8 @@
   "new_count": 0,
   "archive_count": 267,
   "candidates": [],
-  "hourly_collected_at": "2026-09-23T17:01:19.596508+09:00",
-  "hourly_window_start": "2026-09-20T17:01:19.596508+09:00",
+  "hourly_collected_at": "2026-09-23T18:01:16.783402+09:00",
+  "hourly_window_start": "2026-09-20T18:01:16.783402+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -526,6 +526,17 @@
           "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
           "summary": "",
           "published_at": "2026-09-22T21:43:04+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813122",
+          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
+          "independent": false,
+          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
+          "summary": "",
+          "published_at": "2026-09-23T08:24:01+00:00",
           "date_precision": "time"
         }
       ],
@@ -4036,6 +4047,216 @@
           "title": "Custom GPT’lerin Sonu Değil: Yapay Zekâ Ürünlerinde Yeni Bir Başlangıç",
           "summary": "OpenAI’nin Custom GPT’leri Plugins yapısına taşıma planı, yalnızca teknik bir format değişikliği değil. Yapay zekâ ürünlerinin nasıl… Continue reading on Medium »",
           "published_at": "2026-09-23T07:43:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5ca937f67a39e384",
+      "title": "Synchrony AI – AI Powered Investment Research and Portfolio Management Platform",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813328",
+          "target_url": "https://www.synchrony-ai.com",
+          "independent": false,
+          "title": "Synchrony AI – AI Powered Investment Research and Portfolio Management Platform",
+          "summary": "",
+          "published_at": "2026-09-23T08:52:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9a2ea1cda59e14ad",
+      "title": "Using Llama-cpp-Python grammars to generate JSON",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813189",
+          "target_url": "https://til.simonwillison.net/llms/llama-cpp-python-grammars",
+          "independent": false,
+          "title": "Using Llama-cpp-Python grammars to generate JSON",
+          "summary": "",
+          "published_at": "2026-09-23T08:32:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "57dd5a5ef60758cf",
+      "title": "Show HN: ReWeaver AI DriftDetector – score a GitHub repo's production readiness",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813096",
+          "target_url": "https://drift.reweaver.ai/",
+          "independent": false,
+          "title": "Show HN: ReWeaver AI DriftDetector – score a GitHub repo's production readiness",
+          "summary": "",
+          "published_at": "2026-09-23T08:21:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d889263cc3bd58c3",
+      "title": "Shut up and calculate: Jev's new AI primitives for coders",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813030",
+          "target_url": "https://www.theregister.com/devops/2026/09/23/shut-up-and-calculate-jevs-new-ai-primitives-for-coders/5298431",
+          "independent": false,
+          "title": "Shut up and calculate: Jev's new AI primitives for coders",
+          "summary": "",
+          "published_at": "2026-09-23T08:10:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5e392b086baf0108",
+      "title": "Show HN: Gwae – infinite-scroll terminal multiplexer for AI agent fleets",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49813028",
+          "target_url": "https://github.com/hongnoul/gwae",
+          "independent": false,
+          "title": "Show HN: Gwae – infinite-scroll terminal multiplexer for AI agent fleets",
+          "summary": "",
+          "published_at": "2026-09-23T08:10:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9d176ddf66bc90b1",
+      "title": "Why AI Video Editing Feels Choppy (Walter Murch's Fix)",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://hellobusinessdynamite.medium.com/why-ai-video-editing-feels-choppy-walter-murchs-fix-e056fd8d3df1",
+          "target_url": "https://hellobusinessdynamite.medium.com/why-ai-video-editing-feels-choppy-walter-murchs-fix-e056fd8d3df1",
+          "independent": false,
+          "title": "Why AI Video Editing Feels Choppy (Walter Murch's Fix)",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-23T08:44:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "95908083fe6eebf8",
+      "title": "A free and complete AI Engineering Course",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@amitshekhar/a-free-and-complete-ai-engineering-course-96187bdb15db",
+          "target_url": "https://medium.com/@amitshekhar/a-free-and-complete-ai-engineering-course-96187bdb15db",
+          "independent": false,
+          "title": "A free and complete AI Engineering Course",
+          "summary": "Learn AI Engineering step by step - from Machine Learning, Neural Networks, and Transformers to LLMs, Fine-Tuning, RAG, AI Agents, LLM… Continue reading on Medium »",
+          "published_at": "2026-09-23T08:44:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4b753e1c9666fcb3",
+      "title": "In Multi-Agent Systems, the Real Problem Is Not the Number of Agents but Coordination",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@oguzhan.demirbas/in-multi-agent-systems-the-real-problem-is-not-the-number-of-agents-but-coordination-41f7aaf18f77",
+          "target_url": "https://medium.com/@oguzhan.demirbas/in-multi-agent-systems-the-real-problem-is-not-the-number-of-agents-but-coordination-41f7aaf18f77",
+          "independent": false,
+          "title": "In Multi-Agent Systems, the Real Problem Is Not the Number of Agents but Coordination",
+          "summary": "Assigning five AI agents to the same problem does not make a system five times smarter. Research suggests that task decomposition… Continue reading on Medium »",
+          "published_at": "2026-09-23T08:43:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1fdef620599fe54f",
+      "title": "Part 10: The Agent Era",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ganeshpss/part-10-the-agent-era-80ff7c92f3a0",
+          "target_url": "https://medium.com/@ganeshpss/part-10-the-agent-era-80ff7c92f3a0",
+          "independent": false,
+          "title": "Part 10: The Agent Era",
+          "summary": "How AI went from answering questions to doing the work Continue reading on Medium »",
+          "published_at": "2026-09-23T08:42:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "157e78f0498ff495",
+      "title": "When Xiaomi Drops an Open-Source AI That Shakes Up Big Tech: A Deep Dive into MiMo-V2.6",
+      "first_seen": "2026-09-23T18:01:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@muhibuddin12/when-xiaomi-drops-an-open-source-ai-that-shakes-up-big-tech-a-deep-dive-into-mimo-v2-6-7799d48bdc45",
+          "target_url": "https://medium.com/@muhibuddin12/when-xiaomi-drops-an-open-source-ai-that-shakes-up-big-tech-a-deep-dive-into-mimo-v2-6-7799d48bdc45",
+          "independent": false,
+          "title": "When Xiaomi Drops an Open-Source AI That Shakes Up Big Tech: A Deep Dive into MiMo-V2.6",
+          "summary": "If you still think Xiaomi is just about value-for-money smartphones or smart rice cookers, we need to talk. They just rolled out their… Continue reading on Medium »",
+          "published_at": "2026-09-23T08:39:47+00:00",
           "date_precision": "time"
         }
       ],
