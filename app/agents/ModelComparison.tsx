@@ -20,7 +20,20 @@ type AgentModel = {
   input_modalities?: string;
   released_at?: string;
   release_source?: string;
+  effort_levels?: string[];
 };
+
+const DEFAULT_EFFORT = "medium";
+const EFFORT_LABELS: Record<string, string> = {
+  none: "None",
+  low: "Low",
+  medium: "Medium",
+  high: "High",
+  xhigh: "Extra high (xhigh)",
+  max: "Max"
+};
+const effortLabel = (level: string) => EFFORT_LABELS[level] ?? level;
+const REASONING_GUIDE_URL = "https://developers.openai.com/api/docs/guides/reasoning";
 
 const NEW_BADGE_DAYS = 30;
 
@@ -54,7 +67,7 @@ function sourcesText(sources: Source[]): string {
   return sources.map((s) => `${s.name} (${s.url})`).join("; ");
 }
 
-const COMPARE_ROWS: CompareRow[] = [
+const BASE_COMPARE_ROWS: CompareRow[] = [
   {
     key: "model_id",
     label: "API 모델 ID",
@@ -161,6 +174,49 @@ export default function ModelComparison({
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [hiddenRowKeys, setHiddenRowKeys] = useState<string[]>([]);
   const [copyStatus, setCopyStatus] = useState<"idle" | "success" | "error">("idle");
+  const [effortByModelId, setEffortByModelId] = useState<Record<string, string>>({});
+
+  function setEffort(modelId: string, value: string) {
+    setCopyStatus("idle");
+    setEffortByModelId((prev) => ({ ...prev, [modelId]: value }));
+  }
+
+  const compareRows = useMemo<CompareRow[]>(() => {
+    const effortRow: CompareRow = {
+      key: "reasoning_effort",
+      label: "추론 강도 (effort)",
+      cell: ({ model }) => {
+        const levels = model.effort_levels;
+        if (!levels || levels.length === 0) {
+          return <span style={{ fontSize: ".82rem", color: "var(--muted)" }}>제공사별 방식 상이 · 비교 대상 아님</span>;
+        }
+        const value = effortByModelId[model.id] ?? DEFAULT_EFFORT;
+        return (
+          <select
+            className="filter-select"
+            style={{ width: "100%", minWidth: "100px" }}
+            value={levels.includes(value) ? value : levels[0]}
+            onChange={(e) => setEffort(model.id, e.target.value)}
+            aria-label={`${model.name} 추론 강도(effort) 선택`}
+          >
+            {levels.map((level) => (
+              <option key={level} value={level}>{effortLabel(level)}</option>
+            ))}
+          </select>
+        );
+      },
+      text: ({ model }) => {
+        const levels = model.effort_levels;
+        if (!levels || levels.length === 0) return "비교 대상 아님";
+        const value = effortByModelId[model.id] ?? DEFAULT_EFFORT;
+        return effortLabel(levels.includes(value) ? value : levels[0]);
+      }
+    };
+    const insertAt = BASE_COMPARE_ROWS.findIndex((row) => row.key === "minimum_access");
+    const rows = [...BASE_COMPARE_ROWS];
+    rows.splice(insertAt === -1 ? rows.length : insertAt, 0, effortRow);
+    return rows;
+  }, [effortByModelId]);
 
   const modelsById = useMemo(() => {
     const map = new Map<string, ModelEntry>();
@@ -178,7 +234,7 @@ export default function ModelComparison({
     .map((id) => modelsById.get(id))
     .filter((entry): entry is ModelEntry => Boolean(entry));
 
-  const visibleRows = COMPARE_ROWS.filter((row) => !hiddenRowKeys.includes(row.key));
+  const visibleRows = compareRows.filter((row) => !hiddenRowKeys.includes(row.key));
 
   const limitReached = selectedIds.length >= MAX_SELECTED;
 
@@ -314,11 +370,17 @@ export default function ModelComparison({
             <p className="section-note" style={{ marginBottom: "8px" }}>
               최소 이용 비용은 별도 크레딧 구매 없이 이용 가능한 구독·무료 티어 기준입니다. 포함 사용량 초과 시 추가 과금될 수 있으며, API 종량제와 앱 구독은 별개입니다.
             </p>
+            <p className="section-note" style={{ marginBottom: "8px" }}>
+              추론 강도(effort)를 올려도 표에 적힌 100만 토큰당 단가는 그대로입니다. 다만 실제로 쓰이는 추론 토큰량·응답 시간·작업당 비용은 달라질 수 있습니다.
+              OpenAI/Codex 모델에만 적용되며 값 범위는{" "}
+              <a href={REASONING_GUIDE_URL} target="_blank" rel="noopener noreferrer">공식 추론 가이드 ↗</a>
+              를 따릅니다.
+            </p>
 
             <details className="model-picker-fieldset" style={{ marginBottom: "12px" }}>
               <summary className="model-picker-legend">표시할 비교 항목</summary>
               <div className="model-picker-list">
-                {COMPARE_ROWS.map((row) => (
+                {compareRows.map((row) => (
                   <label key={row.key} className="model-picker-item">
                     <input
                       type="checkbox"
