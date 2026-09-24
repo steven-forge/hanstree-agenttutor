@@ -1,10 +1,59 @@
 {
   "edition_date": "2026-09-24",
-  "window_start": "2026-07-26T06:26:08.384885+09:00",
-  "window_end": "2026-09-24T06:26:08.384885+09:00",
-  "collected_at": "2026-09-24T06:26:08.384885+09:00",
+  "window_start": "2026-07-26T09:01:10.588558+09:00",
+  "window_end": "2026-09-24T09:01:10.588558+09:00",
+  "collected_at": "2026-09-24T09:01:40.558263+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "2865ccba82e97c06",
+      "title": "Release v0.61.0",
+      "source_id": "gemini-releases",
+      "source_name": "Gemini CLI Releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0",
+      "source_summary": "## What's Changed * Changelog for v0.60.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29251 * chore(release): bump version to 0.61.0-nightly.20260908.gc647533d6 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29254 * Changelog for v0.59.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29253 * fix(core): preserve explicit versioned Flash model IDs by @SandyTao520 in https://github.com/google-gemini/gemini-cl",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-24T09:01:32+09:00",
+      "published_at": "2026-09-23T23:59:15+00:00",
+      "date_precision": "time",
+      "title_ko": "Gemini CLI v0.61.0 버전 출시",
+      "source_summary_ko": "# # 변경 사항 * https://github.com/google-gemini/gemini-cli/pull/29251의 @ gemini-cli-robot에 의한 v0.60.0-preview.0에 대한 변경 로그 * chore (release): https://github.com/google-gemini/gemini-cli-cli/pull/29254의 @ gemini-cli-robot에 의한 0.61.0-nightly.20260908.gc647533d6에 대한 범프 버전 * https://github.com/google-gemini/gemini-cli/gemini-cli/pull/29253의 @ gemini-cli-robot에 의한 v0.59.0에 대한 변경 로그 * 수정 (core): https://github.com/google-gemini/gemini-cli/gemini-cli/pull/29253에 의해 명시적으로 버전이 지정된 플래시 모델 ID를 보존합니다. https://github.com/google-gemini/gemini-cl의 @ SandyTao520",
+      "release_notes_ko": {
+        "bug_fixes": "fix (core): 명시적 버전의 플래시 모델 ID 유지\nfix (core): 빌드 파일 수정 및 신뢰할 수 없는 플래그를 통해 간접적인 프롬프트 주입 방지\nfix (sandbox): 파일 시스템 경계를 강화하고 런타임 상태를 분리",
+        "chores": "V0.60.0-preview.0에 대한 변경 로그\nchore (release): 0.61.0-nightly.20260908.gc647533d6으로 범프 버전\nV0.59.0에 대한 변경 로그"
+      }
+    },
+    {
+      "id": "a5e35ea59f8666fd",
+      "title": "Meta ditches the camera on its newest smart glasses",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/999281/ray-ban-meta-audio-glasses-meta-connect-2026",
+      "source_summary": "Walking around Meta Connect 2026, everyone's sporting smart glasses in all sorts of shapes, colors, and sizes. It's a marked difference here, a tech bubble where \"pervert glasses\" are not a concern. Outside Connect, the public backlash against wearable surveillance tech - a catchall term that encompasses not just smart glasses, but also smartwatches and […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "fetched_at": "2026-09-24T09:01:40+09:00",
+      "published_at": "2026-09-23T23:37:17+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/999281/ray-ban-meta-audio-glasses-meta-connect-2026",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/23/meta-introduces-camera-free-ai-glasses",
+          "independent": true
+        }
+      ],
+      "title_ko": "Meta는 최신 스마트 안경에 카메라를 버립니다",
+      "source_summary_ko": "Meta Glasses and Ray-Ban Meta Gen 3 나는 새로운 Ray-Ban Meta Gen 3에서 다르게 미끄러지는 것을 느낍니다.\n연말까지 Meta는 100개 이상의 버전의 안경을 가질 것으로 예상합니다.\n안경의 버전이 많을수록 더 많은 사람들에게 다가갈 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line"
+    },
     {
       "id": "6eff16a1336643fb",
       "title": "v2.1.281",

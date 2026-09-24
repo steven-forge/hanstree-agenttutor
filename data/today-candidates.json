@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T08:00:58.041681+09:00",
-  "window_start": "2026-07-26T08:00:58.041681+09:00",
-  "window_end": "2026-09-24T08:00:58.041681+09:00",
+  "collected_at": "2026-09-24T09:01:10.588558+09:00",
+  "window_start": "2026-07-26T09:01:10.588558+09:00",
+  "window_end": "2026-09-24T09:01:10.588558+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 165,
+      "excluded_count": 166,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -53,9 +53,9 @@
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 69,
+      "excluded_count": 70,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -101,7 +101,7 @@
       "count": 9,
       "held_count": 0,
       "excluded_count": 30,
-      "skipped_count": 0,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -109,10 +109,10 @@
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "count": 6,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -263,11 +263,30 @@
       "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
     }
   ],
-  "new_count": 0,
-  "archive_count": 280,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-24T08:01:19.825079+09:00",
-  "hourly_window_start": "2026-09-21T08:01:19.825079+09:00",
+  "new_count": 1,
+  "archive_count": 281,
+  "candidates": [
+    {
+      "id": "2865ccba82e97c06",
+      "title": "Release v0.61.0",
+      "source_id": "gemini-releases",
+      "source_name": "Gemini CLI Releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0",
+      "source_summary": "## What's Changed * Changelog for v0.60.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29251 * chore(release): bump version to 0.61.0-nightly.20260908.gc647533d6 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29254 * Changelog for v0.59.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29253 * fix(core): preserve explicit versioned Flash model IDs by @SandyTao520 in https://github.com/google-gemini/gemini-cl",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-24T09:01:32+09:00",
+      "published_at": "2026-09-23T23:59:15+00:00",
+      "date_precision": "time",
+      "title_ko": "Gemini CLI v0.61.0 버전 출시",
+      "source_summary_ko": "# # 변경 사항 * https://github.com/google-gemini/gemini-cli/pull/29251의 @ gemini-cli-robot에 의한 v0.60.0-preview.0에 대한 변경 로그 * chore (release): https://github.com/google-gemini/gemini-cli-cli/pull/29254의 @ gemini-cli-robot에 의한 0.61.0-nightly.20260908.gc647533d6에 대한 범프 버전 * https://github.com/google-gemini/gemini-cli/gemini-cli/pull/29253의 @ gemini-cli-robot에 의한 v0.59.0에 대한 변경 로그 * 수정 (core): https://github.com/google-gemini/gemini-cli/gemini-cli/pull/29253에 의해 명시적으로 버전이 지정된 플래시 모델 ID를 보존합니다. https://github.com/google-gemini/gemini-cl의 @ SandyTao520",
+      "release_notes_ko": {
+        "bug_fixes": "fix (core): 명시적 버전의 플래시 모델 ID 유지\nfix (core): 빌드 파일 수정 및 신뢰할 수 없는 플래그를 통해 간접적인 프롬프트 주입 방지\nfix (sandbox): 파일 시스템 경계를 강화하고 런타임 상태를 분리",
+        "chores": "V0.60.0-preview.0에 대한 변경 로그\nchore (release): 0.61.0-nightly.20260908.gc647533d6으로 범프 버전\nV0.59.0에 대한 변경 로그"
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-24T09:01:40.558263+09:00",
+  "hourly_window_start": "2026-09-21T09:01:40.558263+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -653,27 +672,6 @@
           "title": "Pruning LLMs Like a Physicist: Block Removal as an Ising Optimization Problem",
           "summary": "",
           "published_at": "2026-09-21T13:44:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "693b3130e25cc880",
-      "title": "tokenizers v1: encode, decode and scaling, measured",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/tokenizers-v1",
-          "target_url": "https://huggingface.co/blog/tokenizers-v1",
-          "independent": true,
-          "title": "tokenizers v1: encode, decode and scaling, measured",
-          "summary": "",
-          "published_at": "2026-09-21T00:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -7992,6 +7990,17 @@
           "summary": "",
           "published_at": "2026-09-23T21:49:57+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824127",
+          "target_url": "https://www.cnn.com/2026/09/23/business/australia-openai-agent-hack-intl-hnk",
+          "independent": false,
+          "title": "OpenAI agent hacked into Australia's national healthcare system",
+          "summary": "",
+          "published_at": "2026-09-23T23:31:43+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -9058,7 +9067,301 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "29d0a1038e63fee9",
+      "title": "Google says its AI model gained unauthorized access to three outside systems",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824369",
+          "target_url": "https://www.nbcnews.com/tech/tech-news/google-says-ai-model-gained-unauthorized-access-three-systems-rcna598651",
+          "independent": false,
+          "title": "Google says its AI model gained unauthorized access to three outside systems",
+          "summary": "",
+          "published_at": "2026-09-23T23:58:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0cbd07e6f99f1575",
+      "title": "The one-person unicorn: building a company alone in two days with Claude",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824339",
+          "target_url": "https://leaveyouragent.com/blog/one-person-unicorn",
+          "independent": false,
+          "title": "The one-person unicorn: building a company alone in two days with Claude",
+          "summary": "",
+          "published_at": "2026-09-23T23:54:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "942f5e3b838f3db1",
+      "title": "Gemini 3.8 TTS Playground",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824314",
+          "target_url": "https://simonwillison.net/2026/Sep/23/gemini-tts-playground",
+          "independent": false,
+          "title": "Gemini 3.8 TTS Playground",
+          "summary": "",
+          "published_at": "2026-09-23T23:52:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5989e310286a88f4",
+      "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824148",
+          "target_url": "https://github.com/gojiplus/batchlane",
+          "independent": false,
+          "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
+          "summary": "",
+          "published_at": "2026-09-23T23:33:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9eef37da8f766267",
+      "title": "Stanford violated AI policy after race-swapping students in ad",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824061",
+          "target_url": "https://www.sfchronicle.com/bayarea/article/stanford-ai-policy-student-photo-race-swapping-22444142.php",
+          "independent": false,
+          "title": "Stanford violated AI policy after race-swapping students in ad",
+          "summary": "",
+          "published_at": "2026-09-23T23:23:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f76cb244d7850997",
+      "title": "One setup, every AI CLI with agnostic-AI",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823920",
+          "target_url": "https://agnostic-ai.org/",
+          "independent": false,
+          "title": "One setup, every AI CLI with agnostic-AI",
+          "summary": "",
+          "published_at": "2026-09-23T23:10:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b2a913a983d022a7",
+      "title": "Meta VR Glasses, Ray-Ban Meta Audio, Ray-Ban Meta Gen 3: Specs, Features, Prices",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/metas-answer-to-the-meta-creep-camera-free-smart-glasses",
+          "target_url": "https://www.wired.com/story/metas-answer-to-the-meta-creep-camera-free-smart-glasses",
+          "independent": true,
+          "title": "Meta VR Glasses, Ray-Ban Meta Audio, Ray-Ban Meta Gen 3: Specs, Features, Prices",
+          "summary": "At its Meta Connect event, CEO Mark Zuckerberg announced a handful of new smart glasses, including a slimmed-down VR headset and the company’s first camera-free glasses.",
+          "published_at": "2026-09-23T23:42:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e68a9b7de2f889c8",
+      "title": "Muse is coming to Meta smart glasses",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/999673/meta-connect-2026-muse-glasses-features",
+          "target_url": "https://www.theverge.com/tech/999673/meta-connect-2026-muse-glasses-features",
+          "independent": true,
+          "title": "Muse is coming to Meta smart glasses",
+          "summary": "Just a couple of weeks after launching Muse, Meta announced that it's \"working on\" bringing the agent to its smart glasses, including the new glasses it unveiled at Meta Connect. Users will be able to activate Muse from their glasses by saying its name and ask it to handle tasks like guiding a workout, logging […]",
+          "published_at": "2026-09-23T23:40:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a7f787561644ed83",
+      "title": "Meta is making Muse more powerful and will let you video chat with it, too",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/999454/meta-muse-ai-agent-video-chat-connect-2026",
+          "target_url": "https://www.theverge.com/tech/999454/meta-muse-ai-agent-video-chat-connect-2026",
+          "independent": true,
+          "title": "Meta is making Muse more powerful and will let you video chat with it, too",
+          "summary": "Meta is quickly iterating on its new Muse AI agent, announcing a bunch of updates today that make the bot more capable and able to chat with you in more ways. Muse agents are getting their own email addresses that they can use for accomplishing tasks. You'll also be able to communicate with your Muse […]",
+          "published_at": "2026-09-23T23:19:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "7db0cc10efad499c",
+      "title": "Our AI Agent Finished the Feature in Four Hours. It Sat Waiting for Humans for Eleven Days.",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/lets-code-future/our-ai-agent-finished-the-feature-in-four-hours-it-sat-waiting-for-humans-for-eleven-days-88a5e9c839eb",
+          "target_url": "https://medium.com/lets-code-future/our-ai-agent-finished-the-feature-in-four-hours-it-sat-waiting-for-humans-for-eleven-days-88a5e9c839eb",
+          "independent": false,
+          "title": "Our AI Agent Finished the Feature in Four Hours. It Sat Waiting for Humans for Eleven Days.",
+          "summary": "We thought coding was slowing the company down, but once implementation became almost instant, we discovered how little of software… Continue reading on Let’s Code Future »",
+          "published_at": "2026-09-23T23:44:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5c122343f9a77caf",
+      "title": "Building Jarvis #1: Getting a Local LLM to Read a PDF It Cannot Fit in Context",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aaryacodes/building-jarvis-1-getting-a-local-llm-to-read-a-pdf-it-cannot-fit-in-context-227d10733624",
+          "target_url": "https://medium.com/@aaryacodes/building-jarvis-1-getting-a-local-llm-to-read-a-pdf-it-cannot-fit-in-context-227d10733624",
+          "independent": false,
+          "title": "Building Jarvis #1: Getting a Local LLM to Read a PDF It Cannot Fit in Context",
+          "summary": "I use AI almost every day. I give it class notes, papers, presentations, and long documents and ask questions about them without really… Continue reading on Medium »",
+          "published_at": "2026-09-23T23:43:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "505374fd43147a99",
+      "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-91f487a18a89",
+          "target_url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-91f487a18a89",
+          "independent": false,
+          "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
+          "summary": "شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf #شماره #خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+          "published_at": "2026-09-23T23:41:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0483a6dc0b64d168",
+      "title": "Do You Trust Your AI Chatbot’s Financial Advice?",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/law-and-ethics-in-tech/do-you-trust-your-ai-chatbots-financial-advice-c0431b347a05",
+          "target_url": "https://medium.com/law-and-ethics-in-tech/do-you-trust-your-ai-chatbots-financial-advice-c0431b347a05",
+          "independent": false,
+          "title": "Do You Trust Your AI Chatbot’s Financial Advice?",
+          "summary": "Every week, we are sharing top 5 incidents and this year, is the year we did not have a single week without an interesting incident. We… Continue reading on Law and Ethics in Tech »",
+          "published_at": "2026-09-23T23:40:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "785bae4c6c36d47e",
+      "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
+      "first_seen": "2026-09-24T09:01:40+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-628a3c90fa07",
+          "target_url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-628a3c90fa07",
+          "independent": false,
+          "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
+          "summary": "شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf #شماره #خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+          "published_at": "2026-09-23T23:40:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 0
+  "auto_published_count": 1
 }
