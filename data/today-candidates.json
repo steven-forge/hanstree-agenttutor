@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T01:01:09.657379+09:00",
-  "window_start": "2026-07-27T01:01:09.657379+09:00",
-  "window_end": "2026-09-25T01:01:09.657379+09:00",
+  "collected_at": "2026-09-25T02:01:13.113223+09:00",
+  "window_start": "2026-07-27T02:01:13.113223+09:00",
+  "window_end": "2026-09-25T02:01:13.113223+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -97,9 +97,9 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 10,
-      "held_count": 1,
+      "status": "ok",
+      "count": 9,
+      "held_count": 0,
       "excluded_count": 29,
       "skipped_count": 0,
       "coverage_limited": false
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 17,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 288,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T01:01:28.602129+09:00",
-  "hourly_window_start": "2026-09-22T01:01:28.602129+09:00",
+  "hourly_collected_at": "2026-09-25T02:01:35.615304+09:00",
+  "hourly_window_start": "2026-09-22T02:01:35.615304+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1183,6 +1183,17 @@
           "summary": "Reason 4 of 5 to attend TechCrunch Disrupt 2026: Practical answers. Two days left to save up to $200 on your pass. Savings disappear after September 25 at 11:59 p.m. PT. Bring a second guest at 50% off.",
           "published_at": "2026-09-24T14:00:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/meet-the-next-wave-of-vcs-judging-startup-battlefield-200-at-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/24/meet-the-next-wave-of-vcs-judging-startup-battlefield-200-at-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Meet the next wave of VCs judging Startup Battlefield 200 at TechCrunch Disrupt 2026",
+          "summary": "Meet the next wave of VCs judging the Startup Battlefield 200 contenders on the main stage at TechCrunch Disrupt 2026. Register by September 25 at 11:59 p.m. PT, to save up to $200 and to get a front-row seat to one of the most intense startup pitch competitions.",
+          "published_at": "2026-09-24T16:03:36+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -1287,27 +1298,6 @@
           "title": "Meta’s Muse is outpacing ChatGPT’s early mobile launch",
           "summary": "Meta’s new AI agent Muse has racked up more downloads and daily active users in the U.S. and Canada than ChatGPT did over the same period after its mobile debut, according to new estimates from Appfigures.",
           "published_at": "2026-09-21T19:19:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "bd11ce5965060707",
-      "title": "With Tabby, a former accountant is using AI to make accountants obsolete",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/21/with-tabby-a-former-accountant-is-using-ai-to-make-accountants-obsolete",
-          "target_url": "https://techcrunch.com/2026/09/21/with-tabby-a-former-accountant-is-using-ai-to-make-accountants-obsolete",
-          "independent": true,
-          "title": "With Tabby, a former accountant is using AI to make accountants obsolete",
-          "summary": "Tabby is designed to be a real-time bookkeeping interface, handling clients’ paperwork as it gives them up-to-the-minute data on their business’s profit and loss.",
-          "published_at": "2026-09-21T16:38:51+00:00",
           "date_precision": "time"
         }
       ],
@@ -5477,6 +5467,17 @@
           "title": "Cheaper LLM Labelling",
           "summary": "",
           "published_at": "2026-09-23T13:41:57+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833421",
+          "target_url": "https://entropicthoughts.com/cheaper-llm-labeling",
+          "independent": false,
+          "title": "Cheaper LLM Labelling",
+          "summary": "",
+          "published_at": "2026-09-24T16:50:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -9830,6 +9831,17 @@
           "summary": "",
           "published_at": "2026-09-24T03:24:33+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833264",
+          "target_url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
+          "independent": false,
+          "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
+          "summary": "",
+          "published_at": "2026-09-24T16:41:55+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -13504,6 +13516,363 @@
           "title": "What Happens When God Becomes Inferior?",
           "summary": "If AI outgrows us, being its creator may be the least useful thing we can say. Continue reading on Medium »",
           "published_at": "2026-09-24T15:46:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3077a62444e8368c",
+      "title": "Pinocchio, make copilot agents real by giving them memory",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833566",
+          "target_url": "https://github.com/chiedo/pinocchio",
+          "independent": false,
+          "title": "Pinocchio, make copilot agents real by giving them memory",
+          "summary": "",
+          "published_at": "2026-09-24T17:01:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dedded481bc9d5c3",
+      "title": "The Gnome LLM Policy That I Want",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833554",
+          "target_url": "https://blogs.gnome.org/alatiera/2026/09/23/the-gnome-llm-policy-that-i-want",
+          "independent": false,
+          "title": "The Gnome LLM Policy That I Want",
+          "summary": "",
+          "published_at": "2026-09-24T17:00:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "321a943a4dd13ce0",
+      "title": "Gemini 3.8 with Live Avatar",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833536",
+          "target_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available",
+          "independent": false,
+          "title": "Gemini 3.8 with Live Avatar",
+          "summary": "",
+          "published_at": "2026-09-24T16:59:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5af4c23588a93431",
+      "title": "Xcode project configuration that's more human-readable and editable by agents",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833395",
+          "target_url": "https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format",
+          "independent": false,
+          "title": "Xcode project configuration that's more human-readable and editable by agents",
+          "summary": "",
+          "published_at": "2026-09-24T16:49:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c05031f9c616dc08",
+      "title": "Show HN: I built an AI assistant that turns website visitors into leads",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833364",
+          "target_url": "https://www.brevn.com",
+          "independent": false,
+          "title": "Show HN: I built an AI assistant that turns website visitors into leads",
+          "summary": "",
+          "published_at": "2026-09-24T16:47:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c432d25394234270",
+      "title": "So yeah it was written using AI",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833245",
+          "target_url": "https://berthub.eu/articles/posts/so-yeah-it-is-written-using-ai",
+          "independent": false,
+          "title": "So yeah it was written using AI",
+          "summary": "",
+          "published_at": "2026-09-24T16:40:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "63e0251438a40139",
+      "title": "Local sandboxing in the GitHub Copilot app",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49833223",
+          "target_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
+          "independent": false,
+          "title": "Local sandboxing in the GitHub Copilot app",
+          "summary": "",
+          "published_at": "2026-09-24T16:39:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51a81db0f2314c5c",
+      "title": "Google’s Gemini Can Now Make Calls for You on Pixel Phones",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/googles-gemini-can-now-make-calls-for-you-on-pixel-phones",
+          "target_url": "https://www.wired.com/story/googles-gemini-can-now-make-calls-for-you-on-pixel-phones",
+          "independent": true,
+          "title": "Google’s Gemini Can Now Make Calls for You on Pixel Phones",
+          "summary": "Call for Me—a feature that’s exclusive to the Pixel 11 series—gives robocalls a new meaning.",
+          "published_at": "2026-09-24T16:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "6472fdda6395fafa",
+      "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
+          "target_url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
+          "independent": true,
+          "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
+          "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to help me set some health […]",
+          "published_at": "2026-09-24T17:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "62bb527af0cd61f3",
+      "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
+          "independent": true,
+          "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
+          "summary": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. According to Google, you don't even need to start the call to have Gemini handle it for you: Instead of dialing yourself, […]",
+          "published_at": "2026-09-24T16:04:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d0323408eb6a3b2c",
+      "title": "TechCrunch Founder Summit 2026: Everything you need to know",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
+          "target_url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
+          "independent": true,
+          "title": "TechCrunch Founder Summit 2026: Everything you need to know",
+          "summary": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their companies.",
+          "published_at": "2026-09-24T16:46:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "1a6a7ee1f4b800d0",
+      "title": "20 minutes with the CEO of ElevenLabs, now reportedly valued at $22B",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion",
+          "target_url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion",
+          "independent": true,
+          "title": "20 minutes with the CEO of ElevenLabs, now reportedly valued at $22B",
+          "summary": "ElevenLabs powers the AI voice on the other end of a lot of customer service calls, and its CEO told me this week that businesses should probably tell you that — at least until getting a machine is what everyone expects anyway.",
+          "published_at": "2026-09-24T16:35:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "6b620c46377507ae",
+      "title": "Learning AI & ML in College: What Happens Beyond the Textbooks",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@riyasingh13.dev/learning-ai-ml-in-college-what-happens-beyond-the-textbooks-bfe9a9f60e64",
+          "target_url": "https://medium.com/@riyasingh13.dev/learning-ai-ml-in-college-what-happens-beyond-the-textbooks-bfe9a9f60e64",
+          "independent": false,
+          "title": "Learning AI & ML in College: What Happens Beyond the Textbooks",
+          "summary": "I’m currently studying B.Tech CSE with AI & ML, and one thing I’ve realised is that learning AI from a syllabus is very different from… Continue reading on Medium »",
+          "published_at": "2026-09-24T16:50:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7b5f33950bb24580",
+      "title": "Stop Trying to “Learn AI” — Do This Instead",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/illumination/stop-trying-to-learn-ai-do-this-instead-78adab5c8b4b",
+          "target_url": "https://medium.com/illumination/stop-trying-to-learn-ai-do-this-instead-78adab5c8b4b",
+          "independent": false,
+          "title": "Stop Trying to “Learn AI” — Do This Instead",
+          "summary": "The Beginner’s Roadmap for What to Learn, What to Build, and What to Skip Continue reading on ILLUMINATION »",
+          "published_at": "2026-09-24T16:49:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "204898c09b64457f",
+      "title": "What is Qwen-Audio-3.1? Why Alibaba Just Shipped a Sound Designer, Not Just a Voice",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lvntblsn/what-is-qwen-audio-3-1-why-alibaba-just-shipped-a-sound-designer-not-just-a-voice-ca5255fbf025",
+          "target_url": "https://medium.com/@lvntblsn/what-is-qwen-audio-3-1-why-alibaba-just-shipped-a-sound-designer-not-just-a-voice-ca5255fbf025",
+          "independent": false,
+          "title": "What is Qwen-Audio-3.1? Why Alibaba Just Shipped a Sound Designer, Not Just a Voice",
+          "summary": "Five models, one audio stack — and the new one writes the footsteps, the rain and the line of dialogue in a single pass. Continue reading on Medium »",
+          "published_at": "2026-09-24T16:49:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "39781dc99693ed2f",
+      "title": "Once Again, I Find Myself Asking…What’s the Point?",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://xlauren-mx.medium.com/once-again-i-find-myself-asking-whats-the-point-cd3ffb49bb7e",
+          "target_url": "https://xlauren-mx.medium.com/once-again-i-find-myself-asking-whats-the-point-cd3ffb49bb7e",
+          "independent": false,
+          "title": "Once Again, I Find Myself Asking…What’s the Point?",
+          "summary": "Paying attention will take its toll on your mental health. Continue reading on Medium »",
+          "published_at": "2026-09-24T16:47:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a397f538b055217",
+      "title": "No mundo da inteligência artificial, a cultura é o que torna uma empresa impossível de copiar",
+      "first_seen": "2026-09-25T02:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alisson.teles0/no-mundo-da-intelig%C3%AAncia-artificial-a-cultura-%C3%A9-o-que-torna-uma-empresa-imposs%C3%ADvel-de-copiar-db20533e5ade",
+          "target_url": "https://medium.com/@alisson.teles0/no-mundo-da-intelig%C3%AAncia-artificial-a-cultura-%C3%A9-o-que-torna-uma-empresa-imposs%C3%ADvel-de-copiar-db20533e5ade",
+          "independent": false,
+          "title": "No mundo da inteligência artificial, a cultura é o que torna uma empresa impossível de copiar",
+          "summary": "Quando todos têm acesso às mesmas tecnologias, a verdadeira diferenciação está na forma singular como cada organização pensa, cria e… Continue reading on Medium »",
+          "published_at": "2026-09-24T16:45:57+00:00",
           "date_precision": "time"
         }
       ],
