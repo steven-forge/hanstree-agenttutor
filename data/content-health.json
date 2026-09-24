@@ -1,6 +1,6 @@
 {
   "news": {
-    "checked_at": "2026-09-25T08:01:14.870381+09:00",
+    "checked_at": "2026-09-25T07:58:12.009342+09:00",
     "status": "partial",
     "candidate_count": 0,
     "archive_count": 289,
@@ -64,13 +64,12 @@
         "id": "grok-releases",
         "name": "Grok Releases",
         "url": "https://docs.x.ai/developers/release-notes",
-        "status": "failed",
+        "status": "partial",
         "count": 0,
-        "held_count": 0,
+        "held_count": 1,
         "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "한국어 번역에 실패했습니다."
+        "skipped_count": 7,
+        "coverage_limited": false
       },
       {
         "id": "anthropic-news",
@@ -99,10 +98,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 7,
+        "count": 5,
         "held_count": 0,
-        "excluded_count": 30,
-        "skipped_count": 0,
+        "excluded_count": 34,
+        "skipped_count": 2,
         "coverage_limited": false
       },
       {
@@ -154,10 +153,10 @@
         "name": "Ars Technica",
         "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "status": "ok",
-        "count": 1,
+        "count": 2,
         "held_count": 0,
-        "excluded_count": 19,
-        "skipped_count": 1,
+        "excluded_count": 18,
+        "skipped_count": 2,
         "coverage_limited": false
       },
       {
@@ -165,10 +164,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 7,
+        "count": 11,
         "held_count": 0,
-        "excluded_count": 23,
-        "skipped_count": 7,
+        "excluded_count": 19,
+        "skipped_count": 11,
         "coverage_limited": false
       },
       {
@@ -275,228 +274,230 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 696
+    "pending_event_count": 685
   },
   "documents": {
-    "checked_at": "2026-09-25T06:26:06.123130+09:00",
+    "checked_at": "2026-09-25T07:53:24.500011+09:00",
     "sources": [
       {
         "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: about.fb.com"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://agentskills.io/specification",
         "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://ai.google.dev/gemini-api/docs",
-        "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
         "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/news/news250115",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: api-docs.deepseek.com"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/news/news260813",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: api-docs.deepseek.com"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/quick_start/pricing",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: api-docs.deepseek.com"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/updates",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: api-docs.deepseek.com"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/context-window.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/features-overview.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/hooks.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/memory.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/plugins-reference.md",
-        "status": "baseline",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/plugins.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/skills.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/sub-agents.md",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://code.claude.com/docs/llms.txt",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-24T06:26:34.253318+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/models",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: dev.meta.ai"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/overview",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: dev.meta.ai"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/pricing-rate-limits",
-        "status": "failed",
-        "checked_at": "2026-09-25T06:26:06.123130+09:00",
-        "error": "허용되지 않은 호스트입니다: dev.meta.ai"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://developers.google.com/machine-learning/glossary",
         "status": "changed",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00",
-        "changed_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://docs.x.ai/build/cli/reference",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-22T06:26:19.366483+09:00"
       },
       {
         "url": "https://docs.x.ai/overview",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-22T06:26:19.366483+09:00"
       },
       {
         "url": "https://gemini.google/overview",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
-        "changed_at": "2026-09-22T06:26:19.366483+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://geminicli.com/docs",
         "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://huggingface.co/learn/llm-course/chapter1/1",
         "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/app-server.md",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-24T06:26:34.253318+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/changelog",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
-        "changed_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/cloud.md",
         "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-24T06:26:34.253318+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/codex/cli.md",
         "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/quickstart.md",
         "status": "unchanged",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
-        "status": "baseline",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "unchanged",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://modelcontextprotocol.io/llms.txt",
-        "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "status": "changed",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://modelcontextprotocol.io/specification/versioning",
         "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://platform.claude.com/docs/en/intro",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
-        "changed_at": "2026-09-24T06:26:34.253318+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
+        "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://www.anthropic.com/engineering/building-effective-agents",
         "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
         "status": "unchanged",
-        "checked_at": "2026-09-20T10:02:50.669396+09:00"
+        "checked_at": "2026-09-25T07:53:24.500011+09:00"
       },
       {
         "url": "https://www.anthropic.com/news",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-24T06:26:34.253318+09:00"
       },
       {
         "url": "https://x.ai/news",
         "status": "changed",
-        "checked_at": "2026-09-24T06:26:34.253318+09:00",
+        "checked_at": "2026-09-25T07:53:24.500011+09:00",
         "changed_at": "2026-09-24T06:26:34.253318+09:00"
       }
     ]

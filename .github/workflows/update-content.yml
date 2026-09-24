@@ -44,6 +44,8 @@ jobs:
 
       - name: Collect news (60-day window, merged into data/today.json)
         id: collect_news
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python3 scripts/collect_content.py news
         continue-on-error: true
 

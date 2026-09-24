@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T08:00:50.869359+09:00",
-  "window_start": "2026-07-27T08:00:50.869359+09:00",
-  "window_end": "2026-09-25T08:00:50.869359+09:00",
+  "collected_at": "2026-09-25T07:58:12.009342+09:00",
+  "window_start": "2026-07-27T07:58:12.009342+09:00",
+  "window_end": "2026-09-25T07:58:12.009342+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -63,13 +63,12 @@
       "id": "grok-releases",
       "name": "Grok Releases",
       "url": "https://docs.x.ai/developers/release-notes",
-      "status": "failed",
+      "status": "partial",
       "count": 0,
-      "held_count": 0,
+      "held_count": 1,
       "excluded_count": 0,
-      "skipped_count": 0,
-      "coverage_limited": false,
-      "error": "한국어 번역에 실패했습니다."
+      "skipped_count": 7,
+      "coverage_limited": false
     },
     {
       "id": "anthropic-news",
@@ -98,10 +97,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 0,
+      "excluded_count": 34,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -153,10 +152,10 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
-      "count": 1,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 19,
-      "skipped_count": 1,
+      "excluded_count": 18,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -164,10 +163,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -277,8 +276,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T08:01:14.870381+09:00",
-  "hourly_window_start": "2026-09-22T08:01:14.870381+09:00",
+  "hourly_collected_at": "2026-09-25T07:01:29.123783+09:00",
+  "hourly_window_start": "2026-09-22T07:01:29.123783+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2923,17 +2922,6 @@
           "title": "Show HN: Armada – Every Claude Code and Codex session and limit, on one screen",
           "summary": "",
           "published_at": "2026-09-24T15:36:15+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837537",
-          "target_url": "https://github.com/Akramovic1/jev-pilot",
-          "independent": false,
-          "title": "Show HN: Jev-pilot – Jev picks Claude Code's effort, model and skill per prompt",
-          "summary": "",
-          "published_at": "2026-09-24T22:21:49+00:00",
           "date_precision": "time"
         }
       ],
@@ -15274,237 +15262,6 @@
           "title": "Can We Trust AI — Is the Risk Worth Taking?",
           "summary": "AI is becoming remarkably useful before it has become reliably trustworthy. This may be the most important thing to understand about AI... Continue reading on Medium »",
           "published_at": "2026-09-24T21:45:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "83d50c6dc9634e0d",
-      "title": "Building an Ultra-High Throughput AI-SQL Engine",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837913",
-          "target_url": "https://fsdatalab.github.io/blog/introducing-quail",
-          "independent": false,
-          "title": "Building an Ultra-High Throughput AI-SQL Engine",
-          "summary": "",
-          "published_at": "2026-09-24T22:56:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f44c9c06a50a6fe6",
-      "title": "DraftKings Is Using AI to Supercharge the Harms of Online Behavioral Advertising",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837877",
-          "target_url": "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
-          "independent": false,
-          "title": "DraftKings Is Using AI to Supercharge the Harms of Online Behavioral Advertising",
-          "summary": "",
-          "published_at": "2026-09-24T22:52:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8e4a1ec1b913ec28",
-      "title": "The model observes, a table decides: keeping an LLM out of pet triage",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837843",
-          "target_url": "https://tailstory-app.com/en/blog/model-observes-table-decides",
-          "independent": false,
-          "title": "The model observes, a table decides: keeping an LLM out of pet triage",
-          "summary": "",
-          "published_at": "2026-09-24T22:48:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "eff814d8056b9ec4",
-      "title": "Laya \"System 1\" Code Intelligence for AI Agents",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837641",
-          "target_url": "https://github.com/leonardoventurini/scs",
-          "independent": false,
-          "title": "Laya \"System 1\" Code Intelligence for AI Agents",
-          "summary": "",
-          "published_at": "2026-09-24T22:31:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ec46717145791fa5",
-      "title": "4% of Sessions, 65% of the Bill: 30 Days of Claude Code Telemetry",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837478",
-          "target_url": "https://www.promptarmor.com/resources/claude-cost-and-risk-otel-findings",
-          "independent": false,
-          "title": "4% of Sessions, 65% of the Bill: 30 Days of Claude Code Telemetry",
-          "summary": "",
-          "published_at": "2026-09-24T22:16:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "04b73764298daec8",
-      "title": "Which AI model is best for coding? A hands-on comparison",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837437",
-          "target_url": "https://flaviocopes.com/ai-coding-models",
-          "independent": false,
-          "title": "Which AI model is best for coding? A hands-on comparison",
-          "summary": "",
-          "published_at": "2026-09-24T22:12:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c1a044e7e567b26e",
-      "title": "Why Generalists Are the Best Bet in an AI World",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@leandroguarnieri/why-generalists-are-the-best-bet-in-an-ai-world-dc83af0b2aa7",
-          "target_url": "https://medium.com/@leandroguarnieri/why-generalists-are-the-best-bet-in-an-ai-world-dc83af0b2aa7",
-          "independent": false,
-          "title": "Why Generalists Are the Best Bet in an AI World",
-          "summary": "The people who know a little about a lot are about to have their moment Continue reading on Medium »",
-          "published_at": "2026-09-24T22:51:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4add80cf75bd712c",
-      "title": "People Strategy: Why AI Thrives Only Where Human Skills Multiply",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@curiousmind1786/people-strategy-why-ai-thrives-only-where-human-skills-multiply-338b006aff3e",
-          "target_url": "https://medium.com/@curiousmind1786/people-strategy-why-ai-thrives-only-where-human-skills-multiply-338b006aff3e",
-          "independent": false,
-          "title": "People Strategy: Why AI Thrives Only Where Human Skills Multiply",
-          "summary": "As AI’s potential to boost workplace performance surges, a critical tension shapes how organizations deploy this technology: should they… Continue reading on Medium »",
-          "published_at": "2026-09-24T22:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e410dd96ce61c762",
-      "title": "4 Months of vox-bench in Production — What 14,000 Benchmark Runs Taught Us About Voice AI Latency",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@autortech/4-months-of-vox-bench-in-production-what-14-000-benchmark-runs-taught-us-about-voice-ai-latency-29e5055a154d",
-          "target_url": "https://medium.com/@autortech/4-months-of-vox-bench-in-production-what-14-000-benchmark-runs-taught-us-about-voice-ai-latency-29e5055a154d",
-          "independent": false,
-          "title": "4 Months of vox-bench in Production — What 14,000 Benchmark Runs Taught Us About Voice AI Latency",
-          "summary": "In June, we open-sourced vox-bench, the latency benchmarking tool we built after a TTS spike caused 12% of Loquent callers to talk over… Continue reading on Medium »",
-          "published_at": "2026-09-24T22:42:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "35413b97780215f5",
-      "title": "I Shipped an LLM Feature to Production. The Model Was the Easy Part.",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rohithraajk/i-shipped-an-llm-feature-to-production-the-model-was-the-easy-part-85138771591a",
-          "target_url": "https://medium.com/@rohithraajk/i-shipped-an-llm-feature-to-production-the-model-was-the-easy-part-85138771591a",
-          "independent": false,
-          "title": "I Shipped an LLM Feature to Production. The Model Was the Easy Part.",
-          "summary": "The demo took a weekend. Production took six months. Continue reading on Medium »",
-          "published_at": "2026-09-24T22:38:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d13e1ab07bdb71f1",
-      "title": "What I Wish I Knew: Your Writing Isn’t About You.",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/pen-with-paper/what-i-wish-i-knew-your-writing-isnt-about-you-e885d152ac24",
-          "target_url": "https://medium.com/pen-with-paper/what-i-wish-i-knew-your-writing-isnt-about-you-e885d152ac24",
-          "independent": false,
-          "title": "What I Wish I Knew: Your Writing Isn’t About You.",
-          "summary": "What I Wished I Knew: The Craft of Writing Is Thinking Beyond Yourself. Continue reading on Pen With Paper »",
-          "published_at": "2026-09-24T22:35:16+00:00",
           "date_precision": "time"
         }
       ],

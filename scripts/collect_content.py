@@ -8,6 +8,7 @@ import hashlib
 import html
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -61,7 +62,8 @@ ALLOWED_HOSTS = {
     "agentskills.io", "www.agentskills.io",
     "modelcontextprotocol.io", "huggingface.co",
     "w3.org", "www.w3.org",
-    "github.com", "api.github.com"
+    "github.com", "api.github.com",
+    "about.fb.com", "dev.meta.ai", "api-docs.deepseek.com"
 }
 TRANSLATION_HOST = "api.mymemory.translated.net"
 
@@ -936,9 +938,11 @@ def parse_github_releases(owner_repo: str, source_id: str, source_name: str, win
     candidates = []
     stats = new_stats()
     stats["coverage_limited"] = True  # 60일 시작 또는 목록 끝에 닿으면 해제
+    token = os.environ.get("GITHUB_TOKEN")
+    headers = {"Authorization": f"Bearer {token}"} if token else None
     for page in range(1, MAX_RELEASE_PAGES + 1):
         api_url = f"https://api.github.com/repos/{owner_repo}/releases?per_page={RELEASES_PER_PAGE}&page={page}"
-        status, _, body = fetch_url(api_url, max_bytes=RELEASES_MAX_BYTES)
+        status, _, body = fetch_url(api_url, max_bytes=RELEASES_MAX_BYTES, extra_headers=headers)
         if status != 200:
             raise RuntimeError(f"HTTP {status}: {api_url}")
         releases = json.loads(body.decode("utf-8"))
@@ -1184,8 +1188,12 @@ def parse_xai_releases(html_bytes: bytes, source_id: str, source_name: str, wind
                     target["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
             continue
 
-        cand = make_candidate(title, source_id, source_name, canonical_url, "\n".join(descriptions), date_fields)
-        cand["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
+        try:
+            cand = make_candidate(title, source_id, source_name, canonical_url, "\n".join(descriptions), date_fields)
+            cand["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
+        except RuntimeError:
+            stats["held_count"] += 1
+            continue
         candidates.append(cand)
 
     stats["coverage_limited"] = not reached_start
@@ -1724,8 +1732,8 @@ def collect_documents(force: bool = False) -> int:
     write_json(SOURCE_CACHE_PATH, source_cache)
 
     print(f"[문서 점검 완료] 전체 출처: {len(url_intervals)}개, 점검 대상: {total_due}개, 실패: {failed_due}개")
-    if total_due > 0 and failed_due == total_due:
-        print("[문서 점검 전체 실패] 모든 대상 출처 점검에 실패했습니다.", file=sys.stderr)
+    if failed_due:
+        print(f"[문서 점검 실패] {failed_due}/{total_due}개 점검 대상 출처에서 오류가 발생했습니다.", file=sys.stderr)
         return 1
     return 0
 
