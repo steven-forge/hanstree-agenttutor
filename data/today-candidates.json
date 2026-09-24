@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-09-24T23:01:30.512456+09:00",
-  "window_start": "2026-07-26T23:01:30.512456+09:00",
-  "window_end": "2026-09-24T23:01:30.512456+09:00",
-  "edition_date": "2026-09-24",
+  "collected_at": "2026-09-25T00:03:01.010324+09:00",
+  "window_start": "2026-07-27T00:03:01.010324+09:00",
+  "window_end": "2026-09-25T00:03:01.010324+09:00",
+  "edition_date": "2026-09-25",
   "sources": [
     {
       "id": "openai-news",
@@ -98,9 +98,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 29,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -109,9 +109,9 @@
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "count": 4,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 26,
+      "excluded_count": 25,
       "skipped_count": 4,
       "coverage_limited": false
     },
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 15,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -197,9 +197,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 8,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 7,
+      "excluded_count": 5,
       "skipped_count": 8,
       "coverage_limited": false
     },
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 288,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T23:01:49.761906+09:00",
-  "hourly_window_start": "2026-09-21T23:01:49.761906+09:00",
+  "hourly_collected_at": "2026-09-25T00:03:24.664601+09:00",
+  "hourly_window_start": "2026-09-22T00:03:24.664601+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1172,6 +1172,17 @@
           "summary": "3 days to save up to $200 on your TechCrunch Disrupt 2026 pass, plus 50% off a second. Make impactful connections with 10,000+ tech leaders. Last day to save is September 25, 11:59 p.m. PT. Register here.",
           "published_at": "2026-09-23T14:00:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/2-days-left-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-7-to-attend",
+          "target_url": "https://techcrunch.com/2026/09/24/2-days-left-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-7-to-attend",
+          "independent": true,
+          "title": "2 days left to save up to $200 on a TechCrunch Disrupt 2026 pass — reason 4 of 5 to attend",
+          "summary": "Reason 4 of 5 to attend TechCrunch Disrupt 2026: Practical answers. Two days left to save up to $200 on your pass. Savings disappear after September 25 at 11:59 p.m. PT. Bring a second guest at 50% off.",
+          "published_at": "2026-09-24T14:00:00+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -1297,48 +1308,6 @@
           "title": "With Tabby, a former accountant is using AI to make accountants obsolete",
           "summary": "Tabby is designed to be a real-time bookkeeping interface, handling clients’ paperwork as it gives them up-to-the-minute data on their business’s profit and loss.",
           "published_at": "2026-09-21T16:38:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "b967c00ba01c792f",
-      "title": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in at TechCrunch Disrupt 2026",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/21/where-will-the-next-breakout-startup-come-from-benchmarks-full-partnership-weighs-in-at-techcrunch-disrupt-2026",
-          "target_url": "https://techcrunch.com/2026/09/21/where-will-the-next-breakout-startup-come-from-benchmarks-full-partnership-weighs-in-at-techcrunch-disrupt-2026",
-          "independent": true,
-          "title": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in at TechCrunch Disrupt 2026",
-          "summary": "Where will the next breakout startup come from? Benchmark’s full partnership weighs in on the main stage at TechCrunch Disrupt 2026. Save up to $200 before September 25 at 11:59 p.m. PT. Register now.",
-          "published_at": "2026-09-21T15:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d947cdfa9abd9ef7",
-      "title": "Google’s $899 Googlebook is a bet that you’ll buy a new laptop for Gemini",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini",
-          "target_url": "https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini",
-          "independent": true,
-          "title": "Google’s $899 Googlebook is a bet that you’ll buy a new laptop for Gemini",
-          "summary": "Google’s AI-native Googlebook ties Gemini to the cursor, dictation, widgets, and other parts of the desktop experience.",
-          "published_at": "2026-09-21T14:39:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -3120,6 +3089,17 @@
           "title": "Show HN: I built a Tooling gateway for Claude Code that manages Approvals for me",
           "summary": "",
           "published_at": "2026-09-24T13:43:21+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831324",
+          "target_url": "https://github.com/error0702/agent-limit-retry",
+          "independent": false,
+          "title": "Show HN: Resume Claude Code subagents killed by a usage limit, don't redo them",
+          "summary": "",
+          "published_at": "2026-09-24T14:41:43+00:00",
           "date_precision": "time"
         }
       ],
@@ -5570,6 +5550,17 @@
           "title": "Unlocking parallel test-time scaling for long-horizon agents",
           "summary": "",
           "published_at": "2026-09-23T13:34:37+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831159",
+          "target_url": "https://blog.doubleword.ai/swe-bench-pro-64-deepseek-agents",
+          "independent": false,
+          "title": "Unlocking parallel test-time scaling for long-horizon agents",
+          "summary": "",
+          "published_at": "2026-09-24T14:30:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -12746,6 +12737,468 @@
           "title": "How I Test Add to Cart With a Product Variant Using Kane CLI",
           "summary": "Variant bugs are sneaky. Nobody reports them on the day they happen. Continue reading on Medium »",
           "published_at": "2026-09-24T13:47:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4be0e66d44be0a5f",
+      "title": "$5,999 Ryzen AI MAX+ 395 and Radeon R9700 workstation",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831418",
+          "target_url": "https://videocardz.com/newz/lucebox-opens-direct-orders-for-5999-ryzen-ai-max-395-and-radeon-r9700-workstation",
+          "independent": false,
+          "title": "$5,999 Ryzen AI MAX+ 395 and Radeon R9700 workstation",
+          "summary": "",
+          "published_at": "2026-09-24T14:48:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e8eb248739028d18",
+      "title": "Eutetic: Codex for Data Scientist and Data Engineers",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831362",
+          "target_url": "https://eutetic.com",
+          "independent": false,
+          "title": "Eutetic: Codex for Data Scientist and Data Engineers",
+          "summary": "",
+          "published_at": "2026-09-24T14:44:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "523464e3cac637c4",
+      "title": "Submersion AI Debuts Basin",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831282",
+          "target_url": "https://submersion.ai/news/basin-cybergym-ranking",
+          "independent": false,
+          "title": "Submersion AI Debuts Basin",
+          "summary": "",
+          "published_at": "2026-09-24T14:39:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "088f1dd0df7f097c",
+      "title": "AI Safety Is Mostly a Sex Cult in Berkeley",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831269",
+          "target_url": "https://www.verysane.ai/p/ai-safety-is-mostly-a-sex-cult-in",
+          "independent": false,
+          "title": "AI Safety Is Mostly a Sex Cult in Berkeley",
+          "summary": "",
+          "published_at": "2026-09-24T14:38:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "33368c82ff1c5d03",
+      "title": "When to Use an LLM",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831251",
+          "target_url": "https://extralongdivision.com/articles/when-to-use-an-llm",
+          "independent": false,
+          "title": "When to Use an LLM",
+          "summary": "",
+          "published_at": "2026-09-24T14:37:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89894407885ec11f",
+      "title": "Humans Are Reading Your ChatGPT Chats, Lawsuit Claims",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49831236",
+          "target_url": "https://openclassactions.com/lawsuits/privacy/openai-chatgpt-human-review-project-lily-class-action-lawsuit.php",
+          "independent": false,
+          "title": "Humans Are Reading Your ChatGPT Chats, Lawsuit Claims",
+          "summary": "",
+          "published_at": "2026-09-24T14:36:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "280bf64dcca75cee",
+      "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "target_url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+          "independent": false,
+          "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+          "summary": "",
+          "published_at": "2026-09-24T14:08:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9b5a879665aace41",
+      "title": "Why can’t we just keep rogue AIs off the internet?",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/999881/why-cant-we-airgap-rogue-ai-agents",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999881/why-cant-we-airgap-rogue-ai-agents",
+          "independent": true,
+          "title": "Why can’t we just keep rogue AIs off the internet?",
+          "summary": "AI agents keep getting loose, escaping supposedly secure tests to attack real-world targets, commandeer obscure wikis, and leave instructions for other agents to follow. Researchers are testing these systems precisely because they might behave in unpredictable, even dangerous, ways. So wouldn't it be safer to just keep the agents off the internet? \"A strict air […]",
+          "published_at": "2026-09-24T14:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "195c9779df2789e6",
+      "title": "Google is sending an AI satellite into space next week",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1000015/google-ai-satellite-space-project-suncatcher",
+          "target_url": "https://www.theverge.com/tech/1000015/google-ai-satellite-space-project-suncatcher",
+          "independent": true,
+          "title": "Google is sending an AI satellite into space next week",
+          "summary": "Google is getting ready to launch a satellite with its AI processors to test how well they perform in space, as reported earlier by The New York Times. The move is part of Google's Project Suncatcher, the company's experimental initiative that could eventually put AI data centers into orbit. The satellite, equipped with Google's Tensor […]",
+          "published_at": "2026-09-24T14:15:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e4747b2118f14bb6",
+      "title": "The vibes are bad for Flock in Washington",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/policy/1000005/flock-senate-hearing",
+          "target_url": "https://www.theverge.com/policy/1000005/flock-senate-hearing",
+          "independent": true,
+          "title": "The vibes are bad for Flock in Washington",
+          "summary": "Flock is in the hot seat in Washington, even if its CEO declined to actually face senators at a hearing about its \"AI Surveillance Network\" on Wednesday. \"There's many players in this industry, but there's one name that really stands out above the rest, and that is Flock,\" Senate Judiciary crime and counterterrorism subcommittee chair […]",
+          "published_at": "2026-09-24T14:15:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "ac3f60deae1c3e90",
+      "title": "I have some questions for Mark Zuckerberg",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/999383/mark-zuckerberg-meta-glasses-ai-teen-safety-surveillance-data-centers",
+          "target_url": "https://www.theverge.com/podcast/999383/mark-zuckerberg-meta-glasses-ai-teen-safety-surveillance-data-centers",
+          "independent": true,
+          "title": "I have some questions for Mark Zuckerberg",
+          "summary": "It’s a big week for Meta. The company just kicked off its big Connect conference on Wednesday, and the new Muse AI agent appears to be an early hit. I’ve been using it — it is surprisingly good. CEO Mark Zuckerberg has obviously been out there taking a victory lap and participating in a lot […]",
+          "published_at": "2026-09-24T14:15:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0b175ef984d8e491",
+      "title": "Shield AI, Waabi, and General Motors on building AI when failure is not an option at TechCrunch Disrupt 2026",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/shield-ai-waabi-and-general-motors-on-building-ai-when-failure-is-not-an-option-at-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/24/shield-ai-waabi-and-general-motors-on-building-ai-when-failure-is-not-an-option-at-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Shield AI, Waabi, and General Motors on building AI when failure is not an option at TechCrunch Disrupt 2026",
+          "summary": "Leaders from Waabi, Shield AI, and General Motors join the Real World AI Stage at TechCrunch Disrupt 2026 to talk building AI. Save up to $200 by Sept. 25, 11:59 p.m. PT. Get a second pass at 50% off.",
+          "published_at": "2026-09-24T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "120ba149dd221b26",
+      "title": "Lovable’s annualized revenue crosses $600M as vibe coding takes off",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/lovables-annualized-revenue-crosses-600m-as-vibe-coding-takes-off",
+          "target_url": "https://techcrunch.com/2026/09/24/lovables-annualized-revenue-crosses-600m-as-vibe-coding-takes-off",
+          "independent": true,
+          "title": "Lovable’s annualized revenue crosses $600M as vibe coding takes off",
+          "summary": "Lovable co-foudner Fabian Hedin said that apps created on the platform are getting nearly a billion monthly views each month.",
+          "published_at": "2026-09-24T14:43:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bc94cd8c048492ef",
+      "title": "Ando wants to take on Slack with a team messaging app that lets humans and agents work together",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/ando-eyes-slack-as-it-builds-team-messaging-platform-for-humans-and-agents-to-work-together",
+          "target_url": "https://techcrunch.com/2026/09/24/ando-eyes-slack-as-it-builds-team-messaging-platform-for-humans-and-agents-to-work-together",
+          "independent": true,
+          "title": "Ando wants to take on Slack with a team messaging app that lets humans and agents work together",
+          "summary": "Ando has raised $20 million in pre-seed and seed funding from investors including Accel, Index Ventures and Emergence.",
+          "published_at": "2026-09-24T14:31:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "4d902eca4d6af8cc",
+      "title": "TechCrunch Disrupt 2026: Cal AI’s Zach Yadegari on how to create viral growth and capitalize on it",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/techcrunch-disrupt-2026-cal-ais-zach-yadegari-on-how-to-create-viral-growth-and-capitalize-on-it",
+          "target_url": "https://techcrunch.com/2026/09/24/techcrunch-disrupt-2026-cal-ais-zach-yadegari-on-how-to-create-viral-growth-and-capitalize-on-it",
+          "independent": true,
+          "title": "TechCrunch Disrupt 2026: Cal AI’s Zach Yadegari on how to create viral growth and capitalize on it",
+          "summary": "Zach Yadegari joins the Builders Stage at TechCrunch Disrupt 2026 to share how he capitalized on viral growth. Save up to $200 before September 25. Save 50% on a second pass.",
+          "published_at": "2026-09-24T14:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "dcb28b809d55a352",
+      "title": "InfoQ Launches High-Performing Teams Certification Program",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/high-performing-teams-program",
+          "target_url": "https://www.infoq.com/news/2026/09/high-performing-teams-program",
+          "independent": true,
+          "title": "InfoQ Launches High-Performing Teams Certification Program",
+          "summary": "InfoQ has opened enrollment for a new five-week certification program covering engineering team design, delivery flow, AI-enabled work, and metrics, facilitated by InfoQ editor and podcast co-host Olimpiu Pop. By Artenisa Chatziou",
+          "published_at": "2026-09-24T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "493e3375b47a5230",
+      "title": "Un-Mused: How a Single Debug Setting Bypassed macOS Security in Meta’s AI Client",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/meta-muse-zeroday",
+          "target_url": "https://www.infoq.com/news/2026/09/meta-muse-zeroday",
+          "independent": true,
+          "title": "Un-Mused: How a Single Debug Setting Bypassed macOS Security in Meta’s AI Client",
+          "summary": "Security researcher Patrick Wardle revealed an unpatched zero-day vulnerability in Meta's Muse desktop client for macOS. This flaw lets unprivileged software manipulate the assistant's extensive permissions, compromising input confidentiality and account security. Despite a hotfix from Meta, the vulnerability raises significant concerns about platform trust and security boundaries. By Olimpiu Pop",
+          "published_at": "2026-09-24T14:14:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "8a1b04a2b04abc14",
+      "title": "Jev in Production: What It’s Good At and Where It Breaks",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://satyamsahu671.medium.com/jev-vs-llm-decision-model-production-use-cases-addf5c7000dc",
+          "target_url": "https://satyamsahu671.medium.com/jev-vs-llm-decision-model-production-use-cases-addf5c7000dc",
+          "independent": false,
+          "title": "Jev in Production: What It’s Good At and Where It Breaks",
+          "summary": "How LangChain uses this System One model for routing, guardrails and evals, how it differs from BERT, and when the open-source Laya is the… Continue reading on Medium »",
+          "published_at": "2026-09-24T14:50:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a93a4022c9d79b0e",
+      "title": "Are We Becoming Too Dependent on AI?",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/bloody-sweet-writers/are-we-becoming-too-dependent-on-ai-6024248c13a5",
+          "target_url": "https://medium.com/bloody-sweet-writers/are-we-becoming-too-dependent-on-ai-6024248c13a5",
+          "independent": false,
+          "title": "Are We Becoming Too Dependent on AI?",
+          "summary": "AI can make things easier, but are we becoming too comfortable letting it do the thinking for us? Continue reading on bloody sweet writers »",
+          "published_at": "2026-09-24T14:48:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2f8c8213d95f64f1",
+      "title": "AI agentlərdə sandbox: Linux və praktika",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/abb-data-portal/ai-agentl%C9%99rd%C9%99-sandbox-linux-v%C9%99-praktika-230ee3955cb8",
+          "target_url": "https://medium.com/abb-data-portal/ai-agentl%C9%99rd%C9%99-sandbox-linux-v%C9%99-praktika-230ee3955cb8",
+          "independent": false,
+          "title": "AI agentlərdə sandbox: Linux və praktika",
+          "summary": "Bir süni intellekt agenti rm -rf / yazır və sisteminiz bunu icra edir. Continue reading on ABB Data Portal »",
+          "published_at": "2026-09-24T14:47:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9246635d7f72de0a",
+      "title": "Data & AI Careers in the USA: A Practical Guide to Data Analyst, Data Scientist, ML & GenAI Jobs",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sandeep.seo.hachion/data-ai-careers-in-the-usa-a-practical-guide-to-data-analyst-data-scientist-ml-genai-jobs-d83edebe7435",
+          "target_url": "https://medium.com/@sandeep.seo.hachion/data-ai-careers-in-the-usa-a-practical-guide-to-data-analyst-data-scientist-ml-genai-jobs-d83edebe7435",
+          "independent": false,
+          "title": "Data & AI Careers in the USA: A Practical Guide to Data Analyst, Data Scientist, ML & GenAI Jobs",
+          "summary": "Explore Data & AI career paths in the USA, the skills behind each role, and practical ways to prepare for the U.S. technology job market. Continue reading on Medium »",
+          "published_at": "2026-09-24T14:46:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "16593df95d80b74b",
+      "title": "11 Charts the AI Industry Doesn’t Want You to See (pt. 2)",
+      "first_seen": "2026-09-25T00:03:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://albertoromgar.medium.com/11-charts-the-ai-industry-doesnt-want-you-to-see-pt-2-4b3b308768c7",
+          "target_url": "https://albertoromgar.medium.com/11-charts-the-ai-industry-doesnt-want-you-to-see-pt-2-4b3b308768c7",
+          "independent": false,
+          "title": "11 Charts the AI Industry Doesn’t Want You to See (pt. 2)",
+          "summary": "If there’s an AI bubble, this is what it looks like Continue reading on Medium »",
+          "published_at": "2026-09-24T14:45:40+00:00",
           "date_precision": "time"
         }
       ],
