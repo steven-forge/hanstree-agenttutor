@@ -65,6 +65,10 @@ function formatUsd(value: number): string {
   return `$${value}`;
 }
 
+function formatContextWindow(value: string): string {
+  return value === "1,050,000" || value === "1,048,576" ? "1M" : value;
+}
+
 function sourcesText(sources: Source[]): string {
   return sources.map((s) => `${s.name} (${s.url})`).join("; ");
 }
@@ -109,8 +113,8 @@ const COMPARE_ROWS: CompareRow[] = [
   {
     key: "context_window",
     label: "컨텍스트 크기",
-    cell: ({ model }) => model.context_window,
-    text: ({ model }) => model.context_window
+    cell: ({ model }) => formatContextWindow(model.context_window),
+    text: ({ model }) => formatContextWindow(model.context_window)
   },
   {
     key: "max_output",
