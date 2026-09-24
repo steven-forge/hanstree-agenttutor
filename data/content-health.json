@@ -1,6 +1,6 @@
 {
   "news": {
-    "checked_at": "2026-09-25T07:01:29.123783+09:00",
+    "checked_at": "2026-09-25T08:01:14.870381+09:00",
     "status": "partial",
     "candidate_count": 0,
     "archive_count": 289,
@@ -31,37 +31,34 @@
         "id": "codex-releases",
         "name": "Codex Releases",
         "url": "https://github.com/openai/codex/releases",
-        "status": "failed",
+        "status": "ok",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "HTTP 403: rate limit exceeded"
+        "excluded_count": 171,
+        "skipped_count": 22,
+        "coverage_limited": false
       },
       {
         "id": "claude-releases",
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
-        "status": "failed",
+        "status": "ok",
         "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "HTTP 403: rate limit exceeded"
+        "skipped_count": 50,
+        "coverage_limited": false
       },
       {
         "id": "gemini-releases",
         "name": "Gemini CLI Releases",
         "url": "https://github.com/google-gemini/gemini-cli/releases",
-        "status": "failed",
+        "status": "ok",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 0,
-        "skipped_count": 0,
-        "coverage_limited": false,
-        "error": "HTTP 403: rate limit exceeded"
+        "excluded_count": 70,
+        "skipped_count": 11,
+        "coverage_limited": false
       },
       {
         "id": "grok-releases",
@@ -102,10 +99,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 5,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 34,
-        "skipped_count": 2,
+        "excluded_count": 30,
+        "skipped_count": 0,
         "coverage_limited": false
       },
       {
@@ -157,10 +154,10 @@
         "name": "Ars Technica",
         "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "status": "ok",
-        "count": 2,
+        "count": 1,
         "held_count": 0,
-        "excluded_count": 18,
-        "skipped_count": 2,
+        "excluded_count": 19,
+        "skipped_count": 1,
         "coverage_limited": false
       },
       {
@@ -168,10 +165,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 11,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 19,
-        "skipped_count": 11,
+        "excluded_count": 23,
+        "skipped_count": 7,
         "coverage_limited": false
       },
       {
@@ -278,7 +275,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 685
+    "pending_event_count": 696
   },
   "documents": {
     "checked_at": "2026-09-25T06:26:06.123130+09:00",
