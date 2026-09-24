@@ -57,6 +57,7 @@ ALLOWED_HOSTS = {
     "anthropic.com", "www.anthropic.com", "code.claude.com", "platform.claude.com",
     "blog.google", "ai.google.dev", "developers.google.com", "gemini.google", "geminicli.com", "www.geminicli.com",
     "x.ai", "www.x.ai", "docs.x.ai",
+    "claude.dev", "www.claude.dev",
     "agentskills.io", "www.agentskills.io",
     "modelcontextprotocol.io", "huggingface.co",
     "w3.org", "www.w3.org",
@@ -1191,7 +1192,7 @@ def parse_xai_releases(html_bytes: bytes, source_id: str, source_name: str, wind
     return candidates, stats
 
 
-def parse_html_news(index_url: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, old_urls: set = None) -> tuple[list[dict], dict]:
+def parse_html_news(index_url: str, source_id: str, source_name: str, window_start: datetime, window_end: datetime, known: tuple = NO_KNOWN, old_urls: set = None, article_path_prefix: str = "/news/") -> tuple[list[dict], dict]:
     """old_urls: 이전 실행에서 60일 시작보다 오래된 것으로 확정된 URL 캐시(제자리 갱신). 오래된 기사는 다시 범위에 들어오지 않는다."""
     candidates = []
     stats = new_stats()
@@ -1216,7 +1217,7 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
         if (p.hostname or "").lower() != base_host:
             continue
         clean_path = p.path.rstrip("/")
-        is_news = clean_path != "/news" and clean_path.startswith("/news/")
+        is_news = clean_path != article_path_prefix.rstrip("/") and clean_path.startswith(article_path_prefix)
         if is_news or (source_id == "anthropic-news" and MODEL_SLUG_RE.match(clean_path)):
             c_url = canonicalize_url(joined)
             if c_url not in seen:
@@ -1279,7 +1280,7 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
         if not title_m:
             title_m = re.search(r'<title\b[^>]*>([^<]+)</title>', art_html, re.I)
         title = html.unescape(title_m.group(1)).strip() if title_m else ""
-        title = re.sub(r'\s*[\-|–—\\]\s*(?:Anthropic|xAI).*$', '', title, flags=re.I).strip()
+        title = re.sub(r'\s*[\-|–—\\/]\s*(?:Anthropic|xAI|claude\.dev).*$', '', title, flags=re.I).strip()
 
         date_str = None
         for jld in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', art_html, re.I):
@@ -1403,6 +1404,7 @@ def collect_news() -> int:
         {"id": "grok-releases", "name": "Grok Releases", "url": "https://docs.x.ai/developers/release-notes", "type": "xai_releases"},
         {"id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html"},
         {"id": "xai-news", "name": "xAI News", "url": "https://x.ai/news", "type": "html"},
+        {"id": "claude-dev-blog", "name": "Claude.dev Blog", "url": "https://claude.dev/", "type": "html", "path_prefix": "/blog/"},
     ]
 
     all_candidates = []
@@ -1439,7 +1441,7 @@ def collect_news() -> int:
                 items, stats = parse_xai_releases(body, sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
             elif stype == "html":
                 old_urls = set(news_cache.get(sid, {}).get("old_urls", []))
-                items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls)
+                items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls, article_path_prefix=sdef.get("path_prefix", "/news/"))
                 cache_entry["old_urls"] = sorted(old_urls)
             news_cache[sid] = cache_entry
         except Exception as error:

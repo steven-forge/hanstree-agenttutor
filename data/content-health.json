@@ -1,9 +1,9 @@
 {
   "news": {
-    "checked_at": "2026-09-24T09:01:40.558263+09:00",
+    "checked_at": "2026-09-24T09:20:17.270809+09:00",
     "status": "partial",
-    "candidate_count": 1,
-    "archive_count": 282,
+    "candidate_count": 2,
+    "archive_count": 284,
     "sources": [
       {
         "id": "openai-news",
@@ -54,10 +54,10 @@
         "name": "Gemini CLI Releases",
         "url": "https://github.com/google-gemini/gemini-cli/releases",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 70,
-        "skipped_count": 10,
+        "skipped_count": 11,
         "coverage_limited": false
       },
       {
@@ -262,6 +262,17 @@
         "skipped_count": 0,
         "coverage_limited": false,
         "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
+      },
+      {
+        "id": "claude-dev-blog",
+        "name": "Claude.dev Blog",
+        "url": "https://claude.dev/",
+        "status": "ok",
+        "count": 2,
+        "held_count": 0,
+        "excluded_count": 6,
+        "skipped_count": 0,
+        "coverage_limited": false
       }
     ],
     "pending_event_count": 419

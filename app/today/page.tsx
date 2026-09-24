@@ -170,11 +170,15 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                     </div>
 
                     <h2 style={{ fontSize: "1.25rem", margin: "0 0 10px", lineHeight: "1.4" }}>
-                      {article.title_ko || article.title}
+                      {article.source_id === "claude-dev-blog" && article.key_points_ko?.length ? (
+                        <Link href={`/today/${article.id}`} style={{ color: "inherit", textDecoration: "none" }}>
+                          {article.title_ko || article.title} →
+                        </Link>
+                      ) : article.title_ko || article.title}
                     </h2>
 
                     {article.summary ? (
-                      <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px" }}>
+                      <p style={{ fontSize: "0.95rem", color: "var(--ink)", lineHeight: "1.6", marginBottom: "14px", whiteSpace: "pre-line" }}>
                         {article.summary}
                       </p>
                     ) : article.source_summary ? (
