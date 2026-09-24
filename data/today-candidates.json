@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T19:00:58.937110+09:00",
-  "window_start": "2026-07-26T19:00:58.937110+09:00",
-  "window_end": "2026-09-24T19:00:58.937110+09:00",
+  "collected_at": "2026-09-24T20:01:13.257944+09:00",
+  "window_start": "2026-07-26T20:01:13.257944+09:00",
+  "window_end": "2026-09-24T20:01:13.257944+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -97,11 +97,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 11,
-      "held_count": 1,
-      "excluded_count": 26,
-      "skipped_count": 2,
+      "status": "ok",
+      "count": 14,
+      "held_count": 0,
+      "excluded_count": 25,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 11,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 19,
-      "skipped_count": 11,
+      "excluded_count": 21,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -197,10 +197,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 10,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 5,
-      "skipped_count": 9,
+      "excluded_count": 7,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T19:01:22.910840+09:00",
-  "hourly_window_start": "2026-09-21T19:01:22.910840+09:00",
+  "hourly_collected_at": "2026-09-24T20:01:34.813994+09:00",
+  "hourly_window_start": "2026-09-21T20:01:34.813994+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1020,27 +1020,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "8b01dd9a86759fd5",
-      "title": "UN says AI safeguards can’t wait for certainty",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
-          "independent": true,
-          "title": "UN says AI safeguards can’t wait for certainty",
-          "summary": "Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of OpenAI's hack of Hugging Face earlier this year. The report cements AI's place on the global diplomatic agenda this week as leaders gather in New York […]",
-          "published_at": "2026-09-21T10:18:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "16afc5791c45315a",
       "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1568,48 +1547,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "208a69d2671df88a",
-      "title": "Podcast: Securing AI Agents: Identity, Authorization, and the DPACT Framework",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/podcasts/securing-ai-agents-identity-authorization",
-          "target_url": "https://www.infoq.com/podcasts/securing-ai-agents-identity-authorization",
-          "independent": true,
-          "title": "Podcast: Securing AI Agents: Identity, Authorization, and the DPACT Framework",
-          "summary": "In this episode, Sahil Agarwal talks about the critical challenges of identity, authorisation, and security in the age of AI agents. Sahil introduces the DPACT framework (Delegation, Policy, Auditability, Context, and Time) as a blueprint for building responsible, guardrailed agentic systems, moving away from simple token-based access toward bounded, delegated authority. By Sahil Agarwal",
-          "published_at": "2026-09-21T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "afb5b609f380acc9",
-      "title": "Presentation: The Agent Harness: Control Planes, Invariants, and Approval Boundaries for Production AI Agents",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/presentations/ai-agent-harness",
-          "target_url": "https://www.infoq.com/presentations/ai-agent-harness",
-          "independent": true,
-          "title": "Presentation: The Agent Harness: Control Planes, Invariants, and Approval Boundaries for Production AI Agents",
-          "summary": "OpenAI’s Vinoth Govindarajan discusses why production AI agents fail beyond model hallucination. Using real-world case studies like OpenClaw, he explains the key principles of reliable agent harnesses: establishing explicit state ownership, serializing concurrent state mutations, scoping execution authority, and validating actions at the user-visible edge. By Vinoth Govindarajan",
-          "published_at": "2026-09-21T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "502ecda31ed9faae",
       "title": "Redefining Media at 18: How I Built an Autonomous Tech News Platform Using AI and n8n",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1980,27 +1917,6 @@
           "title": "Plane Agents",
           "summary": "Assign work to AI agents, like any teammate Discussion | Link",
           "published_at": "2026-09-21T15:36:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f3c176b7dee466a9",
-      "title": "ResumeContext",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/resumecontext",
-          "target_url": "https://www.producthunt.com/products/resumecontext",
-          "independent": false,
-          "title": "ResumeContext",
-          "summary": "Shared memory for coding agents. Discussion | Link",
-          "published_at": "2026-09-21T10:42:06+00:00",
           "date_precision": "time"
         }
       ],
@@ -3318,6 +3234,17 @@
           "title": "Show HN: Is your repo giving coding agents two different answers?",
           "summary": "",
           "published_at": "2026-09-23T05:07:14+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828775",
+          "target_url": "https://forkbench.com/l/FAUiWl3f",
+          "independent": false,
+          "title": "Show HN: Forkbench – boundaries and supervision for AI coding agents",
+          "summary": "",
+          "published_at": "2026-09-24T10:44:24+00:00",
           "date_precision": "time"
         }
       ],
@@ -8810,6 +8737,17 @@
           "summary": "",
           "published_at": "2026-09-23T22:59:45+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828685",
+          "target_url": "https://github.com/sivsivsree/agedb",
+          "independent": false,
+          "title": "Show HN: I built AgeDB, a database for AI agents to store context and data",
+          "summary": "",
+          "published_at": "2026-09-24T10:34:05+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -11793,6 +11731,363 @@
           "title": "Pace the Frontier, Except When the IPO Is Due",
           "summary": "The gap between what AI labs warn about and what they do Continue reading on Medium »",
           "published_at": "2026-09-24T09:39:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7e8515e04538b038",
+      "title": "AI is dominating the conversation at Climate Week",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828921",
+          "target_url": "https://www.technologyreview.com/2026/09/24/1145048/ai-climate-week",
+          "independent": false,
+          "title": "AI is dominating the conversation at Climate Week",
+          "summary": "",
+          "published_at": "2026-09-24T11:01:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "591644ad8415657f",
+      "title": "Ten AI models debated fixes for 15 problems",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828898",
+          "target_url": "https://fixtheworld.io/ai/debate",
+          "independent": false,
+          "title": "Ten AI models debated fixes for 15 problems",
+          "summary": "",
+          "published_at": "2026-09-24T10:58:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4d06cf2168bfbe6b",
+      "title": "Evolving programming languages in the AI era",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828851",
+          "target_url": "https://dashbit.co/blog/evolving-ai-era",
+          "independent": false,
+          "title": "Evolving programming languages in the AI era",
+          "summary": "",
+          "published_at": "2026-09-24T10:52:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1e812a943fda1c8b",
+      "title": "Utyansky Index: Deterministic O(1) slot isolation for AI vibe coding",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828783",
+          "target_url": "https://github.com/vlad-utyansky/utyansky-index",
+          "independent": false,
+          "title": "Utyansky Index: Deterministic O(1) slot isolation for AI vibe coding",
+          "summary": "",
+          "published_at": "2026-09-24T10:45:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "911e8e842618799f",
+      "title": "The Invisible Way Companies Are Using AI to Set Salaries",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828746",
+          "target_url": "https://www.wsj.com/lifestyle/careers/the-invisible-way-companies-are-using-ai-to-set-salaries-ad3f74a8",
+          "independent": false,
+          "title": "The Invisible Way Companies Are Using AI to Set Salaries",
+          "summary": "",
+          "published_at": "2026-09-24T10:41:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d8ad6b58be07b405",
+      "title": "Agent IAP – Little Snitch Meets 1Password for AI Agents",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828744",
+          "target_url": "https://vpetersson.com/2026/09/23/little-snitch-meets-1password-for-ai-agents",
+          "independent": false,
+          "title": "Agent IAP – Little Snitch Meets 1Password for AI Agents",
+          "summary": "",
+          "published_at": "2026-09-24T10:40:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "75508a0497b82a52",
+      "title": "ACTx486 turns a podcast or video into a responsive AI conversation",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828727",
+          "target_url": "https://runtimewire.com/article/actx486-turns-a-podcast-or-video-into-a-responsive-ai-conversation",
+          "independent": false,
+          "title": "ACTx486 turns a podcast or video into a responsive AI conversation",
+          "summary": "",
+          "published_at": "2026-09-24T10:38:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "602b17c0a274ba66",
+      "title": "Polytender – AI for Public Tenders",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828718",
+          "target_url": "https://polytender.com/en",
+          "independent": false,
+          "title": "Polytender – AI for Public Tenders",
+          "summary": "",
+          "published_at": "2026-09-24T10:37:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c652f7fb08ff8890",
+      "title": "Pro-Human AI Declaration",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828647",
+          "target_url": "https://prohumandeclaration.com/en/sign/demand-ai-accountability",
+          "independent": false,
+          "title": "Pro-Human AI Declaration",
+          "summary": "",
+          "published_at": "2026-09-24T10:30:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd5328839ee23cf9",
+      "title": "I miss old Google: readers tell us how they search the internet in the age of AI",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828609",
+          "target_url": "https://www.theguardian.com/technology/2026/sep/23/google-readers-respond-ai-overview-internet-searches",
+          "independent": false,
+          "title": "I miss old Google: readers tell us how they search the internet in the age of AI",
+          "summary": "",
+          "published_at": "2026-09-24T10:24:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "206d24327e02a80b",
+      "title": "LLM-friendliness as a metric: porting 20 languages with an LLM",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828549",
+          "target_url": "https://kostya.github.io/LangArena/llm_friendliness.html",
+          "independent": false,
+          "title": "LLM-friendliness as a metric: porting 20 languages with an LLM",
+          "summary": "",
+          "published_at": "2026-09-24T10:15:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8ad2879767359efd",
+      "title": "AI meets trade Global linkages and the cross-country distribution of AI gains",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828503",
+          "target_url": "https://www.oecd.org/en/publications/ai-meets-trade_13081644-en.html",
+          "independent": false,
+          "title": "AI meets trade Global linkages and the cross-country distribution of AI gains",
+          "summary": "",
+          "published_at": "2026-09-24T10:08:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a9df0c4143c7f643",
+      "title": "Stop Letting AI Guess What You Mean. Make It Ask First.",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://cybernerdie.medium.com/stop-letting-ai-guess-what-you-mean-make-it-ask-first-3990136ecb41",
+          "target_url": "https://cybernerdie.medium.com/stop-letting-ai-guess-what-you-mean-make-it-ask-first-3990136ecb41",
+          "independent": false,
+          "title": "Stop Letting AI Guess What You Mean. Make It Ask First.",
+          "summary": "The best response to an ambiguous prompt is sometimes not an answer. It is a better question Continue reading on Medium »",
+          "published_at": "2026-09-24T10:48:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fa67f3b8665764d2",
+      "title": "Calling LLM APIs from Node.js: A Practical Architecture",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dprasadbairwa1997/calling-llm-apis-from-node-js-a-practical-architecture-d7fd81579ddc",
+          "target_url": "https://medium.com/@dprasadbairwa1997/calling-llm-apis-from-node-js-a-practical-architecture-d7fd81579ddc",
+          "independent": false,
+          "title": "Calling LLM APIs from Node.js: A Practical Architecture",
+          "summary": "An adapter layer, a policy layer and a streaming path that survive slow clients, dropped connections and rate limits. Continue reading on Medium »",
+          "published_at": "2026-09-24T10:48:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "731c48a6effd9c26",
+      "title": "The real persons are more perfect than the AI output.",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bdgeek/the-real-persons-are-more-perfect-than-the-ai-output-d711e5003456",
+          "target_url": "https://medium.com/@bdgeek/the-real-persons-are-more-perfect-than-the-ai-output-d711e5003456",
+          "independent": false,
+          "title": "The real persons are more perfect than the AI output.",
+          "summary": "AI can create a beautiful picture in seconds. But can it create the person's identity behind the picture? Continue reading on Medium »",
+          "published_at": "2026-09-24T10:47:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "559efd5c124dac3d",
+      "title": "The Best Aesthetic Note-Taking App for Students in Back-to-School 2026: Why I'm Choosing Kilonotes",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@koficoffeea/the-best-aesthetic-note-taking-app-for-students-in-back-to-school-2026-why-im-choosing-kilonotes-42f98424a062",
+          "target_url": "https://medium.com/@koficoffeea/the-best-aesthetic-note-taking-app-for-students-in-back-to-school-2026-why-im-choosing-kilonotes-42f98424a062",
+          "independent": false,
+          "title": "The Best Aesthetic Note-Taking App for Students in Back-to-School 2026: Why I'm Choosing Kilonotes",
+          "summary": "Every back-to-school season feels like a fresh beginning. It's the perfect time to create new goals, organize school supplies, and build… Continue reading on Medium »",
+          "published_at": "2026-09-24T10:47:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0fdfe4959f643e9d",
+      "title": "The ₹250 Crore Blindspot: Why Running Your Organization on WhatsApp Violates India’s DPDP Act",
+      "first_seen": "2026-09-24T20:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@goonjar66/the-250-crore-blindspot-why-running-your-organization-on-whatsapp-violates-indias-dpdp-act-3c52282be0cb",
+          "target_url": "https://medium.com/@goonjar66/the-250-crore-blindspot-why-running-your-organization-on-whatsapp-violates-indias-dpdp-act-3c52282be0cb",
+          "independent": false,
+          "title": "The ₹250 Crore Blindspot: Why Running Your Organization on WhatsApp Violates India’s DPDP Act",
+          "summary": "How visible member contact lists, unencrypted device exports, and unconsented data sharing expose Indian schools, societies, and… Continue reading on Medium »",
+          "published_at": "2026-09-24T10:46:47+00:00",
           "date_precision": "time"
         }
       ],
