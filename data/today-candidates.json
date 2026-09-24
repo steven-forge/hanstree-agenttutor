@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T21:01:11.798981+09:00",
-  "window_start": "2026-07-26T21:01:11.798981+09:00",
-  "window_end": "2026-09-24T21:01:11.798981+09:00",
+  "collected_at": "2026-09-24T22:02:15.594432+09:00",
+  "window_start": "2026-07-26T22:02:15.594432+09:00",
+  "window_end": "2026-09-24T22:02:15.594432+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 2,
+      "excluded_count": 30,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -175,9 +175,9 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 4,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 22,
+      "excluded_count": 21,
       "skipped_count": 4,
       "coverage_limited": false
     },
@@ -189,7 +189,7 @@
       "count": 3,
       "held_count": 0,
       "excluded_count": 17,
-      "skipped_count": 2,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -275,10 +275,10 @@
     }
   ],
   "new_count": 0,
-  "archive_count": 286,
+  "archive_count": 288,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T21:01:32.869146+09:00",
-  "hourly_window_start": "2026-09-21T21:01:32.869146+09:00",
+  "hourly_collected_at": "2026-09-24T22:02:43.286167+09:00",
+  "hourly_window_start": "2026-09-21T22:02:43.286167+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2087,6 +2087,17 @@
           "summary": "",
           "published_at": "2026-09-23T07:43:11+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marketing_40758/openais-new-ai-models-in-2026-gpt-6-astra-gpt-6-sol-and-luna-explained-3adf9c5d5c98",
+          "target_url": "https://medium.com/@marketing_40758/openais-new-ai-models-in-2026-gpt-6-astra-gpt-6-sol-and-luna-explained-3adf9c5d5c98",
+          "independent": false,
+          "title": "OpenAI’s New AI Models in 2026: GPT-6 Astra, GPT-6 Sol, and Luna Explained",
+          "summary": "Quick gut check: if you blinked over the last few weeks, you missed an entire new generation of ChatGPT. OpenAI didn’t just ship one model… Continue reading on Medium »",
+          "published_at": "2026-09-24T12:48:02+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3150,6 +3161,17 @@
           "title": "Show HN: Tokenhush – keeps your secrets out of what Claude Code sends",
           "summary": "",
           "published_at": "2026-09-24T03:59:58+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829771",
+          "target_url": "https://github.com/savarin/lean-agent",
+          "independent": false,
+          "title": "Show HN: Link proof assistant Lean to Claude, fix your code's hidden assumptions",
+          "summary": "",
+          "published_at": "2026-09-24T12:37:45+00:00",
           "date_precision": "time"
         }
       ],
@@ -12162,7 +12184,280 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0ce18787d3bec64a",
+      "title": "Show HN: A novel about an AI that starts asking questions, a chapter a day",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49830013",
+          "target_url": "https://thought-is-free.com/read/ch01?from=hn",
+          "independent": false,
+          "title": "Show HN: A novel about an AI that starts asking questions, a chapter a day",
+          "summary": "",
+          "published_at": "2026-09-24T13:01:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9f19d86adb0e8156",
+      "title": "I Proved AI Could Beat Our Technical Interviews. Then I Had to Fix Them",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829915",
+          "target_url": "https://andrewwegner.com/ai-broke-our-interview-process-i-had-to-fix-it.html",
+          "independent": false,
+          "title": "I Proved AI Could Beat Our Technical Interviews. Then I Had to Fix Them",
+          "summary": "",
+          "published_at": "2026-09-24T12:53:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "459d93d21a65dc14",
+      "title": "Changing my mind about AI risk – Francis Fukuyama [video]",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829910",
+          "target_url": "https://www.youtube.com/watch?v=aqdum6lnhJ8",
+          "independent": false,
+          "title": "Changing my mind about AI risk – Francis Fukuyama [video]",
+          "summary": "",
+          "published_at": "2026-09-24T12:53:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43e19a649f25d4b6",
+      "title": "Show HN: App2Api – App actions into API calls for LLMs",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829882",
+          "target_url": "https://app2api.com/",
+          "independent": false,
+          "title": "Show HN: App2Api – App actions into API calls for LLMs",
+          "summary": "",
+          "published_at": "2026-09-24T12:50:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0623e63a0d033db2",
+      "title": "Show HN: Keydris checks your AI agent's permissions before it sends email",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829823",
+          "target_url": "https://www.youtube.com/watch?v=De0PQTEL8r0",
+          "independent": false,
+          "title": "Show HN: Keydris checks your AI agent's permissions before it sends email",
+          "summary": "",
+          "published_at": "2026-09-24T12:43:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "67f96214008cddc3",
+      "title": "Mark Zuckerberg Showcases Muse AI Agent Fused with Smartglasses",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829761",
+          "target_url": "https://www.wsj.com/tech/ai/mark-zuckerberg-lays-out-his-vision-muse-ai-agent-fused-with-smartglasses-18d9c85e",
+          "independent": false,
+          "title": "Mark Zuckerberg Showcases Muse AI Agent Fused with Smartglasses",
+          "summary": "",
+          "published_at": "2026-09-24T12:37:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "21568dbe95ab8cd7",
+      "title": "Agent Speaks MCP. Give It a Computer",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829742",
+          "target_url": "https://fly.io/blog/sprites-mcp",
+          "independent": false,
+          "title": "Agent Speaks MCP. Give It a Computer",
+          "summary": "",
+          "published_at": "2026-09-24T12:35:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f359c710fe1562a0",
+      "title": "Australia to investigate if OpenAI hack of government health website broke the law",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/australia-to-investigate-if-openai-hack-of-government-health-website-broke-the-law",
+          "target_url": "https://techcrunch.com/2026/09/24/australia-to-investigate-if-openai-hack-of-government-health-website-broke-the-law",
+          "independent": true,
+          "title": "Australia to investigate if OpenAI hack of government health website broke the law",
+          "summary": "The incident is the first known breach to affect a government agency, and Australia's prime minister has vowed to hold OpenAI accountable.",
+          "published_at": "2026-09-24T12:54:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "dc56954d45791003",
+      "title": "Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production.",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/cursor-rollouts-firetiger-production",
+          "target_url": "https://thenewstack.io/cursor-rollouts-firetiger-production",
+          "independent": true,
+          "title": "Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production.",
+          "summary": "We all know that producing code is easier than ever thanks to the abundance of AI coding tools and agents. The post Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production. appeared first on The New Stack .",
+          "published_at": "2026-09-24T12:56:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d7ed7bdd7ca6ebe1",
+      "title": "A small, repeatable way to test AI image and video tools",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@xzmowei/a-small-repeatable-way-to-test-ai-image-and-video-tools-b3a5b48ec49c",
+          "target_url": "https://medium.com/@xzmowei/a-small-repeatable-way-to-test-ai-image-and-video-tools-b3a5b48ec49c",
+          "independent": false,
+          "title": "A small, repeatable way to test AI image and video tools",
+          "summary": "When an AI image or video tool looks promising, I try to avoid judging it from a single attractive sample. A small test set tells me much… Continue reading on Medium »",
+          "published_at": "2026-09-24T12:48:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "badaaa4b1484fa6d",
+      "title": "Claude can run your customer feedback loop. Here’s the setup.",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marvin.depping/claude-can-run-your-customer-feedback-loop-heres-the-setup-f0c7fa3f8013",
+          "target_url": "https://medium.com/@marvin.depping/claude-can-run-your-customer-feedback-loop-heres-the-setup-f0c7fa3f8013",
+          "independent": false,
+          "title": "Claude can run your customer feedback loop. Here’s the setup.",
+          "summary": "Most feedback loops have the same weak point: Continue reading on Medium »",
+          "published_at": "2026-09-24T12:48:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5f2e792ef9f9de4",
+      "title": "Visions of a More Sustainable Future of Work for the Underserved",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://jdrolle.medium.com/visions-of-a-more-sustainable-future-of-work-for-the-underserved-283cba0ebbde",
+          "target_url": "https://jdrolle.medium.com/visions-of-a-more-sustainable-future-of-work-for-the-underserved-283cba0ebbde",
+          "independent": false,
+          "title": "Visions of a More Sustainable Future of Work for the Underserved",
+          "summary": "Editor’s note, September 2026: This piece first appeared on LinkedIn on July 18, 2022, when Dr. Rolle was at Medgar Evers College, City… Continue reading on Medium »",
+          "published_at": "2026-09-24T12:47:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d89ebce0a7656e4",
+      "title": "Designing Evals for AI Agents: Why “It Passed” Isn’t Always “It Works”",
+      "first_seen": "2026-09-24T22:02:43+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/data-science-collective/designing-evals-for-ai-agents-why-it-passed-isnt-always-it-works-6344154a8f82",
+          "target_url": "https://medium.com/data-science-collective/designing-evals-for-ai-agents-why-it-passed-isnt-always-it-works-6344154a8f82",
+          "independent": false,
+          "title": "Designing Evals for AI Agents: Why “It Passed” Isn’t Always “It Works”",
+          "summary": "A green eval feels like proof. Five gentle questions show what a pass really promises, and how to make it tell the truth. Continue reading on Data Science Collective »",
+          "published_at": "2026-09-24T12:45:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 2
+  "auto_published_count": 0
 }
