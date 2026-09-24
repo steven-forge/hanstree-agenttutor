@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T15:00:58.780558+09:00",
-  "window_start": "2026-07-26T15:00:58.780558+09:00",
-  "window_end": "2026-09-24T15:00:58.780558+09:00",
+  "collected_at": "2026-09-24T16:02:08.137333+09:00",
+  "window_start": "2026-07-26T16:02:08.137333+09:00",
+  "window_end": "2026-09-24T16:02:08.137333+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 5,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 34,
-      "skipped_count": 4,
+      "excluded_count": 26,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 9,
+      "excluded_count": 20,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -197,9 +197,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 7,
+      "excluded_count": 6,
       "skipped_count": 8,
       "coverage_limited": false
     },
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T15:01:23.684140+09:00",
-  "hourly_window_start": "2026-09-21T15:01:23.684140+09:00",
+  "hourly_collected_at": "2026-09-24T16:02:29.839293+09:00",
+  "hourly_window_start": "2026-09-21T16:02:29.839293+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -3591,27 +3591,6 @@
           "title": "Mastering LLM Inference Optimization",
           "summary": "",
           "published_at": "2026-09-23T06:02:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9368d48638603107",
-      "title": "Solid",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/solid-3",
-          "target_url": "https://www.producthunt.com/products/solid-3",
-          "independent": false,
-          "title": "Solid",
-          "summary": "Agents with their own computers, accounts, and budgets. Discussion | Link",
-          "published_at": "2026-09-21T06:01:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -8061,6 +8040,17 @@
           "summary": "",
           "published_at": "2026-09-24T04:33:52+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826856",
+          "target_url": "https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman",
+          "independent": false,
+          "title": "Albanese says OpenAI hacked Medicare and told Australia months later",
+          "summary": "",
+          "published_at": "2026-09-24T06:13:56+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -9291,6 +9281,17 @@
           "summary": "Meta is building a dedicated hardware device for its new Muse AI agent. The product, called Muse Charm, was briefly shown off by Meta CEO Mark Zuckerberg at the end of tonight's Meta Connect presentation. It looks almost like a chunky smart watch without the strap - just a big screen, plus a little lanyard […]",
           "published_at": "2026-09-24T00:15:20+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826839",
+          "target_url": "https://www.theverge.com/tech/999750/muse-charm-meta-ai-hardware",
+          "independent": false,
+          "title": "Meta is making a standalone Muse AI gadget",
+          "summary": "",
+          "published_at": "2026-09-24T06:12:41+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -9857,6 +9858,17 @@
           "title": "System One Models Are Real,I Built One 9 Months Ago",
           "summary": "TypeSafe AI just validated a category ConceptNet has been building since 2025. Here’s what we learned. Continue reading on Stackademic »",
           "published_at": "2026-09-24T01:39:23+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mohit.prajapat_97569/i-built-a-real-time-solar-system-using-free-ai-models-in-opencode-21e72b9bdfde",
+          "target_url": "https://medium.com/@mohit.prajapat_97569/i-built-a-real-time-solar-system-using-free-ai-models-in-opencode-21e72b9bdfde",
+          "independent": false,
+          "title": "I Built a Real-Time Solar System Using Free AI Models in OpenCode",
+          "summary": "I wanted to see how far I could take a simple idea: make the planets move based on real time instead of just playing a fixed animation. Continue reading on Medium »",
+          "published_at": "2026-09-24T06:48:44+00:00",
           "date_precision": "time"
         }
       ],
@@ -10508,6 +10520,468 @@
           "title": "AI Agents Without Context and Trust Are an Autonomous Liability",
           "summary": "What goes wrong when we hand real work to agents, and what teams can do before the first incident Continue reading on Medium »",
           "published_at": "2026-09-24T05:46:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5aa50604547b17e1",
+      "title": "It took 20 yrs to start regulating social media – will AI controls come sooner?",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827140",
+          "target_url": "https://www.rnz.co.nz/news/business/1557652/it-took-20-years-to-start-regulating-social-media-will-ai-controls-come-sooner",
+          "independent": false,
+          "title": "It took 20 yrs to start regulating social media – will AI controls come sooner?",
+          "summary": "",
+          "published_at": "2026-09-24T06:54:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c3f050f08d65ff1",
+      "title": "Investigate top humanity questions with your own AI agent",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827031",
+          "target_url": "https://interworky.com/",
+          "independent": false,
+          "title": "Investigate top humanity questions with your own AI agent",
+          "summary": "",
+          "published_at": "2026-09-24T06:38:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cd10ee6988a67079",
+      "title": "Can open-source prompt-injection detectors catch realistic AI agent attacks?",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827019",
+          "target_url": "https://github.com/rudratoshs/buried-injections",
+          "independent": false,
+          "title": "Can open-source prompt-injection detectors catch realistic AI agent attacks?",
+          "summary": "",
+          "published_at": "2026-09-24T06:37:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7073894a60edaa36",
+      "title": "AI Passport Photo",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827002",
+          "target_url": "https://www.aipassportphoto.org/",
+          "independent": false,
+          "title": "AI Passport Photo",
+          "summary": "",
+          "published_at": "2026-09-24T06:34:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "031531e5c074fa49",
+      "title": "How to Audit an AI Agent:Time-Travel Debugging and Drift Measurement",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827000",
+          "target_url": "https://medium.com/@MirArshadTalpur/how-to-audit-not-observe-an-ai-agent-time-travel-debugging-and-drift-measurement-f755a6f4732e",
+          "independent": false,
+          "title": "How to Audit an AI Agent:Time-Travel Debugging and Drift Measurement",
+          "summary": "",
+          "published_at": "2026-09-24T06:34:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a705574455c9b527",
+      "title": "The cost and quality frontier across 29 AI coding models",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826998",
+          "target_url": "https://bito.ai/benchmarks/ai-coding-model-cost",
+          "independent": false,
+          "title": "The cost and quality frontier across 29 AI coding models",
+          "summary": "",
+          "published_at": "2026-09-24T06:34:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9be455e04fba05b2",
+      "title": "Show HN: I asked 5 LLMs 10k questions and indexed every domain they cited",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826945",
+          "target_url": "https://citegeo.uvansa.com",
+          "independent": false,
+          "title": "Show HN: I asked 5 LLMs 10k questions and indexed every domain they cited",
+          "summary": "",
+          "published_at": "2026-09-24T06:27:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a14160c34ab0aa3",
+      "title": "What Changed from GPT-3.5 to GPT-4? GPT-3.5: 0/30 Empty Nulls. GPT-4: 30/30",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826884",
+          "target_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1wotljm/what_changed_from_gpt35_to_gpt4_same_prompts",
+          "independent": false,
+          "title": "What Changed from GPT-3.5 to GPT-4? GPT-3.5: 0/30 Empty Nulls. GPT-4: 30/30",
+          "summary": "",
+          "published_at": "2026-09-24T06:19:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc3e114bdfb1cecd",
+      "title": "Mysteries of AI Generalization",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826837",
+          "target_url": "https://www.astralcodexten.com/p/mysteries-of-ai-generalization",
+          "independent": false,
+          "title": "Mysteries of AI Generalization",
+          "summary": "",
+          "published_at": "2026-09-24T06:12:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8c543c7c5765288d",
+      "title": "Lysios – LLM red teaming org",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826834",
+          "target_url": "https://lysios.ai/",
+          "independent": false,
+          "title": "Lysios – LLM red teaming org",
+          "summary": "",
+          "published_at": "2026-09-24T06:11:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a0d588321b444f9a",
+      "title": "The biggest surprises from a year working at OpenAI",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49826830",
+          "target_url": "https://aalokpatwa.substack.com/p/one-year-at-openai",
+          "independent": false,
+          "title": "The biggest surprises from a year working at OpenAI",
+          "summary": "",
+          "published_at": "2026-09-24T06:10:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b48da1dd2bc8cae6",
+      "title": "IntellAgents.io",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/intellagents-io",
+          "target_url": "https://www.producthunt.com/products/intellagents-io",
+          "independent": false,
+          "title": "IntellAgents.io",
+          "summary": "One AI agent for every call, chat, and DM Discussion | Link",
+          "published_at": "2026-09-23T10:45:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7add165c4c6c3f02",
+      "title": "Opaline",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/rudel",
+          "target_url": "https://www.producthunt.com/products/rudel",
+          "independent": false,
+          "title": "Opaline",
+          "summary": "PostHog for team Claude Code and Codex sessions. Discussion | Link",
+          "published_at": "2026-09-22T15:25:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "06cef07de21f8187",
+      "title": "Floot MCP",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/floot",
+          "target_url": "https://www.producthunt.com/products/floot",
+          "independent": false,
+          "title": "Floot MCP",
+          "summary": "Build and ship web and mobile apps inside Claude or ChatGPT Discussion | Link",
+          "published_at": "2026-09-23T20:54:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "93f708baf1d4f4ee",
+      "title": "Tincan",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/tincan-2",
+          "target_url": "https://www.producthunt.com/products/tincan-2",
+          "independent": false,
+          "title": "Tincan",
+          "summary": "A group chat for AI assistants Discussion | Link",
+          "published_at": "2026-09-24T06:34:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "45ef5cdb91b3f3f3",
+      "title": "Bitrise Build Hub",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/bitrise",
+          "target_url": "https://www.producthunt.com/products/bitrise",
+          "independent": false,
+          "title": "Bitrise Build Hub",
+          "summary": "GitHub Actions runners that build 2x faster for your agents Discussion | Link",
+          "published_at": "2026-09-23T19:34:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "934838420d972cdf",
+      "title": "CtrlOps 1.0",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/ctrlops",
+          "target_url": "https://www.producthunt.com/products/ctrlops",
+          "independent": false,
+          "title": "CtrlOps 1.0",
+          "summary": "Your server. Audited, managed, and deployed with AI. Discussion | Link",
+          "published_at": "2026-09-22T10:20:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "39bf123a7c044546",
+      "title": "Apple Reference Image Signs Photos at the Sensor, Moving Provenance Trust Away from C2PA",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/apple-reference-image-provenance",
+          "target_url": "https://www.infoq.com/news/2026/09/apple-reference-image-provenance",
+          "independent": true,
+          "title": "Apple Reference Image Signs Photos at the Sensor, Moving Provenance Trust Away from C2PA",
+          "summary": "Apple has published the design of Reference Image, an iPhone 18 Pro camera mode that signs pixel data at the sensor and develops it in Private Cloud Compute under an Apple signature. Developers on Hacker News and Reddit challenged what it proves, raising photographing a screen, the anonymity guarantee's dependence on Apple's cloud, and whether identity verification is the right use case. By Steef-Jan Wiggers",
+          "published_at": "2026-09-24T05:50:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "85697b904ba98ea3",
+      "title": "Why Small Browser Tools Still Matter in an Age of AI",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@toolscase/why-small-browser-tools-still-matter-in-an-age-of-ai-ca16becc7c89",
+          "target_url": "https://medium.com/@toolscase/why-small-browser-tools-still-matter-in-an-age-of-ai-ca16becc7c89",
+          "independent": false,
+          "title": "Why Small Browser Tools Still Matter in an Age of AI",
+          "summary": "AI can solve increasingly complex problems, but developers and professionals still spend time on tiny repetitive tasks that don’t need a… Continue reading on Medium »",
+          "published_at": "2026-09-24T06:49:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4934cf08f2d4ac27",
+      "title": "The Convenience Trap of AI",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@shania.177/the-convenience-trap-of-ai-0bfed731af93",
+          "target_url": "https://medium.com/@shania.177/the-convenience-trap-of-ai-0bfed731af93",
+          "independent": false,
+          "title": "The Convenience Trap of AI",
+          "summary": "What if the next time you had to write an email, make a decision, solve a problem, or even come up with an idea, your first instinct was… Continue reading on Medium »",
+          "published_at": "2026-09-24T06:49:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ffbeeff31917c17d",
+      "title": "Your AI Agent’s Biggest Risk Isn’t the Model",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://www.towardsdeeplearning.com/your-ai-agents-biggest-risk-isn-t-the-model-24722e37728e",
+          "target_url": "https://www.towardsdeeplearning.com/your-ai-agents-biggest-risk-isn-t-the-model-24722e37728e",
+          "independent": false,
+          "title": "Your AI Agent’s Biggest Risk Isn’t the Model",
+          "summary": "Most agent failures I’ve debugged had nothing wrong with the reasoning step. They fell apart at the boundary between two systems. Continue reading on Towards Deep Learning »",
+          "published_at": "2026-09-24T06:47:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4ff1ff89a6fc67e6",
+      "title": "How to Connect Jev to Claude in 5 Minutes (and What It’s Actually Good For)",
+      "first_seen": "2026-09-24T16:02:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@itaispector1/how-to-connect-jev-to-claude-in-5-minutes-and-what-its-actually-good-for-7c7b46b52036",
+          "target_url": "https://medium.com/@itaispector1/how-to-connect-jev-to-claude-in-5-minutes-and-what-its-actually-good-for-7c7b46b52036",
+          "independent": false,
+          "title": "How to Connect Jev to Claude in 5 Minutes (and What It’s Actually Good For)",
+          "summary": "Jev is TypeSafe’s new model that answers with probabilities instead of words. It can’t replace Claude, but it can make Claude faster… Continue reading on Medium »",
+          "published_at": "2026-09-24T06:46:23+00:00",
           "date_precision": "time"
         }
       ],
