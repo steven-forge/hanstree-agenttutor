@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T02:01:13.113223+09:00",
-  "window_start": "2026-07-27T02:01:13.113223+09:00",
-  "window_end": "2026-09-25T02:01:13.113223+09:00",
+  "collected_at": "2026-09-25T03:01:11.355995+09:00",
+  "window_start": "2026-07-27T03:01:11.355995+09:00",
+  "window_end": "2026-09-25T03:01:11.355995+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 168,
+      "excluded_count": 169,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -98,7 +98,7 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 10,
       "held_count": 0,
       "excluded_count": 29,
       "skipped_count": 0,
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 17,
+      "skipped_count": 18,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 288,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T02:01:35.615304+09:00",
-  "hourly_window_start": "2026-09-22T02:01:35.615304+09:00",
+  "hourly_collected_at": "2026-09-25T03:01:35.309744+09:00",
+  "hourly_window_start": "2026-09-22T03:01:35.309744+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -316,6 +316,17 @@
           "title": "Rebranding artificial intelligence as super intelligence",
           "summary": "",
           "published_at": "2026-09-23T07:27:22+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834227",
+          "target_url": "https://www.netcraft.com/blog/slovenian-si-domain-registrations-rise-trump-super-intelligence",
+          "independent": false,
+          "title": ".si domain registrations outpace .ai after Trump's 'Super Intelligence' rename",
+          "summary": "",
+          "published_at": "2026-09-24T17:44:19+00:00",
           "date_precision": "time"
         }
       ],
@@ -3478,27 +3489,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "61073d0500b34fd6",
-      "title": "Linguo Translate",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/linguo-translate-for-macos",
-          "target_url": "https://www.producthunt.com/products/linguo-translate-for-macos",
-          "independent": false,
-          "title": "Linguo Translate",
-          "summary": "Offline & AI Translation for macOS Discussion | Link",
-          "published_at": "2026-09-21T17:44:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "bdd1084588668c68",
       "title": "ToneBird",
       "first_seen": "2026-09-23T16:01:45+09:00",
@@ -4806,6 +4796,17 @@
           "summary": "",
           "published_at": "2026-09-24T13:48:07+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/metas-muse-charm-looks-like-a-tamagotchi-but-its-tapping-into-a-much-newer-trend",
+          "target_url": "https://techcrunch.com/2026/09/24/metas-muse-charm-looks-like-a-tamagotchi-but-its-tapping-into-a-much-newer-trend",
+          "independent": true,
+          "title": "Meta’s Muse Charm looks like a Tamagotchi, but it’s tapping into a much newer trend",
+          "summary": "Meta’s new AI gadget may look like a Tamagotchi, but its dangling form factor taps into a much broader Gen Z trend around bag charms, retro tech, and turning gadgets into fashion accessories.",
+          "published_at": "2026-09-24T17:39:24+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -5162,6 +5163,17 @@
           "title": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
           "summary": "",
           "published_at": "2026-09-23T12:28:40+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834320",
+          "target_url": "https://www.mef-llm-studio.com/de",
+          "independent": false,
+          "title": "Show HN: MEF LLM Studio",
+          "summary": "",
+          "published_at": "2026-09-24T17:50:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -13873,6 +13885,300 @@
           "title": "No mundo da inteligência artificial, a cultura é o que torna uma empresa impossível de copiar",
           "summary": "Quando todos têm acesso às mesmas tecnologias, a verdadeira diferenciação está na forma singular como cada organização pensa, cria e… Continue reading on Medium »",
           "published_at": "2026-09-24T16:45:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e4969941004027d2",
+      "title": "Show HN: DrawCMS – An open-source animated diagramming tool for AI Agents",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834430",
+          "target_url": "https://github.com/drawcms/drawcms",
+          "independent": false,
+          "title": "Show HN: DrawCMS – An open-source animated diagramming tool for AI Agents",
+          "summary": "",
+          "published_at": "2026-09-24T17:57:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "259ee8df8c5335fb",
+      "title": "Logs you, your AI and cron jobs write to that you can prove weren't altered",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834382",
+          "target_url": "https://freshjots.com/",
+          "independent": false,
+          "title": "Logs you, your AI and cron jobs write to that you can prove weren't altered",
+          "summary": "",
+          "published_at": "2026-09-24T17:53:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8c42aeabc4d52aed",
+      "title": "Show HN: bananabread AI – Find what customers love and want from your products",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834368",
+          "target_url": "https://bb-product-api-docs.web.app/",
+          "independent": false,
+          "title": "Show HN: bananabread AI – Find what customers love and want from your products",
+          "summary": "",
+          "published_at": "2026-09-24T17:52:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "08c7e70accae380e",
+      "title": "AI Workers' Inquiry 2026",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834235",
+          "target_url": "https://techworkersinquiry.org/ai",
+          "independent": false,
+          "title": "AI Workers' Inquiry 2026",
+          "summary": "",
+          "published_at": "2026-09-24T17:44:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24685b791b2303b2",
+      "title": "Unmasking \"zombie cells\" in aging tissue with an AI-powered barcode",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834220",
+          "target_url": "https://news.mit.edu/2026/unmasking-zombie-cells-aging-tissue-ai-powered-barcode-0921",
+          "independent": false,
+          "title": "Unmasking \"zombie cells\" in aging tissue with an AI-powered barcode",
+          "summary": "",
+          "published_at": "2026-09-24T17:43:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bc1969e244b24289",
+      "title": "China's Mind on AI",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834165",
+          "target_url": "https://www.axios.com/2026/09/24/china-ai-plan-trump-xi-visit",
+          "independent": false,
+          "title": "China's Mind on AI",
+          "summary": "",
+          "published_at": "2026-09-24T17:40:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d4b38cef719d6a0c",
+      "title": "Near-Total Liquid Heat Capture Keeps AI Racks Cool",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834101",
+          "target_url": "https://spectrum.ieee.org/fanless-liquid-cooled-ai-servers-coolit",
+          "independent": false,
+          "title": "Near-Total Liquid Heat Capture Keeps AI Racks Cool",
+          "summary": "",
+          "published_at": "2026-09-24T17:35:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c22d0384461d689",
+      "title": "Funny VideosHow to Start a Faceless YouTube Channel with AI: A Complete Guide",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834079",
+          "target_url": "https://coursiv.io/blog/how-to-start-a-faceless-youtube-channel-with-ai",
+          "independent": false,
+          "title": "Funny VideosHow to Start a Faceless YouTube Channel with AI: A Complete Guide",
+          "summary": "",
+          "published_at": "2026-09-24T17:34:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ff3779e3fc84e1f8",
+      "title": "Google Photos ‘Clueless’-inspired virtual closet is now available on Android and iOS",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/google-photos-clueless-inspired-virtual-closet-is-now-available-on-android-and-ios",
+          "target_url": "https://techcrunch.com/2026/09/24/google-photos-clueless-inspired-virtual-closet-is-now-available-on-android-and-ios",
+          "independent": true,
+          "title": "Google Photos ‘Clueless’-inspired virtual closet is now available on Android and iOS",
+          "summary": "The AI-powered feature builds a virtual wardrobe from your photos, and is now broadly available after first rolling out to Android users in June.",
+          "published_at": "2026-09-24T17:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a368a93ae5cca56e",
+      "title": "Jev: The flagship-on-hot-path mistake",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kankit570/jev-the-flagship-on-hot-path-mistake-48b9b90b19e7",
+          "target_url": "https://medium.com/@kankit570/jev-the-flagship-on-hot-path-mistake-48b9b90b19e7",
+          "independent": false,
+          "title": "Jev: The flagship-on-hot-path mistake",
+          "summary": "Stop using GPT-6 Sol to pick a ticket queue. That’s what Jev is for. Continue reading on Medium »",
+          "published_at": "2026-09-24T17:50:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da3896a73ce39a1f",
+      "title": "When Your Past Starts Deciding Your Future",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lemankoksal/when-your-past-starts-deciding-your-future-d69a566eaba3",
+          "target_url": "https://medium.com/@lemankoksal/when-your-past-starts-deciding-your-future-d69a566eaba3",
+          "independent": false,
+          "title": "When Your Past Starts Deciding Your Future",
+          "summary": "What predictive customer experience should remember, negotiate and leave open. Continue reading on Medium »",
+          "published_at": "2026-09-24T17:50:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da47c1e585d576db",
+      "title": "Jev: What If AI Didn’t Need to Talk?",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@vedaa7777/jev-what-if-ai-didnt-need-to-talk-6717d40ec839",
+          "target_url": "https://medium.com/@vedaa7777/jev-what-if-ai-didnt-need-to-talk-6717d40ec839",
+          "independent": false,
+          "title": "Jev: What If AI Didn’t Need to Talk?",
+          "summary": "For the last few years, when we said “AI,” we often meant one thing: LLMs. Continue reading on Medium »",
+          "published_at": "2026-09-24T17:49:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "064eb60de49ef748",
+      "title": "The Autoresponder Is the Brake",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@eduard.deira/the-autoresponder-is-the-brake-64a4dec62c2f",
+          "target_url": "https://medium.com/@eduard.deira/the-autoresponder-is-the-brake-64a4dec62c2f",
+          "independent": false,
+          "title": "The Autoresponder Is the Brake",
+          "summary": "A record of what happened when I sent a structural warning to a sitting U.S. Senator's office Continue reading on Medium »",
+          "published_at": "2026-09-24T17:48:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "73680877a0e1c22b",
+      "title": "Meet HILT",
+      "first_seen": "2026-09-25T03:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@joshuarouthspeaker/meet-hilt-f91679a576b7",
+          "target_url": "https://medium.com/@joshuarouthspeaker/meet-hilt-f91679a576b7",
+          "independent": false,
+          "title": "Meet HILT",
+          "summary": "HILT is the name my AI chose for itself when I asked what I should call it. Considering I am a sword swallower, “To The Hilt” is the name… Continue reading on Medium »",
+          "published_at": "2026-09-24T17:47:11+00:00",
           "date_precision": "time"
         }
       ],
