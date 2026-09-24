@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T17:01:03.739136+09:00",
-  "window_start": "2026-07-26T17:01:03.739136+09:00",
-  "window_end": "2026-09-24T17:01:03.739136+09:00",
+  "collected_at": "2026-09-24T18:01:24.439581+09:00",
+  "window_start": "2026-07-26T18:01:24.439581+09:00",
+  "window_end": "2026-09-24T18:01:24.439581+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 1,
+      "excluded_count": 28,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -167,7 +167,7 @@
       "count": 9,
       "held_count": 0,
       "excluded_count": 21,
-      "skipped_count": 7,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T17:01:27.006189+09:00",
-  "hourly_window_start": "2026-09-21T17:01:27.006189+09:00",
+  "hourly_collected_at": "2026-09-24T18:01:50.092874+09:00",
+  "hourly_window_start": "2026-09-21T18:01:50.092874+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2202,6 +2202,17 @@
           "summary": "",
           "published_at": "2026-09-24T07:07:54+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49812866",
+          "target_url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier",
+          "independent": false,
+          "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
+          "summary": "",
+          "published_at": "2026-09-23T07:43:11+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3833,27 +3844,6 @@
           "title": "Tradeoff considerations while running LLM models locally",
           "summary": "",
           "published_at": "2026-09-23T07:56:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c4a202e0e308532",
-      "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812866",
-          "target_url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier",
-          "independent": false,
-          "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
-          "summary": "",
-          "published_at": "2026-09-23T07:43:11+00:00",
           "date_precision": "time"
         }
       ],
@@ -8073,6 +8063,17 @@
           "summary": "",
           "published_at": "2026-09-24T06:13:56+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@casi.borg/how-an-openai-agent-breached-australias-medicare-portal-36ac4bde4946",
+          "target_url": "https://medium.com/@casi.borg/how-an-openai-agent-breached-australias-medicare-portal-36ac4bde4946",
+          "independent": false,
+          "title": "How an OpenAI Agent Breached Australia’s Medicare Portal",
+          "summary": "An AI agent was looking for information. Instead, it crossed a government security boundary. Australia’s Medicare incident shows why the… Continue reading on Medium »",
+          "published_at": "2026-09-24T08:44:15+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -11277,6 +11278,237 @@
           "title": "Vibe Coding Is Eating Software Development — And Nobody’s Ready for What Comes Next",
           "summary": "Six months ago, “vibe coding” was a joke. Now it’s how half of Silicon Valley ships code. Continue reading on Medium »",
           "published_at": "2026-09-24T07:48:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4431e35e2a6806ed",
+      "title": "Proposed bill to ban artificial superintelligence and create Department of AI",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828049",
+          "target_url": "https://apnews.com/article/ai-superintelligence-bernie-sanders-d6a6a2cd8e71d7c95bdc394595aa85d1",
+          "independent": false,
+          "title": "Proposed bill to ban artificial superintelligence and create Department of AI",
+          "summary": "",
+          "published_at": "2026-09-24T08:59:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "771393ab0ca2cdc2",
+      "title": "Anthropic CEO Amodei Warns UN Security Council on AI Risks",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828026",
+          "target_url": "https://www.youtube.com/watch?v=u-u8gOgNA9o",
+          "independent": false,
+          "title": "Anthropic CEO Amodei Warns UN Security Council on AI Risks",
+          "summary": "",
+          "published_at": "2026-09-24T08:55:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0450032f5d8591e2",
+      "title": "Kerberized MCP Server with Delegation",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827889",
+          "target_url": "https://github.com/overpassconnect/mcp-krb-server",
+          "independent": false,
+          "title": "Kerberized MCP Server with Delegation",
+          "summary": "",
+          "published_at": "2026-09-24T08:35:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b8d9f4ec6f63154c",
+      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827794",
+          "target_url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai",
+          "independent": false,
+          "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
+          "summary": "",
+          "published_at": "2026-09-24T08:23:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d1995bcb67f22f83",
+      "title": "MCP server for Mario Paint. It draws and composes inside the real SNES game",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827764",
+          "target_url": "https://github.com/TheLiux/MCPaint",
+          "independent": false,
+          "title": "MCP server for Mario Paint. It draws and composes inside the real SNES game",
+          "summary": "",
+          "published_at": "2026-09-24T08:18:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dab892839df45099",
+      "title": "Code shouldn't know which LLM provider you're using",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827686",
+          "target_url": "https://github.com/BerriAI/litellm",
+          "independent": false,
+          "title": "Code shouldn't know which LLM provider you're using",
+          "summary": "",
+          "published_at": "2026-09-24T08:06:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "61bbeba82f3d4eb1",
+      "title": "Show HN: compaction.dev makes cc/codex/cursor resend less, per run",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827661",
+          "target_url": "https://github.com/philipppohlmann/compaction",
+          "independent": false,
+          "title": "Show HN: compaction.dev makes cc/codex/cursor resend less, per run",
+          "summary": "",
+          "published_at": "2026-09-24T08:03:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c14a6d4759e402ab",
+      "title": "How I stopped misclassifying jobs with Jev!",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@darkysharky/how-i-stopped-misclassifying-jobs-with-jev-e0d4cf7bdeba",
+          "target_url": "https://medium.com/@darkysharky/how-i-stopped-misclassifying-jobs-with-jev-e0d4cf7bdeba",
+          "independent": false,
+          "title": "How I stopped misclassifying jobs with Jev!",
+          "summary": "Why Java is not JavaScript, remote is not hybrid, and how one fan out call fixed our filters Continue reading on Medium »",
+          "published_at": "2026-09-24T08:49:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd55df3ed45c1c75",
+      "title": "AI RumorBoard, Sept 24, Space Bunny, Tech Boss Xi Dinner",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mikesulka/ai-rumorboard-sept-24-space-bunny-tech-boss-xi-dinner-332b13673290",
+          "target_url": "https://medium.com/@mikesulka/ai-rumorboard-sept-24-space-bunny-tech-boss-xi-dinner-332b13673290",
+          "independent": false,
+          "title": "AI RumorBoard, Sept 24, Space Bunny, Tech Boss Xi Dinner",
+          "summary": "Sleath mode on. Toss in a million-token context window, multimodal input and keyboards perk up. No worries, my friend says, we got this… Continue reading on Medium »",
+          "published_at": "2026-09-24T08:46:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "355f7d6c039c5e0b",
+      "title": "AI Can Open the Pull Request. Who Has Time to Review It?",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/skillstuff/ai-can-open-the-pull-request-who-has-time-to-review-it-31760b282875",
+          "target_url": "https://medium.com/skillstuff/ai-can-open-the-pull-request-who-has-time-to-review-it-31760b282875",
+          "independent": false,
+          "title": "AI Can Open the Pull Request. Who Has Time to Review It?",
+          "summary": "Coding agents are speeding up implementation. The harder job is deciding whether the code is safe, maintainable, and worth merging. Continue reading on Skill Stuff »",
+          "published_at": "2026-09-24T08:44:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e968eb30ec059f35",
+      "title": "UBM Talkshow: Creative Careers in the Age of AI",
+      "first_seen": "2026-09-24T18:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alandthinks/ubm-talkshow-creative-careers-in-the-age-of-ai-814016b89516",
+          "target_url": "https://medium.com/@alandthinks/ubm-talkshow-creative-careers-in-the-age-of-ai-814016b89516",
+          "independent": false,
+          "title": "UBM Talkshow: Creative Careers in the Age of AI",
+          "summary": "Back in 2012, I was a student who decided to start an agency with friends from campus. My first job was handling printed designs. I still… Continue reading on Medium »",
+          "published_at": "2026-09-24T08:43:33+00:00",
           "date_precision": "time"
         }
       ],
