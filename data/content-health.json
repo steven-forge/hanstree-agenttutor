@@ -1,6 +1,6 @@
 {
   "news": {
-    "checked_at": "2026-09-25T08:06:41.158615+09:00",
+    "checked_at": "2026-09-25T08:12:26.578197+09:00",
     "status": "partial",
     "candidate_count": 0,
     "archive_count": 289,
@@ -69,7 +69,10 @@
         "held_count": 1,
         "excluded_count": 0,
         "skipped_count": 7,
-        "coverage_limited": false
+        "coverage_limited": false,
+        "held_reasons": [
+          "한국어 번역 실패: 한국어 번역에 실패했습니다."
+        ]
       },
       {
         "id": "anthropic-news",
@@ -98,10 +101,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 7,
+        "count": 9,
         "held_count": 0,
-        "excluded_count": 30,
-        "skipped_count": 4,
+        "excluded_count": 28,
+        "skipped_count": 7,
         "coverage_limited": false
       },
       {
@@ -211,7 +214,7 @@
         "count": 5,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 0,
+        "skipped_count": 5,
         "coverage_limited": false
       },
       {
@@ -274,7 +277,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 704
+    "pending_event_count": 703
   },
   "documents": {
     "checked_at": "2026-09-25T07:53:24.500011+09:00",

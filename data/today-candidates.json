@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T08:06:14.253138+09:00",
-  "window_start": "2026-07-27T08:06:14.253138+09:00",
-  "window_end": "2026-09-25T08:06:14.253138+09:00",
+  "collected_at": "2026-09-25T08:12:00.259662+09:00",
+  "window_start": "2026-07-27T08:12:00.259662+09:00",
+  "window_end": "2026-09-25T08:12:00.259662+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -68,7 +68,10 @@
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "held_reasons": [
+        "한국어 번역 실패: 한국어 번역에 실패했습니다."
+      ]
     },
     {
       "id": "anthropic-news",
@@ -97,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 4,
+      "excluded_count": 28,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -210,7 +213,7 @@
       "count": 5,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -276,8 +279,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T08:06:41.158615+09:00",
-  "hourly_window_start": "2026-09-22T08:06:41.158615+09:00",
+  "hourly_collected_at": "2026-09-25T08:12:26.578197+09:00",
+  "hourly_window_start": "2026-09-22T08:12:26.578197+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2945,6 +2948,28 @@
           "summary": "",
           "published_at": "2026-09-24T02:23:12+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49815066",
+          "target_url": "https://github.com/zhulinchng/jevper",
+          "independent": false,
+          "title": "Show HN: Jevper – the Jev interface on top of any OpenAI-compatible model",
+          "summary": "",
+          "published_at": "2026-09-23T12:25:21+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838009",
+          "target_url": "https://github.com/danielnc/jev-browse",
+          "independent": false,
+          "title": "Show HN: Jev-browse – browser sub-tasks for coding agents at ~1/3 the cost",
+          "summary": "",
+          "published_at": "2026-09-24T23:08:04+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -5060,27 +5085,6 @@
           "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
           "summary": "",
           "published_at": "2026-09-23T23:33:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "39a6302e63e54638",
-      "title": "Show HN: Jevper – the Jev interface on top of any OpenAI-compatible model",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815066",
-          "target_url": "https://github.com/zhulinchng/jevper",
-          "independent": false,
-          "title": "Show HN: Jevper – the Jev interface on top of any OpenAI-compatible model",
-          "summary": "",
-          "published_at": "2026-09-23T12:25:21+00:00",
           "date_precision": "time"
         }
       ],
@@ -13551,6 +13555,17 @@
           "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
           "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to help me set some health […]",
           "published_at": "2026-09-24T17:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838006",
+          "target_url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
+          "independent": false,
+          "title": "It's sinister that Meta's Muse AI mascot is so cute",
+          "summary": "",
+          "published_at": "2026-09-24T23:07:54+00:00",
           "date_precision": "time"
         }
       ],
