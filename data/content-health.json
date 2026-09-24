@@ -1,8 +1,8 @@
 {
   "news": {
-    "checked_at": "2026-09-25T04:02:27.835442+09:00",
+    "checked_at": "2026-09-25T05:01:53.059406+09:00",
     "status": "partial",
-    "candidate_count": 1,
+    "candidate_count": 0,
     "archive_count": 289,
     "sources": [
       {
@@ -43,10 +43,10 @@
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 49,
+        "skipped_count": 50,
         "coverage_limited": false
       },
       {
@@ -98,10 +98,10 @@
         "id": "hacker-news",
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-        "status": "partial",
-        "count": 6,
-        "held_count": 1,
-        "excluded_count": 32,
+        "status": "ok",
+        "count": 9,
+        "held_count": 0,
+        "excluded_count": 29,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -124,7 +124,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 10,
+        "skipped_count": 9,
         "coverage_limited": false
       },
       {
@@ -135,7 +135,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 6,
+        "skipped_count": 9,
         "coverage_limited": false
       },
       {
@@ -146,7 +146,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 18,
+        "skipped_count": 19,
         "coverage_limited": false
       },
       {
@@ -275,7 +275,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 645
+    "pending_event_count": 660
   },
   "documents": {
     "checked_at": "2026-09-24T06:26:34.253318+09:00",
