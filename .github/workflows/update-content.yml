@@ -1,6 +1,11 @@
 name: Update Content
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/update-content.yml'
+      - 'scripts/collect_content.py'
   schedule:
     - cron: '15 21 * * *'  # 06:15 Asia/Seoul (UTC 21:15 previous day) - 공식 뉴스/문서 수집
     - cron: '0 * * * *'    # 매시 정각 - 외부 뉴스 매시간 수집
