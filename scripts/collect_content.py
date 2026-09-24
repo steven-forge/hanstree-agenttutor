@@ -1191,8 +1191,9 @@ def parse_xai_releases(html_bytes: bytes, source_id: str, source_name: str, wind
         try:
             cand = make_candidate(title, source_id, source_name, canonical_url, "\n".join(descriptions), date_fields)
             cand["release_notes_ko"] = build_grok_release_notes_ko(title, descriptions)
-        except RuntimeError:
+        except RuntimeError as error:
             stats["held_count"] += 1
+            stats.setdefault("held_reasons", []).append(f"한국어 번역 실패: {error}")
             continue
         candidates.append(cand)
 

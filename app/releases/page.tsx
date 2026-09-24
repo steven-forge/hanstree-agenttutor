@@ -355,7 +355,11 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                           <td>{s.count ?? 0}건</td>
                           <td>
                             {s.held_count !== undefined && s.held_count > 0 ? (
-                              <span style={{ color: "#854d0e", fontWeight: 700, fontSize: "0.85rem" }}>
+                              <span
+                                title={s.held_reasons?.join("\n") || "점검 조건을 충족하지 못해 보류했습니다."}
+                                aria-label={`${s.held_count}건 보류: ${s.held_reasons?.join("; ") || "점검 조건을 충족하지 못해 보류했습니다."}`}
+                                style={{ color: "#854d0e", fontWeight: 700, fontSize: "0.85rem", cursor: "help" }}
+                              >
                                 {s.held_count}건 보류
                               </span>
                             ) : (

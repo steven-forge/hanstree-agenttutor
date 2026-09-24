@@ -179,6 +179,7 @@ export type ContentHealthSource = {
   error?: string;
   count?: number;
   held_count?: number;
+  held_reasons?: string[];
   skipped_count?: number;
   excluded_count?: number;
   coverage_limited?: boolean;
