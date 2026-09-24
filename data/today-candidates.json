@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T06:25:37.963248+09:00",
-  "window_start": "2026-07-27T06:25:37.963248+09:00",
-  "window_end": "2026-09-25T06:25:37.963248+09:00",
+  "collected_at": "2026-09-25T07:01:14.427513+09:00",
+  "window_start": "2026-07-27T07:01:14.427513+09:00",
+  "window_end": "2026-09-25T07:01:14.427513+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -30,34 +30,37 @@
       "id": "codex-releases",
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 170,
-      "skipped_count": 22,
-      "coverage_limited": false
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "claude-releases",
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 50,
-      "coverage_limited": false
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 70,
-      "skipped_count": 11,
-      "coverage_limited": false
+      "excluded_count": 0,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "HTTP 403: rate limit exceeded"
     },
     {
       "id": "grok-releases",
@@ -98,10 +101,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 6,
+      "excluded_count": 34,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -164,10 +167,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 9,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -277,8 +280,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T06:26:06.220600+09:00",
-  "hourly_window_start": "2026-09-22T06:26:06.220600+09:00",
+  "hourly_collected_at": "2026-09-25T07:01:29.123783+09:00",
+  "hourly_window_start": "2026-09-22T07:01:29.123783+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1683,27 +1686,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "89072180c88f70f5",
-      "title": "Hola AI",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/hola-ai",
-          "target_url": "https://www.producthunt.com/products/hola-ai",
-          "independent": false,
-          "title": "Hola AI",
-          "summary": "An AI voicemail assistant that answers calls when you can’t. Discussion | Link",
-          "published_at": "2026-09-21T21:42:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "6b1411b365e12678",
@@ -15116,6 +15098,174 @@
           "title": "Divergent and Convergent Thinking Through the Lens of IT and AI",
           "summary": "Over the years, I’ve realized that my nature makes doing my job harder. On a daily basis, it’s difficult to combine curiosity and… Continue reading on Medium »",
           "published_at": "2026-09-24T21:14:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6fb9ccf251690a21",
+      "title": "Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49837278",
+          "target_url": "https://performance.dev/chatgpt",
+          "independent": false,
+          "title": "Reverse Engineering ChatGPT Web: How OpenAI Built for a Billion Users",
+          "summary": "",
+          "published_at": "2026-09-24T22:00:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "22ac1f11eb1d8187",
+      "title": "Askholes and Low Effort AI Answers",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49837063",
+          "target_url": "https://dennisforbes.ca/blog/microblog/2026/09/askholes_and_low_effort_ai_answers",
+          "independent": false,
+          "title": "Askholes and Low Effort AI Answers",
+          "summary": "",
+          "published_at": "2026-09-24T21:38:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8a307c92e4d97c14",
+      "title": "CrowdStrike: Frontier AI for Cybersecurity",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49837058",
+          "target_url": "https://strategyofsecurity.com/p/crowdstrike-frontier-ai-for-cybersecurity",
+          "independent": false,
+          "title": "CrowdStrike: Frontier AI for Cybersecurity",
+          "summary": "",
+          "published_at": "2026-09-24T21:38:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "70835a90756910e4",
+      "title": "E-Signature Software Alone Won’t Fix Your Document Workflow — Here’s What Will",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@atharvinweb/e-signature-software-alone-wont-fix-your-document-workflow-here-s-what-will-dad0c7acb8f4",
+          "target_url": "https://medium.com/@atharvinweb/e-signature-software-alone-wont-fix-your-document-workflow-here-s-what-will-dad0c7acb8f4",
+          "independent": false,
+          "title": "E-Signature Software Alone Won’t Fix Your Document Workflow — Here’s What Will",
+          "summary": "Why legal, HR, and finance teams are quietly moving from “send and sign” tools to workflow-first platforms Continue reading on Medium »",
+          "published_at": "2026-09-24T21:50:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d721061e82cb183f",
+      "title": "Webmines LLC: Transforming Businesses with AI, Automation and Digital Innovation",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marketing_58622/webmines-llc-transforming-businesses-with-ai-automation-and-digital-innovation-d7e4fc3a12cc",
+          "target_url": "https://medium.com/@marketing_58622/webmines-llc-transforming-businesses-with-ai-automation-and-digital-innovation-d7e4fc3a12cc",
+          "independent": false,
+          "title": "Webmines LLC: Transforming Businesses with AI, Automation and Digital Innovation",
+          "summary": "In today’s competitive business environment, organizations need smart technology solutions to improve productivity, reduce operational… Continue reading on Medium »",
+          "published_at": "2026-09-24T21:50:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9f9d626220d966e6",
+      "title": "The AI Detector Companies Agree With the Student They Just Flagged",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aitoolsprimer/the-ai-detector-companies-agree-with-the-student-they-just-flagged-65a939c85a5f",
+          "target_url": "https://medium.com/@aitoolsprimer/the-ai-detector-companies-agree-with-the-student-they-just-flagged-65a939c85a5f",
+          "independent": false,
+          "title": "The AI Detector Companies Agree With the Student They Just Flagged",
+          "summary": "This story was written with the assistance of an AI writing program. Continue reading on Medium »",
+          "published_at": "2026-09-24T21:50:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "25ba00c3821416f6",
+      "title": "Can You Actually Replace Jev?",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://kotrotsos.medium.com/can-you-actually-replace-jev-80a7d1ea5610",
+          "target_url": "https://kotrotsos.medium.com/can-you-actually-replace-jev-80a7d1ea5610",
+          "independent": false,
+          "title": "Can You Actually Replace Jev?",
+          "summary": "What independent tests reveal about Kev, Laya and SemIf, and where the evidence runs out. Continue reading on Medium »",
+          "published_at": "2026-09-24T21:46:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a58af6c26367fd0f",
+      "title": "Can We Trust AI — Is the Risk Worth Taking?",
+      "first_seen": "2026-09-25T07:01:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aristONLINE/can-we-trust-ai-is-the-risk-worth-taking-adebe198efb2",
+          "target_url": "https://medium.com/@aristONLINE/can-we-trust-ai-is-the-risk-worth-taking-adebe198efb2",
+          "independent": false,
+          "title": "Can We Trust AI — Is the Risk Worth Taking?",
+          "summary": "AI is becoming remarkably useful before it has become reliably trustworthy. This may be the most important thing to understand about AI... Continue reading on Medium »",
+          "published_at": "2026-09-24T21:45:36+00:00",
           "date_precision": "time"
         }
       ],
