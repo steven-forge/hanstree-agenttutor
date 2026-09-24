@@ -2,7 +2,7 @@
   "edition_date": "2026-09-24",
   "window_start": "2026-07-26T09:20:17.270809+09:00",
   "window_end": "2026-09-24T09:20:17.270809+09:00",
-  "collected_at": "2026-09-24T09:20:17.270809+09:00",
+  "collected_at": "2026-09-24T10:01:45.905838+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -387,7 +387,24 @@
       "published_on": "2026-09-23",
       "date_precision": "day",
       "title_ko": "Claude.ai를 2주 만에 3배 더 빠르게 만든 방법",
-      "source_summary_ko": "성능 스프린트 내부: Claude가 구축한 벤치마크, 각 Slack 스레드 실행 루프, 3,000개의 변경 사항을 안전하게 배송할 수 있는 가드레일."
+      "source_summary_ko": "성능 스프린트 내부: Claude가 구축한 벤치마크, 각 Slack 스레드 실행 루프, 3,000개의 변경 사항을 안전하게 배송할 수 있는 가드레일.",
+      "sources": [
+        {
+          "source_id": "claude-dev-blog",
+          "name": "Claude.dev Blog",
+          "url": "https://claude.dev/blog/how-we-made-claude-ai-faster",
+          "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49821196",
+          "independent": false,
+          "target_url": "https://claude.dev/blog/how-we-made-claude-ai-faster"
+        }
+      ],
+      "independent_source_count": 0,
+      "importance": "normal"
     },
     {
       "id": "ef1b3a4772eab837",
@@ -530,7 +547,14 @@
       "title_ko": "Claude와 Claude Code에서 Opus 5.5를 최대한 활용하는 방법",
       "source_summary_ko": "Claude 앱과 Claude Code에서 Opus 5.5를 요청하고, 긴 작업을 관리하며, 결과를 확인하는 방법을 안내합니다.",
       "summary": "Opus 5.5에는 작업 전체와 완료 기준, 중단·질문 조건을 한 번에 전달하라고 공식 가이드는 권합니다.\n모델이 답변 전에 스스로 사고하므로 ‘깊이 생각하라’는 문구보다 긴 작업의 진행 규칙과 확인 절차가 중요합니다.\n작업 후에는 사용자 결정이 필요한 부분과 확인하지 못한 내용을 먼저 살피고, 모델 전환 알림과 빠른 모드의 추가 비용도 확인해야 합니다.",
-      "keywords_ko": ["Claude Opus 5.5", "완료 기준", "장기 작업", "Claude Code", "결과 검증", "안전장치"],
+      "keywords_ko": [
+        "Claude Opus 5.5",
+        "완료 기준",
+        "장기 작업",
+        "Claude Code",
+        "결과 검증",
+        "안전장치"
+      ],
       "key_points_ko": [
         "큰 작업은 목표와 완료 조건, 언제 멈춰 질문할지를 한 번에 알려주고 진행 중 추가 요구가 생기면 이어서 전달합니다.",
         "Opus 5.5는 매 답변 전에 스스로 사고하므로 ‘깊이 생각하라’ 같은 문구를 반복할 필요가 없습니다.",
@@ -540,7 +564,24 @@
         "완료 보고에서는 사용자의 결정을 기다리는 사항과 검증하지 못한 부분을 먼저 확인합니다.",
         "Claude 앱에서는 표나 스크린샷을 원본 그대로 첨부하고 완성된 파일을 요청하면 점검이 쉬워집니다.",
         "안전장치로 이전 모델로 전환되면 모델 표시를 확인하고 필요하면 다시 선택합니다. 빠른 모드는 추가 사용량과 더 높은 토큰 비용이 듭니다."
-      ]
+      ],
+      "sources": [
+        {
+          "source_id": "claude-dev-blog",
+          "name": "Claude.dev Blog",
+          "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5",
+          "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823517",
+          "independent": false,
+          "target_url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5"
+        }
+      ],
+      "independent_source_count": 0,
+      "importance": "normal"
     },
     {
       "id": "08ffdb24bebd9aa2",
