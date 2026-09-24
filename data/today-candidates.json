@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T03:01:11.355995+09:00",
-  "window_start": "2026-07-27T03:01:11.355995+09:00",
-  "window_end": "2026-09-25T03:01:11.355995+09:00",
+  "collected_at": "2026-09-25T04:01:59.855462+09:00",
+  "window_start": "2026-07-27T04:01:59.855462+09:00",
+  "window_end": "2026-09-25T04:01:59.855462+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -42,7 +42,7 @@
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 49,
@@ -97,10 +97,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 10,
-      "held_count": 0,
-      "excluded_count": 29,
+      "status": "partial",
+      "count": 6,
+      "held_count": 1,
+      "excluded_count": 32,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 21,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -175,10 +175,10 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 5,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 5,
+      "excluded_count": 22,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -274,11 +274,31 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 288,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-25T03:01:35.309744+09:00",
-  "hourly_window_start": "2026-09-22T03:01:35.309744+09:00",
+  "new_count": 1,
+  "archive_count": 289,
+  "candidates": [
+    {
+      "id": "0b14b0c43ad6eee5",
+      "title": "v2.1.282",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
+      "source_summary": "## What's changed - Added a `maxProseWidth` setting that caps the width of Claude's prose in wide terminals while tables and code blocks keep the full width - Added a startup notice, and `/status` and `claude doctor` entries, listing telemetry variables in a project's settings files that were ignored or that turned telemetry off - Added the `allowClaudeInChromeWithManagedMcp` managed setting to let `claude --chrome` run alongside an exclusive `managed-mcp.json`; the error shown when Chrome is bl",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-25T04:02:18+09:00",
+      "published_at": "2026-09-24T18:38:05+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.282 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - 테이블과 코드 블록이 전체 너비를 유지하는 동안 넓은 터미널에서 Claude의 산문의 너비를 제한하는 `maxProseWidth' 설정 추가 - 시작 알림 및 `/status` 및 `claude doctor` 항목 추가, 무시되거나 원격 분석이 꺼진 프로젝트의 설정 파일에 원격 분석 변수 나열 - `allowClaudeInChromeWithManagedMcp` 관리 설정을 추가하여 `claude --chrome` 이 독점적인 `managed-mcp.json`; 크롬이 bl일 때 표시되는 오류",
+      "release_notes_ko": {
+        "new_features": "테이블과 코드 블록이 전체 너비를 유지하는 동안 넓은 터미널에서 Claude 산문의 너비를 제한하는 'maxProseWidth' 설정이 추가되었습니다.\n시작 알림 및 `/status` 및 `claude doctor` 항목을 추가하여 무시되거나 원격 분석이 꺼진 프로젝트의 설정 파일에 원격 분석 변수를 나열했습니다.",
+        "bug_fixes": "API가 해독할 수 없는 (예: 제3자 게이트웨이를 통해 응답한 턴에서) 웹 검색 결과를 기록한 대화에서 400 오류가 발생하여 모든 요청이 실패하는 문제를 수정했습니다.\n이전 메시지를 변경된 형식으로 계속 또는 재개 (`--continue`, `--resume`) 하는 더 많은 사례를 수정하여 API가 Claude의 이전 추론을 떨어뜨릴 수 있음",
+        "chores": "정점 AI: Claude Code가 아직 인식하지 못하는 모델 (예: 새로 출시된 모델) 에 대해 고정 웹 검색이 제공되지 않음\n압축되지 않은 세션을 포함하여 매우 큰 세션을 재개하는 시간을 개선했습니다.\n성적 증명서 파일 (EBADF) 을 읽을 수 없어 세션을 재개할 수 없는 경우 Windows에 표시되는 오류를 개선했습니다. 이제 가능한 원인과 시도할 항목의 이름을 지정합니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-25T04:02:27.835442+09:00",
+  "hourly_window_start": "2026-09-22T04:02:27.835442+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -852,27 +872,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "e22614e2379711da",
-      "title": "AI, Tariffs, Rare Minerals: What to Expect From Trump’s Upcoming Summit With Xi Jinping",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/ai-tariffs-rare-minerals-what-to-expect-from-trumps-upcoming-summit-with-xi-jinping",
-          "target_url": "https://www.wired.com/story/ai-tariffs-rare-minerals-what-to-expect-from-trumps-upcoming-summit-with-xi-jinping",
-          "independent": true,
-          "title": "AI, Tariffs, Rare Minerals: What to Expect From Trump’s Upcoming Summit With Xi Jinping",
-          "summary": "Washington and Beijing have grown ever more linked in the AI boom, making hardware exports and technological restrictions hefty bargaining chips in negotiations.",
-          "published_at": "2026-09-21T18:33:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "b55c6cd1054ed866",
       "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1349,27 +1348,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "4f4b5d9f753c5cc6",
-      "title": "Grok 4.7",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/grok-4-7-8",
-          "target_url": "https://www.producthunt.com/products/grok-4-7-8",
-          "independent": false,
-          "title": "Grok 4.7",
-          "summary": "SpaceXAI's most powerful model for coding and knowledge work Discussion | Link",
-          "published_at": "2026-09-21T18:48:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "43bc466e5db8cfc8",
       "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1383,27 +1361,6 @@
           "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
           "summary": "There’s little question that AI coding agents have changed where software development work happens. Developers can increasingly delegate work from The post “One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters appeared first on The New Stack .",
           "published_at": "2026-09-22T18:27:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "77d8e62c76d46296",
-      "title": "AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/aws-strands-harness-agent",
-          "target_url": "https://thenewstack.io/aws-strands-harness-agent",
-          "independent": true,
-          "title": "AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex",
-          "summary": "Amazon Web Services (AWS) is lifting the lid on a new open source, general-purpose AI agent, designed to give developers The post AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex appeared first on The New Stack .",
-          "published_at": "2026-09-21T18:30:16+00:00",
           "date_precision": "time"
         }
       ],
@@ -1809,27 +1766,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "ed52f431e276f6c5",
-      "title": "Fez",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/fez-2",
-          "target_url": "https://www.producthunt.com/products/fez-2",
-          "independent": false,
-          "title": "Fez",
-          "summary": "AI agents that work as a team and make decisions together Discussion | Link",
-          "published_at": "2026-09-21T18:50:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "89072180c88f70f5",
@@ -5175,6 +5111,39 @@
           "summary": "",
           "published_at": "2026-09-24T17:50:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49819122",
+          "target_url": "https://github.com/nwjang/psychosis-guard",
+          "independent": false,
+          "title": "Show HN: Psychosis Guard – Safety for long LLM conversations",
+          "summary": "",
+          "published_at": "2026-09-23T16:59:56+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823708",
+          "target_url": "https://promptspend.com/",
+          "independent": false,
+          "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
+          "summary": "",
+          "published_at": "2026-09-23T22:49:57+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824148",
+          "target_url": "https://github.com/gojiplus/batchlane",
+          "independent": false,
+          "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
+          "summary": "",
+          "published_at": "2026-09-23T23:33:56+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -6394,27 +6363,6 @@
           "title": "How to Build an Agent Harness That Decides in 0.65 Seconds",
           "summary": "Routing, tool gating and done-checking, handed to Jev with three Opensource repos you can install today. Continue reading on All in AI »",
           "published_at": "2026-09-23T15:44:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1311da5bb232e56a",
-      "title": "Show HN: Psychosis Guard – Safety for long LLM conversations",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819122",
-          "target_url": "https://github.com/nwjang/psychosis-guard",
-          "independent": false,
-          "title": "Show HN: Psychosis Guard – Safety for long LLM conversations",
-          "summary": "",
-          "published_at": "2026-09-23T16:59:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -8588,27 +8536,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "bf956ca29f180e13",
-      "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823708",
-          "target_url": "https://promptspend.com/",
-          "independent": false,
-          "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
-          "summary": "",
-          "published_at": "2026-09-23T22:49:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "10860c0f140d481d",
       "title": "AI leaders warn UN of security risks as systems grow more powerful",
       "first_seen": "2026-09-24T08:01:19+09:00",
@@ -8906,27 +8833,6 @@
           "title": "Gemini 3.8 TTS Playground",
           "summary": "",
           "published_at": "2026-09-23T23:52:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5989e310286a88f4",
-      "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824148",
-          "target_url": "https://github.com/gojiplus/batchlane",
-          "independent": false,
-          "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
-          "summary": "",
-          "published_at": "2026-09-23T23:33:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -13235,11 +13141,22 @@
           "summary": "",
           "published_at": "2026-09-24T15:58:40+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center",
+          "target_url": "https://techcrunch.com/2026/09/24/oracle-sends-force-majeure-notice-on-its-new-mexico-stargate-data-center",
+          "independent": true,
+          "title": "Oracle sends force majeure notice on its New Mexico Stargate data center",
+          "summary": "The notice would allow Oracle to delay payments should the facility miss its 2028 target to come online.",
+          "published_at": "2026-09-24T18:11:44+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "e6c27271eccf6a39",
@@ -14179,6 +14096,342 @@
           "title": "Meet HILT",
           "summary": "HILT is the name my AI chose for itself when I asked what I should call it. Considering I am a sword swallower, “To The Hilt” is the name… Continue reading on Medium »",
           "published_at": "2026-09-24T17:47:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0ddc1ea436722501",
+      "title": "Show HN: Agency – Manage Agents for Your Robinhood Agentic Account",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49835332",
+          "target_url": "https://agency.trading/",
+          "independent": false,
+          "title": "Show HN: Agency – Manage Agents for Your Robinhood Agentic Account",
+          "summary": "",
+          "published_at": "2026-09-24T18:59:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "91664f2d614a88f2",
+      "title": "GPT-6 Sol is like GPT-5.6 Terra, GPT-6 Luna is like GPT-5.6 Asteroid",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49835237",
+          "target_url": "https://twitter.com/i/status/2103026209361719406",
+          "independent": false,
+          "title": "GPT-6 Sol is like GPT-5.6 Terra, GPT-6 Luna is like GPT-5.6 Asteroid",
+          "summary": "",
+          "published_at": "2026-09-24T18:53:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "29b624ed69b7673e",
+      "title": "Anthropic resumes charging for requests blocked by safeguards",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49835073",
+          "target_url": "https://twitter.com/ClaudeDevs/status/2103170368794185758",
+          "independent": false,
+          "title": "Anthropic resumes charging for requests blocked by safeguards",
+          "summary": "",
+          "published_at": "2026-09-24T18:42:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f8c0c00aa10a00a5",
+      "title": "OpenAI, Anthropic CEOs urge UN countries to cooperate on AI safety standards",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49835056",
+          "target_url": "https://slashdot.org/story/26/09/24/0338213/openai-anthropic-ceos-urge-un-countries-to-cooperate-on-ai-safety-standards",
+          "independent": false,
+          "title": "OpenAI, Anthropic CEOs urge UN countries to cooperate on AI safety standards",
+          "summary": "",
+          "published_at": "2026-09-24T18:40:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c29a9fb3bf01b34",
+      "title": "Existing laws already cover every type of AI security incident",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834966",
+          "target_url": "https://paulfwalsh.substack.com/p/existing-laws-already-cover-every",
+          "independent": false,
+          "title": "Existing laws already cover every type of AI security incident",
+          "summary": "",
+          "published_at": "2026-09-24T18:35:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da703efd7925c38c",
+      "title": "We turned off AI access for new hires",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834932",
+          "target_url": "https://www.valon.ai/blog/we-turned-off-ai-access-for-new-hires",
+          "independent": false,
+          "title": "We turned off AI access for new hires",
+          "summary": "",
+          "published_at": "2026-09-24T18:32:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bcb31d434ed42cb8",
+      "title": "Jensen Huang talks about AI and climate change like a supervillain",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+          "target_url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+          "independent": true,
+          "title": "Jensen Huang talks about AI and climate change like a supervillain",
+          "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil down to the […]",
+          "published_at": "2026-09-24T18:04:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d0c09943ed7a0f81",
+      "title": "Meta is going to let you build games with AI right on your phone",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
+          "target_url": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
+          "independent": true,
+          "title": "Meta is going to let you build games with AI right on your phone",
+          "summary": "Meta has a new plan to get people to make games for its Horizon social platform. The company today announced two new development tools that will let you create games with AI prompts: Horizon Create, a mobile app, and Horizon Studio, a browser app that offers more granular controls. The apps will be available in […]",
+          "published_at": "2026-09-24T17:52:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "16dae4c7c5cb5aa1",
+      "title": "Muse will apparently let you download its entire filesystem",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
+          "independent": true,
+          "title": "Muse will apparently let you download its entire filesystem",
+          "summary": "A pair of developers say that with very little prompting, Meta's Muse will share its entire filesystem with you. Peter James and Jonny L. Saunders have said they both independently coaxed Muse into zipping up and sharing the entire contents of its root filesystem, Ubuntu system files, app templates, and internal documentation. Saunders posted on […]",
+          "published_at": "2026-09-24T17:14:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "dac80f12a88a9c0a",
+      "title": "Muse sure looks a lot like OpenClaw",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
+          "target_url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
+          "independent": true,
+          "title": "Muse sure looks a lot like OpenClaw",
+          "summary": "We seem to be entering into an AI agent renaissance. Meta's new consumer-facing AI agent, Muse, topped the App Store charts soon after its release and has 600,000 daily active users in the US, by an Apptopia estimate. And AI agent platform Instinct, whose eponymous creator is fundraising at a $2.5 billion valuation, has been […]",
+          "published_at": "2026-09-24T17:10:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "257f7f1f9fff2515",
+      "title": "PrismML brings its tiny LLMs to Qualcomm-powered smart glasses",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/prismml-brings-its-tiny-llms-to-qualcomm-powered-smart-glasses",
+          "target_url": "https://techcrunch.com/2026/09/24/prismml-brings-its-tiny-llms-to-qualcomm-powered-smart-glasses",
+          "independent": true,
+          "title": "PrismML brings its tiny LLMs to Qualcomm-powered smart glasses",
+          "summary": "Prism's larger goal is open-weight AI that runs on devices and makes better use of the computing power they already have.",
+          "published_at": "2026-09-24T19:00:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bd1a2f347cf782c2",
+      "title": "AI Will Change Humanity, But We Must Decide What Comes Next",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hervekayumba/ai-will-change-humanity-but-we-must-decide-what-comes-next-71ba93068c2c",
+          "target_url": "https://medium.com/@hervekayumba/ai-will-change-humanity-but-we-must-decide-what-comes-next-71ba93068c2c",
+          "independent": false,
+          "title": "AI Will Change Humanity, But We Must Decide What Comes Next",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-24T18:49:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b2be7326057e8d0",
+      "title": "Google Replaced Its Search Box With AI at I/O 2026. Most Developers Haven’t Updated Their Apps.",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://aiadvances.org/google-replaced-its-search-box-with-ai-at-i-o-2026-most-developers-havent-updated-their-apps-67a680de662e",
+          "target_url": "https://aiadvances.org/google-replaced-its-search-box-with-ai-at-i-o-2026-most-developers-havent-updated-their-apps-67a680de662e",
+          "independent": false,
+          "title": "Google Replaced Its Search Box With AI at I/O 2026. Most Developers Haven’t Updated Their Apps.",
+          "summary": "For 25 years, “search” meant a text box, a keyword query, and a list of results. At Google I/O in May 2026, that model ended. The search… Continue reading on AI Advances »",
+          "published_at": "2026-09-24T18:49:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c80ee17d985a62d",
+      "title": "Why the same people racing to build AI are now the ones asking everyone to slow down",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@abandoned_train_station/why-the-same-people-racing-to-build-ai-are-now-the-ones-asking-everyone-to-slow-down-fe50cb194bff",
+          "target_url": "https://medium.com/@abandoned_train_station/why-the-same-people-racing-to-build-ai-are-now-the-ones-asking-everyone-to-slow-down-fe50cb194bff",
+          "independent": false,
+          "title": "Why the same people racing to build AI are now the ones asking everyone to slow down",
+          "summary": "Dario Amodei published an essay on September 12 saying it’s time to pump the brakes on AI development. He’s proposing a three step plan to… Continue reading on Medium »",
+          "published_at": "2026-09-24T18:47:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bf1670e663208725",
+      "title": "— We no longer need to worry about human failings.",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/everything-shortform/we-no-longer-need-to-worry-about-human-failings-2deba9a28dff",
+          "target_url": "https://medium.com/everything-shortform/we-no-longer-need-to-worry-about-human-failings-2deba9a28dff",
+          "independent": false,
+          "title": "— We no longer need to worry about human failings.",
+          "summary": "Everyone knew what he meant. He meant people were obsolete. He and his followers expected immortality through machines, and would watch… Continue reading on Everything Shortform »",
+          "published_at": "2026-09-24T18:45:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "774916290fe4dd72",
+      "title": "AI in Financial Products: Why Fintech Companies Need Specialized Development Partners",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@matchfast1/ai-in-financial-products-why-fintech-companies-need-specialized-development-partners-3e7dde28057f",
+          "target_url": "https://medium.com/@matchfast1/ai-in-financial-products-why-fintech-companies-need-specialized-development-partners-3e7dde28057f",
+          "independent": false,
+          "title": "AI in Financial Products: Why Fintech Companies Need Specialized Development Partners",
+          "summary": "Few sectors have absorbed the pressure to adopt artificial intelligence as quickly as financial technology, and few decisions matter more… Continue reading on Medium »",
+          "published_at": "2026-09-24T18:44:51+00:00",
           "date_precision": "time"
         }
       ],
