@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T18:01:24.439581+09:00",
-  "window_start": "2026-07-26T18:01:24.439581+09:00",
-  "window_end": "2026-09-24T18:01:24.439581+09:00",
+  "collected_at": "2026-09-24T19:00:58.937110+09:00",
+  "window_start": "2026-07-26T19:00:58.937110+09:00",
+  "window_end": "2026-09-24T19:00:58.937110+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -97,11 +97,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 10,
-      "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 3,
+      "status": "partial",
+      "count": 11,
+      "held_count": 1,
+      "excluded_count": 26,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 9,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -186,10 +186,10 @@
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 3,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 17,
-      "skipped_count": 3,
+      "excluded_count": 18,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -197,9 +197,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 9,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 6,
+      "excluded_count": 5,
       "skipped_count": 9,
       "coverage_limited": false
     },
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T18:01:50.092874+09:00",
-  "hourly_window_start": "2026-09-21T18:01:50.092874+09:00",
+  "hourly_collected_at": "2026-09-24T19:01:22.910840+09:00",
+  "hourly_window_start": "2026-09-21T19:01:22.910840+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1463,27 +1463,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "67f9d6664f531f93",
-      "title": "WZRD",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/wzrd",
-          "target_url": "https://www.producthunt.com/products/wzrd",
-          "independent": false,
-          "title": "WZRD",
-          "summary": "AI-native documents, slides, forms and sheets that talk back Discussion | Link",
-          "published_at": "2026-09-21T09:19:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "33c0df10da5467c0",
       "title": "Valori",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1539,27 +1518,6 @@
           "title": "AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex",
           "summary": "Amazon Web Services (AWS) is lifting the lid on a new open source, general-purpose AI agent, designed to give developers The post AWS open-sources an AI agent it says is 45% cheaper than Claude Code and Codex appeared first on The New Stack .",
           "published_at": "2026-09-21T18:30:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "4b240820147dbcc4",
-      "title": "OpenAI goes from hacker to hacked",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-rundown-ai",
-          "name": "The Rundown AI",
-          "url": "https://www.therundown.ai/articles/openai-goes-from-hacker-to-hacked",
-          "target_url": "https://www.therundown.ai/articles/openai-goes-from-hacker-to-hacked",
-          "independent": true,
-          "title": "OpenAI goes from hacker to hacked",
-          "summary": "PLUS: Build and test your own AI image skill pack",
-          "published_at": "2026-09-21T10:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -8074,6 +8032,17 @@
           "summary": "An AI agent was looking for information. Instead, it crossed a government security boundary. Australia’s Medicare incident shows why the… Continue reading on Medium »",
           "published_at": "2026-09-24T08:44:15+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828422",
+          "target_url": "https://www.theregister.com/security/2026/09/24/openai-agents-infiltrated-australian-government-website/5298702",
+          "independent": false,
+          "title": "OpenAI agents 'infiltrated Australian government website'",
+          "summary": "",
+          "published_at": "2026-09-24T09:56:03+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -11509,6 +11478,321 @@
           "title": "UBM Talkshow: Creative Careers in the Age of AI",
           "summary": "Back in 2012, I was a student who decided to start an agency with friends from campus. My first job was handling printed designs. I still… Continue reading on Medium »",
           "published_at": "2026-09-24T08:43:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "86058a79424eeda6",
+      "title": "Mark Zuckerberg unveils AI 'charm' device that can fit on a keychain",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828450",
+          "target_url": "https://www.ft.com/content/f4770cdf-626e-41e3-9db0-3dc0b64b8c00",
+          "independent": false,
+          "title": "Mark Zuckerberg unveils AI 'charm' device that can fit on a keychain",
+          "summary": "",
+          "published_at": "2026-09-24T09:59:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "13ab240e275aa3fb",
+      "title": "Show HN: FreshThread – context monitor and handoffs for Codex Desktop (Windows)",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828381",
+          "target_url": "https://github.com/GG95-lab/FreshThread-BETA-version",
+          "independent": false,
+          "title": "Show HN: FreshThread – context monitor and handoffs for Codex Desktop (Windows)",
+          "summary": "",
+          "published_at": "2026-09-24T09:48:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "671f082f5cf8b3f9",
+      "title": "Show HN: Tachyon – Java MCP Server SDK",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828275",
+          "target_url": "https://tachyonmcp.dev",
+          "independent": false,
+          "title": "Show HN: Tachyon – Java MCP Server SDK",
+          "summary": "",
+          "published_at": "2026-09-24T09:32:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "65f204bbfacaa8f4",
+      "title": "I reverse-engineered AutoCAD's 3D format to convert DWG to STEP with Claude",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828187",
+          "target_url": "https://cadyon.com/",
+          "independent": false,
+          "title": "I reverse-engineered AutoCAD's 3D format to convert DWG to STEP with Claude",
+          "summary": "",
+          "published_at": "2026-09-24T09:21:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb42bddf00d90214",
+      "title": "AI has no intent and no motivation",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828133",
+          "target_url": "https://www.i-programmer.info/news/245-view-point/19164-ai-has-no-motivation.html",
+          "independent": false,
+          "title": "AI has no intent and no motivation",
+          "summary": "",
+          "published_at": "2026-09-24T09:13:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c1dd33faa509fef8",
+      "title": "Cutting the 'coordination tax': How agentic AI can reshape workflows",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828122",
+          "target_url": "https://www.mckinsey.com/industries/industrials/our-insights/cutting-the-coordination-tax-how-agentic-ai-can-reshape-workflows",
+          "independent": false,
+          "title": "Cutting the 'coordination tax': How agentic AI can reshape workflows",
+          "summary": "",
+          "published_at": "2026-09-24T09:12:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2b48d3187d505d1a",
+      "title": "Agents: The New, New Kingmakers",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828070",
+          "target_url": "https://redmonk.com/sogrady/2026/09/16/new-new-kingmakers",
+          "independent": false,
+          "title": "Agents: The New, New Kingmakers",
+          "summary": "",
+          "published_at": "2026-09-24T09:03:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b0a0158950b08893",
+      "title": "AssBench is all You need to benchmark LLM Harness Intelligence /s",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828065",
+          "target_url": "https://grigio.org/assbench-is-all-you-need-to-benchmark-llm-harness-intelligence-s",
+          "independent": false,
+          "title": "AssBench is all You need to benchmark LLM Harness Intelligence /s",
+          "summary": "",
+          "published_at": "2026-09-24T09:02:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "549242f464f73413",
+      "title": "Gemini 4 is almost ready, says new Google DeepMind chief",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/999802/google-deepmind-gemini-4-timeline-koray-kavukcuoglu",
+          "target_url": "https://www.theverge.com/tech/999802/google-deepmind-gemini-4-timeline-koray-kavukcuoglu",
+          "independent": true,
+          "title": "Gemini 4 is almost ready, says new Google DeepMind chief",
+          "summary": "Google is reportedly nearing the launch of its long awaited Gemini 4 model, after dawdling behind rival developers on flagship AI releases. Speaking with The Information during his first media appearance as the leader of Google's DeepMind division, Koray Kavukcuoglu said that Gemini 4 is currently in its refinement stage, and that the company is […]",
+          "published_at": "2026-09-24T09:04:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "801233c950cba0ea",
+      "title": "Presentation: Designing Fast, Delightful UX With LLMs for Mobile Frontends",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/presentations/llm-mobile-frontend",
+          "target_url": "https://www.infoq.com/presentations/llm-mobile-frontend",
+          "independent": true,
+          "title": "Presentation: Designing Fast, Delightful UX With LLMs for Mobile Frontends",
+          "summary": "Balakrishnan Ramdoss discusses how to architect production-grade, AI-powered conversational apps at scale. He explains how to overcome model latency, leverage server-driven UI and Backend-for-Frontend patterns to dynamically render multi-modal interfaces, optimize prompts for UI selection, and integrate low-latency, privacy-first on-device AI for mobile applications. By Balakrishnan Ramdoss",
+          "published_at": "2026-09-24T09:24:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "f34c764486b27cb1",
+      "title": "ChatGPT vs Gemini: Can They Read Your Math Homework?",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@emma-sullivan8/chatgpt-gemini-math-photo-reading-0098df7ce5bf",
+          "target_url": "https://medium.com/@emma-sullivan8/chatgpt-gemini-math-photo-reading-0098df7ce5bf",
+          "independent": false,
+          "title": "ChatGPT vs Gemini: Can They Read Your Math Homework?",
+          "summary": "The same problems, sent as photos and text, to separate misreading from bad math Continue reading on Medium »",
+          "published_at": "2026-09-24T09:49:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b16f911b8d65e852",
+      "title": "Where Clinical Time Actually Goes: The Hidden Cost of Manual Handoffs",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@info_52759/where-clinical-time-actually-goes-the-hidden-cost-of-manual-handoffs-3a1c3179d74c",
+          "target_url": "https://medium.com/@info_52759/where-clinical-time-actually-goes-the-hidden-cost-of-manual-handoffs-3a1c3179d74c",
+          "independent": false,
+          "title": "Where Clinical Time Actually Goes: The Hidden Cost of Manual Handoffs",
+          "summary": "Clinical workflows rarely break because people don’t care. They break because too many routine handoffs still depend on someone noticing… Continue reading on Medium »",
+          "published_at": "2026-09-24T09:47:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6833a5bc702f5119",
+      "title": "How to Debug a RAG System: Find the Step That Lost the Answer",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@devadiga.navya/how-to-debug-a-rag-system-find-the-step-that-lost-the-answer-de77e12cab6f",
+          "target_url": "https://medium.com/@devadiga.navya/how-to-debug-a-rag-system-find-the-step-that-lost-the-answer-de77e12cab6f",
+          "independent": false,
+          "title": "How to Debug a RAG System: Find the Step That Lost the Answer",
+          "summary": "A wrong RAG answer usually means the right text never reached the model. Six steps sit between your documents and the prompt, and the fix… Continue reading on Medium »",
+          "published_at": "2026-09-24T09:42:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28e763afabc4ad98",
+      "title": "Generative AI Project Ideas With Code",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@brolly-academy/generative-ai-project-ideas-with-code-255636537389",
+          "target_url": "https://medium.com/@brolly-academy/generative-ai-project-ideas-with-code-255636537389",
+          "independent": false,
+          "title": "Generative AI Project Ideas With Code",
+          "summary": "Your RAG chatbot works beautifully in the demo. Continue reading on Medium »",
+          "published_at": "2026-09-24T09:41:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c18971d4f33f7d3d",
+      "title": "Pace the Frontier, Except When the IPO Is Due",
+      "first_seen": "2026-09-24T19:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://sdivye92.medium.com/pace-the-frontier-except-when-the-ipo-is-due-b9cbc11f8846",
+          "target_url": "https://sdivye92.medium.com/pace-the-frontier-except-when-the-ipo-is-due-b9cbc11f8846",
+          "independent": false,
+          "title": "Pace the Frontier, Except When the IPO Is Due",
+          "summary": "The gap between what AI labs warn about and what they do Continue reading on Medium »",
+          "published_at": "2026-09-24T09:39:45+00:00",
           "date_precision": "time"
         }
       ],
