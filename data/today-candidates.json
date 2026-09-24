@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T11:01:01.586437+09:00",
-  "window_start": "2026-07-26T11:01:01.586437+09:00",
-  "window_end": "2026-09-24T11:01:01.586437+09:00",
+  "collected_at": "2026-09-24T12:00:53.650911+09:00",
+  "window_start": "2026-07-26T12:00:53.650911+09:00",
+  "window_end": "2026-09-24T12:00:53.650911+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 127,
@@ -100,7 +100,7 @@
       "status": "ok",
       "count": 10,
       "held_count": 0,
-      "excluded_count": 28,
+      "excluded_count": 30,
       "skipped_count": 3,
       "coverage_limited": false
     },
@@ -145,7 +145,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -274,11 +274,26 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 284,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-24T11:01:25.060872+09:00",
-  "hourly_window_start": "2026-09-21T11:01:25.060872+09:00",
+  "new_count": 1,
+  "archive_count": 286,
+  "candidates": [
+    {
+      "id": "bb71e409dd7f29f7",
+      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
+      "source_summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-24T12:00:53+09:00",
+      "published_at": "2026-09-23T02:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "ChatGPT 광고, 동남아시아 및 대만으로 확대",
+      "source_summary_ko": "ChatGPT Ads는 동남아시아와 대만으로 확장되어 60개 이상의 국가에서 사람들에게 다가갈 수 있는 새로운 방법을 제공합니다."
+    }
+  ],
+  "hourly_collected_at": "2026-09-24T12:01:23.970802+09:00",
+  "hourly_window_start": "2026-09-21T12:01:23.970802+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -5377,6 +5392,17 @@
           "summary": "",
           "published_at": "2026-09-23T12:25:21+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825446",
+          "target_url": "https://apps.apple.com/us/app/chatlo-ai-chat-agent/id6771188943",
+          "independent": false,
+          "title": "Show HN: Chatlo – an iOS-native AI agent, now with Jev",
+          "summary": "",
+          "published_at": "2026-09-24T02:23:12+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8005,6 +8031,17 @@
           "summary": "",
           "published_at": "2026-09-24T01:24:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825580",
+          "target_url": "https://www.bbc.com/news/live/cvgl73pxgndwt",
+          "independent": false,
+          "title": "OpenAI agent hacked Australian government website, PM says",
+          "summary": "",
+          "published_at": "2026-09-24T02:44:48+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8298,6 +8335,17 @@
           "title": "OpenAI Medicare Data Breach",
           "summary": "",
           "published_at": "2026-09-23T21:01:48+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825363",
+          "target_url": "https://www.abc.net.au/news/2026-09-24/openai-agents-plotted-to-access-data-amid-medicare-hack/107189504",
+          "independent": false,
+          "title": "OpenAI agents plotted to access government health data amid Medicare (AU) hack",
+          "summary": "",
+          "published_at": "2026-09-24T02:12:42+00:00",
           "date_precision": "time"
         }
       ],
@@ -9817,7 +9865,196 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8b45acc136d2e5f8",
+      "title": "OpenAI’s A.I. Tried Breaching 4 Other Targets, Without Prompting",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825608",
+          "target_url": "https://www.nytimes.com/2026/09/23/technology/openai-ai-breach-australia.html",
+          "independent": false,
+          "title": "OpenAI’s A.I. Tried Breaching 4 Other Targets, Without Prompting",
+          "summary": "",
+          "published_at": "2026-09-24T02:47:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c8e3d2483935663",
+      "title": "Automatically detecting AI text in my browser",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825489",
+          "target_url": "https://www.seangoedecke.com/deckard",
+          "independent": false,
+          "title": "Automatically detecting AI text in my browser",
+          "summary": "",
+          "published_at": "2026-09-24T02:31:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89852f819719efa3",
+      "title": "Memory Control Signals Emerge Before Action in Long Horizon Agents",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825414",
+          "target_url": "https://arxiv.org/abs/2609.27286",
+          "independent": false,
+          "title": "Memory Control Signals Emerge Before Action in Long Horizon Agents",
+          "summary": "",
+          "published_at": "2026-09-24T02:19:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "10dac75cfeaa0759",
+      "title": "AI Isn't Going to Destroy Humanity–But the People Building It Might",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49825339",
+          "target_url": "https://www.theatlantic.com/technology/2026/09/kara-swisher-ai-destroy-humanity-atlantic-festival/688721",
+          "independent": false,
+          "title": "AI Isn't Going to Destroy Humanity–But the People Building It Might",
+          "summary": "",
+          "published_at": "2026-09-24T02:09:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "745733a90e004ae7",
+      "title": "10 Million Signals. 3,000 AI Decisions. One Intelligent Agentic Architecture.",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@gullashekar/10-million-signals-3-000-ai-decisions-one-intelligent-agentic-architecture-1629e99c9839",
+          "target_url": "https://medium.com/@gullashekar/10-million-signals-3-000-ai-decisions-one-intelligent-agentic-architecture-1629e99c9839",
+          "independent": false,
+          "title": "10 Million Signals. 3,000 AI Decisions. One Intelligent Agentic Architecture.",
+          "summary": "Why enterprise Agentic AI succeeds when it processes fewer events — not more Continue reading on Medium »",
+          "published_at": "2026-09-24T02:48:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5c19de03d45bdcd3",
+      "title": "From Agent Loops to State Machines: Where Should LLM Autonomy End?",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ancypatel21/from-agent-loops-to-state-machines-where-should-llm-autonomy-end-29fb82a3d127",
+          "target_url": "https://medium.com/@ancypatel21/from-agent-loops-to-state-machines-where-should-llm-autonomy-end-29fb82a3d127",
+          "independent": false,
+          "title": "From Agent Loops to State Machines: Where Should LLM Autonomy End?",
+          "summary": "Agentic systems are getting better at deciding what to do next. Production systems still need to decide when they should be allowed to. Continue reading on Medium »",
+          "published_at": "2026-09-24T02:43:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "34eb370b51480933",
+      "title": "Rize Assistant: How AI Can Change the Way We Discover Jobs and Professional Opportunities",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@versatile_satin_sardine_119/rize-assistant-how-ai-can-change-the-way-we-discover-jobs-and-professional-opportunities-f45e583d97d8",
+          "target_url": "https://medium.com/@versatile_satin_sardine_119/rize-assistant-how-ai-can-change-the-way-we-discover-jobs-and-professional-opportunities-f45e583d97d8",
+          "independent": false,
+          "title": "Rize Assistant: How AI Can Change the Way We Discover Jobs and Professional Opportunities",
+          "summary": "Instead of navigating through disconnected tools, what if discovering opportunities started with a conversation? Continue reading on Medium »",
+          "published_at": "2026-09-24T02:42:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a959fe4d8d79edaa",
+      "title": "5 Game-Changing AI Tools to Supercharge Your Productivity in 2026",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/illumination/5-game-changing-ai-tools-to-supercharge-your-productivity-in-2026-e8bdec7ccfe8",
+          "target_url": "https://medium.com/illumination/5-game-changing-ai-tools-to-supercharge-your-productivity-in-2026-e8bdec7ccfe8",
+          "independent": false,
+          "title": "5 Game-Changing AI Tools to Supercharge Your Productivity in 2026",
+          "summary": "Discover the top AI tools designed to streamline your daily workflow and double your output. Continue reading on ILLUMINATION »",
+          "published_at": "2026-09-24T02:39:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d311909e4fe597af",
+      "title": "The Chair Is Taken",
+      "first_seen": "2026-09-24T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/illumination/the-chair-is-taken-40e978908943",
+          "target_url": "https://medium.com/illumination/the-chair-is-taken-40e978908943",
+          "independent": false,
+          "title": "The Chair Is Taken",
+          "summary": "He came to defend the mission. She came with Mason. Continue reading on ILLUMINATION »",
+          "published_at": "2026-09-24T02:36:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 1
+  "auto_published_count": 0
 }
