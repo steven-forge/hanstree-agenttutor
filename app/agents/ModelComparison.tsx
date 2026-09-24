@@ -20,6 +20,9 @@ type AgentModel = {
   input_modalities?: string;
   released_at?: string;
   release_source?: string;
+  effort_levels?: string[];
+  effort_note?: string;
+  effort_source?: Source[];
 };
 
 const NEW_BADGE_DAYS = 30;
@@ -32,7 +35,13 @@ function isNewModel(releasedAt: string | undefined): boolean {
   return diffDays >= 0 && diffDays < NEW_BADGE_DAYS;
 }
 
-type ModelEntry = { model: AgentModel; agent: AgentDoc; input_modalities: string };
+type ModelEntry = {
+  model: AgentModel;
+  agent: AgentDoc;
+  input_modalities: string;
+  effort_source: Source[];
+  effort_note?: string;
+};
 
 type CompareRow = {
   key: string;
@@ -41,7 +50,13 @@ type CompareRow = {
   text: (entry: ModelEntry) => string;
 };
 
-type AgentModelGroup = { agent_slug: string; input_modalities: string; models: AgentModel[] };
+type AgentModelGroup = {
+  agent_slug: string;
+  input_modalities: string;
+  models: AgentModel[];
+  effort_source?: Source[];
+  effort_note?: string;
+};
 
 const MAX_SELECTED = 5;
 const MAX_LISTED = 6;
@@ -116,6 +131,38 @@ const COMPARE_ROWS: CompareRow[] = [
     text: ({ model }) => model.key_feature
   },
   {
+    key: "effort_levels",
+    label: "지원 effort (추론 수준)",
+    cell: ({ model, effort_note, effort_source }) => (
+      <>
+        {model.effort_levels && model.effort_levels.length > 0 ? model.effort_levels.join(" · ") : "설정 미지원"}
+        {effort_note && (
+          <>
+            <br />
+            <span style={{ fontSize: ".78rem", color: "var(--muted)" }}>{effort_note}</span>
+          </>
+        )}
+        {effort_source.map((source) => (
+          <a
+            key={source.url}
+            href={source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "block", color: "var(--blue)", fontSize: ".78rem" }}
+          >
+            {source.name} ↗
+          </a>
+        ))}
+      </>
+    ),
+    text: ({ model, effort_note, effort_source }) => {
+      const levels = model.effort_levels && model.effort_levels.length > 0 ? model.effort_levels.join(" · ") : "설정 미지원";
+      const note = effort_note ? ` (${effort_note})` : "";
+      const source = effort_source.length > 0 ? ` ${sourcesText(effort_source)}` : "";
+      return `${levels}${note}${source}`;
+    }
+  },
+  {
     key: "price_note",
     label: "가격 조건",
     cell: ({ model }) => (
@@ -168,7 +215,13 @@ export default function ModelComparison({
       const agent = agents.find((a) => a.slug === group.agent_slug);
       if (!agent) continue;
       for (const model of group.models.slice(0, MAX_LISTED)) {
-        map.set(model.id, { model, agent, input_modalities: model.input_modalities ?? group.input_modalities });
+        map.set(model.id, {
+          model,
+          agent,
+          input_modalities: model.input_modalities ?? group.input_modalities,
+          effort_source: model.effort_source ?? group.effort_source ?? [],
+          effort_note: model.effort_note ?? group.effort_note
+        });
       }
     }
     return map;
