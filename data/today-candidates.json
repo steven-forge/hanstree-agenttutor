@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T16:02:08.137333+09:00",
-  "window_start": "2026-07-26T16:02:08.137333+09:00",
-  "window_end": "2026-09-24T16:02:08.137333+09:00",
+  "collected_at": "2026-09-24T17:01:03.739136+09:00",
+  "window_start": "2026-07-26T17:01:03.739136+09:00",
+  "window_end": "2026-09-24T17:01:03.739136+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 167,
+      "excluded_count": 168,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 13,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 0,
+      "excluded_count": 30,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 20,
-      "skipped_count": 4,
+      "excluded_count": 21,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -200,7 +200,7 @@
       "count": 9,
       "held_count": 0,
       "excluded_count": 6,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T16:02:29.839293+09:00",
-  "hourly_window_start": "2026-09-21T16:02:29.839293+09:00",
+  "hourly_collected_at": "2026-09-24T17:01:27.006189+09:00",
+  "hourly_window_start": "2026-09-21T17:01:27.006189+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2190,6 +2190,17 @@
           "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
           "summary": "Earlier this month OpenAI introduced GPT-6 Astra and called it the most intelligent and aligned model in the world. Today the company… Continue reading on Medium »",
           "published_at": "2026-09-23T00:08:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827255",
+          "target_url": "https://vercel.com/i/gpt-6-sol-vs-luna",
+          "independent": false,
+          "title": "GPT-6 Sol vs. Luna",
+          "summary": "",
+          "published_at": "2026-09-24T07:07:54+00:00",
           "date_precision": "time"
         }
       ],
@@ -7689,6 +7700,17 @@
           "summary": "",
           "published_at": "2026-09-23T19:42:58+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827560",
+          "target_url": "https://casttake.com/ai-ugc-ad-generator",
+          "independent": false,
+          "title": "Show HN: CastTake – turn one product photo into a short AI UGC ad video",
+          "summary": "",
+          "published_at": "2026-09-24T07:49:11+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -10982,6 +11004,279 @@
           "title": "How to Connect Jev to Claude in 5 Minutes (and What It’s Actually Good For)",
           "summary": "Jev is TypeSafe’s new model that answers with probabilities instead of words. It can’t replace Claude, but it can make Claude faster… Continue reading on Medium »",
           "published_at": "2026-09-24T06:46:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9d90f17eb4550ad1",
+      "title": "Phyll, a UX review for apps built with AI that keeps the design",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827601",
+          "target_url": "https://github.com/carlosphyll/phyll",
+          "independent": false,
+          "title": "Phyll, a UX review for apps built with AI that keeps the design",
+          "summary": "",
+          "published_at": "2026-09-24T07:54:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a90a58ab62cfc3c",
+      "title": "Were agents breaching my site?",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827563",
+          "target_url": "https://blog.matzielab.com/were-agents-breaching-my-site",
+          "independent": false,
+          "title": "Were agents breaching my site?",
+          "summary": "",
+          "published_at": "2026-09-24T07:49:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3852165858ad28ac",
+      "title": "Show HN: CubeLV – AI that designs your automation before building it",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827478",
+          "target_url": "https://app.cubelv.com",
+          "independent": false,
+          "title": "Show HN: CubeLV – AI that designs your automation before building it",
+          "summary": "",
+          "published_at": "2026-09-24T07:39:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5d6a056ae423a31b",
+      "title": "Nuros – AI study tools from notes, PDFs, videos, and links",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827376",
+          "target_url": "https://nuros.app/",
+          "independent": false,
+          "title": "Nuros – AI study tools from notes, PDFs, videos, and links",
+          "summary": "",
+          "published_at": "2026-09-24T07:22:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1043d9fe80283e6f",
+      "title": "Google Private AI Compute with server-side memory",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827294",
+          "target_url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory",
+          "independent": false,
+          "title": "Google Private AI Compute with server-side memory",
+          "summary": "",
+          "published_at": "2026-09-24T07:12:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8d2f248d1382c262",
+      "title": "Bitflix – MCP Apps Example Application for Video",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49827250",
+          "target_url": "https://github.com/bitmovin/bitflix-mcp-apps-example",
+          "independent": false,
+          "title": "Bitflix – MCP Apps Example Application for Video",
+          "summary": "",
+          "published_at": "2026-09-24T07:07:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24341b4cdb77e815",
+      "title": "Harness Manager",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/harness-manager",
+          "target_url": "https://www.producthunt.com/products/harness-manager",
+          "independent": false,
+          "title": "Harness Manager",
+          "summary": "Your AI coding stack manager, all in one place Discussion | Link",
+          "published_at": "2026-09-23T18:17:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b01104434c44996",
+      "title": "Gemini 3.8 text-to-speech models",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/gemini-3-8-text-to-speech-models",
+          "target_url": "https://www.producthunt.com/products/gemini-3-8-text-to-speech-models",
+          "independent": false,
+          "title": "Gemini 3.8 text-to-speech models",
+          "summary": "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS Discussion | Link",
+          "published_at": "2026-09-23T19:11:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3972fda07d19fa16",
+      "title": "Missed-Call Callbacks That Recover Leads Without Spamming Buyers",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://varunon9.medium.com/missed-call-callbacks-that-recover-leads-without-spamming-buyers-f72f7f005b82",
+          "target_url": "https://varunon9.medium.com/missed-call-callbacks-that-recover-leads-without-spamming-buyers-f72f7f005b82",
+          "independent": false,
+          "title": "Missed-Call Callbacks That Recover Leads Without Spamming Buyers",
+          "summary": "An Indian buyer often calls a business number after work, between meetings or while comparing three vendors. Continue reading on Medium »",
+          "published_at": "2026-09-24T07:49:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4433051cf768f9b3",
+      "title": "I’m 22. AI Was Supposed to Make Me Unemployable. Instead It Made Me an Entire Engineering Team",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ivan.yanishevskyi/im-22-ai-was-supposed-to-make-me-unemployable-instead-it-made-me-an-entire-engineering-team-6231cf874c24",
+          "target_url": "https://medium.com/@ivan.yanishevskyi/im-22-ai-was-supposed-to-make-me-unemployable-instead-it-made-me-an-entire-engineering-team-6231cf874c24",
+          "independent": false,
+          "title": "I’m 22. AI Was Supposed to Make Me Unemployable. Instead It Made Me an Entire Engineering Team",
+          "summary": "This summer I defended my thesis. The same week, my feed announced the end of software engineering for the third time that month. Continue reading on Medium »",
+          "published_at": "2026-09-24T07:49:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b093f8cbf5fff493",
+      "title": "AI Made Coding Easy. It Made Software Engineering Harder.",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/skillstuff/ai-made-coding-easy-it-made-software-engineering-harder-a0dbd7448286",
+          "target_url": "https://medium.com/skillstuff/ai-made-coding-easy-it-made-software-engineering-harder-a0dbd7448286",
+          "independent": false,
+          "title": "AI Made Coding Easy. It Made Software Engineering Harder.",
+          "summary": "We automated the fastest part of software development — and accidentally increased the pressure on everything else. Continue reading on Skill Stuff »",
+          "published_at": "2026-09-24T07:49:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "01d71d7f4d0d9c48",
+      "title": "Why Are People Feeling More Alone at the Peak of AI?",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ahsanhr/why-are-people-feeling-more-alone-at-the-peak-of-ai-c09fae4bda24",
+          "target_url": "https://medium.com/@ahsanhr/why-are-people-feeling-more-alone-at-the-peak-of-ai-c09fae4bda24",
+          "independent": false,
+          "title": "Why Are People Feeling More Alone at the Peak of AI?",
+          "summary": "We have never had more ways to communicate. So why does loneliness feel so common? Continue reading on Medium »",
+          "published_at": "2026-09-24T07:48:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24e12111104f843f",
+      "title": "Vibe Coding Is Eating Software Development — And Nobody’s Ready for What Comes Next",
+      "first_seen": "2026-09-24T17:01:27+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hbinte631/vibe-coding-is-eating-software-development-and-nobodys-ready-for-what-comes-next-ffec4f870a7b",
+          "target_url": "https://medium.com/@hbinte631/vibe-coding-is-eating-software-development-and-nobodys-ready-for-what-comes-next-ffec4f870a7b",
+          "independent": false,
+          "title": "Vibe Coding Is Eating Software Development — And Nobody’s Ready for What Comes Next",
+          "summary": "Six months ago, “vibe coding” was a joke. Now it’s how half of Silicon Valley ships code. Continue reading on Medium »",
+          "published_at": "2026-09-24T07:48:44+00:00",
           "date_precision": "time"
         }
       ],
