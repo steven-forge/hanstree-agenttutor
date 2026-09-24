@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-24T20:01:13.257944+09:00",
-  "window_start": "2026-07-26T20:01:13.257944+09:00",
-  "window_end": "2026-09-24T20:01:13.257944+09:00",
+  "collected_at": "2026-09-24T21:01:11.798981+09:00",
+  "window_start": "2026-07-26T21:01:11.798981+09:00",
+  "window_end": "2026-09-24T21:01:11.798981+09:00",
   "edition_date": "2026-09-24",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 14,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 0,
+      "excluded_count": 29,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -123,7 +123,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -134,7 +134,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 9,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -186,9 +186,9 @@
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 2,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 18,
+      "excluded_count": 17,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 286,
   "candidates": [],
-  "hourly_collected_at": "2026-09-24T20:01:34.813994+09:00",
-  "hourly_window_start": "2026-09-21T20:01:34.813994+09:00",
+  "hourly_collected_at": "2026-09-24T21:01:32.869146+09:00",
+  "hourly_window_start": "2026-09-21T21:01:32.869146+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -7029,6 +7029,17 @@
           "summary": "",
           "published_at": "2026-09-23T19:00:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829309",
+          "target_url": "https://modal.com/blog/trillion-tokens-trillion-parameters",
+          "independent": false,
+          "title": "How to serve trillions of tokens for trillion-parameter coding agents",
+          "summary": "",
+          "published_at": "2026-09-24T11:44:58+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -7816,159 +7827,6 @@
           "title": "CorridorKey – free neural net based green screen keys",
           "summary": "",
           "published_at": "2026-09-23T20:58:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "02280242a073b1f4",
-      "title": "OpenAI hacked Australian Medicare portal",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822457",
-          "target_url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
-          "independent": false,
-          "title": "OpenAI hacked Australian Medicare portal",
-          "summary": "",
-          "published_at": "2026-09-23T20:55:51+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822654",
-          "target_url": "https://www.reuters.com/world/asia-pacific/australia-pm-albanese-says-openai-breached-medicare-sydney-morning-herald-2026-09-23",
-          "independent": false,
-          "title": "OpenAI agents hacked Australian Medicare system",
-          "summary": "",
-          "published_at": "2026-09-23T21:08:52+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822973",
-          "target_url": "https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman",
-          "independent": false,
-          "title": "OpenAI agent hacked Medicare, Albanese expressed 'extreme concern' to Sam Altman",
-          "summary": "",
-          "published_at": "2026-09-23T21:41:26+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822950",
-          "target_url": "https://www.rnz.co.nz/news/world/1551084/openai-hacked-medicare-portal-australia-prime-minister-anthony-albanese-says",
-          "independent": false,
-          "title": "OpenAI Hacked Medicare Portal, Australia Prime Minister Anthony Albanese Says",
-          "summary": "",
-          "published_at": "2026-09-23T21:39:50+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823062",
-          "target_url": "https://www.ft.com/content/56133ef4-377b-4e35-a939-f199ceb64507",
-          "independent": false,
-          "title": "OpenAI 'agent' hacked Australia's health service",
-          "summary": "",
-          "published_at": "2026-09-23T21:49:57+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824127",
-          "target_url": "https://www.cnn.com/2026/09/23/business/australia-openai-agent-hack-intl-hnk",
-          "independent": false,
-          "title": "OpenAI agent hacked into Australia's national healthcare system",
-          "summary": "",
-          "published_at": "2026-09-23T23:31:43+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825024",
-          "target_url": "https://www.channelnewsasia.com/world/australia-openai-agent-breach-government-portal-6406411",
-          "independent": false,
-          "title": "Australia says OpenAI agent hacked into government website",
-          "summary": "",
-          "published_at": "2026-09-24T01:24:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825580",
-          "target_url": "https://www.bbc.com/news/live/cvgl73pxgndwt",
-          "independent": false,
-          "title": "OpenAI agent hacked Australian government website, PM says",
-          "summary": "",
-          "published_at": "2026-09-24T02:44:48+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824623",
-          "target_url": "https://www.politico.com/news/2026/09/23/openai-australia-government-breach-01091069",
-          "independent": false,
-          "title": "OpenAI model breaches Australian government websites",
-          "summary": "",
-          "published_at": "2026-09-24T00:30:49+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826285",
-          "target_url": "https://www.bbc.com/news/articles/c6vgy0333dppo",
-          "independent": false,
-          "title": "OpenAI agent 'infiltrated' Australian government website, PM says",
-          "summary": "",
-          "published_at": "2026-09-24T04:33:52+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826856",
-          "target_url": "https://www.theguardian.com/australia-news/2026/sep/24/anthony-albanese-says-openai-agent-hacked-medicare-extreme-concern-sam-altman",
-          "independent": false,
-          "title": "Albanese says OpenAI hacked Medicare and told Australia months later",
-          "summary": "",
-          "published_at": "2026-09-24T06:13:56+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@casi.borg/how-an-openai-agent-breached-australias-medicare-portal-36ac4bde4946",
-          "target_url": "https://medium.com/@casi.borg/how-an-openai-agent-breached-australias-medicare-portal-36ac4bde4946",
-          "independent": false,
-          "title": "How an OpenAI Agent Breached Australia’s Medicare Portal",
-          "summary": "An AI agent was looking for information. Instead, it crossed a government security boundary. Australia’s Medicare incident shows why the… Continue reading on Medium »",
-          "published_at": "2026-09-24T08:44:15+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828422",
-          "target_url": "https://www.theregister.com/security/2026/09/24/openai-agents-infiltrated-australian-government-website/5298702",
-          "independent": false,
-          "title": "OpenAI agents 'infiltrated Australian government website'",
-          "summary": "",
-          "published_at": "2026-09-24T09:56:03+00:00",
           "date_precision": "time"
         }
       ],
@@ -8905,27 +8763,6 @@
           "title": "Meta Connect 2026 live blog: On the ground at Mark Zuckerberg’s next big product launch",
           "summary": "It's time once again for Meta's annual September product launch event, and The Verge is on the ground in Menlo Park to cover the show live. Meta says that today's keynote by Mark Zuckerberg will be about how \"Meta is building a future for everyone\" - something he wrote at length about in a recent […]",
           "published_at": "2026-09-23T22:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "bf0f82f61058abe4",
-      "title": "Anthropic says its biology lab has already found something big",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big",
-          "target_url": "https://techcrunch.com/2026/09/23/anthropic-says-its-biology-lab-has-already-found-something-big",
-          "independent": true,
-          "title": "Anthropic says its biology lab has already found something big",
-          "summary": "But maybe the biggest reveal is that Anthropic has not let Claude run loose in its biology lab. Humans are still, so far, in the loop.",
-          "published_at": "2026-09-23T22:17:39+00:00",
           "date_precision": "time"
         }
       ],
@@ -12094,7 +11931,238 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a9a0142404d9c278",
+      "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829387",
+          "target_url": "https://medium.com/@arielsimon/dark-sourcery-how-hackers-manipulate-ai-to-scam-you-88df434d2073",
+          "independent": false,
+          "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
+          "summary": "",
+          "published_at": "2026-09-24T11:54:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "501eb13d0d3c054a",
+      "title": "AI progress is speeding up dramatically – here's why you should care [video]",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829347",
+          "target_url": "https://www.youtube.com/watch?v=DKA5AkrQfxo",
+          "independent": false,
+          "title": "AI progress is speeding up dramatically – here's why you should care [video]",
+          "summary": "",
+          "published_at": "2026-09-24T11:49:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1e9a0efe2b353aba",
+      "title": "Scoop: Trump allies open new front against Anthropic CEO over AI \"doomerism\"",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829312",
+          "target_url": "https://www.axios.com/2026/09/24/trump-anthropic-ai-doomerism-dario-amodei",
+          "independent": false,
+          "title": "Scoop: Trump allies open new front against Anthropic CEO over AI \"doomerism\"",
+          "summary": "",
+          "published_at": "2026-09-24T11:45:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f0486341f152369d",
+      "title": "Dutch intelligence services warn AI is making cyberattacks faster and easier",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829131",
+          "target_url": "https://nltimes.nl/2026/09/24/dutch-intelligence-services-warn-ai-making-cyberattacks-faster-easier",
+          "independent": false,
+          "title": "Dutch intelligence services warn AI is making cyberattacks faster and easier",
+          "summary": "",
+          "published_at": "2026-09-24T11:27:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cd8d7a2c2413b784",
+      "title": "Show HN: Szept – talk to your AI agents and show them your screen (macOS)",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829021",
+          "target_url": "https://szept.szyma.co/",
+          "independent": false,
+          "title": "Show HN: Szept – talk to your AI agents and show them your screen (macOS)",
+          "summary": "",
+          "published_at": "2026-09-24T11:15:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e266205743ce16bd",
+      "title": "How to keep enjoying programming in a world of LLMs",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828940",
+          "target_url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
+          "independent": false,
+          "title": "How to keep enjoying programming in a world of LLMs",
+          "summary": "",
+          "published_at": "2026-09-24T11:03:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fe6206b9a2c5c5ae",
+      "title": "When being seen as smart starts becoming almost as important as actually learning.",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aarna.k3105/when-being-seen-as-smart-starts-becoming-almost-as-important-as-actually-learning-94586820e478",
+          "target_url": "https://medium.com/@aarna.k3105/when-being-seen-as-smart-starts-becoming-almost-as-important-as-actually-learning-94586820e478",
+          "independent": false,
+          "title": "When being seen as smart starts becoming almost as important as actually learning.",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-24T11:49:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d5841b8295f7de9",
+      "title": "Why Reading Finance Books Is One of the Best Investments You Can Make",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aarna.k3105/why-reading-finance-books-is-one-of-the-best-investments-you-can-make-824171531af8",
+          "target_url": "https://medium.com/@aarna.k3105/why-reading-finance-books-is-one-of-the-best-investments-you-can-make-824171531af8",
+          "independent": false,
+          "title": "Why Reading Finance Books Is One of the Best Investments You Can Make",
+          "summary": "“Why spend money on books when everything is available online?” Continue reading on Medium »",
+          "published_at": "2026-09-24T11:49:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "daa6884e6f198222",
+      "title": "The Difference Between NLP, LLMs and Generative AI",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@guptanikhil8424/the-difference-between-nlp-llms-and-generative-ai-645b1dd29947",
+          "target_url": "https://medium.com/@guptanikhil8424/the-difference-between-nlp-llms-and-generative-ai-645b1dd29947",
+          "independent": false,
+          "title": "The Difference Between NLP, LLMs and Generative AI",
+          "summary": "If you think NLP, LLMs, and Generative AI are three names for the same thing, you’re not alone. I used to think so too. Continue reading on Medium »",
+          "published_at": "2026-09-24T11:48:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d74241cf58105417",
+      "title": "The Real Cost of an AI Model Is the Work It Finishes",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nRouter.ai/the-real-cost-of-an-ai-model-is-the-work-it-finishes-fbe1b28d5578",
+          "target_url": "https://medium.com/@nRouter.ai/the-real-cost-of-an-ai-model-is-the-work-it-finishes-fbe1b28d5578",
+          "independent": false,
+          "title": "The Real Cost of an AI Model Is the Work It Finishes",
+          "summary": "A model comparison that ignores retries and repair work misses the metric production teams actually pay for. Continue reading on Medium »",
+          "published_at": "2026-09-24T11:47:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "66d43a58b9508d73",
+      "title": "The Girl Who Thought She Chose the Wrong Field",
+      "first_seen": "2026-09-24T21:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fatima.batool1048/the-girl-who-thought-she-chose-the-wrong-field-2696b576fefd",
+          "target_url": "https://medium.com/@fatima.batool1048/the-girl-who-thought-she-chose-the-wrong-field-2696b576fefd",
+          "independent": false,
+          "title": "The Girl Who Thought She Chose the Wrong Field",
+          "summary": "A confession before we begin: I once looked at my own code and thought, “maybe I’m just not built for this.” Continue reading on Medium »",
+          "published_at": "2026-09-24T11:45:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 0
+  "auto_published_count": 2
 }
