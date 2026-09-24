@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T06:01:05.609385+09:00",
-  "window_start": "2026-07-27T06:01:05.609385+09:00",
-  "window_end": "2026-09-25T06:01:05.609385+09:00",
+  "collected_at": "2026-09-25T06:25:37.963248+09:00",
+  "window_start": "2026-07-27T06:25:37.963248+09:00",
+  "window_end": "2026-09-25T06:25:37.963248+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -98,10 +98,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 0,
+      "excluded_count": 29,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -164,10 +164,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 20,
-      "skipped_count": 10,
+      "excluded_count": 21,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -277,8 +277,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T06:01:23.588857+09:00",
-  "hourly_window_start": "2026-09-22T06:01:23.588857+09:00",
+  "hourly_collected_at": "2026-09-25T06:26:06.220600+09:00",
+  "hourly_window_start": "2026-09-22T06:26:06.220600+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -14948,6 +14948,174 @@
           "title": "Understanding MCP Servers",
           "summary": "The first time I heard about MCP, It seemed like something really complex. Continue reading on Medium »",
           "published_at": "2026-09-24T20:42:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7904d8843c3b2294",
+      "title": "Show HN: Public Browser MCP – +48% speed -33% token/session vs. AgentBrowser",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49836880",
+          "target_url": "https://github.com/Silbercue/public-browser/releases/tag/v3.0.0",
+          "independent": false,
+          "title": "Show HN: Public Browser MCP – +48% speed -33% token/session vs. AgentBrowser",
+          "summary": "",
+          "published_at": "2026-09-24T21:20:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "95fada2067fbea2a",
+      "title": "The New STOC Rules for the AI Era",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49836839",
+          "target_url": "https://blog.computationalcomplexity.org/2026/09/the-new-stoc-rules-for-ai-era.html",
+          "independent": false,
+          "title": "The New STOC Rules for the AI Era",
+          "summary": "",
+          "published_at": "2026-09-24T21:16:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "aff622aa85ac61ad",
+      "title": "Vibe Coding Production Kit – a production workflow for AI coding agents",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49836678",
+          "target_url": "https://github.com/Moeeryani/Vibe-Coding-Production-Kit",
+          "independent": false,
+          "title": "Vibe Coding Production Kit – a production workflow for AI coding agents",
+          "summary": "",
+          "published_at": "2026-09-24T21:02:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "31bb4851bb819525",
+      "title": "Meet a Professor Who Wrote 200+ Papers This Year — Using AI",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/techx-official/meet-a-professor-who-wrote-200-papers-this-year-using-ai-792cb4377154",
+          "target_url": "https://medium.com/techx-official/meet-a-professor-who-wrote-200-papers-this-year-using-ai-792cb4377154",
+          "independent": false,
+          "title": "Meet a Professor Who Wrote 200+ Papers This Year — Using AI",
+          "summary": "200 Papers, 14 Books and a Growing Debate Over AI in Research Continue reading on Techx_official »",
+          "published_at": "2026-09-24T21:20:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d06631f22ae0e258",
+      "title": "Myślenie rozbieżne i zbieżne przez pryzmat IT i AI",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nejczew/my%C5%9Blenie-rozbie%C5%BCne-i-zbie%C5%BCne-przez-pryzmat-it-i-ai-a12463b722b1",
+          "target_url": "https://medium.com/@nejczew/my%C5%9Blenie-rozbie%C5%BCne-i-zbie%C5%BCne-przez-pryzmat-it-i-ai-a12463b722b1",
+          "independent": false,
+          "title": "Myślenie rozbieżne i zbieżne przez pryzmat IT i AI",
+          "summary": "Po latach doszedłem do wniosku, że moja natura utrudnia mi wykonywanie zawodu. Na co dzień trudno jest połączyć ciekawość i odkrywczość z… Continue reading on Medium »",
+          "published_at": "2026-09-24T21:18:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a1d4577348c5ec38",
+      "title": "In-Chat Checkout Already Failed Once. The Half That Worked Is the Half Worth Building For.",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@optraseven/in-chat-checkout-already-failed-once-the-half-that-worked-is-the-half-worth-building-for-be248317659f",
+          "target_url": "https://medium.com/@optraseven/in-chat-checkout-already-failed-once-the-half-that-worked-is-the-half-worth-building-for-be248317659f",
+          "independent": false,
+          "title": "In-Chat Checkout Already Failed Once. The Half That Worked Is the Half Worth Building For.",
+          "summary": "OpenAI pulled Instant Checkout six months after launch. The adoption numbers explain why — and one number from Walmart explains what… Continue reading on Medium »",
+          "published_at": "2026-09-24T21:17:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "21d5028c451b9bc1",
+      "title": "Brazil Can Join the AI Race Without Building the Next ChatGPT",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alessandro.lrsilveira/brazil-can-join-the-ai-race-without-building-the-next-chatgpt-9be602df3e5c",
+          "target_url": "https://medium.com/@alessandro.lrsilveira/brazil-can-join-the-ai-race-without-building-the-next-chatgpt-9be602df3e5c",
+          "independent": false,
+          "title": "Brazil Can Join the AI Race Without Building the Next ChatGPT",
+          "summary": "TL;DR: A new class of small, specialized models like Jev, and its open clone kev, proves you can get real economic value from AI without a… Continue reading on Medium »",
+          "published_at": "2026-09-24T21:17:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "53b9c25c32db229e",
+      "title": "Divergent and Convergent Thinking Through the Lens of IT and AI",
+      "first_seen": "2026-09-25T06:26:06+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nejczew/divergent-and-convergent-thinking-through-the-lens-of-it-and-ai-c2f83f627821",
+          "target_url": "https://medium.com/@nejczew/divergent-and-convergent-thinking-through-the-lens-of-it-and-ai-c2f83f627821",
+          "independent": false,
+          "title": "Divergent and Convergent Thinking Through the Lens of IT and AI",
+          "summary": "Over the years, I’ve realized that my nature makes doing my job harder. On a daily basis, it’s difficult to combine curiosity and… Continue reading on Medium »",
+          "published_at": "2026-09-24T21:14:44+00:00",
           "date_precision": "time"
         }
       ],
