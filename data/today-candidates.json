@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T08:12:00.259662+09:00",
-  "window_start": "2026-07-27T08:12:00.259662+09:00",
-  "window_end": "2026-09-25T08:12:00.259662+09:00",
+  "collected_at": "2026-09-25T09:01:16.842578+09:00",
+  "window_start": "2026-07-27T09:01:16.842578+09:00",
+  "window_end": "2026-09-25T09:01:16.842578+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 171,
+      "excluded_count": 172,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 7,
+      "excluded_count": 25,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -111,10 +111,10 @@
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "count": 5,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 19,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -213,7 +213,7 @@
       "count": 5,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 5,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T08:12:26.578197+09:00",
-  "hourly_window_start": "2026-09-22T08:12:26.578197+09:00",
+  "hourly_collected_at": "2026-09-25T09:01:41.598272+09:00",
+  "hourly_window_start": "2026-09-22T09:01:41.598272+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -601,27 +601,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "e9f63aa1f7aaa02f",
-      "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/evaleval-aisi",
-          "target_url": "https://huggingface.co/blog/evaleval-aisi",
-          "independent": true,
-          "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
-          "summary": "",
-          "published_at": "2026-09-22T00:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "689d78c6e007ab8e",
       "title": "Transformers now runs llama.cpp quants",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -646,27 +625,6 @@
           "title": "Transformers now runs llama.cpp quants",
           "summary": "",
           "published_at": "2026-09-23T06:18:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "6b3083011aeb49b1",
-      "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/omlx",
-          "target_url": "https://huggingface.co/blog/omlx",
-          "independent": true,
-          "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
-          "summary": "",
-          "published_at": "2026-09-22T00:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -1206,27 +1164,6 @@
           "title": "Nscale’s IPO will test Wall Street’s appetite for concentrated AI bets once again",
           "summary": "The British AI data center developer depends on tech giants Microsoft and Anthropic for most of its revenue.",
           "published_at": "2026-09-22T12:23:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "9b2745b3f19fc69f",
-      "title": "The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping",
-          "target_url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping",
-          "independent": true,
-          "title": "The man who built Apple’s stores doesn’t buy Silicon Valley’s bet on AI shopping",
-          "summary": "Apple Store architect Ron Johnson says Apple's secret sauce has always been its people.",
-          "published_at": "2026-09-21T23:44:28+00:00",
           "date_precision": "time"
         }
       ],
@@ -2970,6 +2907,28 @@
           "summary": "",
           "published_at": "2026-09-24T23:08:04+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828775",
+          "target_url": "https://forkbench.com/l/FAUiWl3f",
+          "independent": false,
+          "title": "Show HN: Forkbench – boundaries and supervision for AI coding agents",
+          "summary": "",
+          "published_at": "2026-09-24T10:44:24+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838333",
+          "target_url": "https://github.com/inlevel9-com/Vons",
+          "independent": false,
+          "title": "Show HN: Vons – Jev-inspired local decisions for AI agents, in the browser",
+          "summary": "",
+          "published_at": "2026-09-24T23:48:09+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3053,17 +3012,6 @@
           "title": "Show HN: Is your repo giving coding agents two different answers?",
           "summary": "",
           "published_at": "2026-09-23T05:07:14+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828775",
-          "target_url": "https://forkbench.com/l/FAUiWl3f",
-          "independent": false,
-          "title": "Show HN: Forkbench – boundaries and supervision for AI coding agents",
-          "summary": "",
-          "published_at": "2026-09-24T10:44:24+00:00",
           "date_precision": "time"
         }
       ],
@@ -15687,6 +15635,237 @@
           "title": "AI Works. The Economics Do Not.",
           "summary": "The one thing one must understand about AI has little to do with the tech. Continue reading on Medium »",
           "published_at": "2026-09-24T22:52:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a8a84063e153cdb1",
+      "title": "Peter Thiel: The AI Crisis, Europe's Decline and the Battle for America [video]",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838422",
+          "target_url": "https://www.youtube.com/watch?v=B7yl7fEHeKM",
+          "independent": false,
+          "title": "Peter Thiel: The AI Crisis, Europe's Decline and the Battle for America [video]",
+          "summary": "",
+          "published_at": "2026-09-25T00:01:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "50a9345ed6238b8c",
+      "title": "Positron Valued at $5B in New Funding as Demand for AI Chips Surges",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838405",
+          "target_url": "https://www.wsj.com/tech/ai/positron-valued-at-5-billion-in-new-funding-as-cpu-demand-surges-76dde819",
+          "independent": false,
+          "title": "Positron Valued at $5B in New Funding as Demand for AI Chips Surges",
+          "summary": "",
+          "published_at": "2026-09-24T23:58:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7481aedc7bc5bb38",
+      "title": "AI is deciding whether or not people receive medical care",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838266",
+          "target_url": "https://www.vox.com/good-medicine-newsletter/503932/ai-health-insurance-united-medicare-cigna-humana",
+          "independent": false,
+          "title": "AI is deciding whether or not people receive medical care",
+          "summary": "",
+          "published_at": "2026-09-24T23:38:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c6dd188cbdc9392",
+      "title": "Rails and AI",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838260",
+          "target_url": "https://rubyonrails.org/ai",
+          "independent": false,
+          "title": "Rails and AI",
+          "summary": "",
+          "published_at": "2026-09-24T23:38:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0b1b7a81c2d81377",
+      "title": "Stats: 72% of respondents said they felt curious, happy or excited about AI",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838182",
+          "target_url": "https://marginalrevolution.com/marginalrevolution/2026/09/earth-fact-of-the-day-2.html",
+          "independent": false,
+          "title": "Stats: 72% of respondents said they felt curious, happy or excited about AI",
+          "summary": "",
+          "published_at": "2026-09-24T23:28:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a41f65de06fe96f4",
+      "title": "Anthropic to Pay Akamai Technologies $11.6B over Seven Years for Cloud Services",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838156",
+          "target_url": "https://www.wsj.com/tech/anthropic-to-pay-akamai-technologies-11-6-billion-over-seven-years-for-cloud-services-7a55360b",
+          "independent": false,
+          "title": "Anthropic to Pay Akamai Technologies $11.6B over Seven Years for Cloud Services",
+          "summary": "",
+          "published_at": "2026-09-24T23:24:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4514b757c66b3ea",
+      "title": "Pinterest (PINS) Has Monetization Headroom. Can Growth Investments Pay Off Without Hurting Margins?",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@khd.muhammadali/pinterest-pins-has-monetization-headroom-can-growth-investments-pay-off-without-hurting-margins-5b24f7266aa0",
+          "target_url": "https://medium.com/@khd.muhammadali/pinterest-pins-has-monetization-headroom-can-growth-investments-pay-off-without-hurting-margins-5b24f7266aa0",
+          "independent": false,
+          "title": "Pinterest (PINS) Has Monetization Headroom. Can Growth Investments Pay Off Without Hurting Margins?",
+          "summary": "Read Full Story… Continue reading on Medium »",
+          "published_at": "2026-09-24T23:46:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1ac8524ba367a64f",
+      "title": "The Beginner Advantage in the AI Economy",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jameswalkerai/the-beginner-advantage-in-the-ai-economy-71cc34e01983",
+          "target_url": "https://medium.com/@jameswalkerai/the-beginner-advantage-in-the-ai-economy-71cc34e01983",
+          "independent": false,
+          "title": "The Beginner Advantage in the AI Economy",
+          "summary": "Many beginners think they’re already behind. The reality may be the opposite. Continue reading on Medium »",
+          "published_at": "2026-09-24T23:46:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ca6d90f53531ec2d",
+      "title": "Day 15/60: LoRA (Low-Rank Adaptation) — Surgical Fine-Tuning for Massive Models",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@divyanshiy6/day-15-60-lora-low-rank-adaptation-surgical-fine-tuning-for-massive-models-be8b4226b1a8",
+          "target_url": "https://medium.com/@divyanshiy6/day-15-60-lora-low-rank-adaptation-surgical-fine-tuning-for-massive-models-be8b4226b1a8",
+          "independent": false,
+          "title": "Day 15/60: LoRA (Low-Rank Adaptation) — Surgical Fine-Tuning for Massive Models",
+          "summary": "Welcome to Day 15 of 60. Continue reading on Medium »",
+          "published_at": "2026-09-24T23:45:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "efc99ca4f3141474",
+      "title": "MCP server testing in CI: the bug no schema check can see",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@karachiwalaumer2612/mcp-server-testing-in-ci-the-bug-no-schema-check-can-see-39cfce248043",
+          "target_url": "https://medium.com/@karachiwalaumer2612/mcp-server-testing-in-ci-the-bug-no-schema-check-can-see-39cfce248043",
+          "independent": false,
+          "title": "MCP server testing in CI: the bug no schema check can see",
+          "summary": "mcp-eval-gate is a regression testing tool for MCP servers. It fails your CI build when a tool’s output gets worse, even if its schema… Continue reading on Medium »",
+          "published_at": "2026-09-24T23:44:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0af9640e8f57bd64",
+      "title": "Why the Same Paragraph Gets Different AI Detector Scores",
+      "first_seen": "2026-09-25T09:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@administrator_19739/why-the-same-paragraph-gets-different-ai-detector-scores-d86812d18f09",
+          "target_url": "https://medium.com/@administrator_19739/why-the-same-paragraph-gets-different-ai-detector-scores-d86812d18f09",
+          "independent": false,
+          "title": "Why the Same Paragraph Gets Different AI Detector Scores",
+          "summary": "Run the same paragraph through two AI detectors and the scores can disagree sharply. That does not automatically mean one tool is broken… Continue reading on Medium »",
+          "published_at": "2026-09-24T23:40:26+00:00",
           "date_precision": "time"
         }
       ],
