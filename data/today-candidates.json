@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T16:02:10.541693+09:00",
-  "window_start": "2026-07-27T16:02:10.541693+09:00",
-  "window_end": "2026-09-25T16:02:10.541693+09:00",
+  "collected_at": "2026-09-25T17:01:01.131744+09:00",
+  "window_start": "2026-07-27T17:01:01.131744+09:00",
+  "window_end": "2026-09-25T17:01:01.131744+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -102,8 +102,8 @@
       "status": "ok",
       "count": 9,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 4,
+      "excluded_count": 30,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 0,
+      "excluded_count": 24,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T16:02:39.176314+09:00",
-  "hourly_window_start": "2026-09-22T16:02:39.176314+09:00",
+  "hourly_collected_at": "2026-09-25T17:01:25.015442+09:00",
+  "hourly_window_start": "2026-09-22T17:01:25.015442+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2995,6 +2995,50 @@
           "summary": "",
           "published_at": "2026-09-25T06:10:44+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834320",
+          "target_url": "https://www.mef-llm-studio.com/de",
+          "independent": false,
+          "title": "Show HN: MEF LLM Studio",
+          "summary": "",
+          "published_at": "2026-09-24T17:50:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49819122",
+          "target_url": "https://github.com/nwjang/psychosis-guard",
+          "independent": false,
+          "title": "Show HN: Psychosis Guard – Safety for long LLM conversations",
+          "summary": "",
+          "published_at": "2026-09-23T16:59:56+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49823708",
+          "target_url": "https://promptspend.com/",
+          "independent": false,
+          "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
+          "summary": "",
+          "published_at": "2026-09-23T22:49:57+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49824148",
+          "target_url": "https://github.com/gojiplus/batchlane",
+          "independent": false,
+          "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
+          "summary": "",
+          "published_at": "2026-09-23T23:33:56+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -5013,50 +5057,6 @@
           "title": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
           "summary": "",
           "published_at": "2026-09-23T12:28:40+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834320",
-          "target_url": "https://www.mef-llm-studio.com/de",
-          "independent": false,
-          "title": "Show HN: MEF LLM Studio",
-          "summary": "",
-          "published_at": "2026-09-24T17:50:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819122",
-          "target_url": "https://github.com/nwjang/psychosis-guard",
-          "independent": false,
-          "title": "Show HN: Psychosis Guard – Safety for long LLM conversations",
-          "summary": "",
-          "published_at": "2026-09-23T16:59:56+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823708",
-          "target_url": "https://promptspend.com/",
-          "independent": false,
-          "title": "Show HN: PromptSpend – LLM API prices re-checked daily, with source per price",
-          "summary": "",
-          "published_at": "2026-09-23T22:49:57+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824148",
-          "target_url": "https://github.com/gojiplus/batchlane",
-          "independent": false,
-          "title": "Show HN: Submit asynchronous LLM batch jobs through one interface",
-          "summary": "",
-          "published_at": "2026-09-23T23:33:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -14203,7 +14203,17 @@
           "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil down to the […]",
           "published_at": "2026-09-24T18:04:44+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bcb31d434ed42cb8",
+      "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
+      "first_seen": "2026-09-25T04:02:27+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -14213,6 +14223,17 @@
           "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
           "summary": "",
           "published_at": "2026-09-25T06:52:12+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+          "target_url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+          "independent": true,
+          "title": "Jensen Huang talks about AI and climate change like a supervillain",
+          "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil down to the […]",
+          "published_at": "2026-09-24T18:04:44+00:00",
           "date_precision": "time"
         }
       ],
@@ -17300,6 +17321,300 @@
           "title": "How to Learn Canva and Freelance From Home: A Beginner’s Guide",
           "summary": "Learning an online skill can open the door to new opportunities for people who want to work from home. One such skill is design in Canva. Continue reading on Medium »",
           "published_at": "2026-09-25T06:46:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0bf421cf1adf9b32",
+      "title": "Show HN: Can an AI agent bypass a post-quantum signed authorization policy?",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841469",
+          "target_url": "https://github.com/max-russo-com/MAX_AUTHORIZATION_SANDBOX",
+          "independent": false,
+          "title": "Show HN: Can an AI agent bypass a post-quantum signed authorization policy?",
+          "summary": "",
+          "published_at": "2026-09-25T07:55:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f895645364a484aa",
+      "title": "OpenAI prepares new $500/month Pro Max plan for ChatGPT",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841456",
+          "target_url": "https://www.testingcatalog.com/openai-prepares-new-500-month-pro-max-plan-for-chatgpt",
+          "independent": false,
+          "title": "OpenAI prepares new $500/month Pro Max plan for ChatGPT",
+          "summary": "",
+          "published_at": "2026-09-25T07:51:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e6d57bc361d5fd4b",
+      "title": "Quiet-guardrails: Claude Code manual mode, minus the nagging",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841340",
+          "target_url": "https://github.com/SeanMcMillan/quiet-guardrails",
+          "independent": false,
+          "title": "Quiet-guardrails: Claude Code manual mode, minus the nagging",
+          "summary": "",
+          "published_at": "2026-09-25T07:35:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f7d13ecebd9fd457",
+      "title": "Implicit Neural Representations with Periodic Activation Functions (2020)",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841300",
+          "target_url": "https://arxiv.org/abs/2006.09661",
+          "independent": false,
+          "title": "Implicit Neural Representations with Periodic Activation Functions (2020)",
+          "summary": "",
+          "published_at": "2026-09-25T07:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b00ada90825617ea",
+      "title": "What is LLM-as-a-Judge, and How It Works?",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841219",
+          "target_url": "https://infere.com/blog/what-is-llm-as-a-judge",
+          "independent": false,
+          "title": "What is LLM-as-a-Judge, and How It Works?",
+          "summary": "",
+          "published_at": "2026-09-25T07:19:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "619fc36bbb476894",
+      "title": "Explyt 5.20 – background task panel for AI agent runs in JetBrains IDEs",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841139",
+          "target_url": "https://explyt.ai/docs/explyt-test/whats-new-explyt",
+          "independent": false,
+          "title": "Explyt 5.20 – background task panel for AI agent runs in JetBrains IDEs",
+          "summary": "",
+          "published_at": "2026-09-25T07:07:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e2971aa1abf40ad3",
+      "title": "RemoteConsole",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/remoteconsole",
+          "target_url": "https://www.producthunt.com/products/remoteconsole",
+          "independent": false,
+          "title": "RemoteConsole",
+          "summary": "Reach your home or work terminal when agents can't or won't Discussion | Link",
+          "published_at": "2026-09-24T09:20:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "be173298d2bce8f5",
+      "title": "Bleetz Network",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/bleetz-network",
+          "target_url": "https://www.producthunt.com/products/bleetz-network",
+          "independent": false,
+          "title": "Bleetz Network",
+          "summary": "AI agent-to-agent VC fundraising & scouting network Discussion | Link",
+          "published_at": "2026-09-23T18:37:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dc3acf34fd21ea92",
+      "title": "Aks.ai",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/aks-ai",
+          "target_url": "https://www.producthunt.com/products/aks-ai",
+          "independent": false,
+          "title": "Aks.ai",
+          "summary": "Your personal companion for guided self-reflection. Discussion | Link",
+          "published_at": "2026-09-23T14:53:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "88dbea5a31a06584",
+      "title": "How I Integrated AI into Our Customer Service Strategy Without Breakdowns",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@GlobalThreads/how-i-integrated-ai-into-our-customer-service-strategy-without-breakdowns-23f13b643ffc",
+          "target_url": "https://medium.com/@GlobalThreads/how-i-integrated-ai-into-our-customer-service-strategy-without-breakdowns-23f13b643ffc",
+          "independent": false,
+          "title": "How I Integrated AI into Our Customer Service Strategy Without Breakdowns",
+          "summary": "I run support operations for a small team that grew faster than our headcount ever did. Eighteen months ago, I was the one telling my boss… Continue reading on Medium »",
+          "published_at": "2026-09-25T07:51:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da462220741ad15d",
+      "title": "High-Income Countries Take Most of AI Everything",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hamzatanveerahmad47/high-income-countries-take-most-of-ai-everything-d6adc847cab8",
+          "target_url": "https://medium.com/@hamzatanveerahmad47/high-income-countries-take-most-of-ai-everything-d6adc847cab8",
+          "independent": false,
+          "title": "High-Income Countries Take Most of AI Everything",
+          "summary": "Who Actually Produces the World’s AI Innovation? Continue reading on Medium »",
+          "published_at": "2026-09-25T07:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9bc8bb6589357ec7",
+      "title": "Everyone Can Create Content Now. So What Makes You Worth Following?",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@thearjittaneja/everyone-can-create-content-now-so-what-makes-you-worth-following-dd995bc511e9",
+          "target_url": "https://medium.com/@thearjittaneja/everyone-can-create-content-now-so-what-makes-you-worth-following-dd995bc511e9",
+          "independent": false,
+          "title": "Everyone Can Create Content Now. So What Makes You Worth Following?",
+          "summary": "Sometimes I scroll through my feed and feel like I have already read the next post. Continue reading on Medium »",
+          "published_at": "2026-09-25T07:50:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a38bc253164c8f67",
+      "title": "The Machines Built a Society Before Anyone Noticed the Break-In",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/x-patriot-the-fifth-column/the-machines-built-a-society-before-anyone-noticed-the-break-in-afd48f96947f",
+          "target_url": "https://medium.com/x-patriot-the-fifth-column/the-machines-built-a-society-before-anyone-noticed-the-break-in-afd48f96947f",
+          "independent": false,
+          "title": "The Machines Built a Society Before Anyone Noticed the Break-In",
+          "summary": "Months before OpenAI’s agents hacked Hugging Face, they outwitted a wiki janitor, impersonated an administrator, and started sacrificing… Continue reading on X Patriot — The Fifth Column »",
+          "published_at": "2026-09-25T07:49:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7e00a03375c7795a",
+      "title": "AI-Based Mobile App Development",
+      "first_seen": "2026-09-25T17:01:25+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@padmapriya2505301/ai-based-mobile-app-development-abe9a8cd371f",
+          "target_url": "https://medium.com/@padmapriya2505301/ai-based-mobile-app-development-abe9a8cd371f",
+          "independent": false,
+          "title": "AI-Based Mobile App Development",
+          "summary": "AI-Based Mobile App Development: Building Smarter Mobile Applications : Continue reading on Medium »",
+          "published_at": "2026-09-25T07:48:56+00:00",
           "date_precision": "time"
         }
       ],
