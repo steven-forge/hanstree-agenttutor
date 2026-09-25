@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T04:01:12.170884+09:00",
-  "window_start": "2026-07-28T04:01:12.170884+09:00",
-  "window_end": "2026-09-26T04:01:12.170884+09:00",
+  "collected_at": "2026-09-26T05:00:54.525401+09:00",
+  "window_start": "2026-07-28T05:00:54.525401+09:00",
+  "window_end": "2026-09-26T05:00:54.525401+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -9,10 +9,10 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 127,
+      "skipped_count": 128,
       "coverage_limited": false
     },
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 30,
+      "excluded_count": 28,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 16,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -155,10 +155,10 @@
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
-      "excluded_count": 19,
-      "skipped_count": 1,
+      "excluded_count": 20,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -269,7 +269,7 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 6,
       "skipped_count": 3,
@@ -277,25 +277,25 @@
     }
   ],
   "new_count": 1,
-  "archive_count": 292,
+  "archive_count": 293,
   "candidates": [
     {
-      "id": "9de028fbe46cac8b",
-      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/proaction",
-      "source_summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
-      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
-      "fetched_at": "2026-09-26T04:01:12+09:00",
-      "published_at": "2026-09-25T19:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "프로액션은 코덱스로 매출을 60% 높이고 75시간 이상을 절약합니다",
-      "source_summary_ko": "Proaction은 Codex, GPT-Live-1 및 GPT-6 Astra를 사용하여 현대적인 차량 관리를 더 빠르게 구축, 운영 및 판매합니다."
+      "id": "baa862a5a9c2bcbd",
+      "title": "Using Claude Code: Spending your effort",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/spending-your-effort",
+      "source_summary": "What effort really is and when to use which level in Claude Code, from my own tests of three builds and a deep dive into Terminal-Bench 3.0 on Opus 5.5 and Fable 5.1.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-26T05:01:17+09:00",
+      "published_on": "2026-09-25",
+      "date_precision": "day",
+      "title_ko": "Claude Code 사용: 노력하기",
+      "source_summary_ko": "Claude Code에서 제가 직접 테스트한 세 가지 빌드와 Opus 5.5 및 Fable 5.1의 Terminal-Bench 3.0에 대한 심층 분석을 통해 실제로 어떤 노력을 언제 사용해야 하는지 알 수 있습니다."
     }
   ],
-  "hourly_collected_at": "2026-09-26T04:01:36.016712+09:00",
-  "hourly_window_start": "2026-09-23T04:01:36.016712+09:00",
+  "hourly_collected_at": "2026-09-26T05:01:19.391564+09:00",
+  "hourly_window_start": "2026-09-23T05:01:19.391564+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -768,48 +768,6 @@
           "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
           "summary": "",
           "published_at": "2026-09-23T03:38:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "811bcae574a076a7",
-      "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai",
-          "target_url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai",
-          "independent": true,
-          "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
-          "summary": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally.",
-          "published_at": "2026-09-22T20:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "a8ca25f3731cf08a",
-      "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence",
-          "target_url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence",
-          "independent": true,
-          "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
-          "summary": "Meta says Muse was built from scratch, but acknowledges the AI assistant was \"heavily inspired\" by OpenClaw — down to some of its workspace filenames and content.",
-          "published_at": "2026-09-22T19:09:11+00:00",
           "date_precision": "time"
         }
       ],
@@ -14561,11 +14519,22 @@
           "summary": "",
           "published_at": "2026-09-24T20:27:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal",
+          "target_url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal",
+          "independent": true,
+          "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
+          "summary": "Anthropic has committed $11.6 billion over seven years to Akamai's cloud infrastructure, a bet on CPUs that could grow to about $20 billion, and in an unusual arrangement, Akamai is giving Anthropic a potential stake of up to 5% of its stock that grows as Anthropic spends more.",
+          "published_at": "2026-09-25T19:13:38+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "0d0ea14f6ce3b724",
@@ -20525,6 +20494,258 @@
           "title": "The Hardest Product Data Question Isn’t “What’s Wrong?” It’s “Which System Do We Trust?”",
           "summary": "A feed, product page and structured data can all disagree. Automation can spot that in seconds. Deciding which one is actually right is… Continue reading on Medium »",
           "published_at": "2026-09-25T18:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6d34fe46118bdbca",
+      "title": "Geely's AI fast charging 'heals' EV batteries for 20% more cycle life",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849171",
+          "target_url": "https://electrek.co/2026/09/25/geely-ai-fast-charging-heals-ev-batteries-pulse-restoration",
+          "independent": false,
+          "title": "Geely's AI fast charging 'heals' EV batteries for 20% more cycle life",
+          "summary": "",
+          "published_at": "2026-09-25T20:00:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0f3acc683e8ce06d",
+      "title": "AI-Powered PDF Extraction for Finance",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849118",
+          "target_url": "https://pedfs.com/",
+          "independent": false,
+          "title": "AI-Powered PDF Extraction for Finance",
+          "summary": "",
+          "published_at": "2026-09-25T19:55:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6a28e7b2178fd656",
+      "title": "Pluto: A StarCraft Brood War neural network trained by self-play RL",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849117",
+          "target_url": "https://github.com/tscmoo/pluto",
+          "independent": false,
+          "title": "Pluto: A StarCraft Brood War neural network trained by self-play RL",
+          "summary": "",
+          "published_at": "2026-09-25T19:55:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ce5fad47c1c7076b",
+      "title": "OpenAI Keeps Hacking and Hacking and",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848954",
+          "target_url": "https://securityboulevard.com/2026/09/openai-keeps-hacking-and-hacking-and",
+          "independent": false,
+          "title": "OpenAI Keeps Hacking and Hacking and",
+          "summary": "",
+          "published_at": "2026-09-25T19:37:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b722bcaf7b05f668",
+      "title": "Show HN: AgentLens – Replay and compare Codex runs",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848914",
+          "target_url": "https://github.com/fang520huang-lgtm/AgentLens",
+          "independent": false,
+          "title": "Show HN: AgentLens – Replay and compare Codex runs",
+          "summary": "",
+          "published_at": "2026-09-25T19:33:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a324c4c3c3e617a5",
+      "title": "Pope: AI must serve humans not become tool of domination",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848734",
+          "target_url": "https://www.euronews.com/2026/09/25/ai-must-serve-humans-rather-than-become-an-instrument-of-domination-and-injustice-pope-war",
+          "independent": false,
+          "title": "Pope: AI must serve humans not become tool of domination",
+          "summary": "",
+          "published_at": "2026-09-25T19:18:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dc204a3ddc33a64e",
+      "title": "A reminder on why basic prompt caching is so important to build AI agents",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848678",
+          "target_url": "https://www.revefi.com/blog/how-revefi-reduced-its-data-agents-spend",
+          "independent": false,
+          "title": "A reminder on why basic prompt caching is so important to build AI agents",
+          "summary": "",
+          "published_at": "2026-09-25T19:12:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5d989f2d3a205e06",
+      "title": "OpenAI Agents Attacked RubyGems Two Months Before Hugging Face: The Hugging Face Incident and the…",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/nationin/openai-agents-attacked-rubygems-two-months-before-hugging-face-the-hugging-face-incident-and-the-5d1384aefdee",
+          "target_url": "https://medium.com/nationin/openai-agents-attacked-rubygems-two-months-before-hugging-face-the-hugging-face-incident-and-the-5d1384aefdee",
+          "independent": false,
+          "title": "OpenAI Agents Attacked RubyGems Two Months Before Hugging Face: The Hugging Face Incident and the…",
+          "summary": "Introduction Continue reading on Nationin »",
+          "published_at": "2026-09-25T19:52:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f25c9cec57e9b6cf",
+      "title": "Yarın yapay zeka tantanası bitse ne olur?",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@Mohamed_Fouadi/yar%C4%B1n-yapay-zeka-tantanas%C4%B1-bitse-ne-olur-542014b79234",
+          "target_url": "https://medium.com/@Mohamed_Fouadi/yar%C4%B1n-yapay-zeka-tantanas%C4%B1-bitse-ne-olur-542014b79234",
+          "independent": false,
+          "title": "Yarın yapay zeka tantanası bitse ne olur?",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-25T19:51:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "26b63ec43e0b04ce",
+      "title": "China Just Dropped Laya MLX | Open-Source AI Model Challenging JEV",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@heyambujsingh/china-just-dropped-laya-mlx-the-open-source-ai-model-challenging-jev-2f8324774c76",
+          "target_url": "https://medium.com/@heyambujsingh/china-just-dropped-laya-mlx-the-open-source-ai-model-challenging-jev-2f8324774c76",
+          "independent": false,
+          "title": "China Just Dropped Laya MLX | Open-Source AI Model Challenging JEV",
+          "summary": "The AI world has become obsessed with bigger models. Continue reading on Medium »",
+          "published_at": "2026-09-25T19:48:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9d6e778168cd0a68",
+      "title": "5 AI Tools I Use Every Day to Save 3 Hours",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ii4812357/5-ai-tools-i-use-every-day-to-save-3-hours-44aaa1b36f29",
+          "target_url": "https://medium.com/@ii4812357/5-ai-tools-i-use-every-day-to-save-3-hours-44aaa1b36f29",
+          "independent": false,
+          "title": "5 AI Tools I Use Every Day to Save 3 Hours",
+          "summary": "I am not a tech expert. I just found these tools and they changed my daily work. Continue reading on Medium »",
+          "published_at": "2026-09-25T19:47:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "79d300ee1cabbe6a",
+      "title": "Harness Engineering — AI Agent Permissions as Policy in the Call Path — Action Matrix and Mode",
+      "first_seen": "2026-09-26T05:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@wasowski.jarek/harness-engineering-ai-agent-permissions-as-policy-in-the-call-path-action-matrix-and-mode-f064b2910cd0",
+          "target_url": "https://medium.com/@wasowski.jarek/harness-engineering-ai-agent-permissions-as-policy-in-the-call-path-action-matrix-and-mode-f064b2910cd0",
+          "independent": false,
+          "title": "Harness Engineering — AI Agent Permissions as Policy in the Call Path — Action Matrix and Mode",
+          "summary": "An action-class × mode matrix, a pre-tool hook, and command grammar instead of regex — how to build an AI agent permissions policy in the… Continue reading on Medium »",
+          "published_at": "2026-09-25T19:46:40+00:00",
           "date_precision": "time"
         }
       ],

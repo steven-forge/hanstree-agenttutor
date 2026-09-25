@@ -1,19 +1,19 @@
 {
   "news": {
-    "checked_at": "2026-09-26T04:01:36.016712+09:00",
+    "checked_at": "2026-09-26T05:01:19.391564+09:00",
     "status": "partial",
     "candidate_count": 1,
-    "archive_count": 292,
+    "archive_count": 293,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 127,
+        "skipped_count": 128,
         "coverage_limited": false
       },
       {
@@ -101,9 +101,9 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 9,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 30,
+        "excluded_count": 28,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -148,7 +148,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 16,
+        "skipped_count": 19,
         "coverage_limited": false
       },
       {
@@ -156,10 +156,10 @@
         "name": "Ars Technica",
         "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
-        "excluded_count": 19,
-        "skipped_count": 1,
+        "excluded_count": 20,
+        "skipped_count": 0,
         "coverage_limited": false
       },
       {
@@ -167,10 +167,10 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 8,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 22,
-        "skipped_count": 8,
+        "excluded_count": 23,
+        "skipped_count": 7,
         "coverage_limited": false
       },
       {
@@ -270,14 +270,14 @@
         "name": "Claude.dev Blog",
         "url": "https://claude.dev/",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 6,
         "skipped_count": 3,
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 918
+    "pending_event_count": 928
   },
   "documents": {
     "checked_at": "2026-09-25T07:53:24.500011+09:00",
