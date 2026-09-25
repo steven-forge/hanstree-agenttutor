@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T19:00:51.878818+09:00",
-  "window_start": "2026-07-27T19:00:51.878818+09:00",
-  "window_end": "2026-09-25T19:00:51.878818+09:00",
+  "collected_at": "2026-09-25T20:00:49.219011+09:00",
+  "window_start": "2026-07-27T20:00:49.219011+09:00",
+  "window_end": "2026-09-25T20:00:49.219011+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -102,7 +102,7 @@
       "status": "ok",
       "count": 8,
       "held_count": 0,
-      "excluded_count": 32,
+      "excluded_count": 30,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 22,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 11,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 4,
+      "excluded_count": 2,
       "skipped_count": 11,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T19:01:19.378803+09:00",
-  "hourly_window_start": "2026-09-22T19:01:19.378803+09:00",
+  "hourly_collected_at": "2026-09-25T20:01:12.839264+09:00",
+  "hourly_window_start": "2026-09-22T20:01:12.839264+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2976,6 +2976,17 @@
           "title": "Show HN: LabLoop – isolated infrastructure for LLM-driven scientific experiments",
           "summary": "",
           "published_at": "2026-09-25T09:26:43+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842358",
+          "target_url": "https://agririgo.com",
+          "independent": false,
+          "title": "Show HN: Rigo Studio | AI Farm Intelligence",
+          "summary": "",
+          "published_at": "2026-09-25T10:02:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -6561,6 +6572,17 @@
           "title": "Uproar in France over award-winning author accused of using AI",
           "summary": "",
           "published_at": "2026-09-23T17:41:45+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842707",
+          "target_url": "https://www.bbc.com/news/articles/ck7v4y45893go",
+          "independent": false,
+          "title": "Uproar in France over award-winning author accused of using AI",
+          "summary": "",
+          "published_at": "2026-09-25T10:48:32+00:00",
           "date_precision": "time"
         }
       ],
@@ -10347,27 +10369,6 @@
           "title": "Bitrise Build Hub",
           "summary": "GitHub Actions runners that build 2x faster for your agents Discussion | Link",
           "published_at": "2026-09-23T19:34:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "934838420d972cdf",
-      "title": "CtrlOps 1.0",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/ctrlops",
-          "target_url": "https://www.producthunt.com/products/ctrlops",
-          "independent": false,
-          "title": "CtrlOps 1.0",
-          "summary": "Your server. Audited, managed, and deployed with AI. Discussion | Link",
-          "published_at": "2026-09-22T10:20:30+00:00",
           "date_precision": "time"
         }
       ],
@@ -18036,6 +18037,258 @@
           "title": "AI Made Me a 3× Faster Developer. So Why Do I Miss Coding?",
           "summary": "The strange psychological trade-off of AI coding agents, developer productivity, and the disappearing feeling of craftsmanship. Continue reading on Medium »",
           "published_at": "2026-09-25T09:49:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2e55831155014269",
+      "title": "Anthropic: The Situation Report",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842788",
+          "target_url": "https://www.anthropic.com/features/ebola-response",
+          "independent": false,
+          "title": "Anthropic: The Situation Report",
+          "summary": "",
+          "published_at": "2026-09-25T10:59:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e24d21ced4ef965d",
+      "title": "Can Claude fix itself? From no to maybe",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842744",
+          "target_url": "https://www.sylvainkalache.com/blog/can-claude-fix-itself",
+          "independent": false,
+          "title": "Can Claude fix itself? From no to maybe",
+          "summary": "",
+          "published_at": "2026-09-25T10:52:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c984a01f495bffd2",
+      "title": "Four things I learned throughout the last years working with AI",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842633",
+          "target_url": "https://www.ssp.sh/brain/what-i-learned-writing-with-ai",
+          "independent": false,
+          "title": "Four things I learned throughout the last years working with AI",
+          "summary": "",
+          "published_at": "2026-09-25T10:38:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2690558920b683f4",
+      "title": "AI-Powered Fuzzing with the GitHub Security Lab Taskflow Agent",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842514",
+          "target_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent",
+          "independent": false,
+          "title": "AI-Powered Fuzzing with the GitHub Security Lab Taskflow Agent",
+          "summary": "",
+          "published_at": "2026-09-25T10:23:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "299151de1ac5c310",
+      "title": "GitHub statistics · Velocity Radar",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/github-statistics-velocity-radar",
+          "target_url": "https://www.producthunt.com/products/github-statistics-velocity-radar",
+          "independent": false,
+          "title": "GitHub statistics · Velocity Radar",
+          "summary": "Real GitHub momentum, including private repos & AI agents Discussion | Link",
+          "published_at": "2026-09-24T09:51:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2aee82d75ddfc818",
+      "title": "From Agent Authorization to AI Production Evaluation: QCon AI New York 2026",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/qcon-ai-newyork-2026-sessions",
+          "target_url": "https://www.infoq.com/news/2026/09/qcon-ai-newyork-2026-sessions",
+          "independent": true,
+          "title": "From Agent Authorization to AI Production Evaluation: QCon AI New York 2026",
+          "summary": "QCon AI New York has confirmed 23 sessions covering agent authorization, production guardrails, shared inference infrastructure, and the evaluation of AI systems after deployment. By Artenisa Chatziou",
+          "published_at": "2026-09-25T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "9da9b98c1f7ed966",
+      "title": "Podcast: The Future of AI: From Enterprise Adoption to Open Source Sovereignty",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/podcasts/enterprise-adoption-open-source-sovereignty",
+          "target_url": "https://www.infoq.com/podcasts/enterprise-adoption-open-source-sovereignty",
+          "independent": true,
+          "title": "Podcast: The Future of AI: From Enterprise Adoption to Open Source Sovereignty",
+          "summary": "In this episode, Meryem Arik, Clara Higuera Cabañes, and Jeff Smith, demystify the current state of AI in the enterprise. The discussion navigates the \"industrial revolution\" moment in AI adoption, exploring why companies are rushing toward these technologies to maintain competitive advantages while grappling with reliability, ethical considerations, and the evolving role of software engineering. By Meryem Arik, Clara Higuera Cabañes, Jeff Smith",
+          "published_at": "2026-09-25T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "2b721593c18b285a",
+      "title": "Selenium Automation Testing: How Does It Work in Real-World Projects?",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@cispro/selenium-automation-testing-how-does-it-work-in-real-world-projects-df0e19bc5f85",
+          "target_url": "https://medium.com/@cispro/selenium-automation-testing-how-does-it-work-in-real-world-projects-df0e19bc5f85",
+          "independent": false,
+          "title": "Selenium Automation Testing: How Does It Work in Real-World Projects?",
+          "summary": "Software applications are becoming more complex, and testing every feature manually after every update can require significant time and… Continue reading on Medium »",
+          "published_at": "2026-09-25T10:47:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d7ac221b1c436d0c",
+      "title": "How I Achieved Fast Growth in Writing.",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/pen-with-paper/how-i-achieved-fast-growth-in-writing-e656b7d4d33b",
+          "target_url": "https://medium.com/pen-with-paper/how-i-achieved-fast-growth-in-writing-e656b7d4d33b",
+          "independent": false,
+          "title": "How I Achieved Fast Growth in Writing.",
+          "summary": "The Proven Habits Behind My Rapid Growth as a Writer. Continue reading on Pen With Paper »",
+          "published_at": "2026-09-25T10:46:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "49262626062ec247",
+      "title": "Is “One-Prompt” Software Actually Ready for Kubernetes?",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@khushijigenshah/is-one-prompt-software-actually-ready-for-kubernetes-f835d34c5593",
+          "target_url": "https://medium.com/@khushijigenshah/is-one-prompt-software-actually-ready-for-kubernetes-f835d34c5593",
+          "independent": false,
+          "title": "Is “One-Prompt” Software Actually Ready for Kubernetes?",
+          "summary": "The generated manifest was never the hard part. I keep watching teams treat it like it was. Continue reading on Medium »",
+          "published_at": "2026-09-25T10:45:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3c9e26827fbaca8d",
+      "title": "Can AI Build a Kubernetes-Ready Application?",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@8080AI/can-ai-build-a-kubernetes-ready-application-304b683a6185",
+          "target_url": "https://medium.com/@8080AI/can-ai-build-a-kubernetes-ready-application-304b683a6185",
+          "independent": false,
+          "title": "Can AI Build a Kubernetes-Ready Application?",
+          "summary": "What AI can generate for production infrastructure and where teams still need to do the work themselves. Continue reading on Medium »",
+          "published_at": "2026-09-25T10:43:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c2e220205d259505",
+      "title": "My AI Model Was 100% Sure and Wrong Half the Time",
+      "first_seen": "2026-09-25T20:01:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sainarayana2311/my-ai-model-was-100-sure-and-wrong-half-the-time-a65bbf3fdda8",
+          "target_url": "https://medium.com/@sainarayana2311/my-ai-model-was-100-sure-and-wrong-half-the-time-a65bbf3fdda8",
+          "independent": false,
+          "title": "My AI Model Was 100% Sure and Wrong Half the Time",
+          "summary": "I ran 1,800 tests on an open-source decision model to find out when you can trust an AI’s confidence score. The answer depends on the… Continue reading on Medium »",
+          "published_at": "2026-09-25T10:42:49+00:00",
           "date_precision": "time"
         }
       ],
