@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T11:00:56.942791+09:00",
-  "window_start": "2026-07-27T11:00:56.942791+09:00",
-  "window_end": "2026-09-25T11:00:56.942791+09:00",
+  "collected_at": "2026-09-25T12:00:58.385187+09:00",
+  "window_start": "2026-07-27T12:00:58.385187+09:00",
+  "window_end": "2026-09-25T12:00:58.385187+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -31,7 +31,7 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 173,
       "skipped_count": 22,
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 6,
+      "excluded_count": 29,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 20,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,30 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 289,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-25T11:01:20.216362+09:00",
-  "hourly_window_start": "2026-09-22T11:01:20.216362+09:00",
+  "new_count": 1,
+  "archive_count": 290,
+  "candidates": [
+    {
+      "id": "64f08139f71bd035",
+      "title": "0.157.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.0",
+      "source_summary": "## New Features - Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. (#47332, #47347) - Enabled fullscreen transcripts by default and added Shift-click to extend text selections. (#47178, #47414) - Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. (#47179, #47318) - Added an `f` shortcut to fork conversations open in another app, preserving drafts and queued p",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-25T12:01:01+09:00",
+      "published_at": "2026-09-25T02:31:06+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.157.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 이전 모델에 대한 Amazon Bedrock 지원 및 마이그레이션 프롬프트를 포함하여 GPT-6 SOL 및 LUNA가 추가되었습니다. (# 47332, # 47347) - 기본적으로 전체 화면 대화 상자를 활성화하고 Shift-click을 추가하여 텍스트 선택을 확장합니다. (# 47178, # 47414) - 서버 설정이 호환되지 않을 때 복구 선택과 함께 적합한 대화식 세션에 대한 자동 백그라운드 서버 시작을 활성화합니다. (# 47179, # 47318) - 포크 대화에 `f` 바로 가기 추가 다른 앱에서 열어 임시글과 대기열을 보존합니다.",
+      "release_notes_ko": {
+        "new_features": "이전 모델에 대한 Amazon Bedrock 지원 및 마이그레이션 프롬프트를 포함하여 GPT-6 Sol 및 Luna가 추가되었습니다.\n기본적으로 전체 화면 대본을 사용하도록 설정하고 Shift-클릭을 추가하여 텍스트 선택 영역을 확장합니다.\n적합한 대화형 세션에 대해 자동 백그라운드 서버 시작을 활성화하고 서버 설정이 호환되지 않을 때 복구를 선택합니다.",
+        "bug_fixes": "스레드를 전환할 때 활성 음성 대화가 유지됩니다.\n활성 히스토리 검색을 방해하지 않고 턴이 끝나면 전송되지 않은 질문 답변을 컴포저로 복구했습니다.\n자동 화면 모드에서 SSH를 통해 tmux 마우스 설정을 존중하고 Terminal.app에 대한 기본 스크롤백을 복원했습니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-25T12:01:26.108925+09:00",
+  "hourly_window_start": "2026-09-22T12:01:26.108925+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2511,6 +2530,17 @@
           "summary": "",
           "published_at": "2026-09-23T04:51:25+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839624",
+          "target_url": "https://github.com/JohnHeibel/PDoomVideo",
+          "independent": false,
+          "title": "Claude Pop – I'm Upping My P(Doom)",
+          "summary": "",
+          "published_at": "2026-09-25T02:43:04+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2939,6 +2969,17 @@
           "title": "Show HN: Is your repo giving coding agents two different answers?",
           "summary": "",
           "published_at": "2026-09-23T05:07:14+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839560",
+          "target_url": "https://macrun.dev/agents",
+          "independent": false,
+          "title": "Show HN: A dedicated Mac that keeps Claude Code or Codex running 24/7",
+          "summary": "",
+          "published_at": "2026-09-25T02:33:30+00:00",
           "date_precision": "time"
         }
       ],
@@ -9082,6 +9123,17 @@
           "summary": "There are thousands of AI tools available right now. Continue reading on Medium »",
           "published_at": "2026-09-24T00:40:41+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@memorymandebvu9/7-ai-skills-you-can-learn-in-2026-that-can-actually-make-you-money-1e61beef5a8c",
+          "target_url": "https://medium.com/@memorymandebvu9/7-ai-skills-you-can-learn-in-2026-that-can-actually-make-you-money-1e61beef5a8c",
+          "independent": false,
+          "title": "7 AI Skills You Can Learn in 2026 That Can Actually Make You Money",
+          "summary": "Artificial intelligence is no longer something reserved for software engineers and large technology companies. Continue reading on Medium »",
+          "published_at": "2026-09-25T02:43:53+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -11361,6 +11413,17 @@
           "title": "Evolving programming languages in the AI era",
           "summary": "",
           "published_at": "2026-09-24T10:52:53+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839567",
+          "target_url": "https://dashbit.co/blog/evolving-ai-era",
+          "independent": false,
+          "title": "Evolving programming languages in the AI era",
+          "summary": "",
+          "published_at": "2026-09-25T02:34:39+00:00",
           "date_precision": "time"
         }
       ],
@@ -16140,6 +16203,195 @@
           "title": "Should you switch to Opus 5.5? The arithmetic and the fine print",
           "summary": "A worked bill comes out 24 percent lower rather than 40; one capability lead is real, and three are ties, and a footnote says some tasks… Continue reading on Generative AI »",
           "published_at": "2026-09-25T01:42:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b676f0fe0052d30b",
+      "title": "Am I too boring to need an AI Agent",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839500",
+          "target_url": "https://www.garbageday.email/p/am-i-too-boring-to-need-an-ai-agent",
+          "independent": false,
+          "title": "Am I too boring to need an AI Agent",
+          "summary": "",
+          "published_at": "2026-09-25T02:23:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f1c049f07cc4fb7c",
+      "title": "OpenAI and Microsoft Admits LLMs Are Destroying the Web and Built on Theft",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839469",
+          "target_url": "https://www.404media.co/doom-loop-openai-and-microsoft-admits-llms-are-destroying-the-web-and-built-on-theft",
+          "independent": false,
+          "title": "OpenAI and Microsoft Admits LLMs Are Destroying the Web and Built on Theft",
+          "summary": "",
+          "published_at": "2026-09-25T02:15:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5bd1f6881bad995",
+      "title": "Snowden on AI Surveillance and Freedom of Speech [video]",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839401",
+          "target_url": "https://www.youtube.com/watch?v=wytH7dPlCVw",
+          "independent": false,
+          "title": "Snowden on AI Surveillance and Freedom of Speech [video]",
+          "summary": "",
+          "published_at": "2026-09-25T02:04:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e8c2f7dea4abebbf",
+      "title": "Peer review in the LLM (mania) age",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839396",
+          "target_url": "https://www.humprog.org/~stephen/blog/research/llms-review-mania.html",
+          "independent": false,
+          "title": "Peer review in the LLM (mania) age",
+          "summary": "",
+          "published_at": "2026-09-25T02:04:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "745afaee010c2e01",
+      "title": "ESA and Mistral strengthen cooperation on AI",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839390",
+          "target_url": "https://www.esa.int/Newsroom/Press_Releases/ESA_and_Mistral_strengthen_cooperation_on_artificial_intelligence",
+          "independent": false,
+          "title": "ESA and Mistral strengthen cooperation on AI",
+          "summary": "",
+          "published_at": "2026-09-25T02:03:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d909cc50197cb3f9",
+      "title": "Generative vs. Agentic AI: From Helpful Chatbots to Proactive Partners",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nuwanmadhusankarulz/generative-vs-agentic-ai-from-helpful-chatbots-to-proactive-partners-0472a31e1651",
+          "target_url": "https://medium.com/@nuwanmadhusankarulz/generative-vs-agentic-ai-from-helpful-chatbots-to-proactive-partners-0472a31e1651",
+          "independent": false,
+          "title": "Generative vs. Agentic AI: From Helpful Chatbots to Proactive Partners",
+          "summary": "If you have used artificial intelligence recently, chances are you have interacted with tools like ChatGPT, Claude, or AI image generators… Continue reading on Medium »",
+          "published_at": "2026-09-25T02:43:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "417d027aa61eac33",
+      "title": "What Is Heat Mapping and How Does It Help UX Designers?",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@designerlifestyle/what-is-heat-mapping-and-how-does-it-help-ux-designers-0186e17fbb3c",
+          "target_url": "https://medium.com/@designerlifestyle/what-is-heat-mapping-and-how-does-it-help-ux-designers-0186e17fbb3c",
+          "independent": false,
+          "title": "What Is Heat Mapping and How Does It Help UX Designers?",
+          "summary": "https://contentsquare.com/guides/heatmaps/ux/ Continue reading on Medium »",
+          "published_at": "2026-09-25T02:41:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9002ddaaaf2b047d",
+      "title": "Jev Explained: Like You’re Actually Going to Use It",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@devopslesson/jev-explained-like-youre-actually-going-to-use-it-c3502ebb16f0",
+          "target_url": "https://medium.com/@devopslesson/jev-explained-like-youre-actually-going-to-use-it-c3502ebb16f0",
+          "independent": false,
+          "title": "Jev Explained: Like You’re Actually Going to Use It",
+          "summary": "TypeSafe’s new model doesn’t write. It decides. Here’s what that means for your code, with diagrams, a worked example, and a quick quiz. Continue reading on Medium »",
+          "published_at": "2026-09-25T02:41:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c52a5357fa422017",
+      "title": "The Invisible Workforce: Why 2026 Is the Year AI Stopped Assisting and Started Doing",
+      "first_seen": "2026-09-25T12:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@SamhiithaReddyDevarapally/the-invisible-workforce-why-2026-is-the-year-ai-stopped-assisting-and-started-doing-d54acdab0648",
+          "target_url": "https://medium.com/@SamhiithaReddyDevarapally/the-invisible-workforce-why-2026-is-the-year-ai-stopped-assisting-and-started-doing-d54acdab0648",
+          "independent": false,
+          "title": "The Invisible Workforce: Why 2026 Is the Year AI Stopped Assisting and Started Doing",
+          "summary": "For a decade, artificial intelligence sat beside us. It suggested. It summarized. It autocompleted. Continue reading on Medium »",
+          "published_at": "2026-09-25T02:39:58+00:00",
           "date_precision": "time"
         }
       ],
