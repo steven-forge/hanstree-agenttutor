@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T12:00:58.385187+09:00",
-  "window_start": "2026-07-27T12:00:58.385187+09:00",
-  "window_end": "2026-09-25T12:00:58.385187+09:00",
+  "collected_at": "2026-09-25T13:00:54.543828+09:00",
+  "window_start": "2026-07-27T13:00:54.543828+09:00",
+  "window_end": "2026-09-25T13:00:54.543828+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 128,
+      "skipped_count": 127,
       "coverage_limited": false
     },
     {
@@ -31,10 +31,10 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 173,
-      "skipped_count": 22,
+      "skipped_count": 23,
       "coverage_limited": false
     },
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 1,
+      "excluded_count": 31,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 20,
-      "skipped_count": 10,
+      "excluded_count": 21,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -276,30 +276,11 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 290,
-  "candidates": [
-    {
-      "id": "64f08139f71bd035",
-      "title": "0.157.0",
-      "source_id": "codex-releases",
-      "source_name": "Codex Releases",
-      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.0",
-      "source_summary": "## New Features - Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. (#47332, #47347) - Enabled fullscreen transcripts by default and added Shift-click to extend text selections. (#47178, #47414) - Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. (#47179, #47318) - Added an `f` shortcut to fork conversations open in another app, preserving drafts and queued p",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-25T12:01:01+09:00",
-      "published_at": "2026-09-25T02:31:06+00:00",
-      "date_precision": "time",
-      "title_ko": "Codex 0.157.0 버전 출시",
-      "source_summary_ko": "# # 새로운 기능 - 이전 모델에 대한 Amazon Bedrock 지원 및 마이그레이션 프롬프트를 포함하여 GPT-6 SOL 및 LUNA가 추가되었습니다. (# 47332, # 47347) - 기본적으로 전체 화면 대화 상자를 활성화하고 Shift-click을 추가하여 텍스트 선택을 확장합니다. (# 47178, # 47414) - 서버 설정이 호환되지 않을 때 복구 선택과 함께 적합한 대화식 세션에 대한 자동 백그라운드 서버 시작을 활성화합니다. (# 47179, # 47318) - 포크 대화에 `f` 바로 가기 추가 다른 앱에서 열어 임시글과 대기열을 보존합니다.",
-      "release_notes_ko": {
-        "new_features": "이전 모델에 대한 Amazon Bedrock 지원 및 마이그레이션 프롬프트를 포함하여 GPT-6 Sol 및 Luna가 추가되었습니다.\n기본적으로 전체 화면 대본을 사용하도록 설정하고 Shift-클릭을 추가하여 텍스트 선택 영역을 확장합니다.\n적합한 대화형 세션에 대해 자동 백그라운드 서버 시작을 활성화하고 서버 설정이 호환되지 않을 때 복구를 선택합니다.",
-        "bug_fixes": "스레드를 전환할 때 활성 음성 대화가 유지됩니다.\n활성 히스토리 검색을 방해하지 않고 턴이 끝나면 전송되지 않은 질문 답변을 컴포저로 복구했습니다.\n자동 화면 모드에서 SSH를 통해 tmux 마우스 설정을 존중하고 Terminal.app에 대한 기본 스크롤백을 복원했습니다."
-      }
-    }
-  ],
-  "hourly_collected_at": "2026-09-25T12:01:26.108925+09:00",
-  "hourly_window_start": "2026-09-22T12:01:26.108925+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-25T13:01:19.957199+09:00",
+  "hourly_window_start": "2026-09-22T13:01:19.957199+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -6830,6 +6811,17 @@
           "title": "How to serve trillions of tokens for trillion-parameter coding agents",
           "summary": "",
           "published_at": "2026-09-24T11:44:58+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839759",
+          "target_url": "https://modal.com/blog/trillion-tokens-trillion-parameters",
+          "independent": false,
+          "title": "How to serve trillions of tokens for trillion-parameter coding agents",
+          "summary": "",
+          "published_at": "2026-09-25T03:07:38+00:00",
           "date_precision": "time"
         }
       ],
@@ -13421,6 +13413,17 @@
           "summary": "Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The \"Live Avatar\" will lip-sync and show different facial expressions during conversations, but it's currently only available to Gemini Enterprise customers. As noted by Google, Live Avatar can transition between the 97 […]",
           "published_at": "2026-09-24T19:59:26+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840035",
+          "target_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available",
+          "independent": false,
+          "title": "Power your agents: Gemini 3.8 Live with Live Avatar is now generally available",
+          "summary": "",
+          "published_at": "2026-09-25T03:55:38+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -16392,6 +16395,216 @@
           "title": "The Invisible Workforce: Why 2026 Is the Year AI Stopped Assisting and Started Doing",
           "summary": "For a decade, artificial intelligence sat beside us. It suggested. It summarized. It autocompleted. Continue reading on Medium »",
           "published_at": "2026-09-25T02:39:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "af379169630f05a9",
+      "title": "We Built a City of 10k AI Researchers",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840006",
+          "target_url": "https://lab.cloud/society",
+          "independent": false,
+          "title": "We Built a City of 10k AI Researchers",
+          "summary": "",
+          "published_at": "2026-09-25T03:49:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "85f66a6419d173a7",
+      "title": "Scaling Laws for Neural Language Models (first \"scaling laws\" paper from 2020)",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839875",
+          "target_url": "https://arxiv.org/abs/2001.08361",
+          "independent": false,
+          "title": "Scaling Laws for Neural Language Models (first \"scaling laws\" paper from 2020)",
+          "summary": "",
+          "published_at": "2026-09-25T03:27:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5e1e74330a9a2b8f",
+      "title": "Search and Recommender Engines AI",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839868",
+          "target_url": "https://github.com/alopatenko/LLMSearchRecommender",
+          "independent": false,
+          "title": "Search and Recommender Engines AI",
+          "summary": "",
+          "published_at": "2026-09-25T03:27:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "32fdadfbad31dbe6",
+      "title": "Using AI to Contribute to Open Source",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839852",
+          "target_url": "https://www.visidata.org/blog/2026/ai",
+          "independent": false,
+          "title": "Using AI to Contribute to Open Source",
+          "summary": "",
+          "published_at": "2026-09-25T03:24:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2d0211e1d5ae05dc",
+      "title": "Human Help to Survive AI",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839812",
+          "target_url": "https://humanityark.cdtglobal.org/",
+          "independent": false,
+          "title": "Human Help to Survive AI",
+          "summary": "",
+          "published_at": "2026-09-25T03:15:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2706d2582512c67d",
+      "title": "The First Step in the Disintermediation of University Education",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://gregtwemlow.medium.com/the-first-step-in-the-disintermediation-of-university-education-230caf24cec3",
+          "target_url": "https://gregtwemlow.medium.com/the-first-step-in-the-disintermediation-of-university-education-230caf24cec3",
+          "independent": false,
+          "title": "The First Step in the Disintermediation of University Education",
+          "summary": "A small Silicon Valley academy may reveal a much larger shift in how young people become capable, how employers find talent, and how… Continue reading on Medium »",
+          "published_at": "2026-09-25T03:38:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd79cac4ffda3a10",
+      "title": "Claude's New addTools() Can Reuse 98.7% of Your Next Request. Editing tools[] Reuses None.",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://pub.towardsai.net/claudes-new-addtools-can-reuse-98-7-of-your-next-request-editing-tools-reuses-none-ef1cfe0cc862",
+          "target_url": "https://pub.towardsai.net/claudes-new-addtools-can-reuse-98-7-of-your-next-request-editing-tools-reuses-none-ef1cfe0cc862",
+          "independent": false,
+          "title": "Claude's New addTools() Can Reuse 98.7% of Your Next Request. Editing tools[] Reuses None.",
+          "summary": "​ Continue reading on Towards AI »",
+          "published_at": "2026-09-25T03:38:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "025a2ad93a5ad5cb",
+      "title": "From Clicks to Content: The Netflix Analytics Process",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rashid3433/from-clicks-to-content-the-netflix-analytics-process-6a8a16430592",
+          "target_url": "https://medium.com/@rashid3433/from-clicks-to-content-the-netflix-analytics-process-6a8a16430592",
+          "independent": false,
+          "title": "From Clicks to Content: The Netflix Analytics Process",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-25T03:38:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d4d4763655eef5a7",
+      "title": "Workflow Automation Guide for Business Growth",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@imdigital/workflow-automation-guide-for-business-growth-7e5451a22cda",
+          "target_url": "https://medium.com/@imdigital/workflow-automation-guide-for-business-growth-7e5451a22cda",
+          "independent": false,
+          "title": "Workflow Automation Guide for Business Growth",
+          "summary": "Most workflows don’t break loudly. They just quietly grow a queue that nobody’s watching. Continue reading on Medium »",
+          "published_at": "2026-09-25T03:36:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0c143412379eb246",
+      "title": "What We Call AI Is a Device",
+      "first_seen": "2026-09-25T13:01:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lenatatsumori/what-we-call-ai-is-a-device-6f772be11328",
+          "target_url": "https://medium.com/@lenatatsumori/what-we-call-ai-is-a-device-6f772be11328",
+          "independent": false,
+          "title": "What We Call AI Is a Device",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-25T03:34:00+00:00",
           "date_precision": "time"
         }
       ],
