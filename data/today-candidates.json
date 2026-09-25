@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T20:00:49.219011+09:00",
-  "window_start": "2026-07-27T20:00:49.219011+09:00",
-  "window_end": "2026-09-25T20:00:49.219011+09:00",
+  "collected_at": "2026-09-25T21:01:23.909070+09:00",
+  "window_start": "2026-07-27T21:01:23.909070+09:00",
+  "window_end": "2026-09-25T21:01:23.909070+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 2,
+      "excluded_count": 34,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 7,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -188,9 +188,9 @@
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 2,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 18,
+      "excluded_count": 17,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 13,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 11,
+      "excluded_count": 3,
+      "skipped_count": 12,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T20:01:12.839264+09:00",
-  "hourly_window_start": "2026-09-22T20:01:12.839264+09:00",
+  "hourly_collected_at": "2026-09-25T21:01:54.703527+09:00",
+  "hourly_window_start": "2026-09-22T21:01:54.703527+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -813,27 +813,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "52b311a05fba7deb",
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-          "target_url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-          "independent": true,
-          "title": "Meta patches Muse exploit that let attackers control the AI agent",
-          "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers running local code to redirect transcription processing from Meta's servers […]",
-          "published_at": "2026-09-22T11:53:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "16afc5791c45315a",
       "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1165,27 +1144,6 @@
           "title": "Google Open-Sources AX a Kubernetes Style Orchestrator for Autonomous AI Agents",
           "summary": "Google has open-sourced AX, an orchestrator designed for managing autonomous AI agent workloads. AX operates on a runtime, Agent Substrate, treating agents as stateful actors. It provides resource-efficient task suspension and resumption to optimise performance and reduce latency in idle phases. It features a control plane with Kubernetes-style primitives for managing agent tasks and resources. By Olimpiu Pop",
           "published_at": "2026-09-22T14:14:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "e827236e6a62628c",
-      "title": "GitLab Duo Expands Self-Hosted AI Options Through Microsoft Foundry",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/gitlab-microsoft-foundry",
-          "target_url": "https://www.infoq.com/news/2026/09/gitlab-microsoft-foundry",
-          "independent": true,
-          "title": "GitLab Duo Expands Self-Hosted AI Options Through Microsoft Foundry",
-          "summary": "GitLab has expanded GitLab Duo Self-Hosted to support models deployed through Microsoft Foundry, letting organizations run GitLab's AI development capabilities against models hosted in their chosen Azure environment. By Craig Risi",
-          "published_at": "2026-09-22T12:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -7687,6 +7645,17 @@
           "title": "An LLM Beat NetHack",
           "summary": "",
           "published_at": "2026-09-23T20:30:58+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843192",
+          "target_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension",
+          "independent": false,
+          "title": "GPT 6 Astra beat NetHack",
+          "summary": "",
+          "published_at": "2026-09-25T11:40:19+00:00",
           "date_precision": "time"
         }
       ],
@@ -18289,6 +18258,258 @@
           "title": "My AI Model Was 100% Sure and Wrong Half the Time",
           "summary": "I ran 1,800 tests on an open-source decision model to find out when you can trust an AI’s confidence score. The answer depends on the… Continue reading on Medium »",
           "published_at": "2026-09-25T10:42:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "40579207c6f62d36",
+      "title": "Planning with Agents: Divided Worlds, Boundary Objects, and Thicker Interfaces",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843399",
+          "target_url": "https://maggieappleton.com/planning-agents",
+          "independent": false,
+          "title": "Planning with Agents: Divided Worlds, Boundary Objects, and Thicker Interfaces",
+          "summary": "",
+          "published_at": "2026-09-25T12:00:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e72715cb6aebe7f2",
+      "title": "Reimagining research papers as interactive and reliable AI agents",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843293",
+          "target_url": "https://www.nature.com/articles/s41586-026-11044-y",
+          "independent": false,
+          "title": "Reimagining research papers as interactive and reliable AI agents",
+          "summary": "",
+          "published_at": "2026-09-25T11:49:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3611e48b59c780bf",
+      "title": "The Biggest Risk of AI Wearables Is Not Personal Privacy – It's Human Agency",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843266",
+          "target_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7498938",
+          "independent": false,
+          "title": "The Biggest Risk of AI Wearables Is Not Personal Privacy – It's Human Agency",
+          "summary": "",
+          "published_at": "2026-09-25T11:46:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "885619cdce1e6be2",
+      "title": "Reverse Engineering a Pellet Stove Remote with Codex",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843038",
+          "target_url": "https://itunsecurity.wordpress.com/2026/09/25/mcz-musa-2-0-air-an-esphome-remote-for-home-assistant",
+          "independent": false,
+          "title": "Reverse Engineering a Pellet Stove Remote with Codex",
+          "summary": "",
+          "published_at": "2026-09-25T11:25:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7cd8f38d17356164",
+      "title": "Show HN: Skipper, a YouTube sponsor skipper using Ask Gemini and SponsorBlock",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49842997",
+          "target_url": "https://chromewebstore.google.com/detail/skipper-ai-â-youtube-spon/ncchpipphiigdfbpbjofbhbahcgckaob",
+          "independent": false,
+          "title": "Show HN: Skipper, a YouTube sponsor skipper using Ask Gemini and SponsorBlock",
+          "summary": "",
+          "published_at": "2026-09-25T11:21:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ab39be4845514124",
+      "title": "Microsoft thinks its new Copilot ‘super app’ will be as influential as Office",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot",
+          "target_url": "https://www.theverge.com/news/1000532/microsoft-copilot-super-app-chat-coding-autopilot",
+          "independent": true,
+          "title": "Microsoft thinks its new Copilot ‘super app’ will be as influential as Office",
+          "summary": "After teasing its new Copilot \"super app\" last month, Microsoft is officially unveiling it today. The redesigned Copilot app bundles three AI capabilities into a single interface of chat, coding, and agents. As part of the launch, Microsoft is also rebranding Scout, the AI personal assistant it unveiled at Build earlier this year, as Autopilot. […]",
+          "published_at": "2026-09-25T12:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "706f349116f5f8de",
+      "title": "Meta's Connect turns into a Muse takeover",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/meta-connect-turns-into-a-muse-takeover",
+          "target_url": "https://www.therundown.ai/articles/meta-connect-turns-into-a-muse-takeover",
+          "independent": true,
+          "title": "Meta's Connect turns into a Muse takeover",
+          "summary": "PLUS: Use Gemini Canvas to visualize Google Sheets",
+          "published_at": "2026-09-25T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d2e6bef4d5ae0afb",
+      "title": "Virtual Program Manager for Aplazo’s Tech Teams: How AI Bot Manages our Roadmap",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@prateekabhayjain/virtual-program-manager-for-aplazos-tech-teams-how-ai-bot-manages-our-roadmap-978bae8ae785",
+          "target_url": "https://medium.com/@prateekabhayjain/virtual-program-manager-for-aplazos-tech-teams-how-ai-bot-manages-our-roadmap-978bae8ae785",
+          "independent": false,
+          "title": "Virtual Program Manager for Aplazo’s Tech Teams: How AI Bot Manages our Roadmap",
+          "summary": "This is the story of how Data Science team at Aplazo built an AI Program Manager that watches an 88-task roadmap, nudges the right people… Continue reading on Medium »",
+          "published_at": "2026-09-25T11:52:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f5f7fa763a0d139d",
+      "title": "Don’t Lick the Glass: What AI Taught Me About Governance, Part 2",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/bluedobie-dialogues/dont-lick-the-glass-what-ai-taught-me-about-governance-part-2-f2eb78d87526",
+          "target_url": "https://medium.com/bluedobie-dialogues/dont-lick-the-glass-what-ai-taught-me-about-governance-part-2-f2eb78d87526",
+          "independent": false,
+          "title": "Don’t Lick the Glass: What AI Taught Me About Governance, Part 2",
+          "summary": "If You’re Fighting Round 23, You Missed the Exit at Round 5 Continue reading on Bluedobie Dialogues »",
+          "published_at": "2026-09-25T11:49:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "80e3419fd59e6650",
+      "title": "Your iPhone Can Be a Dashcam. The Save Button Is Only Half the Story.",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nassersalhi98/your-iphone-can-be-a-dashcam-the-save-button-is-only-half-the-story-99afa60b7ea9",
+          "target_url": "https://medium.com/@nassersalhi98/your-iphone-can-be-a-dashcam-the-save-button-is-only-half-the-story-99afa60b7ea9",
+          "independent": false,
+          "title": "Your iPhone Can Be a Dashcam. The Save Button Is Only Half the Story.",
+          "summary": "A practical look at AyniCam, rolling video buffers, local AI, and the details worth checking before you drive. Continue reading on Medium »",
+          "published_at": "2026-09-25T11:49:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "76fcc089171dede5",
+      "title": "AI In India: How Businesses Are Using Artificial Intelligence In 2026",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@abhinav.shuklaworld/ai-in-india-how-businesses-are-using-artificial-intelligence-in-2026-5565ce9b0949",
+          "target_url": "https://medium.com/@abhinav.shuklaworld/ai-in-india-how-businesses-are-using-artificial-intelligence-in-2026-5565ce9b0949",
+          "independent": false,
+          "title": "AI In India: How Businesses Are Using Artificial Intelligence In 2026",
+          "summary": "Introduction Continue reading on Medium »",
+          "published_at": "2026-09-25T11:47:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51d1542deb5a6775",
+      "title": "Jev Has Played Doom and Mario. I Made It Play Poker",
+      "first_seen": "2026-09-25T21:01:54+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marc.bara.iniesta/jev-has-played-doom-and-mario-i-made-it-play-poker-36d19fd40797",
+          "target_url": "https://medium.com/@marc.bara.iniesta/jev-has-played-doom-and-mario-i-made-it-play-poker-36d19fd40797",
+          "independent": false,
+          "title": "Jev Has Played Doom and Mario. I Made It Play Poker",
+          "summary": "Across all 169 starting hands, TypeSafe’s decision model played like a solid tight player, with two clear leaks Continue reading on Medium »",
+          "published_at": "2026-09-25T11:47:39+00:00",
           "date_precision": "time"
         }
       ],
