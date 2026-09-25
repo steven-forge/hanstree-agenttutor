@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T06:26:20.372597+09:00",
-  "window_start": "2026-07-28T06:26:20.372597+09:00",
-  "window_end": "2026-09-26T06:26:20.372597+09:00",
+  "collected_at": "2026-09-26T07:01:02.465016+09:00",
+  "window_start": "2026-07-28T07:01:02.465016+09:00",
+  "window_end": "2026-09-26T07:01:02.465016+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 176,
+      "excluded_count": 177,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -42,7 +42,7 @@
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 50,
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 2,
+      "excluded_count": 26,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 29,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,31 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 293,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-26T06:26:50.956532+09:00",
-  "hourly_window_start": "2026-09-23T06:26:50.956532+09:00",
+  "new_count": 1,
+  "archive_count": 294,
+  "candidates": [
+    {
+      "id": "35ab415a8fa4d23e",
+      "title": "v2.1.283",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "source_summary": "## What's changed - Added `x-claude-code-prompt-id` to the gateway hint headers so LLM gateways can group the requests that serve one user prompt; opt in with `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` - Added `availableModelsMatch` managed setting: with `\"exact\"`, an `availableModels` entry allows only the model version it names, so new releases stay blocked until listed - Added `deniedModels` managed setting to block specific models, even when `availableModels` allows them - Added MCP tool, WebFetch",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-26T07:01:28+09:00",
+      "published_at": "2026-09-25T21:50:12+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.283 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - LLM 게이트웨이가 하나의 사용자 프롬프트를 제공하는 요청을 그룹화할 수 있도록 게이트웨이 힌트 헤더에 `x-claude-code-prompt-id' 추가; `CLAUDE_CODE_GATEWAY_HINT_HEADERS = 1` 로 선택 - `availableModelsMatch` 관리 설정 추가: `\"exact\"` 로, `availableModels` 항목은 이름이 지정된 모델 버전만 허용하므로 새 릴리스가 나열될 때까지 차단된 상태로 유지 - 특정 모델을 차단하기 위해 `deniedModels` 관리 설정 추가, `availableModels` 를 통해 MCP 도구, WebFetch 추가",
+      "release_notes_ko": {
+        "new_features": "LLM 게이트웨이가 하나의 사용자 프롬프트를 제공하는 요청을 그룹화할 수 있도록 게이트웨이 힌트 헤더에 `x-claude-code-prompt-id' 를 추가했습니다. `CLAUDE_CODE_GATEWAY_HINT_HEADERS = 1` 로 선택\n`availableModelsMatch` 관리 설정이 추가되었습니다. `\"exact\"` 를 사용하면 `availableModels` 항목이 이름이 지정된 모델 버전만 허용하므로 나열될 때까지 새 릴리스가 차단됩니다.",
+        "bug_fixes": "턴이 일찍 종료될 때 지연된 도구 호출 또는 완료된 도구 결과가 손실되거나, 작업자가 다시 시작한 후 보류된 승인 프롬프트가 표시되고, 스트리밍되지 않는 대체 항목의 'result.usage` 가 손실되는 SDK 세션이 수정되었습니다.\n장기간 실행된 도구 호출이 백그라운드로 이동하면 MCP 진행률 알림이 폐기되는 수정되었습니다. 백그라운드 작업에 이제 최신 진행률이 표시됩니다.",
+        "chores": "Windows: `cmd/c rd`, 'rmdir`, `del' 또는 `erase` 가 드라이브 루트, 홈 폴더 및 `Remove-Item` 이 거부하는 기타 폴더를 삭제하도록 하는 PowerShell 도구가 수정되었습니다.\n`/mcp` 도구 목록 개선: 한 번에 더 많은 도구를 표시하고, 페이지 키와 마우스로 스크롤하고, 조직이 차단한 도구를 경고 아이콘으로 표시합니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-26T07:01:39.009902+09:00",
+  "hourly_window_start": "2026-09-23T07:01:39.009902+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -485,69 +505,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "8f302a505a0a7677",
-      "title": "AI is getting cheaper more quickly than any other transformative tech in history",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808743",
-          "target_url": "https://epoch.ai/publications/the-plunging-price-of-thought",
-          "independent": false,
-          "title": "AI is getting cheaper more quickly than any other transformative tech in history",
-          "summary": "",
-          "published_at": "2026-09-22T21:58:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3fe80c6be0b7625a",
-      "title": "AI Abundance Requires a 4-Hour Workweek",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808710",
-          "target_url": "https://elnahla.com/4-hour-workweek",
-          "independent": false,
-          "title": "AI Abundance Requires a 4-Hour Workweek",
-          "summary": "",
-          "published_at": "2026-09-22T21:54:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bf668aa358d55289",
-      "title": "Show HN: Jade Email. Unlimited emails for your domain plus AI Agent support",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808620",
-          "target_url": "https://jade.email/",
-          "independent": false,
-          "title": "Show HN: Jade Email. Unlimited emails for your domain plus AI Agent support",
-          "summary": "",
-          "published_at": "2026-09-22T21:46:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "44ae464c5a0cf852",
       "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -583,27 +540,6 @@
           "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
           "summary": "",
           "published_at": "2026-09-24T04:38:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "73cd9797447d67e4",
-      "title": "My Claude Code setup (11 commands, 3 agents) + shared Meta \"design third brain\"",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808554",
-          "target_url": "https://johnmaartifacts.substack.com/",
-          "independent": false,
-          "title": "My Claude Code setup (11 commands, 3 agents) + shared Meta \"design third brain\"",
-          "summary": "",
-          "published_at": "2026-09-22T21:42:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -13467,6 +13403,17 @@
           "summary": "",
           "published_at": "2026-09-24T17:44:38+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850421",
+          "target_url": "https://techworkersinquiry.org/ai",
+          "independent": false,
+          "title": "AI Workers' Inquiry 2026",
+          "summary": "",
+          "published_at": "2026-09-25T21:47:56+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -15788,6 +15735,17 @@
           "title": "Study shows AI is as good as human tutoring for GRE learning gains",
           "summary": "",
           "published_at": "2026-09-25T02:01:16+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850275",
+          "target_url": "https://arxiv.org/abs/2609.28470",
+          "independent": false,
+          "title": "AI and human tutoring yield equivalent GRE learning gains",
+          "summary": "",
+          "published_at": "2026-09-25T21:34:19+00:00",
           "date_precision": "time"
         }
       ],
@@ -21187,6 +21145,153 @@
           "title": "Human Understanding Is Now the Bottleneck",
           "summary": "AI Can Do the Work and Even the Judging. What Stays With Us Is Wanting and Understanding Continue reading on Medium »",
           "published_at": "2026-09-25T21:09:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d086a6e2b54237d0",
+      "title": "AI Companies Are in a Race Against Time",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850512",
+          "target_url": "https://econjared.substack.com/p/ai-companies-are-in-a-race-against",
+          "independent": false,
+          "title": "AI Companies Are in a Race Against Time",
+          "summary": "",
+          "published_at": "2026-09-25T22:01:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "df0d6ed6dae37364",
+      "title": "AI often makes writing worse. (Even if it makes it better)",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850396",
+          "target_url": "https://www.economist.com/britain/2026/09/24/ai-often-makes-writing-worse-even-if-it-makes-it-better",
+          "independent": false,
+          "title": "AI often makes writing worse. (Even if it makes it better)",
+          "summary": "",
+          "published_at": "2026-09-25T21:45:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cc62c635f5f27d09",
+      "title": "Le Secret des 1% : Comment Bâtir un Empire Digital Autour de 3 Piliers (Tech, Style & Vibe)",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@samynantoy/le-secret-des-1-comment-b%C3%A2tir-un-empire-digital-autour-de-3-piliers-tech-style-vibe-b4cf2d8adfb0",
+          "target_url": "https://medium.com/@samynantoy/le-secret-des-1-comment-b%C3%A2tir-un-empire-digital-autour-de-3-piliers-tech-style-vibe-b4cf2d8adfb0",
+          "independent": false,
+          "title": "Le Secret des 1% : Comment Bâtir un Empire Digital Autour de 3 Piliers (Tech, Style & Vibe)",
+          "summary": "Arrêtez de scroller. Si vous voulez dominer l’algorithme en 2026 et transformer votre audience en une armée de fans fidèles, lisez ceci… Continue reading on Medium »",
+          "published_at": "2026-09-25T21:49:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f0e24cd731d281a3",
+      "title": "JEV AI: Your AI Agent Is Wasting Money on Yes-or-No Questions",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@KreativeNomads/jev-ai-your-ai-agent-is-wasting-money-on-yes-or-no-questions-3baa65992112",
+          "target_url": "https://medium.com/@KreativeNomads/jev-ai-your-ai-agent-is-wasting-money-on-yes-or-no-questions-3baa65992112",
+          "independent": false,
+          "title": "JEV AI: Your AI Agent Is Wasting Money on Yes-or-No Questions",
+          "summary": "There’s now a model that can’t write a single sentence — and that’s exactly why it could make your AI agent faster, cheaper, and safer. Continue reading on Medium »",
+          "published_at": "2026-09-25T21:45:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a31c55cb235682c9",
+      "title": "# What Is Overfitting in Machine Learning? The AI Problem That's Too Good to Be True",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@salamabdullatif120/what-is-overfitting-in-machine-learning-the-ai-problem-thats-too-good-to-be-true-4d5a0b483a68",
+          "target_url": "https://medium.com/@salamabdullatif120/what-is-overfitting-in-machine-learning-the-ai-problem-thats-too-good-to-be-true-4d5a0b483a68",
+          "independent": false,
+          "title": "# What Is Overfitting in Machine Learning? The AI Problem That's Too Good to Be True",
+          "summary": "Photo by Andres Siimon on Unsplash Continue reading on Medium »",
+          "published_at": "2026-09-25T21:43:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "617837aec63ffbc3",
+      "title": "Why Every Tech Company Wants Its Own Chips",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-ai-brief/why-every-tech-company-wants-its-own-chips-57cc0c3cffca",
+          "target_url": "https://medium.com/the-ai-brief/why-every-tech-company-wants-its-own-chips-57cc0c3cffca",
+          "independent": false,
+          "title": "Why Every Tech Company Wants Its Own Chips",
+          "summary": "First google, then Apple, Amazon, and even OpenAI, why is everyone designing their own chips? Continue reading on The AI Brief »",
+          "published_at": "2026-09-25T21:43:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3a7a1daabd9d17e6",
+      "title": "When the Old Constraints Disappear",
+      "first_seen": "2026-09-26T07:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://jsamwrites.medium.com/when-the-old-constraints-disappear-e183f9ce202d",
+          "target_url": "https://jsamwrites.medium.com/when-the-old-constraints-disappear-e183f9ce202d",
+          "independent": false,
+          "title": "When the Old Constraints Disappear",
+          "summary": "AI makes almost anything possible. That makes it more important to ask what still matters. Continue reading on Medium »",
+          "published_at": "2026-09-25T21:41:54+00:00",
           "date_precision": "time"
         }
       ],

@@ -1,10 +1,29 @@
 {
   "edition_date": "2026-09-26",
-  "window_start": "2026-07-28T05:00:54.525401+09:00",
-  "window_end": "2026-09-26T05:00:54.525401+09:00",
-  "collected_at": "2026-09-26T06:01:26.753393+09:00",
+  "window_start": "2026-07-28T07:01:02.465016+09:00",
+  "window_end": "2026-09-26T07:01:02.465016+09:00",
+  "collected_at": "2026-09-26T07:01:02.465016+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "35ab415a8fa4d23e",
+      "title": "v2.1.283",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "source_summary": "## What's changed - Added `x-claude-code-prompt-id` to the gateway hint headers so LLM gateways can group the requests that serve one user prompt; opt in with `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1` - Added `availableModelsMatch` managed setting: with `\"exact\"`, an `availableModels` entry allows only the model version it names, so new releases stay blocked until listed - Added `deniedModels` managed setting to block specific models, even when `availableModels` allows them - Added MCP tool, WebFetch",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-26T07:01:28+09:00",
+      "published_at": "2026-09-25T21:50:12+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.283 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - LLM 게이트웨이가 하나의 사용자 프롬프트를 제공하는 요청을 그룹화할 수 있도록 게이트웨이 힌트 헤더에 `x-claude-code-prompt-id' 추가; `CLAUDE_CODE_GATEWAY_HINT_HEADERS = 1` 로 선택 - `availableModelsMatch` 관리 설정 추가: `\"exact\"` 로, `availableModels` 항목은 이름이 지정된 모델 버전만 허용하므로 새 릴리스가 나열될 때까지 차단된 상태로 유지 - 특정 모델을 차단하기 위해 `deniedModels` 관리 설정 추가, `availableModels` 를 통해 MCP 도구, WebFetch 추가",
+      "release_notes_ko": {
+        "new_features": "LLM 게이트웨이가 하나의 사용자 프롬프트를 제공하는 요청을 그룹화할 수 있도록 게이트웨이 힌트 헤더에 `x-claude-code-prompt-id' 를 추가했습니다. `CLAUDE_CODE_GATEWAY_HINT_HEADERS = 1` 로 선택\n`availableModelsMatch` 관리 설정이 추가되었습니다. `\"exact\"` 를 사용하면 `availableModels` 항목이 이름이 지정된 모델 버전만 허용하므로 나열될 때까지 새 릴리스가 차단됩니다.",
+        "bug_fixes": "턴이 일찍 종료될 때 지연된 도구 호출 또는 완료된 도구 결과가 손실되거나, 작업자가 다시 시작한 후 보류된 승인 프롬프트가 표시되고, 스트리밍되지 않는 대체 항목의 'result.usage` 가 손실되는 SDK 세션이 수정되었습니다.\n장기간 실행된 도구 호출이 백그라운드로 이동하면 MCP 진행률 알림이 폐기되는 수정되었습니다. 백그라운드 작업에 이제 최신 진행률이 표시됩니다.",
+        "chores": "Windows: `cmd/c rd`, 'rmdir`, `del' 또는 `erase` 가 드라이브 루트, 홈 폴더 및 `Remove-Item` 이 거부하는 기타 폴더를 삭제하도록 하는 PowerShell 도구가 수정되었습니다.\n`/mcp` 도구 목록 개선: 한 번에 더 많은 도구를 표시하고, 페이지 키와 마우스로 스크롤하고, 조직이 차단한 도구를 경고 아이콘으로 표시합니다."
+      }
+    },
     {
       "id": "9de028fbe46cac8b",
       "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
