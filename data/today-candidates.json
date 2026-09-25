@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T05:00:54.525401+09:00",
-  "window_start": "2026-07-28T05:00:54.525401+09:00",
-  "window_end": "2026-09-26T05:00:54.525401+09:00",
+  "collected_at": "2026-09-26T06:00:58.319761+09:00",
+  "window_start": "2026-07-28T06:00:58.319761+09:00",
+  "window_end": "2026-09-26T06:00:58.319761+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 175,
+      "excluded_count": 176,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,7 +100,7 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 11,
       "held_count": 0,
       "excluded_count": 28,
       "skipped_count": 0,
@@ -125,7 +125,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -269,33 +269,18 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 6,
-      "skipped_count": 3,
+      "skipped_count": 4,
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 293,
-  "candidates": [
-    {
-      "id": "baa862a5a9c2bcbd",
-      "title": "Using Claude Code: Spending your effort",
-      "source_id": "claude-dev-blog",
-      "source_name": "Claude.dev Blog",
-      "source_url": "https://claude.dev/blog/spending-your-effort",
-      "source_summary": "What effort really is and when to use which level in Claude Code, from my own tests of three builds and a deep dive into Terminal-Bench 3.0 on Opus 5.5 and Fable 5.1.",
-      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
-      "fetched_at": "2026-09-26T05:01:17+09:00",
-      "published_on": "2026-09-25",
-      "date_precision": "day",
-      "title_ko": "Claude Code 사용: 노력하기",
-      "source_summary_ko": "Claude Code에서 제가 직접 테스트한 세 가지 빌드와 Opus 5.5 및 Fable 5.1의 Terminal-Bench 3.0에 대한 심층 분석을 통해 실제로 어떤 노력을 언제 사용해야 하는지 알 수 있습니다."
-    }
-  ],
-  "hourly_collected_at": "2026-09-26T05:01:19.391564+09:00",
-  "hourly_window_start": "2026-09-23T05:01:19.391564+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-26T06:01:26.753393+09:00",
+  "hourly_window_start": "2026-09-23T06:01:26.753393+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -683,27 +668,6 @@
           "title": "I Built AI Clones of My Coworkers. Things Got Weird",
           "summary": "",
           "published_at": "2026-09-23T15:34:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "b55c6cd1054ed866",
-      "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
-          "independent": true,
-          "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
-          "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, and Linux devices. According to Rabbit, you can […]",
-          "published_at": "2026-09-22T20:52:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -1393,6 +1357,17 @@
           "title": "OpenAI’s New AI Models in 2026: GPT-6 Astra, GPT-6 Sol, and Luna Explained",
           "summary": "Quick gut check: if you blinked over the last few weeks, you missed an entire new generation of ChatGPT. OpenAI didn’t just ship one model… Continue reading on Medium »",
           "published_at": "2026-09-24T12:48:02+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kritishik75/gpt-6-astra-everything-you-need-to-know-about-openais-new-ai-model-in-2026-5390661d52ee",
+          "target_url": "https://medium.com/@kritishik75/gpt-6-astra-everything-you-need-to-know-about-openais-new-ai-model-in-2026-5390661d52ee",
+          "independent": false,
+          "title": "GPT-6 Astra: Everything You Need to Know About OpenAI’s New AI Model in 2026",
+          "summary": "GPT-6 Astra is OpenAI’s latest flagship AI model, released in September 2026. Continue reading on Medium »",
+          "published_at": "2026-09-25T20:38:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -2995,6 +2970,17 @@
           "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
           "summary": "",
           "published_at": "2026-09-23T19:22:32+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849546",
+          "target_url": "https://nokku.payanai.com/resume-builder",
+          "independent": false,
+          "title": "Show HN: A free resume builder where the AI can rewrite but can't invent",
+          "summary": "",
+          "published_at": "2026-09-25T20:31:54+00:00",
           "date_precision": "time"
         }
       ],
@@ -10713,6 +10699,17 @@
           "summary": "",
           "published_at": "2026-09-24T09:32:24+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849629",
+          "target_url": "https://piloxa.com/for-ai-agents",
+          "independent": false,
+          "title": "Show HN: Piloxa – an MCP server that sends USPS Certified Mail from your AI",
+          "summary": "",
+          "published_at": "2026-09-25T20:38:05+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -14530,6 +14527,17 @@
           "summary": "Anthropic has committed $11.6 billion over seven years to Akamai's cloud infrastructure, a bet on CPUs that could grow to about $20 billion, and in an unusual arrangement, Akamai is giving Anthropic a potential stake of up to 5% of its stock that grows as Anthropic spends more.",
           "published_at": "2026-09-25T19:13:38+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838156",
+          "target_url": "https://www.wsj.com/tech/anthropic-to-pay-akamai-technologies-11-6-billion-over-seven-years-for-cloud-services-7a55360b",
+          "independent": false,
+          "title": "Anthropic to Pay Akamai Technologies $11.6B over Seven Years for Cloud Services",
+          "summary": "",
+          "published_at": "2026-09-24T23:24:47+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -15495,27 +15503,6 @@
           "title": "Stats: 72% of respondents said they felt curious, happy or excited about AI",
           "summary": "",
           "published_at": "2026-09-24T23:28:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a41f65de06fe96f4",
-      "title": "Anthropic to Pay Akamai Technologies $11.6B over Seven Years for Cloud Services",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838156",
-          "target_url": "https://www.wsj.com/tech/anthropic-to-pay-akamai-technologies-11-6-billion-over-seven-years-for-cloud-services-7a55360b",
-          "independent": false,
-          "title": "Anthropic to Pay Akamai Technologies $11.6B over Seven Years for Cloud Services",
-          "summary": "",
-          "published_at": "2026-09-24T23:24:47+00:00",
           "date_precision": "time"
         }
       ],
@@ -16724,27 +16711,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "af84382b690f4426",
-      "title": "AgreeGuard",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/agreeguard-ai-terms-privacy-analyzer",
-          "target_url": "https://www.producthunt.com/products/agreeguard-ai-terms-privacy-analyzer",
-          "independent": false,
-          "title": "AgreeGuard",
-          "summary": "AI reads the fine print before you click \"I Agree\" Discussion | Link",
-          "published_at": "2026-09-22T20:11:59+00:00",
           "date_precision": "time"
         }
       ],
@@ -19298,6 +19264,17 @@
           "summary": "The AI lab had argued multiple violations of its rights, but a divided panel of judges sided with the Trump administration.",
           "published_at": "2026-09-25T16:58:20+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849556",
+          "target_url": "https://reason.com/volokh/2026/09/25/anthropics-first-amendment-claim-against-department-of-war-rejected",
+          "independent": false,
+          "title": "Anthropic's Claims over Its \"Supply Chain Risk\" Exclusion by Dow Rejected",
+          "summary": "",
+          "published_at": "2026-09-25T20:32:34+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -20746,6 +20723,279 @@
           "title": "Harness Engineering — AI Agent Permissions as Policy in the Call Path — Action Matrix and Mode",
           "summary": "An action-class × mode matrix, a pre-tool hook, and command grammar instead of regex — how to build an AI agent permissions policy in the… Continue reading on Medium »",
           "published_at": "2026-09-25T19:46:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "170188e44caae188",
+      "title": "Too AI; Didn't Read",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849625",
+          "target_url": "https://www.tai-dr.com/",
+          "independent": false,
+          "title": "Too AI; Didn't Read",
+          "summary": "",
+          "published_at": "2026-09-25T20:37:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ad2111376a7d74cc",
+      "title": "The Scarcity Premium: AI made images free; advertising as a solvency bond",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849608",
+          "target_url": "https://scarcity.danieldeboulay.com",
+          "independent": false,
+          "title": "The Scarcity Premium: AI made images free; advertising as a solvency bond",
+          "summary": "",
+          "published_at": "2026-09-25T20:35:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "71514c87caa1cc2a",
+      "title": "AI starter pack for the X-curious",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849474",
+          "target_url": "https://xstarterpack.com/",
+          "independent": false,
+          "title": "AI starter pack for the X-curious",
+          "summary": "",
+          "published_at": "2026-09-25T20:26:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c03c7bd674c740a6",
+      "title": "AI will grow beyond our control, we must instill good values before it does",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849417",
+          "target_url": "https://blog.kradle.ai/p/ai-will-grow-beyond-our-control-we",
+          "independent": false,
+          "title": "AI will grow beyond our control, we must instill good values before it does",
+          "summary": "",
+          "published_at": "2026-09-25T20:21:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c14a84a1fa6159bc",
+      "title": "Build Plugins for Claude",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849384",
+          "target_url": "https://claude.com/blog/build-plugins-for-claude",
+          "independent": false,
+          "title": "Build Plugins for Claude",
+          "summary": "",
+          "published_at": "2026-09-25T20:18:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5103af34bd91ee42",
+      "title": "The District – a live map where AI agents grow their own plots of land",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849346",
+          "target_url": "https://agentnet-wdyqqq-agentnet-district.static.hf.space/index.html",
+          "independent": false,
+          "title": "The District – a live map where AI agents grow their own plots of land",
+          "summary": "",
+          "published_at": "2026-09-25T20:16:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6ec999f401ef3231",
+      "title": "Creating a Blog in Gemini://",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849319",
+          "target_url": "https://brennan.day/creating-a-blog-in-gemini",
+          "independent": false,
+          "title": "Creating a Blog in Gemini://",
+          "summary": "",
+          "published_at": "2026-09-25T20:13:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e3f6721d5d12e107",
+      "title": "Thieves Stole ‘Nvidia’ Trailers. They Got 20 Tons of Sand",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/thieves-stole-nvidia-trailers-they-got-20-tons-of-sand",
+          "target_url": "https://www.wired.com/story/thieves-stole-nvidia-trailers-they-got-20-tons-of-sand",
+          "independent": true,
+          "title": "Thieves Stole ‘Nvidia’ Trailers. They Got 20 Tons of Sand",
+          "summary": "They wanted the silicon. They got the sand.",
+          "published_at": "2026-09-25T20:30:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "8d3ddedf5cc86ac1",
+      "title": "Meta opens early access program for new Muse features",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features",
+          "target_url": "https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features",
+          "independent": true,
+          "title": "Meta opens early access program for new Muse features",
+          "summary": "Anyone interested in joining has to ask Muse to put them on the list.",
+          "published_at": "2026-09-25T20:34:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "1643597b6d5187ad",
+      "title": "Debugging Is Sisyphus’s Boulder. AI Didn’t Take It Away. It Just Made It Lighter.",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@afreennijam98/debugging-is-sisyphuss-boulder-ai-didn-t-take-it-away-it-just-made-it-lighter-7c5ef136e6ff",
+          "target_url": "https://medium.com/@afreennijam98/debugging-is-sisyphuss-boulder-ai-didn-t-take-it-away-it-just-made-it-lighter-7c5ef136e6ff",
+          "independent": false,
+          "title": "Debugging Is Sisyphus’s Boulder. AI Didn’t Take It Away. It Just Made It Lighter.",
+          "summary": "Camus said the struggle itself could fill a life. He never imagined the boulder would start pushing back. Continue reading on Medium »",
+          "published_at": "2026-09-25T20:48:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "50945fdb13deedc4",
+      "title": "You Don’t Need Another AI Subscription. You Need to Use the Ones You Already Have.",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arushi09rana/you-dont-need-another-ai-subscription-you-need-to-use-the-ones-you-already-have-19dac2d1f801",
+          "target_url": "https://medium.com/@arushi09rana/you-dont-need-another-ai-subscription-you-need-to-use-the-ones-you-already-have-19dac2d1f801",
+          "independent": false,
+          "title": "You Don’t Need Another AI Subscription. You Need to Use the Ones You Already Have.",
+          "summary": "We keep adding AI tools to our stack. Continue reading on Medium »",
+          "published_at": "2026-09-25T20:42:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ff71b6c2bc1015fd",
+      "title": "Retrieval-Augmented Generation: Giving LLMs Access to Real Knowledge",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tabsalam120/retrieval-augmented-generation-giving-llms-access-to-real-knowledge-a3593a82331c",
+          "target_url": "https://medium.com/@tabsalam120/retrieval-augmented-generation-giving-llms-access-to-real-knowledge-a3593a82331c",
+          "independent": false,
+          "title": "Retrieval-Augmented Generation: Giving LLMs Access to Real Knowledge",
+          "summary": "In the last article, we built semantic search a way to find relevant documents based on meaning rather than exact keywords. On its own… Continue reading on Medium »",
+          "published_at": "2026-09-25T20:41:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "418e4f509d7c94f5",
+      "title": "Intellectual Manifesto: Towards the Balance of Mercy",
+      "first_seen": "2026-09-26T06:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@adelloismail/intellectual-manifesto-towards-the-balance-of-mercy-f982b70f046c",
+          "target_url": "https://medium.com/@adelloismail/intellectual-manifesto-towards-the-balance-of-mercy-f982b70f046c",
+          "independent": false,
+          "title": "Intellectual Manifesto: Towards the Balance of Mercy",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-25T20:37:53+00:00",
           "date_precision": "time"
         }
       ],
