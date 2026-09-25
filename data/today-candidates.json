@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T14:00:59.535552+09:00",
-  "window_start": "2026-07-27T14:00:59.535552+09:00",
-  "window_end": "2026-09-25T14:00:59.535552+09:00",
+  "collected_at": "2026-09-25T15:00:58.578130+09:00",
+  "window_start": "2026-07-27T15:00:58.578130+09:00",
+  "window_end": "2026-09-25T15:00:58.578130+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -103,7 +103,7 @@
       "count": 7,
       "held_count": 0,
       "excluded_count": 32,
-      "skipped_count": 5,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 9,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T14:01:27.764062+09:00",
-  "hourly_window_start": "2026-09-22T14:01:27.764062+09:00",
+  "hourly_collected_at": "2026-09-25T15:01:24.868084+09:00",
+  "hourly_window_start": "2026-09-22T15:01:24.868084+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -466,6 +466,17 @@
           "title": "Autonomous AI Agents Are Breaking into Online Retailers",
           "summary": "",
           "published_at": "2026-09-22T22:00:20+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840572",
+          "target_url": "https://gambit.security/blog-posts/autonomous-ai-agents-online-retailers-25-a-company",
+          "independent": false,
+          "title": "AI Agents are breaking into Online Retailers for $25 a target",
+          "summary": "",
+          "published_at": "2026-09-25T05:45:14+00:00",
           "date_precision": "time"
         }
       ],
@@ -2961,6 +2972,17 @@
           "title": "Show HN: A dedicated Mac that keeps Claude Code or Codex running 24/7",
           "summary": "",
           "published_at": "2026-09-25T02:33:30+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840365",
+          "target_url": "https://ada.tools/sitcom-flavour",
+          "independent": false,
+          "title": "Show HN: Sitcom Flavour – Season your Claude Code chats with sitcom replies",
+          "summary": "",
+          "published_at": "2026-09-25T05:03:52+00:00",
           "date_precision": "time"
         }
       ],
@@ -16752,6 +16774,195 @@
           "title": "Building a Custom LLM, Part 7: Why Did the Final Candidate Have Seven Layers?",
           "summary": "Comparing where to make the model larger and how often to repeat its computations Continue reading on Medium »",
           "published_at": "2026-09-25T04:47:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "98067e2404dd7819",
+      "title": "I stopped letting LLMs do arithmetic",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840612",
+          "target_url": "https://medium.com/@jwbobbink/best-search-console-mcp-in-2026-gsc-wizard-7a63f91191ca",
+          "independent": false,
+          "title": "I stopped letting LLMs do arithmetic",
+          "summary": "",
+          "published_at": "2026-09-25T05:53:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d36c48731d8df46a",
+      "title": "Show HN: SelMem – selective reconstructive memory for LLMs",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840484",
+          "target_url": "https://github.com/jbsalles/Selmem",
+          "independent": false,
+          "title": "Show HN: SelMem – selective reconstructive memory for LLMs",
+          "summary": "",
+          "published_at": "2026-09-25T05:28:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dea92b88fd149bc9",
+      "title": "Tracking Singularity – A Curated Log of Important Events in AI Since Mid 2026",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840393",
+          "target_url": "https://trackingsingularity.com/",
+          "independent": false,
+          "title": "Tracking Singularity – A Curated Log of Important Events in AI Since Mid 2026",
+          "summary": "",
+          "published_at": "2026-09-25T05:09:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "285e1a493e241d80",
+      "title": "Lightspeed targets $250M for new India fund, focusing on early-stage AI",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/lightspeed-targets-250m-for-new-india-fund-focusing-on-early-stage-ai",
+          "target_url": "https://techcrunch.com/2026/09/24/lightspeed-targets-250m-for-new-india-fund-focusing-on-early-stage-ai",
+          "independent": true,
+          "title": "Lightspeed targets $250M for new India fund, focusing on early-stage AI",
+          "summary": "The Silicon Valley firm is aligning its India fundraising cycle with its global funds for the first time, as it shifts to a shorter investment period.",
+          "published_at": "2026-09-25T05:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "ec7c3424ffcd70fb",
+      "title": "Day 1: Tentang Tetris, Trauma, dan Pertanyaan yang Tidak Bisa Kutinggalkan",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@naniaegadev/day-1-tentang-tetris-trauma-dan-pertanyaan-yang-tidak-bisa-kutinggalkan-5ce30d947b72",
+          "target_url": "https://medium.com/@naniaegadev/day-1-tentang-tetris-trauma-dan-pertanyaan-yang-tidak-bisa-kutinggalkan-5ce30d947b72",
+          "independent": false,
+          "title": "Day 1: Tentang Tetris, Trauma, dan Pertanyaan yang Tidak Bisa Kutinggalkan",
+          "summary": "Catatan: Ini bagian dari jurnal pribadi tempat aku menuangkan rasa penasaran soal sains dan psikologi. Sebagian bahasanya dirapikan dan… Continue reading on Medium »",
+          "published_at": "2026-09-25T05:51:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8705b1d59c2584a9",
+      "title": "Vibe Coding Can Build It. But Is It the Best Solution?",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jeevankpoojarykottadi/vibe-coding-can-build-it-but-is-it-the-best-solution-2af3d6e9a505",
+          "target_url": "https://medium.com/@jeevankpoojarykottadi/vibe-coding-can-build-it-but-is-it-the-best-solution-2af3d6e9a505",
+          "independent": false,
+          "title": "Vibe Coding Can Build It. But Is It the Best Solution?",
+          "summary": "Recently, I’ve been spending more time building things with AI. Continue reading on Medium »",
+          "published_at": "2026-09-25T05:51:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "73974ed22f9b7383",
+      "title": "THE LAND GRAB OF COGNITION",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@warren.neth/the-land-grab-of-cognition-de678b01617b",
+          "target_url": "https://medium.com/@warren.neth/the-land-grab-of-cognition-de678b01617b",
+          "independent": false,
+          "title": "THE LAND GRAB OF COGNITION",
+          "summary": "✨What it means to capture the market for superintelligence✨ Continue reading on Medium »",
+          "published_at": "2026-09-25T05:50:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ff68d05238c2f965",
+      "title": "I finally decided to learn AI",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@shivansh-/i-finally-decided-to-learn-ai-930e47436af0",
+          "target_url": "https://medium.com/@shivansh-/i-finally-decided-to-learn-ai-930e47436af0",
+          "independent": false,
+          "title": "I finally decided to learn AI",
+          "summary": "After a long time.. Continue reading on Medium »",
+          "published_at": "2026-09-25T05:50:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fa4fec3460e015c0",
+      "title": "The Day I Started Wondering Where My Mind Ends",
+      "first_seen": "2026-09-25T15:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@akulabhargavi03/the-day-i-started-wondering-where-my-mind-ends-55fc1f54883d",
+          "target_url": "https://medium.com/@akulabhargavi03/the-day-i-started-wondering-where-my-mind-ends-55fc1f54883d",
+          "independent": false,
+          "title": "The Day I Started Wondering Where My Mind Ends",
+          "summary": "One video. One strange question. And suddenly, my phone didn’t feel like just a phone anymore. Continue reading on Medium »",
+          "published_at": "2026-09-25T05:50:14+00:00",
           "date_precision": "time"
         }
       ],
