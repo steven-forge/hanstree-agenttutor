@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T10:01:35.002059+09:00",
-  "window_start": "2026-07-27T10:01:35.002059+09:00",
-  "window_end": "2026-09-25T10:01:35.002059+09:00",
+  "collected_at": "2026-09-25T11:00:56.942791+09:00",
+  "window_start": "2026-07-27T11:00:56.942791+09:00",
+  "window_end": "2026-09-25T11:00:56.942791+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 13,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 10,
+      "excluded_count": 28,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 10,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 20,
-      "skipped_count": 10,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T10:02:01.762429+09:00",
-  "hourly_window_start": "2026-09-22T10:02:01.762429+09:00",
+  "hourly_collected_at": "2026-09-25T11:01:20.216362+09:00",
+  "hourly_window_start": "2026-09-22T11:01:20.216362+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -9587,6 +9587,17 @@
           "summary": "",
           "published_at": "2026-09-24T16:41:55+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839078",
+          "target_url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
+          "independent": false,
+          "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
+          "summary": "",
+          "published_at": "2026-09-25T01:21:30+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -16003,6 +16014,132 @@
           "title": "How did Predicate Logic change the way computers see knowledge?",
           "summary": "The Language of Reasoning: How Logic Taught Machines to Understand the World Continue reading on Medium »",
           "published_at": "2026-09-25T00:38:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9edb07650d55bdf7",
+      "title": "Study shows AI is as good as human tutoring for GRE learning gains",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49839376",
+          "target_url": "https://arxiv.org/abs/2609.28470",
+          "independent": false,
+          "title": "Study shows AI is as good as human tutoring for GRE learning gains",
+          "summary": "",
+          "published_at": "2026-09-25T02:01:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da594f4a52f3bb89",
+      "title": "The European AI Roadshow and the South Korean Signature",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@businessireland/the-european-ai-roadshow-and-the-south-korean-signature-84bceec4bd94",
+          "target_url": "https://medium.com/@businessireland/the-european-ai-roadshow-and-the-south-korean-signature-84bceec4bd94",
+          "independent": false,
+          "title": "The European AI Roadshow and the South Korean Signature",
+          "summary": "This week in Barcelona, thousands of people queued for the AI Summit, tickets in hand, to stand outside rooms they could not get into. The… Continue reading on Medium »",
+          "published_at": "2026-09-25T01:50:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b829bd2fe7327fc",
+      "title": "Nobody Owns the KV Cache",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://briefs.aiadvances.org/nobody-owns-the-kv-cache-bd893437ac17",
+          "target_url": "https://briefs.aiadvances.org/nobody-owns-the-kv-cache-bd893437ac17",
+          "independent": false,
+          "title": "Nobody Owns the KV Cache",
+          "summary": "I put a GPU bill in front of four teams and could not tell them who owed what Continue reading on AI Advances Briefs »",
+          "published_at": "2026-09-25T01:46:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bba1102841bd4c85",
+      "title": "Revealing a Professional Trading Strategy With Just 2 Indicators",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sayedali_3166/revealing-a-professional-trading-strategy-with-just-2-indicators-3b7efefb284d",
+          "target_url": "https://medium.com/@sayedali_3166/revealing-a-professional-trading-strategy-with-just-2-indicators-3b7efefb284d",
+          "independent": false,
+          "title": "Revealing a Professional Trading Strategy With Just 2 Indicators",
+          "summary": "Most traders spend years jumping from one indicator to another. Continue reading on Medium »",
+          "published_at": "2026-09-25T01:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "037cd8f67eb2824f",
+      "title": "Jev… the AI that doesn’t talk back",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://generativeai.pub/jev-the-ai-that-doesnt-talk-back-8edcea1e9072",
+          "target_url": "https://generativeai.pub/jev-the-ai-that-doesnt-talk-back-8edcea1e9072",
+          "independent": false,
+          "title": "Jev… the AI that doesn’t talk back",
+          "summary": "When AI disappears into the background, who stays in control? Continue reading on Generative AI »",
+          "published_at": "2026-09-25T01:45:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "13b62813218c2ba5",
+      "title": "Should you switch to Opus 5.5? The arithmetic and the fine print",
+      "first_seen": "2026-09-25T11:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://generativeai.pub/should-you-switch-to-opus-5-5-the-arithmetic-and-the-fine-print-eea0ae44a612",
+          "target_url": "https://generativeai.pub/should-you-switch-to-opus-5-5-the-arithmetic-and-the-fine-print-eea0ae44a612",
+          "independent": false,
+          "title": "Should you switch to Opus 5.5? The arithmetic and the fine print",
+          "summary": "A worked bill comes out 24 percent lower rather than 40; one capability lead is real, and three are ties, and a footnote says some tasks… Continue reading on Generative AI »",
+          "published_at": "2026-09-25T01:42:50+00:00",
           "date_precision": "time"
         }
       ],
