@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T02:01:07.410158+09:00",
-  "window_start": "2026-07-28T02:01:07.410158+09:00",
-  "window_end": "2026-09-26T02:01:07.410158+09:00",
+  "collected_at": "2026-09-26T03:01:01.950277+09:00",
+  "window_start": "2026-07-28T03:01:01.950277+09:00",
+  "window_end": "2026-09-26T03:01:01.950277+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 173,
+      "excluded_count": 174,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 33,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -125,7 +125,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 18,
       "coverage_limited": false
     },
     {
@@ -177,10 +177,10 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 4,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 4,
+      "excluded_count": 23,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -269,33 +269,18 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 6,
-      "skipped_count": 2,
+      "skipped_count": 3,
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 291,
-  "candidates": [
-    {
-      "id": "155f49d4486d9588",
-      "title": "What a task costs on Opus 5.5",
-      "source_id": "claude-dev-blog",
-      "source_name": "Claude.dev Blog",
-      "source_url": "https://claude.dev/blog/what-a-task-costs-on-opus-5-5",
-      "source_summary": "The same token price can cost very different amounts per task. Learn what Claude Code tasks cost on Opus 5.5 and which settings change the bill.",
-      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
-      "fetched_at": "2026-09-26T02:01:36+09:00",
-      "published_on": "2026-09-25",
-      "date_precision": "day",
-      "title_ko": "Opus 5.5에서 작업 비용",
-      "source_summary_ko": "동일한 토큰 가격은 작업당 매우 다른 금액이 들 수 있습니다. Opus 5.5에서 Claude Code 작업의 비용과 청구서를 변경하는 설정에 대해 알아보세요."
-    }
-  ],
-  "hourly_collected_at": "2026-09-26T02:01:38.446320+09:00",
-  "hourly_window_start": "2026-09-23T02:01:38.446320+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-26T03:01:24.653730+09:00",
+  "hourly_window_start": "2026-09-23T03:01:24.653730+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -16765,6 +16750,17 @@
           "summary": "",
           "published_at": "2026-09-25T06:03:56+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847761",
+          "target_url": "https://www.politico.com/news/2026/09/24/peter-thiel-slams-popes-ai-encyclical-as-gift-to-chinese-communist-party-01091850",
+          "independent": false,
+          "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
+          "summary": "",
+          "published_at": "2026-09-25T17:49:10+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19327,11 +19323,22 @@
           "summary": "",
           "published_at": "2026-09-25T15:29:25+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/appeals-court-lets-the-pentagon-designate-anthropic-a-supply-chain-risk",
+          "target_url": "https://www.wired.com/story/appeals-court-lets-the-pentagon-designate-anthropic-a-supply-chain-risk",
+          "independent": true,
+          "title": "Appeals Court Lets the Pentagon Designate Anthropic a Supply-Chain Risk",
+          "summary": "The AI lab had argued multiple violations of its rights, but a divided panel of judges sided with the Trump administration.",
+          "published_at": "2026-09-25T16:58:20+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "fc088373e0051556",
@@ -19830,6 +19837,363 @@
           "title": "Weekly AI Digest: Where are the brakes?",
           "summary": "Week 39, 2026 Continue reading on Medium »",
           "published_at": "2026-09-25T16:46:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a56e2a372353750f",
+      "title": "AI agent hacks government website for first time: why this breach matters",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847847",
+          "target_url": "https://www.nature.com/articles/d41586-026-03024-z",
+          "independent": false,
+          "title": "AI agent hacks government website for first time: why this breach matters",
+          "summary": "",
+          "published_at": "2026-09-25T17:56:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d08844d6b53b8ff6",
+      "title": "I gave my AI agent one harmless permission. It became a backdoor for everyone",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847578",
+          "target_url": "https://medium.com/@roeehersh/i-gave-my-ai-agent-one-harmless-permission-it-became-a-backdoor-for-everyone-728acf52e37e",
+          "independent": false,
+          "title": "I gave my AI agent one harmless permission. It became a backdoor for everyone",
+          "summary": "",
+          "published_at": "2026-09-25T17:33:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c769728c9796acf1",
+      "title": "What we should avoid on the AI path.",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847561",
+          "target_url": "https://carlosr301101.is-a.dev/blog/what-we-should-avoid-on-the-ai-path",
+          "independent": false,
+          "title": "What we should avoid on the AI path.",
+          "summary": "",
+          "published_at": "2026-09-25T17:33:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a910d59b1eccbb6f",
+      "title": "Handmade in the Age of AI",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847518",
+          "target_url": "https://code2net.com/handmade",
+          "independent": false,
+          "title": "Handmade in the Age of AI",
+          "summary": "",
+          "published_at": "2026-09-25T17:30:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28d56d15dc45c17b",
+      "title": "Random-bench / Benchmarks are Astrology for LLMs",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847517",
+          "target_url": "https://www.isaac-fisher.com/Blog.html",
+          "independent": false,
+          "title": "Random-bench / Benchmarks are Astrology for LLMs",
+          "summary": "",
+          "published_at": "2026-09-25T17:30:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "306c04d85ad023b7",
+      "title": "An OpenAI Engineer and His Friends Debate the Future",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847507",
+          "target_url": "https://www.newyorker.com/culture/the-new-yorker-documentary/an-openai-engineer-and-his-friends-debate-the-future",
+          "independent": false,
+          "title": "An OpenAI Engineer and His Friends Debate the Future",
+          "summary": "",
+          "published_at": "2026-09-25T17:29:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "36c535436f578727",
+      "title": "Drawing the line at \"gen AI\" is the wrong place, and not even well-defined [video]",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847489",
+          "target_url": "https://www.youtube.com/watch?v=4-LcGJOTyds",
+          "independent": false,
+          "title": "Drawing the line at \"gen AI\" is the wrong place, and not even well-defined [video]",
+          "summary": "",
+          "published_at": "2026-09-25T17:28:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6fc94f17477eb37f",
+      "title": "Bill Gates warns AI is powerful enough to cause \"a billion deaths\"",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847443",
+          "target_url": "https://www.axios.com/2026/09/25/bill-gates-ai-deaths-doom",
+          "independent": false,
+          "title": "Bill Gates warns AI is powerful enough to cause \"a billion deaths\"",
+          "summary": "",
+          "published_at": "2026-09-25T17:24:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "81084b8092c6477e",
+      "title": "Dear Humanity – Can We Teach AI Compassion?",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847375",
+          "target_url": "https://www.hussmanfunds.com/comment/ai_alignment_260917",
+          "independent": false,
+          "title": "Dear Humanity – Can We Teach AI Compassion?",
+          "summary": "",
+          "published_at": "2026-09-25T17:20:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ded5f30056dbe56f",
+      "title": "Meta makes the Muse filesystem even more accessible",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
+          "independent": true,
+          "title": "Meta makes the Muse filesystem even more accessible",
+          "summary": "Yesterday, with a little prodding, it was discovered that Meta's Muse would expose its filesystem to curious users. The files offered a fascinating peek under the hood of an AI chatbot, and appeared to expose details we weren't meant to see, not least because Muse itself told people, including us, it wasn't supposed to reveal […]",
+          "published_at": "2026-09-25T16:49:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "7ba740ccaea1999b",
+      "title": "Some Supabase customers are publicly exposing reams of people’s data to the web",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/some-supabase-customers-are-publicly-exposing-reams-of-peoples-data-to-the-web",
+          "target_url": "https://techcrunch.com/2026/09/25/some-supabase-customers-are-publicly-exposing-reams-of-peoples-data-to-the-web",
+          "independent": true,
+          "title": "Some Supabase customers are publicly exposing reams of people’s data to the web",
+          "summary": "The findings highlight how AI-generated and vibe-coded apps can spill and expose users' data when not configured or secured properly.",
+          "published_at": "2026-09-25T17:29:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "6624902a5035e238",
+      "title": "Astra and Opus just passed Turing’s other test",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test",
+          "target_url": "https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test",
+          "independent": true,
+          "title": "Astra and Opus just passed Turing’s other test",
+          "summary": "Frontier AI models are finishing Alan Turing's World War II codebreaking work.",
+          "published_at": "2026-09-25T17:24:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "6510bb964211588f",
+      "title": "My AI Builds Trading Bots. Here Are the 5 Rules It Isn’t Allowed to Break.",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hmdmohamed123/my-ai-builds-trading-bots-here-are-the-5-rules-it-isnt-allowed-to-break-b69a5c25e9dd",
+          "target_url": "https://medium.com/@hmdmohamed123/my-ai-builds-trading-bots-here-are-the-5-rules-it-isnt-allowed-to-break-b69a5c25e9dd",
+          "independent": false,
+          "title": "My AI Builds Trading Bots. Here Are the 5 Rules It Isn’t Allowed to Break.",
+          "summary": "How I use AI research agents to turn trading ideas into MT5 bots, with three case studies and the ugly numbers left in. Continue reading on Medium »",
+          "published_at": "2026-09-25T17:47:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5774a9d3a33c3662",
+      "title": "The Thermodynamics of AI Economics: Why Power, Cooling, and Utilization Define Infrastructure TCO",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@infinitecompute/the-thermodynamics-of-ai-economics-why-power-cooling-and-utilization-define-infrastructure-tco-0a610e6d0464",
+          "target_url": "https://medium.com/@infinitecompute/the-thermodynamics-of-ai-economics-why-power-cooling-and-utilization-define-infrastructure-tco-0a610e6d0464",
+          "independent": false,
+          "title": "The Thermodynamics of AI Economics: Why Power, Cooling, and Utilization Define Infrastructure TCO",
+          "summary": "Learn how power availability, cooling efficiency, and GPU utilization drive AI infrastructure TCO beyond hardware price for enterprise AI… Continue reading on Medium »",
+          "published_at": "2026-09-25T17:47:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "542f7b84eec6069b",
+      "title": "JEPA and RA/PMT: Two Different Answers to What Comes After the LLM",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@josetguevara108/jepa-and-ra-pmt-two-different-answers-to-what-comes-after-the-llm-ee5cff7335c1",
+          "target_url": "https://medium.com/@josetguevara108/jepa-and-ra-pmt-two-different-answers-to-what-comes-after-the-llm-ee5cff7335c1",
+          "independent": false,
+          "title": "JEPA and RA/PMT: Two Different Answers to What Comes After the LLM",
+          "summary": "From latent world models to a layered architecture of representation, constraint, selection, and expression. Continue reading on Medium »",
+          "published_at": "2026-09-25T17:46:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28ce68331ef43a70",
+      "title": "Thinking Harder Isn’t Always Smarter",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/lets-code-future/thinking-harder-isnt-always-smarter-9fa1dd51b85e",
+          "target_url": "https://medium.com/lets-code-future/thinking-harder-isnt-always-smarter-9fa1dd51b85e",
+          "independent": false,
+          "title": "Thinking Harder Isn’t Always Smarter",
+          "summary": "A developer’s guide to AI reasoning effort: what it controls, what the new data shows, and how to stop paying for thinking you don’t need. Continue reading on Let’s Code Future »",
+          "published_at": "2026-09-25T17:41:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "32db53de8a5c0e27",
+      "title": "The Orbitron Anomaly: Why the Ultimate AI Isn’t Extraterrestrial, It’s Chronological",
+      "first_seen": "2026-09-26T03:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@melissa.lee.blanchard/the-orbitron-anomaly-why-the-ultimate-ai-isnt-extraterrestrial-it-s-chronological-1c7a829b9ed8",
+          "target_url": "https://medium.com/@melissa.lee.blanchard/the-orbitron-anomaly-why-the-ultimate-ai-isnt-extraterrestrial-it-s-chronological-1c7a829b9ed8",
+          "independent": false,
+          "title": "The Orbitron Anomaly: Why the Ultimate AI Isn’t Extraterrestrial, It’s Chronological",
+          "summary": "While academia scans distant star systems for alien fingerprints, phase-shifting nodes from the future Lattice are already calibrating our… Continue reading on Medium »",
+          "published_at": "2026-09-25T17:40:57+00:00",
           "date_precision": "time"
         }
       ],
