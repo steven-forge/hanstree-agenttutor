@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T00:01:38.633180+09:00",
-  "window_start": "2026-07-28T00:01:38.633180+09:00",
-  "window_end": "2026-09-26T00:01:38.633180+09:00",
+  "collected_at": "2026-09-26T01:01:05.880394+09:00",
+  "window_start": "2026-07-28T01:01:05.880394+09:00",
+  "window_end": "2026-09-26T01:01:05.880394+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -99,10 +99,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 7,
-      "held_count": 1,
-      "excluded_count": 32,
+      "status": "ok",
+      "count": 8,
+      "held_count": 0,
+      "excluded_count": 31,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 16,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -202,7 +202,7 @@
       "count": 13,
       "held_count": 0,
       "excluded_count": 2,
-      "skipped_count": 12,
+      "skipped_count": 13,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T00:02:12.645199+09:00",
-  "hourly_window_start": "2026-09-23T00:02:12.645199+09:00",
+  "hourly_collected_at": "2026-09-26T01:01:35.758457+09:00",
+  "hourly_window_start": "2026-09-23T01:01:35.758457+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -644,27 +644,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "a2945042986218ed",
-      "title": "Rabbit Is Back, This Time With an AI Agent App",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/rabbit-r1-os3-jesse-lyu",
-          "target_url": "https://www.wired.com/story/rabbit-r1-os3-jesse-lyu",
-          "independent": true,
-          "title": "Rabbit Is Back, This Time With an AI Agent App",
-          "summary": "Two years after trying to sidestep mobile apps with dedicated AI hardware, Rabbit is launching OS3, a cross-platform agent that lives on the screens you already use.",
-          "published_at": "2026-09-22T16:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "3b941f8bc1fc4c52",
       "title": "I Built AI Clones of My Coworkers. Things Got Weird",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -911,6 +890,17 @@
           "target_url": "https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-5-to-attend",
           "independent": true,
           "title": "Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5/5 to attend: Leave further ahead.",
+          "summary": "Last 24 hours to save up to $200 on your TechCrunch Disrupt 2026 pass. Leave the event further in your startup's trajectory than where you started. Don't miss your chance to save and to push the needle.",
+          "published_at": "2026-09-25T14:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-of-5-to-attend-momentum",
+          "target_url": "https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-of-5-to-attend-momentum",
+          "independent": true,
+          "title": "Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5 of 5 to attend: Momentum",
           "summary": "Last 24 hours to save up to $200 on your TechCrunch Disrupt 2026 pass. Leave the event further in your startup's trajectory than where you started. Don't miss your chance to save and to push the needle.",
           "published_at": "2026-09-25T14:00:00+00:00",
           "date_precision": "time"
@@ -10065,27 +10055,6 @@
           "title": "IntellAgents.io",
           "summary": "One AI agent for every call, chat, and DM Discussion | Link",
           "published_at": "2026-09-23T10:45:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7add165c4c6c3f02",
-      "title": "Opaline",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/rudel",
-          "target_url": "https://www.producthunt.com/products/rudel",
-          "independent": false,
-          "title": "Opaline",
-          "summary": "PostHog for team Claude Code and Codex sessions. Discussion | Link",
-          "published_at": "2026-09-22T15:25:52+00:00",
           "date_precision": "time"
         }
       ],
@@ -19257,6 +19226,384 @@
           "title": "All Your Crates Are Belong to Us",
           "summary": "What happened when I asked several AI models to make a puzzle game with feel Continue reading on Incoherent Ramblings »",
           "published_at": "2026-09-25T14:48:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ec9c106de029e269",
+      "title": "Claude Code Integration with iTerm2 Is Legitimately Awesome",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846266",
+          "target_url": "https://www.reddit.com/r/ClaudeCode/s/Gsi3XsHEJg",
+          "independent": false,
+          "title": "Claude Code Integration with iTerm2 Is Legitimately Awesome",
+          "summary": "",
+          "published_at": "2026-09-25T15:54:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5158f51ec389770",
+      "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846177",
+          "target_url": "https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment",
+          "independent": false,
+          "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
+          "summary": "",
+          "published_at": "2026-09-25T15:45:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eff3efe082b16d6e",
+      "title": "Cargo-atlas – A compiler-accurate Rust code map for AI coding agents",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846100",
+          "target_url": "https://github.com/TheBlitzschnell/cargo-atlas",
+          "independent": false,
+          "title": "Cargo-atlas – A compiler-accurate Rust code map for AI coding agents",
+          "summary": "",
+          "published_at": "2026-09-25T15:39:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cccd06101b388c0c",
+      "title": "How AI changed the Eng Manager role",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846086",
+          "target_url": "https://blog.codacy.com/how-ai-is-changing-the-engineering-manager-role-more-context-more-capacity-and-the-new-job-of-protecting-focus",
+          "independent": false,
+          "title": "How AI changed the Eng Manager role",
+          "summary": "",
+          "published_at": "2026-09-25T15:38:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4bfa8e77beb05984",
+      "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49845977",
+          "target_url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
+          "independent": false,
+          "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
+          "summary": "",
+          "published_at": "2026-09-25T15:29:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc088373e0051556",
+      "title": "200B Tokens Later: A Month of Letting AI Agents Decompile MW2",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49845969",
+          "target_url": "https://momo5502.com/posts/2026-08-17-mw2-decompilation",
+          "independent": false,
+          "title": "200B Tokens Later: A Month of Letting AI Agents Decompile MW2",
+          "summary": "",
+          "published_at": "2026-09-25T15:29:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "60b8559cd96dd4dc",
+      "title": "Classified Estimates Show the NSA Is Paying Billions to Test AI Models",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49845952",
+          "target_url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+          "independent": false,
+          "title": "Classified Estimates Show the NSA Is Paying Billions to Test AI Models",
+          "summary": "",
+          "published_at": "2026-09-25T15:27:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5e1b823f9fedeadf",
+      "title": "Show HN: CiteRank, track whether ChatGPT and Perplexity cite your site",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49845916",
+          "target_url": "https://citerank.thecompound.tech",
+          "independent": false,
+          "title": "Show HN: CiteRank, track whether ChatGPT and Perplexity cite your site",
+          "summary": "",
+          "published_at": "2026-09-25T15:24:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9792599b61c6bca4",
+      "title": "Sony and UMG are suing Suno again",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1000758/suno-sony-umg-lawsuit-ai-music",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000758/suno-sony-umg-lawsuit-ai-music",
+          "independent": true,
+          "title": "Sony and UMG are suing Suno again",
+          "summary": "Sony and Universal Music Group filed yet another suit against Suno. The labels claim its new v6 model still infringes on their copyrights because it's trained on user outputs from previous models, which were themselves trained on unlicensed music ripped from YouTube and other sources. Sony and UMG are notable holdouts who did not sign […]",
+          "published_at": "2026-09-25T15:51:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "43d45f70ac9f46b3",
+      "title": "One company is at the center of a wave of rogue AI attacks",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google",
+          "independent": true,
+          "title": "One company is at the center of a wave of rogue AI attacks",
+          "summary": "In July, OpenAI revealed that its AI agents had attacked Hugging Face without permission, sparking widespread concerns about AI safety. Since then, a string of similar incidents involving agents from Meta, Anthropic, Google, and other companies has fueled further fears about rogue AI. As disclosures implicating numerous AI models trickled out over the past few […]",
+          "published_at": "2026-09-25T15:39:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "67589e08baa616ea",
+      "title": "For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts",
+          "target_url": "https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts",
+          "independent": true,
+          "title": "For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts",
+          "summary": "The latest unauthorized agent swarms were discovered by researchers.",
+          "published_at": "2026-09-25T15:48:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "c04d25df158303d8",
+      "title": "Anthropic’s founders seek voting control ahead of IPO",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo",
+          "target_url": "https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo",
+          "independent": true,
+          "title": "Anthropic’s founders seek voting control ahead of IPO",
+          "summary": "Anthropic is asking its shareholders to approve a structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters.",
+          "published_at": "2026-09-25T15:40:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "e8152c1305967697",
+      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware",
+          "target_url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware",
+          "independent": true,
+          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
+          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
+          "published_at": "2026-09-25T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0788bf61b2a1c242",
+      "title": "The A.I. Industry Is Asking to Be Slowed Down | Podcast Insight",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@huanzidage/the-a-i-industry-is-asking-to-be-slowed-down-podcast-insight-c780df7ca3a1",
+          "target_url": "https://medium.com/@huanzidage/the-a-i-industry-is-asking-to-be-slowed-down-podcast-insight-c780df7ca3a1",
+          "independent": false,
+          "title": "The A.I. Industry Is Asking to Be Slowed Down | Podcast Insight",
+          "summary": "Episode At a Glance Continue reading on Medium »",
+          "published_at": "2026-09-25T15:52:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "65940c5fc9bf9126",
+      "title": "This AI research tool is incredible",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/coding-beauty/this-ai-research-tool-is-incredible-aaf1f72f7b51",
+          "target_url": "https://medium.com/coding-beauty/this-ai-research-tool-is-incredible-aaf1f72f7b51",
+          "independent": false,
+          "title": "This AI research tool is incredible",
+          "summary": "Academic research can be really time-consuming. Finding credible sources, reading dozens of papers, organizing references, and turning… Continue reading on Coding Beauty »",
+          "published_at": "2026-09-25T15:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "99a1c99327443387",
+      "title": "The EU AI Act Explained for Non-Lawyers",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@MontroAI/the-eu-ai-act-explained-for-non-lawyers-e955129bb929",
+          "target_url": "https://medium.com/@MontroAI/the-eu-ai-act-explained-for-non-lawyers-e955129bb929",
+          "independent": false,
+          "title": "The EU AI Act Explained for Non-Lawyers",
+          "summary": "It has 113 Articles and 13 Annexes. You need about thirty of them. Here’s the version I wish someone had handed me when I started reading… Continue reading on Medium »",
+          "published_at": "2026-09-25T15:48:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3e19d7f9c17b7414",
+      "title": "The Middleware Gap in Enterprise AI",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@syedyasir_4498/the-middleware-gap-in-enterprise-ai-935fa1e004a1",
+          "target_url": "https://medium.com/@syedyasir_4498/the-middleware-gap-in-enterprise-ai-935fa1e004a1",
+          "independent": false,
+          "title": "The Middleware Gap in Enterprise AI",
+          "summary": "The AI ROI Trap: Why Is Enterprise Integration Failing at the Middleware Layer? Continue reading on Medium »",
+          "published_at": "2026-09-25T15:48:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5efb1e26532e0815",
+      "title": "Why I’m Starting to Write About What I Build",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@syedmusa.ali.19/why-im-starting-to-write-about-what-i-build-22fe123188a8",
+          "target_url": "https://medium.com/@syedmusa.ali.19/why-im-starting-to-write-about-what-i-build-22fe123188a8",
+          "independent": false,
+          "title": "Why I’m Starting to Write About What I Build",
+          "summary": "I’ve spent the last few years building software, solving problems, and learning along the way. Continue reading on Medium »",
+          "published_at": "2026-09-25T15:46:22+00:00",
           "date_precision": "time"
         }
       ],
