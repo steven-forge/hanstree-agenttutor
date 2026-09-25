@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T01:01:05.880394+09:00",
-  "window_start": "2026-07-28T01:01:05.880394+09:00",
-  "window_end": "2026-09-26T01:01:05.880394+09:00",
+  "collected_at": "2026-09-26T02:01:07.410158+09:00",
+  "window_start": "2026-07-28T02:01:07.410158+09:00",
+  "window_end": "2026-09-26T02:01:07.410158+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -11,7 +11,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 0,
+      "excluded_count": 1,
       "skipped_count": 127,
       "coverage_limited": false
     },
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 174,
+      "excluded_count": 173,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 31,
+      "excluded_count": 33,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 7,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 16,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -269,18 +269,33 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 6,
       "skipped_count": 2,
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 290,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-26T01:01:35.758457+09:00",
-  "hourly_window_start": "2026-09-23T01:01:35.758457+09:00",
+  "new_count": 1,
+  "archive_count": 291,
+  "candidates": [
+    {
+      "id": "155f49d4486d9588",
+      "title": "What a task costs on Opus 5.5",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/what-a-task-costs-on-opus-5-5",
+      "source_summary": "The same token price can cost very different amounts per task. Learn what Claude Code tasks cost on Opus 5.5 and which settings change the bill.",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "fetched_at": "2026-09-26T02:01:36+09:00",
+      "published_on": "2026-09-25",
+      "date_precision": "day",
+      "title_ko": "Opus 5.5에서 작업 비용",
+      "source_summary_ko": "동일한 토큰 가격은 작업당 매우 다른 금액이 들 수 있습니다. Opus 5.5에서 Claude Code 작업의 비용과 청구서를 변경하는 설정에 대해 알아보세요."
+    }
+  ],
+  "hourly_collected_at": "2026-09-26T02:01:38.446320+09:00",
+  "hourly_window_start": "2026-09-23T02:01:38.446320+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -689,27 +704,6 @@
           "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
           "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, and Linux devices. According to Rabbit, you can […]",
           "published_at": "2026-09-22T20:52:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "b764d2ad8902084d",
-      "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
-          "independent": true,
-          "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
-          "summary": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir, Replit, and Stripe, along with $42 million in funding led by a16z. […]",
-          "published_at": "2026-09-22T16:34:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -2758,6 +2752,17 @@
           "summary": "",
           "published_at": "2026-09-25T10:02:08+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846953",
+          "target_url": "https://www.doom-or-bloom.com",
+          "independent": false,
+          "title": "Show HN: Doom or Bloom, map your AI worldview with Jev",
+          "summary": "",
+          "published_at": "2026-09-25T16:51:28+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3073,27 +3078,6 @@
           "title": "Mastering LLM Inference Optimization",
           "summary": "",
           "published_at": "2026-09-23T06:02:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c030711668b9bc73",
-      "title": "Claude Opus 5.5",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/claude-fable-5-1",
-          "target_url": "https://www.producthunt.com/products/claude-fable-5-1",
-          "independent": false,
-          "title": "Claude Opus 5.5",
-          "summary": "Anthropic's first model in their new Claude 5.5 family Discussion | Link",
-          "published_at": "2026-09-22T16:36:09+00:00",
           "date_precision": "time"
         }
       ],
@@ -13188,6 +13172,17 @@
           "summary": "",
           "published_at": "2026-09-24T16:47:29+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846741",
+          "target_url": "https://github.com/Kerneta/daidocs/tree/main/browser-extension",
+          "independent": false,
+          "title": "Show HN: Built an open-source AI browser assistant remembers when you scroll",
+          "summary": "",
+          "published_at": "2026-09-25T16:35:19+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19604,6 +19599,237 @@
           "title": "Why I’m Starting to Write About What I Build",
           "summary": "I’ve spent the last few years building software, solving problems, and learning along the way. Continue reading on Medium »",
           "published_at": "2026-09-25T15:46:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eb617378c0364239",
+      "title": "Jupyter AI: A Map of 100 Jupyter Extensions for AI",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847069",
+          "target_url": "https://openteams.com/awesome-jupyter-ai-extensions",
+          "independent": false,
+          "title": "Jupyter AI: A Map of 100 Jupyter Extensions for AI",
+          "summary": "",
+          "published_at": "2026-09-25T16:58:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "388e75526f8221d2",
+      "title": "If the Work Is So Meh That It Might Be AI, Who Cares How It Was Made?",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49847039",
+          "target_url": "https://novelarcade.substack.com/p/whats-worse-than-ai-slop-trad-slop",
+          "independent": false,
+          "title": "If the Work Is So Meh That It Might Be AI, Who Cares How It Was Made?",
+          "summary": "",
+          "published_at": "2026-09-25T16:56:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a21be8da5be1d3ff",
+      "title": "Agents can now set up your website's security with Turnstile Spin",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846926",
+          "target_url": "https://blog.cloudflare.com/turnstile-spin",
+          "independent": false,
+          "title": "Agents can now set up your website's security with Turnstile Spin",
+          "summary": "",
+          "published_at": "2026-09-25T16:49:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43cf7fa8aee78417",
+      "title": "OpenCode: $60 of usage for DeepSeek v4.1 Flash is now permanent",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846863",
+          "target_url": "https://twitter.com/opencode/status/2103505541871907109",
+          "independent": false,
+          "title": "OpenCode: $60 of usage for DeepSeek v4.1 Flash is now permanent",
+          "summary": "",
+          "published_at": "2026-09-25T16:45:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7b73a8f235ae7af6",
+      "title": "Special agents' blood and urine test results stolen in FBI hack",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49846690",
+          "target_url": "https://www.bbc.co.uk/news/articles/cw62me2vlj07o",
+          "independent": false,
+          "title": "Special agents' blood and urine test results stolen in FBI hack",
+          "summary": "",
+          "published_at": "2026-09-25T16:30:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "73d33ca6f58414c7",
+      "title": "Meta is putting its muscle behind Muse as the AI app takes off",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off",
+          "target_url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off",
+          "independent": true,
+          "title": "Meta is putting its muscle behind Muse as the AI app takes off",
+          "summary": "Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agents's promotion across its own apps and beyond.",
+          "published_at": "2026-09-25T16:16:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "cd39ae8a2a263755",
+      "title": "20 AI Agent Skills With ~800K GitHub Stars That Form a Real Agent Stack",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://agentnativedev.medium.com/20-ai-agent-skills-with-800k-github-stars-that-form-a-real-agent-stack-e0988bbaa365",
+          "target_url": "https://agentnativedev.medium.com/20-ai-agent-skills-with-800k-github-stars-that-form-a-real-agent-stack-e0988bbaa365",
+          "independent": false,
+          "title": "20 AI Agent Skills With ~800K GitHub Stars That Form a Real Agent Stack",
+          "summary": "The weekend is just around the corner, and we know your fingers are already itching to build something even cooler than last time. Continue reading on Medium »",
+          "published_at": "2026-09-25T16:52:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "078672694d776ee1",
+      "title": "DeepSeek Deleted Its Own Model’s Memory. Somehow That Made It Smarter.",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/predict/deepseek-deleted-its-own-models-memory-somehow-that-made-it-smarter-518e9c4772f8",
+          "target_url": "https://medium.com/predict/deepseek-deleted-its-own-models-memory-somehow-that-made-it-smarter-518e9c4772f8",
+          "independent": false,
+          "title": "DeepSeek Deleted Its Own Model’s Memory. Somehow That Made It Smarter.",
+          "summary": "DeepSeek V4.1 Flash matches frontier AI at 40× lower cost by doing something counterintuitive: erasing memory instead of expanding it. The… Continue reading on Predict »",
+          "published_at": "2026-09-25T16:49:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc2d275e6c1ed130",
+      "title": "You Don’t Need an AI Agent. You Need a Workflow.",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tabsalam79/you-dont-need-an-ai-agent-you-need-a-workflow-04932e1552e2",
+          "target_url": "https://medium.com/@tabsalam79/you-dont-need-an-ai-agent-you-need-a-workflow-04932e1552e2",
+          "independent": false,
+          "title": "You Don’t Need an AI Agent. You Need a Workflow.",
+          "summary": "Every AI content feed right now is drowning in “agent” everything — agent frameworks, agent swarms, multi-agent orchestration. Meanwhile… Continue reading on Medium »",
+          "published_at": "2026-09-25T16:49:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c69de284f247efab",
+      "title": "Fraggle Slop",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dr.lodge.mccammon/fraggle-slop-68ecf843afb6",
+          "target_url": "https://medium.com/@dr.lodge.mccammon/fraggle-slop-68ecf843afb6",
+          "independent": false,
+          "title": "Fraggle Slop",
+          "summary": "Case closed. Continue reading on Medium »",
+          "published_at": "2026-09-25T16:47:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "66a32db95c5fae3a",
+      "title": "Weekly AI Digest: Where are the brakes?",
+      "first_seen": "2026-09-26T02:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://ivopbernardo.medium.com/weekly-ai-digest-where-are-the-brakes-8638d02b8c47",
+          "target_url": "https://ivopbernardo.medium.com/weekly-ai-digest-where-are-the-brakes-8638d02b8c47",
+          "independent": false,
+          "title": "Weekly AI Digest: Where are the brakes?",
+          "summary": "Week 39, 2026 Continue reading on Medium »",
+          "published_at": "2026-09-25T16:46:02+00:00",
           "date_precision": "time"
         }
       ],
