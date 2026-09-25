@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T03:01:01.950277+09:00",
-  "window_start": "2026-07-28T03:01:01.950277+09:00",
-  "window_end": "2026-09-26T03:01:01.950277+09:00",
+  "collected_at": "2026-09-26T04:01:12.170884+09:00",
+  "window_start": "2026-07-28T04:01:12.170884+09:00",
+  "window_end": "2026-09-26T04:01:12.170884+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -9,9 +9,9 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 1,
+      "excluded_count": 0,
       "skipped_count": 127,
       "coverage_limited": false
     },
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 174,
+      "excluded_count": 175,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,7 +100,7 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
       "excluded_count": 30,
       "skipped_count": 0,
@@ -125,7 +125,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 18,
+      "skipped_count": 16,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 22,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -177,10 +177,10 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 3,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 3,
+      "excluded_count": 24,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,26 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 291,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-26T03:01:24.653730+09:00",
-  "hourly_window_start": "2026-09-23T03:01:24.653730+09:00",
+  "new_count": 1,
+  "archive_count": 292,
+  "candidates": [
+    {
+      "id": "9de028fbe46cac8b",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/proaction",
+      "source_summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "fetched_at": "2026-09-26T04:01:12+09:00",
+      "published_at": "2026-09-25T19:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "프로액션은 코덱스로 매출을 60% 높이고 75시간 이상을 절약합니다",
+      "source_summary_ko": "Proaction은 Codex, GPT-Live-1 및 GPT-6 Astra를 사용하여 현대적인 차량 관리를 더 빠르게 구축, 운영 및 판매합니다."
+    }
+  ],
+  "hourly_collected_at": "2026-09-26T04:01:36.016712+09:00",
+  "hourly_window_start": "2026-09-23T04:01:36.016712+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -915,26 +930,16 @@
           "summary": "",
           "published_at": "2026-09-23T07:01:18+00:00",
           "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "43bc466e5db8cfc8",
-      "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
+        },
         {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/jetbrains-air-agents-ide",
-          "target_url": "https://thenewstack.io/jetbrains-air-agents-ide",
-          "independent": true,
-          "title": "“One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters",
-          "summary": "There’s little question that AI coding agents have changed where software development work happens. Developers can increasingly delegate work from The post “One of the most significant steps in our 26-year history”: JetBrains goes big on agentic development — and bets the IDE still matters appeared first on The New Stack .",
-          "published_at": "2026-09-22T18:27:37+00:00",
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848424",
+          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
+          "independent": false,
+          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
+          "summary": "",
+          "published_at": "2026-09-25T18:50:20+00:00",
           "date_precision": "time"
         }
       ],
@@ -2748,6 +2753,17 @@
           "summary": "",
           "published_at": "2026-09-25T16:51:28+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848141",
+          "target_url": "https://aidash.dev/",
+          "independent": false,
+          "title": "Show HN: I couldn't deal with another Claude Code tab",
+          "summary": "",
+          "published_at": "2026-09-25T18:22:30+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -3063,27 +3079,6 @@
           "title": "Mastering LLM Inference Optimization",
           "summary": "",
           "published_at": "2026-09-23T06:02:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ceb849a6465ce414",
-      "title": "Jev State",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/jev-state",
-          "target_url": "https://www.producthunt.com/products/jev-state",
-          "independent": false,
-          "title": "Jev State",
-          "summary": "Turn AI conversations into tests and runnable code Discussion | Link",
-          "published_at": "2026-09-22T18:53:46+00:00",
           "date_precision": "time"
         }
       ],
@@ -20194,6 +20189,342 @@
           "title": "The Orbitron Anomaly: Why the Ultimate AI Isn’t Extraterrestrial, It’s Chronological",
           "summary": "While academia scans distant star systems for alien fingerprints, phase-shifting nodes from the future Lattice are already calibrating our… Continue reading on Medium »",
           "published_at": "2026-09-25T17:40:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d051992409d4b60a",
+      "title": "Lobsters: Rename vibecoding to LLMs (Greasemonkey script)",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848548",
+          "target_url": "https://greasyfork.org/en/scripts",
+          "independent": false,
+          "title": "Lobsters: Rename vibecoding to LLMs (Greasemonkey script)",
+          "summary": "",
+          "published_at": "2026-09-25T19:01:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "96545187af2a88d5",
+      "title": "No country controls every layer: The hidden AI systems reshaping global power",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848516",
+          "target_url": "https://www.abc.net.au/news/2026-09-24/ai-race-chips-data-energy-cake-stack-us-china-asia-pacific/107071946",
+          "independent": false,
+          "title": "No country controls every layer: The hidden AI systems reshaping global power",
+          "summary": "",
+          "published_at": "2026-09-25T18:57:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4db0e0a13f91b9f3",
+      "title": "Cambridge Analytica 2.0 – When the AI Assistant Becomes a Intelligence Graph",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848397",
+          "target_url": "https://futurium.ec.europa.eu/en/apply-ai-alliance/community-content/cambridge-analytica-20-when-ai-assistant-becomes-intelligence-graph-billion-dollar-company",
+          "independent": false,
+          "title": "Cambridge Analytica 2.0 – When the AI Assistant Becomes a Intelligence Graph",
+          "summary": "",
+          "published_at": "2026-09-25T18:47:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b9096748181c1634",
+      "title": "Treat Agents Like Direct Reports",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848358",
+          "target_url": "https://toppingdesign.com/writing/agents-are-reports",
+          "independent": false,
+          "title": "Treat Agents Like Direct Reports",
+          "summary": "",
+          "published_at": "2026-09-25T18:44:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "15966dbda7bf1e28",
+      "title": "The cost of free AI restaurant ads is greater than it seems",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848247",
+          "target_url": "https://www.phoenixnewtimes.com/opinion/ai-restaurant-ads-are-free-but-at-what-cost-40701302",
+          "independent": false,
+          "title": "The cost of free AI restaurant ads is greater than it seems",
+          "summary": "",
+          "published_at": "2026-09-25T18:31:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f37444bb30b94151",
+      "title": "AI applications need better primitives than text generation",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848236",
+          "target_url": "https://seldon-ai.com/blog/better-primitives-than-text-generation",
+          "independent": false,
+          "title": "AI applications need better primitives than text generation",
+          "summary": "",
+          "published_at": "2026-09-25T18:30:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8993a8149caab98c",
+      "title": "xAI Moves to Buy Out Southaven Residents Who Agree Not to Sue over Plant Noise",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49848217",
+          "target_url": "https://www.mississippifreepress.org/xai-moves-to-buy-out-southaven-residents-who-agree-not-to-sue-it-over-power-plant-noise-letter-shows",
+          "independent": false,
+          "title": "xAI Moves to Buy Out Southaven Residents Who Agree Not to Sue over Plant Noise",
+          "summary": "",
+          "published_at": "2026-09-25T18:28:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7c4ccc4b5789704a",
+      "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/25/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
+          "summary": "Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses.",
+          "published_at": "2026-09-25T18:48:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "28be881384a00fee",
+      "title": "Ahead of US IPO, British AI neocloud Nscale secures $3.36B in convertible financing",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing",
+          "target_url": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing",
+          "independent": true,
+          "title": "Ahead of US IPO, British AI neocloud Nscale secures $3.36B in convertible financing",
+          "summary": "The funding, which comes from Third Point, Nvidia, and others, will fuel the company's massive AI data center buildout.",
+          "published_at": "2026-09-25T18:33:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "7987845e1d4db7cc",
+      "title": "Meta’s Muse just stole the AI spotlight from OpenAI and Anthropic",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic",
+          "target_url": "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic",
+          "independent": true,
+          "title": "Meta’s Muse just stole the AI spotlight from OpenAI and Anthropic",
+          "summary": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,” maybe someone should have asked: what pace? Now it’s turned into model drop week for both companies as Anthropic rolled out Opus 5.5, followed by OpenAI’s GPT-6 model updates just 90 minutes later. But the company that stole the spotlight was Meta, whose personal AI agent Muse is reportedly outpacing ChatGPT’s early numbers and is headed for smart glasses and […]",
+          "published_at": "2026-09-25T18:22:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "8ec9e02aaceca11d",
+      "title": "Meta’s AI Tamagotchi bet is…working?",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/video/will-metas-ai-tamagotchi-bet-isworking",
+          "target_url": "https://techcrunch.com/video/will-metas-ai-tamagotchi-bet-isworking",
+          "independent": true,
+          "title": "Meta’s AI Tamagotchi bet is…working?",
+          "summary": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,” maybe someone should have asked: what pace? Now it’s turned into model drop week for both companies as Anthropic rolled out Opus 5.5, followed by OpenAI’s GPT-6 model updates just 90 minutes later. But the company that stole the spotlight was Meta, whose personal AI agent Muse is reportedly outpacing ChatGPT’s early numbers and is headed for smart glasses and […]",
+          "published_at": "2026-09-25T16:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "dbbc42a79ca44e23",
+      "title": "Claude, ChatGPT, or a Smaller Model? Use This 60-Second Decision Rule",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@davuttam/claude-chatgpt-or-a-smaller-model-use-this-60-second-decision-rule-918e483d66dc",
+          "target_url": "https://medium.com/@davuttam/claude-chatgpt-or-a-smaller-model-use-this-60-second-decision-rule-918e483d66dc",
+          "independent": false,
+          "title": "Claude, ChatGPT, or a Smaller Model? Use This 60-Second Decision Rule",
+          "summary": "Choose the right AI model by task complexity, cost of failure, speed and data sensitivity — not brand loyalty. Continue reading on Medium »",
+          "published_at": "2026-09-25T18:51:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c9ecb3e8d9bcbb78",
+      "title": "Meta’s Muse Is Everywhere. Your Passwords Should Be Nowhere Near It",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://xhinker.medium.com/metas-muse-is-everywhere-your-passwords-should-be-nowhere-near-it-05b80bf8e900",
+          "target_url": "https://xhinker.medium.com/metas-muse-is-everywhere-your-passwords-should-be-nowhere-near-it-05b80bf8e900",
+          "independent": false,
+          "title": "Meta’s Muse Is Everywhere. Your Passwords Should Be Nowhere Near It",
+          "summary": "Meta’s Muse AI is nothing new, just agent for personal use, why it got so much attention? Continue reading on Medium »",
+          "published_at": "2026-09-25T18:51:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e6124238162d5d8c",
+      "title": "One of Our Best Engineers Stopped Working Overtime. Three Months Later, Everyone Else Was Shipping",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://devrimozcay.medium.com/one-of-our-best-engineers-stopped-working-overtime-three-months-later-everyone-else-was-shipping-e1cda8652f9e",
+          "target_url": "https://devrimozcay.medium.com/one-of-our-best-engineers-stopped-working-overtime-three-months-later-everyone-else-was-shipping-e1cda8652f9e",
+          "independent": false,
+          "title": "One of Our Best Engineers Stopped Working Overtime. Three Months Later, Everyone Else Was Shipping",
+          "summary": "I thought he was protecting his personal time, but he was actually exposing how much of our engineering process depended on people quietly… Continue reading on Medium »",
+          "published_at": "2026-09-25T18:49:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d2fbfeb4031e6636",
+      "title": "Have you heard the news? AI is the great equalizer. Expertise is dead.",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fernando.anselmi/have-you-heard-the-news-ai-is-the-great-equalizer-expertise-is-dead-358654fd513d",
+          "target_url": "https://medium.com/@fernando.anselmi/have-you-heard-the-news-ai-is-the-great-equalizer-expertise-is-dead-358654fd513d",
+          "independent": false,
+          "title": "Have you heard the news? AI is the great equalizer. Expertise is dead.",
+          "summary": "Once in a while I get the chance to talk to Holger, lead product architect at Micromentor. Continue reading on Medium »",
+          "published_at": "2026-09-25T18:48:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "888a0cec02967611",
+      "title": "The Hardest Product Data Question Isn’t “What’s Wrong?” It’s “Which System Do We Trust?”",
+      "first_seen": "2026-09-26T04:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rowmintlab/the-hardest-product-data-question-isnt-what-s-wrong-it-s-which-system-do-we-trust-d82b050cf0f5",
+          "target_url": "https://medium.com/@rowmintlab/the-hardest-product-data-question-isnt-what-s-wrong-it-s-which-system-do-we-trust-d82b050cf0f5",
+          "independent": false,
+          "title": "The Hardest Product Data Question Isn’t “What’s Wrong?” It’s “Which System Do We Trust?”",
+          "summary": "A feed, product page and structured data can all disagree. Automation can spot that in seconds. Deciding which one is actually right is… Continue reading on Medium »",
+          "published_at": "2026-09-25T18:46:01+00:00",
           "date_precision": "time"
         }
       ],
