@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T22:03:14.876943+09:00",
-  "window_start": "2026-07-27T22:03:14.876943+09:00",
-  "window_end": "2026-09-25T22:03:14.876943+09:00",
+  "collected_at": "2026-09-25T23:01:27.845523+09:00",
+  "window_start": "2026-07-27T23:01:27.845523+09:00",
+  "window_end": "2026-09-25T23:01:27.845523+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "partial",
-      "count": 12,
-      "held_count": 1,
-      "excluded_count": 27,
+      "count": 8,
+      "held_count": 2,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 4,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 4,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -202,7 +202,7 @@
       "count": 13,
       "held_count": 0,
       "excluded_count": 2,
-      "skipped_count": 12,
+      "skipped_count": 13,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T22:03:45.303955+09:00",
-  "hourly_window_start": "2026-09-22T22:03:45.303955+09:00",
+  "hourly_collected_at": "2026-09-25T23:01:56.188900+09:00",
+  "hourly_window_start": "2026-09-22T23:01:56.188900+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -986,6 +986,17 @@
           "title": "Meet the next wave of VCs judging Startup Battlefield 200 at TechCrunch Disrupt 2026",
           "summary": "Meet the next wave of VCs judging the Startup Battlefield 200 contenders on the main stage at TechCrunch Disrupt 2026. Register by September 25 at 11:59 p.m. PT, to save up to $200 and to get a front-row seat to one of the most intense startup pitch competitions.",
           "published_at": "2026-09-24T16:03:36+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-5-to-attend",
+          "target_url": "https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-5-to-attend",
+          "independent": true,
+          "title": "Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5/5 to attend: Leave further ahead.",
+          "summary": "Last 24 hours to save up to $200 on your TechCrunch Disrupt 2026 pass. Leave the event further in your startup's trajectory than where you started. Don't miss your chance to save and to push the needle.",
+          "published_at": "2026-09-25T14:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -12881,6 +12892,17 @@
           "summary": "The notice would allow Oracle to delay payments should the facility miss its 2028 target to come online.",
           "published_at": "2026-09-24T18:11:44+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844634",
+          "target_url": "https://www.wsj.com/finance/investing/cracks-in-oracles-ai-data-center-build-out-appear-in-massive-new-mexico-project-effb51c2",
+          "independent": false,
+          "title": "Cracks in Oracle's AI Data-Center Build-Out Appear in New Mexico Project",
+          "summary": "",
+          "published_at": "2026-09-25T13:46:40+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -18783,6 +18805,279 @@
           "title": "Your Business Doesn’t Need an AI Strategy. It Needs a List of Annoying Tasks.",
           "summary": "Forget the hype cycle. A practical guide to finding the one boring workflow where AI actually pays for itself. Continue reading on Magic AI »",
           "published_at": "2026-09-25T12:50:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4ceb9fc2285ee918",
+      "title": "A Jevlike using an escalation model to route between a classifier and an LLM",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844757",
+          "target_url": "https://yogthos.net/posts/2026-09-24-introducing-lev.html",
+          "independent": false,
+          "title": "A Jevlike using an escalation model to route between a classifier and an LLM",
+          "summary": "",
+          "published_at": "2026-09-25T13:57:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c31d7d30bf41afd6",
+      "title": "The US stood alone in dismissing AI safety concerns at the UN",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844717",
+          "target_url": "https://www.semafor.com/article/09/25/2026/white-house-is-isolated-in-brushing-off-ai-safety",
+          "independent": false,
+          "title": "The US stood alone in dismissing AI safety concerns at the UN",
+          "summary": "",
+          "published_at": "2026-09-25T13:54:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bc3bdddd76a7b244",
+      "title": "Tell agents the why, not just the how",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844645",
+          "target_url": "https://www.seangoedecke.com/tell-agents-the-why",
+          "independent": false,
+          "title": "Tell agents the why, not just the how",
+          "summary": "",
+          "published_at": "2026-09-25T13:47:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8987ffbf65e59a0b",
+      "title": "A Model Context Protocol (MCP) server for NATS messaging system integration",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844569",
+          "target_url": "https://github.com/sinadarbouy/mcp-nats",
+          "independent": false,
+          "title": "A Model Context Protocol (MCP) server for NATS messaging system integration",
+          "summary": "",
+          "published_at": "2026-09-25T13:42:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb8739a9d6a76e6d",
+      "title": "The New Copilot with Home, Code and Autopilot",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844564",
+          "target_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot",
+          "independent": false,
+          "title": "The New Copilot with Home, Code and Autopilot",
+          "summary": "",
+          "published_at": "2026-09-25T13:42:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b3598358a8b3fbaf",
+      "title": "Show HN: Sifthound – self-hosted, Tavily-compatible search API for AI agents",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844557",
+          "target_url": "https://github.com/khsarvar/sifthound",
+          "independent": false,
+          "title": "Show HN: Sifthound – self-hosted, Tavily-compatible search API for AI agents",
+          "summary": "",
+          "published_at": "2026-09-25T13:42:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0d0759a966eb7ec",
+      "title": "AI, Consciousness and Emergent Behaviors",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844429",
+          "target_url": "https://blog.borrego.dev/entries/ai-consciousness-emergent-behaviors.html",
+          "independent": false,
+          "title": "AI, Consciousness and Emergent Behaviors",
+          "summary": "",
+          "published_at": "2026-09-25T13:33:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c58ed3cc3208b882",
+      "title": "Can Apple Home’s AI camera features outsmart Amazon’s and Google’s? I put them to the test",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review",
+          "target_url": "https://www.theverge.com/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review",
+          "independent": true,
+          "title": "Can Apple Home’s AI camera features outsmart Amazon’s and Google’s? I put them to the test",
+          "summary": "A few years back, I was at a beachside Easter egg hunt, watching my kids dash through sand dunes searching for sweet treats. My phone buzzed in my pocket; I ignored it. A moment later, it buzzed again. I pulled it out, glanced down, and saw a \"motion detected\" notification from my security camera. \"Just […]",
+          "published_at": "2026-09-25T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "4e632b9579491a97",
+      "title": "What problems is CES trying to solve?",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@michitaka.kondo/what-problems-is-ces-trying-to-solve-9be701fdce59",
+          "target_url": "https://medium.com/@michitaka.kondo/what-problems-is-ces-trying-to-solve-9be701fdce59",
+          "independent": false,
+          "title": "What problems is CES trying to solve?",
+          "summary": "Originally published on TANEMK LABS Continue reading on Medium »",
+          "published_at": "2026-09-25T13:52:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "37cfe421901ffa8a",
+      "title": "Como Parar de Receber Respostas Genéricas da IA",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@victorsantosjobs/como-parar-de-receber-respostas-gen%C3%A9ricas-da-ia-ec9a2a30e801",
+          "target_url": "https://medium.com/@victorsantosjobs/como-parar-de-receber-respostas-gen%C3%A9ricas-da-ia-ec9a2a30e801",
+          "independent": false,
+          "title": "Como Parar de Receber Respostas Genéricas da IA",
+          "summary": "5 Estratégias Práticas de Prompting Continue reading on Medium »",
+          "published_at": "2026-09-25T13:50:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "af3ac3594b850ae6",
+      "title": "What If Your Mind Is Not a Window Into Reality, but a Prediction Engine Wearing Your Identity?",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@saadbasdot/what-if-your-mind-is-not-a-window-into-reality-but-a-prediction-engine-wearing-your-identity-41188f7015dc",
+          "target_url": "https://medium.com/@saadbasdot/what-if-your-mind-is-not-a-window-into-reality-but-a-prediction-engine-wearing-your-identity-41188f7015dc",
+          "independent": false,
+          "title": "What If Your Mind Is Not a Window Into Reality, but a Prediction Engine Wearing Your Identity?",
+          "summary": "Your mind feels like a window. Continue reading on Medium »",
+          "published_at": "2026-09-25T13:49:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bff551753dc8600f",
+      "title": "— English Version — The Art Movement and the Continuity of the Piece",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arnohainet/english-version-the-art-movement-and-the-continuity-of-the-piece-beab06438201",
+          "target_url": "https://medium.com/@arnohainet/english-version-the-art-movement-and-the-continuity-of-the-piece-beab06438201",
+          "independent": false,
+          "title": "— English Version — The Art Movement and the Continuity of the Piece",
+          "summary": "Summary phrase by GPT-5.6 Sol Continue reading on Medium »",
+          "published_at": "2026-09-25T13:49:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "22e8b9a63680ea3f",
+      "title": "Structured Intelligence Was Never Super Intelligence",
+      "first_seen": "2026-09-25T23:01:56+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@SentinelDynamics/structured-intelligence-was-never-super-intelligence-057e34825c4d",
+          "target_url": "https://medium.com/@SentinelDynamics/structured-intelligence-was-never-super-intelligence-057e34825c4d",
+          "independent": false,
+          "title": "Structured Intelligence Was Never Super Intelligence",
+          "summary": "Years before today’s debate over the term SI, I was already developing and publicly writing about Structured Intelligence and Sentinel… Continue reading on Medium »",
+          "published_at": "2026-09-25T13:47:15+00:00",
           "date_precision": "time"
         }
       ],
