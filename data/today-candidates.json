@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T17:01:01.131744+09:00",
-  "window_start": "2026-07-27T17:01:01.131744+09:00",
-  "window_end": "2026-09-25T17:01:01.131744+09:00",
+  "collected_at": "2026-09-25T18:01:28.969659+09:00",
+  "window_start": "2026-07-27T18:01:28.969659+09:00",
+  "window_end": "2026-09-25T18:01:28.969659+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 174,
+      "excluded_count": 173,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,7 +100,7 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
       "excluded_count": 30,
       "skipped_count": 3,
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 3,
+      "excluded_count": 21,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 5,
+      "excluded_count": 4,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T17:01:25.015442+09:00",
-  "hourly_window_start": "2026-09-22T17:01:25.015442+09:00",
+  "hourly_collected_at": "2026-09-25T18:01:57.215061+09:00",
+  "hourly_window_start": "2026-09-22T18:01:57.215061+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -794,27 +794,6 @@
           "title": "A New Chatbot Wants to Unlock the Secrets in Tattered Ancient Greek Records",
           "summary": "In the hope of uncovering new details about ancient life, researchers have developed a large language model that fills in the gaps in papyrus fragments.",
           "published_at": "2026-09-22T09:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "e80b7dda4f9a5f3e",
-      "title": "How to Use AI With Your Privacy Intact",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/how-to-use-ai-with-your-privacy-intact",
-          "target_url": "https://www.wired.com/story/how-to-use-ai-with-your-privacy-intact",
-          "independent": true,
-          "title": "How to Use AI With Your Privacy Intact",
-          "summary": "Your conversations with AI chatbots are both highly personal and deeply vulnerable to surveillance. Here’s how you can protect yourself.",
-          "published_at": "2026-09-22T09:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -3039,6 +3018,17 @@
           "summary": "",
           "published_at": "2026-09-23T23:33:56+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49815095",
+          "target_url": "https://filmstudio.rxlab.app",
+          "independent": false,
+          "title": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
+          "summary": "",
+          "published_at": "2026-09-23T12:28:40+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -5036,27 +5026,6 @@
           "title": "AI proof of the Erdős–Sós conjecture",
           "summary": "",
           "published_at": "2026-09-23T12:31:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ca349c5ed48f5b04",
-      "title": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815095",
-          "target_url": "https://filmstudio.rxlab.app",
-          "independent": false,
-          "title": "Show HN: RxFilm Studio–Create and edit your product videos with AI agent",
-          "summary": "",
-          "published_at": "2026-09-23T12:28:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -17615,6 +17584,300 @@
           "title": "AI-Based Mobile App Development",
           "summary": "AI-Based Mobile App Development: Building Smarter Mobile Applications : Continue reading on Medium »",
           "published_at": "2026-09-25T07:48:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c820356c4e54825f",
+      "title": "Running local LLMs on your Mac: what fits, what's free, and what's overkill",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841873",
+          "target_url": "https://typetab.app/blog/local-llms-on-your-mac",
+          "independent": false,
+          "title": "Running local LLMs on your Mac: what fits, what's free, and what's overkill",
+          "summary": "",
+          "published_at": "2026-09-25T08:53:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e9242a979c8dca2b",
+      "title": "Claude's remake of \"I'm upping my p(doom)\" in 12 hours",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841720",
+          "target_url": "https://x.com/donaldjewkes/2102801274173587569",
+          "independent": false,
+          "title": "Claude's remake of \"I'm upping my p(doom)\" in 12 hours",
+          "summary": "",
+          "published_at": "2026-09-25T08:31:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b2a5dc2a843e886a",
+      "title": "AI for Creativity",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841655",
+          "target_url": "https://twitter.com/jeffreykWNDR/status/2102774995315245469",
+          "independent": false,
+          "title": "AI for Creativity",
+          "summary": "",
+          "published_at": "2026-09-25T08:18:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1ac5c3665a89695c",
+      "title": "Legal AI Harvey's margins went from +50% to -50% in 6 months on frontier costs",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841581",
+          "target_url": "https://finance.yahoo.com/technology/ai/articles/openai-anthropic-costs-push-more-160523322.html",
+          "independent": false,
+          "title": "Legal AI Harvey's margins went from +50% to -50% in 6 months on frontier costs",
+          "summary": "",
+          "published_at": "2026-09-25T08:08:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4c00eddfee518601",
+      "title": "Real-Time AI Simplification (A2, B1, B2) of BBC World News Live",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841565",
+          "target_url": "https://voicefrom.ai/restate",
+          "independent": false,
+          "title": "Real-Time AI Simplification (A2, B1, B2) of BBC World News Live",
+          "summary": "",
+          "published_at": "2026-09-25T08:06:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "efbe5ca9b5cde6eb",
+      "title": "Jango",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/jango",
+          "target_url": "https://www.producthunt.com/products/jango",
+          "independent": false,
+          "title": "Jango",
+          "summary": "Test multi-user apps with AI agents that act like real users Discussion | Link",
+          "published_at": "2026-09-25T02:16:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6f5e5908f6ba2c3d",
+      "title": "Once UI 2.0",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/once-ui-for-figma",
+          "target_url": "https://www.producthunt.com/products/once-ui-for-figma",
+          "independent": false,
+          "title": "Once UI 2.0",
+          "summary": "Builds consistent React apps for developers and AI agents Discussion | Link",
+          "published_at": "2026-09-24T23:05:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d288a08d54c57e52",
+      "title": "Hyperdream",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/hyperdream",
+          "target_url": "https://www.producthunt.com/products/hyperdream",
+          "independent": false,
+          "title": "Hyperdream",
+          "summary": "The Cursor of AI filmmaking Discussion | Link",
+          "published_at": "2026-09-24T15:47:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9cd6ce32b31e05f0",
+      "title": "Article: The Agent Harness: What It Is and Two Ways to Build One",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/articles/agent-harness-build-one",
+          "target_url": "https://www.infoq.com/articles/agent-harness-build-one",
+          "independent": true,
+          "title": "Article: The Agent Harness: What It Is and Two Ways to Build One",
+          "summary": "This article explains the development and operational layers of an agent harness through two implementations of a finance assistant: AWS AgentCore Harness and LangChain with Envoy AI Gateway. It compares how each handles tools, memory, model access, cost control, and observability, and examines the trade-offs in operational ownership, portability, and engineering effort. By Trista Pan",
+          "published_at": "2026-09-25T09:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "5c1fc6cd554b5b1d",
+      "title": "RAG From Zero: The Mental Model I Wish I Had as a Beginner",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/linkit-intecs/rag-from-zero-the-mental-model-i-wish-i-had-as-a-beginner-3a54faaac820",
+          "target_url": "https://medium.com/linkit-intecs/rag-from-zero-the-mental-model-i-wish-i-had-as-a-beginner-3a54faaac820",
+          "independent": false,
+          "title": "RAG From Zero: The Mental Model I Wish I Had as a Beginner",
+          "summary": "How I learned why RAG exists, what chunks and embeddings actually do, and how an LLM finds the right information before answering. Continue reading on LinkIT »",
+          "published_at": "2026-09-25T08:51:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "778605cc9e891dae",
+      "title": "Most Powerful Free AI Background Removal Tools for Students in 2026",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@theayeshawrites/most-powerful-free-ai-background-removal-tools-for-students-in-2026-c12befdab1e2",
+          "target_url": "https://medium.com/@theayeshawrites/most-powerful-free-ai-background-removal-tools-for-students-in-2026-c12befdab1e2",
+          "independent": false,
+          "title": "Most Powerful Free AI Background Removal Tools for Students in 2026",
+          "summary": "Removing an image background used to mean spending a long time tracing around a subject with complicated selection tools. In 2026… Continue reading on Medium »",
+          "published_at": "2026-09-25T08:50:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5cdae137313f4a8",
+      "title": "How I Use Free AI Tools to Find Clients and Make Money Online",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@z01135488/how-i-use-free-ai-tools-to-find-clients-and-make-money-online-ca1af5c5a558",
+          "target_url": "https://medium.com/@z01135488/how-i-use-free-ai-tools-to-find-clients-and-make-money-online-ca1af5c5a558",
+          "independent": false,
+          "title": "How I Use Free AI Tools to Find Clients and Make Money Online",
+          "summary": "A biggner guide of free Ai tools fir making money online Continue reading on Medium »",
+          "published_at": "2026-09-25T08:49:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b5cd0f8cfa292542",
+      "title": "Connected Accounts and Borrower Networks: A Blind Spot in Traditional Credit Assessment",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fineye/connected-accounts-and-borrower-networks-a-blind-spot-in-traditional-credit-assessment-566ab07b6edb",
+          "target_url": "https://medium.com/@fineye/connected-accounts-and-borrower-networks-a-blind-spot-in-traditional-credit-assessment-566ab07b6edb",
+          "independent": false,
+          "title": "Connected Accounts and Borrower Networks: A Blind Spot in Traditional Credit Assessment",
+          "summary": "Underwriting is usually built around a single unit of analysis: one borrower, one loan file, one primary bank account. That’s a reasonable… Continue reading on Medium »",
+          "published_at": "2026-09-25T08:49:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "32db9784bff182b5",
+      "title": "How Agencies Can Measure the Real Business Value of AI",
+      "first_seen": "2026-09-25T18:01:57+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@chandrasona627/how-agencies-can-measure-the-real-business-value-of-ai-2041e45c4b68",
+          "target_url": "https://medium.com/@chandrasona627/how-agencies-can-measure-the-real-business-value-of-ai-2041e45c4b68",
+          "independent": false,
+          "title": "How Agencies Can Measure the Real Business Value of AI",
+          "summary": "AI is now becoming a commonplace technology among agencies’ workflows. Regardless of whether the task concerns creation of any kind of… Continue reading on Medium »",
+          "published_at": "2026-09-25T08:48:03+00:00",
           "date_precision": "time"
         }
       ],
