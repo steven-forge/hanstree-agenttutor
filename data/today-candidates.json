@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T09:01:16.842578+09:00",
-  "window_start": "2026-07-27T09:01:16.842578+09:00",
-  "window_end": "2026-09-25T09:01:16.842578+09:00",
+  "collected_at": "2026-09-25T10:01:35.002059+09:00",
+  "window_start": "2026-07-27T10:01:35.002059+09:00",
+  "window_end": "2026-09-25T10:01:35.002059+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 172,
+      "excluded_count": 173,
       "skipped_count": 22,
       "coverage_limited": false
     },
@@ -103,7 +103,7 @@
       "count": 13,
       "held_count": 0,
       "excluded_count": 25,
-      "skipped_count": 6,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 11,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 19,
-      "skipped_count": 11,
+      "excluded_count": 20,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 289,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T09:01:41.598272+09:00",
-  "hourly_window_start": "2026-09-22T09:01:41.598272+09:00",
+  "hourly_collected_at": "2026-09-25T10:02:01.762429+09:00",
+  "hourly_window_start": "2026-09-22T10:02:01.762429+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2929,6 +2929,17 @@
           "summary": "",
           "published_at": "2026-09-24T23:48:09+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49811879",
+          "target_url": "https://www.zfinia.com/cursed",
+          "independent": false,
+          "title": "Show HN: Is your repo giving coding agents two different answers?",
+          "summary": "",
+          "published_at": "2026-09-23T05:07:14+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2991,27 +3002,6 @@
           "title": "Province of BC Sues OpenAI and Sam Altman over Tumbler Ridge School Shooting",
           "summary": "",
           "published_at": "2026-09-23T05:35:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3d77c257c418a8e9",
-      "title": "Show HN: Is your repo giving coding agents two different answers?",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811879",
-          "target_url": "https://www.zfinia.com/cursed",
-          "independent": false,
-          "title": "Show HN: Is your repo giving coding agents two different answers?",
-          "summary": "",
-          "published_at": "2026-09-23T05:07:14+00:00",
           "date_precision": "time"
         }
       ],
@@ -3307,27 +3297,6 @@
           "title": "Koreshield",
           "summary": "Security and evidence for AI support agents Discussion | Link",
           "published_at": "2026-09-22T12:47:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bdd1084588668c68",
-      "title": "ToneBird",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/tonebird",
-          "target_url": "https://www.producthunt.com/products/tonebird",
-          "independent": false,
-          "title": "ToneBird",
-          "summary": "AI reply assistant that remembers your relationships Discussion | Link",
-          "published_at": "2026-09-22T00:23:50+00:00",
           "date_precision": "time"
         }
       ],
@@ -15866,6 +15835,174 @@
           "title": "Why the Same Paragraph Gets Different AI Detector Scores",
           "summary": "Run the same paragraph through two AI detectors and the scores can disagree sharply. That does not automatically mean one tool is broken… Continue reading on Medium »",
           "published_at": "2026-09-24T23:40:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d71f55a7bf5a884",
+      "title": "Paul Graham on LLMs 'Thinking'",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838788",
+          "target_url": "https://twitter.com/paulg/status/2103135915195371973",
+          "independent": false,
+          "title": "Paul Graham on LLMs 'Thinking'",
+          "summary": "",
+          "published_at": "2026-09-25T00:42:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8d48765dae025ad7",
+      "title": "ServingStudio: Simulating, Analyzing, and Optimizing LLM Serving Systems",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838745",
+          "target_url": "https://syfi-servingstudio.github.io/ServingStudioIntro/blog/introducing-servingstudio",
+          "independent": false,
+          "title": "ServingStudio: Simulating, Analyzing, and Optimizing LLM Serving Systems",
+          "summary": "",
+          "published_at": "2026-09-25T00:38:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b938eec8b2cbc41",
+      "title": "OpenAI attacked Australia's health system and doubled down. Time to act",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49838642",
+          "target_url": "https://www.theguardian.com/commentisfree/2026/sep/25/open-ai-attacked-australias-health-system-and-then-doubled-down-on-its-negligence-the-time-for-wait-and-see-is-over",
+          "independent": false,
+          "title": "OpenAI attacked Australia's health system and doubled down. Time to act",
+          "summary": "",
+          "published_at": "2026-09-25T00:27:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51ac5cf05c75c159",
+      "title": "The AI editor that knows its place",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://code.likeagirl.io/the-ai-editor-that-knows-its-place-3f0a8c71567a",
+          "target_url": "https://code.likeagirl.io/the-ai-editor-that-knows-its-place-3f0a8c71567a",
+          "independent": false,
+          "title": "The AI editor that knows its place",
+          "summary": "Your words, your call Continue reading on Code Like A Girl »",
+          "published_at": "2026-09-25T00:48:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1781975b45d2ed3f",
+      "title": "Texas Has a 466-Gigawatt Line for AI Power. Only 3.9 GW Is Actually Plugged In.",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lvyang860/texas-has-a-466-gigawatt-line-for-ai-power-only-3-9-gw-is-actually-plugged-in-d882fb8214d4",
+          "target_url": "https://medium.com/@lvyang860/texas-has-a-466-gigawatt-line-for-ai-power-only-3-9-gw-is-actually-plugged-in-d882fb8214d4",
+          "independent": false,
+          "title": "Texas Has a 466-Gigawatt Line for AI Power. Only 3.9 GW Is Actually Plugged In.",
+          "summary": "This week Texas froze data center permits. ERCOT’s own numbers, and the grid data we track at Grid Alpha, show why the AI story there has… Continue reading on Medium »",
+          "published_at": "2026-09-25T00:47:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5d7ed27f79cc1a48",
+      "title": "Living on Earth, Chasing the Light",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-fab4799561f8",
+          "target_url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-fab4799561f8",
+          "independent": false,
+          "title": "Living on Earth, Chasing the Light",
+          "summary": "Episode 1: Maru Continue reading on Medium »",
+          "published_at": "2026-09-25T00:38:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0f4acd446c65079b",
+      "title": "You Don’t Need to Worry About Government Surveillance",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/ai-ai-oh/you-dont-need-to-worry-about-government-surveillance-98b69eb7b02f",
+          "target_url": "https://medium.com/ai-ai-oh/you-dont-need-to-worry-about-government-surveillance-98b69eb7b02f",
+          "independent": false,
+          "title": "You Don’t Need to Worry About Government Surveillance",
+          "summary": "Watches that listen, glasses that see, and Waymos that call the police Continue reading on Ai-Ai-OH »",
+          "published_at": "2026-09-25T00:38:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5aed650ab011846",
+      "title": "How did Predicate Logic change the way computers see knowledge?",
+      "first_seen": "2026-09-25T10:02:01+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@thquang2605/how-did-predicate-logic-change-the-way-computers-see-knowledge-82e1f545883f",
+          "target_url": "https://medium.com/@thquang2605/how-did-predicate-logic-change-the-way-computers-see-knowledge-82e1f545883f",
+          "independent": false,
+          "title": "How did Predicate Logic change the way computers see knowledge?",
+          "summary": "The Language of Reasoning: How Logic Taught Machines to Understand the World Continue reading on Medium »",
+          "published_at": "2026-09-25T00:38:13+00:00",
           "date_precision": "time"
         }
       ],
