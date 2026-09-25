@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T21:01:23.909070+09:00",
-  "window_start": "2026-07-27T21:01:23.909070+09:00",
-  "window_end": "2026-09-25T21:01:23.909070+09:00",
+  "collected_at": "2026-09-25T22:03:14.876943+09:00",
+  "window_start": "2026-07-27T22:03:14.876943+09:00",
+  "window_end": "2026-09-25T22:03:14.876943+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 173,
+      "excluded_count": 174,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -99,10 +99,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 6,
-      "held_count": 0,
-      "excluded_count": 34,
+      "status": "partial",
+      "count": 12,
+      "held_count": 1,
+      "excluded_count": 27,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 26,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -191,7 +191,7 @@
       "count": 3,
       "held_count": 0,
       "excluded_count": 17,
-      "skipped_count": 2,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 12,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 3,
+      "excluded_count": 2,
       "skipped_count": 12,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T21:01:54.703527+09:00",
-  "hourly_window_start": "2026-09-22T21:01:54.703527+09:00",
+  "hourly_collected_at": "2026-09-25T22:03:45.303955+09:00",
+  "hourly_window_start": "2026-09-22T22:03:45.303955+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -665,48 +665,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "47022de142cb2171",
-      "title": "Viture’s Vonder Glasses Are Meant to Map Your Mind",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/viture-vonder-glasses-are-meant-to-map-your-mind",
-          "target_url": "https://www.wired.com/story/viture-vonder-glasses-are-meant-to-map-your-mind",
-          "independent": true,
-          "title": "Viture’s Vonder Glasses Are Meant to Map Your Mind",
-          "summary": "No cameras? No problem. Viture’s first display-free smart glasses have bone-conduction microphones to privately record your daily musings.",
-          "published_at": "2026-09-22T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d46f3b265c19ff43",
-      "title": "AI Models Built From Rat Brains Just Got Closer to Reality",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/ai-models-built-from-rat-brains-are-about-to-become-a-reality",
-          "target_url": "https://www.wired.com/story/ai-models-built-from-rat-brains-are-about-to-become-a-reality",
-          "independent": true,
-          "title": "AI Models Built From Rat Brains Just Got Closer to Reality",
-          "summary": "The Biological Computing Company is bringing its AI tools to Amazon Web Services in a major boost for a once-fringe field that aims to marry nature with code.",
-          "published_at": "2026-09-22T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "3b941f8bc1fc4c52",
       "title": "I Built AI Clones of My Coworkers. Things Got Weird",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -1028,48 +986,6 @@
           "title": "Meet the next wave of VCs judging Startup Battlefield 200 at TechCrunch Disrupt 2026",
           "summary": "Meet the next wave of VCs judging the Startup Battlefield 200 contenders on the main stage at TechCrunch Disrupt 2026. Register by September 25 at 11:59 p.m. PT, to save up to $200 and to get a front-row seat to one of the most intense startup pitch competitions.",
           "published_at": "2026-09-24T16:03:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "3998a4c198db2234",
-      "title": "Everyone can find a reason to dislike data center construction",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction",
-          "target_url": "https://techcrunch.com/2026/09/22/everyone-can-find-a-reason-to-dislike-data-center-construction",
-          "independent": true,
-          "title": "Everyone can find a reason to dislike data center construction",
-          "summary": "Inside two years of fraught AI data center debates in Pennsylvania.",
-          "published_at": "2026-09-22T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "9eac9247e40019d4",
-      "title": "Nscale’s IPO will test Wall Street’s appetite for concentrated AI bets once again",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/nscales-ipo-will-test-wall-streets-appetite-for-concentrated-ai-bets-once-again",
-          "target_url": "https://techcrunch.com/2026/09/22/nscales-ipo-will-test-wall-streets-appetite-for-concentrated-ai-bets-once-again",
-          "independent": true,
-          "title": "Nscale’s IPO will test Wall Street’s appetite for concentrated AI bets once again",
-          "summary": "The British AI data center developer depends on tech giants Microsoft and Anthropic for most of its revenue.",
-          "published_at": "2026-09-22T12:23:05+00:00",
           "date_precision": "time"
         }
       ],
@@ -3282,27 +3198,6 @@
           "title": "Claude Opus 5.5",
           "summary": "Anthropic's first model in their new Claude 5.5 family Discussion | Link",
           "published_at": "2026-09-22T16:36:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3e4acbbb33f95be2",
-      "title": "Koreshield",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/koreshield",
-          "target_url": "https://www.producthunt.com/products/koreshield",
-          "independent": false,
-          "title": "Koreshield",
-          "summary": "Security and evidence for AI support agents Discussion | Link",
-          "published_at": "2026-09-22T12:47:36+00:00",
           "date_precision": "time"
         }
       ],
@@ -7646,7 +7541,17 @@
           "summary": "",
           "published_at": "2026-09-23T20:30:58+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "04f352b210857514",
+      "title": "GPT 6 Astra beat NetHack",
+      "first_seen": "2026-09-24T06:01:51+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -12218,6 +12123,17 @@
           "title": "Hard Stop: Out-of-band kernel preemption for rogue AI agents",
           "summary": "",
           "published_at": "2026-09-24T13:50:29+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844056",
+          "target_url": "https://arxiv.org/abs/2609.29808",
+          "independent": false,
+          "title": "Show HN: Hard Stop: Kernel-level preemption for autonomous AI agents",
+          "summary": "",
+          "published_at": "2026-09-25T13:01:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -18510,6 +18426,363 @@
           "title": "Jev Has Played Doom and Mario. I Made It Play Poker",
           "summary": "Across all 169 starting hands, TypeSafe’s decision model played like a solid tight player, with two clear leaks Continue reading on Medium »",
           "published_at": "2026-09-25T11:47:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d503ad104dc9bffb",
+      "title": "I Ran 255 AI Agents to Make Three Comics. The Line Between Slop and Good Is",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844063",
+          "target_url": "https://thoughts.jock.pl/p/ai-slop-comic-experiment-2026",
+          "independent": false,
+          "title": "I Ran 255 AI Agents to Make Three Comics. The Line Between Slop and Good Is",
+          "summary": "",
+          "published_at": "2026-09-25T13:02:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "30c93281b226c8ef",
+      "title": "LLMs are universal translators (2023)",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844062",
+          "target_url": "https://lil.law.harvard.edu/blog/2023/11/29/llms-are-universal-translators",
+          "independent": false,
+          "title": "LLMs are universal translators (2023)",
+          "summary": "",
+          "published_at": "2026-09-25T13:02:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a29f77e1b1937986",
+      "title": "Can you use Claude Cowork to automate A/R?",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49844016",
+          "target_url": "https://revexos.com/blog/accounts-receivable-dashboard-claude-cowork",
+          "independent": false,
+          "title": "Can you use Claude Cowork to automate A/R?",
+          "summary": "",
+          "published_at": "2026-09-25T12:58:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e127d513ce8e0a30",
+      "title": "Doubts grow over claims OpenAI agent hacked Australian Medicare portal",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843979",
+          "target_url": "https://therecord.media/openai-australia-breach-cyber",
+          "independent": false,
+          "title": "Doubts grow over claims OpenAI agent hacked Australian Medicare portal",
+          "summary": "",
+          "published_at": "2026-09-25T12:55:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "39ab8387a16888c6",
+      "title": "Financing the AI Buildout",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843952",
+          "target_url": "https://www.brookings.edu/articles/financing-the-ai-buildout",
+          "independent": false,
+          "title": "Financing the AI Buildout",
+          "summary": "",
+          "published_at": "2026-09-25T12:53:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6f75b35ac18bd786",
+      "title": "Show HN: Worktable, an open-source workspace for you and your agents",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843943",
+          "target_url": "https://github.com/worktable/worktable-dev",
+          "independent": false,
+          "title": "Show HN: Worktable, an open-source workspace for you and your agents",
+          "summary": "",
+          "published_at": "2026-09-25T12:52:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cb4e277078b82b3f",
+      "title": "ChatGPT composed a BEAUTIFUL, original piano solo with code. Is this AGI?",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843819",
+          "target_url": "https://twitter.com/AdamHincu/status/2103462960463311100",
+          "independent": false,
+          "title": "ChatGPT composed a BEAUTIFUL, original piano solo with code. Is this AGI?",
+          "summary": "",
+          "published_at": "2026-09-25T12:40:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d178c78a54857ad3",
+      "title": "EU Member States plan \"digital expropriation\" in the interest of AI companies",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843793",
+          "target_url": "https://noyb.eu/en/ai-eu-member-states-plan-digital-expropriation-europeans-interest-ai-companies",
+          "independent": false,
+          "title": "EU Member States plan \"digital expropriation\" in the interest of AI companies",
+          "summary": "",
+          "published_at": "2026-09-25T12:38:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b816f6fb01a5e5b8",
+      "title": "Jev CEO talk: I made ChatGPT, now I'm building what's next [video]",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843788",
+          "target_url": "https://www.youtube.com/watch?v=cJ0EOzey--o",
+          "independent": false,
+          "title": "Jev CEO talk: I made ChatGPT, now I'm building what's next [video]",
+          "summary": "",
+          "published_at": "2026-09-25T12:38:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c32e9def256a89fe",
+      "title": "IronWarden – A microsecond PII firewall for streaming LLMs in safe Rust",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843753",
+          "target_url": "https://github.com/Somnerd/IronWarden",
+          "independent": false,
+          "title": "IronWarden – A microsecond PII firewall for streaming LLMs in safe Rust",
+          "summary": "",
+          "published_at": "2026-09-25T12:35:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "48468e38580ab840",
+      "title": "Show HN: An AI interviewer that pushes back on your system design trade-offs",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843681",
+          "target_url": "https://prepd.tech/",
+          "independent": false,
+          "title": "Show HN: An AI interviewer that pushes back on your system design trade-offs",
+          "summary": "",
+          "published_at": "2026-09-25T12:27:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "76468f93e686d961",
+      "title": "Stateless MCP Removes Session Affinity Requirements for AWS Server Deployments",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/aws-stateless-mcp",
+          "target_url": "https://www.infoq.com/news/2026/09/aws-stateless-mcp",
+          "independent": true,
+          "title": "Stateless MCP Removes Session Affinity Requirements for AWS Server Deployments",
+          "summary": "AWS details how the latest Model Context Protocol specification removes protocol-level sessions, sticky-session requirements, and session storage for remote MCP servers. The change enables independent request routing and simpler horizontal scaling while shifting application state, retries, observability, and idempotency concerns to other layers. By Leela Kumili",
+          "published_at": "2026-09-25T12:58:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d8db97c29d1de781",
+      "title": "Perplexity’s Fast Search Hits 230ms. The 68% Cost Cut Matters More.",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rothyyorn9/perplexitys-fast-search-hits-230ms-the-68-cost-cut-matters-more-4706444a005c",
+          "target_url": "https://medium.com/@rothyyorn9/perplexitys-fast-search-hits-230ms-the-68-cost-cut-matters-more-4706444a005c",
+          "independent": false,
+          "title": "Perplexity’s Fast Search Hits 230ms. The 68% Cost Cut Matters More.",
+          "summary": "A new speed tier, a Rust rewrite most people will never see, and a specific number worth paying attention to: 68% Continue reading on Medium »",
+          "published_at": "2026-09-25T12:52:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7f7622514df08acf",
+      "title": "I Finished My CSE Degree But What Should I Learn Next?",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@stiti3300/i-finished-my-cse-degree-but-what-should-i-learn-next-00a0ec9b9e4d",
+          "target_url": "https://medium.com/@stiti3300/i-finished-my-cse-degree-but-what-should-i-learn-next-00a0ec9b9e4d",
+          "independent": false,
+          "title": "I Finished My CSE Degree But What Should I Learn Next?",
+          "summary": "A few months ago, I was talking to a CSE graduate who had just completed his degree. Like many students, he was excited at first. After… Continue reading on Medium »",
+          "published_at": "2026-09-25T12:52:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bae731dcbc5b405b",
+      "title": "Who Do You Trust?",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://clearpurpose.media/who-do-you-trust-ac98ff56679c",
+          "target_url": "https://clearpurpose.media/who-do-you-trust-ac98ff56679c",
+          "independent": false,
+          "title": "Who Do You Trust?",
+          "summary": "“In God we trust; all others must bring data.” Continue reading on ClearPurpose »",
+          "published_at": "2026-09-25T12:51:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "974198fed393e761",
+      "title": "Z-Score Explained Simply | Statistics Part 11/15",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kanamadi.bhagyashree.8/z-score-explained-simply-statistics-part-11-15-b8e5f140884d",
+          "target_url": "https://medium.com/@kanamadi.bhagyashree.8/z-score-explained-simply-statistics-part-11-15-b8e5f140884d",
+          "independent": false,
+          "title": "Z-Score Explained Simply | Statistics Part 11/15",
+          "summary": "Have you ever wanted to know how far a particular value is from the average? Continue reading on Medium »",
+          "published_at": "2026-09-25T12:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "de1658010b6808b6",
+      "title": "Your Business Doesn’t Need an AI Strategy. It Needs a List of Annoying Tasks.",
+      "first_seen": "2026-09-25T22:03:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/magic-ai/your-business-doesnt-need-an-ai-strategy-it-needs-a-list-of-annoying-tasks-33e867d85481",
+          "target_url": "https://medium.com/magic-ai/your-business-doesnt-need-an-ai-strategy-it-needs-a-list-of-annoying-tasks-33e867d85481",
+          "independent": false,
+          "title": "Your Business Doesn’t Need an AI Strategy. It Needs a List of Annoying Tasks.",
+          "summary": "Forget the hype cycle. A practical guide to finding the one boring workflow where AI actually pays for itself. Continue reading on Magic AI »",
+          "published_at": "2026-09-25T12:50:57+00:00",
           "date_precision": "time"
         }
       ],
