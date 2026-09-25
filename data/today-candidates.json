@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-25T15:00:58.578130+09:00",
-  "window_start": "2026-07-27T15:00:58.578130+09:00",
-  "window_end": "2026-09-25T15:00:58.578130+09:00",
+  "collected_at": "2026-09-25T16:02:10.541693+09:00",
+  "window_start": "2026-07-27T16:02:10.541693+09:00",
+  "window_end": "2026-09-25T16:02:10.541693+09:00",
   "edition_date": "2026-09-25",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 32,
-      "skipped_count": 2,
+      "excluded_count": 28,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 8,
+      "excluded_count": 23,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 290,
   "candidates": [],
-  "hourly_collected_at": "2026-09-25T15:01:24.868084+09:00",
-  "hourly_window_start": "2026-09-22T15:01:24.868084+09:00",
+  "hourly_collected_at": "2026-09-25T16:02:39.176314+09:00",
+  "hourly_window_start": "2026-09-22T16:02:39.176314+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -2983,6 +2983,17 @@
           "title": "Show HN: Sitcom Flavour – Season your Claude Code chats with sitcom replies",
           "summary": "",
           "published_at": "2026-09-25T05:03:52+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840721",
+          "target_url": "https://github.com/zhulinchng/jevper",
+          "independent": false,
+          "title": "Show HN: Jevper – an LLM API client constrained to the Jev wire format",
+          "summary": "",
+          "published_at": "2026-09-25T06:10:44+00:00",
           "date_precision": "time"
         }
       ],
@@ -14192,6 +14203,17 @@
           "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil down to the […]",
           "published_at": "2026-09-24T18:04:44+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841032",
+          "target_url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
+          "independent": false,
+          "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
+          "summary": "",
+          "published_at": "2026-09-25T06:52:12+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -16963,6 +16985,321 @@
           "title": "The Day I Started Wondering Where My Mind Ends",
           "summary": "One video. One strange question. And suddenly, my phone didn’t feel like just a phone anymore. Continue reading on Medium »",
           "published_at": "2026-09-25T05:50:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6e8b21b79a0180b8",
+      "title": "The Efficiency-Throughput Gap with GitHub Copilot",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49841103",
+          "target_url": "https://cacm.acm.org/research/beyond-the-hype-the-efficiency-throughput-gap-with-github-copilot",
+          "independent": false,
+          "title": "The Efficiency-Throughput Gap with GitHub Copilot",
+          "summary": "",
+          "published_at": "2026-09-25T07:02:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "35f7b7bf290cd5dd",
+      "title": "Show HN: Reteach – AI tutor that feels human",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840850",
+          "target_url": "https://www.reteach.study/",
+          "independent": false,
+          "title": "Show HN: Reteach – AI tutor that feels human",
+          "summary": "",
+          "published_at": "2026-09-25T06:26:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "47ef2883591ea426",
+      "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49840681",
+          "target_url": "https://www.politico.com/news/2026/09/24/peter-thiel-slams-popes-ai-encyclical-as-gift-to-chinese-communist-party-01091850",
+          "independent": false,
+          "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
+          "summary": "",
+          "published_at": "2026-09-25T06:03:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "af84382b690f4426",
+      "title": "AgreeGuard",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/agreeguard-ai-terms-privacy-analyzer",
+          "target_url": "https://www.producthunt.com/products/agreeguard-ai-terms-privacy-analyzer",
+          "independent": false,
+          "title": "AgreeGuard",
+          "summary": "AI reads the fine print before you click \"I Agree\" Discussion | Link",
+          "published_at": "2026-09-22T20:11:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f89219f55f7f8d95",
+      "title": "Kaiku",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/kaiku",
+          "target_url": "https://www.producthunt.com/products/kaiku",
+          "independent": false,
+          "title": "Kaiku",
+          "summary": "The task tracker your AI agents already know how to use Discussion | Link",
+          "published_at": "2026-09-23T01:58:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7919dc4971487b35",
+      "title": "WapiSender",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/wapisender",
+          "target_url": "https://www.producthunt.com/products/wapisender",
+          "independent": false,
+          "title": "WapiSender",
+          "summary": "Powerful WhatsApp automations with AI, visual flows and MCP Discussion | Link",
+          "published_at": "2026-09-23T22:21:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bace2d5906821e44",
+      "title": "HireOtto",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/hireotto",
+          "target_url": "https://www.producthunt.com/products/hireotto",
+          "independent": false,
+          "title": "HireOtto",
+          "summary": "Run your performance marketing stack from AI Discussion | Link",
+          "published_at": "2026-09-24T08:10:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1cf8deabc97fde89",
+      "title": "DEV·TV",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/dev-tv",
+          "target_url": "https://www.producthunt.com/products/dev-tv",
+          "independent": false,
+          "title": "DEV·TV",
+          "summary": "A retro TV for GitHub, Hacker News, DEV & Hugging Face Discussion | Link",
+          "published_at": "2026-09-24T14:29:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "127639cc62d76a80",
+      "title": "Basedash MCP write",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/basedash",
+          "target_url": "https://www.producthunt.com/products/basedash",
+          "independent": false,
+          "title": "Basedash MCP write",
+          "summary": "Build charts and dashboards from Cursor and Claude Discussion | Link",
+          "published_at": "2026-09-24T22:20:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cd7b5df7130df5b6",
+      "title": "Token Forecaster",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/token-forecaster",
+          "target_url": "https://www.producthunt.com/products/token-forecaster",
+          "independent": false,
+          "title": "Token Forecaster",
+          "summary": "Forecast how long an LLM reply will run, before Enter Discussion | Link",
+          "published_at": "2026-09-25T04:40:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d2cdedbd0ff56f81",
+      "title": "What I Would Check Before Choosing an AI Learning Program",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jitendra913017/what-i-would-check-before-choosing-an-ai-learning-program-c77b4b69bde9",
+          "target_url": "https://medium.com/@jitendra913017/what-i-would-check-before-choosing-an-ai-learning-program-c77b4b69bde9",
+          "independent": false,
+          "title": "What I Would Check Before Choosing an AI Learning Program",
+          "summary": "The Course Description Comes First Continue reading on Medium »",
+          "published_at": "2026-09-25T06:50:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5bedb15879e893c8",
+      "title": "My Senior Engineer Shipped More Code Than Ever. Then He Asked Me, “What Exactly Is My Job Now?”",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/engineering-playbook/my-senior-engineer-shipped-more-code-than-ever-then-he-asked-me-what-exactly-is-my-job-now-06b6bd6eae06",
+          "target_url": "https://medium.com/engineering-playbook/my-senior-engineer-shipped-more-code-than-ever-then-he-asked-me-what-exactly-is-my-job-now-06b6bd6eae06",
+          "independent": false,
+          "title": "My Senior Engineer Shipped More Code Than Ever. Then He Asked Me, “What Exactly Is My Job Now?”",
+          "summary": "AI had made him faster at almost everything we measured, but most of his week had quietly become reviewing, correcting, and taking… Continue reading on Production Engineering Playbook »",
+          "published_at": "2026-09-25T06:49:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "01ecbc4eb69a6e2d",
+      "title": "AI Voice Agents in Clinical Operations: Transforming Healthcare Delivery and Patient Engagement",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nexdew_technologies/ai-voice-agents-in-clinical-operations-transforming-healthcare-delivery-and-patient-engagement-68e1ab9472f8",
+          "target_url": "https://medium.com/@nexdew_technologies/ai-voice-agents-in-clinical-operations-transforming-healthcare-delivery-and-patient-engagement-68e1ab9472f8",
+          "independent": false,
+          "title": "AI Voice Agents in Clinical Operations: Transforming Healthcare Delivery and Patient Engagement",
+          "summary": "How conversational AI and automated voice systems are reducing clinician burnout, optimizing triage, and streamlining patient scheduling… Continue reading on Medium »",
+          "published_at": "2026-09-25T06:49:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "64222187d70e2036",
+      "title": "I always check X for Codex reset, so I made this small website",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dayue1068/i-always-check-x-for-codex-reset-so-i-made-this-small-website-3baad49f09cb",
+          "target_url": "https://medium.com/@dayue1068/i-always-check-x-for-codex-reset-so-i-made-this-small-website-3baad49f09cb",
+          "independent": false,
+          "title": "I always check X for Codex reset, so I made this small website",
+          "summary": "Hi, I am learning to make some small AI websites. Continue reading on Medium »",
+          "published_at": "2026-09-25T06:48:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4a7b8ce0c64928ad",
+      "title": "How to Learn Canva and Freelance From Home: A Beginner’s Guide",
+      "first_seen": "2026-09-25T16:02:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alihamzahamza7800/how-to-learn-canva-and-freelance-from-home-a-beginners-guide-34e12098cdf5",
+          "target_url": "https://medium.com/@alihamzahamza7800/how-to-learn-canva-and-freelance-from-home-a-beginners-guide-34e12098cdf5",
+          "independent": false,
+          "title": "How to Learn Canva and Freelance From Home: A Beginner’s Guide",
+          "summary": "Learning an online skill can open the door to new opportunities for people who want to work from home. One such skill is design in Canva. Continue reading on Medium »",
+          "published_at": "2026-09-25T06:46:40+00:00",
           "date_precision": "time"
         }
       ],
