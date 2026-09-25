@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T06:00:58.319761+09:00",
-  "window_start": "2026-07-28T06:00:58.319761+09:00",
-  "window_end": "2026-09-26T06:00:58.319761+09:00",
+  "collected_at": "2026-09-26T06:26:20.372597+09:00",
+  "window_start": "2026-07-28T06:26:20.372597+09:00",
+  "window_end": "2026-09-26T06:26:20.372597+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "excluded_count": 29,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -125,7 +125,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 293,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T06:01:26.753393+09:00",
-  "hourly_window_start": "2026-09-23T06:01:26.753393+09:00",
+  "hourly_collected_at": "2026-09-26T06:26:50.956532+09:00",
+  "hourly_window_start": "2026-09-23T06:26:50.956532+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1369,11 +1369,33 @@
           "summary": "GPT-6 Astra is OpenAI’s latest flagship AI model, released in September 2026. Continue reading on Medium »",
           "published_at": "2026-09-25T20:38:40+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49832346",
+          "target_url": "https://hamel.dev/blog/posts/evals-faq",
+          "independent": false,
+          "title": "AI Evals: Everything You Need to Know",
+          "summary": "",
+          "published_at": "2026-09-24T15:46:51+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
+          "target_url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
+          "independent": true,
+          "title": "TechCrunch Founder Summit 2026: Everything you need to know",
+          "summary": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their companies.",
+          "published_at": "2026-09-24T16:46:47+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "0d30b55e5ce520e2",
@@ -2040,6 +2062,17 @@
           "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
           "summary": "Introducción Continue reading on Medium »",
           "published_at": "2026-09-23T03:43:29+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@maxpc/las-principales-ramas-de-la-inteligencia-artificial-b9a52e748312",
+          "target_url": "https://medium.com/@maxpc/las-principales-ramas-de-la-inteligencia-artificial-b9a52e748312",
+          "independent": false,
+          "title": "Las principales ramas de la Inteligencia Artificial",
+          "summary": "Cuando escuchamos el término “Inteligencia Artificial”, es común imaginar un superordenador todopoderoso o un robot de ciencia ficción. Continue reading on Medium »",
+          "published_at": "2026-09-25T21:11:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -12735,27 +12768,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "18856eb4cfb8af6b",
-      "title": "AI Evals: Everything You Need to Know",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832346",
-          "target_url": "https://hamel.dev/blog/posts/evals-faq",
-          "independent": false,
-          "title": "AI Evals: Everything You Need to Know",
-          "summary": "",
-          "published_at": "2026-09-24T15:46:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "0e182a3cc46fa95b",
       "title": "Show HN: Potluck – Run local AI across the computers you own",
       "first_seen": "2026-09-25T01:01:28+09:00",
@@ -13233,27 +13245,6 @@
           "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
           "summary": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. According to Google, you don't even need to start the call to have Gemini handle it for you: Instead of dialing yourself, […]",
           "published_at": "2026-09-24T16:04:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d0323408eb6a3b2c",
-      "title": "TechCrunch Founder Summit 2026: Everything you need to know",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
-          "target_url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
-          "independent": true,
-          "title": "TechCrunch Founder Summit 2026: Everything you need to know",
-          "summary": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their companies.",
-          "published_at": "2026-09-24T16:46:47+00:00",
           "date_precision": "time"
         }
       ],
@@ -20640,6 +20631,17 @@
           "summary": "Introduction Continue reading on Nationin »",
           "published_at": "2026-09-25T19:52:40+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849985",
+          "target_url": "https://swarmtraces.org/",
+          "independent": false,
+          "title": "Revealing the details of how OpenAI agents hacked Hugging Face",
+          "summary": "",
+          "published_at": "2026-09-25T21:09:27+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -20996,6 +20998,195 @@
           "title": "Intellectual Manifesto: Towards the Balance of Mercy",
           "summary": "Continue reading on Medium »",
           "published_at": "2026-09-25T20:37:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51bf70998a8fcc3a",
+      "title": "It's not hypothetical: the dangers of AI are here",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850168",
+          "target_url": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
+          "independent": false,
+          "title": "It's not hypothetical: the dangers of AI are here",
+          "summary": "",
+          "published_at": "2026-09-25T21:26:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "de955806650a07d9",
+      "title": "Carnegie: China Passes US as Top AI Talent Hub, 40.6% to 34.2%",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850114",
+          "target_url": "https://aiweekly.co/alerts/carnegie-china-passes-us-as-top-ai-talent-hub-406-to-342",
+          "independent": false,
+          "title": "Carnegie: China Passes US as Top AI Talent Hub, 40.6% to 34.2%",
+          "summary": "",
+          "published_at": "2026-09-25T21:22:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "28e3fdb6bf1789dc",
+      "title": "Show HN: NerfWatch() – Track AI degradation with daily tests and community votes",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850096",
+          "target_url": "https://nerfwatch.lol",
+          "independent": false,
+          "title": "Show HN: NerfWatch() – Track AI degradation with daily tests and community votes",
+          "summary": "",
+          "published_at": "2026-09-25T21:21:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c642973a8468ee44",
+      "title": "\"Someone just sent me an ad that features an AI version of me. What do I do?\"",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850042",
+          "target_url": "https://bsky.app/profile/lebassett.bsky.social/post/3mwel345jr22s",
+          "independent": false,
+          "title": "\"Someone just sent me an ad that features an AI version of me. What do I do?\"",
+          "summary": "",
+          "published_at": "2026-09-25T21:15:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0a9b3ce7fa85e155",
+      "title": "Jev was built for agents, here's how we're using it in computer use instead",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849950",
+          "target_url": "https://twitter.com/kylejeong/status/2102108924677927169",
+          "independent": false,
+          "title": "Jev was built for agents, here's how we're using it in computer use instead",
+          "summary": "",
+          "published_at": "2026-09-25T21:06:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43bf9fc00c2ef7a8",
+      "title": "Our Highest-Rated Employee Stopped Doing Anything Outside His Job Description. His Performance Score",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@devrimkodlama/our-highest-rated-employee-stopped-doing-anything-outside-his-job-description-his-performance-score-089a0e0d72e8",
+          "target_url": "https://medium.com/@devrimkodlama/our-highest-rated-employee-stopped-doing-anything-outside-his-job-description-his-performance-score-089a0e0d72e8",
+          "independent": false,
+          "title": "Our Highest-Rated Employee Stopped Doing Anything Outside His Job Description. His Performance Score",
+          "summary": "Everyone called it quiet quitting until we discovered how much unpaid responsibility had quietly become part of being “good at your job.” Continue reading on Medium »",
+          "published_at": "2026-09-25T21:23:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "60f6d58a3c8b5680",
+      "title": "Your AI Rollout Isn’t Failing. You’re Grading It on the Wrong Curve.",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dmytro.v.savchenko/your-ai-rollout-isnt-failing-you-re-grading-it-on-the-wrong-curve-03166eb69f47",
+          "target_url": "https://medium.com/@dmytro.v.savchenko/your-ai-rollout-isnt-failing-you-re-grading-it-on-the-wrong-curve-03166eb69f47",
+          "independent": false,
+          "title": "Your AI Rollout Isn’t Failing. You’re Grading It on the Wrong Curve.",
+          "summary": "Photo by Brice Cooper on Unsplash. Continue reading on Medium »",
+          "published_at": "2026-09-25T21:15:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5fca18b91390d78d",
+      "title": "What Would Jung Say About AI?",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-story-well/what-would-jung-say-about-ai-7473f3ad95dc",
+          "target_url": "https://medium.com/the-story-well/what-would-jung-say-about-ai-7473f3ad95dc",
+          "independent": false,
+          "title": "What Would Jung Say About AI?",
+          "summary": "A Thought Experiment on the 25% Machine Continue reading on The Story Well »",
+          "published_at": "2026-09-25T21:14:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2be1a2e87ff88b79",
+      "title": "Human Understanding Is Now the Bottleneck",
+      "first_seen": "2026-09-26T06:26:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@poola.vii/human-understanding-is-now-the-bottleneck-966e7e040754",
+          "target_url": "https://medium.com/@poola.vii/human-understanding-is-now-the-bottleneck-966e7e040754",
+          "independent": false,
+          "title": "Human Understanding Is Now the Bottleneck",
+          "summary": "AI Can Do the Work and Even the Judging. What Stays With Us Is Wanting and Understanding Continue reading on Medium »",
+          "published_at": "2026-09-25T21:09:39+00:00",
           "date_precision": "time"
         }
       ],
