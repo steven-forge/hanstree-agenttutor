@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T18:00:52.021155+09:00",
-  "window_start": "2026-07-28T18:00:52.021155+09:00",
-  "window_end": "2026-09-26T18:00:52.021155+09:00",
+  "collected_at": "2026-09-26T19:00:51.436040+09:00",
+  "window_start": "2026-07-28T19:00:51.436040+09:00",
+  "window_end": "2026-09-26T19:00:51.436040+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 33,
-      "skipped_count": 1,
+      "excluded_count": 26,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 13,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 13,
+      "excluded_count": 3,
+      "skipped_count": 12,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 295,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T18:01:24.499919+09:00",
-  "hourly_window_start": "2026-09-23T18:01:24.499919+09:00",
+  "hourly_collected_at": "2026-09-26T19:01:18.074574+09:00",
+  "hourly_window_start": "2026-09-23T19:01:18.074574+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1249,279 +1249,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "296d90df691bf513",
-      "title": "What Is an AI Software Factory? Lessons from 3 Client Deployments",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813704",
-          "target_url": "https://camplight.net/ai/ai-software-factory",
-          "independent": false,
-          "title": "What Is an AI Software Factory? Lessons from 3 Client Deployments",
-          "summary": "",
-          "published_at": "2026-09-23T09:57:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "baed9c9d689859ba",
-      "title": "PostMCP – Turn any OpenAPI spec into a context-optimized MCP server",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813617",
-          "target_url": "https://github.com/braveram/postmcp",
-          "independent": false,
-          "title": "PostMCP – Turn any OpenAPI spec into a context-optimized MCP server",
-          "summary": "",
-          "published_at": "2026-09-23T09:41:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0f1735e4b4cf04f4",
-      "title": "Trained KV cache bank turns any LLM into Jev like Model",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813610",
-          "target_url": "https://gambler-relay-us-west1.leo-fish.ts.net/demo",
-          "independent": false,
-          "title": "Trained KV cache bank turns any LLM into Jev like Model",
-          "summary": "",
-          "published_at": "2026-09-23T09:40:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c8268083de11c8f6",
-      "title": "Show HN: Codex Reset – A tracker for public Codex reset signals",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813571",
-          "target_url": "https://codexreset.live",
-          "independent": false,
-          "title": "Show HN: Codex Reset – A tracker for public Codex reset signals",
-          "summary": "",
-          "published_at": "2026-09-23T09:32:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a5545755d69a2a87",
-      "title": "Claude Microfactory",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813561",
-          "target_url": "https://claude.ai/artifact/7nCPrrWTcQsWFfkXFRHDLR",
-          "independent": false,
-          "title": "Claude Microfactory",
-          "summary": "",
-          "published_at": "2026-09-23T09:30:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "80aca5e64109bc69",
-      "title": "Nemotron-H: A Family of Accurate, Efficient Hybrid Mamba-Transformer Models",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813524",
-          "target_url": "https://research.nvidia.com/labs/adlr/nemotronh",
-          "independent": false,
-          "title": "Nemotron-H: A Family of Accurate, Efficient Hybrid Mamba-Transformer Models",
-          "summary": "",
-          "published_at": "2026-09-23T09:25:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ae650fcd937e7f48",
-      "title": "Enables Nvidia DLSS Frame Generation (DLSS-G) on RTX 30-series and RTX 20-series",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813499",
-          "target_url": "https://github.com/sdli1995/dlssg_for_sm86",
-          "independent": false,
-          "title": "Enables Nvidia DLSS Frame Generation (DLSS-G) on RTX 30-series and RTX 20-series",
-          "summary": "",
-          "published_at": "2026-09-23T09:23:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e23a4e993d4e30e1",
-      "title": "Positive emotions toward AI outweigh negative ones in 34 out of 37 countries",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813430",
-          "target_url": "https://news.gallup.com/poll/714593/optimism-globally-widespread-despite-uneven.aspx",
-          "independent": false,
-          "title": "Positive emotions toward AI outweigh negative ones in 34 out of 37 countries",
-          "summary": "",
-          "published_at": "2026-09-23T09:11:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1b48fa09a9e4a8ba",
-      "title": "Anthropic Froze the Biggest IPO Ever Over Leaks, Mutiny, and One Bill",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://levelup.gitconnected.com/anthropic-ipo-delayed-november-2026-876517798d9f",
-          "target_url": "https://levelup.gitconnected.com/anthropic-ipo-delayed-november-2026-876517798d9f",
-          "independent": false,
-          "title": "Anthropic Froze the Biggest IPO Ever Over Leaks, Mutiny, and One Bill",
-          "summary": "Leaked models, resigning scientists, and the single $1.25 billion bill that forced Anthropic to delay its $2 trillion debut. Continue reading on Level Up Coding »",
-          "published_at": "2026-09-23T09:36:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "35b71c2504c05cf3",
-      "title": "AI on Your Own Servers: Adding an LLM to Internal Systems — amBrain",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@info_610/ai-on-your-own-servers-adding-an-llm-to-internal-systems-ambrain-d39eae3aff24",
-          "target_url": "https://medium.com/@info_610/ai-on-your-own-servers-adding-an-llm-to-internal-systems-ambrain-d39eae3aff24",
-          "independent": false,
-          "title": "AI on Your Own Servers: Adding an LLM to Internal Systems — amBrain",
-          "summary": "A company can run a large language model on servers it controls and connect it to its support tickets, documents and internal tools… Continue reading on Medium »",
-          "published_at": "2026-09-23T09:36:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "67943d9bd5f32363",
-      "title": "Ganesha’s Condition",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@arkycookie/ganeshas-condition-73dfbb3fbab7",
-          "target_url": "https://medium.com/@arkycookie/ganeshas-condition-73dfbb3fbab7",
-          "independent": false,
-          "title": "Ganesha’s Condition",
-          "summary": "What a 5,000-year-old scribing contract reveals about AI, Taranto, and Druckenmiller. Continue reading on Medium »",
-          "published_at": "2026-09-23T09:33:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9e7d6c2ecec8c23f",
-      "title": "As AI Accelerates, Are Your Enterprise Systems Ready?",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@xcelore/as-ai-accelerates-are-your-enterprise-systems-ready-4320864fddce",
-          "target_url": "https://medium.com/@xcelore/as-ai-accelerates-are-your-enterprise-systems-ready-4320864fddce",
-          "independent": false,
-          "title": "As AI Accelerates, Are Your Enterprise Systems Ready?",
-          "summary": "AI is moving quickly from experiments into real business systems. What started as chatbots, copilots, and small proofs of concept is now… Continue reading on Medium »",
-          "published_at": "2026-09-23T09:31:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e4bf72902ff60677",
-      "title": "ZERO-FRICTION BUSINESS: How Web 4.0 Reshapes Buyers, Marketing, and Check Sizes (Rm → 0)",
-      "first_seen": "2026-09-23T19:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@olga_shut/zero-friction-business-how-web-4-0-reshapes-buyers-marketing-and-check-sizes-rm-0-a058f61bcfda",
-          "target_url": "https://medium.com/@olga_shut/zero-friction-business-how-web-4-0-reshapes-buyers-marketing-and-check-sizes-rm-0-a058f61bcfda",
-          "independent": false,
-          "title": "ZERO-FRICTION BUSINESS: How Web 4.0 Reshapes Buyers, Marketing, and Check Sizes (Rm → 0)",
-          "summary": "Digital noise has reached the point of thermal breakdown. Users learned to blind-spot banners in 0.3 seconds, lead-gen funnels burn out in… Continue reading on Medium »",
-          "published_at": "2026-09-23T09:30:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f8e4b392a3c2c852",
       "title": "Llama.cpp Under the Hood",
       "first_seen": "2026-09-23T20:01:24+09:00",
@@ -1703,27 +1430,6 @@
           "title": "Presentation: APIs for Agents: Rethinking API Programs in the MCP Era",
           "summary": "Jim Gough and Andreea Niculcea explain how Morgan Stanley uses Architecture as Code with CALM to modernize its API program. They demonstrate integrating Model Context Protocol (MCP) and Agent-to-Agent (A2A) communications, enforcing automated governance through deployment gates, and executing zero-downtime platform upgrades to safely scale enterprise AI and agentic workflows. By Jim Gough, Andreea Niculcea",
           "published_at": "2026-09-23T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "1c92b8776d4e5484",
-      "title": "Google Adds Cycle-Level Kernel Profiling to XProf",
-      "first_seen": "2026-09-23T20:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/google-tpu-xprof",
-          "target_url": "https://www.infoq.com/news/2026/09/google-tpu-xprof",
-          "independent": true,
-          "title": "Google Adds Cycle-Level Kernel Profiling to XProf",
-          "summary": "Google has added a Kernel Profiling suite to XProf. This is its open-source profiler for TPU workloads. Now, developers can see cycle-level details in custom Pallas kernels. Before, these kernels appeared as single opaque blocks in trace captures. By Claudio Masolo",
-          "published_at": "2026-09-23T10:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -9194,6 +8900,17 @@
           "summary": "",
           "published_at": "2026-09-25T23:21:50+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854875",
+          "target_url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
+          "independent": false,
+          "title": "How to keep enjoying programming in a world of LLMs",
+          "summary": "",
+          "published_at": "2026-09-26T09:41:58+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -9382,6 +9099,17 @@
           "title": "Show HN: App2Api – App actions into API calls for LLMs",
           "summary": "",
           "published_at": "2026-09-24T12:50:37+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854783",
+          "target_url": "https://app2api.com/",
+          "independent": false,
+          "title": "Show HN: App2Api – Give your AI the API behind your app",
+          "summary": "",
+          "published_at": "2026-09-26T09:27:27+00:00",
           "date_precision": "time"
         }
       ],
@@ -21029,6 +20757,195 @@
           "title": "Can Jev Replace LLMs? Why Is It So Much Cheaper & Faster?",
           "summary": "TypeSafe’s new System One model is changing how we think about AI decisions, agents, and the role of LLM Continue reading on Medium »",
           "published_at": "2026-09-26T08:45:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f428104ad2768df6",
+      "title": "The Copilot+ PC brand is dead",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854945",
+          "target_url": "https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding",
+          "independent": false,
+          "title": "The Copilot+ PC brand is dead",
+          "summary": "",
+          "published_at": "2026-09-26T09:55:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a1495c2288d01d55",
+      "title": "Drum Machines (LLMs) Have No Soul",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854928",
+          "target_url": "https://calvinflegal.com/2026/09/26/drum-machines-have-no-soul.html",
+          "independent": false,
+          "title": "Drum Machines (LLMs) Have No Soul",
+          "summary": "",
+          "published_at": "2026-09-26T09:52:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1a18c3c44b8b15fe",
+      "title": "Flashcat – a local AI assistant for the Mac terminal that asks first",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854766",
+          "target_url": "https://github.com/TomTomsen765/flashcat",
+          "independent": false,
+          "title": "Flashcat – a local AI assistant for the Mac terminal that asks first",
+          "summary": "",
+          "published_at": "2026-09-26T09:24:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "101b0426acf830d1",
+      "title": "LLM Red-temaing vs. Agent Red teaming",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854557",
+          "target_url": "https://www.botgauge.com/blog/llm-red-teaming-vs-agent-red-teaming",
+          "independent": false,
+          "title": "LLM Red-temaing vs. Agent Red teaming",
+          "summary": "",
+          "published_at": "2026-09-26T08:56:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f06335df34c57c88",
+      "title": "Trust-Aware Machine Learning for Secure Open Banking Decision Systems",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@movvavenkateswaraa/trust-aware-machine-learning-for-secure-open-banking-decision-systems-685539e4c4f6",
+          "target_url": "https://medium.com/@movvavenkateswaraa/trust-aware-machine-learning-for-secure-open-banking-decision-systems-685539e4c4f6",
+          "independent": false,
+          "title": "Trust-Aware Machine Learning for Secure Open Banking Decision Systems",
+          "summary": "Introduction Continue reading on Medium »",
+          "published_at": "2026-09-26T09:48:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9ba1027381996113",
+      "title": "Integrasi Teknologi AI dan Infrastruktur IT untuk Optimalisasi Digital Fundraising Wakaf Qur’an…",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@iyussilpiah35/integrasi-teknologi-ai-dan-infrastruktur-it-untuk-optimalisasi-digital-fundraising-wakaf-quran-be8c24982ce1",
+          "target_url": "https://medium.com/@iyussilpiah35/integrasi-teknologi-ai-dan-infrastruktur-it-untuk-optimalisasi-digital-fundraising-wakaf-quran-be8c24982ce1",
+          "independent": false,
+          "title": "Integrasi Teknologi AI dan Infrastruktur IT untuk Optimalisasi Digital Fundraising Wakaf Qur’an…",
+          "summary": "Perkembangan ekosistem filantropi Islam (ZISWAF) di era modern menuntut adanya transformasi digital yang matang. Saya, Iyus Silpiah… Continue reading on Medium »",
+          "published_at": "2026-09-26T09:48:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd322c2af1d12013",
+      "title": "The AI Bubble Paradox: Why Indonesia’s “Old Economy” is Uniquely Positioned to Win the Artificial…",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nadhifrifat/the-ai-bubble-paradox-why-indonesias-old-economy-is-uniquely-positioned-to-win-the-artificial-adf9d9c236b1",
+          "target_url": "https://medium.com/@nadhifrifat/the-ai-bubble-paradox-why-indonesias-old-economy-is-uniquely-positioned-to-win-the-artificial-adf9d9c236b1",
+          "independent": false,
+          "title": "The AI Bubble Paradox: Why Indonesia’s “Old Economy” is Uniquely Positioned to Win the Artificial…",
+          "summary": "Author: Nadhif Rif’at Rasendriya Continue reading on Medium »",
+          "published_at": "2026-09-26T09:47:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a18bf0ab3e3e553c",
+      "title": "OpenDataLoaderPDFLoader Nedir ve Nasıl Kullanılır — 2026",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sevki6463/opendataloaderpdfloader-nedir-ve-nas%C4%B1l-kullan%C4%B1l%C4%B1r-2026-8d8648094b27",
+          "target_url": "https://medium.com/@sevki6463/opendataloaderpdfloader-nedir-ve-nas%C4%B1l-kullan%C4%B1l%C4%B1r-2026-8d8648094b27",
+          "independent": false,
+          "title": "OpenDataLoaderPDFLoader Nedir ve Nasıl Kullanılır — 2026",
+          "summary": "Merhaba, bugün sizlere Langchain’da yer alan OpenDataLoaderPDFLoader’ın ne olduğunu ve nasıl kullanabileceğinizi göstereceğim Continue reading on Medium »",
+          "published_at": "2026-09-26T09:47:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b747a5ec685fd789",
+      "title": "How AI Learns to Look Things Up Instead of Guessing",
+      "first_seen": "2026-09-26T19:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mahdi.nasermoghadasi/how-ai-learns-to-look-things-up-instead-of-guessing-3810f6faad8a",
+          "target_url": "https://medium.com/@mahdi.nasermoghadasi/how-ai-learns-to-look-things-up-instead-of-guessing-3810f6faad8a",
+          "independent": false,
+          "title": "How AI Learns to Look Things Up Instead of Guessing",
+          "summary": "Retrieval-augmented generation gives a language model an open book during the exam — and changes what it means for AI to “know” something. Continue reading on Medium »",
+          "published_at": "2026-09-26T09:46:51+00:00",
           "date_precision": "time"
         }
       ],
