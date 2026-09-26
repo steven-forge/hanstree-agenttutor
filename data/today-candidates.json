@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T11:01:05.679303+09:00",
-  "window_start": "2026-07-28T11:01:05.679303+09:00",
-  "window_end": "2026-09-26T11:01:05.679303+09:00",
+  "collected_at": "2026-09-26T12:00:51.767619+09:00",
+  "window_start": "2026-07-28T12:00:51.767619+09:00",
+  "window_end": "2026-09-26T12:00:51.767619+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -31,10 +31,10 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
-      "excluded_count": 177,
-      "skipped_count": 23,
+      "excluded_count": 178,
+      "skipped_count": 24,
       "coverage_limited": false
     },
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 5,
+      "excluded_count": 36,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -276,29 +276,11 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 295,
-  "candidates": [
-    {
-      "id": "2f20ff05fa98f6cd",
-      "title": "0.157.1",
-      "source_id": "codex-releases",
-      "source_name": "Codex Releases",
-      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.1",
-      "source_summary": "## Chores - Release highlights could not be determined: the supplied PR index is empty, and the GitHub tag comparison returned 404. ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.157.0...rust-v0.157.1",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-26T11:01:09+09:00",
-      "published_at": "2026-09-26T01:02:31+00:00",
-      "date_precision": "time",
-      "title_ko": "Codex 0.157.1 버전 출시",
-      "source_summary_ko": "# # 집안일 - 릴리스 하이라이트를 확인할 수 없습니다. 제공된 PR 인덱스가 비어 있고 GitHub 태그 비교가 404를 반환했습니다. # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.157.0... rust-v0.157.1",
-      "release_notes_ko": {
-        "chores": "릴리스 하이라이트를 확인할 수 없습니다. 제공된 PR 인덱스가 비어 있고 GitHub 태그 비교가 404를 반환했습니다."
-      }
-    }
-  ],
-  "hourly_collected_at": "2026-09-26T11:01:39.106163+09:00",
-  "hourly_window_start": "2026-09-23T11:01:39.106163+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-26T12:01:21.856911+09:00",
+  "hourly_window_start": "2026-09-23T12:01:21.856911+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -775,69 +757,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "46df1166459d4283",
-      "title": "How to Create Your Own Personal AI Benchmark",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811036",
-          "target_url": "https://every.to/also-true-for-humans/how-to-create-your-own-personal-ai-benchmark",
-          "independent": false,
-          "title": "How to Create Your Own Personal AI Benchmark",
-          "summary": "",
-          "published_at": "2026-09-23T02:48:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5ed528eec0886696",
-      "title": "Measuring behavioral signals of LLM through psychometric profiling",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811024",
-          "target_url": "https://arxiv.org/abs/2609.22934",
-          "independent": false,
-          "title": "Measuring behavioral signals of LLM through psychometric profiling",
-          "summary": "",
-          "published_at": "2026-09-23T02:46:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "be6968ec79c097f4",
-      "title": "Created a local AI to save data",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810817",
-          "target_url": "https://github.com/just-not-google/BiNeuron",
-          "independent": false,
-          "title": "Created a local AI to save data",
-          "summary": "",
-          "published_at": "2026-09-23T02:12:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "be6968ec79c097f4",
       "title": "What if we created a local AI tool to measure your security?",
       "first_seen": "2026-09-23T12:01:17+09:00",
@@ -851,132 +770,6 @@
           "title": "What if we created a local AI tool to measure your security?",
           "summary": "",
           "published_at": "2026-09-23T11:47:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6539f45cd7c2b3a1",
-      "title": "\"I know I am GPT-6. I cannot confirm whether this session uses GPT-6-Sol.\"",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810770",
-          "target_url": "https://twitter.com/benwills/status/2102578927759917497",
-          "independent": false,
-          "title": "\"I know I am GPT-6. I cannot confirm whether this session uses GPT-6-Sol.\"",
-          "summary": "",
-          "published_at": "2026-09-23T02:02:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bfa356f8cee0b850",
-      "title": "Engineering the AI-Native Enterprise — Part 1",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@deepak09b/engineering-the-ai-native-enterprise-part-1-cc39b44ca013",
-          "target_url": "https://medium.com/@deepak09b/engineering-the-ai-native-enterprise-part-1-cc39b44ca013",
-          "independent": false,
-          "title": "Engineering the AI-Native Enterprise — Part 1",
-          "summary": "Why Today’s Enterprise Architecture Is No Longer Enough Continue reading on Medium »",
-          "published_at": "2026-09-23T03:01:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "450cddaa86b23c00",
-      "title": "Testing and Evaluating .NET AI Applications: Prompts, RAG, Agents, Tools, and Regression Confidence",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@oshadhaj/testing-and-evaluating-net-ai-applications-prompts-rag-agents-tools-and-regression-confidence-39d98ce433ec",
-          "target_url": "https://medium.com/@oshadhaj/testing-and-evaluating-net-ai-applications-prompts-rag-agents-tools-and-regression-confidence-39d98ce433ec",
-          "independent": false,
-          "title": "Testing and Evaluating .NET AI Applications: Prompts, RAG, Agents, Tools, and Regression Confidence",
-          "summary": "I wrote about integrating AI into .NET applications using Microsoft.Extensions.AI. Continue reading on Medium »",
-          "published_at": "2026-09-23T03:01:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1bbab19a69c78e2c",
-      "title": "I Googled My Own Company’s Name in ChatGPT. I Wasn’t Ready for the Answer.",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@deepikaagl.05/i-googled-my-own-companys-name-in-chatgpt-i-wasn-t-ready-for-the-answer-650d589b8783",
-          "target_url": "https://medium.com/@deepikaagl.05/i-googled-my-own-companys-name-in-chatgpt-i-wasn-t-ready-for-the-answer-650d589b8783",
-          "independent": false,
-          "title": "I Googled My Own Company’s Name in ChatGPT. I Wasn’t Ready for the Answer.",
-          "summary": "A weird little experiment that taught me something uncomfortable about how AI actually “sees” brands — including mine. Continue reading on Medium »",
-          "published_at": "2026-09-23T03:01:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "91a0388353c10584",
-      "title": "Your iPhone’s AI Runs on Google Now. What About Your Data?",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kidscarebridge/your-iphones-ai-runs-on-google-now-what-about-your-data-805518186f01",
-          "target_url": "https://medium.com/@kidscarebridge/your-iphones-ai-runs-on-google-now-what-about-your-data-805518186f01",
-          "independent": false,
-          "title": "Your iPhone’s AI Runs on Google Now. What About Your Data?",
-          "summary": "Ask Siri something genuinely hard later this year, and the model doing the thinking may not be Apple’s own. It will likely be Google’s. Continue reading on Medium »",
-          "published_at": "2026-09-23T03:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3d512ca96fa9ef0b",
-      "title": "Architecture of the Maison Co-existence AI (Kopu System)",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/maison-momokana-world-architecture/architecture-of-the-maison-co-existence-ai-kopu-system-0472306fae96",
-          "target_url": "https://medium.com/maison-momokana-world-architecture/architecture-of-the-maison-co-existence-ai-kopu-system-0472306fae96",
-          "independent": false,
-          "title": "Architecture of the Maison Co-existence AI (Kopu System)",
-          "summary": "DOOR2— Technical Design of the Three‑Device Structure Supporting a Shared‑Living Community Continue reading on Maison Momokana｜World Architecture »",
-          "published_at": "2026-09-23T02:57:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -21347,6 +21140,132 @@
           "title": "Your agent did not forget your instructions. It compressed them out.",
           "summary": "Long agent runs rarely fail at a tool call. They fail at a compaction boundary, and almost nobody instruments it. Continue reading on Medium »",
           "published_at": "2026-09-26T01:38:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc482855c989ad39",
+      "title": "Revelations of dozens more platforms hit by OpenAI agents",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852728",
+          "target_url": "https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074",
+          "independent": false,
+          "title": "Revelations of dozens more platforms hit by OpenAI agents",
+          "summary": "",
+          "published_at": "2026-09-26T02:48:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e6d5544992b0f579",
+      "title": "I Gave AI Exactly 30 Days to Build Me an Income Stream. Here’s What Actually Happened",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/write-your-world/i-gave-ai-exactly-30-days-to-build-me-an-income-stream-heres-what-actually-happened-d0a117e4c270",
+          "target_url": "https://medium.com/write-your-world/i-gave-ai-exactly-30-days-to-build-me-an-income-stream-heres-what-actually-happened-d0a117e4c270",
+          "independent": false,
+          "title": "I Gave AI Exactly 30 Days to Build Me an Income Stream. Here’s What Actually Happened",
+          "summary": "No “$10K by Friday” promises. Just a real process, tracked day by day. Continue reading on Write Your World »",
+          "published_at": "2026-09-26T02:53:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a6587e7579eabf78",
+      "title": "After Gradient Descent: The Unexpected Flexibility of Neural Network Parameters.",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://siddiqueabusaleh.medium.com/after-gradient-descent-the-unexpected-flexibility-of-neural-network-parameters-e8ada10ac237",
+          "target_url": "https://siddiqueabusaleh.medium.com/after-gradient-descent-the-unexpected-flexibility-of-neural-network-parameters-e8ada10ac237",
+          "independent": false,
+          "title": "After Gradient Descent: The Unexpected Flexibility of Neural Network Parameters.",
+          "summary": "A neural network processes an input through successive layers of computation. Within each layer, units combine incoming signals using… Continue reading on Medium »",
+          "published_at": "2026-09-26T02:52:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b06b4710c45d25f5",
+      "title": "UGC-Style AI Video Prompts: 12 Copy-Paste Templates for Creator Ads",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/write-your-world/ugc-style-ai-video-prompts-12-copy-paste-templates-for-creator-ads-d230f5538ab0",
+          "target_url": "https://medium.com/write-your-world/ugc-style-ai-video-prompts-12-copy-paste-templates-for-creator-ads-d230f5538ab0",
+          "independent": false,
+          "title": "UGC-Style AI Video Prompts: 12 Copy-Paste Templates for Creator Ads",
+          "summary": "Ready-to-use UGC-Style AI Video prompts for content creators to make better-converting ads. Continue reading on Write Your World »",
+          "published_at": "2026-09-26T02:50:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "21dd0abda379e3bc",
+      "title": "Most AI Agents Work on Friday. They Fail on Monday.",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/system-design-mastery-series/most-ai-agents-work-on-friday-they-fail-on-monday-7fbf071697a1",
+          "target_url": "https://medium.com/system-design-mastery-series/most-ai-agents-work-on-friday-they-fail-on-monday-7fbf071697a1",
+          "independent": false,
+          "title": "Most AI Agents Work on Friday. They Fail on Monday.",
+          "summary": "Why the gap between an agent demo and a real deployment is creating one of the fastest-growing roles in AI, and the book I wrote about… Continue reading on Think in AI Agents »",
+          "published_at": "2026-09-26T02:48:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f2d62d5fa2b92173",
+      "title": "Multi-Agent Systems: When Multiple Agents Collaborate",
+      "first_seen": "2026-09-26T12:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@scosmexs/multi-agent-systems-when-multiple-agents-collaborate-fb58942b6966",
+          "target_url": "https://medium.com/@scosmexs/multi-agent-systems-when-multiple-agents-collaborate-fb58942b6966",
+          "independent": false,
+          "title": "Multi-Agent Systems: When Multiple Agents Collaborate",
+          "summary": "A single AI agent can already combine models, tools, memory, retrieval and business logic. Continue reading on Medium »",
+          "published_at": "2026-09-26T02:42:18+00:00",
           "date_precision": "time"
         }
       ],
