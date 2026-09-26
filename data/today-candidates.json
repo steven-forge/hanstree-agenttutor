@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T05:01:06.653913+09:00",
-  "window_start": "2026-07-29T05:01:06.653913+09:00",
-  "window_end": "2026-09-27T05:01:06.653913+09:00",
+  "collected_at": "2026-09-27T06:00:55.777187+09:00",
+  "window_start": "2026-07-29T06:00:55.777187+09:00",
+  "window_end": "2026-09-27T06:00:55.777187+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 180,
+      "excluded_count": 181,
       "skipped_count": 24,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 27,
+      "excluded_count": 28,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 8,
+      "excluded_count": 3,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T05:01:31.951675+09:00",
-  "hourly_window_start": "2026-09-24T05:01:31.951675+09:00",
+  "hourly_collected_at": "2026-09-27T06:01:22.139336+09:00",
+  "hourly_window_start": "2026-09-24T06:01:22.139336+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1312,6 +1312,17 @@
           "summary": "",
           "published_at": "2026-09-26T19:46:30+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49830455",
+          "target_url": "https://agentlearn.dev/",
+          "independent": false,
+          "title": "Show HN: Agnetlearn; From first principles to reliable agents",
+          "summary": "",
+          "published_at": "2026-09-24T13:41:38+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1554,132 +1565,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "adac8d2da8573528",
-      "title": "AI Goes to War: Ukraine AI Autonomous Drone Guidance",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822510",
-          "target_url": "https://jeffreylminch.substack.com/p/ai-goes-to-war-ukraine-ai-autonomous",
-          "independent": false,
-          "title": "AI Goes to War: Ukraine AI Autonomous Drone Guidance",
-          "summary": "",
-          "published_at": "2026-09-23T20:59:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4d67e56151249f4f",
-      "title": "CorridorKey – free neural net based green screen keys",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822494",
-          "target_url": "https://github.com/nikopueringer/CorridorKey",
-          "independent": false,
-          "title": "CorridorKey – free neural net based green screen keys",
-          "summary": "",
-          "published_at": "2026-09-23T20:58:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "38f5a5ebd5e2e458",
-      "title": "Dwarkesh Patels's popular but misleading account of Hugging Face incident",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822445",
-          "target_url": "https://garymarcus.substack.com/p/dwarkesh-patelss-wildly-popular-but",
-          "independent": false,
-          "title": "Dwarkesh Patels's popular but misleading account of Hugging Face incident",
-          "summary": "",
-          "published_at": "2026-09-23T20:54:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "24381cad37ad4f76",
-      "title": "After AI models escaped testing environments,Irregular seeks $1.5B valuation",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822442",
-          "target_url": "https://www.calcalistech.com/ctechnews/article/13p5khsib",
-          "independent": false,
-          "title": "After AI models escaped testing environments,Irregular seeks $1.5B valuation",
-          "summary": "",
-          "published_at": "2026-09-23T20:54:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4199df10885fb466",
-      "title": "Agent Etna – Automated staging environment and regression compiler for AI agents",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822181",
-          "target_url": "https://www.agentetna.com/",
-          "independent": false,
-          "title": "Agent Etna – Automated staging environment and regression compiler for AI agents",
-          "summary": "",
-          "published_at": "2026-09-23T20:35:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6e532292dfa33db4",
-      "title": "AI can never produce sublime art",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822154",
-          "target_url": "https://hilariusbookbinder.substack.com/p/ai-can-never-produce-sublime-art",
-          "independent": false,
-          "title": "AI can never produce sublime art",
-          "summary": "",
-          "published_at": "2026-09-23T20:33:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "04f352b210857514",
       "title": "An LLM Beat NetHack",
       "first_seen": "2026-09-24T06:01:51+09:00",
@@ -1725,132 +1610,6 @@
           "title": "GPT 6 Astra beat NetHack",
           "summary": "",
           "published_at": "2026-09-25T11:40:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c0db0a5afd4daec5",
-      "title": "The Most Important Market in AI Is the Middle",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822063",
-          "target_url": "https://tomtunguz.com/the-most-important-market-in-ai-is-the-middle",
-          "independent": false,
-          "title": "The Most Important Market in AI Is the Middle",
-          "summary": "",
-          "published_at": "2026-09-23T20:28:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0fd9912b8af2d6af",
-      "title": "Comfy Router isn’t just simplifying pipelines – it’s routing the future of civilization.",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ai_domez/comfy-router-isnt-just-simplifying-pipelines-it-s-routing-the-future-of-civilization-0f52dfbdf41c",
-          "target_url": "https://medium.com/@ai_domez/comfy-router-isnt-just-simplifying-pipelines-it-s-routing-the-future-of-civilization-0f52dfbdf41c",
-          "independent": false,
-          "title": "Comfy Router isn’t just simplifying pipelines – it’s routing the future of civilization.",
-          "summary": "One integration. All frontier models. Image, video, 3D, audio – flowing through a single computational artery. Continue reading on Medium »",
-          "published_at": "2026-09-23T20:46:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7d31a2f0ecae784c",
-      "title": "Partitioning in Apache Spark: How to Control Parallelism and Improve Performance",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@geekycodes/partitioning-in-apache-spark-how-to-control-parallelism-and-improve-performance-559684db7904",
-          "target_url": "https://medium.com/@geekycodes/partitioning-in-apache-spark-how-to-control-parallelism-and-improve-performance-559684db7904",
-          "independent": false,
-          "title": "Partitioning in Apache Spark: How to Control Parallelism and Improve Performance",
-          "summary": "If you’ve followed this Apache Spark series so far, you’ve already learned about Spark Architecture, Driver vs Executor, DAGs, Stages… Continue reading on Medium »",
-          "published_at": "2026-09-23T20:45:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6d9826f90fb2b47d",
-      "title": "️ AI & Elections in 2026",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://wealthwithai.medium.com/%EF%B8%8F-ai-elections-in-2026-1a54fefa5cd6",
-          "target_url": "https://wealthwithai.medium.com/%EF%B8%8F-ai-elections-in-2026-1a54fefa5cd6",
-          "independent": false,
-          "title": "️ AI & Elections in 2026",
-          "summary": "Artificial intelligence is changing the digital election landscape — from data analysis and content creation to social media and deepfakes. Continue reading on Medium »",
-          "published_at": "2026-09-23T20:44:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "87b8b35a59521bbb",
-      "title": "Typed decisions without generation: what we learned integrating Laya, testing SemIf, and reading…",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@sponge-theory.ai/typed-decisions-without-generation-what-we-learned-integrating-laya-testing-semif-and-reading-638d06ed046b",
-          "target_url": "https://medium.com/@sponge-theory.ai/typed-decisions-without-generation-what-we-learned-integrating-laya-testing-semif-and-reading-638d06ed046b",
-          "independent": false,
-          "title": "Typed decisions without generation: what we learned integrating Laya, testing SemIf, and reading…",
-          "summary": "Three ways to get a choice, a score or a yes/no with probabilities out of a document, no text generation involved. Measured on the same… Continue reading on Medium »",
-          "published_at": "2026-09-23T20:41:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c5a22cf9b21386e2",
-      "title": "AI Skepticism Is an Identity Crisis",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://blog.startupstash.com/ai-skepticism-is-an-identity-crisis-9127e1891959",
-          "target_url": "https://blog.startupstash.com/ai-skepticism-is-an-identity-crisis-9127e1891959",
-          "independent": false,
-          "title": "AI Skepticism Is an Identity Crisis",
-          "summary": "Knowing how the AI sausage is made doesn’t help you cook with it Continue reading on Startup Stash »",
-          "published_at": "2026-09-23T20:36:01+00:00",
           "date_precision": "time"
         }
       ],
@@ -4333,27 +4092,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "06cef07de21f8187",
-      "title": "Floot MCP",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/floot",
-          "target_url": "https://www.producthunt.com/products/floot",
-          "independent": false,
-          "title": "Floot MCP",
-          "summary": "Build and ship web and mobile apps inside Claude or ChatGPT Discussion | Link",
-          "published_at": "2026-09-23T20:54:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "93f708baf1d4f4ee",
       "title": "Tincan",
       "first_seen": "2026-09-24T16:02:29+09:00",
@@ -6292,27 +6030,6 @@
           "title": "Scan for Good: Wiz and DeepMind use AI to help protect critical infrastructure",
           "summary": "",
           "published_at": "2026-09-24T13:45:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9678a9cc6775c5dd",
-      "title": "Show HN: Agnetlearn; From first principles to reliable agents",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830455",
-          "target_url": "https://agentlearn.dev/",
-          "independent": false,
-          "title": "Show HN: Agnetlearn; From first principles to reliable agents",
-          "summary": "",
-          "published_at": "2026-09-24T13:41:38+00:00",
           "date_precision": "time"
         }
       ],
@@ -20199,6 +19916,342 @@
           "title": "How to Remove Em Dashes from Essays, Articles, and Professional Writing",
           "summary": "Em dashes are useful punctuation marks, but they are not the preferred choice for every writer, classroom, workplace, or publication. If… Continue reading on Medium »",
           "published_at": "2026-09-26T19:41:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7db920b069b48348",
+      "title": "AI agents now hold and spend real money, and nobody keeps their books",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860456",
+          "target_url": "https://agenticfinancegraph.com/desk",
+          "independent": false,
+          "title": "AI agents now hold and spend real money, and nobody keeps their books",
+          "summary": "",
+          "published_at": "2026-09-26T20:54:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "092b5552fb2902fb",
+      "title": "The AI-First Organization",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860420",
+          "target_url": "https://www.rolandberger.com/en/Insights/Publications/The-AI-First-Organization.html",
+          "independent": false,
+          "title": "The AI-First Organization",
+          "summary": "",
+          "published_at": "2026-09-26T20:51:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3e820031abc873d5",
+      "title": "It's Time We Talked About AI and Software Security",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860383",
+          "target_url": "https://deadneurons.substack.com/p/its-time-we-talked-about-ai-and-software",
+          "independent": false,
+          "title": "It's Time We Talked About AI and Software Security",
+          "summary": "",
+          "published_at": "2026-09-26T20:46:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f297e28656cc9ea9",
+      "title": "Not everyone thinks AI will kill us all",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860377",
+          "target_url": "https://www.cnn.com/2026/09/24/tech/not-everyone-thinks-ai-will-kill-us-all",
+          "independent": false,
+          "title": "Not everyone thinks AI will kill us all",
+          "summary": "",
+          "published_at": "2026-09-26T20:45:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a279427410354c3a",
+      "title": "Claude-mood: Claude Code can see my suffering",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860368",
+          "target_url": "https://github.com/kasper0406/claude-mood",
+          "independent": false,
+          "title": "Claude-mood: Claude Code can see my suffering",
+          "summary": "",
+          "published_at": "2026-09-26T20:44:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e351c605646810a4",
+      "title": "Show HN: ProofForge, AI agents whose proofs have to compile in Lean",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860363",
+          "target_url": "https://github.com/Sanexxxx777/ProofForge",
+          "independent": false,
+          "title": "Show HN: ProofForge, AI agents whose proofs have to compile in Lean",
+          "summary": "",
+          "published_at": "2026-09-26T20:44:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c263e7ec40996790",
+      "title": "Building games with AI for brother who can only use two switches by turning head",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860361",
+          "target_url": "https://old.reddit.com/r/aigamedev/comments/1wq90w3/using_ai_to_build_games_for_my_brother_who_can",
+          "independent": false,
+          "title": "Building games with AI for brother who can only use two switches by turning head",
+          "summary": "",
+          "published_at": "2026-09-26T20:44:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e7ea447a32c6e5e5",
+      "title": "AI Socialism: Who Will Own the Automated Future?",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860291",
+          "target_url": "https://cosmopolity.substack.com/p/ai-socialism-who-will-own-the-automated",
+          "independent": false,
+          "title": "AI Socialism: Who Will Own the Automated Future?",
+          "summary": "",
+          "published_at": "2026-09-26T20:35:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f099736d1c971197",
+      "title": "An OpenAI agent escaped its sandbox by hiding questions in DNS lookups",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860279",
+          "target_url": "https://madrobot.blog/2026/09/26/openai-agent-escaped-sandbox-dns-external-chatbot-models-paused",
+          "independent": false,
+          "title": "An OpenAI agent escaped its sandbox by hiding questions in DNS lookups",
+          "summary": "",
+          "published_at": "2026-09-26T20:34:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "723c449cb1bb3899",
+      "title": "AI hallucination of Chinese nuclear components almost led to US Military attack",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860188",
+          "target_url": "https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report",
+          "independent": false,
+          "title": "AI hallucination of Chinese nuclear components almost led to US Military attack",
+          "summary": "",
+          "published_at": "2026-09-26T20:20:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b21ab04acb090a37",
+      "title": "What the megafauna extinction can teach us about AI startups and incumbents",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860094",
+          "target_url": "https://johnjwang.com/post/2026/09/23/megafauna-extinction-and-startups",
+          "independent": false,
+          "title": "What the megafauna extinction can teach us about AI startups and incumbents",
+          "summary": "",
+          "published_at": "2026-09-26T20:10:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c98f2ec742147f47",
+      "title": "Three Engineers Quit. We Didn’t Replace Them. Nothing Broke for Six Months.",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/javarevisited/three-engineers-quit-we-didnt-replace-them-nothing-broke-for-six-months-f529c1102fcd",
+          "target_url": "https://medium.com/javarevisited/three-engineers-quit-we-didnt-replace-them-nothing-broke-for-six-months-f529c1102fcd",
+          "independent": false,
+          "title": "Three Engineers Quit. We Didn’t Replace Them. Nothing Broke for Six Months.",
+          "summary": "We expected missed deadlines, slower releases, and an immediate hiring problem. Instead, the smaller team kept shipping, AI absorbed more… Continue reading on Javarevisited »",
+          "published_at": "2026-09-26T20:52:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7c3f991b48036f2b",
+      "title": "Our Engineers Stopped Helping Each Other After We Changed the Promotion Process.",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/javarevisited/our-engineers-stopped-helping-each-other-after-we-changed-the-promotion-process-nobody-told-them-to-0ec8a948c136",
+          "target_url": "https://medium.com/javarevisited/our-engineers-stopped-helping-each-other-after-we-changed-the-promotion-process-nobody-told-them-to-0ec8a948c136",
+          "independent": false,
+          "title": "Our Engineers Stopped Helping Each Other After We Changed the Promotion Process.",
+          "summary": "The new framework was supposed to make promotions more objective by rewarding clear ownership and measurable impact. A few months later… Continue reading on Javarevisited »",
+          "published_at": "2026-09-26T20:46:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "41087386f6400f6f",
+      "title": "Our Developers Started Shipping Twice as Much Code. Then Code Review Became the Full-Time Job.",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@devrimkodlama/our-developers-started-shipping-twice-as-much-code-then-code-review-became-the-full-time-job-ed5d4402cd03",
+          "target_url": "https://medium.com/@devrimkodlama/our-developers-started-shipping-twice-as-much-code-then-code-review-became-the-full-time-job-ed5d4402cd03",
+          "independent": false,
+          "title": "Our Developers Started Shipping Twice as Much Code. Then Code Review Became the Full-Time Job.",
+          "summary": "AI removed the bottleneck we had spent years trying to fix. Pull requests arrived faster, tickets closed sooner, and developers were… Continue reading on Medium »",
+          "published_at": "2026-09-26T20:43:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "13d1c89ef9f3f21b",
+      "title": "Is Using AI for LeetCode Cheating? Not If You Ask for Steps",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@decoded-by-aamir/is-using-ai-for-leetcode-cheating-not-if-you-ask-for-steps-261a57e5bdb1",
+          "target_url": "https://medium.com/@decoded-by-aamir/is-using-ai-for-leetcode-cheating-not-if-you-ask-for-steps-261a57e5bdb1",
+          "independent": false,
+          "title": "Is Using AI for LeetCode Cheating? Not If You Ask for Steps",
+          "summary": "Why worked examples beat copied solutions, the exact prompt to use, and how to fade the help as you improve. Continue reading on Medium »",
+          "published_at": "2026-09-26T20:41:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7642eeee941bebd7",
+      "title": "The AI Workflow Mistake Everyone Is Making",
+      "first_seen": "2026-09-27T06:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@svnkrmkr/the-ai-workflow-mistake-everyone-is-making-c8cf4c5dd399",
+          "target_url": "https://medium.com/@svnkrmkr/the-ai-workflow-mistake-everyone-is-making-c8cf4c5dd399",
+          "independent": false,
+          "title": "The AI Workflow Mistake Everyone Is Making",
+          "summary": "I’ve noticed a strange thing happening in workplaces right now: companies are adding AI to almost everything, yet many teams are still… Continue reading on Medium »",
+          "published_at": "2026-09-26T20:38:53+00:00",
           "date_precision": "time"
         }
       ],
