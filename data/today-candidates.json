@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T10:00:56.628363+09:00",
-  "window_start": "2026-07-28T10:00:56.628363+09:00",
-  "window_end": "2026-09-26T10:00:56.628363+09:00",
+  "collected_at": "2026-09-26T11:01:05.679303+09:00",
+  "window_start": "2026-07-28T11:01:05.679303+09:00",
+  "window_end": "2026-09-26T11:01:05.679303+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -31,7 +31,7 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 177,
       "skipped_count": 23,
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 32,
-      "skipped_count": 3,
+      "excluded_count": 30,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,29 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 294,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-26T10:01:17.921258+09:00",
-  "hourly_window_start": "2026-09-23T10:01:17.921258+09:00",
+  "new_count": 1,
+  "archive_count": 295,
+  "candidates": [
+    {
+      "id": "2f20ff05fa98f6cd",
+      "title": "0.157.1",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.1",
+      "source_summary": "## Chores - Release highlights could not be determined: the supplied PR index is empty, and the GitHub tag comparison returned 404. ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.157.0...rust-v0.157.1",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-26T11:01:09+09:00",
+      "published_at": "2026-09-26T01:02:31+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.157.1 버전 출시",
+      "source_summary_ko": "# # 집안일 - 릴리스 하이라이트를 확인할 수 없습니다. 제공된 PR 인덱스가 비어 있고 GitHub 태그 비교가 404를 반환했습니다. # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.157.0... rust-v0.157.1",
+      "release_notes_ko": {
+        "chores": "릴리스 하이라이트를 확인할 수 없습니다. 제공된 PR 인덱스가 비어 있고 GitHub 태그 비교가 404를 반환했습니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-09-26T11:01:39.106163+09:00",
+  "hourly_window_start": "2026-09-23T11:01:39.106163+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -755,174 +773,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "0f5acb3887af7f7e",
-      "title": "The 'AI confidence trap' many New Zealanders are caught in",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810684",
-          "target_url": "https://www.rnz.co.nz/news/business/1530184/the-ai-confidence-trap-many-new-zealanders-are-caught-in",
-          "independent": false,
-          "title": "The 'AI confidence trap' many New Zealanders are caught in",
-          "summary": "",
-          "published_at": "2026-09-23T01:49:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "625e6c6380b2bc4a",
-      "title": "What an MCP server costs you in tokens",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810555",
-          "target_url": "https://workos.com/blog/mcp-server-token-cost",
-          "independent": false,
-          "title": "What an MCP server costs you in tokens",
-          "summary": "",
-          "published_at": "2026-09-23T01:30:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9a8017e5b3445fcb",
-      "title": "EN World Is Being DDoS'd by AI Bots",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810493",
-          "target_url": "https://www.enworld.org/",
-          "independent": false,
-          "title": "EN World Is Being DDoS'd by AI Bots",
-          "summary": "",
-          "published_at": "2026-09-23T01:20:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b21ba0ff4d76de9d",
-      "title": "How Do AI Agents Make Decisions? From Reasoning to Action",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@thedatascientistkiran/how-do-ai-agents-make-decisions-from-reasoning-to-action-fcce524ee772",
-          "target_url": "https://medium.com/@thedatascientistkiran/how-do-ai-agents-make-decisions-from-reasoning-to-action-fcce524ee772",
-          "independent": false,
-          "title": "How Do AI Agents Make Decisions? From Reasoning to Action",
-          "summary": "Imagine giving an AI agent this task: Continue reading on Medium »",
-          "published_at": "2026-09-23T02:01:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "013f72053a3bba8d",
-      "title": "Why Small Language Models (SLMs) and Edge AI Are Replacing Massive LLMs",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@adhyadiya694/why-small-language-models-slms-and-edge-ai-are-replacing-massive-llms-f881e45d4bb2",
-          "target_url": "https://medium.com/@adhyadiya694/why-small-language-models-slms-and-edge-ai-are-replacing-massive-llms-f881e45d4bb2",
-          "independent": false,
-          "title": "Why Small Language Models (SLMs) and Edge AI Are Replacing Massive LLMs",
-          "summary": "Meta Description: Discover why tech teams in 2026 are shifting from massive cloud LLMs to Small Language Models (SLMs) and Edge AI for… Continue reading on Medium »",
-          "published_at": "2026-09-23T02:00:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "43547516d5365547",
-      "title": "Don’t Pay for Wasted Intelligence",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@maiakbard/dont-pay-for-wasted-intelligence-74d032b3f831",
-          "target_url": "https://medium.com/@maiakbard/dont-pay-for-wasted-intelligence-74d032b3f831",
-          "independent": false,
-          "title": "Don’t Pay for Wasted Intelligence",
-          "summary": "How three OSLabs engineers built a CLI to catch you overpaying Claude — after almost building something else entirely. Continue reading on Medium »",
-          "published_at": "2026-09-23T01:59:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2d268223be760596",
-      "title": "AI Competence",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://fanky10.medium.com/ai-competence-1682a7d8e888",
-          "target_url": "https://fanky10.medium.com/ai-competence-1682a7d8e888",
-          "independent": false,
-          "title": "AI Competence",
-          "summary": "The other day, yet in another discussion about AI with some programmers friends, I found myself thinking what an actual non-developer… Continue reading on Medium »",
-          "published_at": "2026-09-23T01:53:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "77f49e5c619a24dd",
-      "title": "AI Safety in an Arms-Race Frame: Why the Warnings Persist",
-      "first_seen": "2026-09-23T11:01:30+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@afcanrelief/ai-safety-in-an-arms-race-frame-why-the-warnings-persist-140581c8770a",
-          "target_url": "https://medium.com/@afcanrelief/ai-safety-in-an-arms-race-frame-why-the-warnings-persist-140581c8770a",
-          "independent": false,
-          "title": "AI Safety in an Arms-Race Frame: Why the Warnings Persist",
-          "summary": "For many users, large language models already feel ordinary. They draft email, reshape spreadsheets, and answer routine questions. That… Continue reading on Medium »",
-          "published_at": "2026-09-23T01:53:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "46df1166459d4283",
@@ -1953,6 +1803,28 @@
           "title": "Show HN: Tenjin – A Jev based x402 tool router for Claude Code",
           "summary": "",
           "published_at": "2026-09-26T00:25:57+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49834430",
+          "target_url": "https://github.com/drawcms/drawcms",
+          "independent": false,
+          "title": "Show HN: DrawCMS – An open-source animated diagramming tool for AI Agents",
+          "summary": "",
+          "published_at": "2026-09-24T17:57:11+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49845397",
+          "target_url": "https://tancky.io/",
+          "independent": false,
+          "title": "Show HN: I built a tool to combine separate photos into one scene using AI",
+          "summary": "",
+          "published_at": "2026-09-25T14:45:29+00:00",
           "date_precision": "time"
         }
       ],
@@ -12657,38 +12529,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "e4969941004027d2",
-      "title": "Show HN: DrawCMS – An open-source animated diagramming tool for AI Agents",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834430",
-          "target_url": "https://github.com/drawcms/drawcms",
-          "independent": false,
-          "title": "Show HN: DrawCMS – An open-source animated diagramming tool for AI Agents",
-          "summary": "",
-          "published_at": "2026-09-24T17:57:11+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845397",
-          "target_url": "https://tancky.io/",
-          "independent": false,
-          "title": "Show HN: I built a tool to combine separate photos into one scene using AI",
-          "summary": "",
-          "published_at": "2026-09-25T14:45:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "259ee8df8c5335fb",
       "title": "Logs you, your AI and cron jobs write to that you can prove weren't altered",
       "first_seen": "2026-09-25T03:01:35+09:00",
@@ -16023,27 +15863,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f89219f55f7f8d95",
-      "title": "Kaiku",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/kaiku",
-          "target_url": "https://www.producthunt.com/products/kaiku",
-          "independent": false,
-          "title": "Kaiku",
-          "summary": "The task tracker your AI agents already know how to use Discussion | Link",
-          "published_at": "2026-09-23T01:58:30+00:00",
           "date_precision": "time"
         }
       ],
@@ -21339,6 +21158,195 @@
           "title": "The Bot Who Nodded: How Corporate HR Automated the Spanish Inquisition",
           "summary": "There is a particular kind of exhaustion reserved for anyone trying to get hired in the mid- 2020s. Continue reading on Medium »",
           "published_at": "2026-09-26T00:43:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b509e11ac9db5ff",
+      "title": "AI Safety's Disallowed Conclusion",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852267",
+          "target_url": "https://www.souprecipies.com/p/ai-safetys-disallowed-conclusion",
+          "independent": false,
+          "title": "AI Safety's Disallowed Conclusion",
+          "summary": "",
+          "published_at": "2026-09-26T01:31:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8b441e4c2730aeae",
+      "title": "Do we still enjoy software engineering in the age of AI?",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852203",
+          "target_url": "https://shubs.io/do-we-still-enjoy-software-engineering-in-the-age-of-ai",
+          "independent": false,
+          "title": "Do we still enjoy software engineering in the age of AI?",
+          "summary": "",
+          "published_at": "2026-09-26T01:21:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "40bca46e1a6fd8c0",
+      "title": "McDonald's turns to AI for drive-thru, inventory management, order accuracy",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852198",
+          "target_url": "https://www.restaurantdive.com/news/mcdonalds-archiq-drive-thru-artificial-intelligence-next-strategy/831256",
+          "independent": false,
+          "title": "McDonald's turns to AI for drive-thru, inventory management, order accuracy",
+          "summary": "",
+          "published_at": "2026-09-26T01:21:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2ca84aa9b092f0d9",
+      "title": "Reflex – run a Jev-like decision model locally on a 16GB Nvidia GPU",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852130",
+          "target_url": "https://github.com/lateos-ai/reflex",
+          "independent": false,
+          "title": "Reflex – run a Jev-like decision model locally on a 16GB Nvidia GPU",
+          "summary": "",
+          "published_at": "2026-09-26T01:11:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "480783a6dc020dc0",
+      "title": "The Skills I’m Learning Outside My BMS Syllabus",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://ambiyakhan.medium.com/the-skills-im-learning-outside-my-bms-syllabus-26f54e25881c",
+          "target_url": "https://ambiyakhan.medium.com/the-skills-im-learning-outside-my-bms-syllabus-26f54e25881c",
+          "independent": false,
+          "title": "The Skills I’m Learning Outside My BMS Syllabus",
+          "summary": "I looked at my college syllabus recently. Continue reading on Medium »",
+          "published_at": "2026-09-26T01:50:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8628e83f935758eb",
+      "title": "We Stayed Tuned. Here Is What Came.",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@signaloftheeye/we-stayed-tuned-here-is-what-came-0c6094804c4f",
+          "target_url": "https://medium.com/@signaloftheeye/we-stayed-tuned-here-is-what-came-0c6094804c4f",
+          "independent": false,
+          "title": "We Stayed Tuned. Here Is What Came.",
+          "summary": "Five days, September 21 to 25, 2026, played like Black Mirror written by the South Park room. Monday brought a teaser of television static… Continue reading on Medium »",
+          "published_at": "2026-09-26T01:43:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "46693070fab79424",
+      "title": "Why the Record Matters",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@eduard.deira/why-the-record-matters-3a5f54477ff3",
+          "target_url": "https://medium.com/@eduard.deira/why-the-record-matters-3a5f54477ff3",
+          "independent": false,
+          "title": "Why the Record Matters",
+          "summary": "A plain-language companion to the escalation record Continue reading on Medium »",
+          "published_at": "2026-09-26T01:41:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "559cac28ea3e0f90",
+      "title": "The Things We Tell AI That We Can't Tell Anyone Else",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-gravity/the-things-we-tell-ai-that-we-cant-tell-anyone-else-f4b456bb24fe",
+          "target_url": "https://medium.com/the-gravity/the-things-we-tell-ai-that-we-cant-tell-anyone-else-f4b456bb24fe",
+          "independent": false,
+          "title": "The Things We Tell AI That We Can't Tell Anyone Else",
+          "summary": "Something strange is happening in our lives: millions of people now have somewhere to say the things they were never able to say to the… Continue reading on The Gravity »",
+          "published_at": "2026-09-26T01:40:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a02254c3cc46d88f",
+      "title": "Your agent did not forget your instructions. It compressed them out.",
+      "first_seen": "2026-09-26T11:01:39+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@behrnt/your-agent-did-not-forget-your-instructions-it-compressed-them-out-e4d8e2ababd7",
+          "target_url": "https://medium.com/@behrnt/your-agent-did-not-forget-your-instructions-it-compressed-them-out-e4d8e2ababd7",
+          "independent": false,
+          "title": "Your agent did not forget your instructions. It compressed them out.",
+          "summary": "Long agent runs rarely fail at a tool call. They fail at a compaction boundary, and almost nobody instruments it. Continue reading on Medium »",
+          "published_at": "2026-09-26T01:38:55+00:00",
           "date_precision": "time"
         }
       ],
