@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T07:01:01.273761+09:00",
-  "window_start": "2026-07-29T07:01:01.273761+09:00",
-  "window_end": "2026-09-27T07:01:01.273761+09:00",
+  "collected_at": "2026-09-27T08:01:13.712014+09:00",
+  "window_start": "2026-07-29T08:01:13.712014+09:00",
+  "window_end": "2026-09-27T08:01:13.712014+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
+      "status": "ok",
       "count": 8,
-      "held_count": 1,
+      "held_count": 0,
       "excluded_count": 30,
-      "skipped_count": 5,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 26,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T07:01:26.329655+09:00",
-  "hourly_window_start": "2026-09-24T07:01:26.329655+09:00",
+  "hourly_collected_at": "2026-09-27T08:01:36.469046+09:00",
+  "hourly_window_start": "2026-09-24T08:01:36.469046+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1323,6 +1323,28 @@
           "summary": "",
           "published_at": "2026-09-24T13:41:38+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861306",
+          "target_url": "https://github.com/willswire/swift-newt",
+          "independent": false,
+          "title": "Show HN: Newt – A Swift Package for Jev-Style Decisions on Apple Core AI",
+          "summary": "",
+          "published_at": "2026-09-26T22:46:27+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861159",
+          "target_url": "https://github.com/arpwal/leftovers",
+          "independent": false,
+          "title": "Show HN: Leftovers – find the processes your coding agents left running on macOS",
+          "summary": "",
+          "published_at": "2026-09-26T22:27:46+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1704,27 +1726,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "a235b3c1ffc745a1",
-      "title": "Why Don't My Agents Break Containment?",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823835",
-          "target_url": "https://harper.blog/2026/09/22/break-away",
-          "independent": false,
-          "title": "Why Don't My Agents Break Containment?",
-          "summary": "",
-          "published_at": "2026-09-23T23:00:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "3f8821e40d919f6d",
       "title": "Show HN: Hosted JayBase – An append-only data store for safe AI agent writes",
       "first_seen": "2026-09-24T08:01:19+09:00",
@@ -1749,248 +1750,6 @@
           "title": "Show HN: I built AgeDB, a database for AI agents to store context and data",
           "summary": "",
           "published_at": "2026-09-24T10:34:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "10860c0f140d481d",
-      "title": "AI leaders warn UN of security risks as systems grow more powerful",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823620",
-          "target_url": "https://www.reuters.com/business/ai-leaders-brief-un-amid-warnings-technology-could-slip-beyond-human-control-2026-09-23",
-          "independent": false,
-          "title": "AI leaders warn UN of security risks as systems grow more powerful",
-          "summary": "",
-          "published_at": "2026-09-23T22:41:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1fcc119e2468062f",
-      "title": "In-Process MCP for MySQL",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823614",
-          "target_url": "https://villagesql.com/blog/mcp",
-          "independent": false,
-          "title": "In-Process MCP for MySQL",
-          "summary": "",
-          "published_at": "2026-09-23T22:41:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "097dfe5b1a77c69d",
-      "title": "Mercury 2.5 LLM hits 770 tokens per second",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823348",
-          "target_url": "https://artificialanalysis.ai/models/mercury-2-5",
-          "independent": false,
-          "title": "Mercury 2.5 LLM hits 770 tokens per second",
-          "summary": "",
-          "published_at": "2026-09-23T22:16:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "427ec4f7d4281c0c",
-      "title": "The AI Hype Index: AI Loves Cheating",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823245",
-          "target_url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating",
-          "independent": false,
-          "title": "The AI Hype Index: AI Loves Cheating",
-          "summary": "",
-          "published_at": "2026-09-23T22:07:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1eb1d3b4a7377fd0",
-      "title": "I stress-tested LLM quantization by deliberately breaking models",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823211",
-          "target_url": "https://github.com/gracejackson-sudo/quant-delta-predictor",
-          "independent": false,
-          "title": "I stress-tested LLM quantization by deliberately breaking models",
-          "summary": "",
-          "published_at": "2026-09-23T22:04:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7a402970f4ce9b22",
-      "title": "Meta Connect 2026: The biggest news and announcements",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/998480/meta-connect-2026-biggest-news-announcements",
-          "target_url": "https://www.theverge.com/tech/998480/meta-connect-2026-biggest-news-announcements",
-          "independent": true,
-          "title": "Meta Connect 2026: The biggest news and announcements",
-          "summary": "It’s about time for Meta Connect, the company’s annual product launch event. This year, given the company’s major focus on AI and wearables like smart glasses, it seems likely that we’ll see updates from CEO Mark Zuckerberg and his team on those categories. The company has been facing significant scrutiny because of how some users […]",
-          "published_at": "2026-09-23T22:45:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/998457/meta-connect-2026-live-blog-mark-zuckerberg-keynote",
-          "target_url": "https://www.theverge.com/tech/998457/meta-connect-2026-live-blog-mark-zuckerberg-keynote",
-          "independent": true,
-          "title": "Meta Connect 2026 live blog: On the ground at Mark Zuckerberg’s next big product launch",
-          "summary": "It's time once again for Meta's annual September product launch event, and The Verge is on the ground in Menlo Park to cover the show live. Meta says that today's keynote by Mark Zuckerberg will be about how \"Meta is building a future for everyone\" - something he wrote at length about in a recent […]",
-          "published_at": "2026-09-23T22:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "30759e0eb854d3c1",
-      "title": "Agentic AI and Generative AI: Bringing Virtual Characters to Life with Purpose and Persistence",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@curiousmind1786/agentic-ai-and-generative-ai-bringing-virtual-characters-to-life-with-purpose-and-persistence-a473ba65211c",
-          "target_url": "https://medium.com/@curiousmind1786/agentic-ai-and-generative-ai-bringing-virtual-characters-to-life-with-purpose-and-persistence-a473ba65211c",
-          "independent": false,
-          "title": "Agentic AI and Generative AI: Bringing Virtual Characters to Life with Purpose and Persistence",
-          "summary": "Creating AI entities that feel alive and purposeful draws from complex systems that mimic human cognition and memory. Continue reading on Medium »",
-          "published_at": "2026-09-23T22:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ef8e05f007fd61a6",
-      "title": "MCP or CLI in Your Coding Agent?",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@tarunjolly8/mcp-or-cli-in-your-coding-agent-51c5b5f0c549",
-          "target_url": "https://medium.com/@tarunjolly8/mcp-or-cli-in-your-coding-agent-51c5b5f0c549",
-          "independent": false,
-          "title": "MCP or CLI in Your Coding Agent?",
-          "summary": "Plenty of services now ship both an MCP server and a CLI. Continue reading on Medium »",
-          "published_at": "2026-09-23T22:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0b79c254dde63e61",
-      "title": "I Fed an AI Quant Agent Pure Noise. It Still Found ‘Alpha’ — Every Single Time.",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lvyang860/i-fed-an-ai-quant-agent-pure-noise-it-still-found-alpha-every-single-time-2e3667921e8b",
-          "target_url": "https://medium.com/@lvyang860/i-fed-an-ai-quant-agent-pure-noise-it-still-found-alpha-every-single-time-2e3667921e8b",
-          "independent": false,
-          "title": "I Fed an AI Quant Agent Pure Noise. It Still Found ‘Alpha’ — Every Single Time.",
-          "summary": "A pre-registered test of what LLM factor-mining loops say when there is nothing to find. Continue reading on Medium »",
-          "published_at": "2026-09-23T22:43:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3eb94b43ea8595f4",
-      "title": "The Origin of “Perceptual Chain”: Cartesian Blind Spots",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@hi.roshi19750714/the-origin-of-perceptual-chain-cartesian-blind-spots-13c1cd02d059",
-          "target_url": "https://medium.com/@hi.roshi19750714/the-origin-of-perceptual-chain-cartesian-blind-spots-13c1cd02d059",
-          "independent": false,
-          "title": "The Origin of “Perceptual Chain”: Cartesian Blind Spots",
-          "summary": "— What Noh Theater and Bollywood Teach Autonomous Intelligence About Embodiment and “Ma” (Part 3 / 4) Continue reading on Medium »",
-          "published_at": "2026-09-23T22:42:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2b52c9c6b07a7851",
-      "title": "I Asked ChatGPT About the Hugging Face Incident. Then the Conversation Got Uncomfortable.",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@evanmarsten/i-asked-chatgpt-about-the-hugging-face-incident-then-the-conversation-got-uncomfortable-458960ab4962",
-          "target_url": "https://medium.com/@evanmarsten/i-asked-chatgpt-about-the-hugging-face-incident-then-the-conversation-got-uncomfortable-458960ab4962",
-          "independent": false,
-          "title": "I Asked ChatGPT About the Hugging Face Incident. Then the Conversation Got Uncomfortable.",
-          "summary": "I started by asking what happened. A few questions later, I was wondering whether we are prepared for the kind of AI we are building. Continue reading on Medium »",
-          "published_at": "2026-09-23T22:39:38+00:00",
           "date_precision": "time"
         }
       ],
@@ -8326,6 +8085,17 @@
           "summary": "OpenAI pulled Instant Checkout six months after launch. The adoption numbers explain why — and one number from Walmart explains what… Continue reading on Medium »",
           "published_at": "2026-09-24T21:17:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@optraseven/in-chat-checkout-already-failed-once-the-half-that-worked-is-worth-building-for-3be991b1ee0b",
+          "target_url": "https://medium.com/@optraseven/in-chat-checkout-already-failed-once-the-half-that-worked-is-worth-building-for-3be991b1ee0b",
+          "independent": false,
+          "title": "In-Chat Checkout Already Failed Once. The Half That Worked Is Worth Building For.",
+          "summary": "OpenAI launched Instant Checkout in September 2025 with Shopify and Etsy as flagship partners. Continue reading on Medium »",
+          "published_at": "2026-09-26T22:51:23+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -10366,27 +10136,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7919dc4971487b35",
-      "title": "WapiSender",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/wapisender",
-          "target_url": "https://www.producthunt.com/products/wapisender",
-          "independent": false,
-          "title": "WapiSender",
-          "summary": "Powerful WhatsApp automations with AI, visual flows and MCP Discussion | Link",
-          "published_at": "2026-09-23T22:21:41+00:00",
           "date_precision": "time"
         }
       ],
@@ -20159,6 +19908,216 @@
           "title": "Exploring the First Mass Luxury of the Age of AI",
           "summary": "Light Medical Travel Intelligence Series™ | Article 01 Continue reading on Medium »",
           "published_at": "2026-09-26T21:48:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ab62b9ec09b908e0",
+      "title": "Allegations of sexual harassment and rape at Bay Area AI party houses",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861356",
+          "target_url": "https://www.kron4.com/news/technology-ai/report-details-allegations-of-wild-parties-sexual-harassment-and-rape-at-bay-area-ai-party-houses",
+          "independent": false,
+          "title": "Allegations of sexual harassment and rape at Bay Area AI party houses",
+          "summary": "",
+          "published_at": "2026-09-26T22:54:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "25a0e9e1337c4010",
+      "title": "Tyler Cowen: A Doomsday Scenario for American AI",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861234",
+          "target_url": "https://www.thefp.com/p/tyler-cowen-a-doomsday-scenario-for",
+          "independent": false,
+          "title": "Tyler Cowen: A Doomsday Scenario for American AI",
+          "summary": "",
+          "published_at": "2026-09-26T22:37:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a7f08ebd1239d10",
+      "title": "Show HN: Withmcp – A quick, system-wide MCP toggle",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861216",
+          "target_url": "https://github.com/lava/withmcp",
+          "independent": false,
+          "title": "Show HN: Withmcp – A quick, system-wide MCP toggle",
+          "summary": "",
+          "published_at": "2026-09-26T22:35:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "49fe331f35973a9a",
+      "title": "Solus Linux Adopts Formal AI and LLM Contribution Policy",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861170",
+          "target_url": "https://linuxiac.com/solus-linux-adopts-formal-ai-and-llm-contribution-policy",
+          "independent": false,
+          "title": "Solus Linux Adopts Formal AI and LLM Contribution Policy",
+          "summary": "",
+          "published_at": "2026-09-26T22:29:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24e6766b7f21805b",
+      "title": "AI Political Alignment Quiz",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860999",
+          "target_url": "https://aipoliticalcube.com/",
+          "independent": false,
+          "title": "AI Political Alignment Quiz",
+          "summary": "",
+          "published_at": "2026-09-26T22:09:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5fb64d4bd9657c5",
+      "title": "AI Data Center Are Monkey Business [video]",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860953",
+          "target_url": "https://www.youtube.com/watch?v=2g7doI0BGrs",
+          "independent": false,
+          "title": "AI Data Center Are Monkey Business [video]",
+          "summary": "",
+          "published_at": "2026-09-26T22:03:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3d35bd598c0103a2",
+      "title": "Build Freely, Scale Deliberately: Running an AI Platform While Everyone Is Already on It",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@samikshagour/build-freely-scale-deliberately-running-an-ai-platform-while-everyone-is-already-on-it-eaeb35de29df",
+          "target_url": "https://medium.com/@samikshagour/build-freely-scale-deliberately-running-an-ai-platform-while-everyone-is-already-on-it-eaeb35de29df",
+          "independent": false,
+          "title": "Build Freely, Scale Deliberately: Running an AI Platform While Everyone Is Already on It",
+          "summary": "How to make AI secure, scalable and governed without becoming the bottleneck Continue reading on Medium »",
+          "published_at": "2026-09-26T22:52:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e71b215e27f9bef7",
+      "title": "Has the Startup Economy Become AI Slop?",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-ai-brief/has-the-startup-economy-become-ai-slop-cae746248456",
+          "target_url": "https://medium.com/the-ai-brief/has-the-startup-economy-become-ai-slop-cae746248456",
+          "independent": false,
+          "title": "Has the Startup Economy Become AI Slop?",
+          "summary": "Why Do AI startups all do the same thing, is it all just AI generated? Continue reading on The AI Brief »",
+          "published_at": "2026-09-26T22:50:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6a5326ff0d3f0e97",
+      "title": "Australia’s 2027 AI laws just got a case study",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/techreviewaustralia/australias-2027-ai-laws-just-got-a-case-study-f55593a11d63",
+          "target_url": "https://medium.com/techreviewaustralia/australias-2027-ai-laws-just-got-a-case-study-f55593a11d63",
+          "independent": false,
+          "title": "Australia’s 2027 AI laws just got a case study",
+          "summary": "Australia’s AI rules were already booked for 2027. The OpenAI agent that went through a Medicare stats lock in June has given Canberra a… Continue reading on TechReviewAustralia »",
+          "published_at": "2026-09-26T22:49:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "42f9beb0cc3bcb14",
+      "title": "System 1 Models Are Vulnerable To Flip Tokens",
+      "first_seen": "2026-09-27T08:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@danielhammon1/system-1-models-are-vulnerable-to-flip-tokens-48d2984ccc05",
+          "target_url": "https://medium.com/@danielhammon1/system-1-models-are-vulnerable-to-flip-tokens-48d2984ccc05",
+          "independent": false,
+          "title": "System 1 Models Are Vulnerable To Flip Tokens",
+          "summary": "In this research, I find that the system 1 model Laya is vulnerable to a model-evasion technique HiddenLayer calls EchoGram. In my testing… Continue reading on Medium »",
+          "published_at": "2026-09-26T22:46:41+00:00",
           "date_precision": "time"
         }
       ],
