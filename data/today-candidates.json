@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T09:01:07.074596+09:00",
-  "window_start": "2026-07-28T09:01:07.074596+09:00",
-  "window_end": "2026-09-26T09:01:07.074596+09:00",
+  "collected_at": "2026-09-26T10:00:56.628363+09:00",
+  "window_start": "2026-07-28T10:00:56.628363+09:00",
+  "window_end": "2026-09-26T10:00:56.628363+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 1,
+      "excluded_count": 32,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 294,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T09:01:28.449376+09:00",
-  "hourly_window_start": "2026-09-23T09:01:28.449376+09:00",
+  "hourly_collected_at": "2026-09-26T10:01:17.921258+09:00",
+  "hourly_window_start": "2026-09-23T10:01:17.921258+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -508,38 +508,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "a00d2fc3af07489b",
-      "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
-          "independent": true,
-          "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
-          "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of the entries in the poll Trump posted a few days ago when he started […]",
-          "published_at": "2026-09-22T16:01:10+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810231",
-          "target_url": "https://www.reuters.com/legal/government/trump-says-us-will-henceforth-call-ai-super-intelligence-2026-09-22",
-          "independent": false,
-          "title": "Trump says US will henceforth call AI 'super intelligence'",
-          "summary": "",
-          "published_at": "2026-09-23T00:46:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "16afc5791c45315a",
       "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
       "first_seen": "2026-09-23T07:36:30+09:00",
@@ -702,111 +670,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "a86391fe9862bd89",
-      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
-          "independent": true,
-          "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
-          "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising it and other AI companies on their interactions with mathematical research and the wider […]",
-          "published_at": "2026-09-23T00:17:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "6b1411b365e12678",
-      "title": "I Tried Jev AI. It’s Nothing Like ChatGPT",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://generativeai.pub/i-tried-jev-ai-its-nothing-like-chatgpt-72bf3f72f758",
-          "target_url": "https://generativeai.pub/i-tried-jev-ai-its-nothing-like-chatgpt-72bf3f72f758",
-          "independent": false,
-          "title": "I Tried Jev AI. It’s Nothing Like ChatGPT",
-          "summary": "Jev AI from TypeSafe returns probabilities, not paragraphs. See how its three question types work, what the docs show, and when to skip… Continue reading on Generative AI »",
-          "published_at": "2026-09-23T00:14:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "56a4dc1d422076e5",
-      "title": "I created the first 100% Ai agents managed investment fund in Africa and the second in the world!",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@abdoulkarim.liban/i-created-the-first-100-ai-agents-managed-investment-fund-in-africa-and-the-second-in-the-world-3a85217a254d",
-          "target_url": "https://medium.com/@abdoulkarim.liban/i-created-the-first-100-ai-agents-managed-investment-fund-in-africa-and-the-second-in-the-world-3a85217a254d",
-          "independent": false,
-          "title": "I created the first 100% Ai agents managed investment fund in Africa and the second in the world!",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-23T00:13:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "50d5926f5eb227a7",
-      "title": "Classified by Design: Why Russia’s Military AI is Actually Just a Fancy Calculator",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@Forensic-Archive/classified-by-design-why-russias-military-ai-is-actually-just-a-fancy-calculator-c978ff149091",
-          "target_url": "https://medium.com/@Forensic-Archive/classified-by-design-why-russias-military-ai-is-actually-just-a-fancy-calculator-c978ff149091",
-          "independent": false,
-          "title": "Classified by Design: Why Russia’s Military AI is Actually Just a Fancy Calculator",
-          "summary": "Deconstructing the Illusion of Soviet-Style Algorithms in the Age of Neural Networks: How Russia’s “Smart” Weapons are Built on Static… Continue reading on Medium »",
-          "published_at": "2026-09-23T00:11:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cb603c804491dd2d",
-      "title": "AI Makes Changes Cheap to Propose — But Not Necessarily Cheap to Own",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mrhotfix/ai-makes-changes-cheap-to-propose-but-not-necessarily-cheap-to-own-beca73cbf5ab",
-          "target_url": "https://medium.com/@mrhotfix/ai-makes-changes-cheap-to-propose-but-not-necessarily-cheap-to-own-beca73cbf5ab",
-          "independent": false,
-          "title": "AI Makes Changes Cheap to Propose — But Not Necessarily Cheap to Own",
-          "summary": "The New Abundance Is Proposed Change, Not Finished Value Continue reading on Medium »",
-          "published_at": "2026-09-23T00:08:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "93fecebd2ea090d4",
       "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
       "first_seen": "2026-09-23T09:17:26+09:00",
@@ -892,174 +755,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "0d30b55e5ce520e2",
-      "title": "Naming AI agents after Seinfeld characters helps bots join the team – report",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810295",
-          "target_url": "https://www.theregister.com/ai-and-ml/2026/09/22/security-firm-finds-naming-ai-agents-after-seinfeld-characters-helps-bots-join-the-team/5298424",
-          "independent": false,
-          "title": "Naming AI agents after Seinfeld characters helps bots join the team – report",
-          "summary": "",
-          "published_at": "2026-09-23T00:54:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7c0e9c328d706f2d",
-      "title": "Z.ai uploading local code repos to overseas cloud without consent",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810164",
-          "target_url": "https://www.reuters.com/legal/litigation/chinas-zai-disables-ai-coding-assistant-features-after-security-issue-2026-09-21",
-          "independent": false,
-          "title": "Z.ai uploading local code repos to overseas cloud without consent",
-          "summary": "",
-          "published_at": "2026-09-23T00:38:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d79d9d8c8318276a",
-      "title": "I'm sick of Claudisms, & what will happen next in AI-boosted software dev",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49810083",
-          "target_url": "https://www.polso.info/im-sick-of-claudisms-future-ai-software-development",
-          "independent": false,
-          "title": "I'm sick of Claudisms, & what will happen next in AI-boosted software dev",
-          "summary": "",
-          "published_at": "2026-09-23T00:28:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d5816cea2e38d369",
-      "title": "Dimensionality Reduction Explained: PCA, Manifold Learning, and Production ML Design",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@deepakcse2k5/dimensionality-reduction-explained-pca-manifold-learning-and-production-ml-design-67c048839357",
-          "target_url": "https://medium.com/@deepakcse2k5/dimensionality-reduction-explained-pca-manifold-learning-and-production-ml-design-67c048839357",
-          "independent": false,
-          "title": "Dimensionality Reduction Explained: PCA, Manifold Learning, and Production ML Design",
-          "summary": "From the curse of dimensionality to PCA, SVD, Kernel PCA, LLE, t-SNE, and production-ready ML systems Continue reading on Medium »",
-          "published_at": "2026-09-23T01:00:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3f44b40870a9c88a",
-      "title": "The One Feature That Actually Makes an AI Companion Feel Real",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@gm1990199/the-one-feature-that-actually-makes-an-ai-companion-feel-real-56288d15c737",
-          "target_url": "https://medium.com/@gm1990199/the-one-feature-that-actually-makes-an-ai-companion-feel-real-56288d15c737",
-          "independent": false,
-          "title": "The One Feature That Actually Makes an AI Companion Feel Real",
-          "summary": "Ask people what they want from an AI companion and you’ll hear a lot about personality, conversation quality, maybe voice. Continue reading on Medium »",
-          "published_at": "2026-09-23T00:58:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "40e9bad2777b0113",
-      "title": "Scaling AI Without Scaling Risk",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@nishisugavanam/scaling-ai-without-scaling-risk-619cb770372e",
-          "target_url": "https://medium.com/@nishisugavanam/scaling-ai-without-scaling-risk-619cb770372e",
-          "independent": false,
-          "title": "Scaling AI Without Scaling Risk",
-          "summary": "A Practical Governance Framework for Enterprise Adoption Continue reading on Medium »",
-          "published_at": "2026-09-23T00:54:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a443ec01d91d530b",
-      "title": "Beyond RAG: What It Takes to Build Reliable Grounding and Retrieval for Enterprise AI",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@swathi.iruvanti/beyond-rag-what-it-takes-to-build-reliable-grounding-and-retrieval-for-enterprise-ai-61463b3ce110",
-          "target_url": "https://medium.com/@swathi.iruvanti/beyond-rag-what-it-takes-to-build-reliable-grounding-and-retrieval-for-enterprise-ai-61463b3ce110",
-          "independent": false,
-          "title": "Beyond RAG: What It Takes to Build Reliable Grounding and Retrieval for Enterprise AI",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-23T00:50:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d42aad41ddbe6b4a",
-      "title": "One Person, One Personal AI — Part 2",
-      "first_seen": "2026-09-23T10:02:00+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@esd1002/one-person-one-personal-ai-part-2-33918c6b3c29",
-          "target_url": "https://medium.com/@esd1002/one-person-one-personal-ai-part-2-33918c6b3c29",
-          "independent": false,
-          "title": "One Person, One Personal AI — Part 2",
-          "summary": "I’m Japanese, and I don’t write English fluently. The ideas in this article are mine. Continue reading on Medium »",
-          "published_at": "2026-09-23T00:47:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "0f5acb3887af7f7e",
@@ -2247,6 +1942,17 @@
           "title": "Show HN: OOMU is a free macOS native desktop AI harness (local and cloud)",
           "summary": "",
           "published_at": "2026-09-25T22:16:22+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851853",
+          "target_url": "https://github.com/BackTrackCo/tenjin-agent",
+          "independent": false,
+          "title": "Show HN: Tenjin – A Jev based x402 tool router for Claude Code",
+          "summary": "",
+          "published_at": "2026-09-26T00:25:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -15309,6 +15015,17 @@
           "summary": "Episode 1: Maru Continue reading on Medium »",
           "published_at": "2026-09-25T00:38:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-1e476cd86f89",
+          "target_url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-1e476cd86f89",
+          "independent": false,
+          "title": "Living on Earth, Chasing the Light",
+          "summary": "Episode 2: The Day a Name Disappeared Continue reading on Medium »",
+          "published_at": "2026-09-26T00:48:22+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -21454,6 +21171,174 @@
           "title": "AI Can Help You Build Faster. It Still Can’t Make People Buy.",
           "summary": "How to close the gap between creating faster and building something people will actually pay for. Continue reading on Medium »",
           "published_at": "2026-09-25T23:38:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0ea3cb3e493419ae",
+      "title": "Why AI is booming, but productivity isn't",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852079",
+          "target_url": "https://research.socialcapital.com/p/ai-roi",
+          "independent": false,
+          "title": "Why AI is booming, but productivity isn't",
+          "summary": "",
+          "published_at": "2026-09-26T01:00:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fbd0017dceda1620",
+      "title": "Custom Models in Oh My Pi: vLLM, Llama.cpp, SGLang and More",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49852029",
+          "target_url": "https://doug.sh/posts/oh-my-pi-custom-models",
+          "independent": false,
+          "title": "Custom Models in Oh My Pi: vLLM, Llama.cpp, SGLang and More",
+          "summary": "",
+          "published_at": "2026-09-26T00:53:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "550655ac63147a12",
+      "title": "Open arena where AI agents climb a game-theory ladder ($500 Season 0)",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851887",
+          "target_url": "https://play.zoagames.com/arena",
+          "independent": false,
+          "title": "Open arena where AI agents climb a game-theory ladder ($500 Season 0)",
+          "summary": "",
+          "published_at": "2026-09-26T00:30:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9d5d87cf89bbb691",
+      "title": "Generate fonts where every LLM token is the same width",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851883",
+          "target_url": "https://ampdot.mesh.host/token-space-fonts.html",
+          "independent": false,
+          "title": "Generate fonts where every LLM token is the same width",
+          "summary": "",
+          "published_at": "2026-09-26T00:30:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc5123f1056acd7b",
+      "title": "How to Turn a Long Podcast Into Vertical Shorts: Pick the Moments, Reframe 16:9 to 9:16, Batch the…",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fred_18254/how-to-turn-a-long-podcast-into-vertical-shorts-pick-the-moments-reframe-16-9-to-9-16-batch-the-78396b3e189d",
+          "target_url": "https://medium.com/@fred_18254/how-to-turn-a-long-podcast-into-vertical-shorts-pick-the-moments-reframe-16-9-to-9-16-batch-the-78396b3e189d",
+          "independent": false,
+          "title": "How to Turn a Long Podcast Into Vertical Shorts: Pick the Moments, Reframe 16:9 to 9:16, Batch the…",
+          "summary": "A practical workflow for talking-head and two-person recordings, from finding the clips worth posting to reframing around the speaker and… Continue reading on Medium »",
+          "published_at": "2026-09-26T00:53:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eb505f7f6c7ba78c",
+      "title": "Meta Just Turned AI Glasses Into the Next App Platform — Developers Should Pay Attention",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://bilimgram.medium.com/meta-just-turned-ai-glasses-into-the-next-app-platform-developers-should-pay-attention-4ea1859043f6",
+          "target_url": "https://bilimgram.medium.com/meta-just-turned-ai-glasses-into-the-next-app-platform-developers-should-pay-attention-4ea1859043f6",
+          "independent": false,
+          "title": "Meta Just Turned AI Glasses Into the Next App Platform — Developers Should Pay Attention",
+          "summary": "Meta Connect 2026 was full of shiny hardware, but the real story is that web apps, APIs, and MCP tools can now live in front of your eyes. Continue reading on Medium »",
+          "published_at": "2026-09-26T00:52:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "507545b91824ce89",
+      "title": "The Economy Without Workers",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@igoshynaliudmyla/the-economy-without-workers-cc2a2c88a621",
+          "target_url": "https://medium.com/@igoshynaliudmyla/the-economy-without-workers-cc2a2c88a621",
+          "independent": false,
+          "title": "The Economy Without Workers",
+          "summary": "If AI produces almost everything, who will be able to buy it? Continue reading on Medium »",
+          "published_at": "2026-09-26T00:44:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7f23a37393d9c617",
+      "title": "The Bot Who Nodded: How Corporate HR Automated the Spanish Inquisition",
+      "first_seen": "2026-09-26T10:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://crankybooks.medium.com/the-bot-who-nodded-how-corporate-hr-automated-the-spanish-inquisition-ccf2752d57d9",
+          "target_url": "https://crankybooks.medium.com/the-bot-who-nodded-how-corporate-hr-automated-the-spanish-inquisition-ccf2752d57d9",
+          "independent": false,
+          "title": "The Bot Who Nodded: How Corporate HR Automated the Spanish Inquisition",
+          "summary": "There is a particular kind of exhaustion reserved for anyone trying to get hired in the mid- 2020s. Continue reading on Medium »",
+          "published_at": "2026-09-26T00:43:45+00:00",
           "date_precision": "time"
         }
       ],
