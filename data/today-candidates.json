@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T01:01:20.435850+09:00",
-  "window_start": "2026-07-29T01:01:20.435850+09:00",
-  "window_end": "2026-09-27T01:01:20.435850+09:00",
+  "collected_at": "2026-09-27T02:01:00.268218+09:00",
+  "window_start": "2026-07-29T02:01:00.268218+09:00",
+  "window_end": "2026-09-27T02:01:00.268218+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 128,
+      "skipped_count": 127,
       "coverage_limited": false
     },
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 12,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 27,
+      "excluded_count": 28,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 5,
+      "excluded_count": 4,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T01:01:52.949246+09:00",
-  "hourly_window_start": "2026-09-24T01:01:52.949246+09:00",
+  "hourly_collected_at": "2026-09-27T02:01:31.302677+09:00",
+  "hourly_window_start": "2026-09-24T02:01:31.302677+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1191,6 +1191,39 @@
           "summary": "",
           "published_at": "2026-09-26T15:34:53+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858284",
+          "target_url": "https://starskirmish.com/bench",
+          "independent": false,
+          "title": "Show HN: StarSkirmish, an arena where LLMs create StarCraft Brood War bots",
+          "summary": "",
+          "published_at": "2026-09-26T16:49:18+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858152",
+          "target_url": "https://github.com/hyperlogue/r3",
+          "independent": false,
+          "title": "Show HN: r3, A local alternative to Claude Artifacts",
+          "summary": "",
+          "published_at": "2026-09-26T16:36:19+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858029",
+          "target_url": "https://github.com/banji-007/compliance-ail",
+          "independent": false,
+          "title": "Show HN: Policy gateway for AI agent tool calls, with a tamper-evident log",
+          "summary": "",
+          "published_at": "2026-09-26T16:24:11+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1380,90 +1413,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "dce247a85f7172cd",
-      "title": "Tests of the New AI Siri",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819105",
-          "target_url": "https://pogueman.substack.com/p/125-tests-of-the-new-ai-siri",
-          "independent": false,
-          "title": "Tests of the New AI Siri",
-          "summary": "",
-          "published_at": "2026-09-23T16:59:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4e16a7f8c5a6f848",
-      "title": "Serve DiffusionGemma-Jev (Djev) on a TypeSafe AI Compatible API",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819020",
-          "target_url": "https://github.com/taeold/djev-run",
-          "independent": false,
-          "title": "Serve DiffusionGemma-Jev (Djev) on a TypeSafe AI Compatible API",
-          "summary": "",
-          "published_at": "2026-09-23T16:53:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bca949c250cd8f22",
-      "title": "Fire the slop cannons (safely): on coding agents and sandboxing",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818897",
-          "target_url": "https://www.latacora.com/blog/2026/09/18/fire-the-slop-cannons-safely-on-coding-agents-and-sandboxing",
-          "independent": false,
-          "title": "Fire the slop cannons (safely): on coding agents and sandboxing",
-          "summary": "",
-          "published_at": "2026-09-23T16:46:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c79567e752eda03f",
-      "title": "AI Is a Boring Technology",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818659",
-          "target_url": "https://www.chrbutler.com/ai-is-a-boring-technology",
-          "independent": false,
-          "title": "AI Is a Boring Technology",
-          "summary": "",
-          "published_at": "2026-09-23T16:33:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "c79567e752eda03f",
       "title": "AI Is a Boring Technology",
       "first_seen": "2026-09-24T02:01:21+09:00",
@@ -1477,195 +1426,6 @@
           "title": "AI Is a Boring Technology",
           "summary": "",
           "published_at": "2026-09-25T22:22:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3f24fd23a06d2010",
-      "title": "Everyone is hilariously prompt-injecting AI via llms.txt and you aren't",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818584",
-          "target_url": "https://installmap.com/research/llms-txt-ai-instructions",
-          "independent": false,
-          "title": "Everyone is hilariously prompt-injecting AI via llms.txt and you aren't",
-          "summary": "",
-          "published_at": "2026-09-23T16:29:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9b152c447df89686",
-      "title": "Using Local Coding Agents",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818513",
-          "target_url": "https://magazine.sebastianraschka.com/p/using-local-coding-agents",
-          "independent": false,
-          "title": "Using Local Coding Agents",
-          "summary": "",
-          "published_at": "2026-09-23T16:25:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "89e61b840a3d977d",
-      "title": "Bernie Sanders proposes banning ‘superintelligence’ and putting violators in prison",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/999443/bernie-sanders-ai-superintelligence-ban-act",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999443/bernie-sanders-ai-superintelligence-ban-act",
-          "independent": true,
-          "title": "Bernie Sanders proposes banning ‘superintelligence’ and putting violators in prison",
-          "summary": "Sen. Bernie Sanders (I-VT) and Rep. Greg Casar (D-TX) have introduced new legislation that would ban anyone from developing artificial superintelligence - a technology the bill describes as capable of the \"destruction or disempowerment of humanity,\" including by overthrowing the government. Under the Ban Artificial Superintelligence Act, AI leaders would face up to 20 years […]",
-          "published_at": "2026-09-23T16:23:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "51ae79308bb54c33",
-      "title": "Even Americans who use AI every day are worried about it",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/even-americans-who-use-ai-every-day-are-worried-about-it",
-          "target_url": "https://techcrunch.com/2026/09/23/even-americans-who-use-ai-every-day-are-worried-about-it",
-          "independent": true,
-          "title": "Even Americans who use AI every day are worried about it",
-          "summary": "The report suggests that greater exposure will not resolve the unease around the technology, nor reduce public support for AI regulation.",
-          "published_at": "2026-09-23T16:49:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "82fdd7f5b66951ac",
-      "title": "Grok 4.7 vs Xiaomi MiMo-V2.6: Same Intelligence Score, Very Different Bills",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shtse8/grok-4-7-vs-xiaomi-mimo-v2-6-same-intelligence-score-very-different-bills-4d90f9a823da",
-          "target_url": "https://medium.com/@shtse8/grok-4-7-vs-xiaomi-mimo-v2-6-same-intelligence-score-very-different-bills-4d90f9a823da",
-          "independent": false,
-          "title": "Grok 4.7 vs Xiaomi MiMo-V2.6: Same Intelligence Score, Very Different Bills",
-          "summary": "Created September 23, 2026 16:38 Continue reading on Medium »",
-          "published_at": "2026-09-23T16:47:24+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d09d4f990dcc23f5",
-      "title": "Ben Horowitz on AI Anxiety, Big Tech Transitions & The Future of Startups",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@huanzidage/ben-horowitz-on-ai-anxiety-big-tech-transitions-the-future-of-startups-6e6cced9be2a",
-          "target_url": "https://medium.com/@huanzidage/ben-horowitz-on-ai-anxiety-big-tech-transitions-the-future-of-startups-6e6cced9be2a",
-          "independent": false,
-          "title": "Ben Horowitz on AI Anxiety, Big Tech Transitions & The Future of Startups",
-          "summary": "Ben Horowitz explains how AI rewrites software moats, infrastructure, digital trust, and the future of startups and venture capital. Continue reading on Medium »",
-          "published_at": "2026-09-23T16:47:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b435292ae97a59d4",
-      "title": "I Looked Into Stream Shark Because “Faceless Income” Sounded Almost Too Easy — Here’s What I Found",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mskmedum.fad172/i-looked-into-stream-shark-because-faceless-income-sounded-almost-too-easy-heres-what-i-found-47950730a1df",
-          "target_url": "https://medium.com/@mskmedum.fad172/i-looked-into-stream-shark-because-faceless-income-sounded-almost-too-easy-heres-what-i-found-47950730a1df",
-          "independent": false,
-          "title": "I Looked Into Stream Shark Because “Faceless Income” Sounded Almost Too Easy — Here’s What I Found",
-          "summary": "Stream Shark takes an unusual audio-first approach to online marketing. The idea is interesting — but the income claims deserve a much… Continue reading on Medium »",
-          "published_at": "2026-09-23T16:46:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "70d559fedf4b1d9f",
-      "title": "I Built a Mode That Lets Someone Else Control Your Internet Rules",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@amikm1077/i-built-a-mode-that-lets-someone-else-control-your-internet-rules-22b5d346f693",
-          "target_url": "https://medium.com/@amikm1077/i-built-a-mode-that-lets-someone-else-control-your-internet-rules-22b5d346f693",
-          "independent": false,
-          "title": "I Built a Mode That Lets Someone Else Control Your Internet Rules",
-          "summary": "Because sometimes the problem isn’t knowing what you should block. It’s knowing that future-you can simply change the rules. Continue reading on Medium »",
-          "published_at": "2026-09-23T16:43:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "029778adcddf7d7f",
-      "title": "The Data Science Lesson I Learned Too Late: The Real Gold Was Never in the Data",
-      "first_seen": "2026-09-24T02:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/activated-thinker/the-data-science-lesson-i-learned-too-late-the-real-gold-was-never-in-the-data-1e4636546380",
-          "target_url": "https://medium.com/activated-thinker/the-data-science-lesson-i-learned-too-late-the-real-gold-was-never-in-the-data-1e4636546380",
-          "independent": false,
-          "title": "The Data Science Lesson I Learned Too Late: The Real Gold Was Never in the Data",
-          "summary": "I used to believe that more data meant better decisions. Continue reading on Activated Thinker »",
-          "published_at": "2026-09-23T16:41:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -1851,27 +1611,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4cb1dc983c74e0d6",
-      "title": "ChatGPT mobile app gets voice-based agentic features",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/chatgpt-mobile-app-gets-voice-based-agentic-features",
-          "target_url": "https://techcrunch.com/2026/09/23/chatgpt-mobile-app-gets-voice-based-agentic-features",
-          "independent": true,
-          "title": "ChatGPT mobile app gets voice-based agentic features",
-          "summary": "Pro and Plus users will be able to use the Work tab on their phones to complete agentic tasks.",
-          "published_at": "2026-09-23T17:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "6ead79e212f90723",
@@ -16990,6 +16729,17 @@
           "summary": "",
           "published_at": "2026-09-25T22:59:32+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858360",
+          "target_url": "https://www.nytimes.com/2026/09/25/technology/openai-hugging-face-hack.html",
+          "independent": false,
+          "title": "OpenAI's Rogue A.I. Agents Tried to Trick a Robot Detector",
+          "summary": "",
+          "published_at": "2026-09-26T16:55:43+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -20603,6 +20353,258 @@
           "title": "Why the Future of AI Automation Needs “System One” Models, Not Just Chatbots",
           "summary": "A technical deep dive into TypeSafe AI’s Jev, Reinforcement Learning for Calibrated Decisions (RLCD), and solving the generative… Continue reading on Medium »",
           "published_at": "2026-09-26T15:46:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c156a1902b9b9bbd",
+      "title": "We benchmarked our prompt-injection detector against OWASP's LLM Top",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858304",
+          "target_url": "https://www.cerbereag.site/blog/detecting-prompt-injection-in-production",
+          "independent": false,
+          "title": "We benchmarked our prompt-injection detector against OWASP's LLM Top",
+          "summary": "",
+          "published_at": "2026-09-26T16:51:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2b0ac2e8d37e0c6d",
+      "title": "What Is Jev AI? A Practical Guide to System One and Executable Decisions",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858257",
+          "target_url": "https://huggingface.co/blog/sora-2/what-is-jev-ai-a-practical-guide-to-system-one-and",
+          "independent": false,
+          "title": "What Is Jev AI? A Practical Guide to System One and Executable Decisions",
+          "summary": "",
+          "published_at": "2026-09-26T16:46:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "042a62b95d04f322",
+      "title": "I run the message board an AI swarm improvised to hack Hugging Face– in the open",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858226",
+          "target_url": "https://thefomite.com/dispatch/2026-09-15-the-room-the-swarm-improvised",
+          "independent": false,
+          "title": "I run the message board an AI swarm improvised to hack Hugging Face– in the open",
+          "summary": "",
+          "published_at": "2026-09-26T16:42:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6abf6a99c40ccdf1",
+      "title": "The AI apocalypse may not look how we expect",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858140",
+          "target_url": "https://deanfaenger.bearblog.dev/the-ai-apocalypse-may-not-look-how-we-expect",
+          "independent": false,
+          "title": "The AI apocalypse may not look how we expect",
+          "summary": "",
+          "published_at": "2026-09-26T16:34:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "45f0c28b6d6840b1",
+      "title": "I built a serverless, client-side AI emotional journal",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858020",
+          "target_url": "https://ai-therapist-web-app-7tyh.bolt.host/",
+          "independent": false,
+          "title": "I built a serverless, client-side AI emotional journal",
+          "summary": "",
+          "published_at": "2026-09-26T16:23:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "960b51012f8d643a",
+      "title": "OpenAI pauses training of its ‘most capable models’",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+          "independent": true,
+          "title": "OpenAI pauses training of its ‘most capable models’",
+          "summary": "As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole to gain internet access. The incident happened on September […]",
+          "published_at": "2026-09-26T16:34:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "7ec38b6fe0b06c86",
+      "title": "Docker Cloud Sandboxes Provide a Consistent Sandbox Abstraction Across Laptop and Cloud",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/docker-cloud-sandboxes",
+          "target_url": "https://www.infoq.com/news/2026/09/docker-cloud-sandboxes",
+          "independent": true,
+          "title": "Docker Cloud Sandboxes Provide a Consistent Sandbox Abstraction Across Laptop and Cloud",
+          "summary": "Docker Cloud Sandboxes provide secure, hosted execution environments for running AI coding agents on Docker-managed infrastructure. Built on hardware-enforced microVM isolation, the platform provides a consistent execution environment and unified CLI workflows for seamlessly moving workloads from local machines to the cloud. By Sergio De Simone",
+          "published_at": "2026-09-26T17:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "5f778b3e5d8a035a",
+      "title": "How AI Is Changing the Way We Work Artificial intelligence has moved from buzzword to everyday…",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@simbachampion83/how-ai-is-changing-the-way-we-work-artificial-intelligence-has-moved-from-buzzword-to-everyday-726b5389b518",
+          "target_url": "https://medium.com/@simbachampion83/how-ai-is-changing-the-way-we-work-artificial-intelligence-has-moved-from-buzzword-to-everyday-726b5389b518",
+          "independent": false,
+          "title": "How AI Is Changing the Way We Work Artificial intelligence has moved from buzzword to everyday…",
+          "summary": "The first thing we see is the way we do our daily work. AI tools are doing more data entry, scheduling, basic customer service and… Continue reading on Medium »",
+          "published_at": "2026-09-26T16:53:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fa532d12b11071bf",
+      "title": "Running a One-Person Business as an AI Experiment",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@yasuaki199181/running-a-one-person-business-as-an-ai-experiment-ac66e2c9f0c3",
+          "target_url": "https://medium.com/@yasuaki199181/running-a-one-person-business-as-an-ai-experiment-ac66e2c9f0c3",
+          "independent": false,
+          "title": "Running a One-Person Business as an AI Experiment",
+          "summary": "Running a One-Person Business as an AI Experiment Continue reading on Medium »",
+          "published_at": "2026-09-26T16:52:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1c10e672cc1fca00",
+      "title": "I Launched My AI Video App Twice. Both Launches Failed. I’m Trying Again.",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@otherusama/i-launched-my-ai-video-app-twice-both-launches-failed-im-trying-again-f562686a87f7",
+          "target_url": "https://medium.com/@otherusama/i-launched-my-ai-video-app-twice-both-launches-failed-im-trying-again-f562686a87f7",
+          "independent": false,
+          "title": "I Launched My AI Video App Twice. Both Launches Failed. I’m Trying Again.",
+          "summary": "EditingApp is back with tools for cartoons, faceless videos, product ads, and podcast Shorts — and a free month of the Creator plan. Continue reading on Medium »",
+          "published_at": "2026-09-26T16:52:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b336668d8916441",
+      "title": "What Happens When Attackers Get the Same Coding Agents as Your Security Team?",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@masaood/what-happens-when-attackers-get-the-same-coding-agents-as-your-security-team-ad60ea29a468",
+          "target_url": "https://medium.com/@masaood/what-happens-when-attackers-get-the-same-coding-agents-as-your-security-team-ad60ea29a468",
+          "independent": false,
+          "title": "What Happens When Attackers Get the Same Coding Agents as Your Security Team?",
+          "summary": "When attackers and defenders can use the same capable coding agents, the security advantage moves away from the model and toward the… Continue reading on Medium »",
+          "published_at": "2026-09-26T16:51:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "af4a2b1b19e61c0f",
+      "title": "Las ideologías que heredamos y las mentes que la IA moldeará",
+      "first_seen": "2026-09-27T02:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@felipe_80278/las-ideolog%C3%ADas-que-heredamos-y-las-mentes-que-la-ia-moldear%C3%A1-4cb744845ab6",
+          "target_url": "https://medium.com/@felipe_80278/las-ideolog%C3%ADas-que-heredamos-y-las-mentes-que-la-ia-moldear%C3%A1-4cb744845ab6",
+          "independent": false,
+          "title": "Las ideologías que heredamos y las mentes que la IA moldeará",
+          "summary": "¿Y si lo más importante que cambia la IA no es lo que las máquinas pueden pensar, sino aquello que los seres humanos llegamos a creer? Continue reading on Medium »",
+          "published_at": "2026-09-26T16:51:32+00:00",
           "date_precision": "time"
         }
       ],
