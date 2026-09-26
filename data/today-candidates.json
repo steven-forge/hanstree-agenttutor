@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T14:00:53.816196+09:00",
-  "window_start": "2026-07-28T14:00:53.816196+09:00",
-  "window_end": "2026-09-26T14:00:53.816196+09:00",
+  "collected_at": "2026-09-26T15:01:22.812729+09:00",
+  "window_start": "2026-07-28T15:01:22.812729+09:00",
+  "window_end": "2026-09-26T15:01:22.812729+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "partial",
-      "count": 4,
+      "count": 9,
       "held_count": 1,
-      "excluded_count": 33,
+      "excluded_count": 29,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 295,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T14:01:17.389060+09:00",
-  "hourly_window_start": "2026-09-23T14:01:17.389060+09:00",
+  "hourly_collected_at": "2026-09-26T15:01:45.883237+09:00",
+  "hourly_window_start": "2026-09-23T15:01:45.883237+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1219,195 +1219,6 @@
           "title": "Show HN: A dashboard for tracking usage limits across Claude, Codex, and Cursor",
           "summary": "",
           "published_at": "2026-09-26T03:11:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "22bf4497ad65c64e",
-      "title": "Benzi – Code Intelligence MCP/Harness",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812151",
-          "target_url": "https://varianttech.net",
-          "independent": false,
-          "title": "Benzi – Code Intelligence MCP/Harness",
-          "summary": "",
-          "published_at": "2026-09-23T05:53:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4119869a6d075305",
-      "title": "A Summer of AI Optimization",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812138",
-          "target_url": "https://lemire.me/blog/2026/09/22/a-summer-of-ai-optimization",
-          "independent": false,
-          "title": "A Summer of AI Optimization",
-          "summary": "",
-          "published_at": "2026-09-23T05:51:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "be6e7db8a0fd45ac",
-      "title": "Province of BC Sues OpenAI and Sam Altman over Tumbler Ridge School Shooting",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812040",
-          "target_url": "https://www.theguardian.com/technology/2026/sep/22/british-columbia-sues-openai-sam-altman-tumbler-ridge-school-shooting",
-          "independent": false,
-          "title": "Province of BC Sues OpenAI and Sam Altman over Tumbler Ridge School Shooting",
-          "summary": "",
-          "published_at": "2026-09-23T05:35:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6abaf7bb0bf0e677",
-      "title": "Google Found the Pages. ChatGPT Found the Entity",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811842",
-          "target_url": "https://www.richresults.ai/same-entity-different-retrieval.html",
-          "independent": false,
-          "title": "Google Found the Pages. ChatGPT Found the Entity",
-          "summary": "",
-          "published_at": "2026-09-23T05:01:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "da79426cd886fed7",
-      "title": "Jev: The Decision Layer AI Agents Have Been Missing",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shubh2008mehrotra/jev-the-decision-layer-ai-agents-have-been-missing-5bfc3daf634e",
-          "target_url": "https://medium.com/@shubh2008mehrotra/jev-the-decision-layer-ai-agents-have-been-missing-5bfc3daf634e",
-          "independent": false,
-          "title": "Jev: The Decision Layer AI Agents Have Been Missing",
-          "summary": "Why TypeSafe’s “System One” approach could add a specialized decision layer between LLMs and the software that has to act on their output Continue reading on Medium »",
-          "published_at": "2026-09-23T05:45:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "95a303a452373fb8",
-      "title": "We Chose Restraint with the Bomb. With AI, We Stepped on the Gas.",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@hmkamil2024/we-chose-restraint-with-the-bomb-with-ai-we-stepped-on-the-gas-b82b9be76799",
-          "target_url": "https://medium.com/@hmkamil2024/we-chose-restraint-with-the-bomb-with-ai-we-stepped-on-the-gas-b82b9be76799",
-          "independent": false,
-          "title": "We Chose Restraint with the Bomb. With AI, We Stepped on the Gas.",
-          "summary": "Why Cold War game theory kept us alive, and why that same wisdom completely fails in the age of autonomous intelligence. Continue reading on Medium »",
-          "published_at": "2026-09-23T05:43:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e3e525dd0cf6f06d",
-      "title": "Why RIZZ Looks Beyond Traditional Fitness Tracking",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@anjalishukla97608/why-rizz-looks-beyond-traditional-fitness-tracking-0784c08ff834",
-          "target_url": "https://medium.com/@anjalishukla97608/why-rizz-looks-beyond-traditional-fitness-tracking-0784c08ff834",
-          "independent": false,
-          "title": "Why RIZZ Looks Beyond Traditional Fitness Tracking",
-          "summary": "For years, wearable technology has largely focused on steps, calories, and workouts. But today’s wellness-conscious consumers are becoming… Continue reading on Medium »",
-          "published_at": "2026-09-23T05:42:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ed29a0438acb876f",
-      "title": "How to Perform a High-Impact Test Case Review: A Modern Guide for QA Teams",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@Global_Executive/how-to-perform-a-high-impact-test-case-review-a-modern-guide-for-qa-teams-bb63ddeef91b",
-          "target_url": "https://medium.com/@Global_Executive/how-to-perform-a-high-impact-test-case-review-a-modern-guide-for-qa-teams-bb63ddeef91b",
-          "independent": false,
-          "title": "How to Perform a High-Impact Test Case Review: A Modern Guide for QA Teams",
-          "summary": "In modern software development, speed often threatens to eclipse quality. With CI/CD pipelines deploying code multiple times a day and AI… Continue reading on Medium »",
-          "published_at": "2026-09-23T05:42:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "85fe3a48c74de2ce",
-      "title": "Are Professionals Training AI to Replace Themselves?",
-      "first_seen": "2026-09-23T15:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@zubair.lone/are-professionals-training-ai-to-replace-themselves-a57617719edb",
-          "target_url": "https://medium.com/@zubair.lone/are-professionals-training-ai-to-replace-themselves-a57617719edb",
-          "independent": false,
-          "title": "Are Professionals Training AI to Replace Themselves?",
-          "summary": "In today’s workplace, artificial intelligence is no longer a distant disruption. It is embedded in the daily workflows of professionals… Continue reading on Medium »",
-          "published_at": "2026-09-23T05:42:09+00:00",
           "date_precision": "time"
         }
       ],
@@ -5909,6 +5720,17 @@
           "title": "GPT 6 Astra beat NetHack",
           "summary": "",
           "published_at": "2026-09-25T11:40:19+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853442",
+          "target_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension",
+          "independent": false,
+          "title": "An LLM Beat NetHack",
+          "summary": "",
+          "published_at": "2026-09-26T05:18:53+00:00",
           "date_precision": "time"
         }
       ],
@@ -13567,6 +13389,17 @@
           "summary": "",
           "published_at": "2026-09-24T22:52:06+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853497",
+          "target_url": "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
+          "independent": false,
+          "title": "DraftKings Is Using AI to Supercharge the Harms of Online Behavioral Advertising",
+          "summary": "",
+          "published_at": "2026-09-26T05:32:07+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -13798,7 +13631,17 @@
           "summary": "",
           "published_at": "2026-09-24T23:02:53+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7567326a125c0592",
+      "title": "Was this award-winning book written by AI?",
+      "first_seen": "2026-09-25T08:06:41+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -21120,6 +20963,216 @@
           "title": "Is Human Expertise Becoming More Valuable Because AI Is Everywhere?",
           "summary": "Yes, human expertise is becoming more valuable in many Artificial Intelligence (AI) enabled roles, but the premium is shifting from… Continue reading on Medium »",
           "published_at": "2026-09-26T04:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "93dcf31a027e253c",
+      "title": "Show HN: Botbin.io – pastebin for AI agent artifacts",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853553",
+          "target_url": "https://botbin.io/?md=true",
+          "independent": false,
+          "title": "Show HN: Botbin.io – pastebin for AI agent artifacts",
+          "summary": "",
+          "published_at": "2026-09-26T05:42:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f4028e121e743541",
+      "title": "Can AI Shopping Agents Be Trusted?",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853522",
+          "target_url": "https://www.f-secure.com/en/partners/insights/can-ai-shopping-agents-be-trusted-we-built-one-to-find-out",
+          "independent": false,
+          "title": "Can AI Shopping Agents Be Trusted?",
+          "summary": "",
+          "published_at": "2026-09-26T05:36:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a90b3743d62d1cd7",
+      "title": "OpenAI pauses RL due to model escaping sandbox",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853458",
+          "target_url": "https://twitter.com/tomekkorbak/status/2103673419888013649",
+          "independent": false,
+          "title": "OpenAI pauses RL due to model escaping sandbox",
+          "summary": "",
+          "published_at": "2026-09-26T05:23:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "491f7c9cd06f0055",
+      "title": "Stanford student was erased after university photo change sparks AI controversy",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853440",
+          "target_url": "https://www.cleveland.com/news/2026/09/stanford-student-says-he-was-erased-after-university-photo-change-sparks-ai-controversy.html",
+          "independent": false,
+          "title": "Stanford student was erased after university photo change sparks AI controversy",
+          "summary": "",
+          "published_at": "2026-09-26T05:18:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc1448521700a369",
+      "title": "OpenAI works to understand scope of agent activity as user data leak emerges",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853401",
+          "target_url": "https://www.reuters.com/world/openai-works-understand-full-scope-agent-activity-user-data-leak-emerges-2026-09-25",
+          "independent": false,
+          "title": "OpenAI works to understand scope of agent activity as user data leak emerges",
+          "summary": "",
+          "published_at": "2026-09-26T05:10:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cef47b1b9d30083f",
+      "title": "How AI Agents Can Simplify Social Media Content Creation",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arjunpcworko/how-ai-agents-can-simplify-social-media-content-creation-bc74de78196d",
+          "target_url": "https://medium.com/@arjunpcworko/how-ai-agents-can-simplify-social-media-content-creation-bc74de78196d",
+          "independent": false,
+          "title": "How AI Agents Can Simplify Social Media Content Creation",
+          "summary": "Creating content consistently has become one of the biggest challenges for small businesses, creators, freelancers, and affiliate… Continue reading on Medium »",
+          "published_at": "2026-09-26T05:52:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "59ae794b65ee09bc",
+      "title": "AI Needs a Noun",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arturormk/ai-needs-a-noun-45a04010d93f",
+          "target_url": "https://medium.com/@arturormk/ai-needs-a-noun-45a04010d93f",
+          "independent": false,
+          "title": "AI Needs a Noun",
+          "summary": "Artificial tells us where it came from. Super tells us how it ranks. Continue reading on Medium »",
+          "published_at": "2026-09-26T05:51:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ff6eacab9cd0109b",
+      "title": "10 AI Agents That Always Sell",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dikshitakolekar_91443/10-ai-agents-that-always-sell-3e09987c51c3",
+          "target_url": "https://medium.com/@dikshitakolekar_91443/10-ai-agents-that-always-sell-3e09987c51c3",
+          "independent": false,
+          "title": "10 AI Agents That Always Sell",
+          "summary": "Create these 10 Agents Continue reading on Medium »",
+          "published_at": "2026-09-26T05:51:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "467ce1feb8c41d38",
+      "title": "Why 90% of Crypto Investment Theses Fail: Separating Blockchain Signals from Social Media Noise",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rfj1/why-90-of-crypto-investment-theses-fail-separating-blockchain-signals-from-social-media-noise-d764a4ac67a8",
+          "target_url": "https://medium.com/@rfj1/why-90-of-crypto-investment-theses-fail-separating-blockchain-signals-from-social-media-noise-d764a4ac67a8",
+          "independent": false,
+          "title": "Why 90% of Crypto Investment Theses Fail: Separating Blockchain Signals from Social Media Noise",
+          "summary": "How speculative noise destroys Web3 portfolios — & the disciplined, evidence-first framework required to analyze assets like an institution. Continue reading on Medium »",
+          "published_at": "2026-09-26T05:45:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "50dcb13dc47d458f",
+      "title": "OpenClaw vs Hermes Agent: Which AI Agent Fits Your Workflow?",
+      "first_seen": "2026-09-26T15:01:45+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aatreyaadvith/openclaw-vs-hermes-agent-which-ai-agent-fits-your-workflow-9a46fb535131",
+          "target_url": "https://medium.com/@aatreyaadvith/openclaw-vs-hermes-agent-which-ai-agent-fits-your-workflow-9a46fb535131",
+          "independent": false,
+          "title": "OpenClaw vs Hermes Agent: Which AI Agent Fits Your Workflow?",
+          "summary": "AI agents are moving beyond simple chat. Continue reading on Medium »",
+          "published_at": "2026-09-26T05:44:35+00:00",
           "date_precision": "time"
         }
       ],
