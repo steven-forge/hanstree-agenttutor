@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-09-26T23:01:04.494686+09:00",
-  "window_start": "2026-07-28T23:01:04.494686+09:00",
-  "window_end": "2026-09-26T23:01:04.494686+09:00",
-  "edition_date": "2026-09-26",
+  "collected_at": "2026-09-27T00:01:07.241323+09:00",
+  "window_start": "2026-07-29T00:01:07.241323+09:00",
+  "window_end": "2026-09-27T00:01:07.241323+09:00",
+  "edition_date": "2026-09-27",
   "sources": [
     {
       "id": "openai-news",
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 1,
+      "excluded_count": 35,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 6,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 11,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 4,
-      "skipped_count": 11,
+      "excluded_count": 5,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T23:01:31.705641+09:00",
-  "hourly_window_start": "2026-09-23T23:01:31.705641+09:00",
+  "hourly_collected_at": "2026-09-27T00:01:38.160690+09:00",
+  "hourly_window_start": "2026-09-24T00:01:38.160690+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1358,48 +1358,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "27b9943d135f86fd",
-      "title": "How to Survive Artificial Intelligence",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817199",
-          "target_url": "https://illwill.com/how-to-survive-artificial-intelligence",
-          "independent": false,
-          "title": "How to Survive Artificial Intelligence",
-          "summary": "",
-          "published_at": "2026-09-23T15:00:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d9598925f1b79cca",
-      "title": "Netflix's 'Wonka's the Golden Ticket' Is a Ghoulish Misuse of AI Gene Wilder",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817097",
-          "target_url": "https://variety.com/2026/tv/reviews/wonkas-golden-ticket-review-ai-gene-wilder-1236872754",
-          "independent": false,
-          "title": "Netflix's 'Wonka's the Golden Ticket' Is a Ghoulish Misuse of AI Gene Wilder",
-          "summary": "",
-          "published_at": "2026-09-23T14:52:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "5fb6cf52f5d78d64",
       "title": "OpenAI's Next Marketing Stunt [video]",
       "first_seen": "2026-09-24T00:01:29+09:00",
@@ -1424,300 +1382,6 @@
           "title": "OpenAI's Next Marketing Stunt",
           "summary": "",
           "published_at": "2026-09-24T03:56:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ce2fe6dd944a95cb",
-      "title": "Reverse-engineering vibe-coded repos with an MCP agent",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816897",
-          "target_url": "https://medium.com/@igrglvk/im-tired-of-not-understanding-what-s-going-on-inside-vibe-coded-projects-5368237b8fe2",
-          "independent": false,
-          "title": "Reverse-engineering vibe-coded repos with an MCP agent",
-          "summary": "",
-          "published_at": "2026-09-23T14:39:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9b697965b69a1b07",
-      "title": "Claude Code – Fixing the world with one prompt",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816878",
-          "target_url": "https://www.reddit.com/r/vibecoding/s/gQfearpIHn",
-          "independent": false,
-          "title": "Claude Code – Fixing the world with one prompt",
-          "summary": "",
-          "published_at": "2026-09-23T14:37:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "725ee4bd13b2cbb1",
-      "title": "Meta's New AI Agent Is an Instant Hit–and the Backlash Has Begun",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816846",
-          "target_url": "https://www.wsj.com/tech/ai/meta-ai-agent-muse-reactions-5bf236af",
-          "independent": false,
-          "title": "Meta's New AI Agent Is an Instant Hit–and the Backlash Has Begun",
-          "summary": "",
-          "published_at": "2026-09-23T14:36:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e6df11c1f01d8230",
-      "title": "Trump's 1,156 July Stock Trades Involved AI, Big Oil, Weapons-Makers, and More",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816810",
-          "target_url": "https://www.commondreams.org/news/donald-trump-stock-trades",
-          "independent": false,
-          "title": "Trump's 1,156 July Stock Trades Involved AI, Big Oil, Weapons-Makers, and More",
-          "summary": "",
-          "published_at": "2026-09-23T14:33:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bf4b247b3f71ac79",
-      "title": "Nikclas – Compare the prices of different AI models",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816775",
-          "target_url": "https://github.com/NikclasTech/nikclas",
-          "independent": false,
-          "title": "Nikclas – Compare the prices of different AI models",
-          "summary": "",
-          "published_at": "2026-09-23T14:30:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e14978ff9b482fd8",
-      "title": "YouTube will let you build your own algorithm with AI",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/youtube-will-let-you-build-your-own-algorithm-with-ai",
-          "target_url": "https://techcrunch.com/2026/09/23/youtube-will-let-you-build-your-own-algorithm-with-ai",
-          "independent": true,
-          "title": "YouTube will let you build your own algorithm with AI",
-          "summary": "ouTube’s new custom feeds let users describe the videos they want to see in their own words, then use Gemini to build a personalized feed around the request.",
-          "published_at": "2026-09-23T14:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "dedd20cb4e6c17ac",
-      "title": "StrictlyVC at TechCrunch Disrupt 2026: Inside the changing rules of venture capital",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/strictlyvc-at-techcrunch-disrupt-2026-inside-the-changing-rules-of-venture-capital",
-          "target_url": "https://techcrunch.com/2026/09/23/strictlyvc-at-techcrunch-disrupt-2026-inside-the-changing-rules-of-venture-capital",
-          "independent": true,
-          "title": "StrictlyVC at TechCrunch Disrupt 2026: Inside the changing rules of venture capital",
-          "summary": "StrictlyVC joins TechCrunch Disrupt 2026 to discuss the changing VC landscape thanks to AI. Get your Investor Pass to join this exclusive session. Save $200 before September 25, 11:59 p.m. PT.",
-          "published_at": "2026-09-23T14:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "baa20b51d4c000ed",
-      "title": "YouTube releases new AI features for creators within its Studio app",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/youtube-releases-new-ai-features-for-creators-within-its-studio-app",
-          "target_url": "https://techcrunch.com/2026/09/23/youtube-releases-new-ai-features-for-creators-within-its-studio-app",
-          "independent": true,
-          "title": "YouTube releases new AI features for creators within its Studio app",
-          "summary": "YouTube is adding new features to generate ideas and monitor the performance of thumbnails.",
-          "published_at": "2026-09-23T14:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "57b5dedb505d32d2",
-      "title": "Graphify: Unifying Codebase Context to Streamline Agentic Software Engineering",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/graphify-codebase-exploration",
-          "target_url": "https://www.infoq.com/news/2026/09/graphify-codebase-exploration",
-          "independent": true,
-          "title": "Graphify: Unifying Codebase Context to Streamline Agentic Software Engineering",
-          "summary": "Graphify is an open-source tool designed to convert codebases and unstructured data into queryable knowledge graphs. Launched in April 2026, it addresses challenges of multi-file reasoning for AI coding assistants. Recent updates have enhanced parser features and cross-file resolutions. Community feedback indicates a promising architecture but notes integration challenges in daily workflows. By Olimpiu Pop",
-          "published_at": "2026-09-23T14:14:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "9a39202b7662af2e",
-      "title": "MicroStrategy Alternatives: BI Can’t Execute AI Agents",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mayankmudgal/microstrategy-alternatives-bi-cant-execute-ai-agents-12590a121727",
-          "target_url": "https://medium.com/@mayankmudgal/microstrategy-alternatives-bi-cant-execute-ai-agents-12590a121727",
-          "independent": false,
-          "title": "MicroStrategy Alternatives: BI Can’t Execute AI Agents",
-          "summary": "Runtime governance and temperature-tuned generation work fine for dashboards. They are the wrong control point for agents. Continue reading on Medium »",
-          "published_at": "2026-09-23T14:47:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "76ffac17bd2d3825",
-      "title": "Your Next Headphones Might Be Reading Your Brain — and You Won’t Know Whose Code Is Doing It",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@len213noe/your-next-headphones-might-be-reading-your-brain-and-you-wont-know-whose-code-is-doing-it-adc51e6d0411",
-          "target_url": "https://medium.com/@len213noe/your-next-headphones-might-be-reading-your-brain-and-you-wont-know-whose-code-is-doing-it-adc51e6d0411",
-          "independent": false,
-          "title": "Your Next Headphones Might Be Reading Your Brain — and You Won’t Know Whose Code Is Doing It",
-          "summary": "Brain sensing is being sold as a component to whoever wants to bolt it into headphones, glasses and hats. The moment the sensor disappears… Continue reading on Medium »",
-          "published_at": "2026-09-23T14:47:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5ef577e5aba7057a",
-      "title": "A Pastor’s View of AI for Faithful Business Leaders",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://clearpurpose.media/a-pastors-view-of-ai-for-faithful-business-leaders-cb062a3c0e38",
-          "target_url": "https://clearpurpose.media/a-pastors-view-of-ai-for-faithful-business-leaders-cb062a3c0e38",
-          "independent": false,
-          "title": "A Pastor’s View of AI for Faithful Business Leaders",
-          "summary": "An Interview with Pastor Scott Crosby, Part III Continue reading on ClearPurpose »",
-          "published_at": "2026-09-23T14:46:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "62a8c27e229e5c72",
-      "title": "Writing Product Content in Silos Is Hurting Your Brand’s Credibility: My Framework for Building a…",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@reutmalovani/writing-product-content-in-silos-is-hurting-your-brands-credibility-my-framework-for-building-a-1877cb47ddf8",
-          "target_url": "https://medium.com/@reutmalovani/writing-product-content-in-silos-is-hurting-your-brands-credibility-my-framework-for-building-a-1877cb47ddf8",
-          "independent": false,
-          "title": "Writing Product Content in Silos Is Hurting Your Brand’s Credibility: My Framework for Building a…",
-          "summary": "If you’re working inside a product team, you’ve probably noticed how everyone on your team is using AI daily now to write brand copy or… Continue reading on Medium »",
-          "published_at": "2026-09-23T14:46:24+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "98a73b9e6065fd1c",
-      "title": "Grooming the Machine: How Governments Are Learning to Shape What AI Tells You",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@anavarro_36071/grooming-the-machine-how-governments-are-learning-to-shape-what-ai-tells-you-8c4d86c01716",
-          "target_url": "https://medium.com/@anavarro_36071/grooming-the-machine-how-governments-are-learning-to-shape-what-ai-tells-you-8c4d86c01716",
-          "independent": false,
-          "title": "Grooming the Machine: How Governments Are Learning to Shape What AI Tells You",
-          "summary": "More and more of us inform ourselves by asking AI. Two governments have already learned to shape its answers. So I measured how well it… Continue reading on Medium »",
-          "published_at": "2026-09-23T14:45:50+00:00",
           "date_precision": "time"
         }
       ],
@@ -1871,27 +1535,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7f3dc7d8b5f4df0a",
-      "title": "YouTube is building AI creator tools that do almost everything for them",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/999140/made-on-youtube-creator-tools-ai-thumbnails-tests",
-          "target_url": "https://www.theverge.com/tech/999140/made-on-youtube-creator-tools-ai-thumbnails-tests",
-          "independent": true,
-          "title": "YouTube is building AI creator tools that do almost everything for them",
-          "summary": "Part of the job of a content creator is to figure out how to get their work in front of the most people. Cracking - or fighting - the algorithm has historically been a frustration for creators, but YouTube is increasingly simply telling creators what they should do. At the annual creator-focused Made on YouTube […]",
-          "published_at": "2026-09-23T14:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "5a299724cecafd04",
@@ -11051,6 +10694,17 @@
           "summary": "AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.",
           "published_at": "2026-09-25T22:20:47+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856913",
+          "target_url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
+          "independent": false,
+          "title": "Unsecured OpenAI agents posted 53 user images on the internet",
+          "summary": "",
+          "published_at": "2026-09-26T14:27:27+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -13351,27 +13005,6 @@
           "title": "Bleetz Network",
           "summary": "AI agent-to-agent VC fundraising & scouting network Discussion | Link",
           "published_at": "2026-09-23T18:37:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "dc3acf34fd21ea92",
-      "title": "Aks.ai",
-      "first_seen": "2026-09-25T17:01:25+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/aks-ai",
-          "target_url": "https://www.producthunt.com/products/aks-ai",
-          "independent": false,
-          "title": "Aks.ai",
-          "summary": "Your personal companion for guided self-reflection. Discussion | Link",
-          "published_at": "2026-09-23T14:53:06+00:00",
           "date_precision": "time"
         }
       ],
@@ -20748,6 +20381,216 @@
           "title": "From Experience to Fiction: What AI Changed About the Way I Write",
           "summary": "The Nightlight: Thirty Years with a Non-Physical Intelligence Continue reading on Medium »",
           "published_at": "2026-09-26T13:47:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "11b17fcf54cc80ef",
+      "title": "Terraform and OpenTofu: A CI Checklist for AI-Generated Infra",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857070",
+          "target_url": "https://masterpoint.io/blog/terraform-opentofu-ci-checklist",
+          "independent": false,
+          "title": "Terraform and OpenTofu: A CI Checklist for AI-Generated Infra",
+          "summary": "",
+          "published_at": "2026-09-26T14:43:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cf670fb7114c7c43",
+      "title": "The Notice Had Nowhere to Land: The OpenAI Agent Breach in Australia",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857066",
+          "target_url": "https://www.asticouisland.com/governance/essays/the-notice-had-nowhere-to-land",
+          "independent": false,
+          "title": "The Notice Had Nowhere to Land: The OpenAI Agent Breach in Australia",
+          "summary": "",
+          "published_at": "2026-09-26T14:42:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eb1d63d6d846bb3f",
+      "title": "CropCode – Convert UI Crops into Structured JSON for LLMs",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857041",
+          "target_url": "https://chromewebstore.google.com/detail/cropcode/pcgcpipdelhclccjoaphjelkdidkiecj",
+          "independent": false,
+          "title": "CropCode – Convert UI Crops into Structured JSON for LLMs",
+          "summary": "",
+          "published_at": "2026-09-26T14:39:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8437373c62f6c595",
+      "title": "I'm coding directly in production with AI and I'm not looking back",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856750",
+          "target_url": "https://joydemo.com/blog/coding-directly-in-production-with-ai",
+          "independent": false,
+          "title": "I'm coding directly in production with AI and I'm not looking back",
+          "summary": "",
+          "published_at": "2026-09-26T14:11:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "804c74d256d5e744",
+      "title": "I created an interactive digital avatar of myself — and you can talk to it",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/26/i-created-an-interactive-digital-avatar-of-myself-and-you-can-talk-to-it",
+          "target_url": "https://techcrunch.com/2026/09/26/i-created-an-interactive-digital-avatar-of-myself-and-you-can-talk-to-it",
+          "independent": true,
+          "title": "I created an interactive digital avatar of myself — and you can talk to it",
+          "summary": "After obtaining an interactive avatar and training it to discuss venture fraud, I have mixed feelings about making AI clones of ourselves.",
+          "published_at": "2026-09-26T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "201f257b50823a7e",
+      "title": "Jev vs Laya: the benchmark isn’t on the card",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/ai-that-ships/jev-vs-laya-the-benchmark-isnt-on-the-card-733388d01124",
+          "target_url": "https://medium.com/ai-that-ships/jev-vs-laya-the-benchmark-isnt-on-the-card-733388d01124",
+          "independent": false,
+          "title": "Jev vs Laya: the benchmark isn’t on the card",
+          "summary": "Which AI decision model should you use? The answer is not “Laya, because 0.766.” Continue reading on AI That Ships »",
+          "published_at": "2026-09-26T14:52:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f20fe2433ce13d8",
+      "title": "What Happens When an AI Makes a Mistake?",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ayizawaqqar/what-happens-when-an-ai-makes-a-mistake-2404dd636d90",
+          "target_url": "https://medium.com/@ayizawaqqar/what-happens-when-an-ai-makes-a-mistake-2404dd636d90",
+          "independent": false,
+          "title": "What Happens When an AI Makes a Mistake?",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-26T14:51:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ce097b51896336b4",
+      "title": "The Psychology of Seeing Yourself in Event Photographs",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@velvenlabs/the-psychology-of-seeing-yourself-in-event-photographs-e5515955ee3d",
+          "target_url": "https://medium.com/@velvenlabs/the-psychology-of-seeing-yourself-in-event-photographs-e5515955ee3d",
+          "independent": false,
+          "title": "The Psychology of Seeing Yourself in Event Photographs",
+          "summary": "Why the traditional photo gallery frustrates modern wedding guests — and how AI face-matching is turning photo discovery into moments of… Continue reading on Medium »",
+          "published_at": "2026-09-26T14:50:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "22148707d7e35abc",
+      "title": "Building Your First MCP-Based AI Workflow",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dprasadbairwa1997/building-your-first-mcp-based-ai-workflow-c8782a6e4b98",
+          "target_url": "https://medium.com/@dprasadbairwa1997/building-your-first-mcp-based-ai-workflow-c8782a6e4b98",
+          "independent": false,
+          "title": "Building Your First MCP-Based AI Workflow",
+          "summary": "One orders server with two tools and a resource, tested with Inspector, driven by Claude over stdio and HTTP, and reached through the MCP… Continue reading on Medium »",
+          "published_at": "2026-09-26T14:50:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c94040540a96f0f7",
+      "title": "Every Service Was Healthy. Production Was Still Down.",
+      "first_seen": "2026-09-27T00:01:38+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bybackend/every-service-was-healthy-production-was-still-down-c6d6b8b5c90d",
+          "target_url": "https://medium.com/@bybackend/every-service-was-healthy-production-was-still-down-c6d6b8b5c90d",
+          "independent": false,
+          "title": "Every Service Was Healthy. Production Was Still Down.",
+          "summary": "CPU was normal, memory was normal, PostgreSQL was accepting connections, Redis was reachable, Kafka was processing messages, and every… Continue reading on Medium »",
+          "published_at": "2026-09-26T14:48:15+00:00",
           "date_precision": "time"
         }
       ],
