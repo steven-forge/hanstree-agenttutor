@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T06:00:55.777187+09:00",
-  "window_start": "2026-07-29T06:00:55.777187+09:00",
-  "window_end": "2026-09-27T06:00:55.777187+09:00",
+  "collected_at": "2026-09-27T06:25:45.855914+09:00",
+  "window_start": "2026-07-29T06:25:45.855914+09:00",
+  "window_end": "2026-09-27T06:25:45.855914+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 11,
-      "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "status": "partial",
+      "count": 13,
+      "held_count": 1,
+      "excluded_count": 25,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T06:01:22.139336+09:00",
-  "hourly_window_start": "2026-09-24T06:01:22.139336+09:00",
+  "hourly_collected_at": "2026-09-27T06:26:34.468111+09:00",
+  "hourly_window_start": "2026-09-24T06:26:34.468111+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1618,27 +1618,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "694e585ae7615fd6",
-      "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49822774",
-          "target_url": "https://arxiv.org/abs/2609.26779",
-          "independent": false,
-          "title": "CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents",
-          "summary": "",
-          "published_at": "2026-09-23T21:21:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f55f45ec0b599d1c",
       "title": "OpenAI Medicare Data Breach",
       "first_seen": "2026-09-24T06:26:39+09:00",
@@ -1723,111 +1702,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "16155bdb560e15d9",
-      "title": "I’m Not Preparing for an AI Interview. I’m Preparing to Become a Better Engineer.",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@jayanthi.syamala/im-not-preparing-for-an-ai-interview-i-m-preparing-to-become-a-better-engineer-ec54613bd76d",
-          "target_url": "https://medium.com/@jayanthi.syamala/im-not-preparing-for-an-ai-interview-i-m-preparing-to-become-a-better-engineer-ec54613bd76d",
-          "independent": false,
-          "title": "I’m Not Preparing for an AI Interview. I’m Preparing to Become a Better Engineer.",
-          "summary": "10 years in telecom. Now somewhere between 5G, AI, testing, and the uncomfortable feeling that I should know more Continue reading on Medium »",
-          "published_at": "2026-09-23T21:16:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3f17263e88279fe9",
-      "title": "Remember the Dunning-Kruger Effect? In the Age of AI, It Just Evolved.",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@zhangblue/remember-the-dunning-kruger-effect-in-the-age-of-ai-it-just-evolved-9eda820abe43",
-          "target_url": "https://medium.com/@zhangblue/remember-the-dunning-kruger-effect-in-the-age-of-ai-it-just-evolved-9eda820abe43",
-          "independent": false,
-          "title": "Remember the Dunning-Kruger Effect? In the Age of AI, It Just Evolved.",
-          "summary": "Every engineer is familiar with the Dunning-Kruger Effect, that well-known cognitive bias where beginners with limited knowledge vastly… Continue reading on Medium »",
-          "published_at": "2026-09-23T21:16:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "28866b4df7b5aaad",
-      "title": "After the Prompt: Building a Verifiable Android AI Development Workflow",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@euryperez/after-the-prompt-building-a-verifiable-android-ai-development-workflow-3d606483476b",
-          "target_url": "https://medium.com/@euryperez/after-the-prompt-building-a-verifiable-android-ai-development-workflow-3d606483476b",
-          "independent": false,
-          "title": "After the Prompt: Building a Verifiable Android AI Development Workflow",
-          "summary": "A practical mental model for moving from AI-generated code to shared intent, independent review, runtime evidence, and human acceptance. Continue reading on Medium »",
-          "published_at": "2026-09-23T21:14:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "32b36e8668996632",
-      "title": "AI Cartoon Video Prompts: How One Prompt Library Can Replace the Blank Page",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dynamicgrowthnetwork/ai-cartoon-video-prompts-how-one-prompt-library-can-replace-the-blank-page-8693c1d760f2",
-          "target_url": "https://medium.com/@dynamicgrowthnetwork/ai-cartoon-video-prompts-how-one-prompt-library-can-replace-the-blank-page-8693c1d760f2",
-          "independent": false,
-          "title": "AI Cartoon Video Prompts: How One Prompt Library Can Replace the Blank Page",
-          "summary": "Why random prompts give random videos, and what changes when the prompt already has a shape. Continue reading on Medium »",
-          "published_at": "2026-09-23T21:12:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "264b16c7bbe6d253",
-      "title": "My Senior Engineer Rewrote 3,000 Lines of AI Code. Six Months Later, I Realized We Had Created…",
-      "first_seen": "2026-09-24T06:26:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://levelup.gitconnected.com/my-senior-engineer-rewrote-3-000-lines-of-ai-code-six-months-later-i-realized-we-had-created-80c50fe6be23",
-          "target_url": "https://levelup.gitconnected.com/my-senior-engineer-rewrote-3-000-lines-of-ai-code-six-months-later-i-realized-we-had-created-80c50fe6be23",
-          "independent": false,
-          "title": "My Senior Engineer Rewrote 3,000 Lines of AI Code. Six Months Later, I Realized We Had Created…",
-          "summary": "He rebuilt the system because he refused to own code he could not explain. Then another engineer had to take his pager. Continue reading on Level Up Coding »",
-          "published_at": "2026-09-23T21:06:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "537199df11eeb99d",
@@ -19119,6 +18993,17 @@
           "summary": "As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole to gain internet access. The incident happened on September […]",
           "published_at": "2026-09-26T16:34:59+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860545",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+          "independent": false,
+          "title": "OpenAI pauses training of its 'most capable models'",
+          "summary": "",
+          "published_at": "2026-09-26T21:07:08+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -20252,6 +20137,164 @@
           "title": "The AI Workflow Mistake Everyone Is Making",
           "summary": "I’ve noticed a strange thing happening in workplaces right now: companies are adding AI to almost everything, yet many teams are still… Continue reading on Medium »",
           "published_at": "2026-09-26T20:38:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b2b9ee09897b935c",
+      "title": "Simple visual patterns can trick AI-powered vehicles and robots",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860649",
+          "target_url": "https://news.ufl.edu/2026/09/ai-powered-vehicles",
+          "independent": false,
+          "title": "Simple visual patterns can trick AI-powered vehicles and robots",
+          "summary": "",
+          "published_at": "2026-09-26T21:20:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "622bd91598d5208c",
+      "title": "Can Claude Opus 5.5 find any new leads on Satoshi Nakamoto?",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49860574",
+          "target_url": "https://notesbylex.com/can-claude-opus-5-5-find-any-new-leads-on-satoshi-nakamoto",
+          "independent": false,
+          "title": "Can Claude Opus 5.5 find any new leads on Satoshi Nakamoto?",
+          "summary": "",
+          "published_at": "2026-09-26T21:09:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb61eb14b50af1ee",
+      "title": "Insurers claim AI is already increasing healthcare costs",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs",
+          "target_url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs",
+          "independent": true,
+          "title": "Insurers claim AI is already increasing healthcare costs",
+          "summary": "Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.",
+          "published_at": "2026-09-26T21:02:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "9623e958b708a4ad",
+      "title": "I need a thousan1,000 people to put their hands and skills to work.",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hillbowman561/i-need-a-thousan1-000-people-to-put-their-hands-and-skills-to-work-e2d1fa4fb255",
+          "target_url": "https://medium.com/@hillbowman561/i-need-a-thousan1-000-people-to-put-their-hands-and-skills-to-work-e2d1fa4fb255",
+          "independent": false,
+          "title": "I need a thousan1,000 people to put their hands and skills to work.",
+          "summary": "Global temperature rise due two pollution will cause the extinction of the human species by 2075.. probably statistics Continue reading on Medium »",
+          "published_at": "2026-09-26T21:16:22+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hillbowman561/i-need-a-thousan1-000-people-to-put-their-hands-and-skills-to-work-58f8c14bfc35",
+          "target_url": "https://medium.com/@hillbowman561/i-need-a-thousan1-000-people-to-put-their-hands-and-skills-to-work-58f8c14bfc35",
+          "independent": false,
+          "title": "I need a thousan1,000 people to put their hands and skills to work.",
+          "summary": "Probable statistics the last human being will die of heat bulb exposure before 2075 due to pollution and planetary temperature rise this… Continue reading on Medium »",
+          "published_at": "2026-09-26T21:13:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c364d7e45244f89c",
+      "title": "From CI/CD to AgenticOps: Inside OpenAI Work Cloud",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@brankop/from-ci-cd-to-agenticops-inside-openai-work-cloud-2738e7d61639",
+          "target_url": "https://medium.com/@brankop/from-ci-cd-to-agenticops-inside-openai-work-cloud-2738e7d61639",
+          "independent": false,
+          "title": "From CI/CD to AgenticOps: Inside OpenAI Work Cloud",
+          "summary": "DevOps and platform engineers are moving from operators to governors. Software engineers are already well down that path. Continue reading on Medium »",
+          "published_at": "2026-09-26T21:15:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "53280cebb4a31f0c",
+      "title": "AI safety is becoming a procurement right, not a moral promise",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aiimpactlab/ai-safety-is-becoming-a-procurement-right-not-a-moral-promise-7494deefb764",
+          "target_url": "https://medium.com/@aiimpactlab/ai-safety-is-becoming-a-procurement-right-not-a-moral-promise-7494deefb764",
+          "independent": false,
+          "title": "AI safety is becoming a procurement right, not a moral promise",
+          "summary": "A federal court, a military drone competition, and fresh agent failures expose the same power shift: safety boundaries increasingly belong… Continue reading on Medium »",
+          "published_at": "2026-09-26T21:15:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1bf7d985d7cf662d",
+      "title": "What’s actually in Laya",
+      "first_seen": "2026-09-27T06:26:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nithinellanki/whats-actually-in-laya-f623577d5672",
+          "target_url": "https://medium.com/@nithinellanki/whats-actually-in-laya-f623577d5672",
+          "independent": false,
+          "title": "What’s actually in Laya",
+          "summary": "Jev has been trending recently, and while I was looking into it, I came across Laya, a free open-weights model doing something similar. I… Continue reading on Medium »",
+          "published_at": "2026-09-26T21:11:04+00:00",
           "date_precision": "time"
         }
       ],
