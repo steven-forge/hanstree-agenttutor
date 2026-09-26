@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T00:01:07.241323+09:00",
-  "window_start": "2026-07-29T00:01:07.241323+09:00",
-  "window_end": "2026-09-27T00:01:07.241323+09:00",
+  "collected_at": "2026-09-27T01:01:20.435850+09:00",
+  "window_start": "2026-07-29T01:01:20.435850+09:00",
+  "window_end": "2026-09-27T01:01:20.435850+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 5,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 35,
+      "excluded_count": 27,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 26,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T00:01:38.160690+09:00",
-  "hourly_window_start": "2026-09-24T00:01:38.160690+09:00",
+  "hourly_collected_at": "2026-09-27T01:01:52.949246+09:00",
+  "hourly_window_start": "2026-09-24T01:01:52.949246+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -410,38 +410,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3b941f8bc1fc4c52",
-      "title": "I Built AI Clones of My Coworkers. Things Got Weird",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/ai-coworker-bots-loved-improv-and-interstellar-soundtrack",
-          "target_url": "https://www.wired.com/story/ai-coworker-bots-loved-improv-and-interstellar-soundtrack",
-          "independent": true,
-          "title": "I Built AI Clones of My Coworkers. Things Got Weird",
-          "summary": "Brian Bot loved talking about improv, while Sophie Bot wouldn’t stop calling me “big dog.” Welcome to the future of work.",
-          "published_at": "2026-09-22T10:30:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817704",
-          "target_url": "https://www.wired.com/story/ai-coworker-bots-loved-improv-and-interstellar-soundtrack",
-          "independent": false,
-          "title": "I Built AI Clones of My Coworkers. Things Got Weird",
-          "summary": "",
-          "published_at": "2026-09-23T15:34:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "48d6b4daa4997f3a",
@@ -1201,6 +1169,28 @@
           "summary": "",
           "published_at": "2026-09-26T13:28:24+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857671",
+          "target_url": "https://github.com/marciob/waitwise",
+          "independent": false,
+          "title": "Show HN: Waitwise, Replace Claude Code's spinner with anything usefull",
+          "summary": "",
+          "published_at": "2026-09-26T15:50:40+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857528",
+          "target_url": "https://github.com/brumar/chess-postmortem-skills",
+          "independent": false,
+          "title": "Show HN: A Claude Code skill to analyze your chess games",
+          "summary": "",
+          "published_at": "2026-09-26T15:34:53+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1382,279 +1372,6 @@
           "title": "OpenAI's Next Marketing Stunt",
           "summary": "",
           "published_at": "2026-09-24T03:56:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c37a35aed6b47097",
-      "title": "Is AI killing the forums and wikis your IT team relies on?",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818044",
-          "target_url": "https://www.spiceworks.com/ai/is-ai-quietly-killing-the-forums-and-wikis-your-it-team-relies-on",
-          "independent": false,
-          "title": "Is AI killing the forums and wikis your IT team relies on?",
-          "summary": "",
-          "published_at": "2026-09-23T15:57:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e2234d50fb2c0ce2",
-      "title": "Top post in R/gamedev: \"AI models have caught up with Unity dev.\"",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49818027",
-          "target_url": "https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my",
-          "independent": false,
-          "title": "Top post in R/gamedev: \"AI models have caught up with Unity dev.\"",
-          "summary": "",
-          "published_at": "2026-09-23T15:55:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "710453aa44a210ed",
-      "title": "AI anxiety is sweeping the globe – and cutting across party lines",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817941",
-          "target_url": "https://www.politico.eu/article/poll-ai-anxiety-openai-anthropic-elon-musk-silicon-valley-across-party-lines",
-          "independent": false,
-          "title": "AI anxiety is sweeping the globe – and cutting across party lines",
-          "summary": "",
-          "published_at": "2026-09-23T15:50:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b57f62c6d8763b9a",
-      "title": "I Couldn't Build Jev at OpenAI – Diogo Almeida, TypeSafe Co-Founder and CEO [video]",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817923",
-          "target_url": "https://www.youtube.com/watch?v=cFx9Z3ZXca0",
-          "independent": false,
-          "title": "I Couldn't Build Jev at OpenAI – Diogo Almeida, TypeSafe Co-Founder and CEO [video]",
-          "summary": "",
-          "published_at": "2026-09-23T15:49:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "86e0278082c97703",
-      "title": "Anthropic made Opus 5.5 cheaper. Then it broke four things your agent depends on",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817871",
-          "target_url": "https://thenewstack.io/claude-opus-agent-migration",
-          "independent": false,
-          "title": "Anthropic made Opus 5.5 cheaper. Then it broke four things your agent depends on",
-          "summary": "",
-          "published_at": "2026-09-23T15:46:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d515ab642626bb0c",
-      "title": "Tokonomics–AST context compiler to stop hitting Claude/GPT rate limits in VSCode",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817785",
-          "target_url": "https://marketplace.visualstudio.com/items?itemName=Tokonomics.tokonomics-ai",
-          "independent": false,
-          "title": "Tokonomics–AST context compiler to stop hitting Claude/GPT rate limits in VSCode",
-          "summary": "",
-          "published_at": "2026-09-23T15:40:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "88a2e4e533d7cb15",
-      "title": "After multiple deaths and injuries, NHTSA is investigating comma.ai",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817706",
-          "target_url": "https://arstechnica.com/cars/2026/09/aftermarket-driver-assist-under-federal-probe-following-fatal-crashes",
-          "independent": false,
-          "title": "After multiple deaths and injuries, NHTSA is investigating comma.ai",
-          "summary": "",
-          "published_at": "2026-09-23T15:35:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5a299724cecafd04",
-      "title": "YouTube Music gets more conversational with new AI features",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/youtube-music-gets-more-conversational-with-new-ai-features",
-          "target_url": "https://techcrunch.com/2026/09/23/youtube-music-gets-more-conversational-with-new-ai-features",
-          "independent": true,
-          "title": "YouTube Music gets more conversational with new AI features",
-          "summary": "YouTube is adding new AI-powered features to YouTube Music that aim to make it easier for listeners to discover music, explore artists, and find podcasts they may otherwise miss. Announced at this year’s Made On YouTube event, the updates include “Ask Music,” a conversational tool for music and podcasts, and “Your Podcast Lineup,” a personalized […]",
-          "published_at": "2026-09-23T15:19:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "b9d93378e5356746",
-      "title": "THE CAREER HE STUDIED FOR DISAPPEARED",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@peterwamala/the-career-he-studied-for-disappeared-524792240d45",
-          "target_url": "https://medium.com/@peterwamala/the-career-he-studied-for-disappeared-524792240d45",
-          "independent": false,
-          "title": "THE CAREER HE STUDIED FOR DISAPPEARED",
-          "summary": "What happens when AI learns to do much of the work you spent years learning to do? Continue reading on Medium »",
-          "published_at": "2026-09-23T15:47:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3525637462722145",
-      "title": "How to Build an AI Ticket Spotter That Actually Gets You Good Seats (Without Getting Banned)",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@madkatomega/how-to-build-an-ai-ticket-spotter-that-actually-gets-you-good-seats-without-getting-banned-feb9342a1528",
-          "target_url": "https://medium.com/@madkatomega/how-to-build-an-ai-ticket-spotter-that-actually-gets-you-good-seats-without-getting-banned-feb9342a1528",
-          "independent": false,
-          "title": "How to Build an AI Ticket Spotter That Actually Gets You Good Seats (Without Getting Banned)",
-          "summary": "Four quiet moves to help your family score concert and game-day tickets at face value using local models or Meta Muse. Continue reading on Medium »",
-          "published_at": "2026-09-23T15:46:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1235e67cb9de3fcb",
-      "title": "Generative AI Certification Benefits",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@brolly-academy/generative-ai-certification-benefits-db7e89c279b6",
-          "target_url": "https://medium.com/@brolly-academy/generative-ai-certification-benefits-db7e89c279b6",
-          "independent": false,
-          "title": "Generative AI Certification Benefits",
-          "summary": "An Honest Breakdown for 2026 Continue reading on Medium »",
-          "published_at": "2026-09-23T15:45:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "79088a26f226bf20",
-      "title": "I Tested Claude Opus 5.5. Here’s What Actually Changed",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://mrrehan21.medium.com/i-tested-claude-opus-5-5-heres-what-actually-changed-7d9afb846894",
-          "target_url": "https://mrrehan21.medium.com/i-tested-claude-opus-5-5-heres-what-actually-changed-7d9afb846894",
-          "independent": false,
-          "title": "I Tested Claude Opus 5.5. Here’s What Actually Changed",
-          "summary": "Anthropic didn't just make Claude smarter. It made the model more useful for long, messy, real-world work. Continue reading on Medium »",
-          "published_at": "2026-09-23T15:45:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d803c15af35e30b5",
-      "title": "How to Build an Agent Harness That Decides in 0.65 Seconds",
-      "first_seen": "2026-09-24T01:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/ai-all-in/how-to-build-an-agent-harness-that-decides-in-0-65-seconds-21183b370a9e",
-          "target_url": "https://medium.com/ai-all-in/how-to-build-an-agent-harness-that-decides-in-0-65-seconds-21183b370a9e",
-          "independent": false,
-          "title": "How to Build an Agent Harness That Decides in 0.65 Seconds",
-          "summary": "Routing, tool gating and done-checking, handed to Jev with three Opensource repos you can install today. Continue reading on All in AI »",
-          "published_at": "2026-09-23T15:44:31+00:00",
           "date_precision": "time"
         }
       ],
@@ -2297,6 +2014,17 @@
           "title": "How to serve trillions of tokens for trillion-parameter coding agents",
           "summary": "",
           "published_at": "2026-09-25T03:07:38+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857626",
+          "target_url": "https://modal.com/blog/trillion-tokens-trillion-parameters",
+          "independent": false,
+          "title": "How to serve trillions of tokens for trillion-parameter coding agents",
+          "summary": "",
+          "published_at": "2026-09-26T15:45:53+00:00",
           "date_precision": "time"
         }
       ],
@@ -17651,6 +17379,17 @@
           "summary": "Boom Supersonic CEO Blake Scholl said its new stationary power plants were no longer in Crusoe's near-term plans.",
           "published_at": "2026-09-25T23:11:10+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857555",
+          "target_url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers",
+          "independent": false,
+          "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+          "summary": "",
+          "published_at": "2026-09-26T15:37:31+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -20591,6 +20330,279 @@
           "title": "Every Service Was Healthy. Production Was Still Down.",
           "summary": "CPU was normal, memory was normal, PostgreSQL was accepting connections, Redis was reachable, Kafka was processing messages, and every… Continue reading on Medium »",
           "published_at": "2026-09-26T14:48:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b716be8129cd3d8f",
+      "title": "Make Claude your assistant in excalidraw",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857729",
+          "target_url": "https://tangled.org/yanndegat.tngl.sh/drawgent",
+          "independent": false,
+          "title": "Make Claude your assistant in excalidraw",
+          "summary": "",
+          "published_at": "2026-09-26T15:56:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "16766960d02a50a5",
+      "title": "The AI Bubble Explained",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857723",
+          "target_url": "https://hughhowey.com/the-ai-bubble-explained",
+          "independent": false,
+          "title": "The AI Bubble Explained",
+          "summary": "",
+          "published_at": "2026-09-26T15:55:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e0716152189c263e",
+      "title": "Using an LLM to Automate the Process of Archiving New macOS App Icons",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857650",
+          "target_url": "https://blog.jim-nielsen.com/2026/faster-app-icon-retrieval",
+          "independent": false,
+          "title": "Using an LLM to Automate the Process of Archiving New macOS App Icons",
+          "summary": "",
+          "published_at": "2026-09-26T15:48:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "06e02ed5c17aae3e",
+      "title": "After the AI Hype – What's Real, and What's Next – Richard Campbell [video]",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857643",
+          "target_url": "https://www.youtube.com/watch?v=uWnUnMphmPM",
+          "independent": false,
+          "title": "After the AI Hype – What's Real, and What's Next – Richard Campbell [video]",
+          "summary": "",
+          "published_at": "2026-09-26T15:47:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4421cb94cd13c41e",
+      "title": "An OpenAI agent used DNS to reach an external chatbot",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857609",
+          "target_url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot",
+          "independent": false,
+          "title": "An OpenAI agent used DNS to reach an external chatbot",
+          "summary": "",
+          "published_at": "2026-09-26T15:43:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f8f06de9604c8089",
+      "title": "AI won't take your career",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857463",
+          "target_url": "https://andrej.sh/posts/ai-wont-take-your-career",
+          "independent": false,
+          "title": "AI won't take your career",
+          "summary": "",
+          "published_at": "2026-09-26T15:26:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51e8fb1c3c8faa25",
+      "title": "Details of how BC school shooter used ChatGPT 'more disturbing' than prev. known",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857414",
+          "target_url": "https://www.cbc.ca/news/canada/british-columbia/mother-jones-chatgpt-safeguards-tumbler-ridge-bc-shooter-9.7358031",
+          "independent": false,
+          "title": "Details of how BC school shooter used ChatGPT 'more disturbing' than prev. known",
+          "summary": "",
+          "published_at": "2026-09-26T15:20:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0ff3a8bc1c47d9b1",
+      "title": "All new PocketWebTools – Home of local AI",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49857372",
+          "target_url": "https://pocketweb.tools/",
+          "independent": false,
+          "title": "All new PocketWebTools – Home of local AI",
+          "summary": "",
+          "published_at": "2026-09-26T15:16:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "004f8ab4be7842d4",
+      "title": "AI Visibility Is the New Layer of Digital Discovery",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@orbiniti.social/ai-visibility-is-the-new-layer-of-digital-discovery-9cd8b96dd6fd",
+          "target_url": "https://medium.com/@orbiniti.social/ai-visibility-is-the-new-layer-of-digital-discovery-9cd8b96dd6fd",
+          "independent": false,
+          "title": "AI Visibility Is the New Layer of Digital Discovery",
+          "summary": "AI visibility is how often, how accurately, and how prominently a brand appears in AI-generated answers to relevant customer queries. Continue reading on Medium »",
+          "published_at": "2026-09-26T15:51:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ca82b3e68de1764d",
+      "title": "Why the F-35 had to become this complicated.",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-gravity/why-the-f-35-had-to-become-this-complicated-e3b8bbbcab20",
+          "target_url": "https://medium.com/the-gravity/why-the-f-35-had-to-become-this-complicated-e3b8bbbcab20",
+          "independent": false,
+          "title": "Why the F-35 had to become this complicated.",
+          "summary": "How engineers forced one machine to reconcile stealth, supersonic flight, vertical landing, carrier operations, and a flying computer. Continue reading on The Gravity »",
+          "published_at": "2026-09-26T15:51:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "03684841f7af084f",
+      "title": "Public-Private Partnerships in African Digital Health: Who Actually Benefits",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@emmanuelowusuadu10/public-private-partnerships-in-african-digital-health-who-actually-benefits-7a0800d51c24",
+          "target_url": "https://medium.com/@emmanuelowusuadu10/public-private-partnerships-in-african-digital-health-who-actually-benefits-7a0800d51c24",
+          "independent": false,
+          "title": "Public-Private Partnerships in African Digital Health: Who Actually Benefits",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-26T15:49:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fc582ee7443651fb",
+      "title": "Beyond Our Limits: Why Building Smarter AI Forces Us to Level Up",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://designbyhazema.medium.com/beyond-our-limits-why-building-smarter-ai-forces-us-to-level-up-6d6e3f734e8d",
+          "target_url": "https://designbyhazema.medium.com/beyond-our-limits-why-building-smarter-ai-forces-us-to-level-up-6d6e3f734e8d",
+          "independent": false,
+          "title": "Beyond Our Limits: Why Building Smarter AI Forces Us to Level Up",
+          "summary": "For years, breaking into product design meant one ritual above all others: the sacred, multi-page case study deck. You would spend weeks… Continue reading on Medium »",
+          "published_at": "2026-09-26T15:49:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5f05a0897b9bbc42",
+      "title": "Why the Future of AI Automation Needs “System One” Models, Not Just Chatbots",
+      "first_seen": "2026-09-27T01:01:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aayushsinghrajput3003/why-the-future-of-ai-automation-needs-system-one-models-not-just-chatbots-2e9422cf6f78",
+          "target_url": "https://medium.com/@aayushsinghrajput3003/why-the-future-of-ai-automation-needs-system-one-models-not-just-chatbots-2e9422cf6f78",
+          "independent": false,
+          "title": "Why the Future of AI Automation Needs “System One” Models, Not Just Chatbots",
+          "summary": "A technical deep dive into TypeSafe AI’s Jev, Reinforcement Learning for Calibrated Decisions (RLCD), and solving the generative… Continue reading on Medium »",
+          "published_at": "2026-09-26T15:46:02+00:00",
           "date_precision": "time"
         }
       ],
