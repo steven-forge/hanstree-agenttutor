@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T16:00:59.022443+09:00",
-  "window_start": "2026-07-28T16:00:59.022443+09:00",
-  "window_end": "2026-09-26T16:00:59.022443+09:00",
+  "collected_at": "2026-09-26T17:01:00.751627+09:00",
+  "window_start": "2026-07-28T17:01:00.751627+09:00",
+  "window_end": "2026-09-26T17:01:00.751627+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 1,
+      "excluded_count": 33,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -169,7 +169,7 @@
       "count": 5,
       "held_count": 0,
       "excluded_count": 25,
-      "skipped_count": 4,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 295,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T16:01:26.429779+09:00",
-  "hourly_window_start": "2026-09-23T16:01:26.429779+09:00",
+  "hourly_collected_at": "2026-09-26T17:01:26.759921+09:00",
+  "hourly_window_start": "2026-09-23T17:01:26.759921+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -329,38 +329,6 @@
           "title": ".si domain registrations outpace .ai after Trump's 'Super Intelligence' rename",
           "summary": "",
           "published_at": "2026-09-24T17:44:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "54af403e505df6d8",
-      "title": "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808921",
-          "target_url": "https://www.aipricing.guru/blog/claude-opus-5-5-vs-gpt-6-sol-pricing-2026",
-          "independent": false,
-          "title": "Claude Opus 5.5 vs. GPT-6 Sol: Cost per correct task, not price per token",
-          "summary": "",
-          "published_at": "2026-09-22T22:11:52+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812887",
-          "target_url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna",
-          "independent": false,
-          "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
-          "summary": "",
-          "published_at": "2026-09-23T07:46:22+00:00",
           "date_precision": "time"
         }
       ],
@@ -1249,111 +1217,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "5ba26733185afb8a",
-      "title": "Tradeoff considerations while running LLM models locally",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812956",
-          "target_url": "https://swapniltalekar.substack.com/p/should-you-be-running-llm-models",
-          "independent": false,
-          "title": "Tradeoff considerations while running LLM models locally",
-          "summary": "",
-          "published_at": "2026-09-23T07:56:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3094bfee38247a85",
-      "title": "NobodyWho is an inference engine that lets you run LLMs locally and efficiently",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812811",
-          "target_url": "https://github.com/nobodywho-ooo/nobodywho",
-          "independent": false,
-          "title": "NobodyWho is an inference engine that lets you run LLMs locally and efficiently",
-          "summary": "",
-          "published_at": "2026-09-23T07:33:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "48b18568b4dcf1a9",
-      "title": "New AI technique could make minimally invasive surgeries safer and more precise",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812778",
-          "target_url": "https://news.mit.edu/2026/new-ai-technique-could-make-minimally-invasive-surgeries-safer-more-precise-0916",
-          "independent": false,
-          "title": "New AI technique could make minimally invasive surgeries safer and more precise",
-          "summary": "",
-          "published_at": "2026-09-23T07:27:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1d2486a52d57a320",
-      "title": "Nvitop: A better top for Nvidia GPUs",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812752",
-          "target_url": "https://github.com/XuehaiPan/nvitop",
-          "independent": false,
-          "title": "Nvitop: A better top for Nvidia GPUs",
-          "summary": "",
-          "published_at": "2026-09-23T07:24:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cd7d3f3cc962b4c4",
-      "title": "Gemini Hacked Three Companies in First Known Breakout by Google's AI",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812718",
-          "target_url": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies",
-          "independent": false,
-          "title": "Gemini Hacked Three Companies in First Known Breakout by Google's AI",
-          "summary": "",
-          "published_at": "2026-09-23T07:20:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f330de6f12df20ba",
       "title": "Recursive self-improvement of AI research agents",
       "first_seen": "2026-09-23T17:01:19+09:00",
@@ -1378,111 +1241,6 @@
           "title": "Recursive self-improvement of AI research agents",
           "summary": "",
           "published_at": "2026-09-23T17:47:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e746938010ea1d38",
-      "title": "Jev AI Claims 193.6x Faster. I Checked the Math and Got 1.19x",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lenner9090/jev-ai-claims-193-6x-faster-i-checked-the-math-and-got-1-19x-7f8437c45f73",
-          "target_url": "https://medium.com/@lenner9090/jev-ai-claims-193-6x-faster-i-checked-the-math-and-got-1-19x-7f8437c45f73",
-          "independent": false,
-          "title": "Jev AI Claims 193.6x Faster. I Checked the Math and Got 1.19x",
-          "summary": "A week after TypeSafe AI launched Jev, the number attached to it almost everywhere is 193.6x. TypeSafe puts it on its home page next to… Continue reading on Medium »",
-          "published_at": "2026-09-23T07:46:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a2c175c44ade2f9c",
-      "title": "I Stopped Building AI Chatbots… Then One AI Agent Changed Everything",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@zainahmad6716/i-stopped-building-ai-chatbots-then-one-ai-agent-changed-everything-0960d162e41e",
-          "target_url": "https://medium.com/@zainahmad6716/i-stopped-building-ai-chatbots-then-one-ai-agent-changed-everything-0960d162e41e",
-          "independent": false,
-          "title": "I Stopped Building AI Chatbots… Then One AI Agent Changed Everything",
-          "summary": "The biggest mistake I made wasn’t ignoring AI. Continue reading on Medium »",
-          "published_at": "2026-09-23T07:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c7f82e7254aea768",
-      "title": "Designing for the Bot: Humanizing AI-Agent Interactions in 2026",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://vishnuauditore1996.medium.com/designing-for-the-bot-humanizing-ai-agent-interactions-in-2026-796c8016f88c",
-          "target_url": "https://vishnuauditore1996.medium.com/designing-for-the-bot-humanizing-ai-agent-interactions-in-2026-796c8016f88c",
-          "independent": false,
-          "title": "Designing for the Bot: Humanizing AI-Agent Interactions in 2026",
-          "summary": "How to move past chatbot gimmicks and design autonomous AI agents that build user trust through semantic clarity, transparent intent, and… Continue reading on Medium »",
-          "published_at": "2026-09-23T07:45:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7c8b37d5cd6fc2be",
-      "title": "SE(3)-Equivariant Networks: Extending Rotation Equivariance to Continuous Pose",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@izzetcansorna/se-3-equivariant-networks-extending-rotation-equivariance-to-continuous-pose-1ae9d89f67ba",
-          "target_url": "https://medium.com/@izzetcansorna/se-3-equivariant-networks-extending-rotation-equivariance-to-continuous-pose-1ae9d89f67ba",
-          "independent": false,
-          "title": "SE(3)-Equivariant Networks: Extending Rotation Equivariance to Continuous Pose",
-          "summary": "Day 21 of an ongoing daily series on advanced machine learning concepts Continue reading on Medium »",
-          "published_at": "2026-09-23T07:45:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d06c1ff3795e3a25",
-      "title": "Custom GPT’lerin Sonu Değil: Yapay Zekâ Ürünlerinde Yeni Bir Başlangıç",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@talysinem/custom-gptlerin-sonu-de%C4%9Fil-yapay-zek%C3%A2-%C3%BCr%C3%BCnlerinde-yeni-bir-ba%C5%9Flang%C4%B1%C3%A7-53443d23cdb0",
-          "target_url": "https://medium.com/@talysinem/custom-gptlerin-sonu-de%C4%9Fil-yapay-zek%C3%A2-%C3%BCr%C3%BCnlerinde-yeni-bir-ba%C5%9Flang%C4%B1%C3%A7-53443d23cdb0",
-          "independent": false,
-          "title": "Custom GPT’lerin Sonu Değil: Yapay Zekâ Ürünlerinde Yeni Bir Başlangıç",
-          "summary": "OpenAI’nin Custom GPT’leri Plugins yapısına taşıma planı, yalnızca teknik bir format değişikliği değil. Yapay zekâ ürünlerinin nasıl… Continue reading on Medium »",
-          "published_at": "2026-09-23T07:43:43+00:00",
           "date_precision": "time"
         }
       ],
@@ -5710,6 +5468,17 @@
           "title": "OpenAI agents plotted to access government health data amid Medicare (AU) hack",
           "summary": "",
           "published_at": "2026-09-24T02:12:42+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49854257",
+          "target_url": "https://twitter.com/eastmelbgroupie/status/2102960384777040285",
+          "independent": false,
+          "title": "The OpenAI \"Hack\" of Australia's Medicare That Wasn't",
+          "summary": "",
+          "published_at": "2026-09-26T07:58:20+00:00",
           "date_precision": "time"
         }
       ],
@@ -12990,11 +12759,33 @@
           "summary": "",
           "published_at": "2026-09-26T06:07:54+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49850868",
+          "target_url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
+          "independent": false,
+          "title": "Unsecured OpenAI agents posted 53 user images on the internet",
+          "summary": "",
+          "published_at": "2026-09-25T22:36:24+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
+          "target_url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
+          "independent": true,
+          "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge",
+          "summary": "AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.",
+          "published_at": "2026-09-25T22:20:47+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "22ac1f11eb1d8187",
@@ -19616,38 +19407,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "7fc672768bdc43f8",
-      "title": "Unsecured OpenAI agents posted 53 user images on the internet",
-      "first_seen": "2026-09-26T08:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49850868",
-          "target_url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
-          "independent": false,
-          "title": "Unsecured OpenAI agents posted 53 user images on the internet",
-          "summary": "",
-          "published_at": "2026-09-25T22:36:24+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
-          "target_url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge",
-          "independent": true,
-          "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge",
-          "summary": "AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.",
-          "published_at": "2026-09-25T22:20:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "ba1400ed80110ab9",
       "title": "Show HN: MyA11yReport MCP – Build and test accessible websites with AI",
       "first_seen": "2026-09-26T08:01:23+09:00",
@@ -21205,6 +20964,111 @@
           "title": "How I Made A Japanese “Friend” that Helps Me Learn the Japanese Language",
           "summary": "As usual, once again I ended up building something because an idea hit my head during doomscrolling. It’s when I found a reel from certain… Continue reading on Medium »",
           "published_at": "2026-09-26T06:50:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3a77c4fe2af0093d",
+      "title": "Best Laptop for Machine Learning in 2026: Stop Running Out of GPU Memory",
+      "first_seen": "2026-09-26T17:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mumbamweni3/best-laptop-for-machine-learning-in-2026-stop-running-out-of-gpu-memory-b8b8311fdfd0",
+          "target_url": "https://medium.com/@mumbamweni3/best-laptop-for-machine-learning-in-2026-stop-running-out-of-gpu-memory-b8b8311fdfd0",
+          "independent": false,
+          "title": "Best Laptop for Machine Learning in 2026: Stop Running Out of GPU Memory",
+          "summary": "For ML engineers, AI developers, researchers and serious local-AI users who train, fine-tune, experiment with and run models locally. Continue reading on Medium »",
+          "published_at": "2026-09-26T07:50:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "de95fa520d8fc01d",
+      "title": "MCP Changed APIs Forever. Here’s Why",
+      "first_seen": "2026-09-26T17:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://pub.towardsai.net/mcp-changed-apis-forever-heres-why-9edb8b596777",
+          "target_url": "https://pub.towardsai.net/mcp-changed-apis-forever-heres-why-9edb8b596777",
+          "independent": false,
+          "title": "MCP Changed APIs Forever. Here’s Why",
+          "summary": "How the Model Context Protocol went from an Anthropic project to Linux Foundation infrastructure, and why that actually matters for API… Continue reading on Towards AI »",
+          "published_at": "2026-09-26T07:50:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5b914fc2b3c52597",
+      "title": "How to Stay Valuable When AI Writes 80% of the Boilerplate",
+      "first_seen": "2026-09-26T17:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sheshikiran.gone2002/how-to-stay-valuable-when-ai-writes-80-of-the-boilerplate-d283483b4c0a",
+          "target_url": "https://medium.com/@sheshikiran.gone2002/how-to-stay-valuable-when-ai-writes-80-of-the-boilerplate-d283483b4c0a",
+          "independent": false,
+          "title": "How to Stay Valuable When AI Writes 80% of the Boilerplate",
+          "summary": "A blunt look at what’s actually left for you to do — and why that’s good news, not bad news Continue reading on Medium »",
+          "published_at": "2026-09-26T07:48:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eacbe9bf735bd6b1",
+      "title": "What Happens When Your Medical AI Has No Source?",
+      "first_seen": "2026-09-26T17:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://dmytronasyrov.medium.com/medical-ai-missing-sources-citation-ux-2bf293a123a3",
+          "target_url": "https://dmytronasyrov.medium.com/medical-ai-missing-sources-citation-ux-2bf293a123a3",
+          "independent": false,
+          "title": "What Happens When Your Medical AI Has No Source?",
+          "summary": "Missing evidence, partial answers and the screens a polished healthcare AI demo leaves out. Continue reading on Medium »",
+          "published_at": "2026-09-26T07:47:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "92a0a60fde1d432d",
+      "title": "The Untapped 2026 Side Hustle: Why AI Resume Templates Are Exploding Right Now",
+      "first_seen": "2026-09-26T17:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jitgill148/the-untapped-2026-side-hustle-why-ai-resume-templates-are-exploding-right-now-69cac0a6fa63",
+          "target_url": "https://medium.com/@jitgill148/the-untapped-2026-side-hustle-why-ai-resume-templates-are-exploding-right-now-69cac0a6fa63",
+          "independent": false,
+          "title": "The Untapped 2026 Side Hustle: Why AI Resume Templates Are Exploding Right Now",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-26T07:45:10+00:00",
           "date_precision": "time"
         }
       ],
