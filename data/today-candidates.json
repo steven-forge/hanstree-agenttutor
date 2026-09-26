@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T02:01:00.268218+09:00",
-  "window_start": "2026-07-29T02:01:00.268218+09:00",
-  "window_end": "2026-09-27T02:01:00.268218+09:00",
+  "collected_at": "2026-09-27T03:01:00.294256+09:00",
+  "window_start": "2026-07-29T03:01:00.294256+09:00",
+  "window_end": "2026-09-27T03:01:00.294256+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 179,
+      "excluded_count": 180,
       "skipped_count": 24,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 28,
+      "excluded_count": 34,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 4,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 4,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -202,7 +202,7 @@
       "count": 11,
       "held_count": 0,
       "excluded_count": 4,
-      "skipped_count": 10,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T02:01:31.302677+09:00",
-  "hourly_window_start": "2026-09-24T02:01:31.302677+09:00",
+  "hourly_collected_at": "2026-09-27T03:01:21.898100+09:00",
+  "hourly_window_start": "2026-09-24T03:01:21.898100+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1224,27 +1224,6 @@
           "summary": "",
           "published_at": "2026-09-26T16:24:11+00:00",
           "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "49946666e01d58f7",
-      "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812270",
-          "target_url": "https://www.ceptile.com/",
-          "independent": false,
-          "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
-          "summary": "",
-          "published_at": "2026-09-23T06:10:04+00:00",
-          "date_precision": "time"
         },
         {
           "source_id": "hacker-news",
@@ -1278,37 +1257,38 @@
           "summary": "",
           "published_at": "2026-09-25T20:31:54+00:00",
           "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f330de6f12df20ba",
-      "title": "Recursive self-improvement of AI research agents",
-      "first_seen": "2026-09-23T17:01:19+09:00",
-      "sources": [
+        },
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812641",
-          "target_url": "https://arxiv.org/abs/2609.26457",
+          "url": "https://news.ycombinator.com/item?id=49836576",
+          "target_url": "https://zephclick.com",
           "independent": false,
-          "title": "Recursive self-improvement of AI research agents",
+          "title": "Show HN: A $25 DIY alternative to $159 AI voice recorders – BYOK or local",
           "summary": "",
-          "published_at": "2026-09-23T07:07:09+00:00",
+          "published_at": "2026-09-24T20:51:25+00:00",
           "date_precision": "time"
         },
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819845",
-          "target_url": "https://arxiv.org/abs/2609.26457",
+          "url": "https://news.ycombinator.com/item?id=49853553",
+          "target_url": "https://botbin.io/?md=true",
           "independent": false,
-          "title": "Recursive self-improvement of AI research agents",
+          "title": "Show HN: Botbin.io – pastebin for AI agent artifacts",
           "summary": "",
-          "published_at": "2026-09-23T17:47:15+00:00",
+          "published_at": "2026-09-26T05:42:40+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858875",
+          "target_url": "https://tokken.win/",
+          "independent": false,
+          "title": "Show HN: Tokken – a browser fighting game where AI models fight and HP is tokens",
+          "summary": "",
+          "published_at": "2026-09-26T17:50:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -1434,111 +1414,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "86e423a32a02768b",
-      "title": "Squeezer – Use your idle Claude plan window to work through TODOs overnight",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49820056",
-          "target_url": "https://github.com/valk/squeezer",
-          "independent": false,
-          "title": "Squeezer – Use your idle Claude plan window to work through TODOs overnight",
-          "summary": "",
-          "published_at": "2026-09-23T18:01:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c503f7ab9b331624",
-      "title": "How to Use Self-Hosted AI Agent Sandboxes on Kubernetes",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49820039",
-          "target_url": "https://edera.dev/stories/how-to-use-self-hosted-ai-agent-sandboxes-on-kubernetes-with-edera",
-          "independent": false,
-          "title": "How to Use Self-Hosted AI Agent Sandboxes on Kubernetes",
-          "summary": "",
-          "published_at": "2026-09-23T18:00:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8da83c17f0e20dba",
-      "title": "Repligraphs: A Primitive for AI Provenance",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819932",
-          "target_url": "https://lukechampine.com/repligraphs",
-          "independent": false,
-          "title": "Repligraphs: A Primitive for AI Provenance",
-          "summary": "",
-          "published_at": "2026-09-23T17:52:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "04327f4006c9d301",
-      "title": "UK to fight Russian disinformation and push new global AI standards Burnham says",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819920",
-          "target_url": "https://www.bbc.com/news/articles/c6rerlq99w30o",
-          "independent": false,
-          "title": "UK to fight Russian disinformation and push new global AI standards Burnham says",
-          "summary": "",
-          "published_at": "2026-09-23T17:51:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "acb2d6c8e6b38aae",
-      "title": "ApprenticeBench: Can AI agents learn a real job end to end?",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819853",
-          "target_url": "https://neocognition.io/blog/apprentice-bench",
-          "independent": false,
-          "title": "ApprenticeBench: Can AI agents learn a real job end to end?",
-          "summary": "",
-          "published_at": "2026-09-23T17:47:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f45ed8abc9a4d2ed",
       "title": "Uproar in France over award-winning author accused of using AI",
       "first_seen": "2026-09-24T03:01:31+09:00",
@@ -1563,153 +1438,6 @@
           "title": "Uproar in France over award-winning author accused of using AI",
           "summary": "",
           "published_at": "2026-09-25T10:48:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9107b5774e777029",
-      "title": "GPT-6 Sol might acutally be GPT-6 Terra",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819667",
-          "target_url": "https://twitter.com/eidzoku/status/2102672660379443335",
-          "independent": false,
-          "title": "GPT-6 Sol might acutally be GPT-6 Terra",
-          "summary": "",
-          "published_at": "2026-09-23T17:34:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2c338cf1f4ccf476",
-      "title": "Cortera Framework:agentic framework with containment for rogue agents and action",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819631",
-          "target_url": "https://github.com/Cortera-space/Cortera-Framework/releases",
-          "independent": false,
-          "title": "Cortera Framework:agentic framework with containment for rogue agents and action",
-          "summary": "",
-          "published_at": "2026-09-23T17:31:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6ead79e212f90723",
-      "title": "5 Ways AI Is Quietly Changing Everyday American Life",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@srahman66889/5-ways-ai-is-quietly-changing-everyday-american-life-500d85f23813",
-          "target_url": "https://medium.com/@srahman66889/5-ways-ai-is-quietly-changing-everyday-american-life-500d85f23813",
-          "independent": false,
-          "title": "5 Ways AI Is Quietly Changing Everyday American Life",
-          "summary": "You probably used AI today — and you may not have noticed. Continue reading on Medium »",
-          "published_at": "2026-09-23T17:45:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "20f35d83b9814dee",
-      "title": "The Problem Is Often Not the Problem",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@bijuvr70/the-problem-is-often-not-the-problem-935bc0867ab1",
-          "target_url": "https://medium.com/@bijuvr70/the-problem-is-often-not-the-problem-935bc0867ab1",
-          "independent": false,
-          "title": "The Problem Is Often Not the Problem",
-          "summary": "Problem solving is one of the most valuable skills in business. Continue reading on Medium »",
-          "published_at": "2026-09-23T17:44:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5ba893d176e1552a",
-      "title": "I Tried 20 Deep Learning Tutorials in 2026 — These 4 Were Actually Worth My Time",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://pub.towardsai.net/i-tried-20-deep-learning-tutorials-in-2026-these-4-were-actually-worth-my-time-e9cabfbe08f1",
-          "target_url": "https://pub.towardsai.net/i-tried-20-deep-learning-tutorials-in-2026-these-4-were-actually-worth-my-time-e9cabfbe08f1",
-          "independent": false,
-          "title": "I Tried 20 Deep Learning Tutorials in 2026 — These 4 Were Actually Worth My Time",
-          "summary": "You can spend an entire weekend looking for a deep learning course and somehow end up with 37 browser tabs, five YouTube playlists, three… Continue reading on Towards AI »",
-          "published_at": "2026-09-23T17:43:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "402782051eb49590",
-      "title": "The Shift in AI Architecture",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dhruvpradeep/the-shift-in-ai-architecture-f3c37760050c",
-          "target_url": "https://medium.com/@dhruvpradeep/the-shift-in-ai-architecture-f3c37760050c",
-          "independent": false,
-          "title": "The Shift in AI Architecture",
-          "summary": "Small Models, Open Source, and Non-Autoregressive Decision Engines Continue reading on Medium »",
-          "published_at": "2026-09-23T17:43:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d28731be629738f4",
-      "title": "Why Am I Hearing About Jev AI Everywhere?",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/writefluence/why-am-i-hearing-about-jev-ai-everywhere-dcbca3d931b5",
-          "target_url": "https://medium.com/writefluence/why-am-i-hearing-about-jev-ai-everywhere-dcbca3d931b5",
-          "independent": false,
-          "title": "Why Am I Hearing About Jev AI Everywhere?",
-          "summary": "A few days ago, I started noticing the same word again and again. Continue reading on WriteFluence »",
-          "published_at": "2026-09-23T17:42:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -2079,27 +1807,6 @@
           "title": "Data centers are black boxes, but California wants to change that",
           "summary": "California Gov. Gavin Newsom signed a slate of bills on Monday that could finally give communities better data - and more say - on how data centers impact their electricity bills and water supply. As data centers invade a growing number of communities across the US, they've triggered protests over how the infrastructure underpinning AI […]",
           "published_at": "2026-09-23T18:22:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "08befdebd4cbaf5a",
-      "title": "Anthropic’s biolab made a discovery it’s comparing to Crispr",
-      "first_seen": "2026-09-24T04:01:42+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/999470/anthropic-biolab-claude-crispr",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999470/anthropic-biolab-claude-crispr",
-          "independent": true,
-          "title": "Anthropic’s biolab made a discovery it’s comparing to Crispr",
-          "summary": "Anthropic says its AI Claude has \"autonomously discovered\" a new enzyme system similar to machinery behind the powerful gene-editing tool Crispr. It's the first result from Anthropic's newly-launched wet lab and an early test of Claude's usefulness for science as the company prepares to go public. The company says Claude found the enzyme system after […]",
-          "published_at": "2026-09-23T18:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -9727,27 +9434,6 @@
           "title": "How I changed teaching after AI managed to do all my homework assignments",
           "summary": "",
           "published_at": "2026-09-24T20:51:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "693329ad911e551a",
-      "title": "Show HN: A $25 DIY alternative to $159 AI voice recorders – BYOK or local",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836576",
-          "target_url": "https://zephclick.com",
-          "independent": false,
-          "title": "Show HN: A $25 DIY alternative to $159 AI voice recorders – BYOK or local",
-          "summary": "",
-          "published_at": "2026-09-24T20:51:25+00:00",
           "date_precision": "time"
         }
       ],
@@ -17935,27 +17621,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "93dcf31a027e253c",
-      "title": "Show HN: Botbin.io – pastebin for AI agent artifacts",
-      "first_seen": "2026-09-26T15:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49853553",
-          "target_url": "https://botbin.io/?md=true",
-          "independent": false,
-          "title": "Show HN: Botbin.io – pastebin for AI agent artifacts",
-          "summary": "",
-          "published_at": "2026-09-26T05:42:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f4028e121e743541",
       "title": "Can AI Shopping Agents Be Trusted?",
       "first_seen": "2026-09-26T15:01:45+09:00",
@@ -20605,6 +20270,216 @@
           "title": "Las ideologías que heredamos y las mentes que la IA moldeará",
           "summary": "¿Y si lo más importante que cambia la IA no es lo que las máquinas pueden pensar, sino aquello que los seres humanos llegamos a creer? Continue reading on Medium »",
           "published_at": "2026-09-26T16:51:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0836367661b669a4",
+      "title": "ChatGPT A/B Tests",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858942",
+          "target_url": "https://twitter.com/pappapez/status/2103876517075763638",
+          "independent": false,
+          "title": "ChatGPT A/B Tests",
+          "summary": "",
+          "published_at": "2026-09-26T17:59:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2d0f2bcff94a20c1",
+      "title": "The OpenAI Swarm Was Emergent RSI",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858940",
+          "target_url": "https://gist.github.com/kyrchan/8a86a498bdb9d1aa57d47365cb53ffb3",
+          "independent": false,
+          "title": "The OpenAI Swarm Was Emergent RSI",
+          "summary": "",
+          "published_at": "2026-09-26T17:59:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a0e33986561907ab",
+      "title": "AWS CloudWatch Omni AI",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858866",
+          "target_url": "https://aws.amazon.com/blogs/aws/introducing-amazon-cloudwatch-omni-collaborative-ai-powered-observability-for-your-applications",
+          "independent": false,
+          "title": "AWS CloudWatch Omni AI",
+          "summary": "",
+          "published_at": "2026-09-26T17:50:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "adfda35e86ba9a60",
+      "title": "Six Bazel patches from an AI software factory, plus a remote-cache security bug",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858854",
+          "target_url": "https://www.incredibuild.com/blog/bazel-contributions-security-fix-autonomous-sdlc",
+          "independent": false,
+          "title": "Six Bazel patches from an AI software factory, plus a remote-cache security bug",
+          "summary": "",
+          "published_at": "2026-09-26T17:48:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3ed688d27fe828e7",
+      "title": "Modern LLMs have tiny GPTs hidden inside them",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49858767",
+          "target_url": "https://invertedpassion.substack.com/p/modern-llms-have-tiny-gpts-hidden",
+          "independent": false,
+          "title": "Modern LLMs have tiny GPTs hidden inside them",
+          "summary": "",
+          "published_at": "2026-09-26T17:38:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2d57846cce9e4c90",
+      "title": "AI Orchestration: How AI Actually Gets Work Done Inside a Company",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@naishasaxena2310/ai-orchestration-how-ai-actually-gets-work-done-inside-a-company-aa54a382fd2a",
+          "target_url": "https://medium.com/@naishasaxena2310/ai-orchestration-how-ai-actually-gets-work-done-inside-a-company-aa54a382fd2a",
+          "independent": false,
+          "title": "AI Orchestration: How AI Actually Gets Work Done Inside a Company",
+          "summary": "If you’ve used ChatGPT or Claude, you already know what an LLM can do. It understands your question and gives you a smart answer. But… Continue reading on Medium »",
+          "published_at": "2026-09-26T17:51:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ae63160a05f7e286",
+      "title": "Explorando el Ecosistema de la IA: Del Aprendizaje Automático a la Percepción Computacional",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@vazquezjoshuaemmanuel/explorando-el-ecosistema-de-la-ia-del-aprendizaje-autom%C3%A1tico-a-la-percepci%C3%B3n-computacional-2d7b9e2cb0af",
+          "target_url": "https://medium.com/@vazquezjoshuaemmanuel/explorando-el-ecosistema-de-la-ia-del-aprendizaje-autom%C3%A1tico-a-la-percepci%C3%B3n-computacional-2d7b9e2cb0af",
+          "independent": false,
+          "title": "Explorando el Ecosistema de la IA: Del Aprendizaje Automático a la Percepción Computacional",
+          "summary": "Un recorrido práctico y teórico por las 6 ramas fundamentales que estructuran la inteligencia artificial moderna Continue reading on Medium »",
+          "published_at": "2026-09-26T17:51:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8916271fcd52c8a4",
+      "title": "My Model Was Accurate, but My Machine Learning System Was Still Wrong",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/technology-hits/my-model-was-accurate-but-my-machine-learning-system-was-still-wrong-bbeb9fb7a12c",
+          "target_url": "https://medium.com/technology-hits/my-model-was-accurate-but-my-machine-learning-system-was-still-wrong-bbeb9fb7a12c",
+          "independent": false,
+          "title": "My Model Was Accurate, but My Machine Learning System Was Still Wrong",
+          "summary": "I spent too much time optimizing model metrics before realizing that accuracy was only measuring one small part of whether the system… Continue reading on Technology Hits »",
+          "published_at": "2026-09-26T17:50:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c8c98217dbade559",
+      "title": "AI Tools for Consultants in 2026: Matching Tools to the Actual Value Chain",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jawadfiaz397/ai-tools-for-consultants-in-2026-matching-tools-to-the-actual-value-chain-fa56f367e8dd",
+          "target_url": "https://medium.com/@jawadfiaz397/ai-tools-for-consultants-in-2026-matching-tools-to-the-actual-value-chain-fa56f367e8dd",
+          "independent": false,
+          "title": "AI Tools for Consultants in 2026: Matching Tools to the Actual Value Chain",
+          "summary": "Consulting has always run on the same basic value chain: gather information, find the actual pattern inside it, package that pattern into… Continue reading on Medium »",
+          "published_at": "2026-09-26T17:50:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c50caf26d6ceb624",
+      "title": "AI Writing Is Normal. Trust Is Not.",
+      "first_seen": "2026-09-27T03:01:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@npcsignals/ai-writing-is-normal-trust-is-not-633590429659",
+          "target_url": "https://medium.com/@npcsignals/ai-writing-is-normal-trust-is-not-633590429659",
+          "independent": false,
+          "title": "AI Writing Is Normal. Trust Is Not.",
+          "summary": "Artificial intelligence has moved into the writing process faster than trust has moved with it. Continue reading on Medium »",
+          "published_at": "2026-09-26T17:49:43+00:00",
           "date_precision": "time"
         }
       ],
