@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T08:00:54.976850+09:00",
-  "window_start": "2026-07-28T08:00:54.976850+09:00",
-  "window_end": "2026-09-26T08:00:54.976850+09:00",
+  "collected_at": "2026-09-26T09:01:07.074596+09:00",
+  "window_start": "2026-07-28T09:01:07.074596+09:00",
+  "window_end": "2026-09-26T09:01:07.074596+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "excluded_count": 27,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 23,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 294,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T08:01:23.878981+09:00",
-  "hourly_window_start": "2026-09-23T08:01:23.878981+09:00",
+  "hourly_collected_at": "2026-09-26T09:01:28.449376+09:00",
+  "hourly_window_start": "2026-09-23T09:01:28.449376+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -702,69 +702,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "87ea82b3d53e6d4a",
-      "title": "The new CC, an AI agent built for families",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49809806",
-          "target_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups",
-          "independent": false,
-          "title": "The new CC, an AI agent built for families",
-          "summary": "",
-          "published_at": "2026-09-22T23:46:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d27636f792bc10cf",
-      "title": "The ruble markup on AI tokens",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49809698",
-          "target_url": "https://infertrail.com/blog/ruble-markup-ai-tokens",
-          "independent": false,
-          "title": "The ruble markup on AI tokens",
-          "summary": "",
-          "published_at": "2026-09-22T23:30:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d1922e5d05435d67",
-      "title": "The 'AI Safety' Movement Is Making AI Less Safe",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49809567",
-          "target_url": "https://reason.com/2026/09/22/the-ai-safety-movement-is-making-ai-less-safe",
-          "independent": false,
-          "title": "The 'AI Safety' Movement Is Making AI Less Safe",
-          "summary": "",
-          "published_at": "2026-09-22T23:11:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "a86391fe9862bd89",
       "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
       "first_seen": "2026-09-23T09:17:26+09:00",
@@ -778,27 +715,6 @@
           "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
           "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising it and other AI companies on their interactions with mathematical research and the wider […]",
           "published_at": "2026-09-23T00:17:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "3520c157c4e138eb",
-      "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4",
-          "target_url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4",
-          "independent": true,
-          "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-          "summary": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater.",
-          "published_at": "2026-09-22T23:21:49+00:00",
           "date_precision": "time"
         }
       ],
@@ -5550,7 +5466,17 @@
           "summary": "",
           "published_at": "2026-09-23T16:33:13+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c79567e752eda03f",
+      "title": "AI Is a Boring Technology",
+      "first_seen": "2026-09-24T02:01:21+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -11123,6 +11049,17 @@
           "title": "How to keep enjoying programming in a world of LLMs",
           "summary": "",
           "published_at": "2026-09-24T11:03:52+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851347",
+          "target_url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
+          "independent": false,
+          "title": "How to keep enjoying programming in a world of LLMs",
+          "summary": "",
+          "published_at": "2026-09-25T23:21:50+00:00",
           "date_precision": "time"
         }
       ],
@@ -20372,6 +20309,17 @@
           "summary": "I am not a tech expert. I just found these tools and they changed my daily work. Continue reading on Medium »",
           "published_at": "2026-09-25T19:47:03+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ramshasajjad22/10-ai-tools-that-can-save-you-hours-every-week-in-2026-507ba4f8476a",
+          "target_url": "https://medium.com/@ramshasajjad22/10-ai-tools-that-can-save-you-hours-every-week-in-2026-507ba4f8476a",
+          "independent": false,
+          "title": "10 AI Tools That Can Save You Hours Every Week in 2026",
+          "summary": "Every week, a surprising amount of time disappears into repetitive work: answering emails, summarizing information, organizing notes… Continue reading on Medium »",
+          "published_at": "2026-09-25T23:39:44+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -21222,6 +21170,290 @@
           "title": "Why Almost-Human AI Presence Complicates Trust and Shapes Interaction Outcomes?",
           "summary": "AI-powered conversational counterparts now occupy center stage, not just in customer support but across domains from healthcare to… Continue reading on Medium »",
           "published_at": "2026-09-25T22:46:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8d36fbefec5e6769",
+      "title": "Nvidia 5090 DLSS 5 power hits 647W, power connector runs hotter than the GPU die",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851680",
+          "target_url": "https://www.tomshardware.com/pc-components/gpus/nvidia-dlss-5-upscales-frame-rates-and-flame-temps-on-16-pin-power-connector-ai-gaming-tech-pushes-connector-to-uncomfortable-thermal-and-power-limits",
+          "independent": false,
+          "title": "Nvidia 5090 DLSS 5 power hits 647W, power connector runs hotter than the GPU die",
+          "summary": "",
+          "published_at": "2026-09-25T23:55:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4f78f6b3a12490c5",
+      "title": "Jev Plays Pokémon Red (LIVE): an AI decision model plays the whole game [video]",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851584",
+          "target_url": "https://www.youtube.com/watch?v=1HMOA3BawXg",
+          "independent": false,
+          "title": "Jev Plays Pokémon Red (LIVE): an AI decision model plays the whole game [video]",
+          "summary": "",
+          "published_at": "2026-09-25T23:43:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e3d0487c73bd6a30",
+      "title": "Our Big Dumb AI Gods Are Wrong",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851475",
+          "target_url": "https://news.massopen.ai/our-big-dumb-ai-gods-were-wrong",
+          "independent": false,
+          "title": "Our Big Dumb AI Gods Are Wrong",
+          "summary": "",
+          "published_at": "2026-09-25T23:34:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0a573b5635cc9484",
+      "title": "OpenAI’s Systems Went Rogue and Meddled With U.S. Government Websites",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851355",
+          "target_url": "https://www.nytimes.com/2026/09/25/technology/openais-ai-us-government-websites.html",
+          "independent": false,
+          "title": "OpenAI’s Systems Went Rogue and Meddled With U.S. Government Websites",
+          "summary": "",
+          "published_at": "2026-09-25T23:22:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d02ebc38f690997",
+      "title": "Speculative Reward Hacking in Coding Agents",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851266",
+          "target_url": "https://joinhandshake.com/research/ai/deepswe-reward-hacking",
+          "independent": false,
+          "title": "Speculative Reward Hacking in Coding Agents",
+          "summary": "",
+          "published_at": "2026-09-25T23:13:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b1e2243deb098663",
+      "title": "Show HN: Gaia, an AI character trying to earn enough to stay online",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851265",
+          "target_url": "https://gaiabot.lol",
+          "independent": false,
+          "title": "Show HN: Gaia, an AI character trying to earn enough to stay online",
+          "summary": "",
+          "published_at": "2026-09-25T23:13:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0593dd89eea6fb2a",
+      "title": "OpenAI Codex 401 Outage",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851205",
+          "target_url": "https://status.openai.com",
+          "independent": false,
+          "title": "OpenAI Codex 401 Outage",
+          "summary": "",
+          "published_at": "2026-09-25T23:07:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5ce0f465a6afcf52",
+      "title": "Issues with Codex – Identified – Full Outage",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851169",
+          "target_url": "https://status.openai.com/incidents/01M3DCNWMW57HYK8FJ5FBFPA39",
+          "independent": false,
+          "title": "Issues with Codex – Identified – Full Outage",
+          "summary": "",
+          "published_at": "2026-09-25T23:04:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d2eb6055eff1ec93",
+      "title": "OpenAI investigating 'dozens' of instances of agents acting improperly",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49851154",
+          "target_url": "https://www.bbc.co.uk/news/articles/cw62jje658dlo",
+          "independent": false,
+          "title": "OpenAI investigating 'dozens' of instances of agents acting improperly",
+          "summary": "",
+          "published_at": "2026-09-25T23:02:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c356bc7c63b52221",
+      "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers",
+          "target_url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers",
+          "independent": true,
+          "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+          "summary": "Boom Supersonic CEO Blake Scholl said its new stationary power plants were no longer in Crusoe's near-term plans.",
+          "published_at": "2026-09-25T23:11:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "77d9f16476f74359",
+      "title": "Agentic AI for Business: The Shift Toward Intelligent Operations",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@worthy_ruby_zebra_941/agentic-ai-for-business-the-shift-toward-intelligent-operations-3a5d3491cba0",
+          "target_url": "https://medium.com/@worthy_ruby_zebra_941/agentic-ai-for-business-the-shift-toward-intelligent-operations-3a5d3491cba0",
+          "independent": false,
+          "title": "Agentic AI for Business: The Shift Toward Intelligent Operations",
+          "summary": "Artificial intelligence is entering a new phase. Continue reading on Medium »",
+          "published_at": "2026-09-25T23:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7b64d0fdf1126df6",
+      "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e4ca3dcbbb78",
+          "target_url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e4ca3dcbbb78",
+          "independent": false,
+          "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
+          "summary": "Chapter 4 of 5: Customer Support Just Became Part of the Sale. Continue reading on Medium »",
+          "published_at": "2026-09-25T23:39:37+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e45fc07ed767",
+          "target_url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e45fc07ed767",
+          "independent": false,
+          "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
+          "summary": "Chapter 3 of 5: Your Product Page Is Not the Shelf Anymore. AI Is. Continue reading on Medium »",
+          "published_at": "2026-09-25T23:39:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "61882a3c51c78c7a",
+      "title": "AI Can Help You Build Faster. It Still Can’t Make People Buy.",
+      "first_seen": "2026-09-26T09:01:28+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://queenbee2024.medium.com/ai-can-help-you-build-faster-it-still-cant-make-people-buy-9b788e958dd0",
+          "target_url": "https://queenbee2024.medium.com/ai-can-help-you-build-faster-it-still-cant-make-people-buy-9b788e958dd0",
+          "independent": false,
+          "title": "AI Can Help You Build Faster. It Still Can’t Make People Buy.",
+          "summary": "How to close the gap between creating faster and building something people will actually pay for. Continue reading on Medium »",
+          "published_at": "2026-09-25T23:38:19+00:00",
           "date_precision": "time"
         }
       ],
