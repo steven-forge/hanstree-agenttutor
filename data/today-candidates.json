@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T21:00:56.384306+09:00",
-  "window_start": "2026-07-28T21:00:56.384306+09:00",
-  "window_end": "2026-09-26T21:00:56.384306+09:00",
+  "collected_at": "2026-09-26T22:01:07.154105+09:00",
+  "window_start": "2026-07-28T22:01:07.154105+09:00",
+  "window_end": "2026-09-26T22:01:07.154105+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 2,
+      "excluded_count": 30,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -202,7 +202,7 @@
       "count": 12,
       "held_count": 0,
       "excluded_count": 3,
-      "skipped_count": 11,
+      "skipped_count": 12,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T21:01:18.198931+09:00",
-  "hourly_window_start": "2026-09-23T21:01:18.198931+09:00",
+  "hourly_collected_at": "2026-09-26T22:01:32.215165+09:00",
+  "hourly_window_start": "2026-09-23T22:01:32.215165+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1264,300 +1264,6 @@
           "title": "Recursive self-improvement of AI research agents",
           "summary": "",
           "published_at": "2026-09-23T17:47:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8fad1bb6aaae4c80",
-      "title": "VedicQ AI Astrology Kundli Engine",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815359",
-          "target_url": "https://www.vedicq.com/",
-          "independent": false,
-          "title": "VedicQ AI Astrology Kundli Engine",
-          "summary": "",
-          "published_at": "2026-09-23T12:56:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cc47574a679086e3",
-      "title": "What AI-Native Looks Like",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815344",
-          "target_url": "https://fagnerbrack.com/heres-what-ai-native-with-stable-infra-looks-like-9f17cdb61459",
-          "independent": false,
-          "title": "What AI-Native Looks Like",
-          "summary": "",
-          "published_at": "2026-09-23T12:54:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "30d2ef71c7373414",
-      "title": "The Pain Axis: LLMs Represent Self-Directed Harm and Act to Relieve It",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815339",
-          "target_url": "https://arxiv.org/abs/2609.16247",
-          "independent": false,
-          "title": "The Pain Axis: LLMs Represent Self-Directed Harm and Act to Relieve It",
-          "summary": "",
-          "published_at": "2026-09-23T12:54:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "10d01fbf596511d3",
-      "title": "BannerGen – AI Social Media Banner Generator (CLI, Open Source)",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815178",
-          "target_url": "https://github.com/astra-intelligence/bannergen-cli",
-          "independent": false,
-          "title": "BannerGen – AI Social Media Banner Generator (CLI, Open Source)",
-          "summary": "",
-          "published_at": "2026-09-23T12:37:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ec2d94d3f37d66b7",
-      "title": "OpenAI is enlisting an influencer army to make it look 'good for the world'",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815127",
-          "target_url": "https://www.businessinsider.com/inside-open-ai-influencer-marketing-strategy-chatgpt-ads-sponsorships-instagram-2026-9",
-          "independent": false,
-          "title": "OpenAI is enlisting an influencer army to make it look 'good for the world'",
-          "summary": "",
-          "published_at": "2026-09-23T12:32:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f6560bd8fa69bdcd",
-      "title": "AI proof of the Erdős–Sós conjecture",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815126",
-          "target_url": "https://arxiv.org/abs/2609.17877",
-          "independent": false,
-          "title": "AI proof of the Erdős–Sós conjecture",
-          "summary": "",
-          "published_at": "2026-09-23T12:31:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1ccedf36f3068dce",
-      "title": "First of its kind, AI malware. CLOSEDQUORUM",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814973",
-          "target_url": "https://www.theregister.com/security/2026/09/22/windows-closedquorum-malware-uses-ai-models-to-autonomously-select-post-compromise-actions/5298435",
-          "independent": false,
-          "title": "First of its kind, AI malware. CLOSEDQUORUM",
-          "summary": "",
-          "published_at": "2026-09-23T12:17:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "49da23d57daaae16",
-      "title": "Claude Code reads AGENTS.md only when telemetry is on",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814947",
-          "target_url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on",
-          "independent": false,
-          "title": "Claude Code reads AGENTS.md only when telemetry is on",
-          "summary": "",
-          "published_at": "2026-09-23T12:15:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0d30a54669d6d323",
-      "title": "Spotify’s is giving you the keys to its recommendation algorithm with US launch of ‘Taste Profile’",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/spotify-is-giving-you-the-keys-to-its-recommendation-algorithm-with-u-s-launch-of-taste-profile",
-          "target_url": "https://techcrunch.com/2026/09/23/spotify-is-giving-you-the-keys-to-its-recommendation-algorithm-with-u-s-launch-of-taste-profile",
-          "independent": true,
-          "title": "Spotify’s is giving you the keys to its recommendation algorithm with US launch of ‘Taste Profile’",
-          "summary": "Spotify is rolling out Taste Profile to Premium users in the U.S., letting listeners see how the streamer understands their tastes and use natural language to reshape their recommendations",
-          "published_at": "2026-09-23T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "10dc924dc0083e9a",
-      "title": "Enterprise Agentic RAG: Conquering the Agentic DX — The One-Command Local AI Infrastructure",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/agentic-architecture/enterprise-agentic-rag-conquering-the-agentic-dx-the-one-command-local-ai-infrastructure-09333c1b2ddb",
-          "target_url": "https://medium.com/agentic-architecture/enterprise-agentic-rag-conquering-the-agentic-dx-the-one-command-local-ai-infrastructure-09333c1b2ddb",
-          "independent": false,
-          "title": "Enterprise Agentic RAG: Conquering the Agentic DX — The One-Command Local AI Infrastructure",
-          "summary": "How to orchestrate a Vite, FastAPI, PostgreSQL, Qdrant, and local LLM stack using Docker Compose and GPU passthrough, solving the “It… Continue reading on Agentic Architecture »",
-          "published_at": "2026-09-23T13:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "16ae48a907036d07",
-      "title": "Sarah Finished the Listing. Then the Next Problem Showed Up.",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@coreassetsoperations/sarah-finished-the-listing-then-the-next-problem-showed-up-64196d5a7893",
-          "target_url": "https://medium.com/@coreassetsoperations/sarah-finished-the-listing-then-the-next-problem-showed-up-64196d5a7893",
-          "independent": false,
-          "title": "Sarah Finished the Listing. Then the Next Problem Showed Up.",
-          "summary": "The Real Estate AI Workflow Series — Operation Mode Continue reading on Medium »",
-          "published_at": "2026-09-23T13:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4cb55e8c9117564e",
-      "title": "Anthropic Built a Safety System. Its IPO Will Test Who Really Controls It",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/the-control-grid/anthropic-ipo-safety-governance-control-e82c3b69031f",
-          "target_url": "https://medium.com/the-control-grid/anthropic-ipo-safety-governance-control-e82c3b69031f",
-          "independent": false,
-          "title": "Anthropic Built a Safety System. Its IPO Will Test Who Really Controls It",
-          "summary": "Anthropic’s Trust shapes the board, but management controls most safety calls. The IPO tests whether costly restraint survives Wall Street. Continue reading on The Control Grid »",
-          "published_at": "2026-09-23T13:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6dbb7b0125c727d4",
-      "title": "AI Skills Are Required at Chime and Datadog, Priced at Zero",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/age-of-responsible-ai/ai-skills-are-required-at-chime-and-datadog-priced-at-zero-e2bc9dc1789c",
-          "target_url": "https://medium.com/age-of-responsible-ai/ai-skills-are-required-at-chime-and-datadog-priced-at-zero-e2bc9dc1789c",
-          "independent": false,
-          "title": "AI Skills Are Required at Chime and Datadog, Priced at Zero",
-          "summary": "The 62 percent AI wage premium is a composition effect. Hold employer and level fixed and the senior band does not move. Continue reading on Age of Responsible AI »",
-          "published_at": "2026-09-23T13:01:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4891fa55e1f9f8cd",
-      "title": "Building an AI Incident Triage Agent You Can Defend in an Audit",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@swsloan/building-an-ai-incident-triage-agent-you-can-defend-in-an-audit-4fd010b485b0",
-          "target_url": "https://medium.com/@swsloan/building-an-ai-incident-triage-agent-you-can-defend-in-an-audit-4fd010b485b0",
-          "independent": false,
-          "title": "Building an AI Incident Triage Agent You Can Defend in an Audit",
-          "summary": "Part 3 of 4. The demo everyone builds first is the one that cannot be deployed. Here is the architecture that survives contact with a real… Continue reading on Medium »",
-          "published_at": "2026-09-23T13:01:03+00:00",
           "date_precision": "time"
         }
       ],
@@ -20747,6 +20453,258 @@
           "title": "I Built an AI Research Assistant That Can Read a PDF and Answer Questions — Here’s What I Learned",
           "summary": "What if you could upload a 100-page research paper, ask a question in plain English, and instantly get an answer along with the page where… Continue reading on Medium »",
           "published_at": "2026-09-26T11:50:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8e577edb7e380ba9",
+      "title": "No Blind Trust in AI-Generated Code",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856077",
+          "target_url": "https://wearecommunity.io/communities/jacov/articles/8709",
+          "independent": false,
+          "title": "No Blind Trust in AI-Generated Code",
+          "summary": "",
+          "published_at": "2026-09-26T12:58:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8d2d5449e7e5b392",
+      "title": "CEO of Mistral: AI is software. It can be controlled",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856034",
+          "target_url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
+          "independent": false,
+          "title": "CEO of Mistral: AI is software. It can be controlled",
+          "summary": "",
+          "published_at": "2026-09-26T12:52:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ba13ab54733cd721",
+      "title": "The Discovery Tax: Why Coding Agents Waste 2,500 Tokens Before Writing Code",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856008",
+          "target_url": "https://blog.jarv.dev/the-discovery-tax",
+          "independent": false,
+          "title": "The Discovery Tax: Why Coding Agents Waste 2,500 Tokens Before Writing Code",
+          "summary": "",
+          "published_at": "2026-09-26T12:48:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f5362abe734f2103",
+      "title": "Google's orbital AI data center test packs four TPUs and 1,000W of solar power",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856004",
+          "target_url": "https://www.tomshardware.com/tech-industry/data-centers/google-is-blasting-an-experimental-ai-data-center-into-orbit-first-satellite-will-feature-just-four-tensor-processing-units",
+          "independent": false,
+          "title": "Google's orbital AI data center test packs four TPUs and 1,000W of solar power",
+          "summary": "",
+          "published_at": "2026-09-26T12:47:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "08b29862f2d281d6",
+      "title": "Catching Rogue Agents in Real Time with Synchronous Control Monitoring",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855969",
+          "target_url": "https://max.ax/writing/synchronous-control-monitoring",
+          "independent": false,
+          "title": "Catching Rogue Agents in Real Time with Synchronous Control Monitoring",
+          "summary": "",
+          "published_at": "2026-09-26T12:42:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4f03992a05e84986",
+      "title": "OpenAI says its AI agents posted user images online in error",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855863",
+          "target_url": "https://techxplore.com/news/2026-09-openai-ai-agents-user-images.html",
+          "independent": false,
+          "title": "OpenAI says its AI agents posted user images online in error",
+          "summary": "",
+          "published_at": "2026-09-26T12:26:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "075da9c2e483769f",
+      "title": "Chinese AI models surge in global popularity – and Washington is worried",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855784",
+          "target_url": "https://www.cnbc.com/2026/09/26/china-ai-global-adoption.html",
+          "independent": false,
+          "title": "Chinese AI models surge in global popularity – and Washington is worried",
+          "summary": "",
+          "published_at": "2026-09-26T12:11:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e3d624cca207e0ff",
+      "title": "The Shredder in the Shrine: Inside the Industrial AI Book-Destruction Pipeline Privatizing Human…",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sticklishissues/the-shredder-in-the-shrine-inside-the-industrial-ai-book-destruction-pipeline-privatizing-human-4151156aa4f8",
+          "target_url": "https://medium.com/@sticklishissues/the-shredder-in-the-shrine-inside-the-industrial-ai-book-destruction-pipeline-privatizing-human-4151156aa4f8",
+          "independent": false,
+          "title": "The Shredder in the Shrine: Inside the Industrial AI Book-Destruction Pipeline Privatizing Human…",
+          "summary": "Picture standing in the blazing heat of the Nevada desert outside Las Vegas. Continue reading on Medium »",
+          "published_at": "2026-09-26T12:51:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4472928f58406ef3",
+      "title": "The Origin of the Data Center-Centric City Model (1)",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@takashi_pogi/the-origin-of-the-data-center-centric-city-model-1-263c6e4f95a0",
+          "target_url": "https://medium.com/@takashi_pogi/the-origin-of-the-data-center-centric-city-model-1-263c6e4f95a0",
+          "independent": false,
+          "title": "The Origin of the Data Center-Centric City Model (1)",
+          "summary": "It All Started with a News Story About Water Continue reading on Medium »",
+          "published_at": "2026-09-26T12:51:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cc3768163d412464",
+      "title": "How to Humanize AI-Generated Content: 12 Editing Techniques That Actually Work",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@thepaperalchemist/how-to-humanize-ai-generated-content-12-editing-techniques-that-actually-work-eafca02809a1",
+          "target_url": "https://medium.com/@thepaperalchemist/how-to-humanize-ai-generated-content-12-editing-techniques-that-actually-work-eafca02809a1",
+          "independent": false,
+          "title": "How to Humanize AI-Generated Content: 12 Editing Techniques That Actually Work",
+          "summary": "AI can produce clean writing in seconds. Continue reading on Medium »",
+          "published_at": "2026-09-26T12:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ba7a27d916749572",
+      "title": "The Effects of Artificial Intelligence on the Mental Health of Adolescents",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@spencewrite080/the-effects-of-artificial-intelligence-on-the-mental-health-of-adolescents-598455135ad5",
+          "target_url": "https://medium.com/@spencewrite080/the-effects-of-artificial-intelligence-on-the-mental-health-of-adolescents-598455135ad5",
+          "independent": false,
+          "title": "The Effects of Artificial Intelligence on the Mental Health of Adolescents",
+          "summary": "Introduction: Continue reading on Medium »",
+          "published_at": "2026-09-26T12:50:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3958b7c89285bb03",
+      "title": "SEO Is Not Dead. The Search Journey Has Changed.",
+      "first_seen": "2026-09-26T22:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://amritarishianand.medium.com/seo-is-not-dead-the-search-journey-has-changed-df416410dc5d",
+          "target_url": "https://amritarishianand.medium.com/seo-is-not-dead-the-search-journey-has-changed-df416410dc5d",
+          "independent": false,
+          "title": "SEO Is Not Dead. The Search Journey Has Changed.",
+          "summary": "For years, SEO has been discussed around a fairly predictable set of metrics. Continue reading on Medium »",
+          "published_at": "2026-09-26T12:48:33+00:00",
           "date_precision": "time"
         }
       ],
