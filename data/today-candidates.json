@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T04:00:58.198728+09:00",
-  "window_start": "2026-07-29T04:00:58.198728+09:00",
-  "window_end": "2026-09-27T04:00:58.198728+09:00",
+  "collected_at": "2026-09-27T05:01:06.653913+09:00",
+  "window_start": "2026-07-29T05:01:06.653913+09:00",
+  "window_end": "2026-09-27T05:01:06.653913+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 31,
+      "excluded_count": 27,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -177,10 +177,10 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 2,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 24,
-      "skipped_count": 2,
+      "excluded_count": 25,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T04:01:29.336845+09:00",
-  "hourly_window_start": "2026-09-24T04:01:29.336845+09:00",
+  "hourly_collected_at": "2026-09-27T05:01:31.951675+09:00",
+  "hourly_window_start": "2026-09-24T05:01:31.951675+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1290,6 +1290,28 @@
           "summary": "",
           "published_at": "2026-09-26T17:50:57+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859968",
+          "target_url": "https://zenodo.org/records/22976821",
+          "independent": false,
+          "title": "Show HN: Way to divide parameter space in LLM training",
+          "summary": "",
+          "published_at": "2026-09-26T19:55:35+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859891",
+          "target_url": "https://www.grabbit.live",
+          "independent": false,
+          "title": "Show HN: Grabbit – agent-first screenshot API (MCP and one-line CLI)",
+          "summary": "",
+          "published_at": "2026-09-26T19:46:30+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1500,90 +1522,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "857861dc16520df2",
-      "title": "How to Build an AI Visibility Tracker from Scratch",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821645",
-          "target_url": "https://www.crawlspider.com/how-to-build-an-ai-visibility-tracker-from-scratch",
-          "independent": false,
-          "title": "How to Build an AI Visibility Tracker from Scratch",
-          "summary": "",
-          "published_at": "2026-09-23T19:58:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "654089563f03f514",
-      "title": "Jev is 13.6x faster, 2.7x cheaper than GPT Luna 6",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821631",
-          "target_url": "https://tessl.io/blog/jev-is-136x-faster-and-27x-cheaper-than-gpt-luna-6-for-tessl-verifiers-try-it-yourself",
-          "independent": false,
-          "title": "Jev is 13.6x faster, 2.7x cheaper than GPT Luna 6",
-          "summary": "",
-          "published_at": "2026-09-23T19:56:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6ff587f2cd5b217d",
-      "title": "Show HN: Varkos – a local AI pet that can talk, interact, and play small games",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821592",
-          "target_url": "https://varkos.party/",
-          "independent": false,
-          "title": "Show HN: Varkos – a local AI pet that can talk, interact, and play small games",
-          "summary": "",
-          "published_at": "2026-09-23T19:54:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8423a9b38234c307",
-      "title": "Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821485",
-          "target_url": "https://arxiv.org/abs/2607.29516",
-          "independent": false,
-          "title": "Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
-          "summary": "",
-          "published_at": "2026-09-23T19:45:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "8bf440f9048ed7d6",
       "title": "Show HN: AgentRun: DSL to turn agents into Workflows",
       "first_seen": "2026-09-24T05:01:45+09:00",
@@ -1608,195 +1546,6 @@
           "title": "Show HN: CastTake – turn one product photo into a short AI UGC ad video",
           "summary": "",
           "published_at": "2026-09-24T07:49:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5fecd5f7e5f1b6c6",
-      "title": "VSArena – The official open browser benchmark for embodied AI",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821427",
-          "target_url": "https://vsarena.vercel.app",
-          "independent": false,
-          "title": "VSArena – The official open browser benchmark for embodied AI",
-          "summary": "",
-          "published_at": "2026-09-23T19:41:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6c444607ca34971c",
-      "title": "\"Good\" AI",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821352",
-          "target_url": "https://thoughts.wyounas.com/p/what-does-good-ai-mean",
-          "independent": false,
-          "title": "\"Good\" AI",
-          "summary": "",
-          "published_at": "2026-09-23T19:35:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c6e24d86fd68b267",
-      "title": "Support for Local AI Models in the Antigravity SDK",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49821317",
-          "target_url": "https://developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk",
-          "independent": false,
-          "title": "Support for Local AI Models in the Antigravity SDK",
-          "summary": "",
-          "published_at": "2026-09-23T19:33:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b2cab94e5375e0ba",
-      "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials",
-          "target_url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials",
-          "independent": true,
-          "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
-          "summary": "The round valued the AI biotech at $2 billion. It is currently testing drugs that treat skin conditions and preserve weight loss after stopping GLP-1s.",
-          "published_at": "2026-09-23T19:31:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "3e65c8bc271a62de",
-      "title": "Noteworthy differences between — Wisdom and intelligence",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://tj-influence22.medium.com/noteworthy-differences-between-wisdom-and-intelligence-be5b683f633d",
-          "target_url": "https://tj-influence22.medium.com/noteworthy-differences-between-wisdom-and-intelligence-be5b683f633d",
-          "independent": false,
-          "title": "Noteworthy differences between — Wisdom and intelligence",
-          "summary": "In the quest to understand human capabilities, the concepts of wisdom and intelligence often arise, each holding its own distinct place in… Continue reading on Medium »",
-          "published_at": "2026-09-23T19:47:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3507e7e62806c9f1",
-      "title": "Humans Are Responsible, Not the AI",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@fahey_james/humans-are-responsible-not-the-ai-59c7e1dab07b",
-          "target_url": "https://medium.com/@fahey_james/humans-are-responsible-not-the-ai-59c7e1dab07b",
-          "independent": false,
-          "title": "Humans Are Responsible, Not the AI",
-          "summary": "Treasury just closed the “rogue agent” loophole. The Hugging Face hack was a management failure. Washington is treating it that way. Continue reading on Medium »",
-          "published_at": "2026-09-23T19:47:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1922e2a93f8f6aba",
-      "title": "My Best Engineer Asked Us to Stop Hiring Senior Developers. I Thought AI Had Finally Gone Too Far.",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@devrimkodlama/my-best-engineer-asked-us-to-stop-hiring-senior-developers-i-thought-ai-had-finally-gone-too-far-e878823e4565",
-          "target_url": "https://medium.com/@devrimkodlama/my-best-engineer-asked-us-to-stop-hiring-senior-developers-i-thought-ai-had-finally-gone-too-far-e878823e4565",
-          "independent": false,
-          "title": "My Best Engineer Asked Us to Stop Hiring Senior Developers. I Thought AI Had Finally Gone Too Far.",
-          "summary": "He was not trying to replace experienced engineers with cheaper people, because he believed our hiring process had started selecting… Continue reading on Medium »",
-          "published_at": "2026-09-23T19:46:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f4fb536a6fb3512b",
-      "title": "Before the LLM: Designing a Trustworthy Data Pipeline for RAG",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@miyyapuramshivapreetham/before-the-llm-designing-a-trustworthy-data-pipeline-for-rag-9c415c576603",
-          "target_url": "https://medium.com/@miyyapuramshivapreetham/before-the-llm-designing-a-trustworthy-data-pipeline-for-rag-9c415c576603",
-          "independent": false,
-          "title": "Before the LLM: Designing a Trustworthy Data Pipeline for RAG",
-          "summary": "When a retrieval-augmented generation (RAG) application gives a weak answer, it is tempting to start with the prompt or the model… Continue reading on Medium »",
-          "published_at": "2026-09-23T19:44:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2de06093ecbceaec",
-      "title": "Website System Prompt Steps I Wish I Knew When I Started",
-      "first_seen": "2026-09-24T05:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/codetodeploy/website-system-prompt-steps-i-wish-i-knew-when-i-started-3a8687f3b343",
-          "target_url": "https://medium.com/codetodeploy/website-system-prompt-steps-i-wish-i-knew-when-i-started-3a8687f3b343",
-          "independent": false,
-          "title": "Website System Prompt Steps I Wish I Knew When I Started",
-          "summary": "The step-by-step system prompt process I now follow on every single website project. Continue reading on CodeToDeploy »",
-          "published_at": "2026-09-23T19:43:06+00:00",
           "date_precision": "time"
         }
       ],
@@ -2003,27 +1752,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "dbb0f2d9b0aea483",
-      "title": "“Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6",
-      "first_seen": "2026-09-24T06:01:51+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/xiaomi-mimo-vs-6-open-source",
-          "target_url": "https://thenewstack.io/xiaomi-mimo-vs-6-open-source",
-          "independent": true,
-          "title": "“Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6",
-          "summary": "New models are coming out thick and fast, almost on a weekly cadence, ranging from the powerful proprietary systems coming The post “Impressive level of openness”: Xiaomi goes way beyond the usual open-weight playbook with MiMo-V2.6 appeared first on The New Stack .",
-          "published_at": "2026-09-23T20:00:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "0fd9912b8af2d6af",
@@ -4647,27 +4375,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "45ef5cdb91b3f3f3",
-      "title": "Bitrise Build Hub",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/bitrise",
-          "target_url": "https://www.producthunt.com/products/bitrise",
-          "independent": false,
-          "title": "Bitrise Build Hub",
-          "summary": "GitHub Actions runners that build 2x faster for your agents Discussion | Link",
-          "published_at": "2026-09-23T19:34:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "39bf123a7c044546",
       "title": "Apple Reference Image Signs Photos at the Sensor, Moving Provenance Trust Away from C2PA",
       "first_seen": "2026-09-24T16:02:29+09:00",
@@ -4902,27 +4609,6 @@
           "title": "Bitflix – MCP Apps Example Application for Video",
           "summary": "",
           "published_at": "2026-09-24T07:07:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1b01104434c44996",
-      "title": "Gemini 3.8 text-to-speech models",
-      "first_seen": "2026-09-24T17:01:27+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/gemini-3-8-text-to-speech-models",
-          "target_url": "https://www.producthunt.com/products/gemini-3-8-text-to-speech-models",
-          "independent": false,
-          "title": "Gemini 3.8 text-to-speech models",
-          "summary": "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS Discussion | Link",
-          "published_at": "2026-09-23T19:11:12+00:00",
           "date_precision": "time"
         }
       ],
@@ -20240,6 +19926,279 @@
           "title": "Silver’s Industrial Bid — AI Chips, Solar, and the Supply Deficit Story",
           "summary": "Silver isn’t just “gold’s cheaper cousin” in 2026. It is running its own economy. Continue reading on Medium »",
           "published_at": "2026-09-26T18:45:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "74289c09977528ef",
+      "title": "42x faster prompt lookup drafting in llama.cpp",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859982",
+          "target_url": "https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp",
+          "independent": false,
+          "title": "42x faster prompt lookup drafting in llama.cpp",
+          "summary": "",
+          "published_at": "2026-09-26T19:57:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6314434948345c60",
+      "title": "The Case for Learning in the Era of AI",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859979",
+          "target_url": "https://jonbehnken.substack.com/p/the-case-for-learning",
+          "independent": false,
+          "title": "The Case for Learning in the Era of AI",
+          "summary": "",
+          "published_at": "2026-09-26T19:57:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "49ff66e5f6cee5f6",
+      "title": "OpenAI: Self-replicating prompt injections exist",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859964",
+          "target_url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist",
+          "independent": false,
+          "title": "OpenAI: Self-replicating prompt injections exist",
+          "summary": "",
+          "published_at": "2026-09-26T19:55:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cf5332a7ef15a3dd",
+      "title": "AI Replacing Me? Please Do",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859894",
+          "target_url": "https://medium.com/@azolf/ai-replacing-me-please-do-e353ac6a4bc1",
+          "independent": false,
+          "title": "AI Replacing Me? Please Do",
+          "summary": "",
+          "published_at": "2026-09-26T19:46:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0677b353304528fb",
+      "title": "What will AI do to our jobs and our wages? [video]",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859885",
+          "target_url": "https://www.youtube.com/watch?v=qFf1_gRU2Lw",
+          "independent": false,
+          "title": "What will AI do to our jobs and our wages? [video]",
+          "summary": "",
+          "published_at": "2026-09-26T19:45:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ceb00dca4ab78ba5",
+      "title": "ChatGPT has a data synchronisation bug that can easily cause data loss",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859857",
+          "target_url": "https://emil.fi/d/chatgptdataloss.txt",
+          "independent": false,
+          "title": "ChatGPT has a data synchronisation bug that can easily cause data loss",
+          "summary": "",
+          "published_at": "2026-09-26T19:42:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e2234d50fb2c0ce2",
+      "title": "AI models have caught up with Unity dev",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859826",
+          "target_url": "https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my",
+          "independent": false,
+          "title": "AI models have caught up with Unity dev",
+          "summary": "",
+          "published_at": "2026-09-26T19:39:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "235a12f899aa5f67",
+      "title": "AI Exec: We May Have Pulled Off \"The Largest Theft of Labor in Human History\"",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49859799",
+          "target_url": "https://www.motherjones.com/politics/2026/09/openai-chatgpt-microsoft-copyright-legal-case-documents-revelations",
+          "independent": false,
+          "title": "AI Exec: We May Have Pulled Off \"The Largest Theft of Labor in Human History\"",
+          "summary": "",
+          "published_at": "2026-09-26T19:35:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c809317e04dbc25b",
+      "title": "Beyond Guardrails: The Case for a Psychology of AI",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@reishin.toolsi/beyond-guardrails-the-case-for-a-psychology-of-ai-0eaf7b1311eb",
+          "target_url": "https://medium.com/@reishin.toolsi/beyond-guardrails-the-case-for-a-psychology-of-ai-0eaf7b1311eb",
+          "independent": false,
+          "title": "Beyond Guardrails: The Case for a Psychology of AI",
+          "summary": "I’m all for regulation. But as AI evolves, we also have to understand what actually motivates it. Continue reading on Medium »",
+          "published_at": "2026-09-26T19:53:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c5f581a8d76ae8de",
+      "title": "My talk with Google part 1: The beginning",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jimccarterjr/my-talk-with-google-part-1-the-beginning-ca0e964dfd4c",
+          "target_url": "https://medium.com/@jimccarterjr/my-talk-with-google-part-1-the-beginning-ca0e964dfd4c",
+          "independent": false,
+          "title": "My talk with Google part 1: The beginning",
+          "summary": "I put \"Gyre Field Unified Consciousness Model\" into Google. The below is the conversation I had with Google AI. The Gyre Field Unified… Continue reading on Medium »",
+          "published_at": "2026-09-26T19:52:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a3fa4c5deb23bbd9",
+      "title": "WEEK 3 OF LEARNING PYTHON: A WISER PYTHON BABY, WITH MY LAPTOP STILL OPEN",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ezemaa41/week-3-of-learning-python-a-wiser-python-baby-with-my-laptop-still-open-fc6010982465",
+          "target_url": "https://medium.com/@ezemaa41/week-3-of-learning-python-a-wiser-python-baby-with-my-laptop-still-open-fc6010982465",
+          "independent": false,
+          "title": "WEEK 3 OF LEARNING PYTHON: A WISER PYTHON BABY, WITH MY LAPTOP STILL OPEN",
+          "summary": "Maths made an appearance, JSON finally made sense, and I kept going. Continue reading on Medium »",
+          "published_at": "2026-09-26T19:51:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "11ee23444cddebcb",
+      "title": "How to Turn Your Phone Into a Daily Money-Making Machine",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nouhkoussaimy19/how-to-turn-your-phone-into-a-daily-money-making-machine-695c1b71d2c7",
+          "target_url": "https://medium.com/@nouhkoussaimy19/how-to-turn-your-phone-into-a-daily-money-making-machine-695c1b71d2c7",
+          "independent": false,
+          "title": "How to Turn Your Phone Into a Daily Money-Making Machine",
+          "summary": "Photo by Clay Banks on Unsplash Continue reading on Medium »",
+          "published_at": "2026-09-26T19:41:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "44e666663222baff",
+      "title": "How to Remove Em Dashes from Essays, Articles, and Professional Writing",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@abdiftcr7/how-to-remove-em-dashes-from-essays-articles-and-professional-writing-57549296235a",
+          "target_url": "https://medium.com/@abdiftcr7/how-to-remove-em-dashes-from-essays-articles-and-professional-writing-57549296235a",
+          "independent": false,
+          "title": "How to Remove Em Dashes from Essays, Articles, and Professional Writing",
+          "summary": "Em dashes are useful punctuation marks, but they are not the preferred choice for every writer, classroom, workplace, or publication. If… Continue reading on Medium »",
+          "published_at": "2026-09-26T19:41:20+00:00",
           "date_precision": "time"
         }
       ],
