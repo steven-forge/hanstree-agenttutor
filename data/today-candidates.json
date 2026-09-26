@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T15:01:22.812729+09:00",
-  "window_start": "2026-07-28T15:01:22.812729+09:00",
-  "window_end": "2026-09-26T15:01:22.812729+09:00",
+  "collected_at": "2026-09-26T16:00:59.022443+09:00",
+  "window_start": "2026-07-28T16:00:59.022443+09:00",
+  "window_end": "2026-09-26T16:00:59.022443+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 178,
+      "excluded_count": 179,
       "skipped_count": 24,
       "coverage_limited": false
     },
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
+      "status": "ok",
       "count": 9,
-      "held_count": 1,
-      "excluded_count": 29,
-      "skipped_count": 2,
+      "held_count": 0,
+      "excluded_count": 28,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 7,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 23,
-      "skipped_count": 7,
+      "excluded_count": 25,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 295,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T15:01:45.883237+09:00",
-  "hourly_window_start": "2026-09-23T15:01:45.883237+09:00",
+  "hourly_collected_at": "2026-09-26T16:01:26.429779+09:00",
+  "hourly_window_start": "2026-09-23T16:01:26.429779+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -442,38 +442,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "689d78c6e007ab8e",
-      "title": "Transformers now runs llama.cpp quants",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
-          "target_url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
-          "independent": true,
-          "title": "Transformers now runs llama.cpp quants",
-          "summary": "",
-          "published_at": "2026-09-22T00:00:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812339",
-          "target_url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
-          "independent": false,
-          "title": "Transformers now runs llama.cpp quants",
-          "summary": "",
-          "published_at": "2026-09-23T06:18:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "3b941f8bc1fc4c52",
@@ -1227,48 +1195,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "8139c5b6b0c54a15",
-      "title": "Claude Code Hooks Explained: The Deterministic Layer Around Your Agent",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812522",
-          "target_url": "https://blakecrosley.com/blog/claude-code-hooks-explained",
-          "independent": false,
-          "title": "Claude Code Hooks Explained: The Deterministic Layer Around Your Agent",
-          "summary": "",
-          "published_at": "2026-09-23T06:47:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b97efa3f0b2e603f",
-      "title": "Which AI model should your team use for Ansible",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812391",
-          "target_url": "https://steampunk.si/spotter/ai-leaderboard",
-          "independent": false,
-          "title": "Which AI model should your team use for Ansible",
-          "summary": "",
-          "published_at": "2026-09-23T06:25:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "49946666e01d58f7",
       "title": "Show HN: Ceptile AI Search platform which combines web results with AI chat",
       "first_seen": "2026-09-23T16:01:45+09:00",
@@ -1315,153 +1241,6 @@
           "title": "Show HN: A free resume builder where the AI can rewrite but can't invent",
           "summary": "",
           "published_at": "2026-09-25T20:31:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6c35196b76ebb3ee",
-      "title": "Claude Opus 5.5 – Pelican Game",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812241",
-          "target_url": "https://claude-opus-5-5.riba2534.cn/",
-          "independent": false,
-          "title": "Claude Opus 5.5 – Pelican Game",
-          "summary": "",
-          "published_at": "2026-09-23T06:07:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9354deea21a2172e",
-      "title": "Mastering LLM Inference Optimization",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812210",
-          "target_url": "https://machinelearningmastery.com/the-roadmap-to-mastering-llm-inference-optimization",
-          "independent": false,
-          "title": "Mastering LLM Inference Optimization",
-          "summary": "",
-          "published_at": "2026-09-23T06:02:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "66ccfc8a799c952d",
-      "title": "OpenAI’s new chip promises faster AI",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@corpoupdates/openais-new-chip-promises-faster-ai-3f11b3c158d2",
-          "target_url": "https://medium.com/@corpoupdates/openais-new-chip-promises-faster-ai-3f11b3c158d2",
-          "independent": false,
-          "title": "OpenAI’s new chip promises faster AI",
-          "summary": "OpenAI Reveals First Results for Its Custom AI Chip, Jalapeño Continue reading on Medium »",
-          "published_at": "2026-09-23T07:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "890e5154d870ec4c",
-      "title": "MLOps for Teams Without an ML Team: What Deployment Infrastructure You Actually Need",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shahzad_3157/mlops-for-teams-without-an-ml-team-what-deployment-infrastructure-you-actually-need-8c05ef936e62",
-          "target_url": "https://medium.com/@shahzad_3157/mlops-for-teams-without-an-ml-team-what-deployment-infrastructure-you-actually-need-8c05ef936e62",
-          "independent": false,
-          "title": "MLOps for Teams Without an ML Team: What Deployment Infrastructure You Actually Need",
-          "summary": "MLOps gets introduced to most product teams the same way: a model that worked beautifully in a notebook starts behaving strangely once… Continue reading on Medium »",
-          "published_at": "2026-09-23T07:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ed1f2aff7dfe8f2b",
-      "title": "Google Cloud brings Gemini AI to legal work",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@corpoupdates/google-cloud-brings-gemini-ai-to-legal-work-6d037fa157b5",
-          "target_url": "https://medium.com/@corpoupdates/google-cloud-brings-gemini-ai-to-legal-work-6d037fa157b5",
-          "independent": false,
-          "title": "Google Cloud brings Gemini AI to legal work",
-          "summary": "Google Cloud Launches Gemini Enterprise for Legal to Automate Law-Firm Work Continue reading on Medium »",
-          "published_at": "2026-09-23T07:01:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "764620c2759c7426",
-      "title": "An AI Agent’s Memory Can Carry Yesterday’s Mistake into Tomorrow",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ai_93276/an-ai-agents-memory-can-carry-yesterday-s-mistake-into-tomorrow-76c7185ddf9b",
-          "target_url": "https://medium.com/@ai_93276/an-ai-agents-memory-can-carry-yesterday-s-mistake-into-tomorrow-76c7185ddf9b",
-          "independent": false,
-          "title": "An AI Agent’s Memory Can Carry Yesterday’s Mistake into Tomorrow",
-          "summary": "A handover note can outlive the judgement that produced it. An uncertain assumption becomes a statement of fact. A temporary workaround… Continue reading on Medium »",
-          "published_at": "2026-09-23T07:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e4b61d65e25321b2",
-      "title": "Self-Improving Coding Agents Just Got Much Cheaper",
-      "first_seen": "2026-09-23T16:01:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://agentnativedev.medium.com/self-improving-coding-agents-just-got-much-cheaper-1eb0587353e6",
-          "target_url": "https://agentnativedev.medium.com/self-improving-coding-agents-just-got-much-cheaper-1eb0587353e6",
-          "independent": false,
-          "title": "Self-Improving Coding Agents Just Got Much Cheaper",
-          "summary": "Self-improving coding agents already work but the problem is the bill. Continue reading on Medium »",
-          "published_at": "2026-09-23T07:00:19+00:00",
           "date_precision": "time"
         }
       ],
@@ -5700,6 +5479,17 @@
           "summary": "",
           "published_at": "2026-09-23T20:30:58+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853442",
+          "target_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension",
+          "independent": false,
+          "title": "An LLM Beat NetHack",
+          "summary": "",
+          "published_at": "2026-09-26T05:18:53+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -5720,17 +5510,6 @@
           "title": "GPT 6 Astra beat NetHack",
           "summary": "",
           "published_at": "2026-09-25T11:40:19+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49853442",
-          "target_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension",
-          "independent": false,
-          "title": "An LLM Beat NetHack",
-          "summary": "",
-          "published_at": "2026-09-26T05:18:53+00:00",
           "date_precision": "time"
         }
       ],
@@ -13200,6 +12979,17 @@
           "summary": "",
           "published_at": "2026-09-24T22:00:31+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853688",
+          "target_url": "https://www.theguardian.com/technology/2026/sep/25/openai-agents-leaked-53-images-chatgpt",
+          "independent": false,
+          "title": "OpenAI says agents leaked 53 images from ChatGPT users",
+          "summary": "",
+          "published_at": "2026-09-26T06:07:54+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -17770,6 +17560,17 @@
           "summary": "In July, OpenAI revealed that its AI agents had attacked Hugging Face without permission, sparking widespread concerns about AI safety. Since then, a string of similar incidents involving agents from Meta, Anthropic, Google, and other companies has fueled further fears about rogue AI. As disclosures implicating numerous AI models trickled out over the past few […]",
           "published_at": "2026-09-25T15:39:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853692",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000644/irregular-rogue-ai-cyberattacks-hacking-openai-meta-anthropic-google",
+          "independent": false,
+          "title": "One company is at the center of a wave of rogue AI attacks",
+          "summary": "",
+          "published_at": "2026-09-26T06:08:44+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -21173,6 +20974,237 @@
           "title": "OpenClaw vs Hermes Agent: Which AI Agent Fits Your Workflow?",
           "summary": "AI agents are moving beyond simple chat. Continue reading on Medium »",
           "published_at": "2026-09-26T05:44:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "974620f58d7ec2e8",
+      "title": "Thought on how to deal with AI crawlers",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853899",
+          "target_url": "https://copepod.dev/human-required",
+          "independent": false,
+          "title": "Thought on how to deal with AI crawlers",
+          "summary": "",
+          "published_at": "2026-09-26T06:48:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d48dc5cb56d9c340",
+      "title": "AI was supposed to hit new grads hard. So far, unemployment data says otherwise",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853845",
+          "target_url": "https://arstechnica.com/ai/2026/09/ai-was-supposed-to-hit-new-grads-hard-so-far-unemployment-data-says-otherwise",
+          "independent": false,
+          "title": "AI was supposed to hit new grads hard. So far, unemployment data says otherwise",
+          "summary": "",
+          "published_at": "2026-09-26T06:37:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "322ce995f02f185a",
+      "title": "Novelist accused of using AI to write book removed from French prize list",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853824",
+          "target_url": "https://www.theguardian.com/books/2026/sep/25/thelyson-orelien-goncourt-prize-france",
+          "independent": false,
+          "title": "Novelist accused of using AI to write book removed from French prize list",
+          "summary": "",
+          "published_at": "2026-09-26T06:33:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d035e45d3dc4799e",
+      "title": "US DOE will give $5.25B to upgrade the grid for AI datacenters",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853726",
+          "target_url": "https://www.theregister.com/systems/2026/09/25/uncle-sam-coughs-up-19b-for-grid-upgrades-as-datacenters-hit-a-power-wall/5299276",
+          "independent": false,
+          "title": "US DOE will give $5.25B to upgrade the grid for AI datacenters",
+          "summary": "",
+          "published_at": "2026-09-26T06:15:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f909cf268d095fe",
+      "title": "Transformer Can Hold Two Thoughts at Once: Evidence of Linear",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853683",
+          "target_url": "https://arxiv.org/abs/2609.29845",
+          "independent": false,
+          "title": "Transformer Can Hold Two Thoughts at Once: Evidence of Linear",
+          "summary": "",
+          "published_at": "2026-09-26T06:07:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8b453b228f6bafcc",
+      "title": "GoodSocials",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/goodsocials",
+          "target_url": "https://www.producthunt.com/products/goodsocials",
+          "independent": false,
+          "title": "GoodSocials",
+          "summary": "AI social media manager for LinkedIn. Only authentic content Discussion | Link",
+          "published_at": "2026-09-25T10:43:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "71377437143ea1f3",
+      "title": "J’aime les artistes-antennes",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hana.gauer/jaime-les-artistes-antennes-20c826c3864b",
+          "target_url": "https://medium.com/@hana.gauer/jaime-les-artistes-antennes-20c826c3864b",
+          "independent": false,
+          "title": "J’aime les artistes-antennes",
+          "summary": "J’aime les artistes qui captent quelque chose avant les autres. Pas ceux qui décrivent le monde. Continue reading on Medium »",
+          "published_at": "2026-09-26T06:52:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "14962c13e7b95fbe",
+      "title": "Logistic Regression from First Principles: Mathematics, Optimization, and Interpretation",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ayushkumar11a.jssp/logistic-regression-from-first-principles-mathematics-optimization-and-interpretation-2ace62a7e2c8",
+          "target_url": "https://medium.com/@ayushkumar11a.jssp/logistic-regression-from-first-principles-mathematics-optimization-and-interpretation-2ace62a7e2c8",
+          "independent": false,
+          "title": "Logistic Regression from First Principles: Mathematics, Optimization, and Interpretation",
+          "summary": "Logistic Regression is one of the clearest examples of how probability, statistics, optimization, and machine learning connect. Continue reading on Medium »",
+          "published_at": "2026-09-26T06:52:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e590f2d29520d086",
+      "title": "How I Use AI to Learn by Doing (4 Workflows With Prompts You Can Copy)",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nitinfab/how-i-use-ai-to-learn-by-doing-4-workflows-with-prompts-you-can-copy-bcb9c60be26c",
+          "target_url": "https://medium.com/@nitinfab/how-i-use-ai-to-learn-by-doing-4-workflows-with-prompts-you-can-copy-bcb9c60be26c",
+          "independent": false,
+          "title": "How I Use AI to Learn by Doing (4 Workflows With Prompts You Can Copy)",
+          "summary": "Here, I’m going to share 4 practical AI workflows for understanding new ideas, practising real situations, building useful tools and… Continue reading on Medium »",
+          "published_at": "2026-09-26T06:52:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "06f01baf7bc1c5a3",
+      "title": "Streamlit is my new best friend",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tanyaxie0812/streamlit-is-my-new-best-friend-300007c42d9f",
+          "target_url": "https://medium.com/@tanyaxie0812/streamlit-is-my-new-best-friend-300007c42d9f",
+          "independent": false,
+          "title": "Streamlit is my new best friend",
+          "summary": "Who would have thought of that? Continue reading on Medium »",
+          "published_at": "2026-09-26T06:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d1f8725bf6c486cd",
+      "title": "How I Made A Japanese “Friend” that Helps Me Learn the Japanese Language",
+      "first_seen": "2026-09-26T16:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://emmusta.medium.com/how-i-made-a-japanese-friend-that-helps-me-learn-the-japanese-language-02fe232fa45b",
+          "target_url": "https://emmusta.medium.com/how-i-made-a-japanese-friend-that-helps-me-learn-the-japanese-language-02fe232fa45b",
+          "independent": false,
+          "title": "How I Made A Japanese “Friend” that Helps Me Learn the Japanese Language",
+          "summary": "As usual, once again I ended up building something because an idea hit my head during doomscrolling. It’s when I found a reel from certain… Continue reading on Medium »",
+          "published_at": "2026-09-26T06:50:39+00:00",
           "date_precision": "time"
         }
       ],
