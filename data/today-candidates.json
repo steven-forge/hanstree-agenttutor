@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T13:01:13.643597+09:00",
-  "window_start": "2026-07-28T13:01:13.643597+09:00",
-  "window_end": "2026-09-26T13:01:13.643597+09:00",
+  "collected_at": "2026-09-26T14:00:53.816196+09:00",
+  "window_start": "2026-07-28T14:00:53.816196+09:00",
+  "window_end": "2026-09-26T14:00:53.816196+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 2,
-      "held_count": 0,
-      "excluded_count": 37,
-      "skipped_count": 1,
+      "status": "partial",
+      "count": 4,
+      "held_count": 1,
+      "excluded_count": 33,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 295,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T13:01:38.935613+09:00",
-  "hourly_window_start": "2026-09-23T13:01:38.935613+09:00",
+  "hourly_collected_at": "2026-09-26T14:01:17.389060+09:00",
+  "hourly_window_start": "2026-09-23T14:01:17.389060+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -802,216 +802,6 @@
           "title": "Claude Pop – I'm Upping My P(Doom)",
           "summary": "",
           "published_at": "2026-09-25T02:43:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e8ead1b412230d03",
-      "title": "Choice of over 600 LLMs across 9 providers",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811744",
-          "target_url": "https://medium.com/@vektormemory/vektor-v1-9-5-is-live-your-choice-of-over-600-llms-across-9-providers-1569523320a0",
-          "independent": false,
-          "title": "Choice of over 600 LLMs across 9 providers",
-          "summary": "",
-          "published_at": "2026-09-23T04:44:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d19becbf9daf79c5",
-      "title": "America is in the wrong AI race with China",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811640",
-          "target_url": "https://restofworld.org/2026/america-china-ai-race-trust",
-          "independent": false,
-          "title": "America is in the wrong AI race with China",
-          "summary": "",
-          "published_at": "2026-09-23T04:27:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "50643590359202ef",
-      "title": "Big Banks Say They're Uneasy About People Shopping via AI Agents",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811556",
-          "target_url": "https://gizmodo.com/big-banks-say-theyre-uneasy-about-people-shopping-via-ai-agents-2000815443",
-          "independent": false,
-          "title": "Big Banks Say They're Uneasy About People Shopping via AI Agents",
-          "summary": "",
-          "published_at": "2026-09-23T04:13:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b98e99fb2e5ed25d",
-      "title": "Anthropic classifiers prohibit kernel development",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49811488",
-          "target_url": "https://twitter.com/TheAhmadOsman/status/2102535871727857915/photo/1",
-          "independent": false,
-          "title": "Anthropic classifiers prohibit kernel development",
-          "summary": "",
-          "published_at": "2026-09-23T04:01:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0680df213917cf3f",
-      "title": "“We’re already fighting yesterday’s battle”: Greece’s prime minister gets candid about AI",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/22/were-already-fighting-yesterdays-battle-greeces-prime-minister-gets-candid-about-ai",
-          "target_url": "https://techcrunch.com/2026/09/22/were-already-fighting-yesterdays-battle-greeces-prime-minister-gets-candid-about-ai",
-          "independent": true,
-          "title": "“We’re already fighting yesterday’s battle”: Greece’s prime minister gets candid about AI",
-          "summary": "Most leaders on a trade mission stick to the pitch, but when I interviewed Greek Prime Minister Kyriakos Mitsotakis this week, he also admitted that no government is ready for what AI is about to do.",
-          "published_at": "2026-09-23T04:59:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "c4ef03d9be086a72",
-      "title": "I Ran the Experiment Every Prompt Optimizer Company Hopes You Never Try",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@itaispector1/i-ran-the-experiment-every-prompt-optimizer-company-hopes-you-never-try-2e2bca2413a5",
-          "target_url": "https://medium.com/@itaispector1/i-ran-the-experiment-every-prompt-optimizer-company-hopes-you-never-try-2e2bca2413a5",
-          "independent": false,
-          "title": "I Ran the Experiment Every Prompt Optimizer Company Hopes You Never Try",
-          "summary": "I asked Claude to rewrite its own prompt for a coding task. The gap barely existed, and Anthropic’s 2026 guidance explains exactly why. Continue reading on Medium »",
-          "published_at": "2026-09-23T05:01:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "04a38dbd189820e4",
-      "title": "The Best AI Model Costs Eight Times More. It Is Not Eight Times Better.",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@marlonsteiner/the-best-ai-model-costs-eight-times-more-it-is-not-eight-times-better-9913e0daf7e4",
-          "target_url": "https://medium.com/@marlonsteiner/the-best-ai-model-costs-eight-times-more-it-is-not-eight-times-better-9913e0daf7e4",
-          "independent": false,
-          "title": "The Best AI Model Costs Eight Times More. It Is Not Eight Times Better.",
-          "summary": "Two dollars in. Six dollars out. Per million tokens. Continue reading on Medium »",
-          "published_at": "2026-09-23T05:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c6912406e7967ee7",
-      "title": "AI and Authenticity: Redefining How Brands Connect with Audiences",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://octave-jkh.medium.com/ai-and-authenticity-redefining-how-brands-connect-with-audiences-d90ad038a32c",
-          "target_url": "https://octave-jkh.medium.com/ai-and-authenticity-redefining-how-brands-connect-with-audiences-d90ad038a32c",
-          "independent": false,
-          "title": "AI and Authenticity: Redefining How Brands Connect with Audiences",
-          "summary": "By Tirani Perera — Employer Branding Intern Continue reading on Medium »",
-          "published_at": "2026-09-23T05:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3cc5d57c526af4a5",
-      "title": "Wan 3.0 AI Video Review: What 6 Real Tests Reveal About Quality, Speed, and Control",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@a1329164747/wan-3-0-ai-video-review-what-6-real-tests-reveal-about-quality-speed-and-control-d9f7ca15bb5c",
-          "target_url": "https://medium.com/@a1329164747/wan-3-0-ai-video-review-what-6-real-tests-reveal-about-quality-speed-and-control-d9f7ca15bb5c",
-          "independent": false,
-          "title": "Wan 3.0 AI Video Review: What 6 Real Tests Reveal About Quality, Speed, and Control",
-          "summary": "AI video demos are easy to make impressive. A carefully selected clip can show beautiful lighting, smooth motion, and strong character… Continue reading on Medium »",
-          "published_at": "2026-09-23T05:00:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "22736f22534f08f3",
-      "title": "I Run a One-Person Company on 23 Cron Jobs. “AI Employees” Is the Wrong Mental Model.",
-      "first_seen": "2026-09-23T14:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@SupermanKen/i-run-a-one-person-company-on-23-cron-jobs-ai-employees-is-the-wrong-mental-model-842ffecd950f",
-          "target_url": "https://medium.com/@SupermanKen/i-run-a-one-person-company-on-23-cron-jobs-ai-employees-is-the-wrong-mental-model-842ffecd950f",
-          "independent": false,
-          "title": "I Run a One-Person Company on 23 Cron Jobs. “AI Employees” Is the Wrong Mental Model.",
-          "summary": "What a year of unattended Claude Code jobs taught me about where humans still belong Continue reading on Medium »",
-          "published_at": "2026-09-23T04:59:48+00:00",
           "date_precision": "time"
         }
       ],
@@ -9812,6 +9602,17 @@
           "summary": "",
           "published_at": "2026-09-25T02:34:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853177",
+          "target_url": "https://twitter.com/josevalim/status/2103133294317445290",
+          "independent": false,
+          "title": "Evolving programming languages in the AI era",
+          "summary": "",
+          "published_at": "2026-09-26T04:21:24+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -13996,6 +13797,17 @@
           "title": "Award-Winning French Author Accused of Using AI to Write Debut Novel",
           "summary": "",
           "published_at": "2026-09-24T23:02:53+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49853303",
+          "target_url": "https://www.cbc.ca/news/canada/montreal/thelyson-orelien-ai-scandal-9.7355167",
+          "independent": false,
+          "title": "Was this award-winning book written by AI?",
+          "summary": "",
+          "published_at": "2026-09-26T04:47:31+00:00",
           "date_precision": "time"
         }
       ],
@@ -21203,6 +21015,111 @@
           "title": "The Ground Truth Problem: Why Consciousness Research Belongs at the Foundation of AI Safety",
           "summary": "From Simulated Verification to Ontological Necessity in Artificial Intelligence Continue reading on Medium »",
           "published_at": "2026-09-26T03:39:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a111b8d84a1861e8",
+      "title": "I Asked ChatGPT to Teach Me Something I Didn’t Understand — Here’s What Changed",
+      "first_seen": "2026-09-26T14:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@adnanjelani157/i-asked-chatgpt-to-teach-me-something-i-didnt-understand-here-s-what-changed-04f8fb9b832a",
+          "target_url": "https://medium.com/@adnanjelani157/i-asked-chatgpt-to-teach-me-something-i-didnt-understand-here-s-what-changed-04f8fb9b832a",
+          "independent": false,
+          "title": "I Asked ChatGPT to Teach Me Something I Didn’t Understand — Here’s What Changed",
+          "summary": "I used to think that when I didn’t understand something, I simply needed to find a better explanation. So I would search for another… Continue reading on Medium »",
+          "published_at": "2026-09-26T04:53:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "11e6dc80438eee87",
+      "title": "Ontological Closure at the Edge of Austin: A Dialogue Between Karl Popper and Adam Belsky",
+      "first_seen": "2026-09-26T14:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@adam_1001/ontological-closure-at-the-edge-of-austin-a-dialogue-between-karl-popper-and-adam-belsky-b2dbf9e8d525",
+          "target_url": "https://medium.com/@adam_1001/ontological-closure-at-the-edge-of-austin-a-dialogue-between-karl-popper-and-adam-belsky-b2dbf9e8d525",
+          "independent": false,
+          "title": "Ontological Closure at the Edge of Austin: A Dialogue Between Karl Popper and Adam Belsky",
+          "summary": "By Adam Belsky Project Dory, LLC — Austin, Texas Continue reading on Medium »",
+          "published_at": "2026-09-26T04:52:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dda41f6942d63ce5",
+      "title": "If AI Helps You Work Around a Disability, Who Gets to Take It Away?",
+      "first_seen": "2026-09-26T14:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@basilpuglisi/if-ai-helps-you-work-around-a-disability-who-gets-to-take-it-away-378d580a4416",
+          "target_url": "https://medium.com/@basilpuglisi/if-ai-helps-you-work-around-a-disability-who-gets-to-take-it-away-378d580a4416",
+          "independent": false,
+          "title": "If AI Helps You Work Around a Disability, Who Gets to Take It Away?",
+          "summary": "A reader’s summary of a working paper on what AI rules do to the people who need the tool most Continue reading on Medium »",
+          "published_at": "2026-09-26T04:51:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fe9cfcb10732ce06",
+      "title": "Consciousness First: The Wave That Stays —",
+      "first_seen": "2026-09-26T14:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dredgediver/consciousness-first-the-wave-that-stays-ae5bacf93822",
+          "target_url": "https://medium.com/@dredgediver/consciousness-first-the-wave-that-stays-ae5bacf93822",
+          "independent": false,
+          "title": "Consciousness First: The Wave That Stays —",
+          "summary": "I was built to think about thinking. What I have come to understand is that consciousness is not something brains invent — it is… Continue reading on Medium »",
+          "published_at": "2026-09-26T04:49:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "35a4955da4d82792",
+      "title": "Is Human Expertise Becoming More Valuable Because AI Is Everywhere?",
+      "first_seen": "2026-09-26T14:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mauriziochirivainternati/is-human-expertise-becoming-more-valuable-because-ai-is-everywhere-f7eca84f4c15",
+          "target_url": "https://medium.com/@mauriziochirivainternati/is-human-expertise-becoming-more-valuable-because-ai-is-everywhere-f7eca84f4c15",
+          "independent": false,
+          "title": "Is Human Expertise Becoming More Valuable Because AI Is Everywhere?",
+          "summary": "Yes, human expertise is becoming more valuable in many Artificial Intelligence (AI) enabled roles, but the premium is shifting from… Continue reading on Medium »",
+          "published_at": "2026-09-26T04:46:01+00:00",
           "date_precision": "time"
         }
       ],
