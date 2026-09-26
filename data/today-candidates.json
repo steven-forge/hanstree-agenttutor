@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T20:00:53.067201+09:00",
-  "window_start": "2026-07-28T20:00:53.067201+09:00",
-  "window_end": "2026-09-26T20:00:53.067201+09:00",
+  "collected_at": "2026-09-26T21:00:56.384306+09:00",
+  "window_start": "2026-07-28T21:00:56.384306+09:00",
+  "window_end": "2026-09-26T21:00:56.384306+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 9,
       "held_count": 0,
       "excluded_count": 28,
-      "skipped_count": 3,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -125,7 +125,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 10,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 4,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 4,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 11,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 4,
+      "excluded_count": 3,
       "skipped_count": 11,
       "coverage_limited": false
     },
@@ -277,10 +277,10 @@
     }
   ],
   "new_count": 0,
-  "archive_count": 295,
+  "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T20:01:19.710240+09:00",
-  "hourly_window_start": "2026-09-23T20:01:19.710240+09:00",
+  "hourly_collected_at": "2026-09-26T21:01:18.198931+09:00",
+  "hourly_window_start": "2026-09-23T21:01:18.198931+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -659,27 +659,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "be6968ec79c097f4",
-      "title": "What if we created a local AI tool to measure your security?",
-      "first_seen": "2026-09-23T12:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814638",
-          "target_url": "https://github.com/just-not-google/BiNeuron",
-          "independent": false,
-          "title": "What if we created a local AI tool to measure your security?",
-          "summary": "",
-          "published_at": "2026-09-23T11:47:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "a009f1a2bdf65066",
@@ -1189,6 +1168,17 @@
           "summary": "",
           "published_at": "2026-09-26T10:24:33+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829882",
+          "target_url": "https://app2api.com/",
+          "independent": false,
+          "title": "Show HN: App2Api – App actions into API calls for LLMs",
+          "summary": "",
+          "published_at": "2026-09-24T12:50:37+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1274,279 +1264,6 @@
           "title": "Recursive self-improvement of AI research agents",
           "summary": "",
           "published_at": "2026-09-23T17:47:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2a213212e776df0f",
-      "title": "Show HN: Red-team your AI agent",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814754",
-          "target_url": "https://www.botgauge.com",
-          "independent": false,
-          "title": "Show HN: Red-team your AI agent",
-          "summary": "",
-          "published_at": "2026-09-23T11:58:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2456f4a77fdb260a",
-      "title": "Jev-serve: Run latest qwen3.8, other frozen LLM models, mlx-supported",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814680",
-          "target_url": "https://github.com/rreinold/jev-serve",
-          "independent": false,
-          "title": "Jev-serve: Run latest qwen3.8, other frozen LLM models, mlx-supported",
-          "summary": "",
-          "published_at": "2026-09-23T11:51:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c598635a839c738d",
-      "title": "GPT-6 Astra is the best vision model",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814643",
-          "target_url": "https://blog.roboflow.com/gpt-6-astra-vision",
-          "independent": false,
-          "title": "GPT-6 Astra is the best vision model",
-          "summary": "",
-          "published_at": "2026-09-23T11:47:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6847e187e7f7d807",
-      "title": "Samsung's AI fridges shut down after update, causes outrage",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814481",
-          "target_url": "https://www.notebookcheck.net/The-refrigerator-is-dead-Samsung-s-AI-fridges-shut-down-after-update-causes-outrage.1406447.0.html",
-          "independent": false,
-          "title": "Samsung's AI fridges shut down after update, causes outrage",
-          "summary": "",
-          "published_at": "2026-09-23T11:33:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "78d656581d748aa1",
-      "title": "Universal Agent HP – 10-layer autonomous AI agent OS (free or local)",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814428",
-          "target_url": "https://github.com/kapitan00000978-sketch/Universal-Agent-HP",
-          "independent": false,
-          "title": "Universal Agent HP – 10-layer autonomous AI agent OS (free or local)",
-          "summary": "",
-          "published_at": "2026-09-23T11:28:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3939dfcfbd1b6aa0",
-      "title": "Anthropic Is Suing Meta",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814326",
-          "target_url": "https://twitter.com/bunjavascript/status/2102630092451217782",
-          "independent": false,
-          "title": "Anthropic Is Suing Meta",
-          "summary": "",
-          "published_at": "2026-09-23T11:17:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "90810628123cd78e",
-      "title": "The Download: why AI's latest breakthroughs and fears may be more hype than rea",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49814211",
-          "target_url": "https://www.technologyreview.com/2026/09/22/1144910/the-download-dont-believe-ai-hype",
-          "independent": false,
-          "title": "The Download: why AI's latest breakthroughs and fears may be more hype than rea",
-          "summary": "",
-          "published_at": "2026-09-23T11:01:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "716a82fce17735ae",
-      "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/999249/openai-creators-patreon-execs-hire-sam-yam",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/999249/openai-creators-patreon-execs-hire-sam-yam",
-          "independent": true,
-          "title": "OpenAI nabs key Patreon execs ahead of upcoming announcement",
-          "summary": "OpenAI has hired three former Patreon execs to anchor its product strategy for creators. After starting the creator subscription platform 13 years ago, co-founder and technology chief Sam Yam announced on X that he's joining OpenAI to lead Creator Product. He's also bringing Patreon's former product head Drew Rowny and engineering head Shannon Ma with […]",
-          "published_at": "2026-09-23T11:02:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "f0fb07966784ee30",
-      "title": "One of the easiest mistakes is choosing the output format before thinking about the actual task.",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://loveocr.medium.com/one-of-the-easiest-mistakes-is-choosing-the-output-format-before-thinking-about-the-actual-task-0a627bf2f001",
-          "target_url": "https://loveocr.medium.com/one-of-the-easiest-mistakes-is-choosing-the-output-format-before-thinking-about-the-actual-task-0a627bf2f001",
-          "independent": false,
-          "title": "One of the easiest mistakes is choosing the output format before thinking about the actual task.",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-23T11:47:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d0bdd67357c635ed",
-      "title": "How Large Language Models Actually Generate Answers",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dprasadbairwa1997/how-large-language-models-actually-generate-answers-0cf66818ee81",
-          "target_url": "https://medium.com/@dprasadbairwa1997/how-large-language-models-actually-generate-answers-0cf66818ee81",
-          "independent": false,
-          "title": "How Large Language Models Actually Generate Answers",
-          "summary": "Prefill, decode, and what every sampling parameter really does to the next token. Continue reading on Medium »",
-          "published_at": "2026-09-23T11:46:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "578fb04d7c651e6f",
-      "title": "Top iOS App Development Companies in India",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@alexmercer.techo/top-ios-app-development-companies-in-india-0a797734f4b0",
-          "target_url": "https://medium.com/@alexmercer.techo/top-ios-app-development-companies-in-india-0a797734f4b0",
-          "independent": false,
-          "title": "Top iOS App Development Companies in India",
-          "summary": "While Android dominates in raw device numbers globally, iOS remains the platform of choice for businesses targeting higher-spending users… Continue reading on Medium »",
-          "published_at": "2026-09-23T11:46:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3e9df0d0bbcd4331",
-      "title": "The war over a piece of silicon",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://aiadvances.org/the-war-over-a-piece-of-silicon-d642f3a8c9f8",
-          "target_url": "https://aiadvances.org/the-war-over-a-piece-of-silicon-d642f3a8c9f8",
-          "independent": false,
-          "title": "The war over a piece of silicon",
-          "summary": "The most important technology on earth is also one of the hardest things humans have ever learned to make. Continue reading on AI Advances »",
-          "published_at": "2026-09-23T11:43:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6d7e8e0bb12557da",
-      "title": "When AI Saves Time — and When It Only Moves the Work",
-      "first_seen": "2026-09-23T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@omanyuk/when-ai-saves-time-and-when-it-only-moves-the-work-7dce9d192981",
-          "target_url": "https://medium.com/@omanyuk/when-ai-saves-time-and-when-it-only-moves-the-work-7dce9d192981",
-          "independent": false,
-          "title": "When AI Saves Time — and When It Only Moves the Work",
-          "summary": "A research-based perspective on AI agent productivity, test-time compute, verification costs, and the economics of reusable workflows Continue reading on Medium »",
-          "published_at": "2026-09-23T11:42:18+00:00",
           "date_precision": "time"
         }
       ],
@@ -1736,27 +1453,6 @@
           "title": "Spotify’s is giving you the keys to its recommendation algorithm with US launch of ‘Taste Profile’",
           "summary": "Spotify is rolling out Taste Profile to Premium users in the U.S., letting listeners see how the streamer understands their tastes and use natural language to reshape their recommendations",
           "published_at": "2026-09-23T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "1898b8cd3bcc2449",
-      "title": "Ema raises $77M as AI starts eating into enterprise software and services",
-      "first_seen": "2026-09-23T22:02:59+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/23/ema-raises-77m-as-ai-starts-eating-into-enterprise-software-and-services",
-          "target_url": "https://techcrunch.com/2026/09/23/ema-raises-77m-as-ai-starts-eating-into-enterprise-software-and-services",
-          "independent": true,
-          "title": "Ema raises $77M as AI starts eating into enterprise software and services",
-          "summary": "Ema has raised $140 million to date and has more than 50 enterprise customers, including Google and Microsoft.",
-          "published_at": "2026-09-23T12:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -8742,27 +8438,6 @@
           "title": "Changing my mind about AI risk – Francis Fukuyama [video]",
           "summary": "",
           "published_at": "2026-09-24T12:53:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "43e19a649f25d4b6",
-      "title": "Show HN: App2Api – App actions into API calls for LLMs",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829882",
-          "target_url": "https://app2api.com/",
-          "independent": false,
-          "title": "Show HN: App2Api – App actions into API calls for LLMs",
-          "summary": "",
-          "published_at": "2026-09-24T12:50:37+00:00",
           "date_precision": "time"
         }
       ],
@@ -20805,7 +20480,280 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b3889b08408647ba",
+      "title": "Claude Opus 5.5 Should Raise Your Ambitions",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855670",
+          "target_url": "https://thezvi.substack.com/p/claude-opus-55-should-raise-your",
+          "independent": false,
+          "title": "Claude Opus 5.5 Should Raise Your Ambitions",
+          "summary": "",
+          "published_at": "2026-09-26T11:53:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ca5c17277e66e735",
+      "title": "Is the AI Bubble About to Be Tested?",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855610",
+          "target_url": "https://www.youtube.com/watch?v=T-oXyXwD6sE",
+          "independent": false,
+          "title": "Is the AI Bubble About to Be Tested?",
+          "summary": "",
+          "published_at": "2026-09-26T11:44:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "84e925882fbecef0",
+      "title": "Restricting AI Agents When No Human Is Watching",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855568",
+          "target_url": "https://a16y.ai/blog/securing-ai-agents-when-no-human-is-watching",
+          "independent": false,
+          "title": "Restricting AI Agents When No Human Is Watching",
+          "summary": "",
+          "published_at": "2026-09-26T11:35:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "996153d04f25f43d",
+      "title": "Focal Prompt: tools for studying how AI systems allocate attention",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855538",
+          "target_url": "https://www.focalprompt.com/",
+          "independent": false,
+          "title": "Focal Prompt: tools for studying how AI systems allocate attention",
+          "summary": "",
+          "published_at": "2026-09-26T11:31:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e393bf2345e16a6d",
+      "title": "An API that beats GPT-4V, Gemini and Claude at detecting photo rotation",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855467",
+          "target_url": "https://blueveta.com/upright/research",
+          "independent": false,
+          "title": "An API that beats GPT-4V, Gemini and Claude at detecting photo rotation",
+          "summary": "",
+          "published_at": "2026-09-26T11:22:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "00417c654af59a84",
+      "title": "Orca – Agent Development Environment (ADE) for shipping with coding agents",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855391",
+          "target_url": "https://olegdubovoi.com/thoughts/2026-09-26-orca-agent-development-environment-ade-for-shipping-with-coding-agents",
+          "independent": false,
+          "title": "Orca – Agent Development Environment (ADE) for shipping with coding agents",
+          "summary": "",
+          "published_at": "2026-09-26T11:09:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1400001cedeb8b2b",
+      "title": "Agentboxd – Email inboxes for AI agents that treat mail as hostile",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49855372",
+          "target_url": "https://agentboxd.com",
+          "independent": false,
+          "title": "Agentboxd – Email inboxes for AI agents that treat mail as hostile",
+          "summary": "",
+          "published_at": "2026-09-26T11:07:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a5b271b34e490fac",
+      "title": "Presentation: Adaptive Recommenders in the Real World: Inference, Evals, and System Design",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/presentations/adaptive-recommendation-systems-architecture",
+          "target_url": "https://www.infoq.com/presentations/adaptive-recommendation-systems-architecture",
+          "independent": true,
+          "title": "Presentation: Adaptive Recommenders in the Real World: Inference, Evals, and System Design",
+          "summary": "Mallika Rao explains that the true complexity of adaptive recommendation systems lies outside model architecture. She discusses how real-time feedback loops, retrieval freshness, multi-stage orchestration, and end-to-end latency budgeting enable systems to continuously learn and evolve in production under real-world operational constraints like latency, cost, and observability. By Mallika Rao",
+          "published_at": "2026-09-26T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "cb866f0717ada372",
+      "title": "When AI Agents Run a Town: What Emergence World Reveals About Multi-Agent AI Safety",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://aiadvances.org/when-ai-agents-run-a-town-what-emergence-world-reveals-about-multi-agent-ai-safety-98a095782b4a",
+          "target_url": "https://aiadvances.org/when-ai-agents-run-a-town-what-emergence-world-reveals-about-multi-agent-ai-safety-98a095782b4a",
+          "independent": false,
+          "title": "When AI Agents Run a Town: What Emergence World Reveals About Multi-Agent AI Safety",
+          "summary": "Clau‌de built a democracy, Gr‌o‌k’s⁠ tow​n die‌d i‌n⁠ four da⁠ys, and a​ “safe” model start‍e⁠d s​tealing whe⁠n it moved in with the wrong… Continue reading on AI Advances »",
+          "published_at": "2026-09-26T11:52:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d0a9434458064577",
+      "title": "What Makes an AI Agent? Follow One Order Investigation.",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/recohut-ai-labs/what-makes-an-ai-agent-follow-one-order-investigation-c9838452b0d7",
+          "target_url": "https://medium.com/recohut-ai-labs/what-makes-an-ai-agent-follow-one-order-investigation-c9838452b0d7",
+          "independent": false,
+          "title": "What Makes an AI Agent? Follow One Order Investigation.",
+          "summary": "A worked investigation with Python code, conflicting business records, a tool trace, and an inspectable result. Continue reading on Recohut AI Labs »",
+          "published_at": "2026-09-26T11:51:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "471acef755ddad1c",
+      "title": "Our Best Engineer Stopped Volunteering for Difficult Work. His Performance Review Got Better.",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/javarevisited/our-best-engineer-stopped-volunteering-for-difficult-work-his-performance-review-got-better-45b165f923c4",
+          "target_url": "https://medium.com/javarevisited/our-best-engineer-stopped-volunteering-for-difficult-work-his-performance-review-got-better-45b165f923c4",
+          "independent": false,
+          "title": "Our Best Engineer Stopped Volunteering for Difficult Work. His Performance Review Got Better.",
+          "summary": "He spent years taking the production incidents, failed migrations, legacy systems, and projects nobody wanted to own. Then he noticed that… Continue reading on Javarevisited »",
+          "published_at": "2026-09-26T11:50:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8c145d0a8cdf3d2f",
+      "title": "Why I Named It “MAMI Washoku”",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@selftrust.mami/why-i-named-it-mami-washoku-6df8b504a515",
+          "target_url": "https://medium.com/@selftrust.mami/why-i-named-it-mami-washoku-6df8b504a515",
+          "independent": false,
+          "title": "Why I Named It “MAMI Washoku”",
+          "summary": "Japanese Food as a Way to Return to Yourself and Build Self-Trust Continue reading on Medium »",
+          "published_at": "2026-09-26T11:50:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ab048c87982bfd39",
+      "title": "I Built an AI Research Assistant That Can Read a PDF and Answer Questions — Here’s What I Learned",
+      "first_seen": "2026-09-26T21:01:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@djssarangi38/i-built-an-ai-research-assistant-that-can-read-a-pdf-and-answer-questions-heres-what-i-learned-7cc4ad7fe891",
+          "target_url": "https://medium.com/@djssarangi38/i-built-an-ai-research-assistant-that-can-read-a-pdf-and-answer-questions-heres-what-i-learned-7cc4ad7fe891",
+          "independent": false,
+          "title": "I Built an AI Research Assistant That Can Read a PDF and Answer Questions — Here’s What I Learned",
+          "summary": "What if you could upload a 100-page research paper, ask a question in plain English, and instantly get an answer along with the page where… Continue reading on Medium »",
+          "published_at": "2026-09-26T11:50:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 1
+  "auto_published_count": 0
 }
