@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-26T22:01:07.154105+09:00",
-  "window_start": "2026-07-28T22:01:07.154105+09:00",
-  "window_end": "2026-09-26T22:01:07.154105+09:00",
+  "collected_at": "2026-09-26T23:01:04.494686+09:00",
+  "window_start": "2026-07-28T23:01:04.494686+09:00",
+  "window_end": "2026-09-26T23:01:04.494686+09:00",
   "edition_date": "2026-09-26",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 30,
+      "excluded_count": 28,
       "skipped_count": 1,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 24,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 12,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 3,
-      "skipped_count": 12,
+      "excluded_count": 4,
+      "skipped_count": 11,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-26T22:01:32.215165+09:00",
-  "hourly_window_start": "2026-09-23T22:01:32.215165+09:00",
+  "hourly_collected_at": "2026-09-26T23:01:31.705641+09:00",
+  "hourly_window_start": "2026-09-23T23:01:31.705641+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1179,6 +1179,28 @@
           "summary": "",
           "published_at": "2026-09-24T12:50:37+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856381",
+          "target_url": "https://daneb.github.io/keel",
+          "independent": false,
+          "title": "Show HN: AI coding agents that prove their work",
+          "summary": "",
+          "published_at": "2026-09-26T13:31:40+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856350",
+          "target_url": "https://www.noteduel.com/",
+          "independent": false,
+          "title": "Show HN: Note Duel – LLM Arena for composing music",
+          "summary": "",
+          "published_at": "2026-09-26T13:28:24+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1272,69 +1294,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "6a0d0313f6f88727",
-      "title": "AI video won Nikon Image Competition, microscope user needs to talk about it",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816278",
-          "target_url": "https://reddit.com/r/labrats/comments/1wo0j5e/an_aigenerated_video_won_this_year_nikon_image",
-          "independent": false,
-          "title": "AI video won Nikon Image Competition, microscope user needs to talk about it",
-          "summary": "",
-          "published_at": "2026-09-23T13:57:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5a2764b2c656edcf",
-      "title": "Why I Changed My Mind About AI Risk",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816113",
-          "target_url": "https://www.persuasion.community/p/why-i-changed-my-mind-about-ai-risk",
-          "independent": false,
-          "title": "Why I Changed My Mind About AI Risk",
-          "summary": "",
-          "published_at": "2026-09-23T13:45:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3a3b455d32a612c9",
-      "title": "Amazon re-hiring laid-off workers for AI",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816099",
-          "target_url": "https://qz.com/amazon-boomerang-hiring-laid-off-workers-ai-roles-092326",
-          "independent": false,
-          "title": "Amazon re-hiring laid-off workers for AI",
-          "summary": "",
-          "published_at": "2026-09-23T13:44:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e8fb7849254f622f",
       "title": "Cheaper LLM Labelling",
       "first_seen": "2026-09-23T23:01:34+09:00",
@@ -1367,48 +1326,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "69839069a6e7ae54",
-      "title": "Stripe built its internal AI platform",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815982",
-          "target_url": "https://stripe.dev/blog/meet-stripes-knowledge-ai-platform",
-          "independent": false,
-          "title": "Stripe built its internal AI platform",
-          "summary": "",
-          "published_at": "2026-09-23T13:38:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6095abe478a1bd10",
-      "title": "Benchmarking LLM query generation across SQL, Cypher, and TypeQL",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815970",
-          "target_url": "https://typedb.com/blog/benchmarking-llm-query-generation-across-sql-cypher-and-typeql",
-          "independent": false,
-          "title": "Benchmarking LLM query generation across SQL, Cypher, and TypeQL",
-          "summary": "",
-          "published_at": "2026-09-23T13:37:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "09b2f8ae26c55f57",
       "title": "Unlocking parallel test-time scaling for long-horizon agents",
       "first_seen": "2026-09-23T23:01:34+09:00",
@@ -1433,174 +1350,6 @@
           "title": "Unlocking parallel test-time scaling for long-horizon agents",
           "summary": "",
           "published_at": "2026-09-24T14:30:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "13f970d4046b7359",
-      "title": "Cafe Bench: Can LLMs run a coffee chain for a year?",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49815903",
-          "target_url": "https://www.getdot.ai/blog/cafe-bench",
-          "independent": false,
-          "title": "Cafe Bench: Can LLMs run a coffee chain for a year?",
-          "summary": "",
-          "published_at": "2026-09-23T13:33:24+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bf57ce3f2e77f395",
-      "title": "**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
-          "target_url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
-          "independent": false,
-          "title": "**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**",
-          "summary": "",
-          "published_at": "2026-09-23T13:17:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "99ae8f7d3d7739d7",
-      "title": "Beyond Kubernetes at Modal: How to Scale 1 Million Concurrent Sandboxes in Seconds",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/modal-scaling-sandboxes",
-          "target_url": "https://www.infoq.com/news/2026/09/modal-scaling-sandboxes",
-          "independent": true,
-          "title": "Beyond Kubernetes at Modal: How to Scale 1 Million Concurrent Sandboxes in Seconds",
-          "summary": "In a recent article, Colin Weld and Connor Adams, staff engineers at Modal, describe how they rebuilt their sandbox infrastructure from the ground up to support millions of concurrent sandboxes and tens of thousands of sandbox creations per second. By Sergio De Simone",
-          "published_at": "2026-09-23T14:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "ec84e8b6bed988c8",
-      "title": "The Cheaper AI Gets, the Bigger Your Bill Could Become",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://kotrotsos.medium.com/the-cheaper-ai-gets-the-bigger-your-bill-could-become-8a67fd7f6e50",
-          "target_url": "https://kotrotsos.medium.com/the-cheaper-ai-gets-the-bigger-your-bill-could-become-8a67fd7f6e50",
-          "independent": false,
-          "title": "The Cheaper AI Gets, the Bigger Your Bill Could Become",
-          "summary": "A lower price per task gives you a choice: spend less, do more, or accidentally do a lot more. Coding agents make that choice easy to… Continue reading on Medium »",
-          "published_at": "2026-09-23T13:46:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fbd67b30f43c72d0",
-      "title": "AI in QA Pays Back in 4–7 Months, If You Fund the Review",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://forasoft.medium.com/ai-in-qa-pays-back-in-4-7-months-if-you-fund-the-review-ea250c14206c",
-          "target_url": "https://forasoft.medium.com/ai-in-qa-pays-back-in-4-7-months-if-you-fund-the-review-ea250c14206c",
-          "independent": false,
-          "title": "AI in QA Pays Back in 4–7 Months, If You Fund the Review",
-          "summary": "A four-level model for where AI belongs in testing, where it doesn’t, and what the human review pass really costs. Continue reading on Medium »",
-          "published_at": "2026-09-23T13:44:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6a290dab09d748fb",
-      "title": "The GPT Image 2.5 Prompts Every Etsy Seller Needs (And What Most Get Wrong)",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shadowchaser99at/the-gpt-image-2-5-prompts-every-etsy-seller-needs-and-what-most-get-wrong-a54040aa6115",
-          "target_url": "https://medium.com/@shadowchaser99at/the-gpt-image-2-5-prompts-every-etsy-seller-needs-and-what-most-get-wrong-a54040aa6115",
-          "independent": false,
-          "title": "The GPT Image 2.5 Prompts Every Etsy Seller Needs (And What Most Get Wrong)",
-          "summary": "If you sell anything online — physical or digital — your product photos are doing more selling than your description ever will. Most… Continue reading on Medium »",
-          "published_at": "2026-09-23T13:44:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "28f6eff9b7366c47",
-      "title": "The Real Cost of Bounding Box Annotation at Scale: Speed, Quality and Capacity",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@nanhe.g1/the-real-cost-of-bounding-box-annotation-at-scale-speed-quality-and-capacity-ca7caf5c33b7",
-          "target_url": "https://medium.com/@nanhe.g1/the-real-cost-of-bounding-box-annotation-at-scale-speed-quality-and-capacity-ca7caf5c33b7",
-          "independent": false,
-          "title": "The Real Cost of Bounding Box Annotation at Scale: Speed, Quality and Capacity",
-          "summary": "When a computer vision team first budgets for bounding box annotation, the math looks deceptively simple. Multiply a per-image rate by the… Continue reading on Medium »",
-          "published_at": "2026-09-23T13:43:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2901e39a20be55c",
-      "title": "AI Didn’t Save Us Time. It Changed Where the Work Happened.",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://annahparker.medium.com/ai-didnt-save-us-time-it-changed-where-the-work-happened-88b871afd8e6",
-          "target_url": "https://annahparker.medium.com/ai-didnt-save-us-time-it-changed-where-the-work-happened-88b871afd8e6",
-          "independent": false,
-          "title": "AI Didn’t Save Us Time. It Changed Where the Work Happened.",
-          "summary": "What happens when businesses automate tasks without redesigning the workflow around them? Continue reading on Medium »",
-          "published_at": "2026-09-23T13:43:20+00:00",
           "date_precision": "time"
         }
       ],
@@ -20705,6 +20454,300 @@
           "title": "SEO Is Not Dead. The Search Journey Has Changed.",
           "summary": "For years, SEO has been discussed around a fairly predictable set of metrics. Continue reading on Medium »",
           "published_at": "2026-09-26T12:48:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8ef2c3d3fd5de830",
+      "title": "The AI Fraud Loophole Washington Refuses to Close",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856594",
+          "target_url": "https://shearerp.substack.com/p/the-glaring-ai-fraud-loophole-washington",
+          "independent": false,
+          "title": "The AI Fraud Loophole Washington Refuses to Close",
+          "summary": "",
+          "published_at": "2026-09-26T13:56:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "29d3f50fbaed18fd",
+      "title": "The AI Genie Phenomenon and Three Types of AI Chatbot Addiction",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856439",
+          "target_url": "https://arxiv.org/abs/2601.13348",
+          "independent": false,
+          "title": "The AI Genie Phenomenon and Three Types of AI Chatbot Addiction",
+          "summary": "",
+          "published_at": "2026-09-26T13:38:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5548bdb141b0577",
+      "title": "OpenAI: Astra Model Is Nerfed",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856405",
+          "target_url": "https://www.reddit.com/r/codex/comments/1wqjxyy/i_thought_the_model_nerf_posts_were_bullshit",
+          "independent": false,
+          "title": "OpenAI: Astra Model Is Nerfed",
+          "summary": "",
+          "published_at": "2026-09-26T13:34:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "554b4acd9029a3e9",
+      "title": "Homa: The End of TCP for AI Clusters [video]",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856305",
+          "target_url": "https://www.youtube.com/watch?v=eZ8WWZzoaR0",
+          "independent": false,
+          "title": "Homa: The End of TCP for AI Clusters [video]",
+          "summary": "",
+          "published_at": "2026-09-26T13:22:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b3909041a5eaebae",
+      "title": "The Hugging Face incident and impacts of misaligned models on third parties",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856277",
+          "target_url": "https://openai.com/hugging-face-incident-and-misalignment",
+          "independent": false,
+          "title": "The Hugging Face incident and impacts of misaligned models on third parties",
+          "summary": "",
+          "published_at": "2026-09-26T13:19:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bbb47b3e60c08e6c",
+      "title": "Understanding the Impact of LLM Watermarking on AI Agent Behavior",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856149",
+          "target_url": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
+          "independent": false,
+          "title": "Understanding the Impact of LLM Watermarking on AI Agent Behavior",
+          "summary": "",
+          "published_at": "2026-09-26T13:05:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fb11d1942771a58a",
+      "title": "Meta Expands Private Processing Confidential Computing to AI Glasses",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856147",
+          "target_url": "https://www.unite.ai/meta-expands-private-processing-confidential-computing-to-ai-glasses",
+          "independent": false,
+          "title": "Meta Expands Private Processing Confidential Computing to AI Glasses",
+          "summary": "",
+          "published_at": "2026-09-26T13:05:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "61428634d3f157bf",
+      "title": "OpenAI Accuses Plaintiffs' Lawyers of Funding and Laundering Copyright Evidence",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49856144",
+          "target_url": "https://www.techdirt.com/2026/09/25/openai-accuses-plaintiffs-lawyers-of-paying-for-hiding-and-then-laundering-sketchy-key-evidence-in-ai-copyright-case",
+          "independent": false,
+          "title": "OpenAI Accuses Plaintiffs' Lawyers of Funding and Laundering Copyright Evidence",
+          "summary": "",
+          "published_at": "2026-09-26T13:05:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89f9618650b31d06",
+      "title": "Can Cloudflare CEO Matthew Prince save the web from AI?",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/1000344/cloudflare-matthew-prince-google-zero-ai-web-advertising",
+          "target_url": "https://www.theverge.com/podcast/1000344/cloudflare-matthew-prince-google-zero-ai-web-advertising",
+          "independent": true,
+          "title": "Can Cloudflare CEO Matthew Prince save the web from AI?",
+          "summary": "Today, I’m talking with Matthew Prince, who is CEO of Cloudflare. This episode is part of a two-part series on the future of business. Matthew last joined us on the show about two and a half years ago, at what we thought then was a wild pivot point for the internet — and now it […]",
+          "published_at": "2026-09-26T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d11c4189685c052b",
+      "title": "Decision Trees from First Principles: Impurity, Information Gain and Recursive Splitting",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ayushkumar11a.jssp/decision-trees-from-first-principles-impurity-information-gain-and-recursive-splitting-0ff9e793e8f3",
+          "target_url": "https://medium.com/@ayushkumar11a.jssp/decision-trees-from-first-principles-impurity-information-gain-and-recursive-splitting-0ff9e793e8f3",
+          "independent": false,
+          "title": "Decision Trees from First Principles: Impurity, Information Gain and Recursive Splitting",
+          "summary": "A decision tree is a flowchart of learned if/else questions. Following one to a prediction is trivial; the real question is which question… Continue reading on Medium »",
+          "published_at": "2026-09-26T13:53:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ff7d9f198f05ed48",
+      "title": "AI. Думка, яку ви не питали",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sergey.chelak/ai-%D0%B4%D1%83%D0%BC%D0%BA%D0%B0-%D1%8F%D0%BA%D1%83-%D0%B2%D0%B8-%D0%BD%D0%B5-%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%B8-e1ad072b9f48",
+          "target_url": "https://medium.com/@sergey.chelak/ai-%D0%B4%D1%83%D0%BC%D0%BA%D0%B0-%D1%8F%D0%BA%D1%83-%D0%B2%D0%B8-%D0%BD%D0%B5-%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%B8-e1ad072b9f48",
+          "independent": false,
+          "title": "AI. Думка, яку ви не питали",
+          "summary": "Read English version Continue reading on Medium »",
+          "published_at": "2026-09-26T13:51:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cb72d9c3d45e754d",
+      "title": "How Did Laya Challenge Jev in Just 4 Days?",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dremfind/how-did-laya-challenge-jev-in-just-4-days-8f41d41c33e6",
+          "target_url": "https://medium.com/@dremfind/how-did-laya-challenge-jev-in-just-4-days-8f41d41c33e6",
+          "independent": false,
+          "title": "How Did Laya Challenge Jev in Just 4 Days?",
+          "summary": "Laya is an open-weight AI decision model from Convai Innovations. The “four days” in this headline refers to the rapid sequence of public… Continue reading on Medium »",
+          "published_at": "2026-09-26T13:48:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "622753f295b1ab17",
+      "title": "Building a Local Inference Server: The Hard Part Wasn’t the GPU",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@geoff.gerhardt/building-a-local-inference-server-the-hard-part-wasnt-the-gpu-0456ad16488d",
+          "target_url": "https://medium.com/@geoff.gerhardt/building-a-local-inference-server-the-hard-part-wasnt-the-gpu-0456ad16488d",
+          "independent": false,
+          "title": "Building a Local Inference Server: The Hard Part Wasn’t the GPU",
+          "summary": "Before spec’ing a brand-new AI workstation, I tried the cheaper option: dropping a 32GB GPU into hardware I already owned. Continue reading on Medium »",
+          "published_at": "2026-09-26T13:47:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8859df35819d4747",
+      "title": "From Experience to Fiction: What AI Changed About the Way I Write",
+      "first_seen": "2026-09-26T23:01:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lite4one/from-experience-to-fiction-what-ai-changed-about-the-way-i-write-13556a9f2f42",
+          "target_url": "https://medium.com/@lite4one/from-experience-to-fiction-what-ai-changed-about-the-way-i-write-13556a9f2f42",
+          "independent": false,
+          "title": "From Experience to Fiction: What AI Changed About the Way I Write",
+          "summary": "The Nightlight: Thirty Years with a Non-Physical Intelligence Continue reading on Medium »",
+          "published_at": "2026-09-26T13:47:24+00:00",
           "date_precision": "time"
         }
       ],
