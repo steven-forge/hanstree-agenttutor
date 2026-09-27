@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T22:01:08.687941+09:00",
-  "window_start": "2026-07-29T22:01:08.687941+09:00",
-  "window_end": "2026-09-27T22:01:08.687941+09:00",
+  "collected_at": "2026-09-27T23:01:04.530388+09:00",
+  "window_start": "2026-07-29T23:01:04.530388+09:00",
+  "window_end": "2026-09-27T23:01:04.530388+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 0,
+      "excluded_count": 33,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 2,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 2,
+      "excluded_count": 29,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T22:01:30.202613+09:00",
-  "hourly_window_start": "2026-09-24T22:01:30.202613+09:00",
+  "hourly_collected_at": "2026-09-27T23:01:36.212159+09:00",
+  "hourly_window_start": "2026-09-24T23:01:36.212159+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1975,90 +1975,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "0ce18787d3bec64a",
-      "title": "Show HN: A novel about an AI that starts asking questions, a chapter a day",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830013",
-          "target_url": "https://thought-is-free.com/read/ch01?from=hn",
-          "independent": false,
-          "title": "Show HN: A novel about an AI that starts asking questions, a chapter a day",
-          "summary": "",
-          "published_at": "2026-09-24T13:01:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ab23bd4e46d3f7b2",
-      "title": "AI labs' job-loss plans won't say what the public gets",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830688",
-          "target_url": "https://beigebook.xyz/posts/preparedness-theater",
-          "independent": false,
-          "title": "AI labs' job-loss plans won't say what the public gets",
-          "summary": "",
-          "published_at": "2026-09-24T13:58:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "29f24204f1157894",
-      "title": "AI could make more companies worth hacking, Anthropic report suggests",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830646",
-          "target_url": "https://fortune.com/2026/09/24/ai-could-make-more-companies-worth-hacking-anthropic-report-suggests",
-          "independent": false,
-          "title": "AI could make more companies worth hacking, Anthropic report suggests",
-          "summary": "",
-          "published_at": "2026-09-24T13:55:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "74d746b931c88148",
-      "title": "Our EU AI Act compliance engine has zero LLM calls, and CI blocks adding any",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830570",
-          "target_url": "https://opencomplai.com/blog/no-llm-in-compliance-decisions",
-          "independent": false,
-          "title": "Our EU AI Act compliance engine has zero LLM calls, and CI blocks adding any",
-          "summary": "",
-          "published_at": "2026-09-24T13:50:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "7296ae780a27696d",
       "title": "Hard Stop: Out-of-band kernel preemption for rogue AI agents",
       "first_seen": "2026-09-24T23:01:49+09:00",
@@ -2083,237 +1999,6 @@
           "title": "Show HN: Hard Stop: Kernel-level preemption for autonomous AI agents",
           "summary": "",
           "published_at": "2026-09-25T13:01:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fba8e005a467da27",
-      "title": "I judged my mum for using AI, until I caught myself doing worse",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830523",
-          "target_url": "https://www.0xsid.com/blog/intellectual-fitness",
-          "independent": false,
-          "title": "I judged my mum for using AI, until I caught myself doing worse",
-          "summary": "",
-          "published_at": "2026-09-24T13:47:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f49d8f9cd814a6b7",
-      "title": "Bugpocalypse, or reporting bugs in an AI age",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830497",
-          "target_url": "https://www.qemu.org/2026/09/23/bugs",
-          "independent": false,
-          "title": "Bugpocalypse, or reporting bugs in an AI age",
-          "summary": "",
-          "published_at": "2026-09-24T13:45:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6551e25a24eec65e",
-      "title": "Scan for Good: Wiz and DeepMind use AI to help protect critical infrastructure",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830494",
-          "target_url": "https://www.wiz.io/blog/scan-for-good-critical-ai-exposures",
-          "independent": false,
-          "title": "Scan for Good: Wiz and DeepMind use AI to help protect critical infrastructure",
-          "summary": "",
-          "published_at": "2026-09-24T13:45:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e71edae03ea9bb42",
-      "title": "The Group Chat Where World Leaders Are Racing to Create AI Controls",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830435",
-          "target_url": "https://www.wsj.com/tech/ai/the-group-chat-where-world-leaders-are-racing-to-create-ai-controls-821396d3",
-          "independent": false,
-          "title": "The Group Chat Where World Leaders Are Racing to Create AI Controls",
-          "summary": "",
-          "published_at": "2026-09-24T13:40:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7dabc9cc4827117b",
-      "title": "Meta’s Muse AI Charms can interact with each other",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/999944/meta-muse-charm-ai-interact-5g-modem",
-          "target_url": "https://www.theverge.com/tech/999944/meta-muse-charm-ai-interact-5g-modem",
-          "independent": true,
-          "title": "Meta’s Muse AI Charms can interact with each other",
-          "summary": "Meta's handheld AI gadget, called the Muse Charm, will be able to recognize and interact with other nearby Charms when it launches later this year. That's according to a report from Bloomberg, which includes more details about the device that the company teased during its Meta Connect keynote on Wednesday. The Muse Charm houses the […]",
-          "published_at": "2026-09-24T13:31:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "657c98f37505a09b",
-      "title": "Everything is spying on you and there’s no opting out",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/999889/spy-creep-tech-meta-glasses-apple-watches-surveillance",
-          "target_url": "https://www.theverge.com/tech/999889/spy-creep-tech-meta-glasses-apple-watches-surveillance",
-          "independent": true,
-          "title": "Everything is spying on you and there’s no opting out",
-          "summary": "Earlier this month, Apple announced that its new Apple Watches will have the ability to continuously listen to every spoken word they detect and create summaries of whatever's going on around you. The privacy blowback was immediate and inevitable: Experts warned of the legal risks of using the features, especially in nonpublic spaces and states […]",
-          "published_at": "2026-09-24T13:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "dea4e98d7dd94e6f",
-      "title": "Stop Burning Tokens: Code Almost Forever for $20/M With Codex + GPT-6 Luna",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://devenkoai.medium.com/stop-burning-tokens-code-almost-forever-for-20-m-with-codex-gpt-6-luna-94f2e37da40c",
-          "target_url": "https://devenkoai.medium.com/stop-burning-tokens-code-almost-forever-for-20-m-with-codex-gpt-6-luna-94f2e37da40c",
-          "independent": false,
-          "title": "Stop Burning Tokens: Code Almost Forever for $20/M With Codex + GPT-6 Luna",
-          "summary": "Yesterday OpenAI released GPT-6 Luna. Continue reading on Medium »",
-          "published_at": "2026-09-24T13:49:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "20f11381c8fef5b4",
-      "title": "We Hired a Senior Engineer Who Was Incredible With AI. His First Month Without It Changed Our..",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/engineering-playbook/we-hired-a-senior-engineer-who-was-incredible-with-ai-his-first-month-without-it-changed-our-09dfeadef27a",
-          "target_url": "https://medium.com/engineering-playbook/we-hired-a-senior-engineer-who-was-incredible-with-ai-his-first-month-without-it-changed-our-09dfeadef27a",
-          "independent": false,
-          "title": "We Hired a Senior Engineer Who Was Incredible With AI. His First Month Without It Changed Our..",
-          "summary": "He was faster than almost every candidate we interviewed, but after he joined, we discovered that speed had hidden a question our hiring… Continue reading on Production Engineering Playbook »",
-          "published_at": "2026-09-24T13:49:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0694f9ddf3e4a642",
-      "title": "ScreenConnect + Printer CTF | Full Penetration Testing Challenge",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@pentesterclubpvtltd/screenconnect-printer-ctf-full-penetration-testing-challenge-6962e65995b9",
-          "target_url": "https://medium.com/@pentesterclubpvtltd/screenconnect-printer-ctf-full-penetration-testing-challenge-6962e65995b9",
-          "independent": false,
-          "title": "ScreenConnect + Printer CTF | Full Penetration Testing Challenge",
-          "summary": "What happens when a penetration-testing challenge combines a remote-management application, a network printer, web services… Continue reading on Medium »",
-          "published_at": "2026-09-24T13:49:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2e046725c356328",
-      "title": "The Biggest AI Story Isn’t OpenAI — It’s Google’s Missed Opportunity",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/the-gravity/the-biggest-ai-story-isnt-openai-it-s-google-s-missed-opportunity-fcaf2dfd314f",
-          "target_url": "https://medium.com/the-gravity/the-biggest-ai-story-isnt-openai-it-s-google-s-missed-opportunity-fcaf2dfd314f",
-          "independent": false,
-          "title": "The Biggest AI Story Isn’t OpenAI — It’s Google’s Missed Opportunity",
-          "summary": "Google helped invent many of the technologies powering today’s AI boom. So why did another company capture the world’s attention first? Continue reading on The Gravity »",
-          "published_at": "2026-09-24T13:48:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "537f3282a4e6f79a",
-      "title": "How I Test Add to Cart With a Product Variant Using Kane CLI",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@bhawana.officials/how-i-test-add-to-cart-with-a-product-variant-using-kane-cli-a0e31651e5c9",
-          "target_url": "https://medium.com/@bhawana.officials/how-i-test-add-to-cart-with-a-product-variant-using-kane-cli-a0e31651e5c9",
-          "independent": false,
-          "title": "How I Test Add to Cart With a Product Variant Using Kane CLI",
-          "summary": "Variant bugs are sneaky. Nobody reports them on the day they happen. Continue reading on Medium »",
-          "published_at": "2026-09-24T13:47:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -19644,6 +19329,195 @@
           "title": "Why Static Analysis Matters More Than Ever in the Age of AI",
           "summary": "Hello everyone. Continue reading on Medium »",
           "published_at": "2026-09-27T12:43:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89cfb2a3e8412367",
+      "title": "Sourced tracker for Tasmania's proposed AI data centres",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866711",
+          "target_url": "https://tasdatacentres.org/30min",
+          "independent": false,
+          "title": "Sourced tracker for Tasmania's proposed AI data centres",
+          "summary": "",
+          "published_at": "2026-09-27T13:59:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "de3b13fb34f81da6",
+      "title": "Jev and the Return of AI/ML Engineering",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866629",
+          "target_url": "https://leehanchung.github.io/blogs/2026/09/20/jev-return-ai-ml-engineering",
+          "independent": false,
+          "title": "Jev and the Return of AI/ML Engineering",
+          "summary": "",
+          "published_at": "2026-09-27T13:48:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c4065bc326cb30b9",
+      "title": "Your AI Agent Forgot Half of What You Told It",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866429",
+          "target_url": "https://www.oreilly.com/radar/your-ai-agent-already-forgot-half-of-what-you-told-it",
+          "independent": false,
+          "title": "Your AI Agent Forgot Half of What You Told It",
+          "summary": "",
+          "published_at": "2026-09-27T13:15:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d027e6b03e047eec",
+      "title": "Human-AI partnerships are for alignment, not capability",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866353",
+          "target_url": "https://www.seangoedecke.com/human-ai-partnerships-are-for-alignment-not-capability",
+          "independent": false,
+          "title": "Human-AI partnerships are for alignment, not capability",
+          "summary": "",
+          "published_at": "2026-09-27T13:04:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7b2bdb93a14e3cf1",
+      "title": "10 AI Technologies That Will Change Everyday Life by 2030",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@vedantshrivastava2007/10-ai-technologies-that-will-change-everyday-life-by-2030-8dd97697561e",
+          "target_url": "https://medium.com/@vedantshrivastava2007/10-ai-technologies-that-will-change-everyday-life-by-2030-8dd97697561e",
+          "independent": false,
+          "title": "10 AI Technologies That Will Change Everyday Life by 2030",
+          "summary": "From AI assistants and humanoid robots to smart cars and personalized learning, these technologies could quietly become part of our… Continue reading on Medium »",
+          "published_at": "2026-09-27T13:54:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43148697c3c8dfd2",
+      "title": "AI 學習筆記 — Declarative Schema 的規格層：json-render、A2UI 與 OpenUI Lang",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/ai-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-declarative-schema-%E7%9A%84%E8%A6%8F%E6%A0%BC%E5%B1%A4-json-render-a2ui-%E8%88%87-openui-lang-27dec870fb69",
+          "target_url": "https://medium.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/ai-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-declarative-schema-%E7%9A%84%E8%A6%8F%E6%A0%BC%E5%B1%A4-json-render-a2ui-%E8%88%87-openui-lang-27dec870fb69",
+          "independent": false,
+          "title": "AI 學習筆記 — Declarative Schema 的規格層：json-render、A2UI 與 OpenUI Lang",
+          "summary": "這篇筆記接續著前面討論過的 Generative UI 三種實現方式與 Agentic Protocols，重點放在 Generation 層級的 Declarative Schema。 Continue reading on Recording everything »",
+          "published_at": "2026-09-27T13:53:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b66730f309ed72a9",
+      "title": "How I Automated 12 TikTok Accounts Using Cloud Phones and AI (Without Getting Banned)",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://devenkoai.medium.com/how-i-automated-12-tiktok-accounts-using-cloud-phones-and-ai-without-getting-banned-54247d27992a",
+          "target_url": "https://devenkoai.medium.com/how-i-automated-12-tiktok-accounts-using-cloud-phones-and-ai-without-getting-banned-54247d27992a",
+          "independent": false,
+          "title": "How I Automated 12 TikTok Accounts Using Cloud Phones and AI (Without Getting Banned)",
+          "summary": "I made $14,300 last month. Four tools built the content. Then GeeLark gave the factory twelve phones. Continue reading on Medium »",
+          "published_at": "2026-09-27T13:53:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "75e7df8a7db5f17a",
+      "title": "What “Agent” Actually Means in a Production Spring Boot App",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dshihtzu/what-agent-actually-means-in-a-production-spring-boot-app-98d304c437a3",
+          "target_url": "https://medium.com/@dshihtzu/what-agent-actually-means-in-a-production-spring-boot-app-98d304c437a3",
+          "independent": false,
+          "title": "What “Agent” Actually Means in a Production Spring Boot App",
+          "summary": "I replaced 80 lines of Java string formatting with a Spring AI @Tool adapter. Here’s exactly what changed — and what I watched in the logs. Continue reading on Medium »",
+          "published_at": "2026-09-27T13:53:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b6d62e3e31f43d5e",
+      "title": "The Setting He Never Knew Existed",
+      "first_seen": "2026-09-27T23:01:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@vitthalhainalkar2193/the-setting-he-never-knew-existed-8aea5a1419e3",
+          "target_url": "https://medium.com/@vitthalhainalkar2193/the-setting-he-never-knew-existed-8aea5a1419e3",
+          "independent": false,
+          "title": "The Setting He Never Knew Existed",
+          "summary": "He thought his phone was simply showing him convenient recommendations. Then he discovered how much his apps already knew about his daily… Continue reading on Medium »",
+          "published_at": "2026-09-27T13:53:10+00:00",
           "date_precision": "time"
         }
       ],
