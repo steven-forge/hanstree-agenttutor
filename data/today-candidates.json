@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T06:25:54.273191+09:00",
-  "window_start": "2026-07-30T06:25:54.273191+09:00",
-  "window_end": "2026-09-28T06:25:54.273191+09:00",
+  "collected_at": "2026-09-28T07:01:05.454261+09:00",
+  "window_start": "2026-07-30T07:01:05.454261+09:00",
+  "window_end": "2026-09-28T07:01:05.454261+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
+      "status": "ok",
       "count": 8,
-      "held_count": 1,
+      "held_count": 0,
       "excluded_count": 30,
-      "skipped_count": 6,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 8,
+      "excluded_count": 1,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T06:26:38.697931+09:00",
-  "hourly_window_start": "2026-09-25T06:26:38.697931+09:00",
+  "hourly_collected_at": "2026-09-28T07:01:26.369365+09:00",
+  "hourly_window_start": "2026-09-25T07:01:26.369365+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -2457,153 +2457,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "22ac1f11eb1d8187",
-      "title": "Askholes and Low Effort AI Answers",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837063",
-          "target_url": "https://dennisforbes.ca/blog/microblog/2026/09/askholes_and_low_effort_ai_answers",
-          "independent": false,
-          "title": "Askholes and Low Effort AI Answers",
-          "summary": "",
-          "published_at": "2026-09-24T21:38:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8a307c92e4d97c14",
-      "title": "CrowdStrike: Frontier AI for Cybersecurity",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837058",
-          "target_url": "https://strategyofsecurity.com/p/crowdstrike-frontier-ai-for-cybersecurity",
-          "independent": false,
-          "title": "CrowdStrike: Frontier AI for Cybersecurity",
-          "summary": "",
-          "published_at": "2026-09-24T21:38:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "70835a90756910e4",
-      "title": "E-Signature Software Alone Won’t Fix Your Document Workflow — Here’s What Will",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@atharvinweb/e-signature-software-alone-wont-fix-your-document-workflow-here-s-what-will-dad0c7acb8f4",
-          "target_url": "https://medium.com/@atharvinweb/e-signature-software-alone-wont-fix-your-document-workflow-here-s-what-will-dad0c7acb8f4",
-          "independent": false,
-          "title": "E-Signature Software Alone Won’t Fix Your Document Workflow — Here’s What Will",
-          "summary": "Why legal, HR, and finance teams are quietly moving from “send and sign” tools to workflow-first platforms Continue reading on Medium »",
-          "published_at": "2026-09-24T21:50:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d721061e82cb183f",
-      "title": "Webmines LLC: Transforming Businesses with AI, Automation and Digital Innovation",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@marketing_58622/webmines-llc-transforming-businesses-with-ai-automation-and-digital-innovation-d7e4fc3a12cc",
-          "target_url": "https://medium.com/@marketing_58622/webmines-llc-transforming-businesses-with-ai-automation-and-digital-innovation-d7e4fc3a12cc",
-          "independent": false,
-          "title": "Webmines LLC: Transforming Businesses with AI, Automation and Digital Innovation",
-          "summary": "In today’s competitive business environment, organizations need smart technology solutions to improve productivity, reduce operational… Continue reading on Medium »",
-          "published_at": "2026-09-24T21:50:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9f9d626220d966e6",
-      "title": "The AI Detector Companies Agree With the Student They Just Flagged",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@aitoolsprimer/the-ai-detector-companies-agree-with-the-student-they-just-flagged-65a939c85a5f",
-          "target_url": "https://medium.com/@aitoolsprimer/the-ai-detector-companies-agree-with-the-student-they-just-flagged-65a939c85a5f",
-          "independent": false,
-          "title": "The AI Detector Companies Agree With the Student They Just Flagged",
-          "summary": "This story was written with the assistance of an AI writing program. Continue reading on Medium »",
-          "published_at": "2026-09-24T21:50:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "25ba00c3821416f6",
-      "title": "Can You Actually Replace Jev?",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://kotrotsos.medium.com/can-you-actually-replace-jev-80a7d1ea5610",
-          "target_url": "https://kotrotsos.medium.com/can-you-actually-replace-jev-80a7d1ea5610",
-          "independent": false,
-          "title": "Can You Actually Replace Jev?",
-          "summary": "What independent tests reveal about Kev, Laya and SemIf, and where the evidence runs out. Continue reading on Medium »",
-          "published_at": "2026-09-24T21:46:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a58af6c26367fd0f",
-      "title": "Can We Trust AI — Is the Risk Worth Taking?",
-      "first_seen": "2026-09-25T07:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@aristONLINE/can-we-trust-ai-is-the-risk-worth-taking-adebe198efb2",
-          "target_url": "https://medium.com/@aristONLINE/can-we-trust-ai-is-the-risk-worth-taking-adebe198efb2",
-          "independent": false,
-          "title": "Can We Trust AI — Is the Risk Worth Taking?",
-          "summary": "AI is becoming remarkably useful before it has become reliably trustworthy. This may be the most important thing to understand about AI... Continue reading on Medium »",
-          "published_at": "2026-09-24T21:45:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "83d50c6dc9634e0d",
@@ -8499,6 +8352,17 @@
           "summary": "",
           "published_at": "2026-09-27T11:01:20+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871105",
+          "target_url": "https://www.tomshardware.com/pc-components/gpus/thieves-steal-nvidia-labeled-trailers-expecting-massive-ai-gpu-payday-but-score-40-000-pounds-of-sand-instead-crooks-duped-by-20-tons-of-ballast-sand",
+          "independent": false,
+          "title": "Thieves steal Nvidia-labeled trailers – yields 20 tons of sand",
+          "summary": "",
+          "published_at": "2026-09-27T21:36:26+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -11001,6 +10865,17 @@
           "title": "Trust-Aware Machine Learning for Secure Open Banking Decision Systems",
           "summary": "Introduction Continue reading on Medium »",
           "published_at": "2026-09-26T09:48:23+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871219",
+          "target_url": "https://mlsysbook.ai/",
+          "independent": false,
+          "title": "Machine Learning Systems",
+          "summary": "",
+          "published_at": "2026-09-27T21:50:41+00:00",
           "date_precision": "time"
         }
       ],
@@ -19232,6 +19107,174 @@
           "title": "Jev vs LLM: One Writes, One Decides",
           "summary": "Let us start with one Analogy. The airport security line. The person checking your boarding pass doesn’t interview you. Continue reading on Medium »",
           "published_at": "2026-09-27T21:09:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "092e6baf12c13640",
+      "title": "George Hotz’s opinion on AI coding",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871139",
+          "target_url": "https://twitter.com/__tinygrad__/status/2044354852663558370",
+          "independent": false,
+          "title": "George Hotz’s opinion on AI coding",
+          "summary": "",
+          "published_at": "2026-09-27T21:40:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a20cc7f00a74969f",
+      "title": "AI Has Cracked the Most Diabolical Problems in Math. Why Can't It Solve Chess?",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871100",
+          "target_url": "https://www.wsj.com/tech/ai/chess-artificial-intelligence-ai-e969a830",
+          "independent": false,
+          "title": "AI Has Cracked the Most Diabolical Problems in Math. Why Can't It Solve Chess?",
+          "summary": "",
+          "published_at": "2026-09-27T21:35:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f8e429a21caf3830",
+      "title": "Fundamentals still worth learning when AI writes the code",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871053",
+          "target_url": "https://flaviocopes.com/fundamentals-ai-era",
+          "independent": false,
+          "title": "Fundamentals still worth learning when AI writes the code",
+          "summary": "",
+          "published_at": "2026-09-27T21:29:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6bc7e9925d7a15ce",
+      "title": "Korea’s Overseas Chip Tech Leaks Hit 40 Cases, More Than Triple in 5 Years [Sep 28, 2026…",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://tai-semicon.medium.com/koreas-overseas-chip-tech-leaks-hit-40-cases-more-than-triple-in-5-years-sep-28-2026-f4bb8cf94a3e",
+          "target_url": "https://tai-semicon.medium.com/koreas-overseas-chip-tech-leaks-hit-40-cases-more-than-triple-in-5-years-sep-28-2026-f4bb8cf94a3e",
+          "independent": false,
+          "title": "Korea’s Overseas Chip Tech Leaks Hit 40 Cases, More Than Triple in 5 Years [Sep 28, 2026…",
+          "summary": "Today’s 3-Line Summary Continue reading on Medium »",
+          "published_at": "2026-09-27T21:51:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4a0d77fb8129d5d9",
+      "title": "Preventive Health Intelligence Series™ | Part 7",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@chinatreattrip/preventive-health-intelligence-series-part-7-3f1008d57840",
+          "target_url": "https://medium.com/@chinatreattrip/preventive-health-intelligence-series-part-7-3f1008d57840",
+          "independent": false,
+          "title": "Preventive Health Intelligence Series™ | Part 7",
+          "summary": "How Software Engineers Can Protect Their Health Before 40 Continue reading on Medium »",
+          "published_at": "2026-09-27T21:48:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6624bbcc81db3693",
+      "title": "What Is MCP? Why Every Automation Tool Supports It Now (2026 Explainer)",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@techverdict/what-is-mcp-why-every-automation-tool-supports-it-now-2026-explainer-48aa779e37e6",
+          "target_url": "https://medium.com/@techverdict/what-is-mcp-why-every-automation-tool-supports-it-now-2026-explainer-48aa779e37e6",
+          "independent": false,
+          "title": "What Is MCP? Why Every Automation Tool Supports It Now (2026 Explainer)",
+          "summary": "Disclosure: This article was created with AI assistance — AI tools helped with research, drafting, and fact-checking. Affiliate disclosure… Continue reading on Medium »",
+          "published_at": "2026-09-27T21:45:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7472bf8143e4fe6d",
+      "title": "Best ChatGPT Alternatives: 12 AI Tools Compared",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tabibherb/best-chatgpt-alternatives-12-ai-tools-compared-801d219af4f9",
+          "target_url": "https://medium.com/@tabibherb/best-chatgpt-alternatives-12-ai-tools-compared-801d219af4f9",
+          "independent": false,
+          "title": "Best ChatGPT Alternatives: 12 AI Tools Compared",
+          "summary": "ChatGPT is still one of the most popular AI assistants, but it is not the best choice for every task. Some alternatives offer stronger… Continue reading on Medium »",
+          "published_at": "2026-09-27T21:37:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7278d169285eb000",
+      "title": "The Machine That Was Supposed to Surpass Us Is Running Late",
+      "first_seen": "2026-09-28T07:01:26+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rbusel/the-machine-that-was-supposed-to-surpass-us-is-running-late-f18dacb312fa",
+          "target_url": "https://medium.com/@rbusel/the-machine-that-was-supposed-to-surpass-us-is-running-late-f18dacb312fa",
+          "independent": false,
+          "title": "The Machine That Was Supposed to Surpass Us Is Running Late",
+          "summary": "Silicon Valley is betting that artificial intelligence will soon improve itself without human help. The scorecard tells a different story… Continue reading on Medium »",
+          "published_at": "2026-09-27T21:34:25+00:00",
           "date_precision": "time"
         }
       ],
