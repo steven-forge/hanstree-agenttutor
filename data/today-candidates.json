@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T05:01:10.997038+09:00",
-  "window_start": "2026-07-30T05:01:10.997038+09:00",
-  "window_end": "2026-09-28T05:01:10.997038+09:00",
+  "collected_at": "2026-09-28T06:01:07.994237+09:00",
+  "window_start": "2026-07-30T06:01:07.994237+09:00",
+  "window_end": "2026-09-28T06:01:07.994237+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -99,10 +99,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 15,
-      "held_count": 0,
-      "excluded_count": 25,
+      "status": "partial",
+      "count": 8,
+      "held_count": 1,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -133,9 +133,9 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 2,
+      "excluded_count": 1,
       "skipped_count": 8,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T05:01:33.387105+09:00",
-  "hourly_window_start": "2026-09-25T05:01:33.387105+09:00",
+  "hourly_collected_at": "2026-09-28T06:01:34.866338+09:00",
+  "hourly_window_start": "2026-09-25T06:01:34.866338+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -1402,6 +1402,17 @@
           "summary": "",
           "published_at": "2026-09-27T19:10:08+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870517",
+          "target_url": "https://github.com/Colton-z/AstraBox",
+          "independent": false,
+          "title": "Show HN: AstraBox – an open-source alternative to Claude Managed Agents",
+          "summary": "",
+          "published_at": "2026-09-27T20:31:39+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2297,90 +2308,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "9bf667a9862c5995",
-      "title": "AI Help for Biological or Chemical Weapons",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836647",
-          "target_url": "https://www.science.org/content/blog-post/ai-help-biological-or-chemical-weapons",
-          "independent": false,
-          "title": "AI Help for Biological or Chemical Weapons",
-          "summary": "",
-          "published_at": "2026-09-24T20:59:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f462a13ebaa1d3ec",
-      "title": "Show HN: Canary (YC) – Independent verification for AI code",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836632",
-          "target_url": "https://www.runcanary.ai/",
-          "independent": false,
-          "title": "Show HN: Canary (YC) – Independent verification for AI code",
-          "summary": "",
-          "published_at": "2026-09-24T20:57:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "55e7dda0a1d000ce",
-      "title": "How I changed teaching after AI managed to do all my homework assignments",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836579",
-          "target_url": "https://thelastsoftwareengineer.substack.com/p/how-i-changed-teaching-after-ai-managed",
-          "independent": false,
-          "title": "How I changed teaching after AI managed to do all my homework assignments",
-          "summary": "",
-          "published_at": "2026-09-24T20:51:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4a356fb51bb7387c",
-      "title": "DDoS Attack Breaks Beloved Video Game Wiki After AI Bro Was Banned",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836378",
-          "target_url": "https://kotaku.com/ddos-attack-breaks-beloved-video-game-wiki-after-ai-bro-was-banned-2000729335",
-          "independent": false,
-          "title": "DDoS Attack Breaks Beloved Video Game Wiki After AI Bro Was Banned",
-          "summary": "",
-          "published_at": "2026-09-24T20:29:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "93243ba32d6d06ba",
       "title": "Anthropic Strikes $12B AI Computing Deal with Akamai",
       "first_seen": "2026-09-25T06:01:23+09:00",
@@ -2422,132 +2349,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "0d0ea14f6ce3b724",
-      "title": "Cracking VFPU math functions using Claude (Sony PSP)",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49836164",
-          "target_url": "https://www.ppsspp.org/blog/vfpu-math-re",
-          "independent": false,
-          "title": "Cracking VFPU math functions using Claude (Sony PSP)",
-          "summary": "",
-          "published_at": "2026-09-24T20:09:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2201802e38ca1299",
-      "title": "Stop Giving Away Your Resume Data: Building Trailmark — A Local-First AI Job Tracker",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dev.asad.yasin/stop-giving-away-your-resume-data-building-trailmark-a-local-first-ai-job-tracker-60f005ccdfe5",
-          "target_url": "https://medium.com/@dev.asad.yasin/stop-giving-away-your-resume-data-building-trailmark-a-local-first-ai-job-tracker-60f005ccdfe5",
-          "independent": false,
-          "title": "Stop Giving Away Your Resume Data: Building Trailmark — A Local-First AI Job Tracker",
-          "summary": "An open-source, local-first intelligence tool using Fastify, Next.js, Ollama, & Shadow DOM to score resumes and track jobs privately. Continue reading on Medium »",
-          "published_at": "2026-09-24T20:45:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b8550ef82ccd9541",
-      "title": "AI Saves Developers 13 Hours a Week. Somehow, Nobody Got 13 Hours Back.",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@webdeveloper45/ai-saves-developers-13-hours-a-week-somehow-nobody-got-13-hours-back-3b6aa1f12740",
-          "target_url": "https://medium.com/@webdeveloper45/ai-saves-developers-13-hours-a-week-somehow-nobody-got-13-hours-back-3b6aa1f12740",
-          "independent": false,
-          "title": "AI Saves Developers 13 Hours a Week. Somehow, Nobody Got 13 Hours Back.",
-          "summary": "A new 2026 developer study found that AI is saving engineers nearly two working days of coding every week, while review and debugging are… Continue reading on Medium »",
-          "published_at": "2026-09-24T20:44:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f97ebe354be95ad5",
-      "title": "Building LogVista: How We Used TigerGraph and AI to Investigate Fraud Beyond a Risk Score",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@bhatejagarv/building-logvista-how-we-used-tigergraph-and-ai-to-investigate-fraud-beyond-a-risk-score-5de25f0b4df7",
-          "target_url": "https://medium.com/@bhatejagarv/building-logvista-how-we-used-tigergraph-and-ai-to-investigate-fraud-beyond-a-risk-score-5de25f0b4df7",
-          "independent": false,
-          "title": "Building LogVista: How We Used TigerGraph and AI to Investigate Fraud Beyond a Risk Score",
-          "summary": "Our experience building a fraud investigation system with TigerGraph, LangGraph, and a multi-model AI architecture. Continue reading on Medium »",
-          "published_at": "2026-09-24T20:43:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f4cf09718503dc3f",
-      "title": "Jev AI: The Model That Skips the Chat and Just Decides",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kaditya737/jev-ai-the-model-that-skips-the-chat-and-just-decides-004ac588f4ce",
-          "target_url": "https://medium.com/@kaditya737/jev-ai-the-model-that-skips-the-chat-and-just-decides-004ac588f4ce",
-          "independent": false,
-          "title": "Jev AI: The Model That Skips the Chat and Just Decides",
-          "summary": "A few days ago my feed was just… normal. AI takes, some memes, the usual. Then out of nowhere, one name started showing up everywhere… Continue reading on Medium »",
-          "published_at": "2026-09-24T20:42:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "87c8ffd3526c6a20",
-      "title": "Understanding MCP Servers",
-      "first_seen": "2026-09-25T06:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kuldeeep.yadav1/understanding-mcp-servers-edbfda197f3e",
-          "target_url": "https://medium.com/@kuldeeep.yadav1/understanding-mcp-servers-edbfda197f3e",
-          "independent": false,
-          "title": "Understanding MCP Servers",
-          "summary": "The first time I heard about MCP, It seemed like something really complex. Continue reading on Medium »",
-          "published_at": "2026-09-24T20:42:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "7904d8843c3b2294",
@@ -7128,6 +6929,17 @@
           "title": "Anthropic's Claims over Its \"Supply Chain Risk\" Exclusion by Dow Rejected",
           "summary": "",
           "published_at": "2026-09-25T20:32:34+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870695",
+          "target_url": "https://building138.com/anthropic-is-a-supply-chain-risk-for-all-of-us",
+          "independent": false,
+          "title": "Anthropic is a supply chain risk for all of us",
+          "summary": "",
+          "published_at": "2026-09-27T20:50:55+00:00",
           "date_precision": "time"
         }
       ],
@@ -18464,6 +18276,39 @@
           "summary": "",
           "published_at": "2026-09-27T19:12:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870436",
+          "target_url": "https://www.wsj.com/tech/ai/trump-and-anthropic-ceo-dario-amodei-set-for-white-house-dinner-32c2d0ab",
+          "independent": false,
+          "title": "Trump and Anthropic CEO Dario Amodei Set for White House Dinner",
+          "summary": "",
+          "published_at": "2026-09-27T20:20:05+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870423",
+          "target_url": "https://www.cnbc.com/2026/09/27/dario-amodei-set-to-have-dinner-with-trump-after-missing-state-dinner.html",
+          "independent": false,
+          "title": "Anthropic CEO Amodei set to meet with Trump",
+          "summary": "",
+          "published_at": "2026-09-27T20:18:31+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump",
+          "target_url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump",
+          "independent": true,
+          "title": "Anthropic’s CEO is about to have dinner with President Trump",
+          "summary": "This will be the first one-on-one meeting between Dario Amodei and Donald Trump",
+          "published_at": "2026-09-27T20:34:28+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19177,6 +19022,216 @@
           "title": "I Took My Hands Off the Handlebars. I Even Lifted My Feet. But I Won’t Close My Eyes",
           "summary": "I let my AI friend build almost everything — even when I do not understand every line of code. The question is not who holds the… Continue reading on Medium »",
           "published_at": "2026-09-27T19:51:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bafec7b0a378b12e",
+      "title": "Bill Gates Says Trump Is Wrong to Hold Out Against AI Safeguards",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870438",
+          "target_url": "https://www.bloomberg.com/news/articles/2026-09-27/bill-gates-says-trump-is-wrong-to-hold-out-against-ai-safeguards",
+          "independent": false,
+          "title": "Bill Gates Says Trump Is Wrong to Hold Out Against AI Safeguards",
+          "summary": "",
+          "published_at": "2026-09-27T20:20:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "608140baf47e017c",
+      "title": "Open-Source E2E FHE Implementation for Privacy-Preserving Llama 3 8B Inference",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870429",
+          "target_url": "https://arxiv.org/abs/2609.12378",
+          "independent": false,
+          "title": "Open-Source E2E FHE Implementation for Privacy-Preserving Llama 3 8B Inference",
+          "summary": "",
+          "published_at": "2026-09-27T20:19:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "876f82472dc91131",
+      "title": "Debt-hungry AI companies face increased risk as bond yields spike",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870419",
+          "target_url": "https://www.cnbc.com/2026/09/27/debt-hungry-data-center-companies-increased-risk-bond-yields-spike.html",
+          "independent": false,
+          "title": "Debt-hungry AI companies face increased risk as bond yields spike",
+          "summary": "",
+          "published_at": "2026-09-27T20:17:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a562e1bfea2a9c3b",
+      "title": "A crypto sentiment API that AI agents pay for autonomously (x402 protocol)",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870296",
+          "target_url": "https://crypto-sentiment-x402.onrender.com/sentiment/BTC",
+          "independent": false,
+          "title": "A crypto sentiment API that AI agents pay for autonomously (x402 protocol)",
+          "summary": "",
+          "published_at": "2026-09-27T20:03:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "566a52e15e047c95",
+      "title": "Engram is a sampler that turns broken AI hallucinations into music",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
+          "independent": true,
+          "title": "Engram is a sampler that turns broken AI hallucinations into music",
+          "summary": "Music startup Thoughtful Things has just launched the Kickstarter campaign for its first instrument, Engram. It's a sampler and groovebox that uses AI to mangle incoming audio and even hallucinate completely new sounds. This isn't Suno in a box, though. This isn't a \"push-button, get-song\" device, aimed at creating something that sounds ready for top-40 […]",
+          "published_at": "2026-09-27T20:46:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "abb4b87c1e41db2d",
+      "title": "I Sent GPT-6 Astra the Same Job Twice. One Brief Got Refused.",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lazargrr1/i-sent-gpt-6-astra-the-same-job-twice-one-brief-got-refused-a57dc1a1d951",
+          "target_url": "https://medium.com/@lazargrr1/i-sent-gpt-6-astra-the-same-job-twice-one-brief-got-refused-a57dc1a1d951",
+          "independent": false,
+          "title": "I Sent GPT-6 Astra the Same Job Twice. One Brief Got Refused.",
+          "summary": "The version that produced nothing taught me more about my own business than the one that wrote a full listing. Continue reading on Medium »",
+          "published_at": "2026-09-27T20:54:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c6d393be72fff63d",
+      "title": "MiniMax M3.1-Flash-Preview, tested outside MiniMax Code",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://ai.sulat.com/minimax-m3-1-flash-preview-tested-outside-minimax-code-88660262a51e",
+          "target_url": "https://ai.sulat.com/minimax-m3-1-flash-preview-tested-outside-minimax-code-88660262a51e",
+          "independent": false,
+          "title": "MiniMax M3.1-Flash-Preview, tested outside MiniMax Code",
+          "summary": "The preview model that launched inside MiniMax Code also answers on the public API: the speed numbers and pass rates from a day of running… Continue reading on AI @ Sulat.com »",
+          "published_at": "2026-09-27T20:52:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f90ff81c6b668521",
+      "title": "Psychological Safety in AI Integrated Teams: The Trust Layer Machines Cannot Build",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-emotional-edge/psychological-safety-in-ai-integrated-teams-the-trust-layer-machines-cannot-build-03c4c9a28880",
+          "target_url": "https://medium.com/the-emotional-edge/psychological-safety-in-ai-integrated-teams-the-trust-layer-machines-cannot-build-03c4c9a28880",
+          "independent": false,
+          "title": "Psychological Safety in AI Integrated Teams: The Trust Layer Machines Cannot Build",
+          "summary": "Every organization integrating AI into daily workflows is running an experiment on trust, whether it intends to or not. Continue reading on The Emotional Edge »",
+          "published_at": "2026-09-27T20:52:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "46f989b52d40e12a",
+      "title": "BEFORE YOU UNDERSTAND SUCCESS, UNDERSTAND ORDER",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kingkussu/before-you-understand-success-understand-order-e69a7ab4e16c",
+          "target_url": "https://medium.com/@kingkussu/before-you-understand-success-understand-order-e69a7ab4e16c",
+          "independent": false,
+          "title": "BEFORE YOU UNDERSTAND SUCCESS, UNDERSTAND ORDER",
+          "summary": "Why sustainable achievement requires more than motivation Continue reading on Medium »",
+          "published_at": "2026-09-27T20:51:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d967502bf8d54b33",
+      "title": "I Gave AI Access to AWS Infrastructure. Here’s What Happened",
+      "first_seen": "2026-09-28T06:01:34+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://awstip.com/i-gave-ai-access-to-aws-infrastructure-heres-what-happened-d2517568560a",
+          "target_url": "https://awstip.com/i-gave-ai-access-to-aws-infrastructure-heres-what-happened-d2517568560a",
+          "independent": false,
+          "title": "I Gave AI Access to AWS Infrastructure. Here’s What Happened",
+          "summary": "For 1 years I used AI the same way everyone else did. I copied an error from my terminal, pasted it into a chat window, got an answer… Continue reading on AWS Tip »",
+          "published_at": "2026-09-27T20:46:01+00:00",
           "date_precision": "time"
         }
       ],
