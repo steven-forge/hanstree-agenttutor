@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T19:00:47.896124+09:00",
-  "window_start": "2026-07-29T19:00:47.896124+09:00",
-  "window_end": "2026-09-27T19:00:47.896124+09:00",
+  "collected_at": "2026-09-27T20:00:55.438420+09:00",
+  "window_start": "2026-07-29T20:00:55.438420+09:00",
+  "window_end": "2026-09-27T20:00:55.438420+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 7,
-      "held_count": 1,
-      "excluded_count": 27,
-      "skipped_count": 0,
+      "status": "ok",
+      "count": 12,
+      "held_count": 0,
+      "excluded_count": 25,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 6,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 4,
-      "skipped_count": 6,
+      "excluded_count": 5,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T19:01:14.476102+09:00",
-  "hourly_window_start": "2026-09-24T19:01:14.476102+09:00",
+  "hourly_collected_at": "2026-09-27T20:01:22.398218+09:00",
+  "hourly_window_start": "2026-09-24T20:01:22.398218+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1346,6 +1346,28 @@
           "summary": "",
           "published_at": "2026-09-27T05:50:56+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865431",
+          "target_url": "https://github.com/VBS2004/jev-windows-agent",
+          "independent": false,
+          "title": "Show HN: Jev-windows-agent – Windows UI Automation back end for CUA agents",
+          "summary": "",
+          "published_at": "2026-09-27T10:37:08+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865266",
+          "target_url": "https://vercel.com/i/using-jev-in-tanstack-start-with-tanstack-ai",
+          "independent": false,
+          "title": "Show HN: TanStack Start and TanStack AI Jev Integration",
+          "summary": "",
+          "published_at": "2026-09-27T10:13:46+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1674,38 +1696,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "3f8821e40d919f6d",
-      "title": "Show HN: Hosted JayBase – An append-only data store for safe AI agent writes",
-      "first_seen": "2026-09-24T08:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823815",
-          "target_url": "https://jaybase.ai",
-          "independent": false,
-          "title": "Show HN: Hosted JayBase – An append-only data store for safe AI agent writes",
-          "summary": "",
-          "published_at": "2026-09-23T22:59:45+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828685",
-          "target_url": "https://github.com/sivsivsree/agedb",
-          "independent": false,
-          "title": "Show HN: I built AgeDB, a database for AI agents to store context and data",
-          "summary": "",
-          "published_at": "2026-09-24T10:34:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "923a6aeb6cb9f251",
       "title": "How to Make Money With AI in 2026: Start With One Problem, Not 100 AI Tools",
       "first_seen": "2026-09-24T10:01:45+09:00",
@@ -1898,27 +1888,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "591644ad8415657f",
-      "title": "Ten AI models debated fixes for 15 problems",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828898",
-          "target_url": "https://fixtheworld.io/ai/debate",
-          "independent": false,
-          "title": "Ten AI models debated fixes for 15 problems",
-          "summary": "",
-          "published_at": "2026-09-24T10:58:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "4d06cf2168bfbe6b",
       "title": "Evolving programming languages in the AI era",
       "first_seen": "2026-09-24T20:01:34+09:00",
@@ -1954,300 +1923,6 @@
           "title": "Evolving programming languages in the AI era",
           "summary": "",
           "published_at": "2026-09-26T04:21:24+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1e812a943fda1c8b",
-      "title": "Utyansky Index: Deterministic O(1) slot isolation for AI vibe coding",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828783",
-          "target_url": "https://github.com/vlad-utyansky/utyansky-index",
-          "independent": false,
-          "title": "Utyansky Index: Deterministic O(1) slot isolation for AI vibe coding",
-          "summary": "",
-          "published_at": "2026-09-24T10:45:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "911e8e842618799f",
-      "title": "The Invisible Way Companies Are Using AI to Set Salaries",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828746",
-          "target_url": "https://www.wsj.com/lifestyle/careers/the-invisible-way-companies-are-using-ai-to-set-salaries-ad3f74a8",
-          "independent": false,
-          "title": "The Invisible Way Companies Are Using AI to Set Salaries",
-          "summary": "",
-          "published_at": "2026-09-24T10:41:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d8ad6b58be07b405",
-      "title": "Agent IAP – Little Snitch Meets 1Password for AI Agents",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828744",
-          "target_url": "https://vpetersson.com/2026/09/23/little-snitch-meets-1password-for-ai-agents",
-          "independent": false,
-          "title": "Agent IAP – Little Snitch Meets 1Password for AI Agents",
-          "summary": "",
-          "published_at": "2026-09-24T10:40:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "75508a0497b82a52",
-      "title": "ACTx486 turns a podcast or video into a responsive AI conversation",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828727",
-          "target_url": "https://runtimewire.com/article/actx486-turns-a-podcast-or-video-into-a-responsive-ai-conversation",
-          "independent": false,
-          "title": "ACTx486 turns a podcast or video into a responsive AI conversation",
-          "summary": "",
-          "published_at": "2026-09-24T10:38:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "602b17c0a274ba66",
-      "title": "Polytender – AI for Public Tenders",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828718",
-          "target_url": "https://polytender.com/en",
-          "independent": false,
-          "title": "Polytender – AI for Public Tenders",
-          "summary": "",
-          "published_at": "2026-09-24T10:37:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c652f7fb08ff8890",
-      "title": "Pro-Human AI Declaration",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828647",
-          "target_url": "https://prohumandeclaration.com/en/sign/demand-ai-accountability",
-          "independent": false,
-          "title": "Pro-Human AI Declaration",
-          "summary": "",
-          "published_at": "2026-09-24T10:30:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bd5328839ee23cf9",
-      "title": "I miss old Google: readers tell us how they search the internet in the age of AI",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828609",
-          "target_url": "https://www.theguardian.com/technology/2026/sep/23/google-readers-respond-ai-overview-internet-searches",
-          "independent": false,
-          "title": "I miss old Google: readers tell us how they search the internet in the age of AI",
-          "summary": "",
-          "published_at": "2026-09-24T10:24:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "206d24327e02a80b",
-      "title": "LLM-friendliness as a metric: porting 20 languages with an LLM",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828549",
-          "target_url": "https://kostya.github.io/LangArena/llm_friendliness.html",
-          "independent": false,
-          "title": "LLM-friendliness as a metric: porting 20 languages with an LLM",
-          "summary": "",
-          "published_at": "2026-09-24T10:15:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8ad2879767359efd",
-      "title": "AI meets trade Global linkages and the cross-country distribution of AI gains",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828503",
-          "target_url": "https://www.oecd.org/en/publications/ai-meets-trade_13081644-en.html",
-          "independent": false,
-          "title": "AI meets trade Global linkages and the cross-country distribution of AI gains",
-          "summary": "",
-          "published_at": "2026-09-24T10:08:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a9df0c4143c7f643",
-      "title": "Stop Letting AI Guess What You Mean. Make It Ask First.",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://cybernerdie.medium.com/stop-letting-ai-guess-what-you-mean-make-it-ask-first-3990136ecb41",
-          "target_url": "https://cybernerdie.medium.com/stop-letting-ai-guess-what-you-mean-make-it-ask-first-3990136ecb41",
-          "independent": false,
-          "title": "Stop Letting AI Guess What You Mean. Make It Ask First.",
-          "summary": "The best response to an ambiguous prompt is sometimes not an answer. It is a better question Continue reading on Medium »",
-          "published_at": "2026-09-24T10:48:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fa67f3b8665764d2",
-      "title": "Calling LLM APIs from Node.js: A Practical Architecture",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dprasadbairwa1997/calling-llm-apis-from-node-js-a-practical-architecture-d7fd81579ddc",
-          "target_url": "https://medium.com/@dprasadbairwa1997/calling-llm-apis-from-node-js-a-practical-architecture-d7fd81579ddc",
-          "independent": false,
-          "title": "Calling LLM APIs from Node.js: A Practical Architecture",
-          "summary": "An adapter layer, a policy layer and a streaming path that survive slow clients, dropped connections and rate limits. Continue reading on Medium »",
-          "published_at": "2026-09-24T10:48:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "731c48a6effd9c26",
-      "title": "The real persons are more perfect than the AI output.",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@bdgeek/the-real-persons-are-more-perfect-than-the-ai-output-d711e5003456",
-          "target_url": "https://medium.com/@bdgeek/the-real-persons-are-more-perfect-than-the-ai-output-d711e5003456",
-          "independent": false,
-          "title": "The real persons are more perfect than the AI output.",
-          "summary": "AI can create a beautiful picture in seconds. But can it create the person's identity behind the picture? Continue reading on Medium »",
-          "published_at": "2026-09-24T10:47:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "559efd5c124dac3d",
-      "title": "The Best Aesthetic Note-Taking App for Students in Back-to-School 2026: Why I'm Choosing Kilonotes",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@koficoffeea/the-best-aesthetic-note-taking-app-for-students-in-back-to-school-2026-why-im-choosing-kilonotes-42f98424a062",
-          "target_url": "https://medium.com/@koficoffeea/the-best-aesthetic-note-taking-app-for-students-in-back-to-school-2026-why-im-choosing-kilonotes-42f98424a062",
-          "independent": false,
-          "title": "The Best Aesthetic Note-Taking App for Students in Back-to-School 2026: Why I'm Choosing Kilonotes",
-          "summary": "Every back-to-school season feels like a fresh beginning. It's the perfect time to create new goals, organize school supplies, and build… Continue reading on Medium »",
-          "published_at": "2026-09-24T10:47:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0fdfe4959f643e9d",
-      "title": "The ₹250 Crore Blindspot: Why Running Your Organization on WhatsApp Violates India’s DPDP Act",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@goonjar66/the-250-crore-blindspot-why-running-your-organization-on-whatsapp-violates-indias-dpdp-act-3c52282be0cb",
-          "target_url": "https://medium.com/@goonjar66/the-250-crore-blindspot-why-running-your-organization-on-whatsapp-violates-indias-dpdp-act-3c52282be0cb",
-          "independent": false,
-          "title": "The ₹250 Crore Blindspot: Why Running Your Organization on WhatsApp Violates India’s DPDP Act",
-          "summary": "How visible member contact lists, unencrypted device exports, and unconsented data sharing expose Indian schools, societies, and… Continue reading on Medium »",
-          "published_at": "2026-09-24T10:46:47+00:00",
           "date_precision": "time"
         }
       ],
@@ -11770,6 +11445,17 @@
           "summary": "They wanted the silicon. They got the sand.",
           "published_at": "2026-09-25T20:30:40+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865565",
+          "target_url": "https://www.wired.com/story/thieves-stole-nvidia-trailers-they-got-20-tons-of-sand",
+          "independent": false,
+          "title": "Thieves Stole 'Nvidia' Trailers. They Got 20 Tons of Sand",
+          "summary": "",
+          "published_at": "2026-09-27T11:01:20+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -16616,6 +16302,17 @@
           "summary": "",
           "published_at": "2026-09-26T19:57:08+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865233",
+          "target_url": "https://jonbehnken.substack.com/p/the-case-for-learning",
+          "independent": false,
+          "title": "The Importance of Human Knowledge in the AI Era",
+          "summary": "",
+          "published_at": "2026-09-27T10:08:26+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -17814,7 +17511,17 @@
           "summary": "",
           "published_at": "2026-09-26T23:15:28+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a925afadac5cfaac",
+      "title": "Scoop: Top AI companies probing security incidents",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -19641,6 +19348,237 @@
           "title": "Query Understanding for Production RAG: From User Intent to Smarter Retrieval",
           "summary": "Complete RAG Engineering Series, Part 8 | Engineering intent detection, self-querying retrieval, metadata filtering, query rewriting, and… Continue reading on Medium »",
           "published_at": "2026-09-27T09:50:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ba45ec92938b0cbd",
+      "title": "DeepSeek has 64% market share",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865452",
+          "target_url": "https://twitter.com/gherget/status/2104155774910083275",
+          "independent": false,
+          "title": "DeepSeek has 64% market share",
+          "summary": "",
+          "published_at": "2026-09-27T10:40:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c3b03b1f68e69839",
+      "title": "Being Mentioned in AI Answers Is Not the Same as Being Recommended",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865419",
+          "target_url": "https://cuescout.com/blog/mentioned-is-not-recommended",
+          "independent": false,
+          "title": "Being Mentioned in AI Answers Is Not the Same as Being Recommended",
+          "summary": "",
+          "published_at": "2026-09-27T10:35:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "afb1427d4a3494a6",
+      "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865343",
+          "target_url": "https://arxiv.org/abs/2609.25021",
+          "independent": false,
+          "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
+          "summary": "",
+          "published_at": "2026-09-27T10:26:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6e14458e65a516b4",
+      "title": "Trying GPT-6 Sol with AI SDK Evaluation API",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865269",
+          "target_url": "https://vercel.com/i/using-gpt-6-sol-with-ai-sdk-evaluation",
+          "independent": false,
+          "title": "Trying GPT-6 Sol with AI SDK Evaluation API",
+          "summary": "",
+          "published_at": "2026-09-27T10:14:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6183e339c7be952d",
+      "title": "Claude Isn't Allowed to Write Me Prose",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865222",
+          "target_url": "https://blog.kvit.app/posts/agent-not-allowed-to-write-prose",
+          "independent": false,
+          "title": "Claude Isn't Allowed to Write Me Prose",
+          "summary": "",
+          "published_at": "2026-09-27T10:06:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c385285e93a1a9d8",
+      "title": "How AI Is Accelerating PCB Design and Prototyping",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865196",
+          "target_url": "https://www.eetimes.com/how-ai-is-accelerating-pcb-design-and-prototyping",
+          "independent": false,
+          "title": "How AI Is Accelerating PCB Design and Prototyping",
+          "summary": "",
+          "published_at": "2026-09-27T10:01:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cefddeef2c8c954b",
+      "title": "The Machine-Native Economy: Why AI Agents May Need Their Own Financial Infrastructure",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@akashtembhare75/the-machine-native-economy-why-ai-agents-may-need-their-own-financial-infrastructure-29a2dab4738d",
+          "target_url": "https://medium.com/@akashtembhare75/the-machine-native-economy-why-ai-agents-may-need-their-own-financial-infrastructure-29a2dab4738d",
+          "independent": false,
+          "title": "The Machine-Native Economy: Why AI Agents May Need Their Own Financial Infrastructure",
+          "summary": "Honestly, when I first read BlackRock’s report The Machine-Native Economy, I understood the individual sections but missed the complete… Continue reading on Medium »",
+          "published_at": "2026-09-27T10:53:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "51f7aaad91e7bcde",
+      "title": "Can AI Actually Help You Find Research Ideas?",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@scholar-nest/can-ai-actually-help-you-find-research-ideas-89b22020044b",
+          "target_url": "https://medium.com/@scholar-nest/can-ai-actually-help-you-find-research-ideas-89b22020044b",
+          "independent": false,
+          "title": "Can AI Actually Help You Find Research Ideas?",
+          "summary": "I use AI quite a lot in my research now. Continue reading on Medium »",
+          "published_at": "2026-09-27T10:52:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "999b5d0ab6fc239d",
+      "title": "The Coupling of c and t: An Exploratory Inquiry into the Hilbert–Pólya Conjecture",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bulanramai2558/the-coupling-of-c-and-t-an-exploratory-inquiry-into-the-hilbert-p%C3%B3lya-conjecture-25a7999a5330",
+          "target_url": "https://medium.com/@bulanramai2558/the-coupling-of-c-and-t-an-exploratory-inquiry-into-the-hilbert-p%C3%B3lya-conjecture-25a7999a5330",
+          "independent": false,
+          "title": "The Coupling of c and t: An Exploratory Inquiry into the Hilbert–Pólya Conjecture",
+          "summary": "By Supat Charoensappuech, in collaboration with DeepSeek V4 (September 27, 2026) Continue reading on Medium »",
+          "published_at": "2026-09-27T10:51:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f443583d2e4c5bd2",
+      "title": "ChatGPT Is No Longer Just a Chatbot: How Connected Apps Are Transforming Teacher Workflows",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@techinfohisar/chatgpt-is-no-longer-just-a-chatbot-how-connected-apps-are-transforming-teacher-workflows-c88a30c2c111",
+          "target_url": "https://medium.com/@techinfohisar/chatgpt-is-no-longer-just-a-chatbot-how-connected-apps-are-transforming-teacher-workflows-c88a30c2c111",
+          "independent": false,
+          "title": "ChatGPT Is No Longer Just a Chatbot: How Connected Apps Are Transforming Teacher Workflows",
+          "summary": "ChatGPT Is Moving Beyond a Chatbot: Connected Apps Could Change How Teachers Work Continue reading on Medium »",
+          "published_at": "2026-09-27T10:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8a023360b5079273",
+      "title": "AI Test #3: ChatGPT, Claude, Gemini & Copilot as Dream Interpreters",
+      "first_seen": "2026-09-27T20:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://louisa-light.medium.com/ai-test-3-chatgpt-claude-gemini-copilot-as-dream-interpreters-896a64a7e108",
+          "target_url": "https://louisa-light.medium.com/ai-test-3-chatgpt-claude-gemini-copilot-as-dream-interpreters-896a64a7e108",
+          "independent": false,
+          "title": "AI Test #3: ChatGPT, Claude, Gemini & Copilot as Dream Interpreters",
+          "summary": "How Well Can AI Interpret Dreams? Continue reading on Medium »",
+          "published_at": "2026-09-27T10:50:00+00:00",
           "date_precision": "time"
         }
       ],
