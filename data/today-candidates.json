@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T04:01:02.717741+09:00",
-  "window_start": "2026-07-30T04:01:02.717741+09:00",
-  "window_end": "2026-09-28T04:01:02.717741+09:00",
+  "collected_at": "2026-09-28T05:01:10.997038+09:00",
+  "window_start": "2026-07-30T05:01:10.997038+09:00",
+  "window_end": "2026-09-28T05:01:10.997038+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 183,
+      "excluded_count": 184,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 9,
+      "count": 15,
       "held_count": 0,
-      "excluded_count": 30,
+      "excluded_count": 25,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 4,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 6,
-      "skipped_count": 4,
+      "excluded_count": 7,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 1,
-      "skipped_count": 9,
+      "excluded_count": 2,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T04:01:29.439084+09:00",
-  "hourly_window_start": "2026-09-25T04:01:29.439084+09:00",
+  "hourly_collected_at": "2026-09-28T05:01:33.387105+09:00",
+  "hourly_window_start": "2026-09-25T05:01:33.387105+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -588,6 +588,17 @@
           "title": "Claude Pop – I'm Upping My P(Doom)",
           "summary": "",
           "published_at": "2026-09-25T02:43:04+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869870",
+          "target_url": "https://www.youtube.com/watch?v=8j-hR4fJywU",
+          "independent": false,
+          "title": "Claude Pop – I'm Upping My P(Doom) [video]",
+          "summary": "",
+          "published_at": "2026-09-27T19:13:36+00:00",
           "date_precision": "time"
         }
       ],
@@ -1368,6 +1379,28 @@
           "title": "Show HN: Claude on a 2007 Nokia 6300 (Java ME app, TLS 1.0, private CA)",
           "summary": "",
           "published_at": "2026-09-27T17:13:40+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869937",
+          "target_url": "https://boonful.io",
+          "independent": false,
+          "title": "Show HN: Boonful – Claude Code can publish and sell what it builds",
+          "summary": "",
+          "published_at": "2026-09-27T19:22:10+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869826",
+          "target_url": "https://app2api.com/",
+          "independent": false,
+          "title": "Show HN: App2Api; App actions into API calls for LLMs",
+          "summary": "",
+          "published_at": "2026-09-27T19:10:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -2256,342 +2289,6 @@
           "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
           "summary": "",
           "published_at": "2026-09-25T06:52:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "23a8ee2eb7c366ff",
-      "title": "How to stay smart in the age of AI: the science of critical thinking",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835983",
-          "target_url": "https://www.nature.com/articles/d41586-026-02930-6",
-          "independent": false,
-          "title": "How to stay smart in the age of AI: the science of critical thinking",
-          "summary": "",
-          "published_at": "2026-09-24T19:53:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "481100000f49d027",
-      "title": "Why AI companies don't need new laws",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835968",
-          "target_url": "https://twitter.com/Paul__Walsh/status/2102801667657748720",
-          "independent": false,
-          "title": "Why AI companies don't need new laws",
-          "summary": "",
-          "published_at": "2026-09-24T19:51:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b6f05a92428d5729",
-      "title": "Alexandr Wang Is Meta's Not-So-Secret Weapon in the AI Agent Promo War",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835964",
-          "target_url": "https://www.businessinsider.com/alexandr-wang-meta-muse-social-media-posts-pr-strategy-2026-9",
-          "independent": false,
-          "title": "Alexandr Wang Is Meta's Not-So-Secret Weapon in the AI Agent Promo War",
-          "summary": "",
-          "published_at": "2026-09-24T19:51:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1c2d1bebc144fc0e",
-      "title": "Tech leaders to UN: For sake of humanity, please control the AI tech we created",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835931",
-          "target_url": "https://apnews.com/article/ai-artificial-intelligence-un-security-council-64519ea66b38e2600026f4481ad7f211",
-          "independent": false,
-          "title": "Tech leaders to UN: For sake of humanity, please control the AI tech we created",
-          "summary": "",
-          "published_at": "2026-09-24T19:48:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ff82c1eeef6c446a",
-      "title": "Tiny-Vedas: RISC-V Infrastructure for AI Accelerator Design [pdf]",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835882",
-          "target_url": "https://siliscale.com/papers/tiny-vedas.pdf",
-          "independent": false,
-          "title": "Tiny-Vedas: RISC-V Infrastructure for AI Accelerator Design [pdf]",
-          "summary": "",
-          "published_at": "2026-09-24T19:44:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6f9827e33ab54e34",
-      "title": "GizmoSQL changes the unit economics for AI analyst companies",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835815",
-          "target_url": "https://emms21.github.io/gizmosql-followup",
-          "independent": false,
-          "title": "GizmoSQL changes the unit economics for AI analyst companies",
-          "summary": "",
-          "published_at": "2026-09-24T19:38:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6b0ae13f7e673ea7",
-      "title": "ChatGPT is my (new) GTD interface",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835741",
-          "target_url": "https://raywu.org/chatgpt-is-my-gtd-interface",
-          "independent": false,
-          "title": "ChatGPT is my (new) GTD interface",
-          "summary": "",
-          "published_at": "2026-09-24T19:31:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "89c350f664eba04a",
-      "title": "Claude can't stop itself from writing code comments",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835690",
-          "target_url": "https://bayes.net/shut-up-and-swe-bench",
-          "independent": false,
-          "title": "Claude can't stop itself from writing code comments",
-          "summary": "",
-          "published_at": "2026-09-24T19:27:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6bda3cb2b4e0fb04",
-      "title": "Show HN: Fine-tuned 110M encoder beat 7B LLMs and hybrid search for NIST mapping",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49835684",
-          "target_url": "https://github.com/applied-inference-lab/autormf-ml-lab",
-          "independent": false,
-          "title": "Show HN: Fine-tuned 110M encoder beat 7B LLMs and hybrid search for NIST mapping",
-          "summary": "",
-          "published_at": "2026-09-24T19:26:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5c9f32255544f2b4",
-      "title": "I Think I Found an AI Agent Worth the Risk",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/i-finally-found-an-ai-agent-worth-the-risk",
-          "target_url": "https://www.wired.com/story/i-finally-found-an-ai-agent-worth-the-risk",
-          "independent": true,
-          "title": "I Think I Found an AI Agent Worth the Risk",
-          "summary": "Instinct saved me $550, booked my restaurant reservations, and warned me about a phishing scam. It also wasted $64 and might be a security nightmare.",
-          "published_at": "2026-09-24T19:36:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d3d988f207c8c42a",
-      "title": "Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/24/bring-your-co-founder-partner-or-colleague-and-get-50-off-a-second-techcrunch-disrupt-2026-pass",
-          "target_url": "https://techcrunch.com/2026/09/24/bring-your-co-founder-partner-or-colleague-and-get-50-off-a-second-techcrunch-disrupt-2026-pass",
-          "independent": true,
-          "title": "Bring your co-founder, partner, or colleague and get 50% off a second TechCrunch Disrupt 2026 pass",
-          "summary": "Buy one pass to TechCrunch Disrupt 2026 and get 50% off a second of the same ticket type. Register before event starts on October 13 at 8 a.m. PT.",
-          "published_at": "2026-09-24T19:15:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "4a6df3eb235983bc",
-      "title": "Is Pakistan Ready for The Digital Double?",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@duaaliwarsi449/is-pakistan-ready-for-the-digital-double-21f76b5a2dc5",
-          "target_url": "https://medium.com/@duaaliwarsi449/is-pakistan-ready-for-the-digital-double-21f76b5a2dc5",
-          "independent": false,
-          "title": "Is Pakistan Ready for The Digital Double?",
-          "summary": "Hollywood has long sought to answer the question of how to show deceased actors in films. Pakistan is struggling with a similarly puzzling… Continue reading on Medium »",
-          "published_at": "2026-09-24T19:50:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c89efab07334555a",
-      "title": "The Judge Wrote “Disconnected” and Let It Through",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://briefs.aiadvances.org/the-judge-wrote-disconnected-and-let-it-through-ed09c75d6c08",
-          "target_url": "https://briefs.aiadvances.org/the-judge-wrote-disconnected-and-let-it-through-ed09c75d6c08",
-          "independent": false,
-          "title": "The Judge Wrote “Disconnected” and Let It Through",
-          "summary": "Continue reading on AI Advances Briefs »",
-          "published_at": "2026-09-24T19:50:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e01cda4004aeea06",
-      "title": "“The Model Isn’t Good Enough” Wasn’t Enough of an Answer",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://briefs.aiadvances.org/the-model-isnt-good-enough-wasn-t-enough-of-an-answer-ac65c375341c",
-          "target_url": "https://briefs.aiadvances.org/the-model-isnt-good-enough-wasn-t-enough-of-an-answer-ac65c375341c",
-          "independent": false,
-          "title": "“The Model Isn’t Good Enough” Wasn’t Enough of an Answer",
-          "summary": "How working with vision-language models taught me to turn poor results into testable hypotheses. Continue reading on AI Advances Briefs »",
-          "published_at": "2026-09-24T19:49:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "96c7888f8963ac08",
-      "title": "Should You Block AI Crawlers? A Plain Guide to robots.txt and AI Bots",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://nadeemakram035.medium.com/should-you-block-ai-crawlers-a-plain-guide-to-robots-txt-and-ai-bots-8fdea9bacb0e",
-          "target_url": "https://nadeemakram035.medium.com/should-you-block-ai-crawlers-a-plain-guide-to-robots-txt-and-ai-bots-8fdea9bacb0e",
-          "independent": false,
-          "title": "Should You Block AI Crawlers? A Plain Guide to robots.txt and AI Bots",
-          "summary": "Which AI crawlers visit websites, what the difference between training and search bots is, and how to allow or block each one with… Continue reading on Medium »",
-          "published_at": "2026-09-24T19:48:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a0b15a8517f31d00",
-      "title": "Relative superintelligence and competitive dynamics: between collapse, progress, and breakthroughs",
-      "first_seen": "2026-09-25T05:01:53+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@marcelorinesi/relative-superintelligence-and-competitive-dynamics-between-collapse-progress-and-breakthroughs-0ac519f8e99d",
-          "target_url": "https://medium.com/@marcelorinesi/relative-superintelligence-and-competitive-dynamics-between-collapse-progress-and-breakthroughs-0ac519f8e99d",
-          "independent": false,
-          "title": "Relative superintelligence and competitive dynamics: between collapse, progress, and breakthroughs",
-          "summary": "The key difficulty in modeling the impact of AI on competitive dynamics is that it induces an order of magnitude change in the potential… Continue reading on Medium »",
-          "published_at": "2026-09-24T19:47:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -16349,6 +16046,17 @@
           "summary": "",
           "published_at": "2026-09-27T06:16:24+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870039",
+          "target_url": "https://www.politico.com/news/magazine/2026/09/25/midterms-partisan-ai-chatbots-01092138",
+          "independent": false,
+          "title": "'Pink Slime' Is Infecting AI Chatbots Ahead of the Midterms",
+          "summary": "",
+          "published_at": "2026-09-27T19:33:49+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -18745,6 +18453,17 @@
           "summary": "\"AI is the devil and I its maker.\"",
           "published_at": "2026-09-27T16:30:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869849",
+          "target_url": "https://www.axios.com/2026/09/27/anthropic-trump-dario-amodei-dinner-invite",
+          "independent": false,
+          "title": "Scoop: Anthropic's Dario Amodei to Have White House Dinner with Trump",
+          "summary": "",
+          "published_at": "2026-09-27T19:12:00+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19122,6 +18841,342 @@
           "title": "OpenClaw Promised an Assistant. Some Users Got a Second Job.",
           "summary": "What the maintenance complaints reveal, what September changes, and how to measure whether your assistant earns its keep. Continue reading on Medium »",
           "published_at": "2026-09-27T18:51:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a9d48cda9a3a89b5",
+      "title": "Show HN: An AI wedding concierge I built and ran at my own 300-person wedding",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870185",
+          "target_url": "https://ai-do.io/demo",
+          "independent": false,
+          "title": "Show HN: An AI wedding concierge I built and ran at my own 300-person wedding",
+          "summary": "",
+          "published_at": "2026-09-27T19:50:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2fa844b2fedd10d5",
+      "title": "Corporate America embraces cheaper 'open' AI models",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870126",
+          "target_url": "https://www.ft.com/content/d9de4776-1fc9-4f2b-aaaf-9961c35d8acd",
+          "independent": false,
+          "title": "Corporate America embraces cheaper 'open' AI models",
+          "summary": "",
+          "published_at": "2026-09-27T19:44:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3842e5c6e00ef05c",
+      "title": "DSPy – Program, don't prompt, your LLMs",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870084",
+          "target_url": "https://dspy.ai/current",
+          "independent": false,
+          "title": "DSPy – Program, don't prompt, your LLMs",
+          "summary": "",
+          "published_at": "2026-09-27T19:38:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "91567c4dc4a6d267",
+      "title": "Show HN: Squint – Drag a box on your screen and ask AI about it",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49870007",
+          "target_url": "https://heysquint.com/",
+          "independent": false,
+          "title": "Show HN: Squint – Drag a box on your screen and ask AI about it",
+          "summary": "",
+          "published_at": "2026-09-27T19:29:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0080e782c67119e",
+      "title": "Amazon Blocks Meta's Muse AI Agent from Its Retail Site",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869973",
+          "target_url": "https://www.bloomberg.com/news/articles/2026-09-21/amazon-blocks-meta-s-muse-ai-agent-from-its-retail-site",
+          "independent": false,
+          "title": "Amazon Blocks Meta's Muse AI Agent from Its Retail Site",
+          "summary": "",
+          "published_at": "2026-09-27T19:26:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f31a04b945932157",
+      "title": "AI Companies Say They're Investigating Rogue Bot Incidents",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869944",
+          "target_url": "https://www.motherjones.com/politics/2026/09/rest-assured-ai-companies-say-theyre-investigating-tens-of-thousands-of-rogue-bot-incidents",
+          "independent": false,
+          "title": "AI Companies Say They're Investigating Rogue Bot Incidents",
+          "summary": "",
+          "published_at": "2026-09-27T19:23:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "103468be93f98ae7",
+      "title": "We built DeepL's next-generation LLMs with FP8 for training and inference (2025)",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869889",
+          "target_url": "https://www.deepl.com/en/blog/tech/next-generation-llm-fp8-training",
+          "independent": false,
+          "title": "We built DeepL's next-generation LLMs with FP8 for training and inference (2025)",
+          "summary": "",
+          "published_at": "2026-09-27T19:14:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e9444a35b343d543",
+      "title": "Heypcb: Figma for Hardware, with AI",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869886",
+          "target_url": "https://heypcb.ai",
+          "independent": false,
+          "title": "Heypcb: Figma for Hardware, with AI",
+          "summary": "",
+          "published_at": "2026-09-27T19:14:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ce6afc13767ba801",
+      "title": "DuckDB and Hugging Face: Querying Datasets Directly",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869854",
+          "target_url": "https://duckdb.org/2026/09/25/hugging-face",
+          "independent": false,
+          "title": "DuckDB and Hugging Face: Querying Datasets Directly",
+          "summary": "",
+          "published_at": "2026-09-27T19:12:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bda7d9146645dd6c",
+      "title": "We made our launch video with Claude Code (and open-sourced the tool)",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869834",
+          "target_url": "https://kiln.tech/blog/we_made_our_launch_video_in_claude_code",
+          "independent": false,
+          "title": "We made our launch video with Claude Code (and open-sourced the tool)",
+          "summary": "",
+          "published_at": "2026-09-27T19:10:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3bb8d18f44686569",
+      "title": "Can Muse overcome Meta’s trust issues?",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues",
+          "target_url": "https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues",
+          "independent": true,
+          "title": "Can Muse overcome Meta’s trust issues?",
+          "summary": "On Equity, we discussed how Meta's AI announcement managed to steal the spotlight from OpenAI and Anthropic.",
+          "published_at": "2026-09-27T19:57:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "22f9726570b5ae4a",
+      "title": "We Documented Everything Before Our Senior Engineer Left. Three Months Later, We Still Needed Him.",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://blog.devgenius.io/we-documented-everything-before-our-senior-engineer-left-three-months-later-we-still-needed-him-ccf0f78107c6",
+          "target_url": "https://blog.devgenius.io/we-documented-everything-before-our-senior-engineer-left-three-months-later-we-still-needed-him-ccf0f78107c6",
+          "independent": false,
+          "title": "We Documented Everything Before Our Senior Engineer Left. Three Months Later, We Still Needed Him.",
+          "summary": "The runbooks were complete, the diagrams were current, and every service had an owner. Continue reading on Dev Genius »",
+          "published_at": "2026-09-27T19:54:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "350c267f7aa010b3",
+      "title": "Using the Unreal Engine 5 MCP Server with Kilo Code, OpenCode, and Ollama Cloud",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/engineworks/using-the-unreal-engine-5-mcp-server-with-kilo-code-opencode-and-ollama-cloud-409daff4bb40",
+          "target_url": "https://medium.com/engineworks/using-the-unreal-engine-5-mcp-server-with-kilo-code-opencode-and-ollama-cloud-409daff4bb40",
+          "independent": false,
+          "title": "Using the Unreal Engine 5 MCP Server with Kilo Code, OpenCode, and Ollama Cloud",
+          "summary": "A practical guide to connecting open source AI coding agents to the Unreal Engine 5.8 MCP server. Continue reading on UnrealOps »",
+          "published_at": "2026-09-27T19:54:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ebf8ed1c1c996f11",
+      "title": "Google Analytics MCP to understand the performance of your website",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mehfuz_28627/google-analytics-mcp-to-understand-the-performance-of-your-website-4d3ae37f5fdb",
+          "target_url": "https://medium.com/@mehfuz_28627/google-analytics-mcp-to-understand-the-performance-of-your-website-4d3ae37f5fdb",
+          "independent": false,
+          "title": "Google Analytics MCP to understand the performance of your website",
+          "summary": "Google Analytics is used by most websites in the world, but it takes some know-how to configure it and extract the right information from… Continue reading on Medium »",
+          "published_at": "2026-09-27T19:53:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6579fd239717dc32",
+      "title": "7 AI Freelancing Opportunities You Can Start Today",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://thegrowthledger1.medium.com/7-ai-freelancing-opportunities-you-can-start-today-a5872ad9252e",
+          "target_url": "https://thegrowthledger1.medium.com/7-ai-freelancing-opportunities-you-can-start-today-a5872ad9252e",
+          "independent": false,
+          "title": "7 AI Freelancing Opportunities You Can Start Today",
+          "summary": "AI is changing the way people work. Continue reading on Medium »",
+          "published_at": "2026-09-27T19:52:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f38e8fc3a0dc1d4",
+      "title": "I Took My Hands Off the Handlebars. I Even Lifted My Feet. But I Won’t Close My Eyes",
+      "first_seen": "2026-09-28T05:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@urilaish/i-took-my-hands-off-the-handlebars-i-even-lifted-my-feet-but-i-wont-close-my-eyes-e90f653049a9",
+          "target_url": "https://medium.com/@urilaish/i-took-my-hands-off-the-handlebars-i-even-lifted-my-feet-but-i-wont-close-my-eyes-e90f653049a9",
+          "independent": false,
+          "title": "I Took My Hands Off the Handlebars. I Even Lifted My Feet. But I Won’t Close My Eyes",
+          "summary": "I let my AI friend build almost everything — even when I do not understand every line of code. The question is not who holds the… Continue reading on Medium »",
+          "published_at": "2026-09-27T19:51:46+00:00",
           "date_precision": "time"
         }
       ],
