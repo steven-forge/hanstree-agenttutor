@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T07:01:05.454261+09:00",
-  "window_start": "2026-07-30T07:01:05.454261+09:00",
-  "window_end": "2026-09-28T07:01:05.454261+09:00",
+  "collected_at": "2026-09-28T08:00:54.565407+09:00",
+  "window_start": "2026-07-30T08:00:54.565407+09:00",
+  "window_end": "2026-09-28T08:00:54.565407+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 185,
+      "excluded_count": 184,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 3,
+      "excluded_count": 32,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T07:01:26.369365+09:00",
-  "hourly_window_start": "2026-09-25T07:01:26.369365+09:00",
+  "hourly_collected_at": "2026-09-28T08:01:22.502292+09:00",
+  "hourly_window_start": "2026-09-25T08:01:22.502292+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -2459,27 +2459,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "83d50c6dc9634e0d",
-      "title": "Building an Ultra-High Throughput AI-SQL Engine",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837913",
-          "target_url": "https://fsdatalab.github.io/blog/introducing-quail",
-          "independent": false,
-          "title": "Building an Ultra-High Throughput AI-SQL Engine",
-          "summary": "",
-          "published_at": "2026-09-24T22:56:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "f44c9c06a50a6fe6",
       "title": "DraftKings Is Using AI to Supercharge the Harms of Online Behavioral Advertising",
       "first_seen": "2026-09-25T08:01:14+09:00",
@@ -2504,195 +2483,6 @@
           "title": "DraftKings Is Using AI to Supercharge the Harms of Online Behavioral Advertising",
           "summary": "",
           "published_at": "2026-09-26T05:32:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8e4a1ec1b913ec28",
-      "title": "The model observes, a table decides: keeping an LLM out of pet triage",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837843",
-          "target_url": "https://tailstory-app.com/en/blog/model-observes-table-decides",
-          "independent": false,
-          "title": "The model observes, a table decides: keeping an LLM out of pet triage",
-          "summary": "",
-          "published_at": "2026-09-24T22:48:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "eff814d8056b9ec4",
-      "title": "Laya \"System 1\" Code Intelligence for AI Agents",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837641",
-          "target_url": "https://github.com/leonardoventurini/scs",
-          "independent": false,
-          "title": "Laya \"System 1\" Code Intelligence for AI Agents",
-          "summary": "",
-          "published_at": "2026-09-24T22:31:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ec46717145791fa5",
-      "title": "4% of Sessions, 65% of the Bill: 30 Days of Claude Code Telemetry",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837478",
-          "target_url": "https://www.promptarmor.com/resources/claude-cost-and-risk-otel-findings",
-          "independent": false,
-          "title": "4% of Sessions, 65% of the Bill: 30 Days of Claude Code Telemetry",
-          "summary": "",
-          "published_at": "2026-09-24T22:16:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "04b73764298daec8",
-      "title": "Which AI model is best for coding? A hands-on comparison",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837437",
-          "target_url": "https://flaviocopes.com/ai-coding-models",
-          "independent": false,
-          "title": "Which AI model is best for coding? A hands-on comparison",
-          "summary": "",
-          "published_at": "2026-09-24T22:12:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c1a044e7e567b26e",
-      "title": "Why Generalists Are the Best Bet in an AI World",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@leandroguarnieri/why-generalists-are-the-best-bet-in-an-ai-world-dc83af0b2aa7",
-          "target_url": "https://medium.com/@leandroguarnieri/why-generalists-are-the-best-bet-in-an-ai-world-dc83af0b2aa7",
-          "independent": false,
-          "title": "Why Generalists Are the Best Bet in an AI World",
-          "summary": "The people who know a little about a lot are about to have their moment Continue reading on Medium »",
-          "published_at": "2026-09-24T22:51:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4add80cf75bd712c",
-      "title": "People Strategy: Why AI Thrives Only Where Human Skills Multiply",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@curiousmind1786/people-strategy-why-ai-thrives-only-where-human-skills-multiply-338b006aff3e",
-          "target_url": "https://medium.com/@curiousmind1786/people-strategy-why-ai-thrives-only-where-human-skills-multiply-338b006aff3e",
-          "independent": false,
-          "title": "People Strategy: Why AI Thrives Only Where Human Skills Multiply",
-          "summary": "As AI’s potential to boost workplace performance surges, a critical tension shapes how organizations deploy this technology: should they… Continue reading on Medium »",
-          "published_at": "2026-09-24T22:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e410dd96ce61c762",
-      "title": "4 Months of vox-bench in Production — What 14,000 Benchmark Runs Taught Us About Voice AI Latency",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@autortech/4-months-of-vox-bench-in-production-what-14-000-benchmark-runs-taught-us-about-voice-ai-latency-29e5055a154d",
-          "target_url": "https://medium.com/@autortech/4-months-of-vox-bench-in-production-what-14-000-benchmark-runs-taught-us-about-voice-ai-latency-29e5055a154d",
-          "independent": false,
-          "title": "4 Months of vox-bench in Production — What 14,000 Benchmark Runs Taught Us About Voice AI Latency",
-          "summary": "In June, we open-sourced vox-bench, the latency benchmarking tool we built after a TTS spike caused 12% of Loquent callers to talk over… Continue reading on Medium »",
-          "published_at": "2026-09-24T22:42:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "35413b97780215f5",
-      "title": "I Shipped an LLM Feature to Production. The Model Was the Easy Part.",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rohithraajk/i-shipped-an-llm-feature-to-production-the-model-was-the-easy-part-85138771591a",
-          "target_url": "https://medium.com/@rohithraajk/i-shipped-an-llm-feature-to-production-the-model-was-the-easy-part-85138771591a",
-          "independent": false,
-          "title": "I Shipped an LLM Feature to Production. The Model Was the Easy Part.",
-          "summary": "The demo took a weekend. Production took six months. Continue reading on Medium »",
-          "published_at": "2026-09-24T22:38:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d13e1ab07bdb71f1",
-      "title": "What I Wish I Knew: Your Writing Isn’t About You.",
-      "first_seen": "2026-09-25T08:01:14+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/pen-with-paper/what-i-wish-i-knew-your-writing-isnt-about-you-e885d152ac24",
-          "target_url": "https://medium.com/pen-with-paper/what-i-wish-i-knew-your-writing-isnt-about-you-e885d152ac24",
-          "independent": false,
-          "title": "What I Wish I Knew: Your Writing Isn’t About You.",
-          "summary": "What I Wished I Knew: The Craft of Writing Is Thinking Beyond Yourself. Continue reading on Pen With Paper »",
-          "published_at": "2026-09-24T22:35:16+00:00",
           "date_precision": "time"
         }
       ],
@@ -2798,90 +2588,6 @@
           "title": "What Agentic AI Actually Changes (Part 1)",
           "summary": "Agency is who decides what happens next. Autonomy is whether a human gets a say. Mixing them up is where agentic products break. Continue reading on Medium »",
           "published_at": "2026-09-24T23:03:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b486bc8680508a23",
-      "title": "Fluency Is Not Evidence",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@fmi_a/fluency-is-not-evidence-47f01611353a",
-          "target_url": "https://medium.com/@fmi_a/fluency-is-not-evidence-47f01611353a",
-          "independent": false,
-          "title": "Fluency Is Not Evidence",
-          "summary": "What AI-generated writing teaches us about context, verification, and historical blind spots Continue reading on Medium »",
-          "published_at": "2026-09-24T23:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d5262e5da4a95aca",
-      "title": "Jev Doesn’t Write, It Decides: Games Today, Company Data with Care, Computer Vision Next",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://pub.towardsai.net/jev-doesnt-write-it-decides-games-today-company-data-with-care-computer-vision-next-21178d277475",
-          "target_url": "https://pub.towardsai.net/jev-doesnt-write-it-decides-games-today-company-data-with-care-computer-vision-next-21178d277475",
-          "independent": false,
-          "title": "Jev Doesn’t Write, It Decides: Games Today, Company Data with Care, Computer Vision Next",
-          "summary": "TypeSafe’s “System One” model returns typed decisions with probabilities instead of text. Where it already fits, why I would not send it… Continue reading on Towards AI »",
-          "published_at": "2026-09-24T23:01:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5c74c6af1da731b7",
-      "title": "Me, Mai, or AI?",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/martyn-ai/me-mai-or-ai-6c239885bd73",
-          "target_url": "https://medium.com/martyn-ai/me-mai-or-ai-6c239885bd73",
-          "independent": false,
-          "title": "Me, Mai, or AI?",
-          "summary": "“That looks like AI!” Does that make it less valuable? An honest discussion about working with AI. Continue reading on martyn.ai »",
-          "published_at": "2026-09-24T23:01:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "58b3c89facb66eff",
-      "title": "AI Works. The Economics Do Not.",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ignacio.de.gregorio.noblejas/ai-works-the-economics-do-not-6a5e5f908fc0",
-          "target_url": "https://medium.com/@ignacio.de.gregorio.noblejas/ai-works-the-economics-do-not-6a5e5f908fc0",
-          "independent": false,
-          "title": "AI Works. The Economics Do Not.",
-          "summary": "The one thing one must understand about AI has little to do with the tech. Continue reading on Medium »",
-          "published_at": "2026-09-24T22:52:21+00:00",
           "date_precision": "time"
         }
       ],
@@ -4238,27 +3944,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "127639cc62d76a80",
-      "title": "Basedash MCP write",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/basedash",
-          "target_url": "https://www.producthunt.com/products/basedash",
-          "independent": false,
-          "title": "Basedash MCP write",
-          "summary": "Build charts and dashboards from Cursor and Claude Discussion | Link",
-          "published_at": "2026-09-24T22:20:29+00:00",
           "date_precision": "time"
         }
       ],
@@ -19275,6 +18960,132 @@
           "title": "The Machine That Was Supposed to Surpass Us Is Running Late",
           "summary": "Silicon Valley is betting that artificial intelligence will soon improve itself without human help. The scorecard tells a different story… Continue reading on Medium »",
           "published_at": "2026-09-27T21:34:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cb8bbfaf231328e1",
+      "title": "OpenAI to Halt Training of Some Models",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871351",
+          "target_url": "https://gizmodo.com/openai-to-halt-training-of-some-models-2000817912",
+          "independent": false,
+          "title": "OpenAI to Halt Training of Some Models",
+          "summary": "",
+          "published_at": "2026-09-27T22:09:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "388090f9e000fe32",
+      "title": "Our Senior Engineers Loved AI. Then They Realized Nobody Was Asking Them Questions Anymore.",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@guvencanguven965/our-senior-engineers-loved-ai-then-they-realized-nobody-was-asking-them-questions-anymore-9d363fdab6da",
+          "target_url": "https://medium.com/@guvencanguven965/our-senior-engineers-loved-ai-then-they-realized-nobody-was-asking-them-questions-anymore-9d363fdab6da",
+          "independent": false,
+          "title": "Our Senior Engineers Loved AI. Then They Realized Nobody Was Asking Them Questions Anymore.",
+          "summary": "The junior developers were solving more problems on their own. At first, that looked like exactly the kind of independence we wanted. Continue reading on Medium »",
+          "published_at": "2026-09-27T22:53:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1a843cead689a5a9",
+      "title": "The Cost of Intelligence: Inside the New AI Race",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@chawlapc.619/the-cost-of-intelligence-inside-the-new-ai-race-b40e1c4e4605",
+          "target_url": "https://medium.com/@chawlapc.619/the-cost-of-intelligence-inside-the-new-ai-race-b40e1c4e4605",
+          "independent": false,
+          "title": "The Cost of Intelligence: Inside the New AI Race",
+          "summary": "What happens when the most powerful tools in the world become too expensive for most companies to build — and too powerful for their… Continue reading on Medium »",
+          "published_at": "2026-09-27T22:50:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f30095b057ab2df6",
+      "title": "We Let AI Review Every Pull Request. Three Months Later, Our Engineers Were Reading Less Code.",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@guvencanguven965/we-let-ai-review-every-pull-request-three-months-later-our-engineers-were-reading-less-code-9ec497bd2445",
+          "target_url": "https://medium.com/@guvencanguven965/we-let-ai-review-every-pull-request-three-months-later-our-engineers-were-reading-less-code-9ec497bd2445",
+          "independent": false,
+          "title": "We Let AI Review Every Pull Request. Three Months Later, Our Engineers Were Reading Less Code.",
+          "summary": "The reviews became faster and more detailed. The problem was that engineers slowly stopped forming an opinion before reading the AI’s. Continue reading on Medium »",
+          "published_at": "2026-09-27T22:50:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "118b79ebd4935cf2",
+      "title": "We Asked Three Senior Engineers to Design the Same System With AI. They Came Back With Almost the",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@guvencanguven965/we-asked-three-senior-engineers-to-design-the-same-system-with-ai-they-came-back-with-almost-the-77bd4c440a6b",
+          "target_url": "https://medium.com/@guvencanguven965/we-asked-three-senior-engineers-to-design-the-same-system-with-ai-they-came-back-with-almost-the-77bd4c440a6b",
+          "independent": false,
+          "title": "We Asked Three Senior Engineers to Design the Same System With AI. They Came Back With Almost the",
+          "summary": "We expected AI to help each engineer explore more options. Instead, it seemed to make three experienced people think in surprisingly… Continue reading on Medium »",
+          "published_at": "2026-09-27T22:48:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4b9370eb07da0b2d",
+      "title": "The Load Test: Why a Human in the Loop Isn’t a Control",
+      "first_seen": "2026-09-28T08:01:22+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dasumner/the-load-test-why-a-human-in-the-loop-isnt-a-control-ca271d7ae6fa",
+          "target_url": "https://medium.com/@dasumner/the-load-test-why-a-human-in-the-loop-isnt-a-control-ca271d7ae6fa",
+          "independent": false,
+          "title": "The Load Test: Why a Human in the Loop Isn’t a Control",
+          "summary": "I was fresh out of high school, working at my first summer job as an engineering trainee. The senior engineers made a sport of quizzing me… Continue reading on Medium »",
+          "published_at": "2026-09-27T22:46:05+00:00",
           "date_precision": "time"
         }
       ],
