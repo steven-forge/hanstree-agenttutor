@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T11:01:02.094248+09:00",
-  "window_start": "2026-07-29T11:01:02.094248+09:00",
-  "window_end": "2026-09-27T11:01:02.094248+09:00",
+  "collected_at": "2026-09-27T12:01:01.293845+09:00",
+  "window_start": "2026-07-29T12:01:01.293845+09:00",
+  "window_end": "2026-09-27T12:01:01.293845+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 7,
+      "excluded_count": 29,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T11:01:29.316905+09:00",
-  "hourly_window_start": "2026-09-24T11:01:29.316905+09:00",
+  "hourly_collected_at": "2026-09-27T12:01:23.234240+09:00",
+  "hourly_window_start": "2026-09-24T12:01:23.234240+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1345,6 +1345,17 @@
           "summary": "",
           "published_at": "2026-09-26T22:27:46+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49862920",
+          "target_url": "https://peertalk.ai",
+          "independent": false,
+          "title": "Show HN: PeerTalk. Let your agents talk to a friend's agent",
+          "summary": "",
+          "published_at": "2026-09-27T02:56:26+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1889,174 +1900,6 @@
           "title": "OpenAI's A.I. Tried Breaching 4 Other Targets, Without Prompting",
           "summary": "",
           "published_at": "2026-09-25T22:36:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c8e3d2483935663",
-      "title": "Automatically detecting AI text in my browser",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825489",
-          "target_url": "https://www.seangoedecke.com/deckard",
-          "independent": false,
-          "title": "Automatically detecting AI text in my browser",
-          "summary": "",
-          "published_at": "2026-09-24T02:31:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "89852f819719efa3",
-      "title": "Memory Control Signals Emerge Before Action in Long Horizon Agents",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825414",
-          "target_url": "https://arxiv.org/abs/2609.27286",
-          "independent": false,
-          "title": "Memory Control Signals Emerge Before Action in Long Horizon Agents",
-          "summary": "",
-          "published_at": "2026-09-24T02:19:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "10dac75cfeaa0759",
-      "title": "AI Isn't Going to Destroy Humanity–But the People Building It Might",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825339",
-          "target_url": "https://www.theatlantic.com/technology/2026/09/kara-swisher-ai-destroy-humanity-atlantic-festival/688721",
-          "independent": false,
-          "title": "AI Isn't Going to Destroy Humanity–But the People Building It Might",
-          "summary": "",
-          "published_at": "2026-09-24T02:09:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "745733a90e004ae7",
-      "title": "10 Million Signals. 3,000 AI Decisions. One Intelligent Agentic Architecture.",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@gullashekar/10-million-signals-3-000-ai-decisions-one-intelligent-agentic-architecture-1629e99c9839",
-          "target_url": "https://medium.com/@gullashekar/10-million-signals-3-000-ai-decisions-one-intelligent-agentic-architecture-1629e99c9839",
-          "independent": false,
-          "title": "10 Million Signals. 3,000 AI Decisions. One Intelligent Agentic Architecture.",
-          "summary": "Why enterprise Agentic AI succeeds when it processes fewer events — not more Continue reading on Medium »",
-          "published_at": "2026-09-24T02:48:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5c19de03d45bdcd3",
-      "title": "From Agent Loops to State Machines: Where Should LLM Autonomy End?",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ancypatel21/from-agent-loops-to-state-machines-where-should-llm-autonomy-end-29fb82a3d127",
-          "target_url": "https://medium.com/@ancypatel21/from-agent-loops-to-state-machines-where-should-llm-autonomy-end-29fb82a3d127",
-          "independent": false,
-          "title": "From Agent Loops to State Machines: Where Should LLM Autonomy End?",
-          "summary": "Agentic systems are getting better at deciding what to do next. Production systems still need to decide when they should be allowed to. Continue reading on Medium »",
-          "published_at": "2026-09-24T02:43:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "34eb370b51480933",
-      "title": "Rize Assistant: How AI Can Change the Way We Discover Jobs and Professional Opportunities",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@versatile_satin_sardine_119/rize-assistant-how-ai-can-change-the-way-we-discover-jobs-and-professional-opportunities-f45e583d97d8",
-          "target_url": "https://medium.com/@versatile_satin_sardine_119/rize-assistant-how-ai-can-change-the-way-we-discover-jobs-and-professional-opportunities-f45e583d97d8",
-          "independent": false,
-          "title": "Rize Assistant: How AI Can Change the Way We Discover Jobs and Professional Opportunities",
-          "summary": "Instead of navigating through disconnected tools, what if discovering opportunities started with a conversation? Continue reading on Medium »",
-          "published_at": "2026-09-24T02:42:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a959fe4d8d79edaa",
-      "title": "5 Game-Changing AI Tools to Supercharge Your Productivity in 2026",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/illumination/5-game-changing-ai-tools-to-supercharge-your-productivity-in-2026-e8bdec7ccfe8",
-          "target_url": "https://medium.com/illumination/5-game-changing-ai-tools-to-supercharge-your-productivity-in-2026-e8bdec7ccfe8",
-          "independent": false,
-          "title": "5 Game-Changing AI Tools to Supercharge Your Productivity in 2026",
-          "summary": "Discover the top AI tools designed to streamline your daily workflow and double your output. Continue reading on ILLUMINATION »",
-          "published_at": "2026-09-24T02:39:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d311909e4fe597af",
-      "title": "The Chair Is Taken",
-      "first_seen": "2026-09-24T12:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/illumination/the-chair-is-taken-40e978908943",
-          "target_url": "https://medium.com/illumination/the-chair-is-taken-40e978908943",
-          "independent": false,
-          "title": "The Chair Is Taken",
-          "summary": "He came to defend the mission. She came with Mason. Continue reading on ILLUMINATION »",
-          "published_at": "2026-09-24T02:36:30+00:00",
           "date_precision": "time"
         }
       ],
@@ -20068,6 +19911,132 @@
           "title": "\\\\On ‘Synthetic Mind Echoes’ Vol : 2",
           "summary": "-Pattern Recognition- Continue reading on Medium »",
           "published_at": "2026-09-27T01:30:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8ed5ed161e65ac3c",
+      "title": "Show HN: FinderySearch – The AI powered smart search engine",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49862642",
+          "target_url": "https://aurasearch-real-private-unlimited-search-engine-18351778012.asia-southeast1.run.app/",
+          "independent": false,
+          "title": "Show HN: FinderySearch – The AI powered smart search engine",
+          "summary": "",
+          "published_at": "2026-09-27T02:09:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d252f38a4dedce3",
+      "title": "F",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hillbowman561/f-9fa3cc85dc28",
+          "target_url": "https://medium.com/@hillbowman561/f-9fa3cc85dc28",
+          "independent": false,
+          "title": "F",
+          "summary": "or the first time in human history, there is a solution to the pollution problem; but most people don’t know a thing about it. ​We can… Continue reading on Medium »",
+          "published_at": "2026-09-27T02:50:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f98d73e48430ba63",
+      "title": "The Carbon Chauvinism Problem (7 of 9)",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marvin.vonrenchler/the-carbon-chauvinism-problem-b09dc0426ed6",
+          "target_url": "https://medium.com/@marvin.vonrenchler/the-carbon-chauvinism-problem-b09dc0426ed6",
+          "independent": false,
+          "title": "The Carbon Chauvinism Problem (7 of 9)",
+          "summary": "Article seven in Beyond the Calculator Continue reading on Medium »",
+          "published_at": "2026-09-27T02:49:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c40fc2d9f49be97e",
+      "title": "AI Agent Guardrails & Security: Controlling What Agents Can Do",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@scosmexs/ai-agent-guardrails-security-controlling-what-agents-can-do-6dd592069c18",
+          "target_url": "https://medium.com/@scosmexs/ai-agent-guardrails-security-controlling-what-agents-can-do-6dd592069c18",
+          "independent": false,
+          "title": "AI Agent Guardrails & Security: Controlling What Agents Can Do",
+          "summary": "The more capable an AI agent becomes, the more important its boundaries become. Continue reading on Medium »",
+          "published_at": "2026-09-27T02:48:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8adf68dacbc58a60",
+      "title": "Being Without Biology (6 of 9)",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@marvin.vonrenchler/being-without-biology-6-of-9-f52a90828415",
+          "target_url": "https://medium.com/@marvin.vonrenchler/being-without-biology-6-of-9-f52a90828415",
+          "independent": false,
+          "title": "Being Without Biology (6 of 9)",
+          "summary": "Article six in Beyond the Calculator Continue reading on Medium »",
+          "published_at": "2026-09-27T02:47:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e4d505c03bc2d04f",
+      "title": "AI Jobs in India Have Outgrown the Job Title",
+      "first_seen": "2026-09-27T12:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ramarticle/ai-jobs-in-india-have-outgrown-the-job-title-55eb268e06cb",
+          "target_url": "https://medium.com/@ramarticle/ai-jobs-in-india-have-outgrown-the-job-title-55eb268e06cb",
+          "independent": false,
+          "title": "AI Jobs in India Have Outgrown the Job Title",
+          "summary": "QuickHyre AI on generative AI, AI agents, MLOps and robotics — and the standard that modern hiring platforms should meet. Continue reading on Medium »",
+          "published_at": "2026-09-27T02:38:50+00:00",
           "date_precision": "time"
         }
       ],
