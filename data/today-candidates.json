@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T12:01:01.293845+09:00",
-  "window_start": "2026-07-29T12:01:01.293845+09:00",
-  "window_end": "2026-09-27T12:01:01.293845+09:00",
+  "collected_at": "2026-09-27T13:01:19.110778+09:00",
+  "window_start": "2026-07-29T13:01:19.110778+09:00",
+  "window_end": "2026-09-27T13:01:19.110778+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 6,
+      "excluded_count": 34,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 25,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T12:01:23.234240+09:00",
-  "hourly_window_start": "2026-09-24T12:01:23.234240+09:00",
+  "hourly_collected_at": "2026-09-27T13:01:42.043934+09:00",
+  "hourly_window_start": "2026-09-24T13:01:42.043934+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1356,6 +1356,17 @@
           "summary": "",
           "published_at": "2026-09-27T02:56:26+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49829021",
+          "target_url": "https://szept.szyma.co/",
+          "independent": false,
+          "title": "Show HN: Szept – talk to your AI agents and show them your screen (macOS)",
+          "summary": "",
+          "published_at": "2026-09-24T11:15:14+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1419,38 +1430,6 @@
           "title": "Unlocking parallel test-time scaling for long-horizon agents",
           "summary": "",
           "published_at": "2026-09-24T14:30:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5fb6cf52f5d78d64",
-      "title": "OpenAI's Next Marketing Stunt [video]",
-      "first_seen": "2026-09-24T00:01:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49817032",
-          "target_url": "https://www.youtube.com/watch?v=NshlVxYnjFo",
-          "independent": false,
-          "title": "OpenAI's Next Marketing Stunt [video]",
-          "summary": "",
-          "published_at": "2026-09-23T14:47:51+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826076",
-          "target_url": "https://www.youtube.com/watch?v=NshlVxYnjFo",
-          "independent": false,
-          "title": "OpenAI's Next Marketing Stunt",
-          "summary": "",
-          "published_at": "2026-09-24T03:56:37+00:00",
           "date_precision": "time"
         }
       ],
@@ -1908,27 +1887,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "db63e75f045d58fd",
-      "title": "Show HN: Built-in APM for vibe-coded apps so your AI can fix them",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825904",
-          "target_url": "https://oncroft.net/blog/monitoring-built-in-for-every-croft-app",
-          "independent": false,
-          "title": "Show HN: Built-in APM for vibe-coded apps so your AI can fix them",
-          "summary": "",
-          "published_at": "2026-09-24T03:31:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e8dff0b2d891c147",
       "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
       "first_seen": "2026-09-24T13:01:19+09:00",
@@ -1972,132 +1930,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "84c758c7d1221956",
-      "title": "We Run Kaizen on AI",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825737",
-          "target_url": "https://kznconsulting.com/work/how-we-run-kaizen",
-          "independent": false,
-          "title": "We Run Kaizen on AI",
-          "summary": "",
-          "published_at": "2026-09-24T03:08:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8161e985b74510ec",
-      "title": "Which Information Should Your AI Trust?",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/applied-ai-in-business/which-information-should-your-ai-trust-8e01e73faa83",
-          "target_url": "https://medium.com/applied-ai-in-business/which-information-should-your-ai-trust-8e01e73faa83",
-          "independent": false,
-          "title": "Which Information Should Your AI Trust?",
-          "summary": "One Operational Ecosystem, Part 2 Continue reading on Applied AI in Business »",
-          "published_at": "2026-09-24T03:35:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "01068a06fcf59661",
-      "title": "Do Humans Dream of Reading Still?",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mwboggs3/do-humans-dream-of-reading-still-d7fa278c2989",
-          "target_url": "https://medium.com/@mwboggs3/do-humans-dream-of-reading-still-d7fa278c2989",
-          "independent": false,
-          "title": "Do Humans Dream of Reading Still?",
-          "summary": "In Philip K. Dick’s Do Androids Dream of Electric Sheep?, Continue reading on Medium »",
-          "published_at": "2026-09-24T03:32:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "50d9a9c77a42d7f2",
-      "title": "10 prompts to generate API docs from existing code (because 44% of developers still dig through…",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://nitingavhane.medium.com/10-prompts-to-generate-api-docs-from-existing-code-because-44-of-developers-still-dig-through-bc13de96f6cf",
-          "target_url": "https://nitingavhane.medium.com/10-prompts-to-generate-api-docs-from-existing-code-because-44-of-developers-still-dig-through-bc13de96f6cf",
-          "independent": false,
-          "title": "10 prompts to generate API docs from existing code (because 44% of developers still dig through…",
-          "summary": "Hi everyone, I am Nitin Gavhane and In this blog I’m sharing 10 prompts that turn an undocumented codebase into API docs people can use… Continue reading on Medium »",
-          "published_at": "2026-09-24T03:31:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "dfc009375323e213",
-      "title": "AI Doesn’t Need to Talk to Be Great: Meet Decision Models That Cost $0.042 per Million Tokens",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@trends24/ai-doesnt-need-to-talk-to-be-great-meet-decision-models-that-cost-0-042-per-million-tokens-29613f059dca",
-          "target_url": "https://medium.com/@trends24/ai-doesnt-need-to-talk-to-be-great-meet-decision-models-that-cost-0-042-per-million-tokens-29613f059dca",
-          "independent": false,
-          "title": "AI Doesn’t Need to Talk to Be Great: Meet Decision Models That Cost $0.042 per Million Tokens",
-          "summary": "Hi everyone, I am Trends 24/7 and in this blog I want to talk about the part of AI nobody posts screenshots of. Continue reading on Medium »",
-          "published_at": "2026-09-24T03:31:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "60b012069abd4ef5",
-      "title": "When Surgery Leaves Almost No Mark: How Robotic Technology Is Changing Fistula Repair",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shabnamkanwar/when-surgery-leaves-almost-no-mark-how-robotic-technology-is-changing-fistula-repair-445a728931ef",
-          "target_url": "https://medium.com/@shabnamkanwar/when-surgery-leaves-almost-no-mark-how-robotic-technology-is-changing-fistula-repair-445a728931ef",
-          "independent": false,
-          "title": "When Surgery Leaves Almost No Mark: How Robotic Technology Is Changing Fistula Repair",
-          "summary": "Photo by Stefanie Belinda on Unsplash Continue reading on Medium »",
-          "published_at": "2026-09-24T03:27:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "ec6b5081b4c1fca0",
       "title": "Eric Schmidt on the era of AI warfare",
       "first_seen": "2026-09-24T14:01:18+09:00",
@@ -2132,27 +1964,6 @@
           "title": "Nori LLM: Achieving Over 1M tok / s",
           "summary": "",
           "published_at": "2026-09-24T04:11:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "65cc05d765fbdd6d",
-      "title": "China's Approach to AI",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826102",
-          "target_url": "https://madeinchinajournal.com/2026/09/23/chinas-approach-to-ai-infrastructural-statecraft-managed-pluralism",
-          "independent": false,
-          "title": "China's Approach to AI",
-          "summary": "",
-          "published_at": "2026-09-24T04:01:17+00:00",
           "date_precision": "time"
         }
       ],
@@ -4003,27 +3814,6 @@
           "title": "Dutch intelligence services warn AI is making cyberattacks faster and easier",
           "summary": "",
           "published_at": "2026-09-24T11:27:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cd8d7a2c2413b784",
-      "title": "Show HN: Szept – talk to your AI agents and show them your screen (macOS)",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829021",
-          "target_url": "https://szept.szyma.co/",
-          "independent": false,
-          "title": "Show HN: Szept – talk to your AI agents and show them your screen (macOS)",
-          "summary": "",
-          "published_at": "2026-09-24T11:15:14+00:00",
           "date_precision": "time"
         }
       ],
@@ -20037,6 +19827,153 @@
           "title": "AI Jobs in India Have Outgrown the Job Title",
           "summary": "QuickHyre AI on generative AI, AI agents, MLOps and robotics — and the standard that modern hiring platforms should meet. Continue reading on Medium »",
           "published_at": "2026-09-27T02:38:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "eeaf1ae69d8b7c31",
+      "title": "Nom Army: Don't trust coding agents when they say they're done",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863042",
+          "target_url": "https://github.com/rayson-tech/nomarmy",
+          "independent": false,
+          "title": "Nom Army: Don't trust coding agents when they say they're done",
+          "summary": "",
+          "published_at": "2026-09-27T03:17:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b5f689c711c93a2a",
+      "title": "Minicut AI: Higgsfield but for AI Drama and Film",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49862980",
+          "target_url": "https://www.minicut.ai",
+          "independent": false,
+          "title": "Minicut AI: Higgsfield but for AI Drama and Film",
+          "summary": "",
+          "published_at": "2026-09-27T03:05:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "79e211f7595d3299",
+      "title": "Autonomous AI and the Judgment We Delegate",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@johnhinkey39/autonomous-ai-and-the-judgment-we-delegate-e9b5ec5622c9",
+          "target_url": "https://medium.com/@johnhinkey39/autonomous-ai-and-the-judgment-we-delegate-e9b5ec5622c9",
+          "independent": false,
+          "title": "Autonomous AI and the Judgment We Delegate",
+          "summary": "Human fallibility and the conditions for safer autonomy Continue reading on Medium »",
+          "published_at": "2026-09-27T03:54:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "12d9f651fbefb27f",
+      "title": "Jev vs LLMs: Why TypeSafe’s System One Model Changes the Agent Loop",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@pankaj_pandey/jev-vs-llms-why-typesafes-system-one-model-changes-the-agent-loop-ec9bd96f4f15",
+          "target_url": "https://medium.com/@pankaj_pandey/jev-vs-llms-why-typesafes-system-one-model-changes-the-agent-loop-ec9bd96f4f15",
+          "independent": false,
+          "title": "Jev vs LLMs: Why TypeSafe’s System One Model Changes the Agent Loop",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-27T03:52:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "079e890803fc8d2d",
+      "title": "Jev Knew When to Say “50%.” Its Open-Source Copies Didn’t.",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lvyang860/jev-knew-when-to-say-50-its-open-source-copies-didnt-253c3ee0fc0a",
+          "target_url": "https://medium.com/@lvyang860/jev-knew-when-to-say-50-its-open-source-copies-didnt-253c3ee0fc0a",
+          "independent": false,
+          "title": "Jev Knew When to Say “50%.” Its Open-Source Copies Didn’t.",
+          "summary": "TypeSafe’s decision model, three open replicas and a general LLM answered the same pre-registered placebo test. I scored every answer… Continue reading on Medium »",
+          "published_at": "2026-09-27T03:51:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c2bffef730628115",
+      "title": "GPT-6 Astra Held the Crown for Nineteen Days. Then Claude Opus 5.5 Showed Up.",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/skillstuff/gpt-6-astra-held-the-crown-for-nineteen-days-then-claude-opus-5-5-showed-up-29fca5fcbb75",
+          "target_url": "https://medium.com/skillstuff/gpt-6-astra-held-the-crown-for-nineteen-days-then-claude-opus-5-5-showed-up-29fca5fcbb75",
+          "independent": false,
+          "title": "GPT-6 Astra Held the Crown for Nineteen Days. Then Claude Opus 5.5 Showed Up.",
+          "summary": "The AI Arms Race Just Got Faster And No Throne Is Safe for Long Continue reading on Skill Stuff »",
+          "published_at": "2026-09-27T03:50:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d93e727d6ceade19",
+      "title": "Mistral AI: From a 7B Model to Europe’s Sovereign AI Ambition",
+      "first_seen": "2026-09-27T13:01:42+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@christy.cs07/mistral-ai-from-a-7b-model-to-europes-sovereign-ai-ambition-458dbee03e90",
+          "target_url": "https://medium.com/@christy.cs07/mistral-ai-from-a-7b-model-to-europes-sovereign-ai-ambition-458dbee03e90",
+          "independent": false,
+          "title": "Mistral AI: From a 7B Model to Europe’s Sovereign AI Ambition",
+          "summary": "In only three years, Mistral AI has evolved from a newly formed French research company into one of Europe’s most significant AI companies… Continue reading on Medium »",
+          "published_at": "2026-09-27T03:49:40+00:00",
           "date_precision": "time"
         }
       ],
