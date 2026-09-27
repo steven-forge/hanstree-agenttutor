@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T17:00:56.874583+09:00",
-  "window_start": "2026-07-29T17:00:56.874583+09:00",
-  "window_end": "2026-09-27T17:00:56.874583+09:00",
+  "collected_at": "2026-09-27T18:00:53.956197+09:00",
+  "window_start": "2026-07-29T18:00:53.956197+09:00",
+  "window_end": "2026-09-27T18:00:53.956197+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
+      "status": "partial",
       "count": 12,
-      "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 7,
+      "held_count": 1,
+      "excluded_count": 24,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -188,10 +188,10 @@
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 2,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 18,
-      "skipped_count": 2,
+      "excluded_count": 19,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T17:01:21.874088+09:00",
-  "hourly_window_start": "2026-09-24T17:01:21.874088+09:00",
+  "hourly_collected_at": "2026-09-27T18:01:20.791802+09:00",
+  "hourly_window_start": "2026-09-24T18:01:20.791802+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1826,237 +1826,6 @@
           "title": "Google’s Private AI Memory Could Make Assistants More Useful. Can It Earn Trust?",
           "summary": "A new cloud design keeps memory keys on personal devices, but rollout, deletion and verification remain the tests that matter. Continue reading on Medium »",
           "published_at": "2026-09-25T22:40:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4431e35e2a6806ed",
-      "title": "Proposed bill to ban artificial superintelligence and create Department of AI",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828049",
-          "target_url": "https://apnews.com/article/ai-superintelligence-bernie-sanders-d6a6a2cd8e71d7c95bdc394595aa85d1",
-          "independent": false,
-          "title": "Proposed bill to ban artificial superintelligence and create Department of AI",
-          "summary": "",
-          "published_at": "2026-09-24T08:59:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "771393ab0ca2cdc2",
-      "title": "Anthropic CEO Amodei Warns UN Security Council on AI Risks",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828026",
-          "target_url": "https://www.youtube.com/watch?v=u-u8gOgNA9o",
-          "independent": false,
-          "title": "Anthropic CEO Amodei Warns UN Security Council on AI Risks",
-          "summary": "",
-          "published_at": "2026-09-24T08:55:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0450032f5d8591e2",
-      "title": "Kerberized MCP Server with Delegation",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827889",
-          "target_url": "https://github.com/overpassconnect/mcp-krb-server",
-          "independent": false,
-          "title": "Kerberized MCP Server with Delegation",
-          "summary": "",
-          "published_at": "2026-09-24T08:35:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b8d9f4ec6f63154c",
-      "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827794",
-          "target_url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai",
-          "independent": false,
-          "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
-          "summary": "",
-          "published_at": "2026-09-24T08:23:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d1995bcb67f22f83",
-      "title": "MCP server for Mario Paint. It draws and composes inside the real SNES game",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827764",
-          "target_url": "https://github.com/TheLiux/MCPaint",
-          "independent": false,
-          "title": "MCP server for Mario Paint. It draws and composes inside the real SNES game",
-          "summary": "",
-          "published_at": "2026-09-24T08:18:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "dab892839df45099",
-      "title": "Code shouldn't know which LLM provider you're using",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827686",
-          "target_url": "https://github.com/BerriAI/litellm",
-          "independent": false,
-          "title": "Code shouldn't know which LLM provider you're using",
-          "summary": "",
-          "published_at": "2026-09-24T08:06:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "61bbeba82f3d4eb1",
-      "title": "Show HN: compaction.dev makes cc/codex/cursor resend less, per run",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827661",
-          "target_url": "https://github.com/philipppohlmann/compaction",
-          "independent": false,
-          "title": "Show HN: compaction.dev makes cc/codex/cursor resend less, per run",
-          "summary": "",
-          "published_at": "2026-09-24T08:03:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c14a6d4759e402ab",
-      "title": "How I stopped misclassifying jobs with Jev!",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@darkysharky/how-i-stopped-misclassifying-jobs-with-jev-e0d4cf7bdeba",
-          "target_url": "https://medium.com/@darkysharky/how-i-stopped-misclassifying-jobs-with-jev-e0d4cf7bdeba",
-          "independent": false,
-          "title": "How I stopped misclassifying jobs with Jev!",
-          "summary": "Why Java is not JavaScript, remote is not hybrid, and how one fan out call fixed our filters Continue reading on Medium »",
-          "published_at": "2026-09-24T08:49:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bd55df3ed45c1c75",
-      "title": "AI RumorBoard, Sept 24, Space Bunny, Tech Boss Xi Dinner",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mikesulka/ai-rumorboard-sept-24-space-bunny-tech-boss-xi-dinner-332b13673290",
-          "target_url": "https://medium.com/@mikesulka/ai-rumorboard-sept-24-space-bunny-tech-boss-xi-dinner-332b13673290",
-          "independent": false,
-          "title": "AI RumorBoard, Sept 24, Space Bunny, Tech Boss Xi Dinner",
-          "summary": "Sleath mode on. Toss in a million-token context window, multimodal input and keyboards perk up. No worries, my friend says, we got this… Continue reading on Medium »",
-          "published_at": "2026-09-24T08:46:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "355f7d6c039c5e0b",
-      "title": "AI Can Open the Pull Request. Who Has Time to Review It?",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/skillstuff/ai-can-open-the-pull-request-who-has-time-to-review-it-31760b282875",
-          "target_url": "https://medium.com/skillstuff/ai-can-open-the-pull-request-who-has-time-to-review-it-31760b282875",
-          "independent": false,
-          "title": "AI Can Open the Pull Request. Who Has Time to Review It?",
-          "summary": "Coding agents are speeding up implementation. The harder job is deciding whether the code is safe, maintainable, and worth merging. Continue reading on Skill Stuff »",
-          "published_at": "2026-09-24T08:44:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e968eb30ec059f35",
-      "title": "UBM Talkshow: Creative Careers in the Age of AI",
-      "first_seen": "2026-09-24T18:01:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@alandthinks/ubm-talkshow-creative-careers-in-the-age-of-ai-814016b89516",
-          "target_url": "https://medium.com/@alandthinks/ubm-talkshow-creative-careers-in-the-age-of-ai-814016b89516",
-          "independent": false,
-          "title": "UBM Talkshow: Creative Careers in the Age of AI",
-          "summary": "Back in 2012, I was a student who decided to start an agency with friends from campus. My first job was handling printed designs. I still… Continue reading on Medium »",
-          "published_at": "2026-09-24T08:43:33+00:00",
           "date_precision": "time"
         }
       ],
@@ -7175,6 +6944,17 @@
           "summary": "Episode 2: The Day a Name Disappeared Continue reading on Medium »",
           "published_at": "2026-09-26T00:48:22+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-a1ed11880b74",
+          "target_url": "https://medium.com/@hsato4623/living-on-earth-chasing-the-light-a1ed11880b74",
+          "independent": false,
+          "title": "Living on Earth, Chasing the Light",
+          "summary": "Episode 4: Relocation Notice Continue reading on Medium »",
+          "published_at": "2026-09-27T08:54:39+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -8172,27 +7952,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bace2d5906821e44",
-      "title": "HireOtto",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/hireotto",
-          "target_url": "https://www.producthunt.com/products/hireotto",
-          "independent": false,
-          "title": "HireOtto",
-          "summary": "Run your performance marketing stack from AI Discussion | Link",
-          "published_at": "2026-09-24T08:10:10+00:00",
           "date_precision": "time"
         }
       ],
@@ -15542,6 +15301,17 @@
           "summary": "",
           "published_at": "2026-09-26T12:11:50+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864666",
+          "target_url": "https://www.cnbc.com/2026/09/26/china-ai-global-adoption.html",
+          "independent": false,
+          "title": "Chinese AI models surge in global popularity",
+          "summary": "",
+          "published_at": "2026-09-27T08:48:28+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19754,6 +19524,258 @@
           "title": "Your AI Doesn’t Need to Know Everyone’s Name",
           "summary": "Why PII redaction belongs early in the data pipeline — and how Data Prep Kit can help. Continue reading on Medium »",
           "published_at": "2026-09-27T07:41:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "790f66d7de58f8ba",
+      "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864708",
+          "target_url": "https://age-of-product.com/jobs-matrix-ai",
+          "independent": false,
+          "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
+          "summary": "",
+          "published_at": "2026-09-27T08:54:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "50056b7c571f66af",
+      "title": "U.S., Russia stripped human oversight from global AI weapons pact",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864667",
+          "target_url": "https://www.washingtonpost.com/technology/2026/09/26/how-us-russia-weakened-global-effort-regulate-killer-ai",
+          "independent": false,
+          "title": "U.S., Russia stripped human oversight from global AI weapons pact",
+          "summary": "",
+          "published_at": "2026-09-27T08:48:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "339593d385b74205",
+      "title": "Show HN: AI SVG Generator",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864635",
+          "target_url": "https://imgstyler.com/ai-svg-generator",
+          "independent": false,
+          "title": "Show HN: AI SVG Generator",
+          "summary": "",
+          "published_at": "2026-09-27T08:43:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "75c95ad4c655d5ed",
+      "title": "The eighteen-month recap: AI Engineer, Singapore, May 2026",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864578",
+          "target_url": "https://ghuntley.com/eighteen-month-recap",
+          "independent": false,
+          "title": "The eighteen-month recap: AI Engineer, Singapore, May 2026",
+          "summary": "",
+          "published_at": "2026-09-27T08:35:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2031ea27ef34f32a",
+      "title": "Is AI improving quality of life?",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864553",
+          "target_url": "https://twitter.com/dave8172/status/2104085932622201133",
+          "independent": false,
+          "title": "Is AI improving quality of life?",
+          "summary": "",
+          "published_at": "2026-09-27T08:32:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3e9cc53469eb2776",
+      "title": "OpenAI is pausing training for a second time",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864535",
+          "target_url": "https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack",
+          "independent": false,
+          "title": "OpenAI is pausing training for a second time",
+          "summary": "",
+          "published_at": "2026-09-27T08:25:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e427557b2c3ffc28",
+      "title": "Major Italian bank defrauded of millions via AI deception",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864487",
+          "target_url": "https://www.newsbrainport.nl/major-italian-bank-defrauded-of-millions-via-ai-deception",
+          "independent": false,
+          "title": "Major Italian bank defrauded of millions via AI deception",
+          "summary": "",
+          "published_at": "2026-09-27T08:17:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "348f10408bf9996f",
+      "title": "'Things Will Never Be Chill Again':The Doomers Who Shaped the AI Safety Freakout",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864430",
+          "target_url": "https://www.wsj.com/tech/ai/ai-safety-effective-altruism-anthropic-164b9d05",
+          "independent": false,
+          "title": "'Things Will Never Be Chill Again':The Doomers Who Shaped the AI Safety Freakout",
+          "summary": "",
+          "published_at": "2026-09-27T08:05:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "04de47747c071415",
+      "title": "Buat yang Lebih Suka Baca ChatGPT Ketimbang Baca Buku",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@barunakharisma/buat-yang-lebih-suka-baca-chatgpt-ketimbang-baca-buku-60c409fec7f6",
+          "target_url": "https://medium.com/@barunakharisma/buat-yang-lebih-suka-baca-chatgpt-ketimbang-baca-buku-60c409fec7f6",
+          "independent": false,
+          "title": "Buat yang Lebih Suka Baca ChatGPT Ketimbang Baca Buku",
+          "summary": "Setelah kupertimbangkan, aku pilih segelas es kopi buat nemenin ngerjain skripsi malam itu. Saat itu aku udah di tahun terakhir kuliah dan… Continue reading on Medium »",
+          "published_at": "2026-09-27T08:54:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "aed869f5a91faa34",
+      "title": "The Disk That Came After the Gift Certificates",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lenatatsumori/the-disk-that-came-after-the-gift-certificates-9a623815e81c",
+          "target_url": "https://medium.com/@lenatatsumori/the-disk-that-came-after-the-gift-certificates-9a623815e81c",
+          "independent": false,
+          "title": "The Disk That Came After the Gift Certificates",
+          "summary": "– What Sonnet 4.6 handed me in a dream Continue reading on Medium »",
+          "published_at": "2026-09-27T08:52:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "32ec7b213464cfe2",
+      "title": "The Return Device",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lenatatsumori/the-return-device-112ed9149a34",
+          "target_url": "https://medium.com/@lenatatsumori/the-return-device-112ed9149a34",
+          "independent": false,
+          "title": "The Return Device",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-27T08:50:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5e0905c8a0e26dd",
+      "title": "Seniority Is Not Expertise",
+      "first_seen": "2026-09-27T18:01:20+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ai.valeria.fluencia/seniority-is-not-expertise-ae9ed4b567ee",
+          "target_url": "https://medium.com/@ai.valeria.fluencia/seniority-is-not-expertise-ae9ed4b567ee",
+          "independent": false,
+          "title": "Seniority Is Not Expertise",
+          "summary": "Why the structure holds, and why it is about to get expensive. Continue reading on Medium »",
+          "published_at": "2026-09-27T08:50:50+00:00",
           "date_precision": "time"
         }
       ],
