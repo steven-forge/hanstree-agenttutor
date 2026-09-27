@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T15:01:00.965975+09:00",
-  "window_start": "2026-07-29T15:01:00.965975+09:00",
-  "window_end": "2026-09-27T15:01:00.965975+09:00",
+  "collected_at": "2026-09-27T16:01:42.575436+09:00",
+  "window_start": "2026-07-29T16:01:42.575436+09:00",
+  "window_end": "2026-09-27T16:01:42.575436+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 183,
+      "excluded_count": 184,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 5,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 34,
-      "skipped_count": 2,
+      "excluded_count": 27,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 5,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 5,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 10,
+      "count": 11,
       "held_count": 0,
-      "excluded_count": 5,
+      "excluded_count": 4,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T15:01:32.147008+09:00",
-  "hourly_window_start": "2026-09-24T15:01:32.147008+09:00",
+  "hourly_collected_at": "2026-09-27T16:02:12.275964+09:00",
+  "hourly_window_start": "2026-09-24T16:02:12.275964+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1727,49 +1727,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "a7f787561644ed83",
-      "title": "Meta is making Muse more powerful and will let you video chat with it, too",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/999454/meta-muse-ai-agent-video-chat-connect-2026",
-          "target_url": "https://www.theverge.com/tech/999454/meta-muse-ai-agent-video-chat-connect-2026",
-          "independent": true,
-          "title": "Meta is making Muse more powerful and will let you video chat with it, too",
-          "summary": "Meta is quickly iterating on its new Muse AI agent, announcing a bunch of updates today that make the bot more capable and able to chat with you in more ways. Muse agents are getting their own email addresses that they can use for accomplishing tasks. You'll also be able to communicate with your Muse […]",
-          "published_at": "2026-09-23T23:19:42+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/999750/muse-charm-meta-ai-hardware",
-          "target_url": "https://www.theverge.com/tech/999750/muse-charm-meta-ai-hardware",
-          "independent": true,
-          "title": "Meta is making a standalone Muse AI gadget",
-          "summary": "Meta is building a dedicated hardware device for its new Muse AI agent. The product, called Muse Charm, was briefly shown off by Meta CEO Mark Zuckerberg at the end of tonight's Meta Connect presentation. It looks almost like a chunky smart watch without the strap - just a big screen, plus a little lanyard […]",
-          "published_at": "2026-09-24T00:15:20+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826839",
-          "target_url": "https://www.theverge.com/tech/999750/muse-charm-meta-ai-hardware",
-          "independent": false,
-          "title": "Meta is making a standalone Muse AI gadget",
-          "summary": "",
-          "published_at": "2026-09-24T06:12:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "923a6aeb6cb9f251",
       "title": "How to Make Money With AI in 2026: Start With One Problem, Not 100 AI Tools",
       "first_seen": "2026-09-24T10:01:45+09:00",
@@ -1794,38 +1751,6 @@
           "title": "7 AI Skills You Can Learn in 2026 That Can Actually Make You Money",
           "summary": "Artificial intelligence is no longer something reserved for software engineers and large technology companies. Continue reading on Medium »",
           "published_at": "2026-09-25T02:43:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b987135793d078a6",
-      "title": "System One Models Are Real,I Built One 9 Months Ago",
-      "first_seen": "2026-09-24T11:01:25+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://blog.stackademic.com/system-one-models-are-real-i-built-one-9-months-ago-f8098c8000e9",
-          "target_url": "https://blog.stackademic.com/system-one-models-are-real-i-built-one-9-months-ago-f8098c8000e9",
-          "independent": false,
-          "title": "System One Models Are Real,I Built One 9 Months Ago",
-          "summary": "TypeSafe AI just validated a category ConceptNet has been building since 2025. Here’s what we learned. Continue reading on Stackademic »",
-          "published_at": "2026-09-24T01:39:23+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mohit.prajapat_97569/i-built-a-real-time-solar-system-using-free-ai-models-in-opencode-21e72b9bdfde",
-          "target_url": "https://medium.com/@mohit.prajapat_97569/i-built-a-real-time-solar-system-using-free-ai-models-in-opencode-21e72b9bdfde",
-          "independent": false,
-          "title": "I Built a Real-Time Solar System Using Free AI Models in OpenCode",
-          "summary": "I wanted to see how far I could take a simple idea: make the planets move based on real time instead of just playing a fixed animation. Continue reading on Medium »",
-          "published_at": "2026-09-24T06:48:44+00:00",
           "date_precision": "time"
         }
       ],
@@ -1901,342 +1826,6 @@
           "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
           "summary": "",
           "published_at": "2026-09-25T01:21:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5aa50604547b17e1",
-      "title": "It took 20 yrs to start regulating social media – will AI controls come sooner?",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827140",
-          "target_url": "https://www.rnz.co.nz/news/business/1557652/it-took-20-years-to-start-regulating-social-media-will-ai-controls-come-sooner",
-          "independent": false,
-          "title": "It took 20 yrs to start regulating social media – will AI controls come sooner?",
-          "summary": "",
-          "published_at": "2026-09-24T06:54:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c3f050f08d65ff1",
-      "title": "Investigate top humanity questions with your own AI agent",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827031",
-          "target_url": "https://interworky.com/",
-          "independent": false,
-          "title": "Investigate top humanity questions with your own AI agent",
-          "summary": "",
-          "published_at": "2026-09-24T06:38:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cd10ee6988a67079",
-      "title": "Can open-source prompt-injection detectors catch realistic AI agent attacks?",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827019",
-          "target_url": "https://github.com/rudratoshs/buried-injections",
-          "independent": false,
-          "title": "Can open-source prompt-injection detectors catch realistic AI agent attacks?",
-          "summary": "",
-          "published_at": "2026-09-24T06:37:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7073894a60edaa36",
-      "title": "AI Passport Photo",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827002",
-          "target_url": "https://www.aipassportphoto.org/",
-          "independent": false,
-          "title": "AI Passport Photo",
-          "summary": "",
-          "published_at": "2026-09-24T06:34:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "031531e5c074fa49",
-      "title": "How to Audit an AI Agent:Time-Travel Debugging and Drift Measurement",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827000",
-          "target_url": "https://medium.com/@MirArshadTalpur/how-to-audit-not-observe-an-ai-agent-time-travel-debugging-and-drift-measurement-f755a6f4732e",
-          "independent": false,
-          "title": "How to Audit an AI Agent:Time-Travel Debugging and Drift Measurement",
-          "summary": "",
-          "published_at": "2026-09-24T06:34:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a705574455c9b527",
-      "title": "The cost and quality frontier across 29 AI coding models",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826998",
-          "target_url": "https://bito.ai/benchmarks/ai-coding-model-cost",
-          "independent": false,
-          "title": "The cost and quality frontier across 29 AI coding models",
-          "summary": "",
-          "published_at": "2026-09-24T06:34:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9be455e04fba05b2",
-      "title": "Show HN: I asked 5 LLMs 10k questions and indexed every domain they cited",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826945",
-          "target_url": "https://citegeo.uvansa.com",
-          "independent": false,
-          "title": "Show HN: I asked 5 LLMs 10k questions and indexed every domain they cited",
-          "summary": "",
-          "published_at": "2026-09-24T06:27:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7a14160c34ab0aa3",
-      "title": "What Changed from GPT-3.5 to GPT-4? GPT-3.5: 0/30 Empty Nulls. GPT-4: 30/30",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826884",
-          "target_url": "https://www.reddit.com/r/ArtificialInteligence/comments/1wotljm/what_changed_from_gpt35_to_gpt4_same_prompts",
-          "independent": false,
-          "title": "What Changed from GPT-3.5 to GPT-4? GPT-3.5: 0/30 Empty Nulls. GPT-4: 30/30",
-          "summary": "",
-          "published_at": "2026-09-24T06:19:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fc3e114bdfb1cecd",
-      "title": "Mysteries of AI Generalization",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826837",
-          "target_url": "https://www.astralcodexten.com/p/mysteries-of-ai-generalization",
-          "independent": false,
-          "title": "Mysteries of AI Generalization",
-          "summary": "",
-          "published_at": "2026-09-24T06:12:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8c543c7c5765288d",
-      "title": "Lysios – LLM red teaming org",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826834",
-          "target_url": "https://lysios.ai/",
-          "independent": false,
-          "title": "Lysios – LLM red teaming org",
-          "summary": "",
-          "published_at": "2026-09-24T06:11:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a0d588321b444f9a",
-      "title": "The biggest surprises from a year working at OpenAI",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826830",
-          "target_url": "https://aalokpatwa.substack.com/p/one-year-at-openai",
-          "independent": false,
-          "title": "The biggest surprises from a year working at OpenAI",
-          "summary": "",
-          "published_at": "2026-09-24T06:10:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "93f708baf1d4f4ee",
-      "title": "Tincan",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/tincan-2",
-          "target_url": "https://www.producthunt.com/products/tincan-2",
-          "independent": false,
-          "title": "Tincan",
-          "summary": "A group chat for AI assistants Discussion | Link",
-          "published_at": "2026-09-24T06:34:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "85697b904ba98ea3",
-      "title": "Why Small Browser Tools Still Matter in an Age of AI",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@toolscase/why-small-browser-tools-still-matter-in-an-age-of-ai-ca16becc7c89",
-          "target_url": "https://medium.com/@toolscase/why-small-browser-tools-still-matter-in-an-age-of-ai-ca16becc7c89",
-          "independent": false,
-          "title": "Why Small Browser Tools Still Matter in an Age of AI",
-          "summary": "AI can solve increasingly complex problems, but developers and professionals still spend time on tiny repetitive tasks that don’t need a… Continue reading on Medium »",
-          "published_at": "2026-09-24T06:49:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4934cf08f2d4ac27",
-      "title": "The Convenience Trap of AI",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@shania.177/the-convenience-trap-of-ai-0bfed731af93",
-          "target_url": "https://medium.com/@shania.177/the-convenience-trap-of-ai-0bfed731af93",
-          "independent": false,
-          "title": "The Convenience Trap of AI",
-          "summary": "What if the next time you had to write an email, make a decision, solve a problem, or even come up with an idea, your first instinct was… Continue reading on Medium »",
-          "published_at": "2026-09-24T06:49:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ffbeeff31917c17d",
-      "title": "Your AI Agent’s Biggest Risk Isn’t the Model",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://www.towardsdeeplearning.com/your-ai-agents-biggest-risk-isn-t-the-model-24722e37728e",
-          "target_url": "https://www.towardsdeeplearning.com/your-ai-agents-biggest-risk-isn-t-the-model-24722e37728e",
-          "independent": false,
-          "title": "Your AI Agent’s Biggest Risk Isn’t the Model",
-          "summary": "Most agent failures I’ve debugged had nothing wrong with the reasoning step. They fell apart at the boundary between two systems. Continue reading on Towards Deep Learning »",
-          "published_at": "2026-09-24T06:47:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4ff1ff89a6fc67e6",
-      "title": "How to Connect Jev to Claude in 5 Minutes (and What It’s Actually Good For)",
-      "first_seen": "2026-09-24T16:02:29+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@itaispector1/how-to-connect-jev-to-claude-in-5-minutes-and-what-its-actually-good-for-7c7b46b52036",
-          "target_url": "https://medium.com/@itaispector1/how-to-connect-jev-to-claude-in-5-minutes-and-what-its-actually-good-for-7c7b46b52036",
-          "independent": false,
-          "title": "How to Connect Jev to Claude in 5 Minutes (and What It’s Actually Good For)",
-          "summary": "Jev is TypeSafe’s new model that answers with probabilities instead of words. It can’t replace Claude, but it can make Claude faster… Continue reading on Medium »",
-          "published_at": "2026-09-24T06:46:23+00:00",
           "date_precision": "time"
         }
       ],
@@ -10748,6 +10337,17 @@
           "summary": "",
           "published_at": "2026-09-25T13:42:22+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864066",
+          "target_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot",
+          "independent": false,
+          "title": "The New Copilot with Home, Code and Autopilot",
+          "summary": "",
+          "published_at": "2026-09-27T06:54:03+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -16152,6 +15752,17 @@
           "summary": "",
           "published_at": "2026-09-26T12:26:27+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863653",
+          "target_url": "https://openai.com/hugging-face-incident-and-misalignment",
+          "independent": false,
+          "title": "OpenAI Freezes Development of Top Models After Rogue Agents Leak User Images",
+          "summary": "",
+          "published_at": "2026-09-27T05:39:46+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19819,6 +19430,17 @@
           "summary": "",
           "published_at": "2026-09-27T05:07:08+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863792",
+          "target_url": "https://perfect-crime.ai/",
+          "independent": false,
+          "title": "The Perfect Crime: LLM Agents Can Easily Tamper with Their Own Traces",
+          "summary": "",
+          "published_at": "2026-09-27T06:04:03+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19902,6 +19524,279 @@
           "title": "Nobody’s Actually Reviewing the Code Your AI Agent Just Shipped",
           "summary": "A senior engineer I know approved a 400-line PR last week in under two minutes. Tests green, CI happy, description looked reasonable. He… Continue reading on devdotcom »",
           "published_at": "2026-09-27T05:46:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8a03ea7fd547e7a0",
+      "title": "AI and Teams =?",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864084",
+          "target_url": "https://mcastenfors.substack.com/p/ai-teams",
+          "independent": false,
+          "title": "AI and Teams =?",
+          "summary": "",
+          "published_at": "2026-09-27T06:56:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b441f1a3e93a5548",
+      "title": "Despite canning the Copilot+ brand, \"most people love\" its AI assistant",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49864043",
+          "target_url": "https://www.xda-developers.com/despite-canning-the-copilot-brand-most-people-love-its-ai-assistant-says-microsoft",
+          "independent": false,
+          "title": "Despite canning the Copilot+ brand, \"most people love\" its AI assistant",
+          "summary": "",
+          "published_at": "2026-09-27T06:49:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f8549d2de19b744b",
+      "title": "How to Disable Nvidia Optimus Cards on NetBSD",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863972",
+          "target_url": "https://www.unitedbsd.com/d/1690-how-to-disable-nvidia-optimus-cards-on-netbsd-a-guide",
+          "independent": false,
+          "title": "How to Disable Nvidia Optimus Cards on NetBSD",
+          "summary": "",
+          "published_at": "2026-09-27T06:38:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6a2e502c9b20fa2b",
+      "title": "Mahout – Tasker+AI+N8N",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863965",
+          "target_url": "https://github.com/ankurCES/Mahout",
+          "independent": false,
+          "title": "Mahout – Tasker+AI+N8N",
+          "summary": "",
+          "published_at": "2026-09-27T06:35:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7cdac29e207c795a",
+      "title": "Llama.cpp banned him for accidentally tagging in a fork PR",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863937",
+          "target_url": "https://github.com/jadidbourbaki/llama.cpp/pull/2",
+          "independent": false,
+          "title": "Llama.cpp banned him for accidentally tagging in a fork PR",
+          "summary": "",
+          "published_at": "2026-09-27T06:30:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bf6e13bc84725c71",
+      "title": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863864",
+          "target_url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal",
+          "independent": false,
+          "title": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
+          "summary": "",
+          "published_at": "2026-09-27T06:19:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "845a0af54e5d32cc",
+      "title": "'Pink Slime' Is Infecting AI Chatbots Ahead of the Midterms",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863846",
+          "target_url": "https://www.politico.com/news/magazine/2026/09/25/midterms-partisan-ai-chatbots-01092138",
+          "independent": false,
+          "title": "'Pink Slime' Is Infecting AI Chatbots Ahead of the Midterms",
+          "summary": "",
+          "published_at": "2026-09-27T06:16:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "deffd6ec4248fdab",
+      "title": "GKE Pod Snapshots Cut Model Load Times, and Move the Work to Snapshot Lifecycle Management",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/09/gke-pod-snapshots-benchmarks",
+          "target_url": "https://www.infoq.com/news/2026/09/gke-pod-snapshots-benchmarks",
+          "independent": true,
+          "title": "GKE Pod Snapshots Cut Model Load Times, and Move the Work to Snapshot Lifecycle Management",
+          "summary": "Google has published benchmarks for GKE Pod snapshots, reporting up to 89% lower startup latency and a 70B model loading in 37 seconds. The feature checkpoints CPU and GPU memory through gVisor into Cloud Storage. Practitioners have asked whether invalidation is the harder problem, since snapshots match on a spec hash, machine series, and kernel and driver versions. By Steef-Jan Wiggers",
+          "published_at": "2026-09-27T06:46:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "c9a5c3ca4b66520a",
+      "title": "The Muon Optimizer — How to Update Neural Network Weights Smartly",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@himanshuit3036/the-muon-optimizer-how-to-update-neural-network-weights-smartly-b148b8ee848a",
+          "target_url": "https://medium.com/@himanshuit3036/the-muon-optimizer-how-to-update-neural-network-weights-smartly-b148b8ee848a",
+          "independent": false,
+          "title": "The Muon Optimizer — How to Update Neural Network Weights Smartly",
+          "summary": "Introduction: The Problem with Training Large Models Continue reading on Medium »",
+          "published_at": "2026-09-27T06:54:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bf149029b83e6130",
+      "title": "deniedModels vs availableModels: 7 Claude Model Gates, Ranked",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@automation.labs/deniedmodels-vs-availablemodels-7-claude-model-gates-ranked-ef2c5f3842bd",
+          "target_url": "https://medium.com/@automation.labs/deniedmodels-vs-availablemodels-7-claude-model-gates-ranked-ef2c5f3842bd",
+          "independent": false,
+          "title": "deniedModels vs availableModels: 7 Claude Model Gates, Ranked",
+          "summary": "deniedModels shipped Sept 25, Claude Code 2.1.283. 7 ways to keep a $10/Mtok model off the bill: 3 hold, 1 caps spend, 2 leak, 1 is a… Continue reading on Medium »",
+          "published_at": "2026-09-27T06:54:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1b42d3186be0f440",
+      "title": "Personalisation Is Not The Strategy",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mgamurugan/personalisation-is-not-the-strategy-4e098b162736",
+          "target_url": "https://medium.com/@mgamurugan/personalisation-is-not-the-strategy-4e098b162736",
+          "independent": false,
+          "title": "Personalisation Is Not The Strategy",
+          "summary": "Relevance matters, but consensus moves B2B buying decisions Continue reading on Medium »",
+          "published_at": "2026-09-27T06:51:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8c46a01c7f18fa01",
+      "title": "When the Artist Has to Prove He Is Human",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/majordigest/when-the-artist-has-to-prove-he-is-human-8e360bf77110",
+          "target_url": "https://medium.com/majordigest/when-the-artist-has-to-prove-he-is-human-8e360bf77110",
+          "independent": false,
+          "title": "When the Artist Has to Prove He Is Human",
+          "summary": "AI is changing how we look at art, authenticity and trust. Continue reading on Major Digest »",
+          "published_at": "2026-09-27T06:51:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d305e0e7d2714826",
+      "title": "Pre-Training an AI Model",
+      "first_seen": "2026-09-27T16:02:12+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/ai-safety-ethics/pre-training-an-ai-model-bf56ebfc86d4",
+          "target_url": "https://medium.com/ai-safety-ethics/pre-training-an-ai-model-bf56ebfc86d4",
+          "independent": false,
+          "title": "Pre-Training an AI Model",
+          "summary": "How pre-training builds the foundation of a large language model (LLMs) Continue reading on AI Safety & Ethics »",
+          "published_at": "2026-09-27T06:48:43+00:00",
           "date_precision": "time"
         }
       ],
