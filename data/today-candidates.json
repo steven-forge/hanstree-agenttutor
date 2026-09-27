@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T21:01:16.348665+09:00",
-  "window_start": "2026-07-29T21:01:16.348665+09:00",
-  "window_end": "2026-09-27T21:01:16.348665+09:00",
+  "collected_at": "2026-09-27T22:01:08.687941+09:00",
+  "window_start": "2026-07-29T22:01:08.687941+09:00",
+  "window_end": "2026-09-27T22:01:08.687941+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 12,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 5,
+      "excluded_count": 31,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -177,10 +177,10 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 1,
+      "excluded_count": 26,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T21:01:41.309953+09:00",
-  "hourly_window_start": "2026-09-24T21:01:41.309953+09:00",
+  "hourly_collected_at": "2026-09-27T22:01:30.202613+09:00",
+  "hourly_window_start": "2026-09-24T22:01:30.202613+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1379,6 +1379,17 @@
           "summary": "",
           "published_at": "2026-09-27T11:35:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866246",
+          "target_url": "https://github.com/h1d3mun3/augur",
+          "independent": false,
+          "title": "Show HN: Augur – Sandboxed macOS VMs with Xcode for AI Coding Agents",
+          "summary": "",
+          "published_at": "2026-09-27T12:52:07+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1977,216 +1988,6 @@
           "title": "Show HN: A novel about an AI that starts asking questions, a chapter a day",
           "summary": "",
           "published_at": "2026-09-24T13:01:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9f19d86adb0e8156",
-      "title": "I Proved AI Could Beat Our Technical Interviews. Then I Had to Fix Them",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829915",
-          "target_url": "https://andrewwegner.com/ai-broke-our-interview-process-i-had-to-fix-it.html",
-          "independent": false,
-          "title": "I Proved AI Could Beat Our Technical Interviews. Then I Had to Fix Them",
-          "summary": "",
-          "published_at": "2026-09-24T12:53:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "459d93d21a65dc14",
-      "title": "Changing my mind about AI risk – Francis Fukuyama [video]",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829910",
-          "target_url": "https://www.youtube.com/watch?v=aqdum6lnhJ8",
-          "independent": false,
-          "title": "Changing my mind about AI risk – Francis Fukuyama [video]",
-          "summary": "",
-          "published_at": "2026-09-24T12:53:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0623e63a0d033db2",
-      "title": "Show HN: Keydris checks your AI agent's permissions before it sends email",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829823",
-          "target_url": "https://www.youtube.com/watch?v=De0PQTEL8r0",
-          "independent": false,
-          "title": "Show HN: Keydris checks your AI agent's permissions before it sends email",
-          "summary": "",
-          "published_at": "2026-09-24T12:43:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "67f96214008cddc3",
-      "title": "Mark Zuckerberg Showcases Muse AI Agent Fused with Smartglasses",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829761",
-          "target_url": "https://www.wsj.com/tech/ai/mark-zuckerberg-lays-out-his-vision-muse-ai-agent-fused-with-smartglasses-18d9c85e",
-          "independent": false,
-          "title": "Mark Zuckerberg Showcases Muse AI Agent Fused with Smartglasses",
-          "summary": "",
-          "published_at": "2026-09-24T12:37:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "21568dbe95ab8cd7",
-      "title": "Agent Speaks MCP. Give It a Computer",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829742",
-          "target_url": "https://fly.io/blog/sprites-mcp",
-          "independent": false,
-          "title": "Agent Speaks MCP. Give It a Computer",
-          "summary": "",
-          "published_at": "2026-09-24T12:35:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "dc56954d45791003",
-      "title": "Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production.",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/cursor-rollouts-firetiger-production",
-          "target_url": "https://thenewstack.io/cursor-rollouts-firetiger-production",
-          "independent": true,
-          "title": "Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production.",
-          "summary": "We all know that producing code is easier than ever thanks to the abundance of AI coding tools and agents. The post Cursor acquired Firetiger. A month later, Cursor launched a bot that tracks code changes through to production. appeared first on The New Stack .",
-          "published_at": "2026-09-24T12:56:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d7ed7bdd7ca6ebe1",
-      "title": "A small, repeatable way to test AI image and video tools",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@xzmowei/a-small-repeatable-way-to-test-ai-image-and-video-tools-b3a5b48ec49c",
-          "target_url": "https://medium.com/@xzmowei/a-small-repeatable-way-to-test-ai-image-and-video-tools-b3a5b48ec49c",
-          "independent": false,
-          "title": "A small, repeatable way to test AI image and video tools",
-          "summary": "When an AI image or video tool looks promising, I try to avoid judging it from a single attractive sample. A small test set tells me much… Continue reading on Medium »",
-          "published_at": "2026-09-24T12:48:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "badaaa4b1484fa6d",
-      "title": "Claude can run your customer feedback loop. Here’s the setup.",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@marvin.depping/claude-can-run-your-customer-feedback-loop-heres-the-setup-f0c7fa3f8013",
-          "target_url": "https://medium.com/@marvin.depping/claude-can-run-your-customer-feedback-loop-heres-the-setup-f0c7fa3f8013",
-          "independent": false,
-          "title": "Claude can run your customer feedback loop. Here’s the setup.",
-          "summary": "Most feedback loops have the same weak point: Continue reading on Medium »",
-          "published_at": "2026-09-24T12:48:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a5f2e792ef9f9de4",
-      "title": "Visions of a More Sustainable Future of Work for the Underserved",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://jdrolle.medium.com/visions-of-a-more-sustainable-future-of-work-for-the-underserved-283cba0ebbde",
-          "target_url": "https://jdrolle.medium.com/visions-of-a-more-sustainable-future-of-work-for-the-underserved-283cba0ebbde",
-          "independent": false,
-          "title": "Visions of a More Sustainable Future of Work for the Underserved",
-          "summary": "Editor’s note, September 2026: This piece first appeared on LinkedIn on July 18, 2022, when Dr. Rolle was at Medgar Evers College, City… Continue reading on Medium »",
-          "published_at": "2026-09-24T12:47:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1d89ebce0a7656e4",
-      "title": "Designing Evals for AI Agents: Why “It Passed” Isn’t Always “It Works”",
-      "first_seen": "2026-09-24T22:02:43+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/data-science-collective/designing-evals-for-ai-agents-why-it-passed-isnt-always-it-works-6344154a8f82",
-          "target_url": "https://medium.com/data-science-collective/designing-evals-for-ai-agents-why-it-passed-isnt-always-it-works-6344154a8f82",
-          "independent": false,
-          "title": "Designing Evals for AI Agents: Why “It Passed” Isn’t Always “It Works”",
-          "summary": "A green eval feels like proof. Five gentle questions show what a pass really promises, and how to make it tell the truth. Continue reading on Data Science Collective »",
-          "published_at": "2026-09-24T12:45:51+00:00",
           "date_precision": "time"
         }
       ],
@@ -15578,6 +15379,17 @@
           "summary": "The first thing we see is the way we do our daily work. AI tools are doing more data entry, scheduling, basic customer service and… Continue reading on Medium »",
           "published_at": "2026-09-26T16:53:01+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://markettrendz.medium.com/chatgpt-astra-how-openais-new-ai-model-is-changing-the-way-we-work-7068dc10f88a",
+          "target_url": "https://markettrendz.medium.com/chatgpt-astra-how-openais-new-ai-model-is-changing-the-way-we-work-7068dc10f88a",
+          "independent": false,
+          "title": "ChatGPT Astra: How OpenAI’s New AI Model Is Changing the Way We Work",
+          "summary": "Artificial intelligence is moving into a phase where simply generating an answer may no longer be enough. The next step is getting AI… Continue reading on Medium »",
+          "published_at": "2026-09-27T12:46:39+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19601,6 +19413,237 @@
           "title": "13 Substack Posts I’ll Always Click",
           "summary": "I have absolutely no self control when it comes to clicking interesting Substack posts. I’ll open one because the title caught my… Continue reading on Medium »",
           "published_at": "2026-09-27T11:46:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "59be227bb1195b56",
+      "title": "AI Doesn't Need to Invent a Supervirus to Be Dangerous",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866283",
+          "target_url": "https://liorzi.substack.com/p/ai-doesnt-need-to-invent-a-supervirus",
+          "independent": false,
+          "title": "AI Doesn't Need to Invent a Supervirus to Be Dangerous",
+          "summary": "",
+          "published_at": "2026-09-27T12:57:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f576f38fdf6e24bd",
+      "title": "A wall that listens: the local-LLM pipeline behind an AI party in Vilnius",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866154",
+          "target_url": "https://vania-novikau.me/ai-party-wall",
+          "independent": false,
+          "title": "A wall that listens: the local-LLM pipeline behind an AI party in Vilnius",
+          "summary": "",
+          "published_at": "2026-09-27T12:35:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9ff57782ef8e6821",
+      "title": "Understanding the Four AI Risk Domains",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866122",
+          "target_url": "https://sdarchitect.blog/2026/09/27/ai-risk-a-users-guide-part-iv-understanding-the-four-ai-risk-domains",
+          "independent": false,
+          "title": "Understanding the Four AI Risk Domains",
+          "summary": "",
+          "published_at": "2026-09-27T12:30:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "701c1d9af49bc1cb",
+      "title": "Is Windows NT's object-based model better suited for AI agents than Linux?",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866112",
+          "target_url": "https://www.windowslatest.com/2026/09/26/google-researcher-explains-why-windows-nt-puts-linux-to-shame-and-imagines-an-alternate-history-where-it-won",
+          "independent": false,
+          "title": "Is Windows NT's object-based model better suited for AI agents than Linux?",
+          "summary": "",
+          "published_at": "2026-09-27T12:30:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4deca8727b0e540",
+      "title": "Andrew Ng: One Skill to Stay Relevant in the Age of AI [video]",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866102",
+          "target_url": "https://www.youtube.com/watch?v=HTlf3KNNez0",
+          "independent": false,
+          "title": "Andrew Ng: One Skill to Stay Relevant in the Age of AI [video]",
+          "summary": "",
+          "published_at": "2026-09-27T12:29:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "873837d446bf7e78",
+      "title": "The Sad Wives of AI",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866040",
+          "target_url": "https://www.wired.com/story/meet-the-sad-wives-of-ai",
+          "independent": false,
+          "title": "The Sad Wives of AI",
+          "summary": "",
+          "published_at": "2026-09-27T12:18:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fbf2909d1262b536",
+      "title": "Accurate AI reporting deemed 'woke'",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49866007",
+          "target_url": "https://blog.keyvan.net/p/accurate-ai-reporting-deemed-woke",
+          "independent": false,
+          "title": "Accurate AI reporting deemed 'woke'",
+          "summary": "",
+          "published_at": "2026-09-27T12:12:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "97d910d9c1970c0b",
+      "title": "Nobody tells you the product is the easy part",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@smtbedi65/nobody-tells-you-the-product-is-the-easy-part-4a78ce80d2b2",
+          "target_url": "https://medium.com/@smtbedi65/nobody-tells-you-the-product-is-the-easy-part-4a78ce80d2b2",
+          "independent": false,
+          "title": "Nobody tells you the product is the easy part",
+          "summary": "Part 2 of building Inkword: a database that runs itself, AI agents that check each other’s work, cheap models versus expensive ones, and… Continue reading on Medium »",
+          "published_at": "2026-09-27T12:51:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4043caa51b294369",
+      "title": "COZYMERYN: How to Create Cozy Anime ASMR Videos Without Learning Traditional Animation",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@amiraahrabiu02/cozymeryn-cozy-anime-asmr-guide-f7db31a9ee61",
+          "target_url": "https://medium.com/@amiraahrabiu02/cozymeryn-cozy-anime-asmr-guide-f7db31a9ee61",
+          "independent": false,
+          "title": "COZYMERYN: How to Create Cozy Anime ASMR Videos Without Learning Traditional Animation",
+          "summary": "There is something strangely comforting about a quiet animated kitchen. Continue reading on Medium »",
+          "published_at": "2026-09-27T12:49:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "79bd5419c2ab592c",
+      "title": "Azure Container Apps Sandboxes",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@brianveldman/azure-container-apps-sandboxes-e956be015705",
+          "target_url": "https://medium.com/@brianveldman/azure-container-apps-sandboxes-e956be015705",
+          "independent": false,
+          "title": "Azure Container Apps Sandboxes",
+          "summary": "Azure Container Apps Sandboxes provide secure isolated compute environments designed to safely run code, tools, and AI agents. Continue reading on Medium »",
+          "published_at": "2026-09-27T12:49:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e54a834f29a3ac72",
+      "title": "Why Static Analysis Matters More Than Ever in the Age of AI",
+      "first_seen": "2026-09-27T22:01:30+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@cybersecurecloud/why-static-analysis-matters-more-than-ever-in-the-age-of-ai-ed30c574d2a0",
+          "target_url": "https://medium.com/@cybersecurecloud/why-static-analysis-matters-more-than-ever-in-the-age-of-ai-ed30c574d2a0",
+          "independent": false,
+          "title": "Why Static Analysis Matters More Than Ever in the Age of AI",
+          "summary": "Hello everyone. Continue reading on Medium »",
+          "published_at": "2026-09-27T12:43:16+00:00",
           "date_precision": "time"
         }
       ],
