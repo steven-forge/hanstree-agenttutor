@@ -1,6 +1,6 @@
 {
   "news": {
-    "checked_at": "2026-09-27T13:01:42.043934+09:00",
+    "checked_at": "2026-09-27T14:01:24.410354+09:00",
     "status": "partial",
     "candidate_count": 0,
     "archive_count": 296,
@@ -34,7 +34,7 @@
         "status": "ok",
         "count": 0,
         "held_count": 0,
-        "excluded_count": 182,
+        "excluded_count": 183,
         "skipped_count": 23,
         "coverage_limited": false
       },
@@ -71,7 +71,7 @@
         "skipped_count": 7,
         "coverage_limited": false,
         "held_reasons": [
-          "한국어 번역 실패: 한국어 번역에 실패했습니다."
+          "한국어 번역 실패: Retry-After 대기시간 초과 (68317.0초)"
         ]
       },
       {
@@ -101,10 +101,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 4,
+        "count": 5,
         "held_count": 0,
         "excluded_count": 34,
-        "skipped_count": 2,
+        "skipped_count": 3,
         "coverage_limited": false
       },
       {
@@ -277,7 +277,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 860
+    "pending_event_count": 857
   },
   "documents": {
     "checked_at": "2026-09-27T06:26:16.321511+09:00",

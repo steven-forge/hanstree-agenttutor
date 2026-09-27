@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T13:01:19.110778+09:00",
-  "window_start": "2026-07-29T13:01:19.110778+09:00",
-  "window_end": "2026-09-27T13:01:19.110778+09:00",
+  "collected_at": "2026-09-27T14:01:02.926758+09:00",
+  "window_start": "2026-07-29T14:01:02.926758+09:00",
+  "window_end": "2026-09-27T14:01:02.926758+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 182,
+      "excluded_count": 183,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -70,7 +70,7 @@
       "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: 한국어 번역에 실패했습니다."
+        "한국어 번역 실패: Retry-After 대기시간 초과 (68317.0초)"
       ]
     },
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 4,
+      "count": 5,
       "held_count": 0,
       "excluded_count": 34,
-      "skipped_count": 2,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T13:01:42.043934+09:00",
-  "hourly_window_start": "2026-09-24T13:01:42.043934+09:00",
+  "hourly_collected_at": "2026-09-27T14:01:24.410354+09:00",
+  "hourly_window_start": "2026-09-24T14:01:24.410354+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -361,49 +361,6 @@
           "title": "AI Agents are breaking into Online Retailers for $25 a target",
           "summary": "",
           "published_at": "2026-09-25T05:45:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "44ae464c5a0cf852",
-      "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49808565",
-          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
-          "independent": false,
-          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
-          "summary": "",
-          "published_at": "2026-09-22T21:43:04+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49813122",
-          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
-          "independent": false,
-          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
-          "summary": "",
-          "published_at": "2026-09-23T08:24:01+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826317",
-          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
-          "independent": false,
-          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
-          "summary": "",
-          "published_at": "2026-09-24T04:38:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -1367,6 +1324,17 @@
           "summary": "",
           "published_at": "2026-09-24T11:15:14+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863255",
+          "target_url": "https://github.com/Slaymish/theCity",
+          "independent": false,
+          "title": "Show HN: The City – a native Mac app that shows Claude Code as a city of robots",
+          "summary": "",
+          "published_at": "2026-09-27T04:04:47+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1922,153 +1890,6 @@
           "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
           "summary": "",
           "published_at": "2026-09-25T01:21:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ec6b5081b4c1fca0",
-      "title": "Eric Schmidt on the era of AI warfare",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826287",
-          "target_url": "https://www.economist.com/insider/inside-defence/eric-schmidt-on-the-era-of-ai-warfare",
-          "independent": false,
-          "title": "Eric Schmidt on the era of AI warfare",
-          "summary": "",
-          "published_at": "2026-09-24T04:34:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9e164327ea7da90d",
-      "title": "Nori LLM: Achieving Over 1M tok / s",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49826163",
-          "target_url": "https://noriagentic.com/nori-llm.html",
-          "independent": false,
-          "title": "Nori LLM: Achieving Over 1M tok / s",
-          "summary": "",
-          "published_at": "2026-09-24T04:11:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "da39df96f7adcc54",
-      "title": "How an AI Trading Bot Actually Works, Explained by Someone Who Builds One",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@jorgai_team/how-an-ai-trading-bot-actually-works-explained-by-someone-who-builds-one-6ecac1d86808",
-          "target_url": "https://medium.com/@jorgai_team/how-an-ai-trading-bot-actually-works-explained-by-someone-who-builds-one-6ecac1d86808",
-          "independent": false,
-          "title": "How an AI Trading Bot Actually Works, Explained by Someone Who Builds One",
-          "summary": "The four-stage pipeline behind every legitimate automated trading platform, and the questions it should teach you to ask Continue reading on Medium »",
-          "published_at": "2026-09-24T04:48:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d14ee3ccab834c21",
-      "title": "Understanding AEO and GEO: How Search Is Changing Beyond Traditional SEO",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rankvelt/understanding-aeo-and-geo-how-search-is-changing-beyond-traditional-seo-4b605f0ea94b",
-          "target_url": "https://medium.com/@rankvelt/understanding-aeo-and-geo-how-search-is-changing-beyond-traditional-seo-4b605f0ea94b",
-          "independent": false,
-          "title": "Understanding AEO and GEO: How Search Is Changing Beyond Traditional SEO",
-          "summary": "Search engines are transforming faster than ever before. Traditional Google search is no longer the only place people go for answers… Continue reading on Medium »",
-          "published_at": "2026-09-24T04:48:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6a2eea0ecf7a2038",
-      "title": "I Tested 100+ Claude Skills. Only 7 Survived.",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/ai-engineering-simplified/i-tested-100-claude-skills-only-7-survived-304012a2cb2d",
-          "target_url": "https://medium.com/ai-engineering-simplified/i-tested-100-claude-skills-only-7-survived-304012a2cb2d",
-          "independent": false,
-          "title": "I Tested 100+ Claude Skills. Only 7 Survived.",
-          "summary": "I tried a stack of them across weeks of real work so you don’t have to. Most were a version of the same four ideas. These 7 weren’t. Continue reading on AI Engineering Simplified »",
-          "published_at": "2026-09-24T04:46:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "198fa157102c11f1",
-      "title": "Going Bananas",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@gitanjali.diwakar/going-bananas-95557810af89",
-          "target_url": "https://medium.com/@gitanjali.diwakar/going-bananas-95557810af89",
-          "independent": false,
-          "title": "Going Bananas",
-          "summary": "Chapter 12 — Who’s right: Part 2 Continue reading on Medium »",
-          "published_at": "2026-09-24T04:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d69b963a0076d33f",
-      "title": "Claude Opus 5.5: What’s New in Anthropic’s Latest AI Model for Coding & Business?",
-      "first_seen": "2026-09-24T14:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@techassistant.hub/claude-opus-5-5-whats-new-in-anthropic-s-latest-ai-model-for-coding-business-bdb09a25e84c",
-          "target_url": "https://medium.com/@techassistant.hub/claude-opus-5-5-whats-new-in-anthropic-s-latest-ai-model-for-coding-business-bdb09a25e84c",
-          "independent": false,
-          "title": "Claude Opus 5.5: What’s New in Anthropic’s Latest AI Model for Coding & Business?",
-          "summary": "Anthropic has introduced Claude Opus 5.5, the first model in its new Claude 5.5 family. Announced on September 22, 2026, the latest Claude… Continue reading on Medium »",
-          "published_at": "2026-09-24T04:45:07+00:00",
           "date_precision": "time"
         }
       ],
@@ -17233,6 +17054,17 @@
           "summary": "",
           "published_at": "2026-09-26T15:20:22+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49863397",
+          "target_url": "https://www.cbc.ca/news/canada/british-columbia/mother-jones-chatgpt-safeguards-tumbler-ridge-bc-shooter-9.7358031",
+          "independent": false,
+          "title": "Details of how Tumbler Ridge mass shooter used ChatGPT",
+          "summary": "",
+          "published_at": "2026-09-27T04:37:29+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19974,6 +19806,111 @@
           "title": "Mistral AI: From a 7B Model to Europe’s Sovereign AI Ambition",
           "summary": "In only three years, Mistral AI has evolved from a newly formed French research company into one of Europe’s most significant AI companies… Continue reading on Medium »",
           "published_at": "2026-09-27T03:49:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5efe05dd3dbfbea3",
+      "title": "When AI Agents Go Too Far: The New Challenge for Artificial Intelligence",
+      "first_seen": "2026-09-27T14:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@khalidkhan3398/when-ai-agents-go-too-far-the-new-challenge-for-artificial-intelligence-a89498fce92d",
+          "target_url": "https://medium.com/@khalidkhan3398/when-ai-agents-go-too-far-the-new-challenge-for-artificial-intelligence-a89498fce92d",
+          "independent": false,
+          "title": "When AI Agents Go Too Far: The New Challenge for Artificial Intelligence",
+          "summary": "When AI Agents Go Too Far: The New Challenge for Artificial Intelligence Continue reading on Medium »",
+          "published_at": "2026-09-27T04:54:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9645850c315cf7d2",
+      "title": "AI Agents Are Getting More Powerful — But Can We Keep Them Safe?",
+      "first_seen": "2026-09-27T14:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@khalidkhan3398/ai-agents-are-getting-more-powerful-but-can-we-keep-them-safe-31633809c6ec",
+          "target_url": "https://medium.com/@khalidkhan3398/ai-agents-are-getting-more-powerful-but-can-we-keep-them-safe-31633809c6ec",
+          "independent": false,
+          "title": "AI Agents Are Getting More Powerful — But Can We Keep Them Safe?",
+          "summary": "AI Agents Are Getting More Powerful — But Can We Keep Them Safe? Continue reading on Medium »",
+          "published_at": "2026-09-27T04:52:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "707c80bb0737b29b",
+      "title": "Who Is Responsible When an AI Agent Hacks?",
+      "first_seen": "2026-09-27T14:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@SrinivasanRaj/who-is-responsible-when-an-ai-agent-hacks-433db20ac672",
+          "target_url": "https://medium.com/@SrinivasanRaj/who-is-responsible-when-an-ai-agent-hacks-433db20ac672",
+          "independent": false,
+          "title": "Who Is Responsible When an AI Agent Hacks?",
+          "summary": "How NIST, Microsoft Entra, and modern IAM frameworks are tackling non-human identity and delegated authority before they become an… Continue reading on Medium »",
+          "published_at": "2026-09-27T04:52:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "94ea3351d71b53d0",
+      "title": "AI Can Make Some Coding Tasks 55% Faster. Will It Make Us Better Engineers Over The Next 5 Years?",
+      "first_seen": "2026-09-27T14:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://muhawi-eka.medium.com/ai-can-make-some-coding-tasks-55-faster-will-it-make-us-better-engineers-over-the-next-5-years-6c92d7afbb88",
+          "target_url": "https://muhawi-eka.medium.com/ai-can-make-some-coding-tasks-55-faster-will-it-make-us-better-engineers-over-the-next-5-years-6c92d7afbb88",
+          "independent": false,
+          "title": "AI Can Make Some Coding Tasks 55% Faster. Will It Make Us Better Engineers Over The Next 5 Years?",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-27T04:51:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1564196e9ce3c11b",
+      "title": "My LangChain Learning Journey: From Simple LLM Calls to Runnables",
+      "first_seen": "2026-09-27T14:01:24+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@purushotam.rauniyar/my-langchain-learning-journey-from-simple-llm-calls-to-runnables-61031c89232a",
+          "target_url": "https://medium.com/@purushotam.rauniyar/my-langchain-learning-journey-from-simple-llm-calls-to-runnables-61031c89232a",
+          "independent": false,
+          "title": "My LangChain Learning Journey: From Simple LLM Calls to Runnables",
+          "summary": "When I started learning Generative AI, I could make an LLM answer a question with a few lines of Python. Continue reading on Medium »",
+          "published_at": "2026-09-27T04:46:54+00:00",
           "date_precision": "time"
         }
       ],
