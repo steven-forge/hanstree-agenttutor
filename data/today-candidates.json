@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T08:01:13.712014+09:00",
-  "window_start": "2026-07-29T08:01:13.712014+09:00",
-  "window_end": "2026-09-27T08:01:13.712014+09:00",
+  "collected_at": "2026-09-27T09:01:54.586644+09:00",
+  "window_start": "2026-07-29T09:01:54.586644+09:00",
+  "window_end": "2026-09-27T09:01:54.586644+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 127,
+      "skipped_count": 126,
       "coverage_limited": false
     },
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 0,
+      "excluded_count": 25,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 3,
-      "skipped_count": 7,
+      "excluded_count": 4,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 4,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 4,
+      "excluded_count": 27,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T08:01:36.469046+09:00",
-  "hourly_window_start": "2026-09-24T08:01:36.469046+09:00",
+  "hourly_collected_at": "2026-09-27T09:02:18.913602+09:00",
+  "hourly_window_start": "2026-09-24T09:02:18.913602+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1758,132 +1758,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "29d0a1038e63fee9",
-      "title": "Google says its AI model gained unauthorized access to three outside systems",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824369",
-          "target_url": "https://www.nbcnews.com/tech/tech-news/google-says-ai-model-gained-unauthorized-access-three-systems-rcna598651",
-          "independent": false,
-          "title": "Google says its AI model gained unauthorized access to three outside systems",
-          "summary": "",
-          "published_at": "2026-09-23T23:58:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0cbd07e6f99f1575",
-      "title": "The one-person unicorn: building a company alone in two days with Claude",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824339",
-          "target_url": "https://leaveyouragent.com/blog/one-person-unicorn",
-          "independent": false,
-          "title": "The one-person unicorn: building a company alone in two days with Claude",
-          "summary": "",
-          "published_at": "2026-09-23T23:54:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "942f5e3b838f3db1",
-      "title": "Gemini 3.8 TTS Playground",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824314",
-          "target_url": "https://simonwillison.net/2026/Sep/23/gemini-tts-playground",
-          "independent": false,
-          "title": "Gemini 3.8 TTS Playground",
-          "summary": "",
-          "published_at": "2026-09-23T23:52:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9eef37da8f766267",
-      "title": "Stanford violated AI policy after race-swapping students in ad",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49824061",
-          "target_url": "https://www.sfchronicle.com/bayarea/article/stanford-ai-policy-student-photo-race-swapping-22444142.php",
-          "independent": false,
-          "title": "Stanford violated AI policy after race-swapping students in ad",
-          "summary": "",
-          "published_at": "2026-09-23T23:23:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f76cb244d7850997",
-      "title": "One setup, every AI CLI with agnostic-AI",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49823920",
-          "target_url": "https://agnostic-ai.org/",
-          "independent": false,
-          "title": "One setup, every AI CLI with agnostic-AI",
-          "summary": "",
-          "published_at": "2026-09-23T23:10:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b2a913a983d022a7",
-      "title": "Meta VR Glasses, Ray-Ban Meta Audio, Ray-Ban Meta Gen 3: Specs, Features, Prices",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/metas-answer-to-the-meta-creep-camera-free-smart-glasses",
-          "target_url": "https://www.wired.com/story/metas-answer-to-the-meta-creep-camera-free-smart-glasses",
-          "independent": true,
-          "title": "Meta VR Glasses, Ray-Ban Meta Audio, Ray-Ban Meta Gen 3: Specs, Features, Prices",
-          "summary": "At its Meta Connect event, CEO Mark Zuckerberg announced a handful of new smart glasses, including a slimmed-down VR headset and the company’s first camera-free glasses.",
-          "published_at": "2026-09-23T23:42:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "a7f787561644ed83",
       "title": "Meta is making Muse more powerful and will let you video chat with it, too",
       "first_seen": "2026-09-24T09:01:40+09:00",
@@ -1925,111 +1799,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "7db0cc10efad499c",
-      "title": "Our AI Agent Finished the Feature in Four Hours. It Sat Waiting for Humans for Eleven Days.",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/lets-code-future/our-ai-agent-finished-the-feature-in-four-hours-it-sat-waiting-for-humans-for-eleven-days-88a5e9c839eb",
-          "target_url": "https://medium.com/lets-code-future/our-ai-agent-finished-the-feature-in-four-hours-it-sat-waiting-for-humans-for-eleven-days-88a5e9c839eb",
-          "independent": false,
-          "title": "Our AI Agent Finished the Feature in Four Hours. It Sat Waiting for Humans for Eleven Days.",
-          "summary": "We thought coding was slowing the company down, but once implementation became almost instant, we discovered how little of software… Continue reading on Let’s Code Future »",
-          "published_at": "2026-09-23T23:44:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5c122343f9a77caf",
-      "title": "Building Jarvis #1: Getting a Local LLM to Read a PDF It Cannot Fit in Context",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@aaryacodes/building-jarvis-1-getting-a-local-llm-to-read-a-pdf-it-cannot-fit-in-context-227d10733624",
-          "target_url": "https://medium.com/@aaryacodes/building-jarvis-1-getting-a-local-llm-to-read-a-pdf-it-cannot-fit-in-context-227d10733624",
-          "independent": false,
-          "title": "Building Jarvis #1: Getting a Local LLM to Read a PDF It Cannot Fit in Context",
-          "summary": "I use AI almost every day. I give it class notes, papers, presentations, and long documents and ask questions about them without really… Continue reading on Medium »",
-          "published_at": "2026-09-23T23:43:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "505374fd43147a99",
-      "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-91f487a18a89",
-          "target_url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-91f487a18a89",
-          "independent": false,
-          "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
-          "summary": "شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf #شماره #خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
-          "published_at": "2026-09-23T23:41:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0483a6dc0b64d168",
-      "title": "Do You Trust Your AI Chatbot’s Financial Advice?",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/law-and-ethics-in-tech/do-you-trust-your-ai-chatbots-financial-advice-c0431b347a05",
-          "target_url": "https://medium.com/law-and-ethics-in-tech/do-you-trust-your-ai-chatbots-financial-advice-c0431b347a05",
-          "independent": false,
-          "title": "Do You Trust Your AI Chatbot’s Financial Advice?",
-          "summary": "Every week, we are sharing top 5 incidents and this year, is the year we did not have a single week without an interesting incident. We… Continue reading on Law and Ethics in Tech »",
-          "published_at": "2026-09-23T23:40:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "785bae4c6c36d47e",
-      "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
-      "first_seen": "2026-09-24T09:01:40+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-628a3c90fa07",
-          "target_url": "https://medium.com/@saydablwchy2/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-628a3c90fa07",
-          "independent": false,
-          "title": "09370673570شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره…",
-          "summary": "شماره خاله #شماره خاله#تهران #شماره خاله#اصفهان شماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf #شماره #خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
-          "published_at": "2026-09-23T23:40:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "a20cc7f00a74969f",
@@ -20118,6 +19887,237 @@
           "title": "System 1 Models Are Vulnerable To Flip Tokens",
           "summary": "In this research, I find that the system 1 model Laya is vulnerable to a model-evasion technique HiddenLayer calls EchoGram. In my testing… Continue reading on Medium »",
           "published_at": "2026-09-26T22:46:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c85c67e65601a9f",
+      "title": "Practical lessons on building software with LLMs and automated governance",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861827",
+          "target_url": "https://banes-lab.com/",
+          "independent": false,
+          "title": "Practical lessons on building software with LLMs and automated governance",
+          "summary": "",
+          "published_at": "2026-09-27T00:00:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1a4fe5cc3c5e6f59",
+      "title": "\"can't a guy walk down the street anymore without being harassed by AI\" [video]",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861804",
+          "target_url": "https://bsky.app/profile/cabel.panic.com/post/3mwgo5kml3r2z",
+          "independent": false,
+          "title": "\"can't a guy walk down the street anymore without being harassed by AI\" [video]",
+          "summary": "",
+          "published_at": "2026-09-26T23:57:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4811fc5b769cb71d",
+      "title": "What reversing, modernising old games tells us about the economic impact of AI",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861755",
+          "target_url": "https://this.os.isfine.org/blog/posts/what-reverse-engineering-and-modernising-an-old-war-game-tells-us-about-the-econ",
+          "independent": false,
+          "title": "What reversing, modernising old games tells us about the economic impact of AI",
+          "summary": "",
+          "published_at": "2026-09-26T23:49:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "576187f12727601c",
+      "title": "Claude Deleted 48k Files",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861717",
+          "target_url": "https://web.archive.org/web/20260920145334/https://www.reddit.com/r/ClaudeAI/comments/1wl5cgo/code_just_deleted_48k_files_this_cant_be_real?solution=7a8eb446d9dfaf1c7a8eb446d9dfaf1c&js_challenge=1&jsc_token=7afd7253fec22262ff1c52b1703fe9ecebcc8a5a54d4e96f970086c157293d95&jsc_orig_r=",
+          "independent": false,
+          "title": "Claude Deleted 48k Files",
+          "summary": "",
+          "published_at": "2026-09-26T23:42:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a925afadac5cfaac",
+      "title": "Top AI companies probing security incidents",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861517",
+          "target_url": "https://www.axios.com/2026/09/26/openai-anthropic-thousands-ai-security-incidents",
+          "independent": false,
+          "title": "Top AI companies probing security incidents",
+          "summary": "",
+          "published_at": "2026-09-26T23:15:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ded5da7b623af05b",
+      "title": "Interpolating Between Neural Networks",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49861496",
+          "target_url": "https://flx.ai/2026/interpolating-between-neural-networks",
+          "independent": false,
+          "title": "Interpolating Between Neural Networks",
+          "summary": "",
+          "published_at": "2026-09-26T23:13:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b72f1c1dd606b909",
+      "title": "Pope Leo’s Take On AI: A Close-Up Of The Encyclical (Part II)",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sparrow_starfire/pope-leos-take-on-ai-a-close-up-of-the-encyclical-part-ii-2be6e5ba4bb1",
+          "target_url": "https://medium.com/@sparrow_starfire/pope-leos-take-on-ai-a-close-up-of-the-encyclical-part-ii-2be6e5ba4bb1",
+          "independent": false,
+          "title": "Pope Leo’s Take On AI: A Close-Up Of The Encyclical (Part II)",
+          "summary": "Ask not what AI can do in a lab today. Ask where it will soon take us as a people, and whether we, the public, can trust those steering… Continue reading on Medium »",
+          "published_at": "2026-09-26T23:52:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a9dec642bd931208",
+      "title": "8 Python Tools That Turn Quick Scripts Into Maintainable Software",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://blog.stackademic.com/8-python-tools-that-turn-quick-scripts-into-maintainable-software-92e9074163d8",
+          "target_url": "https://blog.stackademic.com/8-python-tools-that-turn-quick-scripts-into-maintainable-software-92e9074163d8",
+          "independent": false,
+          "title": "8 Python Tools That Turn Quick Scripts Into Maintainable Software",
+          "summary": "Keep the speed. Lose the fragility. Continue reading on Stackademic »",
+          "published_at": "2026-09-26T23:48:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d781a67aeb640300",
+      "title": "Tech Explorer: Code, Intelligence, and Security",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/write-a-catalyst/tech-explorer-code-intelligence-and-security-a24302c80a7c",
+          "target_url": "https://medium.com/write-a-catalyst/tech-explorer-code-intelligence-and-security-a24302c80a7c",
+          "independent": false,
+          "title": "Tech Explorer: Code, Intelligence, and Security",
+          "summary": "I did not plan to become a generalist… Continue reading on Write A Catalyst »",
+          "published_at": "2026-09-26T23:47:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f69b4ef90bda65b8",
+      "title": "I Build AI Automation for a Living. Here Is What I’m Teaching My Kids About the Future.",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/write-a-catalyst/i-build-ai-automation-for-a-living-here-is-what-im-teaching-my-kids-about-the-future-a9cfac1a7e59",
+          "target_url": "https://medium.com/write-a-catalyst/i-build-ai-automation-for-a-living-here-is-what-im-teaching-my-kids-about-the-future-a9cfac1a7e59",
+          "independent": false,
+          "title": "I Build AI Automation for a Living. Here Is What I’m Teaching My Kids About the Future.",
+          "summary": "The uncomfortable truth about the skills that will actually survive the next decade of the internet. Continue reading on Write A Catalyst »",
+          "published_at": "2026-09-26T23:46:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5bdb3753f17eab35",
+      "title": "Why Answering Every Question Is Wrong: Teaching LLMs When to Clarify and When to Act",
+      "first_seen": "2026-09-27T09:02:18+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@chrisjcc.physics/why-answering-every-question-is-wrong-teaching-llms-when-to-clarify-and-when-to-act-5f2d667234f1",
+          "target_url": "https://medium.com/@chrisjcc.physics/why-answering-every-question-is-wrong-teaching-llms-when-to-clarify-and-when-to-act-5f2d667234f1",
+          "independent": false,
+          "title": "Why Answering Every Question Is Wrong: Teaching LLMs When to Clarify and When to Act",
+          "summary": "A practical experiment in training a 7B-parameter language model to distinguish ambiguous questions from answerable ones using SFT, DPO… Continue reading on Medium »",
+          "published_at": "2026-09-26T23:43:21+00:00",
           "date_precision": "time"
         }
       ],
