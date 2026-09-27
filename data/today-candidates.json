@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T01:00:56.771562+09:00",
-  "window_start": "2026-07-30T01:00:56.771562+09:00",
-  "window_end": "2026-09-28T01:00:56.771562+09:00",
+  "collected_at": "2026-09-28T02:00:52.856071+09:00",
+  "window_start": "2026-07-30T02:00:52.856071+09:00",
+  "window_end": "2026-09-28T02:00:52.856071+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 31,
-      "skipped_count": 1,
+      "excluded_count": 27,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 1,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 1,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T01:01:23.082770+09:00",
-  "hourly_window_start": "2026-09-25T01:01:23.082770+09:00",
+  "hourly_collected_at": "2026-09-28T02:01:23.068386+09:00",
+  "hourly_window_start": "2026-09-25T02:01:23.068386+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1401,37 +1401,16 @@
           "summary": "",
           "published_at": "2026-09-27T15:14:15+00:00",
           "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e8fb7849254f622f",
-      "title": "Cheaper LLM Labelling",
-      "first_seen": "2026-09-23T23:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49816035",
-          "target_url": "https://entropicthoughts.com/cheaper-llm-labeling",
-          "independent": false,
-          "title": "Cheaper LLM Labelling",
-          "summary": "",
-          "published_at": "2026-09-23T13:41:57+00:00",
-          "date_precision": "time"
         },
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833421",
-          "target_url": "https://entropicthoughts.com/cheaper-llm-labeling",
+          "url": "https://news.ycombinator.com/item?id=49868143",
+          "target_url": "https://github.com/borisreitman/browser-session-ctl",
           "independent": false,
-          "title": "Cheaper LLM Labelling",
+          "title": "Show HN: Drive your Chrome window from shell (use with Claude)",
           "summary": "",
-          "published_at": "2026-09-24T16:50:57+00:00",
+          "published_at": "2026-09-27T16:24:38+00:00",
           "date_precision": "time"
         }
       ],
@@ -1829,6 +1808,17 @@
           "summary": "A new cloud design keeps memory keys on personal devices, but rollout, deletion and verification remain the tests that matter. Continue reading on Medium »",
           "published_at": "2026-09-25T22:40:07+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867987",
+          "target_url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory",
+          "independent": false,
+          "title": "Advancing Private AI Compute with secure, server-side memory",
+          "summary": "",
+          "published_at": "2026-09-27T16:10:34+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2114,27 +2104,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "dedded481bc9d5c3",
-      "title": "The Gnome LLM Policy That I Want",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833554",
-          "target_url": "https://blogs.gnome.org/alatiera/2026/09/23/the-gnome-llm-policy-that-i-want",
-          "independent": false,
-          "title": "The Gnome LLM Policy That I Want",
-          "summary": "",
-          "published_at": "2026-09-24T17:00:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "321a943a4dd13ce0",
       "title": "Gemini 3.8 with Live Avatar",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2176,27 +2145,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "5af4c23588a93431",
-      "title": "Xcode project configuration that's more human-readable and editable by agents",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833395",
-          "target_url": "https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format",
-          "independent": false,
-          "title": "Xcode project configuration that's more human-readable and editable by agents",
-          "summary": "",
-          "published_at": "2026-09-24T16:49:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "c05031f9c616dc08",
@@ -2263,27 +2211,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "63e0251438a40139",
-      "title": "Local sandboxing in the GitHub Copilot app",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833223",
-          "target_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
-          "independent": false,
-          "title": "Local sandboxing in the GitHub Copilot app",
-          "summary": "",
-          "published_at": "2026-09-24T16:39:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "6472fdda6395fafa",
       "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2316,69 +2243,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "62bb527af0cd61f3",
-      "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000116/google-gemini-business-phone-calls",
-          "independent": true,
-          "title": "Gemini can now call businesses for you so you don’t have to wait on hold",
-          "summary": "Google's launching an \"early experiment\" feature on Pixel 11 that lets users delegate local business calls to Gemini, like making a reservation, checking if a product is in stock, or rescheduling an appointment. According to Google, you don't even need to start the call to have Gemini handle it for you: Instead of dialing yourself, […]",
-          "published_at": "2026-09-24T16:04:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "1a6a7ee1f4b800d0",
-      "title": "20 minutes with the CEO of ElevenLabs, now reportedly valued at $22B",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion",
-          "target_url": "https://techcrunch.com/2026/09/24/twenty-minutes-with-the-ceo-of-elevenlabs-now-reportedly-valued-at-22-billion",
-          "independent": true,
-          "title": "20 minutes with the CEO of ElevenLabs, now reportedly valued at $22B",
-          "summary": "ElevenLabs powers the AI voice on the other end of a lot of customer service calls, and its CEO told me this week that businesses should probably tell you that — at least until getting a machine is what everyone expects anyway.",
-          "published_at": "2026-09-24T16:35:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "6b620c46377507ae",
-      "title": "Learning AI & ML in College: What Happens Beyond the Textbooks",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@riyasingh13.dev/learning-ai-ml-in-college-what-happens-beyond-the-textbooks-bfe9a9f60e64",
-          "target_url": "https://medium.com/@riyasingh13.dev/learning-ai-ml-in-college-what-happens-beyond-the-textbooks-bfe9a9f60e64",
-          "independent": false,
-          "title": "Learning AI & ML in College: What Happens Beyond the Textbooks",
-          "summary": "I’m currently studying B.Tech CSE with AI & ML, and one thing I’ve realised is that learning AI from a syllabus is very different from… Continue reading on Medium »",
-          "published_at": "2026-09-24T16:50:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "7b5f33950bb24580",
       "title": "Stop Trying to “Learn AI” — Do This Instead",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2403,69 +2267,6 @@
           "title": "Stop Asking AI to “Write an Article”: Do This Instead for Human-Grade Output",
           "summary": "The quality of AI writing often depends less on the model and more on the instructions we give it. Continue reading on Activated Thinker »",
           "published_at": "2026-09-26T18:44:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "204898c09b64457f",
-      "title": "What is Qwen-Audio-3.1? Why Alibaba Just Shipped a Sound Designer, Not Just a Voice",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lvntblsn/what-is-qwen-audio-3-1-why-alibaba-just-shipped-a-sound-designer-not-just-a-voice-ca5255fbf025",
-          "target_url": "https://medium.com/@lvntblsn/what-is-qwen-audio-3-1-why-alibaba-just-shipped-a-sound-designer-not-just-a-voice-ca5255fbf025",
-          "independent": false,
-          "title": "What is Qwen-Audio-3.1? Why Alibaba Just Shipped a Sound Designer, Not Just a Voice",
-          "summary": "Five models, one audio stack — and the new one writes the footsteps, the rain and the line of dialogue in a single pass. Continue reading on Medium »",
-          "published_at": "2026-09-24T16:49:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "39781dc99693ed2f",
-      "title": "Once Again, I Find Myself Asking…What’s the Point?",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://xlauren-mx.medium.com/once-again-i-find-myself-asking-whats-the-point-cd3ffb49bb7e",
-          "target_url": "https://xlauren-mx.medium.com/once-again-i-find-myself-asking-whats-the-point-cd3ffb49bb7e",
-          "independent": false,
-          "title": "Once Again, I Find Myself Asking…What’s the Point?",
-          "summary": "Paying attention will take its toll on your mental health. Continue reading on Medium »",
-          "published_at": "2026-09-24T16:47:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7a397f538b055217",
-      "title": "No mundo da inteligência artificial, a cultura é o que torna uma empresa impossível de copiar",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@alisson.teles0/no-mundo-da-intelig%C3%AAncia-artificial-a-cultura-%C3%A9-o-que-torna-uma-empresa-imposs%C3%ADvel-de-copiar-db20533e5ade",
-          "target_url": "https://medium.com/@alisson.teles0/no-mundo-da-intelig%C3%AAncia-artificial-a-cultura-%C3%A9-o-que-torna-uma-empresa-imposs%C3%ADvel-de-copiar-db20533e5ade",
-          "independent": false,
-          "title": "No mundo da inteligência artificial, a cultura é o que torna uma empresa impossível de copiar",
-          "summary": "Quando todos têm acesso às mesmas tecnologias, a verdadeira diferenciação está na forma singular como cada organização pensa, cria e… Continue reading on Medium »",
-          "published_at": "2026-09-24T16:45:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -2630,27 +2431,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ff3779e3fc84e1f8",
-      "title": "Google Photos ‘Clueless’-inspired virtual closet is now available on Android and iOS",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/24/google-photos-clueless-inspired-virtual-closet-is-now-available-on-android-and-ios",
-          "target_url": "https://techcrunch.com/2026/09/24/google-photos-clueless-inspired-virtual-closet-is-now-available-on-android-and-ios",
-          "independent": true,
-          "title": "Google Photos ‘Clueless’-inspired virtual closet is now available on Android and iOS",
-          "summary": "The AI-powered feature builds a virtual wardrobe from your photos, and is now broadly available after first rolling out to Android users in June.",
-          "published_at": "2026-09-24T17:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "a368a93ae5cca56e",
@@ -17345,6 +17125,17 @@
           "summary": "",
           "published_at": "2026-09-27T07:40:36+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868202",
+          "target_url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
+          "independent": false,
+          "title": "OpenAI halts training of latest models as reports mount of AI agents going rogue",
+          "summary": "",
+          "published_at": "2026-09-27T16:29:38+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19193,6 +18984,237 @@
           "title": "I Turned My Weird Doodles Into AI Art - And It Changed How I Think About Creativity",
           "summary": "Continue reading on KAIRI »",
           "published_at": "2026-09-27T15:51:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "186f5d3222443dcf",
+      "title": "Life Forge – Autonomous Flight Simulator for AI Agents",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868500",
+          "target_url": "https://github.com/zariffromlatif/life-forge",
+          "independent": false,
+          "title": "Life Forge – Autonomous Flight Simulator for AI Agents",
+          "summary": "",
+          "published_at": "2026-09-27T17:00:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dc3b4bc4e3c7a5bb",
+      "title": "Observability-driven harnesses for building with agents",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868243",
+          "target_url": "https://www.datadoghq.com/blog/ai/harness-first-agents",
+          "independent": false,
+          "title": "Observability-driven harnesses for building with agents",
+          "summary": "",
+          "published_at": "2026-09-27T16:33:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "61c1e51f252c9ea2",
+      "title": "Zero to SaaS in 24 hours with Claude Projects and Opus 5.5",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868199",
+          "target_url": "https://lorentz.app/blog-item.html?id=slivingdoc-hosted-in-a-day",
+          "independent": false,
+          "title": "Zero to SaaS in 24 hours with Claude Projects and Opus 5.5",
+          "summary": "",
+          "published_at": "2026-09-27T16:29:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ae6b36aa6e7ef96a",
+      "title": "Glyd – Run LLMs in 33% less GPU memory, bit for bit",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868130",
+          "target_url": "https://getglyd.com/",
+          "independent": false,
+          "title": "Glyd – Run LLMs in 33% less GPU memory, bit for bit",
+          "summary": "",
+          "published_at": "2026-09-27T16:23:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b62a94f3911c0d7f",
+      "title": "There are no \"rogue\" AI agents",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868083",
+          "target_url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+          "independent": false,
+          "title": "There are no \"rogue\" AI agents",
+          "summary": "",
+          "published_at": "2026-09-27T16:19:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "208027e4792521e9",
+      "title": "Kimi K3 vs. Claude Opus 5.5: How Two Flagship LLMs Built Pokémon Emerald Worms",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868056",
+          "target_url": "https://www.runsybil.com/blog/kimi-k3-vs-claude-opus-5-5-how-two-flagship-llms-built-pokemon-emerald-worms",
+          "independent": false,
+          "title": "Kimi K3 vs. Claude Opus 5.5: How Two Flagship LLMs Built Pokémon Emerald Worms",
+          "summary": "",
+          "published_at": "2026-09-27T16:17:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f5d5f1c5cf571770",
+      "title": "The AI Gave Me Sources. I Still Had to Check Them.",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://cybernerdie.medium.com/the-ai-gave-me-sources-i-still-had-to-check-them-cb0ffcc48a76",
+          "target_url": "https://cybernerdie.medium.com/the-ai-gave-me-sources-i-still-had-to-check-them-cb0ffcc48a76",
+          "independent": false,
+          "title": "The AI Gave Me Sources. I Still Had to Check Them.",
+          "summary": "AI can make research much faster. The trick is knowing where its job ends and yours begins. Continue reading on Medium »",
+          "published_at": "2026-09-27T16:54:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "389f515efdc63de6",
+      "title": "Meta Muse: Features, Price, Privacy and UAE Availability of Meta’s New AI Agent",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nexploreinfo/meta-muse-features-price-privacy-and-uae-availability-of-metas-new-ai-agent-f95e86b1cc10",
+          "target_url": "https://medium.com/@nexploreinfo/meta-muse-features-price-privacy-and-uae-availability-of-metas-new-ai-agent-f95e86b1cc10",
+          "independent": false,
+          "title": "Meta Muse: Features, Price, Privacy and UAE Availability of Meta’s New AI Agent",
+          "summary": "Meta Muse is Meta’s new personal AI agent, and it does a lot more than chat. It can send emails, book travel, fill out forms and shop for… Continue reading on Medium »",
+          "published_at": "2026-09-27T16:53:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c96564aec2e493af",
+      "title": "The Convergence Nobody’s Talking About: What Happens When AI Starts Running Your Crypto Portfolio",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@barronqasem/the-convergence-nobodys-talking-about-what-happens-when-ai-starts-running-your-crypto-portfolio-2229f9c7333a",
+          "target_url": "https://medium.com/@barronqasem/the-convergence-nobodys-talking-about-what-happens-when-ai-starts-running-your-crypto-portfolio-2229f9c7333a",
+          "independent": false,
+          "title": "The Convergence Nobody’s Talking About: What Happens When AI Starts Running Your Crypto Portfolio",
+          "summary": "For the last two years, two technology waves have been building in parallel. One is artificial intelligence — increasingly capable of… Continue reading on Medium »",
+          "published_at": "2026-09-27T16:53:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9fa675e6ee482ffc",
+      "title": "ShikshaPulse AI: Turning Education Data Into Decisions, Actions, and Accountability",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@harjotsingh97801/shikshapulse-ai-turning-education-data-into-decisions-actions-and-accountability-d470124b1c87",
+          "target_url": "https://medium.com/@harjotsingh97801/shikshapulse-ai-turning-education-data-into-decisions-actions-and-accountability-d470124b1c87",
+          "independent": false,
+          "title": "ShikshaPulse AI: Turning Education Data Into Decisions, Actions, and Accountability",
+          "summary": "Building an AI-powered education intelligence platform that helps education officers move from fragmented data to prioritized… Continue reading on Medium »",
+          "published_at": "2026-09-27T16:51:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "60c030fbd9fcda06",
+      "title": "3 Reasons Your AI Budget Is Bleeding: Why “LLM-Jacking” Attacks Are Surging (And The 8-Minute…",
+      "first_seen": "2026-09-28T02:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nanthakumar18122000/3-reasons-your-ai-budget-is-bleeding-why-llm-jacking-attacks-are-surging-and-the-8-minute-29e173f50b47",
+          "target_url": "https://medium.com/@nanthakumar18122000/3-reasons-your-ai-budget-is-bleeding-why-llm-jacking-attacks-are-surging-and-the-8-minute-29e173f50b47",
+          "independent": false,
+          "title": "3 Reasons Your AI Budget Is Bleeding: Why “LLM-Jacking” Attacks Are Surging (And The 8-Minute…",
+          "summary": "What causes AI bills to explode? LLM-jacking. Learn the 8-minute breach, detection signals, and practical defenses before costs spiral… Continue reading on Medium »",
+          "published_at": "2026-09-27T16:49:05+00:00",
           "date_precision": "time"
         }
       ],
