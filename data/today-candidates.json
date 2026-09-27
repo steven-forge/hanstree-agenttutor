@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T02:00:52.856071+09:00",
-  "window_start": "2026-07-30T02:00:52.856071+09:00",
-  "window_end": "2026-09-28T02:00:52.856071+09:00",
+  "collected_at": "2026-09-28T03:00:55.410999+09:00",
+  "window_start": "2026-07-30T03:00:55.410999+09:00",
+  "window_end": "2026-09-28T03:00:55.410999+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -102,7 +102,7 @@
       "status": "ok",
       "count": 9,
       "held_count": 0,
-      "excluded_count": 27,
+      "excluded_count": 29,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 10,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 9,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -279,63 +279,9 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T02:01:23.068386+09:00",
-  "hourly_window_start": "2026-09-25T02:01:23.068386+09:00",
+  "hourly_collected_at": "2026-09-28T03:01:17.266826+09:00",
+  "hourly_window_start": "2026-09-25T03:01:17.266826+09:00",
   "events": [
-    {
-      "id": "4963c688783e308d",
-      "title": "Trump orders AI rebrand as \"super intelligence\"",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49809237",
-          "target_url": "https://www.axios.com/2026/09/22/trump-ai-super-intelligence-rebrand",
-          "independent": false,
-          "title": "Trump orders AI rebrand as \"super intelligence\"",
-          "summary": "",
-          "published_at": "2026-09-22T22:35:56+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49809314",
-          "target_url": "https://www.washingtonpost.com/technology/2026/09/22/trump-says-hes-renaming-ai-super-intelligence",
-          "independent": false,
-          "title": "Trump Renames Artificial Intelligence to Super Intelligence",
-          "summary": "",
-          "published_at": "2026-09-22T22:43:49+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812776",
-          "target_url": "https://www.bbc.com/news/videos/c8n5d9x10v14o",
-          "independent": false,
-          "title": "Rebranding artificial intelligence as super intelligence",
-          "summary": "",
-          "published_at": "2026-09-23T07:27:22+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834227",
-          "target_url": "https://www.netcraft.com/blog/slovenian-si-domain-registrations-rise-trump-super-intelligence",
-          "independent": false,
-          "title": ".si domain registrations outpace .ai after Trump's 'Super Intelligence' rename",
-          "summary": "",
-          "published_at": "2026-09-24T17:44:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
     {
       "id": "4fb133d3e42799c6",
       "title": "Autonomous AI Agents Are Breaking into Online Retailers",
@@ -1412,6 +1358,17 @@
           "summary": "",
           "published_at": "2026-09-27T16:24:38+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868631",
+          "target_url": "https://github.com/emir/claude-s40",
+          "independent": false,
+          "title": "Show HN: Claude on a 2007 Nokia 6300 (Java ME app, TLS 1.0, private CA)",
+          "summary": "",
+          "published_at": "2026-09-27T17:13:40+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2083,27 +2040,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "3077a62444e8368c",
-      "title": "Pinocchio, make copilot agents real by giving them memory",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833566",
-          "target_url": "https://github.com/chiedo/pinocchio",
-          "independent": false,
-          "title": "Pinocchio, make copilot agents real by giving them memory",
-          "summary": "",
-          "published_at": "2026-09-24T17:01:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "321a943a4dd13ce0",
       "title": "Gemini 3.8 with Live Avatar",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2275,48 +2211,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "259ee8df8c5335fb",
-      "title": "Logs you, your AI and cron jobs write to that you can prove weren't altered",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834382",
-          "target_url": "https://freshjots.com/",
-          "independent": false,
-          "title": "Logs you, your AI and cron jobs write to that you can prove weren't altered",
-          "summary": "",
-          "published_at": "2026-09-24T17:53:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8c42aeabc4d52aed",
-      "title": "Show HN: bananabread AI – Find what customers love and want from your products",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834368",
-          "target_url": "https://bb-product-api-docs.web.app/",
-          "independent": false,
-          "title": "Show HN: bananabread AI – Find what customers love and want from your products",
-          "summary": "",
-          "published_at": "2026-09-24T17:52:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "08c7e70accae380e",
       "title": "AI Workers' Inquiry 2026",
       "first_seen": "2026-09-25T03:01:35+09:00",
@@ -2341,195 +2235,6 @@
           "title": "AI Workers' Inquiry 2026",
           "summary": "",
           "published_at": "2026-09-25T21:47:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "24685b791b2303b2",
-      "title": "Unmasking \"zombie cells\" in aging tissue with an AI-powered barcode",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834220",
-          "target_url": "https://news.mit.edu/2026/unmasking-zombie-cells-aging-tissue-ai-powered-barcode-0921",
-          "independent": false,
-          "title": "Unmasking \"zombie cells\" in aging tissue with an AI-powered barcode",
-          "summary": "",
-          "published_at": "2026-09-24T17:43:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bc1969e244b24289",
-      "title": "China's Mind on AI",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834165",
-          "target_url": "https://www.axios.com/2026/09/24/china-ai-plan-trump-xi-visit",
-          "independent": false,
-          "title": "China's Mind on AI",
-          "summary": "",
-          "published_at": "2026-09-24T17:40:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d4b38cef719d6a0c",
-      "title": "Near-Total Liquid Heat Capture Keeps AI Racks Cool",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834101",
-          "target_url": "https://spectrum.ieee.org/fanless-liquid-cooled-ai-servers-coolit",
-          "independent": false,
-          "title": "Near-Total Liquid Heat Capture Keeps AI Racks Cool",
-          "summary": "",
-          "published_at": "2026-09-24T17:35:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c22d0384461d689",
-      "title": "Funny VideosHow to Start a Faceless YouTube Channel with AI: A Complete Guide",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49834079",
-          "target_url": "https://coursiv.io/blog/how-to-start-a-faceless-youtube-channel-with-ai",
-          "independent": false,
-          "title": "Funny VideosHow to Start a Faceless YouTube Channel with AI: A Complete Guide",
-          "summary": "",
-          "published_at": "2026-09-24T17:34:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a368a93ae5cca56e",
-      "title": "Jev: The flagship-on-hot-path mistake",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kankit570/jev-the-flagship-on-hot-path-mistake-48b9b90b19e7",
-          "target_url": "https://medium.com/@kankit570/jev-the-flagship-on-hot-path-mistake-48b9b90b19e7",
-          "independent": false,
-          "title": "Jev: The flagship-on-hot-path mistake",
-          "summary": "Stop using GPT-6 Sol to pick a ticket queue. That’s what Jev is for. Continue reading on Medium »",
-          "published_at": "2026-09-24T17:50:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "da3896a73ce39a1f",
-      "title": "When Your Past Starts Deciding Your Future",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lemankoksal/when-your-past-starts-deciding-your-future-d69a566eaba3",
-          "target_url": "https://medium.com/@lemankoksal/when-your-past-starts-deciding-your-future-d69a566eaba3",
-          "independent": false,
-          "title": "When Your Past Starts Deciding Your Future",
-          "summary": "What predictive customer experience should remember, negotiate and leave open. Continue reading on Medium »",
-          "published_at": "2026-09-24T17:50:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "da47c1e585d576db",
-      "title": "Jev: What If AI Didn’t Need to Talk?",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@vedaa7777/jev-what-if-ai-didnt-need-to-talk-6717d40ec839",
-          "target_url": "https://medium.com/@vedaa7777/jev-what-if-ai-didnt-need-to-talk-6717d40ec839",
-          "independent": false,
-          "title": "Jev: What If AI Didn’t Need to Talk?",
-          "summary": "For the last few years, when we said “AI,” we often meant one thing: LLMs. Continue reading on Medium »",
-          "published_at": "2026-09-24T17:49:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "064eb60de49ef748",
-      "title": "The Autoresponder Is the Brake",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@eduard.deira/the-autoresponder-is-the-brake-64a4dec62c2f",
-          "target_url": "https://medium.com/@eduard.deira/the-autoresponder-is-the-brake-64a4dec62c2f",
-          "independent": false,
-          "title": "The Autoresponder Is the Brake",
-          "summary": "A record of what happened when I sent a structural warning to a sitting U.S. Senator's office Continue reading on Medium »",
-          "published_at": "2026-09-24T17:48:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "73680877a0e1c22b",
-      "title": "Meet HILT",
-      "first_seen": "2026-09-25T03:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@joshuarouthspeaker/meet-hilt-f91679a576b7",
-          "target_url": "https://medium.com/@joshuarouthspeaker/meet-hilt-f91679a576b7",
-          "independent": false,
-          "title": "Meet HILT",
-          "summary": "HILT is the name my AI chose for itself when I asked what I should call it. Considering I am a sword swallower, “To The Hilt” is the name… Continue reading on Medium »",
-          "published_at": "2026-09-24T17:47:11+00:00",
           "date_precision": "time"
         }
       ],
@@ -2709,69 +2414,6 @@
           "title": "Jensen Huang talks about AI and climate change like a supervillain",
           "summary": "As Jensen Huang puts it, AI can help fight climate change - but only if it inflicts \"an enormous amount of pain and suffering\" first. The Nvidia CEO discussed the future of energy and AI's impact on our planet in the latest episode of The Ezra Klein Show. But his comments boil down to the […]",
           "published_at": "2026-09-24T18:04:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d0c09943ed7a0f81",
-      "title": "Meta is going to let you build games with AI right on your phone",
-      "first_seen": "2026-09-25T04:02:27+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
-          "target_url": "https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games",
-          "independent": true,
-          "title": "Meta is going to let you build games with AI right on your phone",
-          "summary": "Meta has a new plan to get people to make games for its Horizon social platform. The company today announced two new development tools that will let you create games with AI prompts: Horizon Create, a mobile app, and Horizon Studio, a browser app that offers more granular controls. The apps will be available in […]",
-          "published_at": "2026-09-24T17:52:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "16dae4c7c5cb5aa1",
-      "title": "Muse will apparently let you download its entire filesystem",
-      "first_seen": "2026-09-25T04:02:27+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000222/meta-muse-ai-filesystem",
-          "independent": true,
-          "title": "Muse will apparently let you download its entire filesystem",
-          "summary": "A pair of developers say that with very little prompting, Meta's Muse will share its entire filesystem with you. Peter James and Jonny L. Saunders have said they both independently coaxed Muse into zipping up and sharing the entire contents of its root filesystem, Ubuntu system files, app templates, and internal documentation. Saunders posted on […]",
-          "published_at": "2026-09-24T17:14:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "dac80f12a88a9c0a",
-      "title": "Muse sure looks a lot like OpenClaw",
-      "first_seen": "2026-09-25T04:02:27+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
-          "target_url": "https://www.theverge.com/report/1000180/muse-openclaw-instinct-lookalike",
-          "independent": true,
-          "title": "Muse sure looks a lot like OpenClaw",
-          "summary": "We seem to be entering into an AI agent renaissance. Meta's new consumer-facing AI agent, Muse, topped the App Store charts soon after its release and has 600,000 daily active users in the US, by an Apptopia estimate. And AI agent platform Instinct, whose eponymous creator is fundraising at a $2.5 billion valuation, has been […]",
-          "published_at": "2026-09-24T17:10:38+00:00",
           "date_precision": "time"
         }
       ],
@@ -8115,6 +7757,17 @@
           "title": "Classified Estimates Show the NSA Is Paying Billions to Test AI Models",
           "summary": "",
           "published_at": "2026-09-25T15:27:35+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869066",
+          "target_url": "https://www.gadgetreview.com/the-nsa-is-spending-billions-to-test-ai-models-classified-estimates-show",
+          "independent": false,
+          "title": "The NSA Is Spending Billions to Test AI Models, Classified Estimates Show",
+          "summary": "",
+          "published_at": "2026-09-27T17:56:05+00:00",
           "date_precision": "time"
         }
       ],
@@ -15854,6 +15507,17 @@
           "summary": "",
           "published_at": "2026-09-27T09:18:05+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869024",
+          "target_url": "https://www.axios.com/2026/09/26/openai-anthropic-thousands-ai-security-incidents",
+          "independent": false,
+          "title": "Scoop: Top AI companies probing tens of thousands of security incidents",
+          "summary": "",
+          "published_at": "2026-09-27T17:53:07+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -16190,11 +15854,22 @@
           "summary": "",
           "published_at": "2026-09-27T01:08:07+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001178/openai-agents-bruteforce-un-website",
+          "independent": true,
+          "title": "OpenAI agents tried to ‘bruteforce’ a UN website",
+          "summary": "Security researcher Rowan Howard-Jones says that OpenAI agents scanned the UN Conference on Trade and Development's (UNCTAD) statistics site over 16,000 times between April and June. While the incident doesn't quite rise to the level of the Hugging Face hack, or the recent attacks on US government sites, it's yet another concerning example of AI […]",
+          "published_at": "2026-09-27T17:21:07+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "6083a5f7c82d58fa",
@@ -19215,6 +18890,237 @@
           "title": "3 Reasons Your AI Budget Is Bleeding: Why “LLM-Jacking” Attacks Are Surging (And The 8-Minute…",
           "summary": "What causes AI bills to explode? LLM-jacking. Learn the 8-minute breach, detection signals, and practical defenses before costs spiral… Continue reading on Medium »",
           "published_at": "2026-09-27T16:49:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fea32b4d00b60852",
+      "title": "Google OpenAI Anthropic Begin Forming SAFA – Standards Authority for Frontier AI",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869112",
+          "target_url": "https://www.proactiveinvestors.com/companies/news/1099096/google-openai-and-anthropic-move-closer-to-ai-safety-standards-body-1099096.html",
+          "independent": false,
+          "title": "Google OpenAI Anthropic Begin Forming SAFA – Standards Authority for Frontier AI",
+          "summary": "",
+          "published_at": "2026-09-27T18:00:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "11566ec323505f51",
+      "title": "Deming in the machine running an AI assisted film",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869027",
+          "target_url": "https://medium.com/@zrkjsy/deming-in-the-machine-running-an-ai-assisted-film-production-on-continuous-improvement-0337a3112111",
+          "independent": false,
+          "title": "Deming in the machine running an AI assisted film",
+          "summary": "",
+          "published_at": "2026-09-27T17:53:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a0ea83549f383955",
+      "title": "China and U.S. to open AI 'communication channel' after summit",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49869011",
+          "target_url": "https://www.japantimes.co.jp/news/2026/09/26/world/us-china-ai-communication-line",
+          "independent": false,
+          "title": "China and U.S. to open AI 'communication channel' after summit",
+          "summary": "",
+          "published_at": "2026-09-27T17:51:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a7a4f325fc63bf33",
+      "title": "102.8B tokens and 474K LOC with Gemini Flash – Telemetry and post-mortem",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868950",
+          "target_url": "https://github.com/Janson79jc/antigravity-100b-telemetry-audit",
+          "independent": false,
+          "title": "102.8B tokens and 474K LOC with Gemini Flash – Telemetry and post-mortem",
+          "summary": "",
+          "published_at": "2026-09-27T17:43:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "87450867153b72cb",
+      "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868831",
+          "target_url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+          "independent": false,
+          "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+          "summary": "",
+          "published_at": "2026-09-27T17:32:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "43403437c49acd95",
+      "title": "Calling the AI bluff: Adding \"Do not guess\" cut made-up fields from 71% to 20%",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49868753",
+          "target_url": "https://earnanhonestdollar.com/bench",
+          "independent": false,
+          "title": "Calling the AI bluff: Adding \"Do not guess\" cut made-up fields from 71% to 20%",
+          "summary": "",
+          "published_at": "2026-09-27T17:24:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6c36e048bc496725",
+      "title": "I kept losing the tools I found while scrolling, so I built an app that remembers them for",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@Kris025/i-kept-losing-the-tools-i-found-while-scrolling-so-i-built-an-app-that-remembers-them-for-9650ff626661",
+          "target_url": "https://medium.com/@Kris025/i-kept-losing-the-tools-i-found-while-scrolling-so-i-built-an-app-that-remembers-them-for-9650ff626661",
+          "independent": false,
+          "title": "I kept losing the tools I found while scrolling, so I built an app that remembers them for",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-27T17:54:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0e25fe4c14b8384c",
+      "title": "40+ AI Image Prompts to Create Stunning Photos & Creative Art",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@topubunerjee/40-ai-image-prompts-to-create-stunning-photos-creative-art-75b1acc68bb4",
+          "target_url": "https://medium.com/@topubunerjee/40-ai-image-prompts-to-create-stunning-photos-creative-art-75b1acc68bb4",
+          "independent": false,
+          "title": "40+ AI Image Prompts to Create Stunning Photos & Creative Art",
+          "summary": "Have you ever used an AI image generator and thought, “This is not what I wanted”? Continue reading on Medium »",
+          "published_at": "2026-09-27T17:51:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "69913a7a55351095",
+      "title": "Advanced Technology Ultimately Destroys the Civilization",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/new-literary-society/advanced-technology-ultimately-destroys-the-civilization-5bd15763619d",
+          "target_url": "https://medium.com/new-literary-society/advanced-technology-ultimately-destroys-the-civilization-5bd15763619d",
+          "independent": false,
+          "title": "Advanced Technology Ultimately Destroys the Civilization",
+          "summary": "Continue reading on NEW LITERARY SOCIETY »",
+          "published_at": "2026-09-27T17:50:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1743d43252a865e1",
+      "title": "The insanely fast RAG alternative (OpenCode + Cerebras Qwen 3.8)",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@airabbitX/the-insanely-fast-rag-alternative-opencode-cerebras-qwen-3-8-a11ea929f64c",
+          "target_url": "https://medium.com/@airabbitX/the-insanely-fast-rag-alternative-opencode-cerebras-qwen-3-8-a11ea929f64c",
+          "independent": false,
+          "title": "The insanely fast RAG alternative (OpenCode + Cerebras Qwen 3.8)",
+          "summary": "One of the most game-changing capabilities of GenAI is RAG: the ability to “chat with anything” using natural language. But building a… Continue reading on Medium »",
+          "published_at": "2026-09-27T17:48:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e6a7521d9f710361",
+      "title": "Building an AI-Powered F1 Race Strategy Analyst with LangGraph",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kaibalyamohanty1221/building-an-ai-powered-f1-race-strategy-analyst-with-langgraph-28827bc2105e",
+          "target_url": "https://medium.com/@kaibalyamohanty1221/building-an-ai-powered-f1-race-strategy-analyst-with-langgraph-28827bc2105e",
+          "independent": false,
+          "title": "Building an AI-Powered F1 Race Strategy Analyst with LangGraph",
+          "summary": "How I built a multi-agent system that routes F1 questions, analyzes race data, retrieves relevant knowledge, and reasons about race… Continue reading on Medium »",
+          "published_at": "2026-09-27T17:47:38+00:00",
           "date_precision": "time"
         }
       ],
