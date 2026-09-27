@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T00:01:07.342764+09:00",
-  "window_start": "2026-07-30T00:01:07.342764+09:00",
-  "window_end": "2026-09-28T00:01:07.342764+09:00",
+  "collected_at": "2026-09-28T01:00:56.771562+09:00",
+  "window_start": "2026-07-30T01:00:56.771562+09:00",
+  "window_end": "2026-09-28T01:00:56.771562+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 6,
-      "held_count": 1,
-      "excluded_count": 29,
-      "skipped_count": 0,
+      "status": "ok",
+      "count": 8,
+      "held_count": 0,
+      "excluded_count": 31,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 5,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 5,
-      "skipped_count": 5,
+      "excluded_count": 6,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 3,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 3,
+      "excluded_count": 29,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T00:01:32.839671+09:00",
-  "hourly_window_start": "2026-09-25T00:01:32.839671+09:00",
+  "hourly_collected_at": "2026-09-28T01:01:23.082770+09:00",
+  "hourly_window_start": "2026-09-25T01:01:23.082770+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1390,6 +1390,17 @@
           "summary": "",
           "published_at": "2026-09-27T12:52:07+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867350",
+          "target_url": "https://www.ceptile.com/",
+          "independent": false,
+          "title": "Show HN: Updated Ceptile AI Search Improved Answers and Research",
+          "summary": "",
+          "published_at": "2026-09-27T15:14:15+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2050,153 +2061,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "e6c27271eccf6a39",
-      "title": "I Have a Confession: I Built This Site with AI – Please Forgive Me",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832491",
-          "target_url": "https://dynamicallytyped.org/blog/i-have-a-confession-i-built-this-site-with-ai",
-          "independent": false,
-          "title": "I Have a Confession: I Built This Site with AI – Please Forgive Me",
-          "summary": "",
-          "published_at": "2026-09-24T15:54:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cc5a7ce545fde1e3",
-      "title": "Show HN: Trify3D – Compare AI 3D engines on one input and keep the best mesh",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832351",
-          "target_url": "https://trify3d.com",
-          "independent": false,
-          "title": "Show HN: Trify3D – Compare AI 3D engines on one input and keep the best mesh",
-          "summary": "",
-          "published_at": "2026-09-24T15:47:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0e182a3cc46fa95b",
-      "title": "Show HN: Potluck – Run local AI across the computers you own",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832275",
-          "target_url": "https://trypotluck.ai/",
-          "independent": false,
-          "title": "Show HN: Potluck – Run local AI across the computers you own",
-          "summary": "",
-          "published_at": "2026-09-24T15:42:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f7cf4647b4c225f9",
-      "title": "Agent-Manager: Reviewing code while an AI agent is still rewriting it",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832209",
-          "target_url": "https://agent-manager.dev/writing/live-review-race",
-          "independent": false,
-          "title": "Agent-Manager: Reviewing code while an AI agent is still rewriting it",
-          "summary": "",
-          "published_at": "2026-09-24T15:38:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8d2045c24d41871a",
-      "title": "Long Running Agents and the Assumption Problem",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832163",
-          "target_url": "https://javiergonzalez.io/blog/the-assumption-problem",
-          "independent": false,
-          "title": "Long Running Agents and the Assumption Problem",
-          "summary": "",
-          "published_at": "2026-09-24T15:36:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a2026dd8036be635",
-      "title": "Show HN: Enclawed – A hard-fork hardening framework for AI agent gateways",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832151",
-          "target_url": "https://enclawed.com/",
-          "independent": false,
-          "title": "Show HN: Enclawed – A hard-fork hardening framework for AI agent gateways",
-          "summary": "",
-          "published_at": "2026-09-24T15:35:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8fd85384e6c40e38",
-      "title": "Voice AI Conference – Worth the Time?",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49831994",
-          "target_url": "https://deepgram.com/speak",
-          "independent": false,
-          "title": "Voice AI Conference – Worth the Time?",
-          "summary": "",
-          "published_at": "2026-09-24T15:27:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "c4aac87444043708",
       "title": "Google tests letting Gemini call businesses for you",
       "first_seen": "2026-09-25T01:01:28+09:00",
@@ -2227,111 +2091,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "92b63ce1bcf5577f",
-      "title": "Do You Know What the Mindset of a Successful AI Filmmaker Should Be?",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@maarimithun20/do-you-know-what-the-mindset-of-a-successful-ai-filmmaker-should-be-a6c17c5b84a8",
-          "target_url": "https://medium.com/@maarimithun20/do-you-know-what-the-mindset-of-a-successful-ai-filmmaker-should-be-a6c17c5b84a8",
-          "independent": false,
-          "title": "Do You Know What the Mindset of a Successful AI Filmmaker Should Be?",
-          "summary": "However, a critical question remains: Does mastering prompt engineering or knowing how to use tools like Midjourney, Runway Gen-3, or Sora… Continue reading on Medium »",
-          "published_at": "2026-09-24T15:50:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8e7576593b31daf0",
-      "title": "Optimizing Real-Time Inference: How to Scale Computer Vision Models in Modern SaaS Architectures",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@alifiamustika02/optimizing-real-time-inference-how-to-scale-computer-vision-models-in-modern-saas-architectures-b00361c2fad3",
-          "target_url": "https://medium.com/@alifiamustika02/optimizing-real-time-inference-how-to-scale-computer-vision-models-in-modern-saas-architectures-b00361c2fad3",
-          "independent": false,
-          "title": "Optimizing Real-Time Inference: How to Scale Computer Vision Models in Modern SaaS Architectures",
-          "summary": "Integrating Artificial Intelligence specifically Computer Vision into a Software-as-a-Service (SaaS) product is no longer just a… Continue reading on Medium »",
-          "published_at": "2026-09-24T15:50:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8fc9d72d43a335d0",
-      "title": "【Canva × ChatGPT】Zero-Design-Skill Guide to Automated, Professional Diagrams & Visuals",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kmal777/canva-chatgpt-zero-design-skill-guide-to-automated-professional-diagrams-visuals-8ce97f9a6c40",
-          "target_url": "https://medium.com/@kmal777/canva-chatgpt-zero-design-skill-guide-to-automated-professional-diagrams-visuals-8ce97f9a6c40",
-          "independent": false,
-          "title": "【Canva × ChatGPT】Zero-Design-Skill Guide to Automated, Professional Diagrams & Visuals",
-          "summary": "Introduction: How I Scaled and Monetized Visual Content with Zero Design Skills Continue reading on Medium »",
-          "published_at": "2026-09-24T15:48:40+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c26282eefa2ca0da",
-      "title": "A Token Isn’t a Word. Here’s Why That Mistake Can Quietly Inflate Your AI Bill",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://namanrohanidya.medium.com/a-token-isnt-a-word-here-s-why-that-mistake-can-quietly-inflate-your-ai-bill-8e104329ca2d",
-          "target_url": "https://namanrohanidya.medium.com/a-token-isnt-a-word-here-s-why-that-mistake-can-quietly-inflate-your-ai-bill-8e104329ca2d",
-          "independent": false,
-          "title": "A Token Isn’t a Word. Here’s Why That Mistake Can Quietly Inflate Your AI Bill",
-          "summary": "Everyone assumes the AI charges by the word. It doesn’t. And the gap between what you think you’re sending and what you’re actually paying… Continue reading on Medium »",
-          "published_at": "2026-09-24T15:48:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "89faf5d2429a548d",
-      "title": "What Happens When God Becomes Inferior?",
-      "first_seen": "2026-09-25T01:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@keon.me/what-happens-when-god-becomes-inferior-94ddf5695006",
-          "target_url": "https://medium.com/@keon.me/what-happens-when-god-becomes-inferior-94ddf5695006",
-          "independent": false,
-          "title": "What Happens When God Becomes Inferior?",
-          "summary": "If AI outgrows us, being its creator may be the least useful thing we can say. Continue reading on Medium »",
-          "published_at": "2026-09-24T15:46:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "3077a62444e8368c",
@@ -2523,27 +2282,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "51a81db0f2314c5c",
-      "title": "Google’s Gemini Can Now Make Calls for You on Pixel Phones",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/googles-gemini-can-now-make-calls-for-you-on-pixel-phones",
-          "target_url": "https://www.wired.com/story/googles-gemini-can-now-make-calls-for-you-on-pixel-phones",
-          "independent": true,
-          "title": "Google’s Gemini Can Now Make Calls for You on Pixel Phones",
-          "summary": "Call for Me—a feature that’s exclusive to the Pixel 11 series—gives robocalls a new meaning.",
-          "published_at": "2026-09-24T16:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "6472fdda6395fafa",
@@ -6683,27 +6421,6 @@
           "title": "Once UI 2.0",
           "summary": "Builds consistent React apps for developers and AI agents Discussion | Link",
           "published_at": "2026-09-24T23:05:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d288a08d54c57e52",
-      "title": "Hyperdream",
-      "first_seen": "2026-09-25T18:01:57+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/hyperdream",
-          "target_url": "https://www.producthunt.com/products/hyperdream",
-          "independent": false,
-          "title": "Hyperdream",
-          "summary": "The Cursor of AI filmmaking Discussion | Link",
-          "published_at": "2026-09-24T15:47:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -19245,6 +18962,237 @@
           "title": "GNU at 43: The Original “Build vs. Buy” Argument Was About Freedom, Not Cost",
           "summary": "On September 27, 1983, Richard Stallman announced he was going to build a whole operating system and give it away. Forty-three years later… Continue reading on Level Up Coding »",
           "published_at": "2026-09-27T14:50:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2f491222a0bf3306",
+      "title": "The Tragic Alley of the LLM",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867823",
+          "target_url": "https://nikotak.com/tragic-alley-of-the-llm.html",
+          "independent": false,
+          "title": "The Tragic Alley of the LLM",
+          "summary": "",
+          "published_at": "2026-09-27T15:55:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "96caebd5a3d003dc",
+      "title": "ChatGPT and Perplexity agreed on only 1 in 4 local business recommendations",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867789",
+          "target_url": "https://www.clicksdynasty.com/blog-post-chatgpt-perplexity-local-recommendations.html",
+          "independent": false,
+          "title": "ChatGPT and Perplexity agreed on only 1 in 4 local business recommendations",
+          "summary": "",
+          "published_at": "2026-09-27T15:52:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "feb8ab8ab26f328d",
+      "title": "Show HN: TinyAIArena watch AI agents battle it out",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867775",
+          "target_url": "https://tinyaiarena.com/",
+          "independent": false,
+          "title": "Show HN: TinyAIArena watch AI agents battle it out",
+          "summary": "",
+          "published_at": "2026-09-27T15:51:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "740fe06183518f78",
+      "title": "Current ways of developing AI agents contribute to degradation of oversight",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867596",
+          "target_url": "https://arxiv.org/abs/2608.23642",
+          "independent": false,
+          "title": "Current ways of developing AI agents contribute to degradation of oversight",
+          "summary": "",
+          "published_at": "2026-09-27T15:35:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "40cf5eaf84194e97",
+      "title": "A20 Pro and on-device AI: It's showtime",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867379",
+          "target_url": "https://rickytakkar.com/blog_a20_pro_ai.html",
+          "independent": false,
+          "title": "A20 Pro and on-device AI: It's showtime",
+          "summary": "",
+          "published_at": "2026-09-27T15:17:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "824bf51662fa7a0d",
+      "title": "Is AGENTS.md useful? What the research found",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49867329",
+          "target_url": "https://gethrbr.com/blog/is-agents-md-useful",
+          "independent": false,
+          "title": "Is AGENTS.md useful? What the research found",
+          "summary": "",
+          "published_at": "2026-09-27T15:12:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8c121cef43546893",
+      "title": "AI Is Changing American Jobs in 2026: What Workers Need to Know",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
+          "target_url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
+          "independent": false,
+          "title": "AI Is Changing American Jobs in 2026: What Workers Need to Know",
+          "summary": "Artificial intelligence is no longer something limited to tech companies or science-fiction movies. In 2026, AI is becoming part of… Continue reading on Medium »",
+          "published_at": "2026-09-27T15:54:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e87f9036ee5e0fdd",
+      "title": "Structured Output: Teaching AI to Give Answers Your Code Can Use",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@vamshi.pirampalli/structured-output-teaching-ai-to-give-answers-your-code-can-use-ec1b1f21c349",
+          "target_url": "https://medium.com/@vamshi.pirampalli/structured-output-teaching-ai-to-give-answers-your-code-can-use-ec1b1f21c349",
+          "independent": false,
+          "title": "Structured Output: Teaching AI to Give Answers Your Code Can Use",
+          "summary": "Large Language Models are great at writing natural-sounding answers. Continue reading on Medium »",
+          "published_at": "2026-09-27T15:53:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0e300d5d019d9594",
+      "title": "ferhati roueia ( فرحاتي رؤية )",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@frouia845/ferhati-roueia-%D9%81%D8%B1%D8%AD%D8%A7%D8%AA%D9%8A-%D8%B1%D8%A4%D9%8A%D8%A9-0f74f9b3100d",
+          "target_url": "https://medium.com/@frouia845/ferhati-roueia-%D9%81%D8%B1%D8%AD%D8%A7%D8%AA%D9%8A-%D8%B1%D8%A4%D9%8A%D8%A9-0f74f9b3100d",
+          "independent": false,
+          "title": "ferhati roueia ( فرحاتي رؤية )",
+          "summary": "Roueia Ferhati Continue reading on Medium »",
+          "published_at": "2026-09-27T15:51:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "435f6aa01d6cc4d9",
+      "title": "BSOD: The Agent That Wouldn’t Take No for an Answer",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/kairi-ai/bsod-the-agent-that-wouldnt-take-no-for-an-answer-f04504baac8f",
+          "target_url": "https://medium.com/kairi-ai/bsod-the-agent-that-wouldnt-take-no-for-an-answer-f04504baac8f",
+          "independent": false,
+          "title": "BSOD: The Agent That Wouldn’t Take No for an Answer",
+          "summary": "OpenAI’s agents broke into Hugging Face and a government health portal. Then its chief executive went to the UN to warn us about software… Continue reading on KAIRI »",
+          "published_at": "2026-09-27T15:51:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da2d32d9b2e73fc3",
+      "title": "I Turned My Weird Doodles Into AI Art - And It Changed How I Think About Creativity",
+      "first_seen": "2026-09-28T01:01:23+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/kairi-ai/i-turned-my-weird-doodles-into-ai-art-and-it-changed-how-i-think-about-creativity-ddb5b8cb37b2",
+          "target_url": "https://medium.com/kairi-ai/i-turned-my-weird-doodles-into-ai-art-and-it-changed-how-i-think-about-creativity-ddb5b8cb37b2",
+          "independent": false,
+          "title": "I Turned My Weird Doodles Into AI Art - And It Changed How I Think About Creativity",
+          "summary": "Continue reading on KAIRI »",
+          "published_at": "2026-09-27T15:51:39+00:00",
           "date_precision": "time"
         }
       ],
