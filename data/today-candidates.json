@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-27T20:00:55.438420+09:00",
-  "window_start": "2026-07-29T20:00:55.438420+09:00",
-  "window_end": "2026-09-27T20:00:55.438420+09:00",
+  "collected_at": "2026-09-27T21:01:16.348665+09:00",
+  "window_start": "2026-07-29T21:01:16.348665+09:00",
+  "window_end": "2026-09-27T21:01:16.348665+09:00",
   "edition_date": "2026-09-27",
   "sources": [
     {
@@ -102,8 +102,8 @@
       "status": "ok",
       "count": 12,
       "held_count": 0,
-      "excluded_count": 25,
-      "skipped_count": 2,
+      "excluded_count": 28,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-27T20:01:22.398218+09:00",
-  "hourly_window_start": "2026-09-24T20:01:22.398218+09:00",
+  "hourly_collected_at": "2026-09-27T21:01:41.309953+09:00",
+  "hourly_window_start": "2026-09-24T21:01:41.309953+09:00",
   "events": [
     {
       "id": "4963c688783e308d",
@@ -1368,6 +1368,17 @@
           "summary": "",
           "published_at": "2026-09-27T10:13:46+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865755",
+          "target_url": "https://rebyte.ai/docs/agents-api/overview",
+          "independent": false,
+          "title": "Show HN: An OpenAI-compatible, model-agnostic agent API",
+          "summary": "",
+          "published_at": "2026-09-27T11:35:48+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1867,27 +1878,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "7e8515e04538b038",
-      "title": "AI is dominating the conversation at Climate Week",
-      "first_seen": "2026-09-24T20:01:34+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828921",
-          "target_url": "https://www.technologyreview.com/2026/09/24/1145048/ai-climate-week",
-          "independent": false,
-          "title": "AI is dominating the conversation at Climate Week",
-          "summary": "",
-          "published_at": "2026-09-24T11:01:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "4d06cf2168bfbe6b",
       "title": "Evolving programming languages in the AI era",
       "first_seen": "2026-09-24T20:01:34+09:00",
@@ -1931,90 +1921,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "a9a0142404d9c278",
-      "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829387",
-          "target_url": "https://medium.com/@arielsimon/dark-sourcery-how-hackers-manipulate-ai-to-scam-you-88df434d2073",
-          "independent": false,
-          "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
-          "summary": "",
-          "published_at": "2026-09-24T11:54:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "501eb13d0d3c054a",
-      "title": "AI progress is speeding up dramatically – here's why you should care [video]",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829347",
-          "target_url": "https://www.youtube.com/watch?v=DKA5AkrQfxo",
-          "independent": false,
-          "title": "AI progress is speeding up dramatically – here's why you should care [video]",
-          "summary": "",
-          "published_at": "2026-09-24T11:49:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1e9a0efe2b353aba",
-      "title": "Scoop: Trump allies open new front against Anthropic CEO over AI \"doomerism\"",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829312",
-          "target_url": "https://www.axios.com/2026/09/24/trump-anthropic-ai-doomerism-dario-amodei",
-          "independent": false,
-          "title": "Scoop: Trump allies open new front against Anthropic CEO over AI \"doomerism\"",
-          "summary": "",
-          "published_at": "2026-09-24T11:45:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f0486341f152369d",
-      "title": "Dutch intelligence services warn AI is making cyberattacks faster and easier",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49829131",
-          "target_url": "https://nltimes.nl/2026/09/24/dutch-intelligence-services-warn-ai-making-cyberattacks-faster-easier",
-          "independent": false,
-          "title": "Dutch intelligence services warn AI is making cyberattacks faster and easier",
-          "summary": "",
-          "published_at": "2026-09-24T11:27:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e266205743ce16bd",
       "title": "How to keep enjoying programming in a world of LLMs",
       "first_seen": "2026-09-24T21:01:32+09:00",
@@ -2050,111 +1956,6 @@
           "title": "How to keep enjoying programming in a world of LLMs",
           "summary": "",
           "published_at": "2026-09-26T09:41:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fe6206b9a2c5c5ae",
-      "title": "When being seen as smart starts becoming almost as important as actually learning.",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@aarna.k3105/when-being-seen-as-smart-starts-becoming-almost-as-important-as-actually-learning-94586820e478",
-          "target_url": "https://medium.com/@aarna.k3105/when-being-seen-as-smart-starts-becoming-almost-as-important-as-actually-learning-94586820e478",
-          "independent": false,
-          "title": "When being seen as smart starts becoming almost as important as actually learning.",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-24T11:49:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1d5841b8295f7de9",
-      "title": "Why Reading Finance Books Is One of the Best Investments You Can Make",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@aarna.k3105/why-reading-finance-books-is-one-of-the-best-investments-you-can-make-824171531af8",
-          "target_url": "https://medium.com/@aarna.k3105/why-reading-finance-books-is-one-of-the-best-investments-you-can-make-824171531af8",
-          "independent": false,
-          "title": "Why Reading Finance Books Is One of the Best Investments You Can Make",
-          "summary": "“Why spend money on books when everything is available online?” Continue reading on Medium »",
-          "published_at": "2026-09-24T11:49:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "daa6884e6f198222",
-      "title": "The Difference Between NLP, LLMs and Generative AI",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@guptanikhil8424/the-difference-between-nlp-llms-and-generative-ai-645b1dd29947",
-          "target_url": "https://medium.com/@guptanikhil8424/the-difference-between-nlp-llms-and-generative-ai-645b1dd29947",
-          "independent": false,
-          "title": "The Difference Between NLP, LLMs and Generative AI",
-          "summary": "If you think NLP, LLMs, and Generative AI are three names for the same thing, you’re not alone. I used to think so too. Continue reading on Medium »",
-          "published_at": "2026-09-24T11:48:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d74241cf58105417",
-      "title": "The Real Cost of an AI Model Is the Work It Finishes",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@nRouter.ai/the-real-cost-of-an-ai-model-is-the-work-it-finishes-fbe1b28d5578",
-          "target_url": "https://medium.com/@nRouter.ai/the-real-cost-of-an-ai-model-is-the-work-it-finishes-fbe1b28d5578",
-          "independent": false,
-          "title": "The Real Cost of an AI Model Is the Work It Finishes",
-          "summary": "A model comparison that ignores retries and repair work misses the metric production teams actually pay for. Continue reading on Medium »",
-          "published_at": "2026-09-24T11:47:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "66d43a58b9508d73",
-      "title": "The Girl Who Thought She Chose the Wrong Field",
-      "first_seen": "2026-09-24T21:01:32+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@fatima.batool1048/the-girl-who-thought-she-chose-the-wrong-field-2696b576fefd",
-          "target_url": "https://medium.com/@fatima.batool1048/the-girl-who-thought-she-chose-the-wrong-field-2696b576fefd",
-          "independent": false,
-          "title": "The Girl Who Thought She Chose the Wrong Field",
-          "summary": "A confession before we begin: I once looked at my own code and thought, “maybe I’m just not built for this.” Continue reading on Medium »",
-          "published_at": "2026-09-24T11:45:53+00:00",
           "date_precision": "time"
         }
       ],
@@ -16302,7 +16103,17 @@
           "summary": "",
           "published_at": "2026-09-26T19:57:08+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6314434948345c60",
+      "title": "The Importance of Human Knowledge in the AI Era",
+      "first_seen": "2026-09-27T05:01:31+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -19118,6 +18929,17 @@
           "summary": "",
           "published_at": "2026-09-27T08:05:30+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865606",
+          "target_url": "https://www.msn.com/en-us/money/general/things-will-never-be-chill-again-the-doomers-who-shaped-the-ai-safety-freakout/ar-AA2d2d6t",
+          "independent": false,
+          "title": "'Things will never be chill again': The doomers who shaped AI safety freakout",
+          "summary": "",
+          "published_at": "2026-09-27T11:08:43+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19579,6 +19401,206 @@
           "title": "AI Test #3: ChatGPT, Claude, Gemini & Copilot as Dream Interpreters",
           "summary": "How Well Can AI Interpret Dreams? Continue reading on Medium »",
           "published_at": "2026-09-27T10:50:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "62873e131a9f01a8",
+      "title": "An AI-First, Censorship-Resistant Media Ecosystem",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865868",
+          "target_url": "https://labnews.ai/manifesto",
+          "independent": false,
+          "title": "An AI-First, Censorship-Resistant Media Ecosystem",
+          "summary": "",
+          "published_at": "2026-09-27T11:50:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "22a95c1a98d853a3",
+      "title": "The BR essays that foresaw OpenAI's latest scandal",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865844",
+          "target_url": "https://www.bostonreview.net/reading-list/ai-companies-come-for-mathematics",
+          "independent": false,
+          "title": "The BR essays that foresaw OpenAI's latest scandal",
+          "summary": "",
+          "published_at": "2026-09-27T11:47:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "84a6e15b7d56df22",
+      "title": "A world that remembers (8 bit AI game)",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865663",
+          "target_url": "https://www.twitch.tv/genesisplanet",
+          "independent": false,
+          "title": "A world that remembers (8 bit AI game)",
+          "summary": "",
+          "published_at": "2026-09-27T11:19:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ed3d27fc7345defb",
+      "title": "Anthropic Is Building HAL 9000",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865653",
+          "target_url": "https://j.jnord.workers.dev/articles/2026-09-27-anthropic-is-building-hal-9000",
+          "independent": false,
+          "title": "Anthropic Is Building HAL 9000",
+          "summary": "",
+          "published_at": "2026-09-27T11:17:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "653e2677bf05a5e8",
+      "title": "Anthropic's Secretive AI-Powered Wet Lab Breaks Cover and Makes First Discovery",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49865571",
+          "target_url": "https://www.the-scientist.com/anthropic-s-secretive-ai-powered-wet-lab-breaks-cover-and-makes-first-discovery-75037",
+          "independent": false,
+          "title": "Anthropic's Secretive AI-Powered Wet Lab Breaks Cover and Makes First Discovery",
+          "summary": "",
+          "published_at": "2026-09-27T11:03:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0e76bb109fd7c907",
+      "title": "Regulatory Capture Is the Design of Global AI Governance",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mail17_15488/regulatory-capture-is-the-design-of-global-ai-governance-b6aae3e9c326",
+          "target_url": "https://medium.com/@mail17_15488/regulatory-capture-is-the-design-of-global-ai-governance-b6aae3e9c326",
+          "independent": false,
+          "title": "Regulatory Capture Is the Design of Global AI Governance",
+          "summary": "A Stockholm policy brief called for consolidated, interoperable AI governance. Continue reading on Medium »",
+          "published_at": "2026-09-27T11:53:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "de3087fb3581aacf",
+      "title": "Existence Log — Season 22 The Last Human Invention part 02",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@djvjdjvj/existence-log-season-22-the-last-human-invention-part-02-ab53b0e7a3b6",
+          "target_url": "https://medium.com/@djvjdjvj/existence-log-season-22-the-last-human-invention-part-02-ab53b0e7a3b6",
+          "independent": false,
+          "title": "Existence Log — Season 22 The Last Human Invention part 02",
+          "summary": "🔥 Existence Log — Season 22 Continue reading on Medium »",
+          "published_at": "2026-09-27T11:52:47+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@djvjdjvj/existence-log-season-22-the-last-human-invention-part-01-bd24b85bafa7",
+          "target_url": "https://medium.com/@djvjdjvj/existence-log-season-22-the-last-human-invention-part-01-bd24b85bafa7",
+          "independent": false,
+          "title": "Existence Log — Season 22 The Last Human Invention part 01",
+          "summary": "🔥 Existence Log — Season 22 Continue reading on Medium »",
+          "published_at": "2026-09-27T11:50:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d1d83da6c7b69cf6",
+      "title": "What I Am Learning While Teaching AI Across Sri Lanka",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://samisa-abeysinghe.medium.com/what-i-am-learning-while-teaching-ai-across-sri-lanka-0aa343d826ef",
+          "target_url": "https://samisa-abeysinghe.medium.com/what-i-am-learning-while-teaching-ai-across-sri-lanka-0aa343d826ef",
+          "independent": false,
+          "title": "What I Am Learning While Teaching AI Across Sri Lanka",
+          "summary": "AI, Human Agency and the Digital Economy Series Continue reading on Medium »",
+          "published_at": "2026-09-27T11:48:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1e71b28598590d38",
+      "title": "13 Substack Posts I’ll Always Click",
+      "first_seen": "2026-09-27T21:01:41+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@gtks1212/13-substack-posts-ill-always-click-4e5f8291e73a",
+          "target_url": "https://medium.com/@gtks1212/13-substack-posts-ill-always-click-4e5f8291e73a",
+          "independent": false,
+          "title": "13 Substack Posts I’ll Always Click",
+          "summary": "I have absolutely no self control when it comes to clicking interesting Substack posts. I’ll open one because the title caught my… Continue reading on Medium »",
+          "published_at": "2026-09-27T11:46:57+00:00",
           "date_precision": "time"
         }
       ],
