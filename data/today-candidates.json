@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T08:00:54.565407+09:00",
-  "window_start": "2026-07-30T08:00:54.565407+09:00",
-  "window_end": "2026-09-28T08:00:54.565407+09:00",
+  "collected_at": "2026-09-28T09:01:03.970712+09:00",
+  "window_start": "2026-07-30T09:01:03.970712+09:00",
+  "window_end": "2026-09-28T09:01:03.970712+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 124,
+      "skipped_count": 123,
       "coverage_limited": false
     },
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 184,
+      "excluded_count": 183,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 6,
-      "held_count": 0,
+      "status": "partial",
+      "count": 5,
+      "held_count": 1,
       "excluded_count": 32,
-      "skipped_count": 5,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 9,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 1,
-      "skipped_count": 9,
+      "excluded_count": 2,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 2,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 2,
+      "excluded_count": 29,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T08:01:22.502292+09:00",
-  "hourly_window_start": "2026-09-25T08:01:22.502292+09:00",
+  "hourly_collected_at": "2026-09-28T09:01:32.210695+09:00",
+  "hourly_window_start": "2026-09-25T09:01:32.210695+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -1413,6 +1413,28 @@
           "summary": "",
           "published_at": "2026-09-27T20:31:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871923",
+          "target_url": "https://github.com/marciob/agenttab",
+          "independent": false,
+          "title": "Show HN: Agenttab – Status Icons for Claude Code, Codex and OpenCode Tabs",
+          "summary": "",
+          "published_at": "2026-09-27T23:38:44+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871819",
+          "target_url": "https://github.com/ninjahawk/livenerf",
+          "independent": false,
+          "title": "Show HN: Has Anthropic been nerfing their models without disclosure",
+          "summary": "",
+          "published_at": "2026-09-27T23:21:50+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2191,38 +2213,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "6472fdda6395fafa",
-      "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
-          "target_url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
-          "independent": true,
-          "title": "It’s sinister that Meta’s Muse AI mascot is so cute",
-          "summary": "This is Optimizer, a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here. Last night, I asked Blorbo - what I named my Muse AI agent - to help me set some health […]",
-          "published_at": "2026-09-24T17:00:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838006",
-          "target_url": "https://www.theverge.com/column/999999/optimizer-meta-muse-ai-cute",
-          "independent": false,
-          "title": "It's sinister that Meta's Muse AI mascot is so cute",
-          "summary": "",
-          "published_at": "2026-09-24T23:07:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "7b5f33950bb24580",
       "title": "Stop Trying to “Learn AI” — Do This Instead",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2491,48 +2481,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "1b3872822a266d19",
-      "title": "CTNicholas Multiplayer-Coding-Agents",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837993",
-          "target_url": "https://github.com/CTNicholas/multiplayer-coding-agents",
-          "independent": false,
-          "title": "CTNicholas Multiplayer-Coding-Agents",
-          "summary": "",
-          "published_at": "2026-09-24T23:05:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7567326a125c0592",
-      "title": "Award-Winning French Author Accused of Using AI to Write Debut Novel",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837972",
-          "target_url": "https://www.cbc.ca/news/canada/montreal/thelyson-orelien-ai-scandal-9.7355167",
-          "independent": false,
-          "title": "Award-Winning French Author Accused of Using AI to Write Debut Novel",
-          "summary": "",
-          "published_at": "2026-09-24T23:02:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "7567326a125c0592",
       "title": "Was this award-winning book written by AI?",
       "first_seen": "2026-09-25T08:06:41+09:00",
@@ -2546,258 +2494,6 @@
           "title": "Was this award-winning book written by AI?",
           "summary": "",
           "published_at": "2026-09-26T04:47:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "525bff4362a9b9f4",
-      "title": "Zuse: Open-Source Cloud Agents",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49837957",
-          "target_url": "https://github.com/swarajbachu/zuse",
-          "independent": false,
-          "title": "Zuse: Open-Source Cloud Agents",
-          "summary": "",
-          "published_at": "2026-09-24T23:01:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6338c32c84dfe42a",
-      "title": "What Agentic AI Actually Changes (Part 1)",
-      "first_seen": "2026-09-25T08:06:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kishorenagr/what-agentic-ai-actually-changes-part-1-0dbd16f04912",
-          "target_url": "https://medium.com/@kishorenagr/what-agentic-ai-actually-changes-part-1-0dbd16f04912",
-          "independent": false,
-          "title": "What Agentic AI Actually Changes (Part 1)",
-          "summary": "Agency is who decides what happens next. Autonomy is whether a human gets a say. Mixing them up is where agentic products break. Continue reading on Medium »",
-          "published_at": "2026-09-24T23:03:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a8a84063e153cdb1",
-      "title": "Peter Thiel: The AI Crisis, Europe's Decline and the Battle for America [video]",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838422",
-          "target_url": "https://www.youtube.com/watch?v=B7yl7fEHeKM",
-          "independent": false,
-          "title": "Peter Thiel: The AI Crisis, Europe's Decline and the Battle for America [video]",
-          "summary": "",
-          "published_at": "2026-09-25T00:01:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "50a9345ed6238b8c",
-      "title": "Positron Valued at $5B in New Funding as Demand for AI Chips Surges",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838405",
-          "target_url": "https://www.wsj.com/tech/ai/positron-valued-at-5-billion-in-new-funding-as-cpu-demand-surges-76dde819",
-          "independent": false,
-          "title": "Positron Valued at $5B in New Funding as Demand for AI Chips Surges",
-          "summary": "",
-          "published_at": "2026-09-24T23:58:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7481aedc7bc5bb38",
-      "title": "AI is deciding whether or not people receive medical care",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838266",
-          "target_url": "https://www.vox.com/good-medicine-newsletter/503932/ai-health-insurance-united-medicare-cigna-humana",
-          "independent": false,
-          "title": "AI is deciding whether or not people receive medical care",
-          "summary": "",
-          "published_at": "2026-09-24T23:38:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c6dd188cbdc9392",
-      "title": "Rails and AI",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838260",
-          "target_url": "https://rubyonrails.org/ai",
-          "independent": false,
-          "title": "Rails and AI",
-          "summary": "",
-          "published_at": "2026-09-24T23:38:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0b1b7a81c2d81377",
-      "title": "Stats: 72% of respondents said they felt curious, happy or excited about AI",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838182",
-          "target_url": "https://marginalrevolution.com/marginalrevolution/2026/09/earth-fact-of-the-day-2.html",
-          "independent": false,
-          "title": "Stats: 72% of respondents said they felt curious, happy or excited about AI",
-          "summary": "",
-          "published_at": "2026-09-24T23:28:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b4514b757c66b3ea",
-      "title": "Pinterest (PINS) Has Monetization Headroom. Can Growth Investments Pay Off Without Hurting Margins?",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@khd.muhammadali/pinterest-pins-has-monetization-headroom-can-growth-investments-pay-off-without-hurting-margins-5b24f7266aa0",
-          "target_url": "https://medium.com/@khd.muhammadali/pinterest-pins-has-monetization-headroom-can-growth-investments-pay-off-without-hurting-margins-5b24f7266aa0",
-          "independent": false,
-          "title": "Pinterest (PINS) Has Monetization Headroom. Can Growth Investments Pay Off Without Hurting Margins?",
-          "summary": "Read Full Story… Continue reading on Medium »",
-          "published_at": "2026-09-24T23:46:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1ac8524ba367a64f",
-      "title": "The Beginner Advantage in the AI Economy",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@jameswalkerai/the-beginner-advantage-in-the-ai-economy-71cc34e01983",
-          "target_url": "https://medium.com/@jameswalkerai/the-beginner-advantage-in-the-ai-economy-71cc34e01983",
-          "independent": false,
-          "title": "The Beginner Advantage in the AI Economy",
-          "summary": "Many beginners think they’re already behind. The reality may be the opposite. Continue reading on Medium »",
-          "published_at": "2026-09-24T23:46:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ca6d90f53531ec2d",
-      "title": "Day 15/60: LoRA (Low-Rank Adaptation) — Surgical Fine-Tuning for Massive Models",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@divyanshiy6/day-15-60-lora-low-rank-adaptation-surgical-fine-tuning-for-massive-models-be8b4226b1a8",
-          "target_url": "https://medium.com/@divyanshiy6/day-15-60-lora-low-rank-adaptation-surgical-fine-tuning-for-massive-models-be8b4226b1a8",
-          "independent": false,
-          "title": "Day 15/60: LoRA (Low-Rank Adaptation) — Surgical Fine-Tuning for Massive Models",
-          "summary": "Welcome to Day 15 of 60. Continue reading on Medium »",
-          "published_at": "2026-09-24T23:45:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "efc99ca4f3141474",
-      "title": "MCP server testing in CI: the bug no schema check can see",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@karachiwalaumer2612/mcp-server-testing-in-ci-the-bug-no-schema-check-can-see-39cfce248043",
-          "target_url": "https://medium.com/@karachiwalaumer2612/mcp-server-testing-in-ci-the-bug-no-schema-check-can-see-39cfce248043",
-          "independent": false,
-          "title": "MCP server testing in CI: the bug no schema check can see",
-          "summary": "mcp-eval-gate is a regression testing tool for MCP servers. It fails your CI build when a tool’s output gets worse, even if its schema… Continue reading on Medium »",
-          "published_at": "2026-09-24T23:44:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0af9640e8f57bd64",
-      "title": "Why the Same Paragraph Gets Different AI Detector Scores",
-      "first_seen": "2026-09-25T09:01:41+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@administrator_19739/why-the-same-paragraph-gets-different-ai-detector-scores-d86812d18f09",
-          "target_url": "https://medium.com/@administrator_19739/why-the-same-paragraph-gets-different-ai-detector-scores-d86812d18f09",
-          "independent": false,
-          "title": "Why the Same Paragraph Gets Different AI Detector Scores",
-          "summary": "Run the same paragraph through two AI detectors and the scores can disagree sharply. That does not automatically mean one tool is broken… Continue reading on Medium »",
-          "published_at": "2026-09-24T23:40:26+00:00",
           "date_precision": "time"
         }
       ],
@@ -4427,27 +4123,6 @@
           "title": "Jango",
           "summary": "Test multi-user apps with AI agents that act like real users Discussion | Link",
           "published_at": "2026-09-25T02:16:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6f5e5908f6ba2c3d",
-      "title": "Once UI 2.0",
-      "first_seen": "2026-09-25T18:01:57+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/once-ui-for-figma",
-          "target_url": "https://www.producthunt.com/products/once-ui-for-figma",
-          "independent": false,
-          "title": "Once UI 2.0",
-          "summary": "Builds consistent React apps for developers and AI agents Discussion | Link",
-          "published_at": "2026-09-24T23:05:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -6235,6 +5910,17 @@
           "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
           "summary": "",
           "published_at": "2026-09-26T08:52:57+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871834",
+          "target_url": "https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment",
+          "independent": false,
+          "title": "Medicare admin using WISeR AI to approve/deny medical care for seniors",
+          "summary": "",
+          "published_at": "2026-09-27T23:24:45+00:00",
           "date_precision": "time"
         }
       ],
@@ -19086,6 +18772,153 @@
           "title": "The Load Test: Why a Human in the Loop Isn’t a Control",
           "summary": "I was fresh out of high school, working at my first summer job as an engineering trainee. The senior engineers made a sport of quizzing me… Continue reading on Medium »",
           "published_at": "2026-09-27T22:46:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fd03e712c4099594",
+      "title": "How to Know When the AI Boom Is About to Go Bust",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872025",
+          "target_url": "https://www.wsj.com/finance/stocks/how-to-know-when-the-ai-boom-is-about-to-go-bust-61af3d26",
+          "independent": false,
+          "title": "How to Know When the AI Boom Is About to Go Bust",
+          "summary": "",
+          "published_at": "2026-09-27T23:54:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "feb9950db48c5406",
+      "title": "Leaked Gemini 4 Pro numbers",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49871864",
+          "target_url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1wqze2k/looking_at_the_leaked_gemini_4_pro_numbers_vs",
+          "independent": false,
+          "title": "Leaked Gemini 4 Pro numbers",
+          "summary": "",
+          "published_at": "2026-09-27T23:28:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4188eba505777c8a",
+      "title": "AI Was Supposed to Give You Your Time Back. Here’s Why It Didn’t.",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/illumination/ai-was-supposed-to-give-you-your-time-back-heres-why-it-didn-t-a5a2634c83cc",
+          "target_url": "https://medium.com/illumination/ai-was-supposed-to-give-you-your-time-back-heres-why-it-didn-t-a5a2634c83cc",
+          "independent": false,
+          "title": "AI Was Supposed to Give You Your Time Back. Here’s Why It Didn’t.",
+          "summary": "Seventy-seven percent of people using AI tools at work say their workload went up, not down. Continue reading on ILLUMINATION »",
+          "published_at": "2026-09-27T23:48:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "64ddc613cbd491a4",
+      "title": "The One Mental Skill Getting Weaker While AI Gets Smarter",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/illumination/the-one-mental-skill-getting-weaker-while-ai-gets-smarter-7d0b878c02de",
+          "target_url": "https://medium.com/illumination/the-one-mental-skill-getting-weaker-while-ai-gets-smarter-7d0b878c02de",
+          "independent": false,
+          "title": "The One Mental Skill Getting Weaker While AI Gets Smarter",
+          "summary": "A study of 666 people found something worth sitting with: the more someone leaned on AI tools, the lower they scored on critical thinking… Continue reading on ILLUMINATION »",
+          "published_at": "2026-09-27T23:48:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6680c494bdfacb69",
+      "title": "Da Qualidade Industrial à Inteligência Artificial Aplicada",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ornelas.tozato/da-qualidade-industrial-%C3%A0-intelig%C3%AAncia-artificial-aplicada-ee3c0cbc5b65",
+          "target_url": "https://medium.com/@ornelas.tozato/da-qualidade-industrial-%C3%A0-intelig%C3%AAncia-artificial-aplicada-ee3c0cbc5b65",
+          "independent": false,
+          "title": "Da Qualidade Industrial à Inteligência Artificial Aplicada",
+          "summary": "Uma jornada entre processos, dados e transformação digital Continue reading on Medium »",
+          "published_at": "2026-09-27T23:46:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8e1387d6539cda09",
+      "title": "When Does Becoming Who You’re Meant to Be Become Urgent?",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://mssheajohnson.medium.com/youre-not-stuck-you-re-becoming-ef73b5eb3ac6",
+          "target_url": "https://mssheajohnson.medium.com/youre-not-stuck-you-re-becoming-ef73b5eb3ac6",
+          "independent": false,
+          "title": "When Does Becoming Who You’re Meant to Be Become Urgent?",
+          "summary": "What if you woke up and decided to be exactly who you want to be, unapologetically? Continue reading on Medium »",
+          "published_at": "2026-09-27T23:40:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "870abd389c20b225",
+      "title": "How to Reduce LLM API Costs: 7 Levers That Actually Work (2026)",
+      "first_seen": "2026-09-28T09:01:32+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@techverdict/how-to-reduce-llm-api-costs-7-levers-that-actually-work-2026-733b6bc2c7da",
+          "target_url": "https://medium.com/@techverdict/how-to-reduce-llm-api-costs-7-levers-that-actually-work-2026-733b6bc2c7da",
+          "independent": false,
+          "title": "How to Reduce LLM API Costs: 7 Levers That Actually Work (2026)",
+          "summary": "Disclosure: This article was created with AI assistance — AI tools helped with research, drafting, and fact-checking. Affiliate disclosure… Continue reading on Medium »",
+          "published_at": "2026-09-27T23:40:15+00:00",
           "date_precision": "time"
         }
       ],
