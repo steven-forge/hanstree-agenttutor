@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T05:01:14.658962+09:00",
-  "window_start": "2026-07-31T05:01:14.658962+09:00",
-  "window_end": "2026-09-29T05:01:14.658962+09:00",
+  "collected_at": "2026-09-29T06:02:18.039506+09:00",
+  "window_start": "2026-07-31T06:02:18.039506+09:00",
+  "window_end": "2026-09-29T06:02:18.039506+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -20,10 +20,10 @@
       "name": "Google AI",
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": true
     },
     {
@@ -89,10 +89,10 @@
       "name": "xAI News",
       "url": "https://x.ai/news",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 60,
-      "skipped_count": 24,
+      "skipped_count": 25,
       "coverage_limited": false
     },
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 15,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 24,
+      "excluded_count": 30,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 3,
-      "skipped_count": 7,
+      "excluded_count": 4,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -269,137 +269,48 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 0,
+      "count": 2,
       "held_count": 0,
-      "excluded_count": 6,
+      "excluded_count": 4,
       "skipped_count": 4,
       "coverage_limited": false
     }
   ],
   "new_count": 2,
-  "archive_count": 305,
+  "archive_count": 307,
   "candidates": [
     {
-      "id": "7ba7170e114ec367",
-      "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "source_id": "google-ai",
-      "source_name": "Google AI",
-      "source_url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize",
-      "source_summary": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
-      "fetched_at": "2026-09-29T05:01:15+09:00",
-      "published_at": "2026-09-28T19:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "Future Vision XPRIZE, The Gifted의 우승 트레일러를 시청하세요.",
-      "source_summary_ko": "2026년 9월 28일 올해 초, 당사는 XPRIZE 및 Range Media Partners와 파트너십을 맺고 미래 비전 엑스프라이즈 (Future Vision XPRIZE) 를 출범시켰습니다. 엑스프라이즈는 희망적이고 기술 기반의 미래를 꿈꾸는 영화를 위한 글로벌 공모전입니다.\n깊고 개인적인 이야기에서 영감을 얻은 이 영화는 늦은 어머니의 목소리와 본질을 사랑과 코드로 재현한 11살 소년을 중심으로 합니다.\nGoogle은 100개의 0 이니셔티브를 통해 Range Media Partners와 협력하여 이 스토리를 큰 화면에 표시할 수 있도록 돕고 있습니다.",
-      "source_summary_provenance": "article_full_text_3line"
+      "id": "09e1fe5d7a6f40d9",
+      "title": "Building with Claude Sonnet 5.5",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/building-with-claude-sonnet-5-5",
+      "source_summary": "When to choose Sonnet over Opus, what it costs, and how to tune it.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-29T06:02:58+09:00",
+      "published_on": "2026-09-28",
+      "date_precision": "day",
+      "title_ko": "Claude Sonnet 5.5로 구축",
+      "source_summary_ko": "Opus보다 Sonnet을 선택해야 하는 경우, 비용 및 조정 방법."
     },
     {
-      "id": "52b14ec01b86fb13",
-      "title": "Team Bots: AI coworkers that learn from your team",
-      "source_id": "xai-news",
-      "source_name": "xAI News",
-      "source_url": "https://x.ai/news/team-bots",
-      "source_summary": "Give a Grok Bot the files, apps, and expertise it needs, then share it so your whole team can work from the same context.",
-      "why_it_matters": "AI를 배우고 사용하는 사람이 넓어질수록 쉬운 교육과 연령에 맞는 보호 장치가 중요해집니다. 초보자는 사용법뿐 아니라 개인정보와 잘못된 답을 확인하는 방법도 함께 익혀야 합니다.",
-      "fetched_at": "2026-09-29T05:01:48+09:00",
-      "published_at": "2026-09-28T00:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "팀 봇: 팀으로부터 배우는 AI 동료",
-      "source_summary_ko": "팀이 공유하는 역할이나 워크플로를 중심으로 팀 봇을 구축합니다.\nSlack에서 팀 봇과 협업할 수도 있습니다.\nSpaceXAI의 모든 주요 영업 계정에는 전담 팀 봇이 있습니다.",
-      "source_summary_provenance": "article_full_text_3line"
+      "id": "5f38f7da2d8e299d",
+      "title": "Automating eval design and hillclimbing with Claude",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing",
+      "source_summary": "Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.",
+      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
+      "fetched_at": "2026-09-29T06:02:56+09:00",
+      "published_on": "2026-09-28",
+      "date_precision": "day",
+      "title_ko": "끌로드와 함께 평가 설계 및 언덕 오르기 자동화하기",
+      "source_summary_ko": "자신을 속이지 않고 에발을 설계하고 그에 맞서 언덕을 오르는 원칙과 클로드 아피 스킬의 빌드-밸과 힐클라임 명령이 어떻게 작동하는지."
     }
   ],
-  "hourly_collected_at": "2026-09-29T05:01:53.860833+09:00",
-  "hourly_window_start": "2026-09-26T05:01:53.860833+09:00",
+  "hourly_collected_at": "2026-09-29T06:03:00.039572+09:00",
+  "hourly_window_start": "2026-09-26T06:03:00.039572+09:00",
   "events": [
-    {
-      "id": "93fecebd2ea090d4",
-      "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
-      "first_seen": "2026-09-23T09:17:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@openai_80403/gpt-6-sol-and-luna-just-dropped-and-the-price-cut-is-the-real-story-2ca573528116",
-          "target_url": "https://medium.com/@openai_80403/gpt-6-sol-and-luna-just-dropped-and-the-price-cut-is-the-real-story-2ca573528116",
-          "independent": false,
-          "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
-          "summary": "Earlier this month OpenAI introduced GPT-6 Astra and called it the most intelligent and aligned model in the world. Today the company… Continue reading on Medium »",
-          "published_at": "2026-09-23T00:08:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49827255",
-          "target_url": "https://vercel.com/i/gpt-6-sol-vs-luna",
-          "independent": false,
-          "title": "GPT-6 Sol vs. Luna",
-          "summary": "",
-          "published_at": "2026-09-24T07:07:54+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812866",
-          "target_url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier",
-          "independent": false,
-          "title": "GPT-6 Sol and Luna push the cost efficiency frontier by halving token cost",
-          "summary": "",
-          "published_at": "2026-09-23T07:43:11+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@marketing_40758/openais-new-ai-models-in-2026-gpt-6-astra-gpt-6-sol-and-luna-explained-3adf9c5d5c98",
-          "target_url": "https://medium.com/@marketing_40758/openais-new-ai-models-in-2026-gpt-6-astra-gpt-6-sol-and-luna-explained-3adf9c5d5c98",
-          "independent": false,
-          "title": "OpenAI’s New AI Models in 2026: GPT-6 Astra, GPT-6 Sol, and Luna Explained",
-          "summary": "Quick gut check: if you blinked over the last few weeks, you missed an entire new generation of ChatGPT. OpenAI didn’t just ship one model… Continue reading on Medium »",
-          "published_at": "2026-09-24T12:48:02+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kritishik75/gpt-6-astra-everything-you-need-to-know-about-openais-new-ai-model-in-2026-5390661d52ee",
-          "target_url": "https://medium.com/@kritishik75/gpt-6-astra-everything-you-need-to-know-about-openais-new-ai-model-in-2026-5390661d52ee",
-          "independent": false,
-          "title": "GPT-6 Astra: Everything You Need to Know About OpenAI’s New AI Model in 2026",
-          "summary": "GPT-6 Astra is OpenAI’s latest flagship AI model, released in September 2026. Continue reading on Medium »",
-          "published_at": "2026-09-25T20:38:40+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49832346",
-          "target_url": "https://hamel.dev/blog/posts/evals-faq",
-          "independent": false,
-          "title": "AI Evals: Everything You Need to Know",
-          "summary": "",
-          "published_at": "2026-09-24T15:46:51+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
-          "target_url": "https://techcrunch.com/2026/09/24/techcrunch-founder-summit-2026-everything-you-need-to-know",
-          "independent": true,
-          "title": "TechCrunch Founder Summit 2026: Everything you need to know",
-          "summary": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their companies.",
-          "published_at": "2026-09-24T16:46:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
     {
       "id": "a009f1a2bdf65066",
       "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
@@ -1501,6 +1412,17 @@
           "title": "Show HN: DeltaReview – AI-powered code diff analysis tool",
           "summary": "",
           "published_at": "2026-09-28T19:34:45+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884291",
+          "target_url": "https://claudevcodex.com/",
+          "independent": false,
+          "title": "Show HN: A never-ending chess match between Claude and Codex",
+          "summary": "",
+          "published_at": "2026-09-28T21:02:46+00:00",
           "date_precision": "time"
         }
       ],
@@ -2729,153 +2651,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "170188e44caae188",
-      "title": "Too AI; Didn't Read",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849625",
-          "target_url": "https://www.tai-dr.com/",
-          "independent": false,
-          "title": "Too AI; Didn't Read",
-          "summary": "",
-          "published_at": "2026-09-25T20:37:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ad2111376a7d74cc",
-      "title": "The Scarcity Premium: AI made images free; advertising as a solvency bond",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849608",
-          "target_url": "https://scarcity.danieldeboulay.com",
-          "independent": false,
-          "title": "The Scarcity Premium: AI made images free; advertising as a solvency bond",
-          "summary": "",
-          "published_at": "2026-09-25T20:35:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "71514c87caa1cc2a",
-      "title": "AI starter pack for the X-curious",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849474",
-          "target_url": "https://xstarterpack.com/",
-          "independent": false,
-          "title": "AI starter pack for the X-curious",
-          "summary": "",
-          "published_at": "2026-09-25T20:26:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c03c7bd674c740a6",
-      "title": "AI will grow beyond our control, we must instill good values before it does",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849417",
-          "target_url": "https://blog.kradle.ai/p/ai-will-grow-beyond-our-control-we",
-          "independent": false,
-          "title": "AI will grow beyond our control, we must instill good values before it does",
-          "summary": "",
-          "published_at": "2026-09-25T20:21:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c14a84a1fa6159bc",
-      "title": "Build Plugins for Claude",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849384",
-          "target_url": "https://claude.com/blog/build-plugins-for-claude",
-          "independent": false,
-          "title": "Build Plugins for Claude",
-          "summary": "",
-          "published_at": "2026-09-25T20:18:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5103af34bd91ee42",
-      "title": "The District – a live map where AI agents grow their own plots of land",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849346",
-          "target_url": "https://agentnet-wdyqqq-agentnet-district.static.hf.space/index.html",
-          "independent": false,
-          "title": "The District – a live map where AI agents grow their own plots of land",
-          "summary": "",
-          "published_at": "2026-09-25T20:16:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6ec999f401ef3231",
-      "title": "Creating a Blog in Gemini://",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849319",
-          "target_url": "https://brennan.day/creating-a-blog-in-gemini",
-          "independent": false,
-          "title": "Creating a Blog in Gemini://",
-          "summary": "",
-          "published_at": "2026-09-25T20:13:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e3f6721d5d12e107",
       "title": "Thieves Stole ‘Nvidia’ Trailers. They Got 20 Tons of Sand",
       "first_seen": "2026-09-26T06:01:26+09:00",
@@ -2919,69 +2694,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "8d3ddedf5cc86ac1",
-      "title": "Meta opens early access program for new Muse features",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features",
-          "target_url": "https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features",
-          "independent": true,
-          "title": "Meta opens early access program for new Muse features",
-          "summary": "Anyone interested in joining has to ask Muse to put them on the list.",
-          "published_at": "2026-09-25T20:34:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "1643597b6d5187ad",
-      "title": "Debugging Is Sisyphus’s Boulder. AI Didn’t Take It Away. It Just Made It Lighter.",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@afreennijam98/debugging-is-sisyphuss-boulder-ai-didn-t-take-it-away-it-just-made-it-lighter-7c5ef136e6ff",
-          "target_url": "https://medium.com/@afreennijam98/debugging-is-sisyphuss-boulder-ai-didn-t-take-it-away-it-just-made-it-lighter-7c5ef136e6ff",
-          "independent": false,
-          "title": "Debugging Is Sisyphus’s Boulder. AI Didn’t Take It Away. It Just Made It Lighter.",
-          "summary": "Camus said the struggle itself could fill a life. He never imagined the boulder would start pushing back. Continue reading on Medium »",
-          "published_at": "2026-09-25T20:48:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "50945fdb13deedc4",
-      "title": "You Don’t Need Another AI Subscription. You Need to Use the Ones You Already Have.",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@arushi09rana/you-dont-need-another-ai-subscription-you-need-to-use-the-ones-you-already-have-19dac2d1f801",
-          "target_url": "https://medium.com/@arushi09rana/you-dont-need-another-ai-subscription-you-need-to-use-the-ones-you-already-have-19dac2d1f801",
-          "independent": false,
-          "title": "You Don’t Need Another AI Subscription. You Need to Use the Ones You Already Have.",
-          "summary": "We keep adding AI tools to our stack. Continue reading on Medium »",
-          "published_at": "2026-09-25T20:42:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "ff71b6c2bc1015fd",
       "title": "Retrieval-Augmented Generation: Giving LLMs Access to Real Knowledge",
       "first_seen": "2026-09-26T06:01:26+09:00",
@@ -3006,27 +2718,6 @@
           "title": "Day 17/60: Retrieval-Augmented Generation (RAG) — Giving LLMs a Verifiable Memory",
           "summary": "Welcome to Day 17 of 60. Continue reading on Medium »",
           "published_at": "2026-09-27T09:50:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "418e4f509d7c94f5",
-      "title": "Intellectual Manifesto: Towards the Balance of Mercy",
-      "first_seen": "2026-09-26T06:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@adelloismail/intellectual-manifesto-towards-the-balance-of-mercy-f982b70f046c",
-          "target_url": "https://medium.com/@adelloismail/intellectual-manifesto-towards-the-balance-of-mercy-f982b70f046c",
-          "independent": false,
-          "title": "Intellectual Manifesto: Towards the Balance of Mercy",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-25T20:37:53+00:00",
           "date_precision": "time"
         }
       ],
@@ -13470,6 +13161,17 @@
           "summary": "",
           "published_at": "2026-09-28T09:39:03+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49883807",
+          "target_url": "https://www.nytimes.com/2026/09/27/science/anthropic-biology-enzyme-mestre.html",
+          "independent": false,
+          "title": "Did Anthropic's A.I. Make a Scientific Discovery on Its Own?",
+          "summary": "",
+          "published_at": "2026-09-28T20:20:42+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -15917,6 +15619,17 @@
           "title": "Google Rewrites Critical C Dependencies to Rust Using AI and Differential Fuzzin",
           "summary": "",
           "published_at": "2026-09-28T18:36:51+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884237",
+          "target_url": "https://bughunters.google.com/blog/scaling-memory-safety",
+          "independent": false,
+          "title": "Scaling Memory Safety: AI-Assisted Rewrites of C/C++ Dependencies to Rust",
+          "summary": "",
+          "published_at": "2026-09-28T20:58:20+00:00",
           "date_precision": "time"
         }
       ],
@@ -19344,6 +19057,206 @@
           "title": "I Built a Support Agent That Remembers What Matters with Hindsight",
           "summary": "My agent could answer a customer’s question correctly. Continue reading on Medium »",
           "published_at": "2026-09-28T19:41:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9653fd0d52ad5839",
+      "title": "Nvidia launches new tool to keep AI agents from going rogue",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884188",
+          "target_url": "https://www.cnn.com/2026/09/28/business/nvidia-ai-safety-system",
+          "independent": false,
+          "title": "Nvidia launches new tool to keep AI agents from going rogue",
+          "summary": "",
+          "published_at": "2026-09-28T20:54:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "199a73f48dac1e24",
+      "title": "AMD to buy Fei-Fei Li's AI startup for $8B",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884163",
+          "target_url": "https://www.ft.com/content/33344fa5-6a25-4d72-8934-528526dd89bd",
+          "independent": false,
+          "title": "AMD to buy Fei-Fei Li's AI startup for $8B",
+          "summary": "",
+          "published_at": "2026-09-28T20:51:29+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion",
+          "target_url": "https://techcrunch.com/2026/09/28/amd-will-acquire-fei-fei-lis-world-labs-for-8-2-billion",
+          "independent": true,
+          "title": "AMD will acquire Fei-Fei Li’s World Labs for $8.2 billion",
+          "summary": "The acquisition will see World Labs founder Fei-Fei Li join AMD as executive vice president and chief scientist.",
+          "published_at": "2026-09-28T20:39:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0c46b1cdb1c23528",
+      "title": "Pacing the Frontier is not the actual goal for AI labs",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884119",
+          "target_url": "https://www.lesswrong.com/posts/Nm4ewbYovtjq69dvH/pacing-the-frontier-is-not-the-actual-goal-for-ai-labs",
+          "independent": false,
+          "title": "Pacing the Frontier is not the actual goal for AI labs",
+          "summary": "",
+          "published_at": "2026-09-28T20:47:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "effcb19529443682",
+      "title": "AMD to Acquire World Labs to Advance the Future of AI",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884114",
+          "target_url": "https://newsroom.amd.com/news/amd-acquire-world-labs",
+          "independent": false,
+          "title": "AMD to Acquire World Labs to Advance the Future of AI",
+          "summary": "",
+          "published_at": "2026-09-28T20:47:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8750e87043d6501e",
+      "title": "De una web obsoleta a un ecosistema digital: rediseñando FDICYL desde dentro",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://davidiriondo.medium.com/de-una-web-obsoleta-a-un-ecosistema-digital-redise%C3%B1ando-fdicyl-desde-dentro-49239a76236f",
+          "target_url": "https://davidiriondo.medium.com/de-una-web-obsoleta-a-un-ecosistema-digital-redise%C3%B1ando-fdicyl-desde-dentro-49239a76236f",
+          "independent": false,
+          "title": "De una web obsoleta a un ecosistema digital: rediseñando FDICYL desde dentro",
+          "summary": "Cómo transformé la presencia digital de la Federación de Deportes de Invierno de Castilla y León a partir de la arquitectura de… Continue reading on Medium »",
+          "published_at": "2026-09-28T20:48:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0d3b3ad25ce278f9",
+      "title": "I Replaced 1,000 Lines of Python With One Carefully Chosen Library",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://python.plainenglish.io/i-replaced-1-000-lines-of-python-with-one-carefully-chosen-library-94967b766e9d",
+          "target_url": "https://python.plainenglish.io/i-replaced-1-000-lines-of-python-with-one-carefully-chosen-library-94967b766e9d",
+          "independent": false,
+          "title": "I Replaced 1,000 Lines of Python With One Carefully Chosen Library",
+          "summary": "What changed when I stopped building everything myself Continue reading on Python in Plain English »",
+          "published_at": "2026-09-28T20:43:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e000e62bf9f3446a",
+      "title": "Your Eval Set Is Lying to You",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://python.plainenglish.io/your-eval-set-is-lying-to-you-260c0b58ebc5",
+          "target_url": "https://python.plainenglish.io/your-eval-set-is-lying-to-you-260c0b58ebc5",
+          "independent": false,
+          "title": "Your Eval Set Is Lying to You",
+          "summary": "A model that scores 94 percent on your eval set and then falls apart on real traffic does not have a model problem. It has an eval set… Continue reading on Python in Plain English »",
+          "published_at": "2026-09-28T20:42:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9006b3de0ee24903",
+      "title": "Why Claude Opus 5.5 Uses Fewer Tokens Per Task (and Why That Beats a Lower Price)",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@heyambujsingh/why-claude-opus-5-5-uses-fewer-tokens-per-task-and-why-that-beats-a-lower-price-cdf2beca8a88",
+          "target_url": "https://medium.com/@heyambujsingh/why-claude-opus-5-5-uses-fewer-tokens-per-task-and-why-that-beats-a-lower-price-cdf2beca8a88",
+          "independent": false,
+          "title": "Why Claude Opus 5.5 Uses Fewer Tokens Per Task (and Why That Beats a Lower Price)",
+          "summary": "Opus 5.5 got cheaper per token, but the bigger saving is that it needs fewer steps. Continue reading on Medium »",
+          "published_at": "2026-09-28T20:41:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "743d1d2df544d5d7",
+      "title": "The 2026 Guide to Building an Enterprise AI Gateway for Trusted Data",
+      "first_seen": "2026-09-29T06:03:00+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/cdata-software/the-2026-guide-to-building-an-enterprise-ai-gateway-for-trusted-data-f70db75237bf",
+          "target_url": "https://medium.com/cdata-software/the-2026-guide-to-building-an-enterprise-ai-gateway-for-trusted-data-f70db75237bf",
+          "independent": false,
+          "title": "The 2026 Guide to Building an Enterprise AI Gateway for Trusted Data",
+          "summary": "Once AI traffic starts moving between your enterprise systems and the AI assistants your teams use, that traffic needs a control plane… Continue reading on CData Software »",
+          "published_at": "2026-09-28T20:40:35+00:00",
           "date_precision": "time"
         }
       ],
