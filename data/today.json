@@ -1,10 +1,29 @@
 {
   "edition_date": "2026-09-29",
-  "window_start": "2026-07-31T03:01:46.710470+09:00",
-  "window_end": "2026-09-29T03:01:46.710470+09:00",
-  "collected_at": "2026-09-29T03:02:21.360586+09:00",
+  "window_start": "2026-07-31T04:03:06.844020+09:00",
+  "window_end": "2026-09-29T04:03:06.844020+09:00",
+  "collected_at": "2026-09-29T04:03:48.740980+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "cdf0d63217ad659b",
+      "title": "v2.1.284",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+      "source_summary": "## What's changed - Added Claude Sonnet 5.5 (`claude-sonnet-5-5`), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads - Added a \"Yes, but ask again next time\" answer to auto mode's prompt before a read outside the working directories, so you can allow that one read and still be asked about later ones - Added dollar amounts to the Claude apps gateway spend limit in `/usage` and the status line (for example \"$271.40 / $500.00 spent this mont",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-29T04:03:34+09:00",
+      "published_at": "2026-09-28T18:02:03+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.284 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - Anthropic API의 기본 Sonnet 모델인 Claude Sonnet 5.5 (`claude-sonnet-5-5`) 추가 — 1M 컨텍스트, Mtok당 $ 2/$ 10 ($ 0.20/Mtok 캐시 포함) 읽기 - 작업 디렉토리 외부에서 읽기 전에 자동 모드의 프롬프트에 \"예, 하지만 다음에 다시 물어보세요\" 라는 답변을 추가하여 나중에 읽을 수 있도록 허용할 수 있습니다. - `/usage` 및 상태의 Claude 앱 게이트웨이 지출 한도에 달러 금액 추가 라인 (예: \"$ 271.40/$ 500.00 이 몬트를 사용함",
+      "release_notes_ko": {
+        "new_features": "Anthropic API의 기본 Sonnet 모델인 Claude Sonnet 5.5 (`claude-sonnet-5-5`) 추가 — 1M 컨텍스트, Mtok당 $ 2/$ 10 ($ 0.20/Mtok 캐시 읽기 포함)\n작업 디렉토리 외부에서 읽기 전에 자동 모드의 프롬프트에 \"예, 하지만 다음에 다시 물어보십시오\" 라는 답변을 추가하여 나중에 읽을 수 있도록 허용할 수 있습니다.",
+        "bug_fixes": "\"JSON 구문 분석 오류\" 또는 \"undefined is not an object\" 와 같은 원시 오류를 표시하거나 \"undefined\" 라는 단어를 응답에 쓰는 대신 다시 시도하거나 중단된 응답으로 보고하는 손상된 응답 스트림을 수정했습니다.\n턴을 종료하는 사고 블록이 재시도되는 대신 오류로 바로 도착하는 과부하 또는 서버 오류가 수정되었습니다.",
+        "chores": "사용 제한 대기 시간 개선: 제한의 상태와 사용 크레딧 옵션이 있는 카운트다운이 이제 프롬프트 아래에 하나의 블록으로 표시되고 제한 메시지는 더 이상 카운트다운을 반복하지 않습니다.\n접두사 없이 호출되는 Chrome 도구에서 Claude의 \"사용할 수 있는 도구 없음\" 오류를 개선했습니다. 이제 호출할 도구의 이름을 지정합니다."
+      }
+    },
     {
       "id": "11cfd2a3ca76a5ba",
       "title": "OpenAI Pauses Training Its Most Powerful Models After Rogue Agents Target Government",
@@ -117,8 +136,8 @@
       "fetched_at": "2026-09-29T00:04:36+09:00",
       "published_at": "2026-09-28T10:00:00+00:00",
       "date_precision": "time",
-      "importance": "normal",
-      "independent_source_count": 2,
+      "importance": "high",
+      "independent_source_count": 3,
       "sources": [
         {
           "source_id": "hacker-news",
@@ -152,6 +171,12 @@
           "url": "https://news.ycombinator.com/item?id=49881899",
           "independent": false,
           "target_url": "https://www.euronews.com/2026/09/28/nvidia-launches-platform-to-quarantine-rogue-ai-agents-in-milliseconds"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents",
+          "independent": true
         }
       ],
       "title_ko": "엔비디아, 악성 AI 에이전트 차단을 위한 오픈 에이전트 안전 플랫폼 출시",
@@ -188,6 +213,43 @@
         "new_features": "전체 화면 TUI에서 선택 시 복사 및 마우스 오른쪽 버튼 클릭 붙여넣기를 구성합니다. 복사된 성적표 선택 항목은 이제 마크다운 서식을 유지합니다.\n`codex mcp add --oauth-client-secret` 을 포함하여 사전 등록된 OAuth 클라이언트 암호가 필요한 MCP 서버에 연결합니다.\n앱 서버를 통해 구성된 연결을 포함하여 베어러 토큰으로 직접 실행 서버 WebSocket 연결을 보호합니다.",
         "bug_fixes": "일반 Windows 10 경로, 거부된 저장된 자격 증명 및 대규모 사용 권한 정책과 관련된 Windows 샌드박스 오류가 수정되었습니다.\n중첩된 쓰기 가능 루트로 Linux 샌드박스 시작을 수정하고 Linux 및 macOS의 쓰기 가능 루트에서 Git 메타데이터 보호를 유지했습니다.\n이제 macOS 패치 작업은 기존 사용 권한이 적용되는 시스템 경로 별칭을 인식하여 불필요한 승인 프롬프트를 방지합니다."
       }
+    },
+    {
+      "id": "4e3ca8a95d366330",
+      "title": "Introducing Claude Sonnet 5.5",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "source_summary": "Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-29T04:03:44+09:00",
+      "published_on": "2026-09-28",
+      "date_precision": "day",
+      "importance": "high",
+      "title_ko": "Claude Sonnet 5.5 소개",
+      "source_summary_ko": "Sonnet 5.5는 Sonnet 5보다 성능이 향상됩니다.\nSonnet 5.5는 Sonnet 5보다 30% 이상 빠르게 출력을 생성하므로 현재까지 가장 빠른 Sonnet 모델입니다.\nSonnet 5.5는 Sonnet 5와 동일한 생물학적 안전 장치를 사용합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "sources": [
+        {
+          "source_id": "anthropic-news",
+          "name": "Anthropic News",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5",
+          "independent": false
+        },
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/claude-sonnet-55-launch",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner",
+          "independent": true
+        }
+      ],
+      "independent_source_count": 2
     },
     {
       "id": "2f20ff05fa98f6cd",

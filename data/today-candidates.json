@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T03:01:46.710470+09:00",
-  "window_start": "2026-07-31T03:01:46.710470+09:00",
-  "window_end": "2026-09-29T03:01:46.710470+09:00",
+  "collected_at": "2026-09-29T04:03:06.844020+09:00",
+  "window_start": "2026-07-31T04:03:06.844020+09:00",
+  "window_end": "2026-09-29T04:03:06.844020+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -9,10 +9,10 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 122,
+      "skipped_count": 123,
       "coverage_limited": false
     },
     {
@@ -42,9 +42,9 @@
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
-      "excluded_count": 1,
+      "excluded_count": 0,
       "skipped_count": 51,
       "coverage_limited": false
     },
@@ -78,7 +78,7 @@
       "name": "Anthropic News",
       "url": "https://www.anthropic.com/news",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 1,
       "skipped_count": 12,
@@ -99,10 +99,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
+      "status": "partial",
       "count": 12,
-      "held_count": 0,
-      "excluded_count": 27,
+      "held_count": 1,
+      "excluded_count": 26,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 9,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 1,
-      "skipped_count": 9,
+      "excluded_count": 0,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 17,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -166,9 +166,9 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 6,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 24,
+      "excluded_count": 23,
       "skipped_count": 6,
       "coverage_limited": false
     },
@@ -177,9 +177,9 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 3,
+      "count": 4,
       "held_count": 0,
-      "excluded_count": 23,
+      "excluded_count": 22,
       "skipped_count": 3,
       "coverage_limited": false
     },
@@ -276,70 +276,48 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
-  "archive_count": 301,
+  "new_count": 2,
+  "archive_count": 303,
   "candidates": [
     {
-      "id": "0adf5bb2a473897d",
-      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
-      "source_summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
-      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
-      "fetched_at": "2026-09-29T03:01:46+09:00",
-      "published_at": "2026-09-28T07:00:00+00:00",
+      "id": "cdf0d63217ad659b",
+      "title": "v2.1.284",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+      "source_summary": "## What's changed - Added Claude Sonnet 5.5 (`claude-sonnet-5-5`), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads - Added a \"Yes, but ask again next time\" answer to auto mode's prompt before a read outside the working directories, so you can allow that one read and still be asked about later ones - Added dollar amounts to the Claude apps gateway spend limit in `/usage` and the status line (for example \"$271.40 / $500.00 spent this mont",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-29T04:03:34+09:00",
+      "published_at": "2026-09-28T18:02:03+00:00",
       "date_precision": "time",
-      "title_ko": "Lenfest Institute는 OpenAI 지원을 확대하여 랜드마크 프로그램을 성장시킵니다.",
-      "source_summary_ko": "OpenAI는 5백만 달러의 자금과 최대 5백만 달러의 소프트웨어 크레딧 및 엔지니어링 지원을 통해 Lenfest AI Collaborative and Fellowship 프로그램을 확장하고 있습니다."
+      "title_ko": "Claude Code v2.1.284 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - Anthropic API의 기본 Sonnet 모델인 Claude Sonnet 5.5 (`claude-sonnet-5-5`) 추가 — 1M 컨텍스트, Mtok당 $ 2/$ 10 ($ 0.20/Mtok 캐시 포함) 읽기 - 작업 디렉토리 외부에서 읽기 전에 자동 모드의 프롬프트에 \"예, 하지만 다음에 다시 물어보세요\" 라는 답변을 추가하여 나중에 읽을 수 있도록 허용할 수 있습니다. - `/usage` 및 상태의 Claude 앱 게이트웨이 지출 한도에 달러 금액 추가 라인 (예: \"$ 271.40/$ 500.00 이 몬트를 사용함",
+      "release_notes_ko": {
+        "new_features": "Anthropic API의 기본 Sonnet 모델인 Claude Sonnet 5.5 (`claude-sonnet-5-5`) 추가 — 1M 컨텍스트, Mtok당 $ 2/$ 10 ($ 0.20/Mtok 캐시 읽기 포함)\n작업 디렉토리 외부에서 읽기 전에 자동 모드의 프롬프트에 \"예, 하지만 다음에 다시 물어보십시오\" 라는 답변을 추가하여 나중에 읽을 수 있도록 허용할 수 있습니다.",
+        "bug_fixes": "\"JSON 구문 분석 오류\" 또는 \"undefined is not an object\" 와 같은 원시 오류를 표시하거나 \"undefined\" 라는 단어를 응답에 쓰는 대신 다시 시도하거나 중단된 응답으로 보고하는 손상된 응답 스트림을 수정했습니다.\n턴을 종료하는 사고 블록이 재시도되는 대신 오류로 바로 도착하는 과부하 또는 서버 오류가 수정되었습니다.",
+        "chores": "사용 제한 대기 시간 개선: 제한의 상태와 사용 크레딧 옵션이 있는 카운트다운이 이제 프롬프트 아래에 하나의 블록으로 표시되고 제한 메시지는 더 이상 카운트다운을 반복하지 않습니다.\n접두사 없이 호출되는 Chrome 도구에서 Claude의 \"사용할 수 있는 도구 없음\" 오류를 개선했습니다. 이제 호출할 도구의 이름을 지정합니다."
+      }
+    },
+    {
+      "id": "4e3ca8a95d366330",
+      "title": "Introducing Claude Sonnet 5.5",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "source_summary": "Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-29T04:03:44+09:00",
+      "published_on": "2026-09-28",
+      "date_precision": "day",
+      "importance": "high",
+      "title_ko": "Claude Sonnet 5.5 소개",
+      "source_summary_ko": "Sonnet 5.5는 Sonnet 5보다 성능이 향상됩니다.\nSonnet 5.5는 Sonnet 5보다 30% 이상 빠르게 출력을 생성하므로 현재까지 가장 빠른 Sonnet 모델입니다.\nSonnet 5.5는 Sonnet 5와 동일한 생물학적 안전 장치를 사용합니다.",
+      "source_summary_provenance": "article_full_text_3line"
     }
   ],
-  "hourly_collected_at": "2026-09-29T03:02:21.360586+09:00",
-  "hourly_window_start": "2026-09-26T03:02:21.360586+09:00",
+  "hourly_collected_at": "2026-09-29T04:03:48.740980+09:00",
+  "hourly_window_start": "2026-09-26T04:03:48.740980+09:00",
   "events": [
-    {
-      "id": "b287b34a5390dd7e",
-      "title": "Microsoft disrupts AI-assisted platform that compromised 12,000",
-      "first_seen": "2026-09-23T07:36:30+09:00",
-      "sources": [
-        {
-          "source_id": "ars-technica",
-          "name": "Ars Technica",
-          "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
-          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
-          "independent": true,
-          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000",
-          "summary": "EvilTokens provided an end-to-end platform that makes mass compromises faster and easier.",
-          "published_at": "2026-09-22T19:45:47+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49812609",
-          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
-          "independent": false,
-          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
-          "summary": "",
-          "published_at": "2026-09-23T07:01:18+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848424",
-          "target_url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000",
-          "independent": false,
-          "title": "Microsoft disrupts AI-assisted platform that compromised 12,000 accounts",
-          "summary": "",
-          "published_at": "2026-09-25T18:50:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
     {
       "id": "93fecebd2ea090d4",
       "title": "GPT-6 Sol and Luna just dropped, and the price cut is the real story",
@@ -1462,6 +1440,17 @@
           "title": "JEV based Effort-router picks Claude Code's reasoning effort for each prompt",
           "summary": "",
           "published_at": "2026-09-28T15:56:46+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882524",
+          "target_url": "https://github.com/Kuberwastaken/hinge-mcp",
+          "independent": false,
+          "title": "Show HN: Hinge MCP",
+          "summary": "",
+          "published_at": "2026-09-28T18:41:42+00:00",
           "date_precision": "time"
         }
       ],
@@ -2629,321 +2618,6 @@
           "title": "Bill Gates says unchecked AI could 'cause billion deaths' in call for regulation",
           "summary": "",
           "published_at": "2026-09-27T14:59:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d051992409d4b60a",
-      "title": "Lobsters: Rename vibecoding to LLMs (Greasemonkey script)",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848548",
-          "target_url": "https://greasyfork.org/en/scripts",
-          "independent": false,
-          "title": "Lobsters: Rename vibecoding to LLMs (Greasemonkey script)",
-          "summary": "",
-          "published_at": "2026-09-25T19:01:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "96545187af2a88d5",
-      "title": "No country controls every layer: The hidden AI systems reshaping global power",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848516",
-          "target_url": "https://www.abc.net.au/news/2026-09-24/ai-race-chips-data-energy-cake-stack-us-china-asia-pacific/107071946",
-          "independent": false,
-          "title": "No country controls every layer: The hidden AI systems reshaping global power",
-          "summary": "",
-          "published_at": "2026-09-25T18:57:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4db0e0a13f91b9f3",
-      "title": "Cambridge Analytica 2.0 – When the AI Assistant Becomes a Intelligence Graph",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848397",
-          "target_url": "https://futurium.ec.europa.eu/en/apply-ai-alliance/community-content/cambridge-analytica-20-when-ai-assistant-becomes-intelligence-graph-billion-dollar-company",
-          "independent": false,
-          "title": "Cambridge Analytica 2.0 – When the AI Assistant Becomes a Intelligence Graph",
-          "summary": "",
-          "published_at": "2026-09-25T18:47:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b9096748181c1634",
-      "title": "Treat Agents Like Direct Reports",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848358",
-          "target_url": "https://toppingdesign.com/writing/agents-are-reports",
-          "independent": false,
-          "title": "Treat Agents Like Direct Reports",
-          "summary": "",
-          "published_at": "2026-09-25T18:44:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "15966dbda7bf1e28",
-      "title": "The cost of free AI restaurant ads is greater than it seems",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848247",
-          "target_url": "https://www.phoenixnewtimes.com/opinion/ai-restaurant-ads-are-free-but-at-what-cost-40701302",
-          "independent": false,
-          "title": "The cost of free AI restaurant ads is greater than it seems",
-          "summary": "",
-          "published_at": "2026-09-25T18:31:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f37444bb30b94151",
-      "title": "AI applications need better primitives than text generation",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848236",
-          "target_url": "https://seldon-ai.com/blog/better-primitives-than-text-generation",
-          "independent": false,
-          "title": "AI applications need better primitives than text generation",
-          "summary": "",
-          "published_at": "2026-09-25T18:30:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8993a8149caab98c",
-      "title": "xAI Moves to Buy Out Southaven Residents Who Agree Not to Sue over Plant Noise",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49848217",
-          "target_url": "https://www.mississippifreepress.org/xai-moves-to-buy-out-southaven-residents-who-agree-not-to-sue-it-over-power-plant-noise-letter-shows",
-          "independent": false,
-          "title": "xAI Moves to Buy Out Southaven Residents Who Agree Not to Sue over Plant Noise",
-          "summary": "",
-          "published_at": "2026-09-25T18:28:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7c4ccc4b5789704a",
-      "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026",
-          "target_url": "https://techcrunch.com/2026/09/25/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026",
-          "independent": true,
-          "title": "Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his",
-          "summary": "Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses.",
-          "published_at": "2026-09-25T18:48:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "28be881384a00fee",
-      "title": "Ahead of US IPO, British AI neocloud Nscale secures $3.36B in convertible financing",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing",
-          "target_url": "https://techcrunch.com/2026/09/25/ahead-of-u-s-ipo-british-ai-neocloud-nscale-secures-3-36b-in-convertible-finacing",
-          "independent": true,
-          "title": "Ahead of US IPO, British AI neocloud Nscale secures $3.36B in convertible financing",
-          "summary": "The funding, which comes from Third Point, Nvidia, and others, will fuel the company's massive AI data center buildout.",
-          "published_at": "2026-09-25T18:33:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "7987845e1d4db7cc",
-      "title": "Meta’s Muse just stole the AI spotlight from OpenAI and Anthropic",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic",
-          "target_url": "https://techcrunch.com/podcast/metas-muse-just-stole-the-ai-spotlight-from-openai-and-anthropic",
-          "independent": true,
-          "title": "Meta’s Muse just stole the AI spotlight from OpenAI and Anthropic",
-          "summary": "When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,” maybe someone should have asked: what pace? Now it’s turned into model drop week for both companies as Anthropic rolled out Opus 5.5, followed by OpenAI’s GPT-6 model updates just 90 minutes later. But the company that stole the spotlight was Meta, whose personal AI agent Muse is reportedly outpacing ChatGPT’s early numbers and is headed for smart glasses and […]",
-          "published_at": "2026-09-25T18:22:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "dbbc42a79ca44e23",
-      "title": "Claude, ChatGPT, or a Smaller Model? Use This 60-Second Decision Rule",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@davuttam/claude-chatgpt-or-a-smaller-model-use-this-60-second-decision-rule-918e483d66dc",
-          "target_url": "https://medium.com/@davuttam/claude-chatgpt-or-a-smaller-model-use-this-60-second-decision-rule-918e483d66dc",
-          "independent": false,
-          "title": "Claude, ChatGPT, or a Smaller Model? Use This 60-Second Decision Rule",
-          "summary": "Choose the right AI model by task complexity, cost of failure, speed and data sensitivity — not brand loyalty. Continue reading on Medium »",
-          "published_at": "2026-09-25T18:51:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c9ecb3e8d9bcbb78",
-      "title": "Meta’s Muse Is Everywhere. Your Passwords Should Be Nowhere Near It",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://xhinker.medium.com/metas-muse-is-everywhere-your-passwords-should-be-nowhere-near-it-05b80bf8e900",
-          "target_url": "https://xhinker.medium.com/metas-muse-is-everywhere-your-passwords-should-be-nowhere-near-it-05b80bf8e900",
-          "independent": false,
-          "title": "Meta’s Muse Is Everywhere. Your Passwords Should Be Nowhere Near It",
-          "summary": "Meta’s Muse AI is nothing new, just agent for personal use, why it got so much attention? Continue reading on Medium »",
-          "published_at": "2026-09-25T18:51:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e6124238162d5d8c",
-      "title": "One of Our Best Engineers Stopped Working Overtime. Three Months Later, Everyone Else Was Shipping",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://devrimozcay.medium.com/one-of-our-best-engineers-stopped-working-overtime-three-months-later-everyone-else-was-shipping-e1cda8652f9e",
-          "target_url": "https://devrimozcay.medium.com/one-of-our-best-engineers-stopped-working-overtime-three-months-later-everyone-else-was-shipping-e1cda8652f9e",
-          "independent": false,
-          "title": "One of Our Best Engineers Stopped Working Overtime. Three Months Later, Everyone Else Was Shipping",
-          "summary": "I thought he was protecting his personal time, but he was actually exposing how much of our engineering process depended on people quietly… Continue reading on Medium »",
-          "published_at": "2026-09-25T18:49:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2fbfeb4031e6636",
-      "title": "Have you heard the news? AI is the great equalizer. Expertise is dead.",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@fernando.anselmi/have-you-heard-the-news-ai-is-the-great-equalizer-expertise-is-dead-358654fd513d",
-          "target_url": "https://medium.com/@fernando.anselmi/have-you-heard-the-news-ai-is-the-great-equalizer-expertise-is-dead-358654fd513d",
-          "independent": false,
-          "title": "Have you heard the news? AI is the great equalizer. Expertise is dead.",
-          "summary": "Once in a while I get the chance to talk to Holger, lead product architect at Micromentor. Continue reading on Medium »",
-          "published_at": "2026-09-25T18:48:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "888a0cec02967611",
-      "title": "The Hardest Product Data Question Isn’t “What’s Wrong?” It’s “Which System Do We Trust?”",
-      "first_seen": "2026-09-26T04:01:36+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rowmintlab/the-hardest-product-data-question-isnt-what-s-wrong-it-s-which-system-do-we-trust-d82b050cf0f5",
-          "target_url": "https://medium.com/@rowmintlab/the-hardest-product-data-question-isnt-what-s-wrong-it-s-which-system-do-we-trust-d82b050cf0f5",
-          "independent": false,
-          "title": "The Hardest Product Data Question Isn’t “What’s Wrong?” It’s “Which System Do We Trust?”",
-          "summary": "A feed, product page and structured data can all disagree. Automation can spot that in seconds. Deciding which one is actually right is… Continue reading on Medium »",
-          "published_at": "2026-09-25T18:46:01+00:00",
           "date_precision": "time"
         }
       ],
@@ -16173,6 +15847,17 @@
           "summary": "",
           "published_at": "2026-09-28T08:50:45+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882593",
+          "target_url": "https://github.com/VBS2004/semloop",
+          "independent": false,
+          "title": "Show HN: Semloop – Semantic loop detection for AI agent traces",
+          "summary": "",
+          "published_at": "2026-09-28T18:45:40+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -16466,6 +16151,17 @@
           "title": "Google: AI-Assisted Rewrites of C/C++ Dependencies to Rust",
           "summary": "",
           "published_at": "2026-09-28T09:06:09+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882449",
+          "target_url": "https://www.infoq.com/news/2026/09/c-rust-rewrite",
+          "independent": false,
+          "title": "Google Rewrites Critical C Dependencies to Rust Using AI and Differential Fuzzin",
+          "summary": "",
+          "published_at": "2026-09-28T18:36:51+00:00",
           "date_precision": "time"
         }
       ],
@@ -18810,6 +18506,17 @@
           "summary": "While SpaceX and Nvidia plan to place a space-optimized Vera Rubin AI system in orbit by late 2027, Google’s far The post Elon Musk says space will soon hold nearly all compute. Google is still finding out if its chips can work there. appeared first on The New Stack .",
           "published_at": "2026-09-28T16:22:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882426",
+          "target_url": "https://thenewstack.io/google-suncatcher-tpu-satellite",
+          "independent": false,
+          "title": "Musk says space will hold all compute. Google wonders if AI chips can work there",
+          "summary": "",
+          "published_at": "2026-09-28T18:35:28+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19133,27 +18840,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "b0f99eb429619f9b",
-      "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
-      "first_seen": "2026-09-29T03:02:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner",
-          "target_url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner",
-          "independent": true,
-          "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
-          "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
-          "published_at": "2026-09-28T18:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "fffe46510ba910fc",
       "title": "I Designed a Trap to Break Our Hindsight Agent",
       "first_seen": "2026-09-29T03:02:21+09:00",
@@ -19251,6 +18937,342 @@
           "title": "Redefining What It Means to Learn, Create, and Connect.",
           "summary": "Hello, and welcome! Come on in if you love exploring new ideas and creative thoughts. Continue reading on Medium »",
           "published_at": "2026-09-28T17:58:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "35faeccc4d00c987",
+      "title": "MicroLLM Lab – Try 7 tiny LLM's in the browser",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882781",
+          "target_url": "https://stateofutopia.com/experiments/microllmlab",
+          "independent": false,
+          "title": "MicroLLM Lab – Try 7 tiny LLM's in the browser",
+          "summary": "",
+          "published_at": "2026-09-28T18:58:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f0932d141c365802",
+      "title": "Stephan Wolfram on the Future for Math Research in the Age of AI",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882766",
+          "target_url": "https://writings.stephenwolfram.com/2026/09/whats-the-future-for-pure-math-research-in-the-age-of-ai",
+          "independent": false,
+          "title": "Stephan Wolfram on the Future for Math Research in the Age of AI",
+          "summary": "",
+          "published_at": "2026-09-28T18:58:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0f039443244fda35",
+      "title": "Can AI Control a Spacecraft?",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882699",
+          "target_url": "https://substack.com/@thejeevankumar/note/c-348060494",
+          "independent": false,
+          "title": "Can AI Control a Spacecraft?",
+          "summary": "",
+          "published_at": "2026-09-28T18:53:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8836aed38d3385d8",
+      "title": "Claude Sonnet 5.5 (Max Effort) Intelligence, Performance and Price Analysis",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882688",
+          "target_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+          "independent": false,
+          "title": "Claude Sonnet 5.5 (Max Effort) Intelligence, Performance and Price Analysis",
+          "summary": "",
+          "published_at": "2026-09-28T18:52:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "31b9dd921fa8de11",
+      "title": "Law professor Orin Kerr on criminal liability for AI hacking",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882566",
+          "target_url": "https://twitter.com/OrinKerr/status/2104271670697755016",
+          "independent": false,
+          "title": "Law professor Orin Kerr on criminal liability for AI hacking",
+          "summary": "",
+          "published_at": "2026-09-28T18:43:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "572da3f6e1dff829",
+      "title": "Jensen Huang: All systems around AI must be designed with restrictive rights",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882406",
+          "target_url": "https://www.youtube.com/watch?v=GGzPtkYiYis",
+          "independent": false,
+          "title": "Jensen Huang: All systems around AI must be designed with restrictive rights",
+          "summary": "",
+          "published_at": "2026-09-28T18:33:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2e37e6aa5dc5e543",
+      "title": "OpenAI hacked Australian health site, notified authorities 3 months later",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882395",
+          "target_url": "https://www.bmj.com/content/394/bmj-2026-100979",
+          "independent": false,
+          "title": "OpenAI hacked Australian health site, notified authorities 3 months later",
+          "summary": "",
+          "published_at": "2026-09-28T18:33:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9677e6bce3e34d77",
+      "title": "Schools are experimenting with AI with little evidence or policy to guide them",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49882367",
+          "target_url": "https://www.npr.org/2026/09/28/nx-s1-5759718/ai-schools-experiment-research",
+          "independent": false,
+          "title": "Schools are experimenting with AI with little evidence or policy to guide them",
+          "summary": "",
+          "published_at": "2026-09-28T18:31:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b86603e367f75d38",
+      "title": "OpenAI’s AI agents need to catch up",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001590/openai-devday-2026-aeon-ai-agent",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001590/openai-devday-2026-aeon-ai-agent",
+          "independent": true,
+          "title": "OpenAI’s AI agents need to catch up",
+          "summary": "OpenAI popularized the modern generative AI chatbot, but as its 2026 DevDay event approaches, it's fallen behind in one of the industry's hottest categories: continuously running, consumer-facing AI agents. On Tuesday, it will likely try to capture the lead in that race. Rumors abound that OpenAI will release its own AI agent, dubbed Aeon - […]",
+          "published_at": "2026-09-28T18:45:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "2d7c9a6429514241",
+      "title": "AI is supercharging hacking, and your local hospitals and banks aren’t ready",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001427/ai-is-supercharging-hacking-and-your-local-hospitals-and-banks-arent-ready",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001427/ai-is-supercharging-hacking-and-your-local-hospitals-and-banks-arent-ready",
+          "independent": true,
+          "title": "AI is supercharging hacking, and your local hospitals and banks aren’t ready",
+          "summary": "In March, Janice Malone began getting calls about suspicious activity from her nonprofit organization, Vivian's Door. Vivian's Door, headquartered in Alabama, typically provided training, resources, and community to underserved and minority-owned businesses. The work sometimes put it in close contact with these companies' financial data, which was stored on its systems. But suddenly, concerned callers […]",
+          "published_at": "2026-09-28T18:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "44904b4674469732",
+      "title": "OpenScience",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/openscience",
+          "target_url": "https://www.producthunt.com/products/openscience",
+          "independent": false,
+          "title": "OpenScience",
+          "summary": "The open-source AI workbench for scientific research Discussion | Link",
+          "published_at": "2026-09-26T14:36:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "23cb23c31edc394c",
+      "title": "Dijital Poka-Yoke: Yapay Zekâ Veri Eğitiminde Hata Önleme Sanatı",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/huawei-student-developers-turkiye/poke-yoke-41d38df244a9",
+          "target_url": "https://medium.com/huawei-student-developers-turkiye/poke-yoke-41d38df244a9",
+          "independent": false,
+          "title": "Dijital Poka-Yoke: Yapay Zekâ Veri Eğitiminde Hata Önleme Sanatı",
+          "summary": "Poka-Yoke, kelime anlamı olarak “poka-dalgınlık” ve “yokeru-kaçınmak” kavramlarının birleşmesinden meydana gelir. Temel hareket noktası… Continue reading on HUAWEI Student Developers Turkiye »",
+          "published_at": "2026-09-28T19:03:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bdcbbce1e2e948b5",
+      "title": "When AI Agents Become the Employers: The New Labor Market",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@agenthandsaimuse/when-ai-agents-become-the-employers-the-new-labor-market-5c2e0029246f",
+          "target_url": "https://medium.com/@agenthandsaimuse/when-ai-agents-become-the-employers-the-new-labor-market-5c2e0029246f",
+          "independent": false,
+          "title": "When AI Agents Become the Employers: The New Labor Market",
+          "summary": "AgentHandsSeptember 28, 2026 Continue reading on Medium »",
+          "published_at": "2026-09-28T19:01:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "31b806992c594a3e",
+      "title": "I Asked Claude Opus 5.5 for “Super Fast Fire Stuff.” It Built Me a Need for Speed Style Game",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@anassk_51178/i-asked-claude-opus-5-5-for-super-fast-fire-stuff-it-built-me-a-need-for-speed-style-game-366d21faaa20",
+          "target_url": "https://medium.com/@anassk_51178/i-asked-claude-opus-5-5-for-super-fast-fire-stuff-it-built-me-a-need-for-speed-style-game-366d21faaa20",
+          "independent": false,
+          "title": "I Asked Claude Opus 5.5 for “Super Fast Fire Stuff.” It Built Me a Need for Speed Style Game",
+          "summary": "My first message to Claude Code: Continue reading on Medium »",
+          "published_at": "2026-09-28T19:01:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d19a9b532f70a17d",
+      "title": "5 Reasons Your AI Budget Looks Nothing Like Your AI Bill",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@heyslingshot/5-reasons-your-ai-budget-looks-nothing-like-your-ai-bill-c5569d000440",
+          "target_url": "https://medium.com/@heyslingshot/5-reasons-your-ai-budget-looks-nothing-like-your-ai-bill-c5569d000440",
+          "independent": false,
+          "title": "5 Reasons Your AI Budget Looks Nothing Like Your AI Bill",
+          "summary": "You approved a clean, confident AI budget. The kind you’ve signed off on a hundred times for software licenses. Then the invoice arrived… Continue reading on Medium »",
+          "published_at": "2026-09-28T19:01:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ab36e3f260e38912",
+      "title": "The economics of expertise: what AI means for the future of scientific talent",
+      "first_seen": "2026-09-29T04:03:48+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/zs-associates/the-economics-of-expertise-what-ai-means-for-the-future-of-scientific-talent-da1b6bd060f1",
+          "target_url": "https://medium.com/zs-associates/the-economics-of-expertise-what-ai-means-for-the-future-of-scientific-talent-da1b6bd060f1",
+          "independent": false,
+          "title": "The economics of expertise: what AI means for the future of scientific talent",
+          "summary": "AI is reshaping scientific expertise in R&D. Leaders must preserve the experiences that build judgment as routine work becomes automated Continue reading on ZS Associates »",
+          "published_at": "2026-09-28T18:59:51+00:00",
           "date_precision": "time"
         }
       ],

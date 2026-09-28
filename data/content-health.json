@@ -1,19 +1,19 @@
 {
   "news": {
-    "checked_at": "2026-09-29T03:02:21.360586+09:00",
+    "checked_at": "2026-09-29T04:03:48.740980+09:00",
     "status": "partial",
-    "candidate_count": 1,
-    "archive_count": 301,
+    "candidate_count": 2,
+    "archive_count": 303,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 122,
+        "skipped_count": 123,
         "coverage_limited": false
       },
       {
@@ -43,9 +43,9 @@
         "name": "Claude Code Releases",
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
-        "excluded_count": 1,
+        "excluded_count": 0,
         "skipped_count": 51,
         "coverage_limited": false
       },
@@ -79,7 +79,7 @@
         "name": "Anthropic News",
         "url": "https://www.anthropic.com/news",
         "status": "ok",
-        "count": 0,
+        "count": 1,
         "held_count": 0,
         "excluded_count": 1,
         "skipped_count": 12,
@@ -100,10 +100,10 @@
         "id": "hacker-news",
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-        "status": "ok",
+        "status": "partial",
         "count": 12,
-        "held_count": 0,
-        "excluded_count": 27,
+        "held_count": 1,
+        "excluded_count": 26,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -134,10 +134,10 @@
         "name": "The Verge",
         "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
         "status": "ok",
-        "count": 9,
+        "count": 10,
         "held_count": 0,
-        "excluded_count": 1,
-        "skipped_count": 9,
+        "excluded_count": 0,
+        "skipped_count": 8,
         "coverage_limited": false
       },
       {
@@ -148,7 +148,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 17,
+        "skipped_count": 19,
         "coverage_limited": false
       },
       {
@@ -167,9 +167,9 @@
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 6,
+        "count": 7,
         "held_count": 0,
-        "excluded_count": 24,
+        "excluded_count": 23,
         "skipped_count": 6,
         "coverage_limited": false
       },
@@ -178,9 +178,9 @@
         "name": "The New Stack",
         "url": "https://thenewstack.io/category/ai/feed/",
         "status": "ok",
-        "count": 3,
+        "count": 4,
         "held_count": 0,
-        "excluded_count": 23,
+        "excluded_count": 22,
         "skipped_count": 3,
         "coverage_limited": false
       },
@@ -277,7 +277,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 806
+    "pending_event_count": 805
   },
   "documents": {
     "checked_at": "2026-09-28T06:26:21.001688+09:00",
