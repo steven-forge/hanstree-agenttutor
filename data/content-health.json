@@ -1,19 +1,19 @@
 {
   "news": {
-    "checked_at": "2026-09-29T06:27:46.748388+09:00",
+    "checked_at": "2026-09-29T07:01:45.655865+09:00",
     "status": "partial",
-    "candidate_count": 2,
-    "archive_count": 309,
+    "candidate_count": 0,
+    "archive_count": 310,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 2,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 123,
+        "skipped_count": 125,
         "coverage_limited": false
       },
       {
@@ -101,10 +101,10 @@
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
         "status": "ok",
-        "count": 8,
+        "count": 14,
         "held_count": 0,
-        "excluded_count": 31,
-        "skipped_count": 2,
+        "excluded_count": 26,
+        "skipped_count": 6,
         "coverage_limited": false
       },
       {
@@ -137,7 +137,7 @@
         "count": 10,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 10,
+        "skipped_count": 9,
         "coverage_limited": false
       },
       {
@@ -148,7 +148,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 20,
+        "skipped_count": 19,
         "coverage_limited": false
       },
       {
@@ -277,7 +277,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 802
+    "pending_event_count": 805
   },
   "documents": {
     "checked_at": "2026-09-29T06:27:28.773825+09:00",
