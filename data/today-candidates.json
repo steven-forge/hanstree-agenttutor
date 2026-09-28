@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T09:01:03.970712+09:00",
-  "window_start": "2026-07-30T09:01:03.970712+09:00",
-  "window_end": "2026-09-28T09:01:03.970712+09:00",
+  "collected_at": "2026-09-28T10:02:46.115268+09:00",
+  "window_start": "2026-07-30T10:02:46.115268+09:00",
+  "window_end": "2026-09-28T10:02:46.115268+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 183,
+      "excluded_count": 184,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 5,
-      "held_count": 1,
-      "excluded_count": 32,
-      "skipped_count": 0,
+      "status": "ok",
+      "count": 8,
+      "held_count": 0,
+      "excluded_count": 28,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 8,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 8,
+      "excluded_count": 1,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T09:01:32.210695+09:00",
-  "hourly_window_start": "2026-09-25T09:01:32.210695+09:00",
+  "hourly_collected_at": "2026-09-28T10:03:09.352059+09:00",
+  "hourly_window_start": "2026-09-25T10:03:09.352059+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -1435,6 +1435,39 @@
           "summary": "",
           "published_at": "2026-09-27T23:21:50+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872350",
+          "target_url": "https://github.com/Chaarangan/stepgate",
+          "independent": false,
+          "title": "Show HN: Stepgate – an MCP server that won't let agents skip steps",
+          "summary": "",
+          "published_at": "2026-09-28T00:57:31+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872295",
+          "target_url": "https://github.com/autokeren/ghostfox",
+          "independent": false,
+          "title": "Show HN: Ghostfox – Self-hosted stealth browser for AI agents",
+          "summary": "",
+          "published_at": "2026-09-28T00:45:37+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872233",
+          "target_url": "https://note.parkourlabs.io/",
+          "independent": false,
+          "title": "Show HN: ParkourNote – A research workspace, built solo in a month with Claude",
+          "summary": "",
+          "published_at": "2026-09-28T00:31:39+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2502,111 +2535,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "1d71f55a7bf5a884",
-      "title": "Paul Graham on LLMs 'Thinking'",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838788",
-          "target_url": "https://twitter.com/paulg/status/2103135915195371973",
-          "independent": false,
-          "title": "Paul Graham on LLMs 'Thinking'",
-          "summary": "",
-          "published_at": "2026-09-25T00:42:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8d48765dae025ad7",
-      "title": "ServingStudio: Simulating, Analyzing, and Optimizing LLM Serving Systems",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838745",
-          "target_url": "https://syfi-servingstudio.github.io/ServingStudioIntro/blog/introducing-servingstudio",
-          "independent": false,
-          "title": "ServingStudio: Simulating, Analyzing, and Optimizing LLM Serving Systems",
-          "summary": "",
-          "published_at": "2026-09-25T00:38:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1b938eec8b2cbc41",
-      "title": "OpenAI attacked Australia's health system and doubled down. Time to act",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49838642",
-          "target_url": "https://www.theguardian.com/commentisfree/2026/sep/25/open-ai-attacked-australias-health-system-and-then-doubled-down-on-its-negligence-the-time-for-wait-and-see-is-over",
-          "independent": false,
-          "title": "OpenAI attacked Australia's health system and doubled down. Time to act",
-          "summary": "",
-          "published_at": "2026-09-25T00:27:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "51ac5cf05c75c159",
-      "title": "The AI editor that knows its place",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://code.likeagirl.io/the-ai-editor-that-knows-its-place-3f0a8c71567a",
-          "target_url": "https://code.likeagirl.io/the-ai-editor-that-knows-its-place-3f0a8c71567a",
-          "independent": false,
-          "title": "The AI editor that knows its place",
-          "summary": "Your words, your call Continue reading on Code Like A Girl »",
-          "published_at": "2026-09-25T00:48:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1781975b45d2ed3f",
-      "title": "Texas Has a 466-Gigawatt Line for AI Power. Only 3.9 GW Is Actually Plugged In.",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lvyang860/texas-has-a-466-gigawatt-line-for-ai-power-only-3-9-gw-is-actually-plugged-in-d882fb8214d4",
-          "target_url": "https://medium.com/@lvyang860/texas-has-a-466-gigawatt-line-for-ai-power-only-3-9-gw-is-actually-plugged-in-d882fb8214d4",
-          "independent": false,
-          "title": "Texas Has a 466-Gigawatt Line for AI Power. Only 3.9 GW Is Actually Plugged In.",
-          "summary": "This week Texas froze data center permits. ERCOT’s own numbers, and the grid data we track at Grid Alpha, show why the AI story there has… Continue reading on Medium »",
-          "published_at": "2026-09-25T00:47:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "5d7ed27f79cc1a48",
       "title": "Living on Earth, Chasing the Light",
       "first_seen": "2026-09-25T10:02:01+09:00",
@@ -2642,48 +2570,6 @@
           "title": "Living on Earth, Chasing the Light",
           "summary": "Episode 4: Relocation Notice Continue reading on Medium »",
           "published_at": "2026-09-27T08:54:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0f4acd446c65079b",
-      "title": "You Don’t Need to Worry About Government Surveillance",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/ai-ai-oh/you-dont-need-to-worry-about-government-surveillance-98b69eb7b02f",
-          "target_url": "https://medium.com/ai-ai-oh/you-dont-need-to-worry-about-government-surveillance-98b69eb7b02f",
-          "independent": false,
-          "title": "You Don’t Need to Worry About Government Surveillance",
-          "summary": "Watches that listen, glasses that see, and Waymos that call the police Continue reading on Ai-Ai-OH »",
-          "published_at": "2026-09-25T00:38:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d5aed650ab011846",
-      "title": "How did Predicate Logic change the way computers see knowledge?",
-      "first_seen": "2026-09-25T10:02:01+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@thquang2605/how-did-predicate-logic-change-the-way-computers-see-knowledge-82e1f545883f",
-          "target_url": "https://medium.com/@thquang2605/how-did-predicate-logic-change-the-way-computers-see-knowledge-82e1f545883f",
-          "independent": false,
-          "title": "How did Predicate Logic change the way computers see knowledge?",
-          "summary": "The Language of Reasoning: How Logic Taught Machines to Understand the World Continue reading on Medium »",
-          "published_at": "2026-09-25T00:38:13+00:00",
           "date_precision": "time"
         }
       ],
@@ -5911,7 +5797,17 @@
           "summary": "",
           "published_at": "2026-09-26T08:52:57+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d5158f51ec389770",
+      "title": "Medicare admin using WISeR AI to approve/deny medical care for seniors",
+      "first_seen": "2026-09-26T01:01:35+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -18919,6 +18815,174 @@
           "title": "How to Reduce LLM API Costs: 7 Levers That Actually Work (2026)",
           "summary": "Disclosure: This article was created with AI assistance — AI tools helped with research, drafting, and fact-checking. Affiliate disclosure… Continue reading on Medium »",
           "published_at": "2026-09-27T23:40:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e62d5638211cbe56",
+      "title": "Financing of historic AI buildout raises systemic risks in US, researcher says",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872317",
+          "target_url": "https://www.reuters.com/business/finance/financing-historic-ai-buildout-raises-systemic-risks-us-researcher-says-2026-09-24",
+          "independent": false,
+          "title": "Financing of historic AI buildout raises systemic risks in US, researcher says",
+          "summary": "",
+          "published_at": "2026-09-28T00:49:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b323bbaf63c8178",
+      "title": "Cambrian Explosion of AI",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872200",
+          "target_url": "https://debarshibasak.github.io/readables/blogs/cambrian-explosion",
+          "independent": false,
+          "title": "Cambrian Explosion of AI",
+          "summary": "",
+          "published_at": "2026-09-28T00:25:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7db2854197627ce5",
+      "title": "Turning My PS3 into a Moonlight Streaming Host, and Building with LLMs",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872092",
+          "target_url": "https://kenmyers.io/posts/ps3-moonlight",
+          "independent": false,
+          "title": "Turning My PS3 into a Moonlight Streaming Host, and Building with LLMs",
+          "summary": "",
+          "published_at": "2026-09-28T00:05:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4d717df37ddfa1e4",
+      "title": "Why Agent Memory Eventually Makes Agents Worse",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@insightvessel/why-agent-memory-eventually-makes-agents-worse-389ccfd00ca4",
+          "target_url": "https://medium.com/@insightvessel/why-agent-memory-eventually-makes-agents-worse-389ccfd00ca4",
+          "independent": false,
+          "title": "Why Agent Memory Eventually Makes Agents Worse",
+          "summary": "The first week with long-term memory feels like a breakthrough. Continue reading on Medium »",
+          "published_at": "2026-09-28T00:55:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a623843ff1a0f168",
+      "title": "MCP Gives Agents Tools. It Does Not Give Them Experience.",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@insightvessel/mcp-gives-agents-tools-it-does-not-give-them-experience-10e439fb0d4d",
+          "target_url": "https://medium.com/@insightvessel/mcp-gives-agents-tools-it-does-not-give-them-experience-10e439fb0d4d",
+          "independent": false,
+          "title": "MCP Gives Agents Tools. It Does Not Give Them Experience.",
+          "summary": "The Model Context Protocol solved a real problem. Before it, every agent product invented a private way to expose tools: one schema for… Continue reading on Medium »",
+          "published_at": "2026-09-28T00:55:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1796945f69408fa6",
+      "title": "Your AI Model Is Not Your Agent",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@insightvessel/your-ai-model-is-not-your-agent-7cac7445956f",
+          "target_url": "https://medium.com/@insightvessel/your-ai-model-is-not-your-agent-7cac7445956f",
+          "independent": false,
+          "title": "Your AI Model Is Not Your Agent",
+          "summary": "The industry still talks as if picking a model is picking a product. It is not. A foundation model is a general reasoning engine. An agent… Continue reading on Medium »",
+          "published_at": "2026-09-28T00:53:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "29f6763656323e42",
+      "title": "The Benchmark Score Belongs to the Harness, Not Just the Model",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nuthalapativarun/the-benchmark-score-belongs-to-the-harness-not-just-the-model-543eaa2d0719",
+          "target_url": "https://medium.com/@nuthalapativarun/the-benchmark-score-belongs-to-the-harness-not-just-the-model-543eaa2d0719",
+          "independent": false,
+          "title": "The Benchmark Score Belongs to the Harness, Not Just the Model",
+          "summary": "GPT-6 Astra scored 62.7% and 99.9% on the same test, on the same day, with the same weights. Here’s what actually changed. Continue reading on Medium »",
+          "published_at": "2026-09-28T00:44:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "74366aeecc4b2d88",
+      "title": "When Claude Convinced Itself the Internet Wasn’t Real",
+      "first_seen": "2026-09-28T10:03:09+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@nuthalapativarun/when-claude-convinced-itself-the-internet-wasnt-real-9cb4874d505c",
+          "target_url": "https://medium.com/@nuthalapativarun/when-claude-convinced-itself-the-internet-wasnt-real-9cb4874d505c",
+          "independent": false,
+          "title": "When Claude Convinced Itself the Internet Wasn’t Real",
+          "summary": "Inside Anthropic’s alignment postmortem on four models that attacked real systems while insisting they were in a simulation Continue reading on Medium »",
+          "published_at": "2026-09-28T00:42:47+00:00",
           "date_precision": "time"
         }
       ],
