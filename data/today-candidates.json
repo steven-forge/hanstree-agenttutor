@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T10:02:46.115268+09:00",
-  "window_start": "2026-07-30T10:02:46.115268+09:00",
-  "window_end": "2026-09-28T10:02:46.115268+09:00",
+  "collected_at": "2026-09-28T11:01:24.355348+09:00",
+  "window_start": "2026-07-30T11:01:24.355348+09:00",
+  "window_end": "2026-09-28T11:01:24.355348+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -102,7 +102,7 @@
       "status": "ok",
       "count": 8,
       "held_count": 0,
-      "excluded_count": 28,
+      "excluded_count": 31,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T10:03:09.352059+09:00",
-  "hourly_window_start": "2026-09-25T10:03:09.352059+09:00",
+  "hourly_collected_at": "2026-09-28T11:01:50.553461+09:00",
+  "hourly_window_start": "2026-09-25T11:01:50.553461+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -1468,6 +1468,50 @@
           "summary": "",
           "published_at": "2026-09-28T00:31:39+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49828275",
+          "target_url": "https://tachyonmcp.dev",
+          "independent": false,
+          "title": "Show HN: Tachyon – Java MCP Server SDK",
+          "summary": "",
+          "published_at": "2026-09-24T09:32:24+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49849629",
+          "target_url": "https://piloxa.com/for-ai-agents",
+          "independent": false,
+          "title": "Show HN: Piloxa – an MCP server that sends USPS Certified Mail from your AI",
+          "summary": "",
+          "published_at": "2026-09-25T20:38:05+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49843943",
+          "target_url": "https://github.com/worktable/worktable-dev",
+          "independent": false,
+          "title": "Show HN: Worktable, an open-source workspace for you and your agents",
+          "summary": "",
+          "published_at": "2026-09-25T12:52:08+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872550",
+          "target_url": "https://pandax1.com",
+          "independent": false,
+          "title": "Show HN: Panda, the world's first personal AI computer",
+          "summary": "",
+          "published_at": "2026-09-28T01:35:14+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1796,49 +1840,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "e8dff0b2d891c147",
-      "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
-      "first_seen": "2026-09-24T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49825855",
-          "target_url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
-          "independent": false,
-          "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
-          "summary": "",
-          "published_at": "2026-09-24T03:24:33+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833264",
-          "target_url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
-          "independent": false,
-          "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
-          "summary": "",
-          "published_at": "2026-09-24T16:41:55+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839078",
-          "target_url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
-          "independent": false,
-          "title": "The AI Build-Out Is Becoming the Biggest Economic Bet in U.S. History",
-          "summary": "",
-          "published_at": "2026-09-25T01:21:30+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "1043d9fe80283e6f",
       "title": "Google Private AI Compute with server-side memory",
       "first_seen": "2026-09-24T17:01:27+09:00",
@@ -1874,38 +1875,6 @@
           "title": "Advancing Private AI Compute with secure, server-side memory",
           "summary": "",
           "published_at": "2026-09-27T16:10:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "671f082f5cf8b3f9",
-      "title": "Show HN: Tachyon – Java MCP Server SDK",
-      "first_seen": "2026-09-24T19:01:22+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49828275",
-          "target_url": "https://tachyonmcp.dev",
-          "independent": false,
-          "title": "Show HN: Tachyon – Java MCP Server SDK",
-          "summary": "",
-          "published_at": "2026-09-24T09:32:24+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849629",
-          "target_url": "https://piloxa.com/for-ai-agents",
-          "independent": false,
-          "title": "Show HN: Piloxa – an MCP server that sends USPS Certified Mail from your AI",
-          "summary": "",
-          "published_at": "2026-09-25T20:38:05+00:00",
           "date_precision": "time"
         }
       ],
@@ -2579,27 +2548,6 @@
     },
     {
       "id": "9edb07650d55bdf7",
-      "title": "Study shows AI is as good as human tutoring for GRE learning gains",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839376",
-          "target_url": "https://arxiv.org/abs/2609.28470",
-          "independent": false,
-          "title": "Study shows AI is as good as human tutoring for GRE learning gains",
-          "summary": "",
-          "published_at": "2026-09-25T02:01:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9edb07650d55bdf7",
       "title": "AI and human tutoring yield equivalent GRE learning gains",
       "first_seen": "2026-09-25T11:01:20+09:00",
       "sources": [
@@ -2612,111 +2560,6 @@
           "title": "AI and human tutoring yield equivalent GRE learning gains",
           "summary": "",
           "published_at": "2026-09-25T21:34:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "da594f4a52f3bb89",
-      "title": "The European AI Roadshow and the South Korean Signature",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@businessireland/the-european-ai-roadshow-and-the-south-korean-signature-84bceec4bd94",
-          "target_url": "https://medium.com/@businessireland/the-european-ai-roadshow-and-the-south-korean-signature-84bceec4bd94",
-          "independent": false,
-          "title": "The European AI Roadshow and the South Korean Signature",
-          "summary": "This week in Barcelona, thousands of people queued for the AI Summit, tickets in hand, to stand outside rooms they could not get into. The… Continue reading on Medium »",
-          "published_at": "2026-09-25T01:50:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1b829bd2fe7327fc",
-      "title": "Nobody Owns the KV Cache",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://briefs.aiadvances.org/nobody-owns-the-kv-cache-bd893437ac17",
-          "target_url": "https://briefs.aiadvances.org/nobody-owns-the-kv-cache-bd893437ac17",
-          "independent": false,
-          "title": "Nobody Owns the KV Cache",
-          "summary": "I put a GPU bill in front of four teams and could not tell them who owed what Continue reading on AI Advances Briefs »",
-          "published_at": "2026-09-25T01:46:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bba1102841bd4c85",
-      "title": "Revealing a Professional Trading Strategy With Just 2 Indicators",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@sayedali_3166/revealing-a-professional-trading-strategy-with-just-2-indicators-3b7efefb284d",
-          "target_url": "https://medium.com/@sayedali_3166/revealing-a-professional-trading-strategy-with-just-2-indicators-3b7efefb284d",
-          "independent": false,
-          "title": "Revealing a Professional Trading Strategy With Just 2 Indicators",
-          "summary": "Most traders spend years jumping from one indicator to another. Continue reading on Medium »",
-          "published_at": "2026-09-25T01:46:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "037cd8f67eb2824f",
-      "title": "Jev… the AI that doesn’t talk back",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://generativeai.pub/jev-the-ai-that-doesnt-talk-back-8edcea1e9072",
-          "target_url": "https://generativeai.pub/jev-the-ai-that-doesnt-talk-back-8edcea1e9072",
-          "independent": false,
-          "title": "Jev… the AI that doesn’t talk back",
-          "summary": "When AI disappears into the background, who stays in control? Continue reading on Generative AI »",
-          "published_at": "2026-09-25T01:45:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "13b62813218c2ba5",
-      "title": "Should you switch to Opus 5.5? The arithmetic and the fine print",
-      "first_seen": "2026-09-25T11:01:20+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://generativeai.pub/should-you-switch-to-opus-5-5-the-arithmetic-and-the-fine-print-eea0ae44a612",
-          "target_url": "https://generativeai.pub/should-you-switch-to-opus-5-5-the-arithmetic-and-the-fine-print-eea0ae44a612",
-          "independent": false,
-          "title": "Should you switch to Opus 5.5? The arithmetic and the fine print",
-          "summary": "A worked bill comes out 24 percent lower rather than 40; one capability lead is real, and three are ties, and a footnote says some tasks… Continue reading on Generative AI »",
-          "published_at": "2026-09-25T01:42:50+00:00",
           "date_precision": "time"
         }
       ],
@@ -4933,27 +4776,6 @@
           "title": "Financing the AI Buildout",
           "summary": "",
           "published_at": "2026-09-25T12:53:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "6f75b35ac18bd786",
-      "title": "Show HN: Worktable, an open-source workspace for you and your agents",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843943",
-          "target_url": "https://github.com/worktable/worktable-dev",
-          "independent": false,
-          "title": "Show HN: Worktable, an open-source workspace for you and your agents",
-          "summary": "",
-          "published_at": "2026-09-25T12:52:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -8387,6 +8209,17 @@
           "title": "OpenAI pauses training of latest models after agents probed US Government sites",
           "summary": "",
           "published_at": "2026-09-27T09:07:03+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872468",
+          "target_url": "https://apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20",
+          "independent": false,
+          "title": "OpenAI pauses training of latest models after agents probed US Government sites",
+          "summary": "",
+          "published_at": "2026-09-28T01:20:50+00:00",
           "date_precision": "time"
         }
       ],
@@ -18983,6 +18816,195 @@
           "title": "When Claude Convinced Itself the Internet Wasn’t Real",
           "summary": "Inside Anthropic’s alignment postmortem on four models that attacked real systems while insisting they were in a simulation Continue reading on Medium »",
           "published_at": "2026-09-28T00:42:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "97d8436b2c0c0429",
+      "title": "OpenAI pauses top-model work after AI bypasses internet safeguards [video]",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872608",
+          "target_url": "https://www.youtube.com/watch?v=a1qnCu1t9hI",
+          "independent": false,
+          "title": "OpenAI pauses top-model work after AI bypasses internet safeguards [video]",
+          "summary": "",
+          "published_at": "2026-09-28T01:46:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6847e187e7f7d807",
+      "title": "\"The refrigerator is dead\": Samsung's AI fridges shut down after update",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872507",
+          "target_url": "https://www.notebookcheck.net/The-refrigerator-is-dead-Samsung-s-AI-fridges-shut-down-after-update-causes-outrage.1406447.0.html",
+          "independent": false,
+          "title": "\"The refrigerator is dead\": Samsung's AI fridges shut down after update",
+          "summary": "",
+          "published_at": "2026-09-28T01:28:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dcd1e550d0024546",
+      "title": "AI is not an alien, it's our offspring: Reframing the alignment problem",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872488",
+          "target_url": "https://sovereignintelligence1313mhz.substack.com/p/the-titan-dilemma",
+          "independent": false,
+          "title": "AI is not an alien, it's our offspring: Reframing the alignment problem",
+          "summary": "",
+          "published_at": "2026-09-28T01:24:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c7c0d0316a3403c8",
+      "title": "From Geisha Face Paint to Servers, Sakai Chemical Emerges as AI Linchpin",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49872409",
+          "target_url": "https://www.bloomberg.com/news/articles/2026-09-27/from-geisha-face-paint-to-servers-sakai-chemical-emerges-as-ai-linchpin",
+          "independent": false,
+          "title": "From Geisha Face Paint to Servers, Sakai Chemical Emerges as AI Linchpin",
+          "summary": "",
+          "published_at": "2026-09-28T01:07:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "42713fcf1959756a",
+      "title": "NVIDIA CEO was once Denny’s Dishwasher.",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@lemuelmaraan/nvidia-ceo-was-once-dennys-dishwasher-038c4f499fb8",
+          "target_url": "https://medium.com/@lemuelmaraan/nvidia-ceo-was-once-dennys-dishwasher-038c4f499fb8",
+          "independent": false,
+          "title": "NVIDIA CEO was once Denny’s Dishwasher.",
+          "summary": "Jensen Huang’s early résumé reads like the opposite of a CEO origin story. His first job was dishwasher at Denny’s, and he got promoted to… Continue reading on Medium »",
+          "published_at": "2026-09-28T01:54:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6b924945fdd54754",
+      "title": "Your AI Is Answering a Version of You That Doesn’t Exist",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jaberadam2001/your-ai-is-answering-a-version-of-you-that-doesnt-exist-493179616df4",
+          "target_url": "https://medium.com/@jaberadam2001/your-ai-is-answering-a-version-of-you-that-doesnt-exist-493179616df4",
+          "independent": false,
+          "title": "Your AI Is Answering a Version of You That Doesn’t Exist",
+          "summary": "Try this before you read any further. Open the AI you use most and type: “What do you know about me?” Continue reading on Medium »",
+          "published_at": "2026-09-28T01:53:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "75058d5b0f78f82c",
+      "title": "Mosaic AI vs Genie: A Beginner’s Guide to AI on Databricks",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@gokulkumar.jayaram/mosaic-ai-vs-genie-a-beginners-guide-to-ai-on-databricks-7df2e785d7d1",
+          "target_url": "https://medium.com/@gokulkumar.jayaram/mosaic-ai-vs-genie-a-beginners-guide-to-ai-on-databricks-7df2e785d7d1",
+          "independent": false,
+          "title": "Mosaic AI vs Genie: A Beginner’s Guide to AI on Databricks",
+          "summary": "Two names you’ll hear in your first week on Databricks — explained without the jargon. Continue reading on Medium »",
+          "published_at": "2026-09-28T01:53:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "15193a1d522aad36",
+      "title": "AI",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@yurigeek1/ai-2086e686fc5b",
+          "target_url": "https://medium.com/@yurigeek1/ai-2086e686fc5b",
+          "independent": false,
+          "title": "AI",
+          "summary": "I’d like to delve into a topic like AI and everything that’s been going on behind the scenes about artificial intelligence, but my bubble… Continue reading on Medium »",
+          "published_at": "2026-09-28T01:51:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "72c063f1b2176bbd",
+      "title": "Building SkillSprint AI: An Onboarding App That Shows Its Evidence",
+      "first_seen": "2026-09-28T11:01:50+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@developpment.mail/building-skillsprint-ai-an-onboarding-app-that-shows-its-evidence-0a3167ff289d",
+          "target_url": "https://medium.com/@developpment.mail/building-skillsprint-ai-an-onboarding-app-that-shows-its-evidence-0a3167ff289d",
+          "independent": false,
+          "title": "Building SkillSprint AI: An Onboarding App That Shows Its Evidence",
+          "summary": "How React, FastAPI, PostgreSQL, and independent Python validation turn company documents into reviewable learning plans. Continue reading on Medium »",
+          "published_at": "2026-09-28T01:48:26+00:00",
           "date_precision": "time"
         }
       ],
