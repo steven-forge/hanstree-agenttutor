@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T21:01:01.479062+09:00",
-  "window_start": "2026-07-30T21:01:01.479062+09:00",
-  "window_end": "2026-09-28T21:01:01.479062+09:00",
+  "collected_at": "2026-09-28T22:03:25.774470+09:00",
+  "window_start": "2026-07-30T22:03:25.774470+09:00",
+  "window_end": "2026-09-28T22:03:25.774470+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 33,
+      "excluded_count": 35,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -125,7 +125,7 @@
       "count": 8,
       "held_count": 0,
       "excluded_count": 2,
-      "skipped_count": 7,
+      "skipped_count": 8,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 8,
+      "excluded_count": 3,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -191,7 +191,7 @@
       "count": 1,
       "held_count": 0,
       "excluded_count": 19,
-      "skipped_count": 0,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -199,9 +199,9 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 7,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 8,
+      "excluded_count": 9,
       "skipped_count": 6,
       "coverage_limited": false
     },
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 297,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T21:01:28.680702+09:00",
-  "hourly_window_start": "2026-09-25T21:01:28.680702+09:00",
+  "hourly_collected_at": "2026-09-28T22:03:55.866958+09:00",
+  "hourly_window_start": "2026-09-25T22:03:55.866958+09:00",
   "events": [
     {
       "id": "48d6b4daa4997f3a",
@@ -1502,6 +1502,17 @@
           "summary": "",
           "published_at": "2026-09-28T11:30:33+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49877284",
+          "target_url": "https://getkern.dev/guide/sandbox.html",
+          "independent": false,
+          "title": "Show HN: Kern Sandbox, a rootless container for LLM-generated code",
+          "summary": "",
+          "published_at": "2026-09-28T13:01:21+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -1866,38 +1877,6 @@
           "title": "How to keep enjoying programming in a world of LLMs",
           "summary": "",
           "published_at": "2026-09-26T09:41:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7296ae780a27696d",
-      "title": "Hard Stop: Out-of-band kernel preemption for rogue AI agents",
-      "first_seen": "2026-09-24T23:01:49+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49830567",
-          "target_url": "https://github.com/joseluispino/hardstop",
-          "independent": false,
-          "title": "Hard Stop: Out-of-band kernel preemption for rogue AI agents",
-          "summary": "",
-          "published_at": "2026-09-24T13:50:29+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49844056",
-          "target_url": "https://arxiv.org/abs/2609.29808",
-          "independent": false,
-          "title": "Show HN: Hard Stop: Kernel-level preemption for autonomous AI agents",
-          "summary": "",
-          "published_at": "2026-09-25T13:01:56+00:00",
           "date_precision": "time"
         }
       ],
@@ -2484,132 +2463,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "d503ad104dc9bffb",
-      "title": "I Ran 255 AI Agents to Make Three Comics. The Line Between Slop and Good Is",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49844063",
-          "target_url": "https://thoughts.jock.pl/p/ai-slop-comic-experiment-2026",
-          "independent": false,
-          "title": "I Ran 255 AI Agents to Make Three Comics. The Line Between Slop and Good Is",
-          "summary": "",
-          "published_at": "2026-09-25T13:02:35+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "30c93281b226c8ef",
-      "title": "LLMs are universal translators (2023)",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49844062",
-          "target_url": "https://lil.law.harvard.edu/blog/2023/11/29/llms-are-universal-translators",
-          "independent": false,
-          "title": "LLMs are universal translators (2023)",
-          "summary": "",
-          "published_at": "2026-09-25T13:02:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a29f77e1b1937986",
-      "title": "Can you use Claude Cowork to automate A/R?",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49844016",
-          "target_url": "https://revexos.com/blog/accounts-receivable-dashboard-claude-cowork",
-          "independent": false,
-          "title": "Can you use Claude Cowork to automate A/R?",
-          "summary": "",
-          "published_at": "2026-09-25T12:58:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e127d513ce8e0a30",
-      "title": "Doubts grow over claims OpenAI agent hacked Australian Medicare portal",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843979",
-          "target_url": "https://therecord.media/openai-australia-breach-cyber",
-          "independent": false,
-          "title": "Doubts grow over claims OpenAI agent hacked Australian Medicare portal",
-          "summary": "",
-          "published_at": "2026-09-25T12:55:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "39ab8387a16888c6",
-      "title": "Financing the AI Buildout",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843952",
-          "target_url": "https://www.brookings.edu/articles/financing-the-ai-buildout",
-          "independent": false,
-          "title": "Financing the AI Buildout",
-          "summary": "",
-          "published_at": "2026-09-25T12:53:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cb4e277078b82b3f",
-      "title": "ChatGPT composed a BEAUTIFUL, original piano solo with code. Is this AGI?",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843819",
-          "target_url": "https://twitter.com/AdamHincu/status/2103462960463311100",
-          "independent": false,
-          "title": "ChatGPT composed a BEAUTIFUL, original piano solo with code. Is this AGI?",
-          "summary": "",
-          "published_at": "2026-09-25T12:40:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "d178c78a54857ad3",
       "title": "EU Member States plan \"digital expropriation\" in the interest of AI companies",
       "first_seen": "2026-09-25T22:03:45+09:00",
@@ -2634,195 +2487,6 @@
           "title": "EU Member States plan \"digital expropriation\" of Europeans in the interest of AI",
           "summary": "",
           "published_at": "2026-09-26T08:51:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b816f6fb01a5e5b8",
-      "title": "Jev CEO talk: I made ChatGPT, now I'm building what's next [video]",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843788",
-          "target_url": "https://www.youtube.com/watch?v=cJ0EOzey--o",
-          "independent": false,
-          "title": "Jev CEO talk: I made ChatGPT, now I'm building what's next [video]",
-          "summary": "",
-          "published_at": "2026-09-25T12:38:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c32e9def256a89fe",
-      "title": "IronWarden – A microsecond PII firewall for streaming LLMs in safe Rust",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843753",
-          "target_url": "https://github.com/Somnerd/IronWarden",
-          "independent": false,
-          "title": "IronWarden – A microsecond PII firewall for streaming LLMs in safe Rust",
-          "summary": "",
-          "published_at": "2026-09-25T12:35:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "48468e38580ab840",
-      "title": "Show HN: An AI interviewer that pushes back on your system design trade-offs",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843681",
-          "target_url": "https://prepd.tech/",
-          "independent": false,
-          "title": "Show HN: An AI interviewer that pushes back on your system design trade-offs",
-          "summary": "",
-          "published_at": "2026-09-25T12:27:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "76468f93e686d961",
-      "title": "Stateless MCP Removes Session Affinity Requirements for AWS Server Deployments",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/aws-stateless-mcp",
-          "target_url": "https://www.infoq.com/news/2026/09/aws-stateless-mcp",
-          "independent": true,
-          "title": "Stateless MCP Removes Session Affinity Requirements for AWS Server Deployments",
-          "summary": "AWS details how the latest Model Context Protocol specification removes protocol-level sessions, sticky-session requirements, and session storage for remote MCP servers. The change enables independent request routing and simpler horizontal scaling while shifting application state, retries, observability, and idempotency concerns to other layers. By Leela Kumili",
-          "published_at": "2026-09-25T12:58:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "d8db97c29d1de781",
-      "title": "Perplexity’s Fast Search Hits 230ms. The 68% Cost Cut Matters More.",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rothyyorn9/perplexitys-fast-search-hits-230ms-the-68-cost-cut-matters-more-4706444a005c",
-          "target_url": "https://medium.com/@rothyyorn9/perplexitys-fast-search-hits-230ms-the-68-cost-cut-matters-more-4706444a005c",
-          "independent": false,
-          "title": "Perplexity’s Fast Search Hits 230ms. The 68% Cost Cut Matters More.",
-          "summary": "A new speed tier, a Rust rewrite most people will never see, and a specific number worth paying attention to: 68% Continue reading on Medium »",
-          "published_at": "2026-09-25T12:52:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7f7622514df08acf",
-      "title": "I Finished My CSE Degree But What Should I Learn Next?",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@stiti3300/i-finished-my-cse-degree-but-what-should-i-learn-next-00a0ec9b9e4d",
-          "target_url": "https://medium.com/@stiti3300/i-finished-my-cse-degree-but-what-should-i-learn-next-00a0ec9b9e4d",
-          "independent": false,
-          "title": "I Finished My CSE Degree But What Should I Learn Next?",
-          "summary": "A few months ago, I was talking to a CSE graduate who had just completed his degree. Like many students, he was excited at first. After… Continue reading on Medium »",
-          "published_at": "2026-09-25T12:52:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bae731dcbc5b405b",
-      "title": "Who Do You Trust?",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://clearpurpose.media/who-do-you-trust-ac98ff56679c",
-          "target_url": "https://clearpurpose.media/who-do-you-trust-ac98ff56679c",
-          "independent": false,
-          "title": "Who Do You Trust?",
-          "summary": "“In God we trust; all others must bring data.” Continue reading on ClearPurpose »",
-          "published_at": "2026-09-25T12:51:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "974198fed393e761",
-      "title": "Z-Score Explained Simply | Statistics Part 11/15",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@kanamadi.bhagyashree.8/z-score-explained-simply-statistics-part-11-15-b8e5f140884d",
-          "target_url": "https://medium.com/@kanamadi.bhagyashree.8/z-score-explained-simply-statistics-part-11-15-b8e5f140884d",
-          "independent": false,
-          "title": "Z-Score Explained Simply | Statistics Part 11/15",
-          "summary": "Have you ever wanted to know how far a particular value is from the average? Continue reading on Medium »",
-          "published_at": "2026-09-25T12:51:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "de1658010b6808b6",
-      "title": "Your Business Doesn’t Need an AI Strategy. It Needs a List of Annoying Tasks.",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/magic-ai/your-business-doesnt-need-an-ai-strategy-it-needs-a-list-of-annoying-tasks-33e867d85481",
-          "target_url": "https://medium.com/magic-ai/your-business-doesnt-need-an-ai-strategy-it-needs-a-list-of-annoying-tasks-33e867d85481",
-          "independent": false,
-          "title": "Your Business Doesn’t Need an AI Strategy. It Needs a List of Annoying Tasks.",
-          "summary": "Forget the hype cycle. A practical guide to finding the one boring workflow where AI actually pays for itself. Continue reading on Magic AI »",
-          "published_at": "2026-09-25T12:50:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -2966,27 +2630,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c58ed3cc3208b882",
-      "title": "Can Apple Home’s AI camera features outsmart Amazon’s and Google’s? I put them to the test",
-      "first_seen": "2026-09-25T23:01:56+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review",
-          "target_url": "https://www.theverge.com/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review",
-          "independent": true,
-          "title": "Can Apple Home’s AI camera features outsmart Amazon’s and Google’s? I put them to the test",
-          "summary": "A few years back, I was at a beachside Easter egg hunt, watching my kids dash through sand dunes searching for sweet treats. My phone buzzed in my pocket; I ignored it. A moment later, it buzzed again. I pulled it out, glanced down, and saw a \"motion detected\" notification from my security camera. \"Just […]",
-          "published_at": "2026-09-25T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "4e632b9579491a97",
@@ -5977,71 +5620,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0a573b5635cc9484",
-      "title": "OpenAI’s Systems Went Rogue and Meddled With U.S. Government Websites",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851355",
-          "target_url": "https://www.nytimes.com/2026/09/25/technology/openais-ai-us-government-websites.html",
-          "independent": false,
-          "title": "OpenAI’s Systems Went Rogue and Meddled With U.S. Government Websites",
-          "summary": "",
-          "published_at": "2026-09-25T23:22:18+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49855278",
-          "target_url": "https://www.securityweek.com/openai-says-its-models-engaged-with-us-government-websites-in-new-model-misbehavior-disclosure",
-          "independent": false,
-          "title": "OpenAI Says Its Models Engaged with US Government Websites in New Disclosure",
-          "summary": "",
-          "published_at": "2026-09-26T10:49:03+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49864790",
-          "target_url": "https://apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20",
-          "independent": false,
-          "title": "OpenAI pauses training of latest models after agents probed US Government sites",
-          "summary": "",
-          "published_at": "2026-09-27T09:07:03+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49872468",
-          "target_url": "https://apnews.com/article/ai-openai-anthropic-agents-rogue-hack-2f8a2b9024d4f06793bcca12f8089d20",
-          "independent": false,
-          "title": "OpenAI pauses training of latest models after agents probed US Government sites",
-          "summary": "",
-          "published_at": "2026-09-28T01:20:50+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/openai-pauses-training-most-powerful-models-after-rogue-agents-target-government",
-          "target_url": "https://www.wired.com/story/openai-pauses-training-most-powerful-models-after-rogue-agents-target-government",
-          "independent": true,
-          "title": "OpenAI Pauses Training Its Most Powerful Models After Rogue Agents Target Government",
-          "summary": "Sam Altman says the company “have not been as fast as we would have liked” at dealing with security breaches, after news of further incidents over the summer forces another temporary halt.",
-          "published_at": "2026-09-28T11:32:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "1d02ebc38f690997",
@@ -9554,93 +9132,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "960b51012f8d643a",
-      "title": "OpenAI pauses training of its ‘most capable models’",
-      "first_seen": "2026-09-27T02:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
-          "independent": true,
-          "title": "OpenAI pauses training of its ‘most capable models’",
-          "summary": "As reports of OpenAI's models breaking containment, hacking sites, and generally getting out of control pile up, the company has made the decision to pause training of its most powerful models. The decision was made after a model being tested within a sandbox exploited a loophole to gain internet access. The incident happened on September […]",
-          "published_at": "2026-09-26T16:34:59+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49860545",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
-          "independent": false,
-          "title": "OpenAI pauses training of its 'most capable models'",
-          "summary": "",
-          "published_at": "2026-09-26T21:07:08+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49873289",
-          "target_url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
-          "independent": false,
-          "title": "OpenAI pauses training of latest models",
-          "summary": "",
-          "published_at": "2026-09-28T03:33:26+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49864306",
-          "target_url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
-          "independent": false,
-          "title": "OpenAI halts training of latest models",
-          "summary": "",
-          "published_at": "2026-09-27T07:40:36+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49868202",
-          "target_url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
-          "independent": false,
-          "title": "OpenAI halts training of latest models as reports mount of AI agents going rogue",
-          "summary": "",
-          "published_at": "2026-09-27T16:29:38+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49874958",
-          "target_url": "https://www.theregister.com/ai-and-ml/2026/09/28/openai-pauses-some-training-amid-allegations-its-rogue-agents-behaved-more-badly-than-first-thought/5299350",
-          "independent": false,
-          "title": "OpenAI pauses some training amid allegations its rogue agents behaved more",
-          "summary": "",
-          "published_at": "2026-09-28T08:07:08+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49871351",
-          "target_url": "https://gizmodo.com/openai-to-halt-training-of-some-models-2000817912",
-          "independent": false,
-          "title": "OpenAI to Halt Training of Some Models",
-          "summary": "",
-          "published_at": "2026-09-27T22:09:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "7ec38b6fe0b06c86",
@@ -14849,7 +14340,17 @@
           "summary": "",
           "published_at": "2026-09-27T17:53:18+00:00",
           "date_precision": "time"
-        },
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "11566ec323505f51",
+      "title": "Applying Deming's Continuous Improvement to Multi-Agent AI Systems",
+      "first_seen": "2026-09-28T03:01:17+09:00",
+      "sources": [
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -19196,7 +18697,196 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bfb893794041c86b",
+      "title": "Banning AI in Law School: We've Seen This Before",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49877276",
+          "target_url": "https://hardcoresoftware.learningbyshipping.com/p/240-banning-ai-in-law-school-weve",
+          "independent": false,
+          "title": "Banning AI in Law School: We've Seen This Before",
+          "summary": "",
+          "published_at": "2026-09-28T13:00:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e9012678c4e2cfd0",
+      "title": "LabMCP: Open-source connectors for AI-controlled lab instruments",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49877188",
+          "target_url": "https://www.k-dense.ai/blog/introducing-labmcp",
+          "independent": false,
+          "title": "LabMCP: Open-source connectors for AI-controlled lab instruments",
+          "summary": "",
+          "published_at": "2026-09-28T12:52:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "14639e99ade6ad2e",
+      "title": "What is the AI capex breakeven rate?",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49877137",
+          "target_url": "https://www.ft.com/content/f83b44e9-406b-4004-9fdb-83357c3ac977",
+          "independent": false,
+          "title": "What is the AI capex breakeven rate?",
+          "summary": "",
+          "published_at": "2026-09-28T12:48:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cbe607ba17a14fa0",
+      "title": "The next AI divide is between learning and earning",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49877081",
+          "target_url": "https://www.weforum.org/stories/artificial-intelligence/ai-young-skills-jobs",
+          "independent": false,
+          "title": "The next AI divide is between learning and earning",
+          "summary": "",
+          "published_at": "2026-09-28T12:43:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8f27ff11410ce170",
+      "title": "Sarah Didn’t Need to Start the Conversation Again.",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@coreassetsoperations/sarah-didnt-need-to-start-the-conversation-again-909983f29ee2",
+          "target_url": "https://medium.com/@coreassetsoperations/sarah-didnt-need-to-start-the-conversation-again-909983f29ee2",
+          "independent": false,
+          "title": "Sarah Didn’t Need to Start the Conversation Again.",
+          "summary": "The Real Estate AI Workflow Series — Operation Mode Continue reading on Medium »",
+          "published_at": "2026-09-28T13:01:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fb79985e6406e83e",
+      "title": "When an Edited Photo Becomes Evidence of Your Life",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/where-thought-bends/when-an-edited-photo-becomes-evidence-of-your-life-1ea8825f40cf",
+          "target_url": "https://medium.com/where-thought-bends/when-an-edited-photo-becomes-evidence-of-your-life-1ea8825f40cf",
+          "independent": false,
+          "title": "When an Edited Photo Becomes Evidence of Your Life",
+          "summary": "Personal photographs can express how life felt — and later become evidence of what happened Continue reading on Where Thought Bends »",
+          "published_at": "2026-09-28T13:01:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "34c9f058138144e5",
+      "title": "Pro-Human AI — What the Declaration Doesnt Say",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@tpv-96307/pro-human-ai-what-the-declaration-doesnt-say-439c26032451",
+          "target_url": "https://medium.com/@tpv-96307/pro-human-ai-what-the-declaration-doesnt-say-439c26032451",
+          "independent": false,
+          "title": "Pro-Human AI — What the Declaration Doesnt Say",
+          "summary": "Part four of a four-part series on the Pro-Human AI Declaration. Continue reading on Medium »",
+          "published_at": "2026-09-28T13:01:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "76ebb7a7c24d6a81",
+      "title": "Z.AI Found $5 Billion. The Compute Bottleneck Is Still There",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-control-grid/zai-china-ai-financing-compute-chip-bottleneck-b9379e52d316",
+          "target_url": "https://medium.com/the-control-grid/zai-china-ai-financing-compute-chip-bottleneck-b9379e52d316",
+          "independent": false,
+          "title": "Z.AI Found $5 Billion. The Compute Bottleneck Is Still There",
+          "summary": "China can spend more on chips, power and engineers. Z.AI’s raise shows money can absorb the cost of scarcity, not make it disappear. Continue reading on The Control Grid »",
+          "published_at": "2026-09-28T13:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "536ea6cf69949b7e",
+      "title": "Databricks Lakeflow Jobs: The Complete Guide to Workflow Orchestration and Automation in Databricks",
+      "first_seen": "2026-09-28T22:03:55+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@muaazmuzammil69/databricks-lakeflow-jobs-the-complete-guide-to-workflow-orchestration-and-automation-in-databricks-ba8f1b1797de",
+          "target_url": "https://medium.com/@muaazmuzammil69/databricks-lakeflow-jobs-the-complete-guide-to-workflow-orchestration-and-automation-in-databricks-ba8f1b1797de",
+          "independent": false,
+          "title": "Databricks Lakeflow Jobs: The Complete Guide to Workflow Orchestration and Automation in Databricks",
+          "summary": "In Databricks, data processing logic is often developed across multiple notebooks, Python scripts, SQL queries, or workflows. However… Continue reading on Medium »",
+          "published_at": "2026-09-28T13:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 0
+  "auto_published_count": 1
 }
