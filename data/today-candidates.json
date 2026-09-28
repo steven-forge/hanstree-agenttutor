@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T15:01:14.283892+09:00",
-  "window_start": "2026-07-30T15:01:14.283892+09:00",
-  "window_end": "2026-09-28T15:01:14.283892+09:00",
+  "collected_at": "2026-09-28T16:04:33.258884+09:00",
+  "window_start": "2026-07-30T16:04:33.258884+09:00",
+  "window_end": "2026-09-28T16:04:33.258884+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -31,10 +31,10 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 185,
-      "skipped_count": 23,
+      "skipped_count": 24,
       "coverage_limited": false
     },
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 4,
-      "held_count": 0,
-      "excluded_count": 32,
-      "skipped_count": 2,
+      "status": "partial",
+      "count": 7,
+      "held_count": 1,
+      "excluded_count": 30,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -166,10 +166,10 @@
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 1,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 29,
-      "skipped_count": 1,
+      "excluded_count": 23,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -202,7 +202,7 @@
       "count": 9,
       "held_count": 0,
       "excluded_count": 6,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -276,30 +276,11 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 297,
-  "candidates": [
-    {
-      "id": "b6ce910accbcbcac",
-      "title": "0.158.0",
-      "source_id": "codex-releases",
-      "source_name": "Codex Releases",
-      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
-      "source_summary": "## New Features - Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. (#47639, #47896, #48118) - Connect to MCP servers that require pre-registered OAuth client secrets, including through `codex mcp add --oauth-client-secret`. (#47891) - Secure direct exec-server WebSocket connections with bearer tokens, including connections configured through app-server. (#47601, #47648) - Image generation and editing can explicit",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-28T15:01:17+09:00",
-      "published_at": "2026-09-28T05:07:23+00:00",
-      "date_precision": "time",
-      "title_ko": "Codex 0.158.0 버전 출시",
-      "source_summary_ko": "# # 새로운 기능 - 전체 화면 TUI에서 선택 시 복사 및 마우스 오른쪽 버튼 클릭 붙여넣기를 구성합니다. 복사된 대화록 선택은 이제 마크다운 서식을 유지합니다. (# 47639, # 47896, # 48118) - `codex mcp add --oauth-client-secret` 을 통해 사전 등록된 OAuth 클라이언트 암호가 필요한 MCP 서버에 연결합니다. (# 47891) - 앱 서버를 통해 구성된 연결을 포함하여 베어러 토큰으로 직접 실행 서버 웹 소켓 연결을 보호합니다. (# 47601, # 47648) - 이미지 생성 및 편집이 명시적일 수 있음",
-      "release_notes_ko": {
-        "new_features": "전체 화면 TUI에서 선택 시 복사 및 마우스 오른쪽 버튼 클릭 붙여넣기를 구성합니다. 복사된 성적표 선택 항목은 이제 마크다운 서식을 유지합니다.\n`codex mcp add --oauth-client-secret` 을 포함하여 사전 등록된 OAuth 클라이언트 암호가 필요한 MCP 서버에 연결합니다.\n앱 서버를 통해 구성된 연결을 포함하여 베어러 토큰으로 직접 실행 서버 WebSocket 연결을 보호합니다.",
-        "bug_fixes": "일반 Windows 10 경로, 거부된 저장된 자격 증명 및 대규모 사용 권한 정책과 관련된 Windows 샌드박스 오류가 수정되었습니다.\n중첩된 쓰기 가능 루트로 Linux 샌드박스 시작을 수정하고 Linux 및 macOS의 쓰기 가능 루트에서 Git 메타데이터 보호를 유지했습니다.\n이제 macOS 패치 작업은 기존 사용 권한이 적용되는 시스템 경로 별칭을 인식하여 불필요한 승인 프롬프트를 방지합니다."
-      }
-    }
-  ],
-  "hourly_collected_at": "2026-09-28T15:01:44.071074+09:00",
-  "hourly_window_start": "2026-09-25T15:01:44.071074+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-28T16:05:04.298052+09:00",
+  "hourly_window_start": "2026-09-25T16:05:04.298052+09:00",
   "events": [
     {
       "id": "48d6b4daa4997f3a",
@@ -2191,27 +2172,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "bcb31d434ed42cb8",
-      "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
-      "first_seen": "2026-09-25T04:02:27+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49841032",
-          "target_url": "https://www.theverge.com/tech/1000140/jensen-huang-nvidia-ai-energy-climate-change-supervillain",
-          "independent": false,
-          "title": "Jensen Huang says with AI 'in order to save you, they've got to hurt you first.'",
-          "summary": "",
-          "published_at": "2026-09-25T06:52:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "93243ba32d6d06ba",
       "title": "Anthropic Strikes $12B AI Computing Deal with Akamai",
       "first_seen": "2026-09-25T06:01:23+09:00",
@@ -2480,48 +2440,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "6e8b21b79a0180b8",
-      "title": "The Efficiency-Throughput Gap with GitHub Copilot",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49841103",
-          "target_url": "https://cacm.acm.org/research/beyond-the-hype-the-efficiency-throughput-gap-with-github-copilot",
-          "independent": false,
-          "title": "The Efficiency-Throughput Gap with GitHub Copilot",
-          "summary": "",
-          "published_at": "2026-09-25T07:02:09+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "35f7b7bf290cd5dd",
-      "title": "Show HN: Reteach – AI tutor that feels human",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49840850",
-          "target_url": "https://www.reteach.study/",
-          "independent": false,
-          "title": "Show HN: Reteach – AI tutor that feels human",
-          "summary": "",
-          "published_at": "2026-09-25T06:26:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "47ef2883591ea426",
       "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
       "first_seen": "2026-09-25T16:02:39+09:00",
@@ -2546,111 +2464,6 @@
           "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
           "summary": "",
           "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2cdedbd0ff56f81",
-      "title": "What I Would Check Before Choosing an AI Learning Program",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@jitendra913017/what-i-would-check-before-choosing-an-ai-learning-program-c77b4b69bde9",
-          "target_url": "https://medium.com/@jitendra913017/what-i-would-check-before-choosing-an-ai-learning-program-c77b4b69bde9",
-          "independent": false,
-          "title": "What I Would Check Before Choosing an AI Learning Program",
-          "summary": "The Course Description Comes First Continue reading on Medium »",
-          "published_at": "2026-09-25T06:50:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5bedb15879e893c8",
-      "title": "My Senior Engineer Shipped More Code Than Ever. Then He Asked Me, “What Exactly Is My Job Now?”",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/engineering-playbook/my-senior-engineer-shipped-more-code-than-ever-then-he-asked-me-what-exactly-is-my-job-now-06b6bd6eae06",
-          "target_url": "https://medium.com/engineering-playbook/my-senior-engineer-shipped-more-code-than-ever-then-he-asked-me-what-exactly-is-my-job-now-06b6bd6eae06",
-          "independent": false,
-          "title": "My Senior Engineer Shipped More Code Than Ever. Then He Asked Me, “What Exactly Is My Job Now?”",
-          "summary": "AI had made him faster at almost everything we measured, but most of his week had quietly become reviewing, correcting, and taking… Continue reading on Production Engineering Playbook »",
-          "published_at": "2026-09-25T06:49:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "01ecbc4eb69a6e2d",
-      "title": "AI Voice Agents in Clinical Operations: Transforming Healthcare Delivery and Patient Engagement",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@nexdew_technologies/ai-voice-agents-in-clinical-operations-transforming-healthcare-delivery-and-patient-engagement-68e1ab9472f8",
-          "target_url": "https://medium.com/@nexdew_technologies/ai-voice-agents-in-clinical-operations-transforming-healthcare-delivery-and-patient-engagement-68e1ab9472f8",
-          "independent": false,
-          "title": "AI Voice Agents in Clinical Operations: Transforming Healthcare Delivery and Patient Engagement",
-          "summary": "How conversational AI and automated voice systems are reducing clinician burnout, optimizing triage, and streamlining patient scheduling… Continue reading on Medium »",
-          "published_at": "2026-09-25T06:49:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "64222187d70e2036",
-      "title": "I always check X for Codex reset, so I made this small website",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dayue1068/i-always-check-x-for-codex-reset-so-i-made-this-small-website-3baad49f09cb",
-          "target_url": "https://medium.com/@dayue1068/i-always-check-x-for-codex-reset-so-i-made-this-small-website-3baad49f09cb",
-          "independent": false,
-          "title": "I always check X for Codex reset, so I made this small website",
-          "summary": "Hi, I am learning to make some small AI websites. Continue reading on Medium »",
-          "published_at": "2026-09-25T06:48:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "4a7b8ce0c64928ad",
-      "title": "How to Learn Canva and Freelance From Home: A Beginner’s Guide",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@alihamzahamza7800/how-to-learn-canva-and-freelance-from-home-a-beginners-guide-34e12098cdf5",
-          "target_url": "https://medium.com/@alihamzahamza7800/how-to-learn-canva-and-freelance-from-home-a-beginners-guide-34e12098cdf5",
-          "independent": false,
-          "title": "How to Learn Canva and Freelance From Home: A Beginner’s Guide",
-          "summary": "Learning an online skill can open the door to new opportunities for people who want to work from home. One such skill is design in Canva. Continue reading on Medium »",
-          "published_at": "2026-09-25T06:46:40+00:00",
           "date_precision": "time"
         }
       ],
@@ -14717,6 +14530,17 @@
           "summary": "",
           "published_at": "2026-09-27T10:06:19+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874299",
+          "target_url": "https://blog.kvit.app/posts/agent-not-allowed-to-write-prose",
+          "independent": false,
+          "title": "Claude Isn't Allowed to Write Me Prose",
+          "summary": "",
+          "published_at": "2026-09-28T06:22:21+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -18825,6 +18649,363 @@
           "title": "The Delete Button Didn’t Delete the Data",
           "summary": "Architect’s Desk — Episode 42 Continue reading on Medium »",
           "published_at": "2026-09-28T05:53:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b23cedda9984a4e0",
+      "title": "AI safety field *visual* impact analysis",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874527",
+          "target_url": "https://www.lesswrong.com/posts/fqpSosGwSt3uiZq35/ai-safety-field-visual-impact-analysis",
+          "independent": false,
+          "title": "AI safety field *visual* impact analysis",
+          "summary": "",
+          "published_at": "2026-09-28T07:02:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "902cd6e923607f57",
+      "title": "SeedRouter – One API for LLM, image and video models",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874386",
+          "target_url": "https://seedrouter.ai",
+          "independent": false,
+          "title": "SeedRouter – One API for LLM, image and video models",
+          "summary": "",
+          "published_at": "2026-09-28T06:39:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0ce7e584e24d9ac5",
+      "title": "Publish facts AI agents can trust, instead of what they scraped",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874363",
+          "target_url": "https://profiles.skin/",
+          "independent": false,
+          "title": "Publish facts AI agents can trust, instead of what they scraped",
+          "summary": "",
+          "published_at": "2026-09-28T06:34:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a46e801c1f333b5e",
+      "title": "Show HN: FAB – A benchmark for AI agents doing financial due diligence",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874360",
+          "target_url": "https://github.com/SecondState-ai/finance-agents-benchmark",
+          "independent": false,
+          "title": "Show HN: FAB – A benchmark for AI agents doing financial due diligence",
+          "summary": "",
+          "published_at": "2026-09-28T06:34:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "71258f18a4a13376",
+      "title": "LLM capabilities can transfer through unrelated text",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874237",
+          "target_url": "https://github.com/myboker/ATD",
+          "independent": false,
+          "title": "LLM capabilities can transfer through unrelated text",
+          "summary": "",
+          "published_at": "2026-09-28T06:11:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "42b06c0ffb488dc3",
+      "title": "Sayble",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/sayble",
+          "target_url": "https://www.producthunt.com/products/sayble",
+          "independent": false,
+          "title": "Sayble",
+          "summary": "AI copilot for calls that tells you what to say next Discussion | Link",
+          "published_at": "2026-09-27T19:46:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd30e2881a935d59",
+      "title": "Harness Router",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/harness-103",
+          "target_url": "https://www.producthunt.com/products/harness-103",
+          "independent": false,
+          "title": "Harness Router",
+          "summary": "AI, JEV, MCTS, opensource Discussion | Link",
+          "published_at": "2026-09-27T07:03:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "74f34cc33d9afcd6",
+      "title": "Arc",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/arc-ai-screen-assistant",
+          "target_url": "https://www.producthunt.com/products/arc-ai-screen-assistant",
+          "independent": false,
+          "title": "Arc",
+          "summary": "Your mobile AI assistant on any screen Discussion | Link",
+          "published_at": "2026-09-27T17:11:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "aef81f3da288ec70",
+      "title": "Microsoft Copilot",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/microsoft-copilot-2",
+          "target_url": "https://www.producthunt.com/products/microsoft-copilot-2",
+          "independent": false,
+          "title": "Microsoft Copilot",
+          "summary": "The Al built for work Discussion | Link",
+          "published_at": "2026-09-25T19:17:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "479b5692c3a16a66",
+      "title": "Zerg Router",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/zerg-router",
+          "target_url": "https://www.producthunt.com/products/zerg-router",
+          "independent": false,
+          "title": "Zerg Router",
+          "summary": "Run DeepSeek in Codex Discussion | Link",
+          "published_at": "2026-09-25T07:29:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "459abb9aac63eaa0",
+      "title": "vantage.ai",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/vantage-ai-2",
+          "target_url": "https://www.producthunt.com/products/vantage-ai-2",
+          "independent": false,
+          "title": "vantage.ai",
+          "summary": "See and control what your coding agent does. Discussion | Link",
+          "published_at": "2026-09-26T10:22:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "95df23639e3cffe1",
+      "title": "PIP",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/pip-9",
+          "target_url": "https://www.producthunt.com/products/pip-9",
+          "independent": false,
+          "title": "PIP",
+          "summary": "AI buddy on your computer Discussion | Link",
+          "published_at": "2026-09-27T16:48:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e3808c6d3811408f",
+      "title": "Introduction: Backend Engineering Looks Simple Until the Traffic Arrives",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@samanlnayak2003/introduction-backend-engineering-looks-simple-until-the-traffic-arrives-b14936663773",
+          "target_url": "https://medium.com/@samanlnayak2003/introduction-backend-engineering-looks-simple-until-the-traffic-arrives-b14936663773",
+          "independent": false,
+          "title": "Introduction: Backend Engineering Looks Simple Until the Traffic Arrives",
+          "summary": "**A practical guide to backend engineering, system design, databases, caching, queues, distributed systems, reliability, and production… Continue reading on Medium »",
+          "published_at": "2026-09-28T06:53:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "978de1a36f0b2a17",
+      "title": "AI in Indian Finance: Where It Is Actually Creating Value",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@MarketDeck/ai-in-indian-finance-where-it-is-actually-creating-value-12ec79d0709f",
+          "target_url": "https://medium.com/@MarketDeck/ai-in-indian-finance-where-it-is-actually-creating-value-12ec79d0709f",
+          "independent": false,
+          "title": "AI in Indian Finance: Where It Is Actually Creating Value",
+          "summary": "The useful question is not AI versus humans. It is where assistance ends and delegated authority begins. Continue reading on Medium »",
+          "published_at": "2026-09-28T06:53:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "575f1ae9ca6d1a6d",
+      "title": "Model Bisnis Duolingo: Cara Aplikasi Gratis Cetak Profit",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://fajrulhadi.medium.com/model-bisnis-duolingo-cara-aplikasi-gratis-cetak-profit-0e9a066b1bf4",
+          "target_url": "https://fajrulhadi.medium.com/model-bisnis-duolingo-cara-aplikasi-gratis-cetak-profit-0e9a066b1bf4",
+          "independent": false,
+          "title": "Model Bisnis Duolingo: Cara Aplikasi Gratis Cetak Profit",
+          "summary": "Pelajari cara Duolingo memanfaatan rekayasa perilaku dan AI untuk mengubah pengguna gratisan jadi sumber profit berkelanjutan. Continue reading on Medium »",
+          "published_at": "2026-09-28T06:52:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2c2db18ed990e5be",
+      "title": "The Attorney That AI Talks About: 3 Modern Strategies To Get Law Firms Mentioned By AI For Actively…",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@christina.martin88/the-attorney-that-ai-talks-about-3-modern-strategies-to-get-law-firms-mentioned-by-ai-for-actively-1f5e0ea28fb5",
+          "target_url": "https://medium.com/@christina.martin88/the-attorney-that-ai-talks-about-3-modern-strategies-to-get-law-firms-mentioned-by-ai-for-actively-1f5e0ea28fb5",
+          "independent": false,
+          "title": "The Attorney That AI Talks About: 3 Modern Strategies To Get Law Firms Mentioned By AI For Actively…",
+          "summary": "A long time ago, my father taught me that knowledge is like underwear. Continue reading on Medium »",
+          "published_at": "2026-09-28T06:52:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "01759d539484fb10",
+      "title": "Designing the IncidentIQ Interface Around Engineering Memory",
+      "first_seen": "2026-09-28T16:05:04+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@laxmanrompella/designing-the-incidentiq-interface-around-engineering-memory-c90194ba2647",
+          "target_url": "https://medium.com/@laxmanrompella/designing-the-incidentiq-interface-around-engineering-memory-c90194ba2647",
+          "independent": false,
+          "title": "Designing the IncidentIQ Interface Around Engineering Memory",
+          "summary": "Making AI incident investigation understandable by showing what the system remembered Continue reading on Medium »",
+          "published_at": "2026-09-28T06:52:02+00:00",
           "date_precision": "time"
         }
       ],
