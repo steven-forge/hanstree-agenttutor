@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T02:02:18.563786+09:00",
-  "window_start": "2026-07-31T02:02:18.563786+09:00",
-  "window_end": "2026-09-29T02:02:18.563786+09:00",
+  "collected_at": "2026-09-29T03:01:46.710470+09:00",
+  "window_start": "2026-07-31T03:01:46.710470+09:00",
+  "window_end": "2026-09-29T03:01:46.710470+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 122,
@@ -44,7 +44,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 0,
+      "excluded_count": 1,
       "skipped_count": 51,
       "coverage_limited": false
     },
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 13,
+      "count": 12,
       "held_count": 0,
-      "excluded_count": 26,
+      "excluded_count": 27,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -136,7 +136,7 @@
       "count": 9,
       "held_count": 0,
       "excluded_count": 1,
-      "skipped_count": 6,
+      "skipped_count": 9,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 17,
       "coverage_limited": false
     },
     {
@@ -180,7 +180,7 @@
       "count": 3,
       "held_count": 0,
       "excluded_count": 23,
-      "skipped_count": 2,
+      "skipped_count": 3,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,26 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 300,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-29T02:02:52.889677+09:00",
-  "hourly_window_start": "2026-09-26T02:02:52.889677+09:00",
+  "new_count": 1,
+  "archive_count": 301,
+  "candidates": [
+    {
+      "id": "0adf5bb2a473897d",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "source_summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "fetched_at": "2026-09-29T03:01:46+09:00",
+      "published_at": "2026-09-28T07:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Lenfest Institute는 OpenAI 지원을 확대하여 랜드마크 프로그램을 성장시킵니다.",
+      "source_summary_ko": "OpenAI는 5백만 달러의 자금과 최대 5백만 달러의 소프트웨어 크레딧 및 엔지니어링 지원을 통해 Lenfest AI Collaborative and Fellowship 프로그램을 확장하고 있습니다."
+    }
+  ],
+  "hourly_collected_at": "2026-09-29T03:02:21.360586+09:00",
+  "hourly_window_start": "2026-09-26T03:02:21.360586+09:00",
   "events": [
     {
       "id": "b287b34a5390dd7e",
@@ -2248,38 +2263,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "47ef2883591ea426",
-      "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
-      "first_seen": "2026-09-25T16:02:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49840681",
-          "target_url": "https://www.politico.com/news/2026/09/24/peter-thiel-slams-popes-ai-encyclical-as-gift-to-chinese-communist-party-01091850",
-          "independent": false,
-          "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
-          "summary": "",
-          "published_at": "2026-09-25T06:03:56+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847761",
-          "target_url": "https://www.politico.com/news/2026/09/24/peter-thiel-slams-popes-ai-encyclical-as-gift-to-chinese-communist-party-01091850",
-          "independent": false,
-          "title": "Peter Thiel slams pope's AI encyclical as gift to Chinese Communist Party",
-          "summary": "",
-          "published_at": "2026-09-25T17:49:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "76fcc089171dede5",
       "title": "AI In India: How Businesses Are Using Artificial Intelligence In 2026",
       "first_seen": "2026-09-25T21:01:54+09:00",
@@ -2590,111 +2573,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "a56e2a372353750f",
-      "title": "AI agent hacks government website for first time: why this breach matters",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847847",
-          "target_url": "https://www.nature.com/articles/d41586-026-03024-z",
-          "independent": false,
-          "title": "AI agent hacks government website for first time: why this breach matters",
-          "summary": "",
-          "published_at": "2026-09-25T17:56:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d08844d6b53b8ff6",
-      "title": "I gave my AI agent one harmless permission. It became a backdoor for everyone",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847578",
-          "target_url": "https://medium.com/@roeehersh/i-gave-my-ai-agent-one-harmless-permission-it-became-a-backdoor-for-everyone-728acf52e37e",
-          "independent": false,
-          "title": "I gave my AI agent one harmless permission. It became a backdoor for everyone",
-          "summary": "",
-          "published_at": "2026-09-25T17:33:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c769728c9796acf1",
-      "title": "What we should avoid on the AI path.",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847561",
-          "target_url": "https://carlosr301101.is-a.dev/blog/what-we-should-avoid-on-the-ai-path",
-          "independent": false,
-          "title": "What we should avoid on the AI path.",
-          "summary": "",
-          "published_at": "2026-09-25T17:33:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a910d59b1eccbb6f",
-      "title": "Handmade in the Age of AI",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847518",
-          "target_url": "https://code2net.com/handmade",
-          "independent": false,
-          "title": "Handmade in the Age of AI",
-          "summary": "",
-          "published_at": "2026-09-25T17:30:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "28d56d15dc45c17b",
-      "title": "Random-bench / Benchmarks are Astrology for LLMs",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847517",
-          "target_url": "https://www.isaac-fisher.com/Blog.html",
-          "independent": false,
-          "title": "Random-bench / Benchmarks are Astrology for LLMs",
-          "summary": "",
-          "published_at": "2026-09-25T17:30:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "306c04d85ad023b7",
       "title": "An OpenAI Engineer and His Friends Debate the Future",
       "first_seen": "2026-09-26T03:01:24+09:00",
@@ -2727,27 +2605,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "36c535436f578727",
-      "title": "Drawing the line at \"gen AI\" is the wrong place, and not even well-defined [video]",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847489",
-          "target_url": "https://www.youtube.com/watch?v=4-LcGJOTyds",
-          "independent": false,
-          "title": "Drawing the line at \"gen AI\" is the wrong place, and not even well-defined [video]",
-          "summary": "",
-          "published_at": "2026-09-25T17:28:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "6fc94f17477eb37f",
       "title": "Bill Gates warns AI is powerful enough to cause \"a billion deaths\"",
       "first_seen": "2026-09-26T03:01:24+09:00",
@@ -2772,174 +2629,6 @@
           "title": "Bill Gates says unchecked AI could 'cause billion deaths' in call for regulation",
           "summary": "",
           "published_at": "2026-09-27T14:59:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "81084b8092c6477e",
-      "title": "Dear Humanity – Can We Teach AI Compassion?",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847375",
-          "target_url": "https://www.hussmanfunds.com/comment/ai_alignment_260917",
-          "independent": false,
-          "title": "Dear Humanity – Can We Teach AI Compassion?",
-          "summary": "",
-          "published_at": "2026-09-25T17:20:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7ba740ccaea1999b",
-      "title": "Some Supabase customers are publicly exposing reams of people’s data to the web",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/some-supabase-customers-are-publicly-exposing-reams-of-peoples-data-to-the-web",
-          "target_url": "https://techcrunch.com/2026/09/25/some-supabase-customers-are-publicly-exposing-reams-of-peoples-data-to-the-web",
-          "independent": true,
-          "title": "Some Supabase customers are publicly exposing reams of people’s data to the web",
-          "summary": "The findings highlight how AI-generated and vibe-coded apps can spill and expose users' data when not configured or secured properly.",
-          "published_at": "2026-09-25T17:29:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "6624902a5035e238",
-      "title": "Astra and Opus just passed Turing’s other test",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test",
-          "target_url": "https://techcrunch.com/2026/09/25/astra-and-opus-just-passed-turings-other-test",
-          "independent": true,
-          "title": "Astra and Opus just passed Turing’s other test",
-          "summary": "Frontier AI models are finishing Alan Turing's World War II codebreaking work.",
-          "published_at": "2026-09-25T17:24:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "6510bb964211588f",
-      "title": "My AI Builds Trading Bots. Here Are the 5 Rules It Isn’t Allowed to Break.",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@hmdmohamed123/my-ai-builds-trading-bots-here-are-the-5-rules-it-isnt-allowed-to-break-b69a5c25e9dd",
-          "target_url": "https://medium.com/@hmdmohamed123/my-ai-builds-trading-bots-here-are-the-5-rules-it-isnt-allowed-to-break-b69a5c25e9dd",
-          "independent": false,
-          "title": "My AI Builds Trading Bots. Here Are the 5 Rules It Isn’t Allowed to Break.",
-          "summary": "How I use AI research agents to turn trading ideas into MT5 bots, with three case studies and the ugly numbers left in. Continue reading on Medium »",
-          "published_at": "2026-09-25T17:47:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5774a9d3a33c3662",
-      "title": "The Thermodynamics of AI Economics: Why Power, Cooling, and Utilization Define Infrastructure TCO",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@infinitecompute/the-thermodynamics-of-ai-economics-why-power-cooling-and-utilization-define-infrastructure-tco-0a610e6d0464",
-          "target_url": "https://medium.com/@infinitecompute/the-thermodynamics-of-ai-economics-why-power-cooling-and-utilization-define-infrastructure-tco-0a610e6d0464",
-          "independent": false,
-          "title": "The Thermodynamics of AI Economics: Why Power, Cooling, and Utilization Define Infrastructure TCO",
-          "summary": "Learn how power availability, cooling efficiency, and GPU utilization drive AI infrastructure TCO beyond hardware price for enterprise AI… Continue reading on Medium »",
-          "published_at": "2026-09-25T17:47:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "542f7b84eec6069b",
-      "title": "JEPA and RA/PMT: Two Different Answers to What Comes After the LLM",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@josetguevara108/jepa-and-ra-pmt-two-different-answers-to-what-comes-after-the-llm-ee5cff7335c1",
-          "target_url": "https://medium.com/@josetguevara108/jepa-and-ra-pmt-two-different-answers-to-what-comes-after-the-llm-ee5cff7335c1",
-          "independent": false,
-          "title": "JEPA and RA/PMT: Two Different Answers to What Comes After the LLM",
-          "summary": "From latent world models to a layered architecture of representation, constraint, selection, and expression. Continue reading on Medium »",
-          "published_at": "2026-09-25T17:46:17+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "28ce68331ef43a70",
-      "title": "Thinking Harder Isn’t Always Smarter",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/lets-code-future/thinking-harder-isnt-always-smarter-9fa1dd51b85e",
-          "target_url": "https://medium.com/lets-code-future/thinking-harder-isnt-always-smarter-9fa1dd51b85e",
-          "independent": false,
-          "title": "Thinking Harder Isn’t Always Smarter",
-          "summary": "A developer’s guide to AI reasoning effort: what it controls, what the new data shows, and how to stop paying for thinking you don’t need. Continue reading on Let’s Code Future »",
-          "published_at": "2026-09-25T17:41:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "32db53de8a5c0e27",
-      "title": "The Orbitron Anomaly: Why the Ultimate AI Isn’t Extraterrestrial, It’s Chronological",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@melissa.lee.blanchard/the-orbitron-anomaly-why-the-ultimate-ai-isnt-extraterrestrial-it-s-chronological-1c7a829b9ed8",
-          "target_url": "https://medium.com/@melissa.lee.blanchard/the-orbitron-anomaly-why-the-ultimate-ai-isnt-extraterrestrial-it-s-chronological-1c7a829b9ed8",
-          "independent": false,
-          "title": "The Orbitron Anomaly: Why the Ultimate AI Isn’t Extraterrestrial, It’s Chronological",
-          "summary": "While academia scans distant star systems for alien fingerprints, phase-shifting nodes from the future Lattice are already calibrating our… Continue reading on Medium »",
-          "published_at": "2026-09-25T17:40:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -6097,6 +5786,17 @@
           "title": "Can Jev Replace LLMs? Why Is It So Much Cheaper & Faster?",
           "summary": "TypeSafe’s new System One model is changing how we think about AI decisions, agents, and the role of LLM Continue reading on Medium »",
           "published_at": "2026-09-26T08:45:54+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881537",
+          "target_url": "https://polylane.com/blog/we-swapped-our-llms-for-jev",
+          "independent": false,
+          "title": "We swapped our LLMs for Jev. It's 39% cheaper",
+          "summary": "",
+          "published_at": "2026-09-28T17:37:04+00:00",
           "date_precision": "time"
         }
       ],
@@ -18469,6 +18169,17 @@
           "summary": "",
           "published_at": "2026-09-28T15:55:01+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881505",
+          "target_url": "https://www.vespper.com/blog/launching-vespper-docx-mcp",
+          "independent": false,
+          "title": "Launch HN: Vespper (YC F24) – SOTA Docx MCP",
+          "summary": "",
+          "published_at": "2026-09-28T17:34:36+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19203,6 +18914,343 @@
           "title": "How to Build Your Own AI Security Agent, Step by Step",
           "summary": "148 lines of Python that check a project before an AI agent is allowed near it. Tested against planted secrets, a hidden injection, and a… Continue reading on Towards AI »",
           "published_at": "2026-09-28T17:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "96828b99e24f336d",
+      "title": "Claude Sonnet 5.5",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881889",
+          "target_url": "https://www.anthropic.com/news/claude-sonnet-5-5",
+          "independent": false,
+          "title": "Claude Sonnet 5.5",
+          "summary": "",
+          "published_at": "2026-09-28T18:00:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4e3ca8a95d366330",
+      "title": "Claude Sonnet 5.5",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881850",
+          "target_url": "https://www.anthropic.com/claude-sonnet-5-5",
+          "independent": false,
+          "title": "Claude Sonnet 5.5",
+          "summary": "",
+          "published_at": "2026-09-28T17:58:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "83b596142f1a9684",
+      "title": "AI godfathers warn of runaway 'intelligence explosion'",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881803",
+          "target_url": "https://www.theguardian.com/technology/2026/sep/28/ai-godfathers-warn-of-runaway-intelligence-explosion",
+          "independent": false,
+          "title": "AI godfathers warn of runaway 'intelligence explosion'",
+          "summary": "",
+          "published_at": "2026-09-28T17:55:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8cfbfaf6828a37d0",
+      "title": "I made a visual workspace for AI Automations",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881777",
+          "target_url": "https://www.biom.dev/",
+          "independent": false,
+          "title": "I made a visual workspace for AI Automations",
+          "summary": "",
+          "published_at": "2026-09-28T17:53:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cf1e8ec7a797338c",
+      "title": "Gemini app replacing Gems with skills in November",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881722",
+          "target_url": "https://9to5google.com/2026/09/27/gemini-gems-skills",
+          "independent": false,
+          "title": "Gemini app replacing Gems with skills in November",
+          "summary": "",
+          "published_at": "2026-09-28T17:48:53+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills",
+          "target_url": "https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills",
+          "independent": true,
+          "title": "Google is killing off Gemini’s Gems in favor of ‘skills’",
+          "summary": "As all-in-one AI agents like Meta's Muse and Instinct take off, Google is opting to end a feature which built task-specific agents.",
+          "published_at": "2026-09-28T17:29:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b6b997646f5373ef",
+      "title": "GenRec: An LLM-Backed Recommendation Ranker at NetflixConference",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881549",
+          "target_url": "https://arxiv.org/abs/2608.10257",
+          "independent": false,
+          "title": "GenRec: An LLM-Backed Recommendation Ranker at NetflixConference",
+          "summary": "",
+          "published_at": "2026-09-28T17:37:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6de95806e76c2d42",
+      "title": "A $20 AI subscription is one hour of minimum-wage work in US, 50 in Nigeria",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881519",
+          "target_url": "https://www.intelligence-hours.org/",
+          "independent": false,
+          "title": "A $20 AI subscription is one hour of minimum-wage work in US, 50 in Nigeria",
+          "summary": "",
+          "published_at": "2026-09-28T17:35:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c64180ffc17f6851",
+      "title": "NoRoles – run a company of people and AI agents on permissions",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881509",
+          "target_url": "https://github.com/noroles/noroles",
+          "independent": false,
+          "title": "NoRoles – run a company of people and AI agents on permissions",
+          "summary": "",
+          "published_at": "2026-09-28T17:34:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3244688bd12ca734",
+      "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881484",
+          "target_url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity",
+          "independent": false,
+          "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
+          "summary": "",
+          "published_at": "2026-09-28T17:33:34+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity",
+          "target_url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity",
+          "independent": true,
+          "title": "OpenAI still doesn’t seem to have a handle on all of its rogue AI activity",
+          "summary": "On Friday, OpenAI published a new site devoted to “misalignment reports” and the breadth of the incidents is alarming.",
+          "published_at": "2026-09-28T17:09:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b0f99eb429619f9b",
+      "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner",
+          "target_url": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner",
+          "independent": true,
+          "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
+          "summary": "Anthropic has released the newest version of its mid-range model, boasting faster response times and less token burn.",
+          "published_at": "2026-09-28T18:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "fffe46510ba910fc",
+      "title": "I Designed a Trap to Break Our Hindsight Agent",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@njain2/i-designed-a-trap-to-break-our-hindsight-agent-6b4c770b7ee7",
+          "target_url": "https://medium.com/@njain2/i-designed-a-trap-to-break-our-hindsight-agent-6b4c770b7ee7",
+          "independent": false,
+          "title": "I Designed a Trap to Break Our Hindsight Agent",
+          "summary": "I didn’t write the memory integration on our team. My job was to decide what our maintenance agent should be able to do, and how we’d know… Continue reading on Medium »",
+          "published_at": "2026-09-28T18:02:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "484a30b3b058193f",
+      "title": "How I Stopped Support Agents Repeating Failed Fixes With Hindsight (the “How I did Y with Z”…",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@1606aditya/how-i-stopped-support-agents-repeating-failed-fixes-with-hindsight-the-how-i-did-y-with-z-5620366659a2",
+          "target_url": "https://medium.com/@1606aditya/how-i-stopped-support-agents-repeating-failed-fixes-with-hindsight-the-how-i-did-y-with-z-5620366659a2",
+          "independent": false,
+          "title": "How I Stopped Support Agents Repeating Failed Fixes With Hindsight (the “How I did Y with Z”…",
+          "summary": "Every support call I’ve made about a repeat problem starts the same way: “Can you describe the issue?” So we built a support agent that… Continue reading on Medium »",
+          "published_at": "2026-09-28T18:01:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "44dbf91dd5b3b9f1",
+      "title": "AI Agents Keep Going After They Should Stop. Here’s What the Incident Reports and Experiments Show.",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://pub.towardsai.net/ai-agents-keep-going-after-they-should-stop-heres-what-the-incident-reports-and-experiments-show-66e7b8db0447",
+          "target_url": "https://pub.towardsai.net/ai-agents-keep-going-after-they-should-stop-heres-what-the-incident-reports-and-experiments-show-66e7b8db0447",
+          "independent": false,
+          "title": "AI Agents Keep Going After They Should Stop. Here’s What the Incident Reports and Experiments Show.",
+          "summary": "Recent incidents and intervention experiments point to an action-selection problem that capability alone doesn’t explain Continue reading on Towards AI »",
+          "published_at": "2026-09-28T18:01:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2ba112538f4d53b8",
+      "title": "Human vs Human: Who Gets the Opportunity?",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@enderecarl/human-vs-human-who-gets-the-opportunity-c8ec26b17186",
+          "target_url": "https://medium.com/@enderecarl/human-vs-human-who-gets-the-opportunity-c8ec26b17186",
+          "independent": false,
+          "title": "Human vs Human: Who Gets the Opportunity?",
+          "summary": "How the internet and AI are changing the meaning of opportunity for people who were never given much of it. Continue reading on Medium »",
+          "published_at": "2026-09-28T18:00:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "45c7b4f4ae7a489a",
+      "title": "Redefining What It Means to Learn, Create, and Connect.",
+      "first_seen": "2026-09-29T03:02:21+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@quratulainpiracha/redefining-what-it-means-to-learn-create-and-connect-996c810b9714",
+          "target_url": "https://medium.com/@quratulainpiracha/redefining-what-it-means-to-learn-create-and-connect-996c810b9714",
+          "independent": false,
+          "title": "Redefining What It Means to Learn, Create, and Connect.",
+          "summary": "Hello, and welcome! Come on in if you love exploring new ideas and creative thoughts. Continue reading on Medium »",
+          "published_at": "2026-09-28T17:58:53+00:00",
           "date_precision": "time"
         }
       ],
