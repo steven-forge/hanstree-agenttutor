@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T12:01:39.873187+09:00",
-  "window_start": "2026-07-30T12:01:39.873187+09:00",
-  "window_end": "2026-09-28T12:01:39.873187+09:00",
+  "collected_at": "2026-09-28T13:02:03.969939+09:00",
+  "window_start": "2026-07-30T13:02:03.969939+09:00",
+  "window_end": "2026-09-28T13:02:03.969939+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 184,
+      "excluded_count": 185,
       "skipped_count": 23,
       "coverage_limited": false
     },
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 32,
-      "skipped_count": 2,
+      "excluded_count": 29,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 296,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T12:02:07.206704+09:00",
-  "hourly_window_start": "2026-09-25T12:02:07.206704+09:00",
+  "hourly_collected_at": "2026-09-28T13:02:31.640340+09:00",
+  "hourly_window_start": "2026-09-25T13:02:31.640340+09:00",
   "events": [
     {
       "id": "4fb133d3e42799c6",
@@ -2076,49 +2076,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "321a943a4dd13ce0",
-      "title": "Gemini 3.8 with Live Avatar",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833536",
-          "target_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available",
-          "independent": false,
-          "title": "Gemini 3.8 with Live Avatar",
-          "summary": "",
-          "published_at": "2026-09-24T16:59:07+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
-          "target_url": "https://www.theverge.com/tech/1000328/google-gemini-ai-live-avatar-face",
-          "independent": true,
-          "title": "Gemini 3.8 Live with Live Avatar gives Google’s AI a face",
-          "summary": "Google's new Gemini 3.8 Live update lets users have conversations with the model while watching an animated AI persona respond in real time. The \"Live Avatar\" will lip-sync and show different facial expressions during conversations, but it's currently only available to Gemini Enterprise customers. As noted by Google, Live Avatar can transition between the 97 […]",
-          "published_at": "2026-09-24T19:59:26+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49840035",
-          "target_url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-8-live-with-live-avatar-is-now-generally-available",
-          "independent": false,
-          "title": "Power your agents: Gemini 3.8 Live with Live Avatar is now generally available",
-          "summary": "",
-          "published_at": "2026-09-25T03:55:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "c05031f9c616dc08",
       "title": "Show HN: I built an AI assistant that turns website visitors into leads",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2528,216 +2485,6 @@
           "title": "AI and human tutoring yield equivalent GRE learning gains",
           "summary": "",
           "published_at": "2026-09-25T21:34:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "af379169630f05a9",
-      "title": "We Built a City of 10k AI Researchers",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49840006",
-          "target_url": "https://lab.cloud/society",
-          "independent": false,
-          "title": "We Built a City of 10k AI Researchers",
-          "summary": "",
-          "published_at": "2026-09-25T03:49:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "85f66a6419d173a7",
-      "title": "Scaling Laws for Neural Language Models (first \"scaling laws\" paper from 2020)",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839875",
-          "target_url": "https://arxiv.org/abs/2001.08361",
-          "independent": false,
-          "title": "Scaling Laws for Neural Language Models (first \"scaling laws\" paper from 2020)",
-          "summary": "",
-          "published_at": "2026-09-25T03:27:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5e1e74330a9a2b8f",
-      "title": "Search and Recommender Engines AI",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839868",
-          "target_url": "https://github.com/alopatenko/LLMSearchRecommender",
-          "independent": false,
-          "title": "Search and Recommender Engines AI",
-          "summary": "",
-          "published_at": "2026-09-25T03:27:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "32fdadfbad31dbe6",
-      "title": "Using AI to Contribute to Open Source",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839852",
-          "target_url": "https://www.visidata.org/blog/2026/ai",
-          "independent": false,
-          "title": "Using AI to Contribute to Open Source",
-          "summary": "",
-          "published_at": "2026-09-25T03:24:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2d0211e1d5ae05dc",
-      "title": "Human Help to Survive AI",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49839812",
-          "target_url": "https://humanityark.cdtglobal.org/",
-          "independent": false,
-          "title": "Human Help to Survive AI",
-          "summary": "",
-          "published_at": "2026-09-25T03:15:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2706d2582512c67d",
-      "title": "The First Step in the Disintermediation of University Education",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://gregtwemlow.medium.com/the-first-step-in-the-disintermediation-of-university-education-230caf24cec3",
-          "target_url": "https://gregtwemlow.medium.com/the-first-step-in-the-disintermediation-of-university-education-230caf24cec3",
-          "independent": false,
-          "title": "The First Step in the Disintermediation of University Education",
-          "summary": "A small Silicon Valley academy may reveal a much larger shift in how young people become capable, how employers find talent, and how… Continue reading on Medium »",
-          "published_at": "2026-09-25T03:38:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bd79cac4ffda3a10",
-      "title": "Claude's New addTools() Can Reuse 98.7% of Your Next Request. Editing tools[] Reuses None.",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://pub.towardsai.net/claudes-new-addtools-can-reuse-98-7-of-your-next-request-editing-tools-reuses-none-ef1cfe0cc862",
-          "target_url": "https://pub.towardsai.net/claudes-new-addtools-can-reuse-98-7-of-your-next-request-editing-tools-reuses-none-ef1cfe0cc862",
-          "independent": false,
-          "title": "Claude's New addTools() Can Reuse 98.7% of Your Next Request. Editing tools[] Reuses None.",
-          "summary": "​ Continue reading on Towards AI »",
-          "published_at": "2026-09-25T03:38:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "025a2ad93a5ad5cb",
-      "title": "From Clicks to Content: The Netflix Analytics Process",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rashid3433/from-clicks-to-content-the-netflix-analytics-process-6a8a16430592",
-          "target_url": "https://medium.com/@rashid3433/from-clicks-to-content-the-netflix-analytics-process-6a8a16430592",
-          "independent": false,
-          "title": "From Clicks to Content: The Netflix Analytics Process",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-25T03:38:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d4d4763655eef5a7",
-      "title": "Workflow Automation Guide for Business Growth",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@imdigital/workflow-automation-guide-for-business-growth-7e5451a22cda",
-          "target_url": "https://medium.com/@imdigital/workflow-automation-guide-for-business-growth-7e5451a22cda",
-          "independent": false,
-          "title": "Workflow Automation Guide for Business Growth",
-          "summary": "Most workflows don’t break loudly. They just quietly grow a queue that nobody’s watching. Continue reading on Medium »",
-          "published_at": "2026-09-25T03:36:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0c143412379eb246",
-      "title": "What We Call AI Is a Device",
-      "first_seen": "2026-09-25T13:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@lenatatsumori/what-we-call-ai-is-a-device-6f772be11328",
-          "target_url": "https://medium.com/@lenatatsumori/what-we-call-ai-is-a-device-6f772be11328",
-          "independent": false,
-          "title": "What We Call AI Is a Device",
-          "summary": "Continue reading on Medium »",
-          "published_at": "2026-09-25T03:34:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -10523,6 +10270,17 @@
           "summary": "It All Started with a News Story About Water Continue reading on Medium »",
           "published_at": "2026-09-26T12:51:42+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@takashi_pogi/the-origin-of-the-data-center-centric-city-model-3-994391830448",
+          "target_url": "https://medium.com/@takashi_pogi/the-origin-of-the-data-center-centric-city-model-3-994391830448",
+          "independent": false,
+          "title": "The Origin of the Data Center-Centric City Model (3)",
+          "summary": "Are Steel Mills and Data Centers Really Different Industries? Continue reading on Medium »",
+          "published_at": "2026-09-28T03:46:50+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -11521,6 +11279,17 @@
           "title": "OpenAI pauses training of its 'most capable models'",
           "summary": "",
           "published_at": "2026-09-26T21:07:08+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49873289",
+          "target_url": "https://www.nbcnews.com/tech/tech-news/openai-pauses-training-latest-models-agents-searched-us-government-sit-rcna600098",
+          "independent": false,
+          "title": "OpenAI pauses training of latest models",
+          "summary": "",
+          "published_at": "2026-09-28T03:33:26+00:00",
           "date_precision": "time"
         }
       ],
@@ -18963,6 +18732,174 @@
           "title": "The Gap AI Can’t Fill",
           "summary": "Authenticity lives in the relationship between words and a lived life, something AI can imitate but not possess. Continue reading on Write A Catalyst »",
           "published_at": "2026-09-28T02:51:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6225938132094d24",
+      "title": "How the stories about all-powerful AI are swallowing the world",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49873320",
+          "target_url": "https://www.bloodinthemachine.com/p/how-the-stories-about-all-powerful",
+          "independent": false,
+          "title": "How the stories about all-powerful AI are swallowing the world",
+          "summary": "",
+          "published_at": "2026-09-28T03:38:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3346fffa360cc265",
+      "title": "Australia Senate Requests OpenAI, Anthropic CEOs Face AI Inquiry",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49873255",
+          "target_url": "https://www.bloomberg.com/news/articles/2026-09-27/australia-senate-requests-openai-anthropic-ceos-face-ai-inquiry",
+          "independent": false,
+          "title": "Australia Senate Requests OpenAI, Anthropic CEOs Face AI Inquiry",
+          "summary": "",
+          "published_at": "2026-09-28T03:26:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "604a98b4a3b301ea",
+      "title": "Thinking Fast and Slow in AI: The Role of Metacognition",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49873241",
+          "target_url": "https://arxiv.org/abs/2110.01834",
+          "independent": false,
+          "title": "Thinking Fast and Slow in AI: The Role of Metacognition",
+          "summary": "",
+          "published_at": "2026-09-28T03:23:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "33143d730b0728ee",
+      "title": "RFPeptides: De novo design of protein-binding macrocycles using deep learning",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49873193",
+          "target_url": "https://www.nature.com/articles/s41589-025-01929-w",
+          "independent": false,
+          "title": "RFPeptides: De novo design of protein-binding macrocycles using deep learning",
+          "summary": "",
+          "published_at": "2026-09-28T03:17:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd1564d8c42bc9ba",
+      "title": "No, AI Didn’t Solve That Maths Problem",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/skillstuff/no-ai-didnt-solve-that-maths-problem-f2235f8b0f15",
+          "target_url": "https://medium.com/skillstuff/no-ai-didnt-solve-that-maths-problem-f2235f8b0f15",
+          "independent": false,
+          "title": "No, AI Didn’t Solve That Maths Problem",
+          "summary": "The headlines are exciting. The reality is more interesting, more complicated, and more honest than what you were told. Continue reading on Skill Stuff »",
+          "published_at": "2026-09-28T03:52:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4b2a7de5dd879a37",
+      "title": "7 Claude Tricks That Give You an Unfair Advantage (Most People Still Use the Old Way)",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/skillstuff/7-claude-tricks-that-give-you-an-unfair-advantage-most-people-still-use-the-old-way-90b422e41be7",
+          "target_url": "https://medium.com/skillstuff/7-claude-tricks-that-give-you-an-unfair-advantage-most-people-still-use-the-old-way-90b422e41be7",
+          "independent": false,
+          "title": "7 Claude Tricks That Give You an Unfair Advantage (Most People Still Use the Old Way)",
+          "summary": "Most people type a question and wait for an answer. These seven techniques turn Claude into something far more powerful. Continue reading on Skill Stuff »",
+          "published_at": "2026-09-28T03:52:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "20bad2bac2f4c79a",
+      "title": "# Monetising Enterprise RAG: How Agencies Sell Custom AI Copilots with 70% Gross Margins",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@igrowix/monetising-enterprise-rag-how-agencies-sell-custom-ai-copilots-with-70-gross-margins-e4e5686196ea",
+          "target_url": "https://medium.com/@igrowix/monetising-enterprise-rag-how-agencies-sell-custom-ai-copilots-with-70-gross-margins-e4e5686196ea",
+          "independent": false,
+          "title": "# Monetising Enterprise RAG: How Agencies Sell Custom AI Copilots with 70% Gross Margins",
+          "summary": "Agency Growth & AI Strategic Playbook 2026: Architectural Blueprints & Commercial Growth* Continue reading on Medium »",
+          "published_at": "2026-09-28T03:48:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9ae33d58f9497061",
+      "title": "Ada Karena Kamu Ada 1",
+      "first_seen": "2026-09-28T13:02:31+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aaajev7/ada-karena-kamu-ada-1-c0a0d3da10ec",
+          "target_url": "https://medium.com/@aaajev7/ada-karena-kamu-ada-1-c0a0d3da10ec",
+          "independent": false,
+          "title": "Ada Karena Kamu Ada 1",
+          "summary": "JeVycline Continue reading on Medium »",
+          "published_at": "2026-09-28T03:46:25+00:00",
           "date_precision": "time"
         }
       ],
