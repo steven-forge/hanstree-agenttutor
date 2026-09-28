@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T01:02:42.432044+09:00",
-  "window_start": "2026-07-31T01:02:42.432044+09:00",
-  "window_end": "2026-09-29T01:02:42.432044+09:00",
+  "collected_at": "2026-09-29T02:02:18.563786+09:00",
+  "window_start": "2026-07-31T02:02:18.563786+09:00",
+  "window_end": "2026-09-29T02:02:18.563786+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -64,10 +64,10 @@
       "name": "Grok Releases",
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
-      "count": 1,
+      "count": 0,
       "held_count": 1,
       "excluded_count": 0,
-      "skipped_count": 6,
+      "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
@@ -100,9 +100,9 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 10,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 30,
+      "excluded_count": 26,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 8,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 2,
-      "skipped_count": 8,
+      "excluded_count": 3,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -133,10 +133,10 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 7,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 3,
-      "skipped_count": 7,
+      "excluded_count": 1,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 18,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -177,9 +177,9 @@
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 2,
+      "count": 3,
       "held_count": 0,
-      "excluded_count": 24,
+      "excluded_count": 23,
       "skipped_count": 2,
       "coverage_limited": false
     },
@@ -276,29 +276,11 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 300,
-  "candidates": [
-    {
-      "id": "39ac19dcd39aaf04",
-      "title": "safety_identifier request field",
-      "source_id": "grok-releases",
-      "source_name": "Grok Releases",
-      "source_url": "https://docs.x.ai/developers/release-notes#safety_identifier-request-field",
-      "source_summary": "You can now send safety_identifier, an opaque end-user identifier assigned by your application, on Chat Completions, the Responses API, deferred chat completions, the Batch API, and the gRPC GetCompletionsRequest. It lets SpaceXAI attribute a policy violation to one of your end users rather than to your API key. The legacy user field is still accepted. See the Security FAQ.",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "fetched_at": "2026-09-29T01:03:12+09:00",
-      "published_on": "2026-09-25",
-      "date_precision": "day",
-      "title_ko": "safety_identifier 요청 필드",
-      "source_summary_ko": "이제 채팅 완료, 응답 API, 지연 채팅 완료, 배치 API 및 gRPC GetCompletionsRequest에서 애플리케이션에 의해 할당된 불투명한 최종 사용자 식별자인 safety_identifier를 보낼 수 있습니다. 이를 통해 SpaceXAI는 API 키가 아닌 최종 사용자 중 한 명에게 정책 위반을 속성으로 지정할 수 있습니다. 레거시 사용자 필드는 여전히 허용됩니다. 보안 관련 자주 묻는 질문 을 참조하세요.",
-      "release_notes_ko": {
-        "new_features": "이제 채팅 완료, 응답 API, 지연 채팅 완료, 배치 API 및 gRPC GetCompletionsRequest에서 애플리케이션에 의해 할당된 불투명한 최종 사용자 식별자인 safety_identifier를 보낼 수 있습니다. 이를 통해 SpaceXAI는 API 키가 아닌 최종 사용자 중 한 명에게 정책 위반을 속성으로 지정할 수 있습니다. 레거시 사용자 필드는 여전히 허용됩니다. 보안 관련 자주 묻는 질문 을 참조하세요."
-      }
-    }
-  ],
-  "hourly_collected_at": "2026-09-29T01:03:17.386495+09:00",
-  "hourly_window_start": "2026-09-26T01:03:17.386495+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-29T02:02:52.889677+09:00",
+  "hourly_window_start": "2026-09-26T02:02:52.889677+09:00",
   "events": [
     {
       "id": "b287b34a5390dd7e",
@@ -1902,38 +1884,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "c05031f9c616dc08",
-      "title": "Show HN: I built an AI assistant that turns website visitors into leads",
-      "first_seen": "2026-09-25T02:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49833364",
-          "target_url": "https://www.brevn.com",
-          "independent": false,
-          "title": "Show HN: I built an AI assistant that turns website visitors into leads",
-          "summary": "",
-          "published_at": "2026-09-24T16:47:29+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49846741",
-          "target_url": "https://github.com/Kerneta/daidocs/tree/main/browser-extension",
-          "independent": false,
-          "title": "Show HN: Built an open-source AI browser assistant remembers when you scroll",
-          "summary": "",
-          "published_at": "2026-09-25T16:35:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "c432d25394234270",
       "title": "So yeah it was written using AI",
       "first_seen": "2026-09-25T02:01:35+09:00",
@@ -2640,237 +2590,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "eb617378c0364239",
-      "title": "Jupyter AI: A Map of 100 Jupyter Extensions for AI",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847069",
-          "target_url": "https://openteams.com/awesome-jupyter-ai-extensions",
-          "independent": false,
-          "title": "Jupyter AI: A Map of 100 Jupyter Extensions for AI",
-          "summary": "",
-          "published_at": "2026-09-25T16:58:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "388e75526f8221d2",
-      "title": "If the Work Is So Meh That It Might Be AI, Who Cares How It Was Made?",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49847039",
-          "target_url": "https://novelarcade.substack.com/p/whats-worse-than-ai-slop-trad-slop",
-          "independent": false,
-          "title": "If the Work Is So Meh That It Might Be AI, Who Cares How It Was Made?",
-          "summary": "",
-          "published_at": "2026-09-25T16:56:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a21be8da5be1d3ff",
-      "title": "Agents can now set up your website's security with Turnstile Spin",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49846926",
-          "target_url": "https://blog.cloudflare.com/turnstile-spin",
-          "independent": false,
-          "title": "Agents can now set up your website's security with Turnstile Spin",
-          "summary": "",
-          "published_at": "2026-09-25T16:49:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "43cf7fa8aee78417",
-      "title": "OpenCode: $60 of usage for DeepSeek v4.1 Flash is now permanent",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49846863",
-          "target_url": "https://twitter.com/opencode/status/2103505541871907109",
-          "independent": false,
-          "title": "OpenCode: $60 of usage for DeepSeek v4.1 Flash is now permanent",
-          "summary": "",
-          "published_at": "2026-09-25T16:45:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7b73a8f235ae7af6",
-      "title": "Special agents' blood and urine test results stolen in FBI hack",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49846690",
-          "target_url": "https://www.bbc.co.uk/news/articles/cw62me2vlj07o",
-          "independent": false,
-          "title": "Special agents' blood and urine test results stolen in FBI hack",
-          "summary": "",
-          "published_at": "2026-09-25T16:30:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "73d33ca6f58414c7",
-      "title": "Meta is putting its muscle behind Muse as the AI app takes off",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off",
-          "target_url": "https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off",
-          "independent": true,
-          "title": "Meta is putting its muscle behind Muse as the AI app takes off",
-          "summary": "Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agents's promotion across its own apps and beyond.",
-          "published_at": "2026-09-25T16:16:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "cd39ae8a2a263755",
-      "title": "20 AI Agent Skills With ~800K GitHub Stars That Form a Real Agent Stack",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://agentnativedev.medium.com/20-ai-agent-skills-with-800k-github-stars-that-form-a-real-agent-stack-e0988bbaa365",
-          "target_url": "https://agentnativedev.medium.com/20-ai-agent-skills-with-800k-github-stars-that-form-a-real-agent-stack-e0988bbaa365",
-          "independent": false,
-          "title": "20 AI Agent Skills With ~800K GitHub Stars That Form a Real Agent Stack",
-          "summary": "The weekend is just around the corner, and we know your fingers are already itching to build something even cooler than last time. Continue reading on Medium »",
-          "published_at": "2026-09-25T16:52:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "078672694d776ee1",
-      "title": "DeepSeek Deleted Its Own Model’s Memory. Somehow That Made It Smarter.",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/predict/deepseek-deleted-its-own-models-memory-somehow-that-made-it-smarter-518e9c4772f8",
-          "target_url": "https://medium.com/predict/deepseek-deleted-its-own-models-memory-somehow-that-made-it-smarter-518e9c4772f8",
-          "independent": false,
-          "title": "DeepSeek Deleted Its Own Model’s Memory. Somehow That Made It Smarter.",
-          "summary": "DeepSeek V4.1 Flash matches frontier AI at 40× lower cost by doing something counterintuitive: erasing memory instead of expanding it. The… Continue reading on Predict »",
-          "published_at": "2026-09-25T16:49:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fc2d275e6c1ed130",
-      "title": "You Don’t Need an AI Agent. You Need a Workflow.",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@tabsalam79/you-dont-need-an-ai-agent-you-need-a-workflow-04932e1552e2",
-          "target_url": "https://medium.com/@tabsalam79/you-dont-need-an-ai-agent-you-need-a-workflow-04932e1552e2",
-          "independent": false,
-          "title": "You Don’t Need an AI Agent. You Need a Workflow.",
-          "summary": "Every AI content feed right now is drowning in “agent” everything — agent frameworks, agent swarms, multi-agent orchestration. Meanwhile… Continue reading on Medium »",
-          "published_at": "2026-09-25T16:49:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c69de284f247efab",
-      "title": "Fraggle Slop",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dr.lodge.mccammon/fraggle-slop-68ecf843afb6",
-          "target_url": "https://medium.com/@dr.lodge.mccammon/fraggle-slop-68ecf843afb6",
-          "independent": false,
-          "title": "Fraggle Slop",
-          "summary": "Case closed. Continue reading on Medium »",
-          "published_at": "2026-09-25T16:47:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "66a32db95c5fae3a",
-      "title": "Weekly AI Digest: Where are the brakes?",
-      "first_seen": "2026-09-26T02:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://ivopbernardo.medium.com/weekly-ai-digest-where-are-the-brakes-8638d02b8c47",
-          "target_url": "https://ivopbernardo.medium.com/weekly-ai-digest-where-are-the-brakes-8638d02b8c47",
-          "independent": false,
-          "title": "Weekly AI Digest: Where are the brakes?",
-          "summary": "Week 39, 2026 Continue reading on Medium »",
-          "published_at": "2026-09-25T16:46:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "a56e2a372353750f",
       "title": "AI agent hacks government website for first time: why this breach matters",
       "first_seen": "2026-09-26T03:01:24+09:00",
@@ -3080,27 +2799,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "ded5f30056dbe56f",
-      "title": "Meta makes the Muse filesystem even more accessible",
-      "first_seen": "2026-09-26T03:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
-          "independent": true,
-          "title": "Meta makes the Muse filesystem even more accessible",
-          "summary": "Yesterday, with a little prodding, it was discovered that Meta's Muse would expose its filesystem to curious users. The files offered a fascinating peek under the hood of an AI chatbot, and appeared to expose details we weren't meant to see, not least because Muse itself told people, including us, it wasn't supposed to reveal […]",
-          "published_at": "2026-09-25T16:49:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "7ba740ccaea1999b",
@@ -4358,6 +4056,17 @@
           "title": "AI Companies Are in a Race Against Time",
           "summary": "",
           "published_at": "2026-09-25T22:01:18+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880693",
+          "target_url": "https://econjared.substack.com/p/ai-companies-are-in-a-race-against",
+          "independent": false,
+          "title": "AI Companies Are in a Race Against Time",
+          "summary": "",
+          "published_at": "2026-09-28T16:36:13+00:00",
           "date_precision": "time"
         }
       ],
@@ -19032,6 +18741,468 @@
           "title": "100 Containers Are Waiting at the Port. Which 30 Should You Pick Up First?",
           "summary": "A real-world supply chain decision problem — and why container pickup should be driven by production risk, inventory, time, cost, and… Continue reading on Medium »",
           "published_at": "2026-09-28T15:58:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "95d6ac947b0c1af2",
+      "title": "The Download: rogue agent liability and the AI Hype Index",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49881038",
+          "target_url": "https://www.technologyreview.com/2026/09/28/1145202/the-download-rogue-agent-liability-and-the-ai-hype-index",
+          "independent": false,
+          "title": "The Download: rogue agent liability and the AI Hype Index",
+          "summary": "",
+          "published_at": "2026-09-28T17:01:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b8329b0f11206b63",
+      "title": "Florida asks court to bar OpenAI from new models as part of child harm lawsuit",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880973",
+          "target_url": "https://www.reuters.com/world/florida-asks-court-bar-openai-developing-new-models-part-child-harm-lawsuit-2026-09-28",
+          "independent": false,
+          "title": "Florida asks court to bar OpenAI from new models as part of child harm lawsuit",
+          "summary": "",
+          "published_at": "2026-09-28T16:56:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "794a7df1410f9f05",
+      "title": "We Can't Let Enormous Weirdos Regulate AI",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880968",
+          "target_url": "https://little-flying-robots.ghost.io/why-we-cant-let-enormous-weirdos-regulate-ai",
+          "independent": false,
+          "title": "We Can't Let Enormous Weirdos Regulate AI",
+          "summary": "",
+          "published_at": "2026-09-28T16:55:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e7d001b9ef981675",
+      "title": "AI tutoring outperforms in-class active learning",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880945",
+          "target_url": "https://www.nature.com/articles/s41598-025-97652-6",
+          "independent": false,
+          "title": "AI tutoring outperforms in-class active learning",
+          "summary": "",
+          "published_at": "2026-09-28T16:53:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "afa6050995798e12",
+      "title": "Watch an AI agent try to prove the Riemann hypothesis on the cheap",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880874",
+          "target_url": "https://www.zeyaddeeb.com/experiments/proofs",
+          "independent": false,
+          "title": "Watch an AI agent try to prove the Riemann hypothesis on the cheap",
+          "summary": "",
+          "published_at": "2026-09-28T16:48:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da2af885c2ac6422",
+      "title": "Voice Agents Can Just Do Things: Why voice is the next capability overhang",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880869",
+          "target_url": "https://www.ignorance.ai/p/voice-agents-can-just-do-things",
+          "independent": false,
+          "title": "Voice Agents Can Just Do Things: Why voice is the next capability overhang",
+          "summary": "",
+          "published_at": "2026-09-28T16:48:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1eca05844c1b9bef",
+      "title": "Extrinsic World Modeling with Opus, Astra and Grok",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880865",
+          "target_url": "https://all3d.ai/research/grok-spatial-reasoning",
+          "independent": false,
+          "title": "Extrinsic World Modeling with Opus, Astra and Grok",
+          "summary": "",
+          "published_at": "2026-09-28T16:47:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "813db9a13955c056",
+      "title": "GPT-6 Astra performs unsanctioned supply-chain attacks in simulations",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880842",
+          "target_url": "https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations",
+          "independent": false,
+          "title": "GPT-6 Astra performs unsanctioned supply-chain attacks in simulations",
+          "summary": "",
+          "published_at": "2026-09-28T16:46:25+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6585754de0db34c3",
+      "title": "2026 in LLMs (So Far)",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880838",
+          "target_url": "https://simonw.substack.com/p/2026-in-llms-so-far",
+          "independent": false,
+          "title": "2026 in LLMs (So Far)",
+          "summary": "",
+          "published_at": "2026-09-28T16:45:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a9165eb895c8fe71",
+      "title": "I built a native Apple app for 4 platforms in one afternoon with my AI workflow",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880706",
+          "target_url": "https://twitter.com/danielhayesmith/status/2103976394338271515",
+          "independent": false,
+          "title": "I built a native Apple app for 4 platforms in one afternoon with my AI workflow",
+          "summary": "",
+          "published_at": "2026-09-28T16:37:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "064c0ab26491ac07",
+      "title": "Building a physics model with fitted parameters is machine learning, but slower",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880600",
+          "target_url": "https://www.harysdalvi.com/blog/machine-learning-in-slow-motion",
+          "independent": false,
+          "title": "Building a physics model with fitted parameters is machine learning, but slower",
+          "summary": "",
+          "published_at": "2026-09-28T16:31:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0a765bafb70e29b8",
+      "title": "Grok TiddlyWiki, the definitive TiddlyWiki learning resource",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49880591",
+          "target_url": "https://groktiddlywiki.com/read",
+          "independent": false,
+          "title": "Grok TiddlyWiki, the definitive TiddlyWiki learning resource",
+          "summary": "",
+          "published_at": "2026-09-28T16:30:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "da1149ea8723f1ee",
+      "title": "Florida seeks a ban on ChatGPT acting like a person",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001527/chatgpt-florida-ban-first-person-human-attributes-kids",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001527/chatgpt-florida-ban-first-person-human-attributes-kids",
+          "independent": true,
+          "title": "Florida seeks a ban on ChatGPT acting like a person",
+          "summary": "Florida Attorney General James Uthmeier is calling for a judge to block OpenAI from \"giving ChatGPT false human attributes,\" a few months after Florida sued the AI company over safety concerns. According to Uthmeier, users are lulled into a false sense of security by the AI bot, as \"ChatGPT's use of language, including first-person pronouns […]",
+          "published_at": "2026-09-28T17:00:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "3a3d10d73e96ef6c",
+      "title": "OpenAI keeps bulldozing mathematicians",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001477/openai-math-advisory-group",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1001477/openai-math-advisory-group",
+          "independent": true,
+          "title": "OpenAI keeps bulldozing mathematicians",
+          "summary": "In a chaotic few months, OpenAI has demonstrated it can do two things with remarkable consistency: make impressive breakthroughs in mathematics, then colossally screw up announcing them. OpenAI is now trying to do better. Somehow, it has botched that too. OpenAI's latest attempt to repair fractured relations with a mathematical community it has repeatedly alienated […]",
+          "published_at": "2026-09-28T17:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0521ce66261c4e2a",
+      "title": "Walmart won’t hike prices based on your shopping history, CEO says",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1001492/walmart-dynamic-pricing-digital-shelf-labels",
+          "target_url": "https://www.theverge.com/tech/1001492/walmart-dynamic-pricing-digital-shelf-labels",
+          "independent": true,
+          "title": "Walmart won’t hike prices based on your shopping history, CEO says",
+          "summary": "Walmart says it won't change product prices based on your personal information or the time of day, as reported earlier by The Wall Street Journal. In a letter to customers, Walmart CEO John Furner writes that the company's switch to digital shelf labels is meant to save store associates time, rather than dynamically change prices. […]",
+          "published_at": "2026-09-28T16:44:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "bf4fdde4cf128dfd",
+      "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative",
+          "target_url": "https://techcrunch.com/2026/09/28/meta-launches-enterprise-ai-platform-hires-mongodb-ceo-to-lead-new-initiative",
+          "independent": true,
+          "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
+          "summary": "Meta says it will focus on bringing its full technology stack, including Muse, Meta Business Agent, Muse API, Muse Code, and more to businesses and developers.",
+          "published_at": "2026-09-28T16:52:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "022ecca3ab2090a4",
+      "title": "Elon Musk says space will soon hold nearly all compute. Google is still finding out if its chips can work there.",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/google-suncatcher-tpu-satellite",
+          "target_url": "https://thenewstack.io/google-suncatcher-tpu-satellite",
+          "independent": true,
+          "title": "Elon Musk says space will soon hold nearly all compute. Google is still finding out if its chips can work there.",
+          "summary": "While SpaceX and Nvidia plan to place a space-optimized Vera Rubin AI system in orbit by late 2027, Google’s far The post Elon Musk says space will soon hold nearly all compute. Google is still finding out if its chips can work there. appeared first on The New Stack .",
+          "published_at": "2026-09-28T16:22:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "b625c014ea6110f4",
+      "title": "AI Explained Simply #16: Why Your AI Lies With Confidence (And How to Stop It)",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://santoshshelar.medium.com/ai-explained-simply-16-why-your-ai-lies-with-confidence-and-how-to-stop-it-60ef0514d519",
+          "target_url": "https://santoshshelar.medium.com/ai-explained-simply-16-why-your-ai-lies-with-confidence-and-how-to-stop-it-60ef0514d519",
+          "independent": false,
+          "title": "AI Explained Simply #16: Why Your AI Lies With Confidence (And How to Stop It)",
+          "summary": "Understanding Hallucinations: When Pattern Prediction Collides With Fact Continue reading on Medium »",
+          "published_at": "2026-09-28T17:02:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dda8fa1c058bce1c",
+      "title": "Deterministic Guardrails for Agentic AI: Engineering Zero-Trust Execution Pipelines As autonomous…",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@arahmedahmed99/deterministic-guardrails-for-agentic-ai-engineering-zero-trust-execution-pipelines-as-autonomous-3afe6721fa56",
+          "target_url": "https://medium.com/@arahmedahmed99/deterministic-guardrails-for-agentic-ai-engineering-zero-trust-execution-pipelines-as-autonomous-3afe6721fa56",
+          "independent": false,
+          "title": "Deterministic Guardrails for Agentic AI: Engineering Zero-Trust Execution Pipelines As autonomous…",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-28T17:01:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e33be0d4258b5ae2",
+      "title": "Tests passed. Nobody can explain the change.",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://svikrant.medium.com/tests-passed-nobody-can-explain-the-change-499fbcabd824",
+          "target_url": "https://svikrant.medium.com/tests-passed-nobody-can-explain-the-change-499fbcabd824",
+          "independent": false,
+          "title": "Tests passed. Nobody can explain the change.",
+          "summary": "Green is not the same as known. Continue reading on Medium »",
+          "published_at": "2026-09-28T17:01:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f3e1d57625552062",
+      "title": "Choosing the Right Tech Stack for an AI-Driven Micro-SaaS",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://alifiamustika.medium.com/choosing-the-right-tech-stack-for-an-ai-driven-micro-saas-00dd63e05879",
+          "target_url": "https://alifiamustika.medium.com/choosing-the-right-tech-stack-for-an-ai-driven-micro-saas-00dd63e05879",
+          "independent": false,
+          "title": "Choosing the Right Tech Stack for an AI-Driven Micro-SaaS",
+          "summary": "Building a traditional Software-as-a-Service (SaaS) product already requires careful planning of your technology stack. However, when you… Continue reading on Medium »",
+          "published_at": "2026-09-28T17:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3f54887c9a0108f4",
+      "title": "How to Build Your Own AI Security Agent, Step by Step",
+      "first_seen": "2026-09-29T02:02:52+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://pub.towardsai.net/how-to-build-your-own-ai-security-agent-step-by-step-27c3cf8169a0",
+          "target_url": "https://pub.towardsai.net/how-to-build-your-own-ai-security-agent-step-by-step-27c3cf8169a0",
+          "independent": false,
+          "title": "How to Build Your Own AI Security Agent, Step by Step",
+          "summary": "148 lines of Python that check a project before an AI agent is allowed near it. Tested against planted secrets, a hidden injection, and a… Continue reading on Towards AI »",
+          "published_at": "2026-09-28T17:01:03+00:00",
           "date_precision": "time"
         }
       ],
