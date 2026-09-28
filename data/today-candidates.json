@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-28T19:02:42.011724+09:00",
-  "window_start": "2026-07-30T19:02:42.011724+09:00",
-  "window_end": "2026-09-28T19:02:42.011724+09:00",
+  "collected_at": "2026-09-28T20:02:06.215379+09:00",
+  "window_start": "2026-07-30T20:02:06.215379+09:00",
+  "window_end": "2026-09-28T20:02:06.215379+09:00",
   "edition_date": "2026-09-28",
   "sources": [
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 11,
+      "count": 10,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 3,
+      "excluded_count": 29,
+      "skipped_count": 0,
       "coverage_limited": false
     },
     {
@@ -114,7 +114,7 @@
       "count": 1,
       "held_count": 0,
       "excluded_count": 29,
-      "skipped_count": 0,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -122,10 +122,10 @@
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 6,
+      "count": 7,
       "held_count": 0,
-      "excluded_count": 4,
-      "skipped_count": 5,
+      "excluded_count": 3,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -180,7 +180,7 @@
       "count": 1,
       "held_count": 0,
       "excluded_count": 25,
-      "skipped_count": 0,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 8,
+      "count": 6,
       "held_count": 0,
-      "excluded_count": 7,
-      "skipped_count": 8,
+      "excluded_count": 9,
+      "skipped_count": 6,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 297,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T19:03:09.377481+09:00",
-  "hourly_window_start": "2026-09-25T19:03:09.377481+09:00",
+  "hourly_collected_at": "2026-09-28T20:02:33.664933+09:00",
+  "hourly_window_start": "2026-09-25T20:02:33.664933+09:00",
   "events": [
     {
       "id": "48d6b4daa4997f3a",
@@ -1519,38 +1519,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "f45ed8abc9a4d2ed",
-      "title": "Uproar in France over award-winning author accused of using AI",
-      "first_seen": "2026-09-24T03:01:31+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49819767",
-          "target_url": "https://www.bbc.com/news/articles/ck7v4y45893go",
-          "independent": false,
-          "title": "Uproar in France over award-winning author accused of using AI",
-          "summary": "",
-          "published_at": "2026-09-23T17:41:45+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49842707",
-          "target_url": "https://www.bbc.com/news/articles/ck7v4y45893go",
-          "independent": false,
-          "title": "Uproar in France over award-winning author accused of using AI",
-          "summary": "",
-          "published_at": "2026-09-25T10:48:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "2e1bfff239807da2",
       "title": "How to serve trillions of tokens for trillion-parameter coding agents",
       "first_seen": "2026-09-24T04:01:42+09:00",
@@ -2483,237 +2451,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "2e55831155014269",
-      "title": "Anthropic: The Situation Report",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49842788",
-          "target_url": "https://www.anthropic.com/features/ebola-response",
-          "independent": false,
-          "title": "Anthropic: The Situation Report",
-          "summary": "",
-          "published_at": "2026-09-25T10:59:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e24d21ced4ef965d",
-      "title": "Can Claude fix itself? From no to maybe",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49842744",
-          "target_url": "https://www.sylvainkalache.com/blog/can-claude-fix-itself",
-          "independent": false,
-          "title": "Can Claude fix itself? From no to maybe",
-          "summary": "",
-          "published_at": "2026-09-25T10:52:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c984a01f495bffd2",
-      "title": "Four things I learned throughout the last years working with AI",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49842633",
-          "target_url": "https://www.ssp.sh/brain/what-i-learned-writing-with-ai",
-          "independent": false,
-          "title": "Four things I learned throughout the last years working with AI",
-          "summary": "",
-          "published_at": "2026-09-25T10:38:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2690558920b683f4",
-      "title": "AI-Powered Fuzzing with the GitHub Security Lab Taskflow Agent",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49842514",
-          "target_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent",
-          "independent": false,
-          "title": "AI-Powered Fuzzing with the GitHub Security Lab Taskflow Agent",
-          "summary": "",
-          "published_at": "2026-09-25T10:23:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2aee82d75ddfc818",
-      "title": "From Agent Authorization to AI Production Evaluation: QCon AI New York 2026",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/qcon-ai-newyork-2026-sessions",
-          "target_url": "https://www.infoq.com/news/2026/09/qcon-ai-newyork-2026-sessions",
-          "independent": true,
-          "title": "From Agent Authorization to AI Production Evaluation: QCon AI New York 2026",
-          "summary": "QCon AI New York has confirmed 23 sessions covering agent authorization, production guardrails, shared inference infrastructure, and the evaluation of AI systems after deployment. By Artenisa Chatziou",
-          "published_at": "2026-09-25T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "9da9b98c1f7ed966",
-      "title": "Podcast: The Future of AI: From Enterprise Adoption to Open Source Sovereignty",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/podcasts/enterprise-adoption-open-source-sovereignty",
-          "target_url": "https://www.infoq.com/podcasts/enterprise-adoption-open-source-sovereignty",
-          "independent": true,
-          "title": "Podcast: The Future of AI: From Enterprise Adoption to Open Source Sovereignty",
-          "summary": "In this episode, Meryem Arik, Clara Higuera Cabañes, and Jeff Smith, demystify the current state of AI in the enterprise. The discussion navigates the \"industrial revolution\" moment in AI adoption, exploring why companies are rushing toward these technologies to maintain competitive advantages while grappling with reliability, ethical considerations, and the evolving role of software engineering. By Meryem Arik, Clara Higuera Cabañes, Jeff Smith",
-          "published_at": "2026-09-25T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "2b721593c18b285a",
-      "title": "Selenium Automation Testing: How Does It Work in Real-World Projects?",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@cispro/selenium-automation-testing-how-does-it-work-in-real-world-projects-df0e19bc5f85",
-          "target_url": "https://medium.com/@cispro/selenium-automation-testing-how-does-it-work-in-real-world-projects-df0e19bc5f85",
-          "independent": false,
-          "title": "Selenium Automation Testing: How Does It Work in Real-World Projects?",
-          "summary": "Software applications are becoming more complex, and testing every feature manually after every update can require significant time and… Continue reading on Medium »",
-          "published_at": "2026-09-25T10:47:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d7ac221b1c436d0c",
-      "title": "How I Achieved Fast Growth in Writing.",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/pen-with-paper/how-i-achieved-fast-growth-in-writing-e656b7d4d33b",
-          "target_url": "https://medium.com/pen-with-paper/how-i-achieved-fast-growth-in-writing-e656b7d4d33b",
-          "independent": false,
-          "title": "How I Achieved Fast Growth in Writing.",
-          "summary": "The Proven Habits Behind My Rapid Growth as a Writer. Continue reading on Pen With Paper »",
-          "published_at": "2026-09-25T10:46:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "49262626062ec247",
-      "title": "Is “One-Prompt” Software Actually Ready for Kubernetes?",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@khushijigenshah/is-one-prompt-software-actually-ready-for-kubernetes-f835d34c5593",
-          "target_url": "https://medium.com/@khushijigenshah/is-one-prompt-software-actually-ready-for-kubernetes-f835d34c5593",
-          "independent": false,
-          "title": "Is “One-Prompt” Software Actually Ready for Kubernetes?",
-          "summary": "The generated manifest was never the hard part. I keep watching teams treat it like it was. Continue reading on Medium »",
-          "published_at": "2026-09-25T10:45:53+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3c9e26827fbaca8d",
-      "title": "Can AI Build a Kubernetes-Ready Application?",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@8080AI/can-ai-build-a-kubernetes-ready-application-304b683a6185",
-          "target_url": "https://medium.com/@8080AI/can-ai-build-a-kubernetes-ready-application-304b683a6185",
-          "independent": false,
-          "title": "Can AI Build a Kubernetes-Ready Application?",
-          "summary": "What AI can generate for production infrastructure and where teams still need to do the work themselves. Continue reading on Medium »",
-          "published_at": "2026-09-25T10:43:13+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c2e220205d259505",
-      "title": "My AI Model Was 100% Sure and Wrong Half the Time",
-      "first_seen": "2026-09-25T20:01:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@sainarayana2311/my-ai-model-was-100-sure-and-wrong-half-the-time-a65bbf3fdda8",
-          "target_url": "https://medium.com/@sainarayana2311/my-ai-model-was-100-sure-and-wrong-half-the-time-a65bbf3fdda8",
-          "independent": false,
-          "title": "My AI Model Was 100% Sure and Wrong Half the Time",
-          "summary": "I ran 1,800 tests on an open-source decision model to find out when you can trust an AI’s confidence score. The answer depends on the… Continue reading on Medium »",
-          "published_at": "2026-09-25T10:42:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "40579207c6f62d36",
       "title": "Planning with Agents: Divided Worlds, Boundary Objects, and Thicker Interfaces",
       "first_seen": "2026-09-25T21:01:54+09:00",
@@ -2927,6 +2664,17 @@
           "title": "The AI Boom in 2026: How Artificial Intelligence Is Changing American Jobs",
           "summary": "Artificial intelligence is transforming the American workplace, creating new career opportunities while changing how millions of people… Continue reading on Medium »",
           "published_at": "2026-09-28T09:58:50+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
+          "target_url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
+          "independent": false,
+          "title": "AI Is Changing American Jobs in 2026: What Workers Need to Know",
+          "summary": "Artificial intelligence is no longer something limited to tech companies or science-fiction movies. In 2026, AI is becoming part of… Continue reading on Medium »",
+          "published_at": "2026-09-27T15:54:18+00:00",
           "date_precision": "time"
         }
       ],
@@ -7738,27 +7486,6 @@
           "title": "Transformer Can Hold Two Thoughts at Once: Evidence of Linear",
           "summary": "",
           "published_at": "2026-09-26T06:07:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8b453b228f6bafcc",
-      "title": "GoodSocials",
-      "first_seen": "2026-09-26T16:01:26+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/goodsocials",
-          "target_url": "https://www.producthunt.com/products/goodsocials",
-          "independent": false,
-          "title": "GoodSocials",
-          "summary": "AI social media manager for LinkedIn. Only authentic content Discussion | Link",
-          "published_at": "2026-09-25T10:43:48+00:00",
           "date_precision": "time"
         }
       ],
@@ -14981,27 +14708,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "8c121cef43546893",
-      "title": "AI Is Changing American Jobs in 2026: What Workers Need to Know",
-      "first_seen": "2026-09-28T01:01:23+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
-          "target_url": "https://medium.com/@mdtuhinhossain92666/ai-is-changing-american-jobs-in-2026-what-workers-need-to-know-8f5a7940f087",
-          "independent": false,
-          "title": "AI Is Changing American Jobs in 2026: What Workers Need to Know",
-          "summary": "Artificial intelligence is no longer something limited to tech companies or science-fiction movies. In 2026, AI is becoming part of… Continue reading on Medium »",
-          "published_at": "2026-09-27T15:54:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e87f9036ee5e0fdd",
       "title": "Structured Output: Teaching AI to Give Answers Your Code Can Use",
       "first_seen": "2026-09-28T01:01:23+09:00",
@@ -19104,6 +18810,342 @@
           "title": "7 Practical Ways to Use ChatGPT for Writing Without Letting It Write Everything for You",
           "summary": "AI can make writing faster, but there’s a big difference between using ChatGPT as a writing assistant and asking it to do all the thinking… Continue reading on Medium »",
           "published_at": "2026-09-28T09:58:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "306cb055dc065471",
+      "title": "What Would a Serious AI Product Look Like?",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876148",
+          "target_url": "https://blog.glyph.im/2026/09/serious-ai-product.html",
+          "independent": false,
+          "title": "What Would a Serious AI Product Look Like?",
+          "summary": "",
+          "published_at": "2026-09-28T11:02:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4a8a140e104bbc4",
+      "title": "Who's liable when AI agents go rogue?",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876144",
+          "target_url": "https://www.technologyreview.com/2026/09/28/1145197/whos-liable-when-ai-agents-go-rogue",
+          "independent": false,
+          "title": "Who's liable when AI agents go rogue?",
+          "summary": "",
+          "published_at": "2026-09-28T11:01:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6fc9692e4557b48b",
+      "title": "It's Time to Investigate the AI Labs",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876129",
+          "target_url": "https://calnewport.com/its-time-to-investigate-the-ai-labs",
+          "independent": false,
+          "title": "It's Time to Investigate the AI Labs",
+          "summary": "",
+          "published_at": "2026-09-28T11:00:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "713248b653060c4f",
+      "title": "I benchmarked a TDD-enforcing Claude Code plugin. It didn't write better code",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876083",
+          "target_url": "https://www.maxtaylor.me/articles/i-benchmarked-tdd-guard-it-didn-t-write-better-code",
+          "independent": false,
+          "title": "I benchmarked a TDD-enforcing Claude Code plugin. It didn't write better code",
+          "summary": "",
+          "published_at": "2026-09-28T10:55:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f694c47db8322861",
+      "title": "Guide to Investigating Tech and AI in Modern Warfare",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876042",
+          "target_url": "https://gijn.org/resource/investigate-tech-ai-modern-warfare",
+          "independent": false,
+          "title": "Guide to Investigating Tech and AI in Modern Warfare",
+          "summary": "",
+          "published_at": "2026-09-28T10:50:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c67fef3fd596b7fb",
+      "title": "Show HN: Yaystack.ch, check whether AI answer engines can see your website",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876037",
+          "target_url": "https://yaystack.ch/",
+          "independent": false,
+          "title": "Show HN: Yaystack.ch, check whether AI answer engines can see your website",
+          "summary": "",
+          "published_at": "2026-09-28T10:50:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ffffd05d6d8f68b0",
+      "title": "Nvidia releases software platform to stop AI agents from misbehaving",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49876019",
+          "target_url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html",
+          "independent": false,
+          "title": "Nvidia releases software platform to stop AI agents from misbehaving",
+          "summary": "",
+          "published_at": "2026-09-28T10:45:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7e6af4cdafc85c6b",
+      "title": "How to export ChatGPT to word without losing formatting [video]",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49875968",
+          "target_url": "https://www.youtube.com/watch?v=zUzkUI7U-A4",
+          "independent": false,
+          "title": "How to export ChatGPT to word without losing formatting [video]",
+          "summary": "",
+          "published_at": "2026-09-28T10:38:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c96279ccb7a7e05a",
+      "title": "Show HN: Codify, AI for transforming and reforming law",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49875854",
+          "target_url": "https://codify.centreai.global/",
+          "independent": false,
+          "title": "Show HN: Codify, AI for transforming and reforming law",
+          "summary": "",
+          "published_at": "2026-09-28T10:21:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb6138a6aa4e5f5e",
+      "title": "China weighs allowing ByteDance, Alibaba to buy new Nvidia chips",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49875844",
+          "target_url": "https://www.reuters.com/business/retail-consumer/china-weighs-allowing-bytedance-alibaba-buy-new-nvidia-chips-information-reports-2026-09-27",
+          "independent": false,
+          "title": "China weighs allowing ByteDance, Alibaba to buy new Nvidia chips",
+          "summary": "",
+          "published_at": "2026-09-28T10:20:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "667c4606e9398cc2",
+      "title": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/ai-agents-are-about-to-flood-the-workforce-no-ones-ready-for-it",
+          "target_url": "https://www.wired.com/story/ai-agents-are-about-to-flood-the-workforce-no-ones-ready-for-it",
+          "independent": true,
+          "title": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
+          "summary": "Your next coworker might well be an AI agent—and will require a whole new model of workplace interactions.",
+          "published_at": "2026-09-28T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "879bd3fd239c32e3",
+      "title": "Top Product Engineering Companies in 2026",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@alexmercer.techo/top-product-engineering-companies-in-2026-f299949728cb",
+          "target_url": "https://medium.com/@alexmercer.techo/top-product-engineering-companies-in-2026-f299949728cb",
+          "independent": false,
+          "title": "Top Product Engineering Companies in 2026",
+          "summary": "Software products that succeed over the long term share a common trait beneath their surface-level features: solid engineering discipline… Continue reading on Medium »",
+          "published_at": "2026-09-28T11:00:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d991f7b7d3d8136e",
+      "title": "What Mathematics Problem Did OpenAI Just Claim to Solve?",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@shogbamuolamide/what-mathematics-problem-did-openai-just-claim-to-solve-6da0f51d91b3",
+          "target_url": "https://medium.com/@shogbamuolamide/what-mathematics-problem-did-openai-just-claim-to-solve-6da0f51d91b3",
+          "independent": false,
+          "title": "What Mathematics Problem Did OpenAI Just Claim to Solve?",
+          "summary": "In 2000, the Clay Mathematics Institute of Cambridge, Massachusetts, established the Millennium Prize Problems, seven fundamental… Continue reading on Medium »",
+          "published_at": "2026-09-28T10:59:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3fd16e31e2a844e8",
+      "title": "Our Senior Engineer Made Our API 40% Slower on Purpose. I Almost Reverted His Change.",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://blog.stackademic.com/our-senior-engineer-made-our-api-40-slower-on-purpose-i-almost-reverted-his-change-a12dbfca9600",
+          "target_url": "https://blog.stackademic.com/our-senior-engineer-made-our-api-40-slower-on-purpose-i-almost-reverted-his-change-a12dbfca9600",
+          "independent": false,
+          "title": "Our Senior Engineer Made Our API 40% Slower on Purpose. I Almost Reverted His Change.",
+          "summary": "Latency went up immediately, infrastructure cost barely moved, and nothing was broken. He still argued that the slower version was safer. Continue reading on Stackademic »",
+          "published_at": "2026-09-28T10:59:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "02e16f791cf4b9ae",
+      "title": "From Sky to Soil: How Drone Surveys Are Transforming Managed Farmland Land Verification",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@moggsestatesofficial/from-sky-to-soil-how-drone-surveys-are-transforming-managed-farmland-land-verification-fe9f86cf367c",
+          "target_url": "https://medium.com/@moggsestatesofficial/from-sky-to-soil-how-drone-surveys-are-transforming-managed-farmland-land-verification-fe9f86cf367c",
+          "independent": false,
+          "title": "From Sky to Soil: How Drone Surveys Are Transforming Managed Farmland Land Verification",
+          "summary": "How Drone Surveys Help Land Verification Continue reading on Medium »",
+          "published_at": "2026-09-28T10:57:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb3dfe29933ffc55",
+      "title": "Our Senior Engineer Refused to Automate a Task He Did Every Friday.",
+      "first_seen": "2026-09-28T20:02:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@codewar_with_me/our-senior-engineer-refused-to-automate-a-task-he-did-every-friday-50764df6a72b",
+          "target_url": "https://medium.com/@codewar_with_me/our-senior-engineer-refused-to-automate-a-task-he-did-every-friday-50764df6a72b",
+          "independent": false,
+          "title": "Our Senior Engineer Refused to Automate a Task He Did Every Friday.",
+          "summary": "The work was repetitive, documented, and easy to automate. He still insisted that someone should keep doing it by hand. Continue reading on Medium »",
+          "published_at": "2026-09-28T10:56:27+00:00",
           "date_precision": "time"
         }
       ],
