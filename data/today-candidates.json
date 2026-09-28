@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T06:02:18.039506+09:00",
-  "window_start": "2026-07-31T06:02:18.039506+09:00",
-  "window_end": "2026-09-29T06:02:18.039506+09:00",
+  "collected_at": "2026-09-29T06:26:52.450168+09:00",
+  "window_start": "2026-07-31T06:26:52.450168+09:00",
+  "window_end": "2026-09-29T06:26:52.450168+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 2,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 123,
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 8,
       "held_count": 0,
-      "excluded_count": 30,
-      "skipped_count": 0,
+      "excluded_count": 31,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -269,80 +269,48 @@
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
       "status": "ok",
-      "count": 2,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 4,
-      "skipped_count": 4,
+      "skipped_count": 6,
       "coverage_limited": false
     }
   ],
   "new_count": 2,
-  "archive_count": 307,
+  "archive_count": 309,
   "candidates": [
     {
-      "id": "09e1fe5d7a6f40d9",
-      "title": "Building with Claude Sonnet 5.5",
-      "source_id": "claude-dev-blog",
-      "source_name": "Claude.dev Blog",
-      "source_url": "https://claude.dev/blog/building-with-claude-sonnet-5-5",
-      "source_summary": "When to choose Sonnet over Opus, what it costs, and how to tune it.",
-      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
-      "fetched_at": "2026-09-29T06:02:58+09:00",
-      "published_on": "2026-09-28",
-      "date_precision": "day",
-      "title_ko": "Claude Sonnet 5.5로 구축",
-      "source_summary_ko": "Opus보다 Sonnet을 선택해야 하는 경우, 비용 및 조정 방법."
+      "id": "833e9419a34f8836",
+      "title": "Are you a Codex Original?",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/form/codex-originals",
+      "source_summary": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "fetched_at": "2026-09-29T06:26:52+09:00",
+      "published_at": "2026-09-28T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "귀하는 코덱스 원본입니까?",
+      "source_summary_ko": "우리는 코덱스를 사용하여 놀라운 일을 하는 건축업자, 땜장이, 연구원 및 제작자의 실제 이야기를 수집하고 있습니다. 코덱스 오리지널 프로그램의 다음 장에 참여하고 싶다면 아래에서 여러분의 이야기와 프로젝트에 대해 자세히 알려주세요."
     },
     {
-      "id": "5f38f7da2d8e299d",
-      "title": "Automating eval design and hillclimbing with Claude",
-      "source_id": "claude-dev-blog",
-      "source_name": "Claude.dev Blog",
-      "source_url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing",
-      "source_summary": "Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.",
-      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
-      "fetched_at": "2026-09-29T06:02:56+09:00",
-      "published_on": "2026-09-28",
-      "date_precision": "day",
-      "title_ko": "끌로드와 함께 평가 설계 및 언덕 오르기 자동화하기",
-      "source_summary_ko": "자신을 속이지 않고 에발을 설계하고 그에 맞서 언덕을 오르는 원칙과 클로드 아피 스킬의 빌드-밸과 힐클라임 명령이 어떻게 작동하는지."
+      "id": "eb674100bb687fff",
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "source_summary": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "fetched_at": "2026-09-29T06:26:55+09:00",
+      "published_at": "2026-09-28T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Basis는 GPT-6 Astra로 세금 워크북을 2배 빠르게 완료합니다",
+      "source_summary_ko": "GPT-6 Astra는 GPT-5.6 Sol보다 두 배 빠른 50탭 세금 워크북을 완성했으며, 사용자 의도에 대한 이해가 강화되어 Basis는 실제 사용에 대해 더 자신감을 갖게 되었습니다."
     }
   ],
-  "hourly_collected_at": "2026-09-29T06:03:00.039572+09:00",
-  "hourly_window_start": "2026-09-26T06:03:00.039572+09:00",
+  "hourly_collected_at": "2026-09-29T06:27:46.748388+09:00",
+  "hourly_window_start": "2026-09-26T06:27:46.748388+09:00",
   "events": [
-    {
-      "id": "a009f1a2bdf65066",
-      "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
-      "first_seen": "2026-09-23T13:01:06+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mirandaherreramoreno/m%C3%A1s-all%C3%A1-del-c%C3%B3digo-c%C3%B3mo-las-ramas-de-la-inteligencia-artificial-transforman-nuestra-vida-c22db7a5bca9",
-          "target_url": "https://medium.com/@mirandaherreramoreno/m%C3%A1s-all%C3%A1-del-c%C3%B3digo-c%C3%B3mo-las-ramas-de-la-inteligencia-artificial-transforman-nuestra-vida-c22db7a5bca9",
-          "independent": false,
-          "title": "Más allá del código: Cómo las ramas de la Inteligencia Artificial transforman nuestra vida…",
-          "summary": "Introducción Continue reading on Medium »",
-          "published_at": "2026-09-23T03:43:29+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@maxpc/las-principales-ramas-de-la-inteligencia-artificial-b9a52e748312",
-          "target_url": "https://medium.com/@maxpc/las-principales-ramas-de-la-inteligencia-artificial-b9a52e748312",
-          "independent": false,
-          "title": "Las principales ramas de la Inteligencia Artificial",
-          "summary": "Cuando escuchamos el término “Inteligencia Artificial”, es común imaginar un superordenador todopoderoso o un robot de ciencia ficción. Continue reading on Medium »",
-          "published_at": "2026-09-25T21:11:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
     {
       "id": "2388dbe9319557a4",
       "title": "Claude Pop – I'm Upping My P(Doom) [video]",
@@ -2612,6 +2580,17 @@
           "summary": "",
           "published_at": "2026-09-25T21:09:27+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884610",
+          "target_url": "https://www.reddit.com/r/AIDangers/s/S7YoH2hBqx",
+          "independent": false,
+          "title": "OpenAI, Hugging Face Attack – Music Video",
+          "summary": "",
+          "published_at": "2026-09-28T21:25:50+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2718,195 +2697,6 @@
           "title": "Day 17/60: Retrieval-Augmented Generation (RAG) — Giving LLMs a Verifiable Memory",
           "summary": "Welcome to Day 17 of 60. Continue reading on Medium »",
           "published_at": "2026-09-27T09:50:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "51bf70998a8fcc3a",
-      "title": "It's not hypothetical: the dangers of AI are here",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49850168",
-          "target_url": "https://www.theguardian.com/commentisfree/2026/sep/25/ai-israel-gaza-iran-police-surveillance",
-          "independent": false,
-          "title": "It's not hypothetical: the dangers of AI are here",
-          "summary": "",
-          "published_at": "2026-09-25T21:26:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "de955806650a07d9",
-      "title": "Carnegie: China Passes US as Top AI Talent Hub, 40.6% to 34.2%",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49850114",
-          "target_url": "https://aiweekly.co/alerts/carnegie-china-passes-us-as-top-ai-talent-hub-406-to-342",
-          "independent": false,
-          "title": "Carnegie: China Passes US as Top AI Talent Hub, 40.6% to 34.2%",
-          "summary": "",
-          "published_at": "2026-09-25T21:22:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "28e3fdb6bf1789dc",
-      "title": "Show HN: NerfWatch() – Track AI degradation with daily tests and community votes",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49850096",
-          "target_url": "https://nerfwatch.lol",
-          "independent": false,
-          "title": "Show HN: NerfWatch() – Track AI degradation with daily tests and community votes",
-          "summary": "",
-          "published_at": "2026-09-25T21:21:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c642973a8468ee44",
-      "title": "\"Someone just sent me an ad that features an AI version of me. What do I do?\"",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49850042",
-          "target_url": "https://bsky.app/profile/lebassett.bsky.social/post/3mwel345jr22s",
-          "independent": false,
-          "title": "\"Someone just sent me an ad that features an AI version of me. What do I do?\"",
-          "summary": "",
-          "published_at": "2026-09-25T21:15:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0a9b3ce7fa85e155",
-      "title": "Jev was built for agents, here's how we're using it in computer use instead",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49849950",
-          "target_url": "https://twitter.com/kylejeong/status/2102108924677927169",
-          "independent": false,
-          "title": "Jev was built for agents, here's how we're using it in computer use instead",
-          "summary": "",
-          "published_at": "2026-09-25T21:06:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "43bf9fc00c2ef7a8",
-      "title": "Our Highest-Rated Employee Stopped Doing Anything Outside His Job Description. His Performance Score",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@devrimkodlama/our-highest-rated-employee-stopped-doing-anything-outside-his-job-description-his-performance-score-089a0e0d72e8",
-          "target_url": "https://medium.com/@devrimkodlama/our-highest-rated-employee-stopped-doing-anything-outside-his-job-description-his-performance-score-089a0e0d72e8",
-          "independent": false,
-          "title": "Our Highest-Rated Employee Stopped Doing Anything Outside His Job Description. His Performance Score",
-          "summary": "Everyone called it quiet quitting until we discovered how much unpaid responsibility had quietly become part of being “good at your job.” Continue reading on Medium »",
-          "published_at": "2026-09-25T21:23:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "60f6d58a3c8b5680",
-      "title": "Your AI Rollout Isn’t Failing. You’re Grading It on the Wrong Curve.",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@dmytro.v.savchenko/your-ai-rollout-isnt-failing-you-re-grading-it-on-the-wrong-curve-03166eb69f47",
-          "target_url": "https://medium.com/@dmytro.v.savchenko/your-ai-rollout-isnt-failing-you-re-grading-it-on-the-wrong-curve-03166eb69f47",
-          "independent": false,
-          "title": "Your AI Rollout Isn’t Failing. You’re Grading It on the Wrong Curve.",
-          "summary": "Photo by Brice Cooper on Unsplash. Continue reading on Medium »",
-          "published_at": "2026-09-25T21:15:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5fca18b91390d78d",
-      "title": "What Would Jung Say About AI?",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/the-story-well/what-would-jung-say-about-ai-7473f3ad95dc",
-          "target_url": "https://medium.com/the-story-well/what-would-jung-say-about-ai-7473f3ad95dc",
-          "independent": false,
-          "title": "What Would Jung Say About AI?",
-          "summary": "A Thought Experiment on the 25% Machine Continue reading on The Story Well »",
-          "published_at": "2026-09-25T21:14:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2be1a2e87ff88b79",
-      "title": "Human Understanding Is Now the Bottleneck",
-      "first_seen": "2026-09-26T06:26:50+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@poola.vii/human-understanding-is-now-the-bottleneck-966e7e040754",
-          "target_url": "https://medium.com/@poola.vii/human-understanding-is-now-the-bottleneck-966e7e040754",
-          "independent": false,
-          "title": "Human Understanding Is Now the Bottleneck",
-          "summary": "AI Can Do the Work and Even the Judging. What Stays With Us Is Wanting and Understanding Continue reading on Medium »",
-          "published_at": "2026-09-25T21:09:39+00:00",
           "date_precision": "time"
         }
       ],
@@ -19111,6 +18901,17 @@
           "summary": "The acquisition will see World Labs founder Fei-Fei Li join AMD as executive vice president and chief scientist.",
           "published_at": "2026-09-28T20:39:33+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884114",
+          "target_url": "https://newsroom.amd.com/news/amd-acquire-world-labs",
+          "independent": false,
+          "title": "AMD to Acquire World Labs to Advance the Future of AI",
+          "summary": "",
+          "published_at": "2026-09-28T20:47:09+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19131,27 +18932,6 @@
           "title": "Pacing the Frontier is not the actual goal for AI labs",
           "summary": "",
           "published_at": "2026-09-28T20:47:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "effcb19529443682",
-      "title": "AMD to Acquire World Labs to Advance the Future of AI",
-      "first_seen": "2026-09-29T06:03:00+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49884114",
-          "target_url": "https://newsroom.amd.com/news/amd-acquire-world-labs",
-          "independent": false,
-          "title": "AMD to Acquire World Labs to Advance the Future of AI",
-          "summary": "",
-          "published_at": "2026-09-28T20:47:09+00:00",
           "date_precision": "time"
         }
       ],
@@ -19257,6 +19037,216 @@
           "title": "The 2026 Guide to Building an Enterprise AI Gateway for Trusted Data",
           "summary": "Once AI traffic starts moving between your enterprise systems and the AI assistants your teams use, that traffic needs a control plane… Continue reading on CData Software »",
           "published_at": "2026-09-28T20:40:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3b4a027082a1cbb7",
+      "title": "Stanford CME295 Transformers n LLMs – Autumn 2026 – Lecture 1 – Transformers [video]",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884519",
+          "target_url": "https://www.youtube.com/watch?v=114i2Kz-LZA",
+          "independent": false,
+          "title": "Stanford CME295 Transformers n LLMs – Autumn 2026 – Lecture 1 – Transformers [video]",
+          "summary": "",
+          "published_at": "2026-09-28T21:18:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0a70b86fe27cd5ab",
+      "title": "Authors Guild calls on publishers to share Anthropic wealth",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884458",
+          "target_url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/101364-authors-guild-calls-on-publishers-to-share-the-anthropic-wealth.html",
+          "independent": false,
+          "title": "Authors Guild calls on publishers to share Anthropic wealth",
+          "summary": "",
+          "published_at": "2026-09-28T21:14:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8e8f3558746b2a99",
+      "title": "Florida asks for order to halt ChatGPT development",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884415",
+          "target_url": "https://www.axios.com/2026/09/28/florida-openai-chatgpt-injunction-uthmeier",
+          "independent": false,
+          "title": "Florida asks for order to halt ChatGPT development",
+          "summary": "",
+          "published_at": "2026-09-28T21:11:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5883f8e150f1b844",
+      "title": "Researchers proved AI has deleted every reason universities exist",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884413",
+          "target_url": "https://twitter.com/thesupermannx/status/2104519992532496810",
+          "independent": false,
+          "title": "Researchers proved AI has deleted every reason universities exist",
+          "summary": "",
+          "published_at": "2026-09-28T21:11:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fe02938df5e22255",
+      "title": "Man Says Meta's Muse AI Gave His Home Address Out to Strangers",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49884367",
+          "target_url": "https://futurism.com/artificial-intelligence/metas-muse-ai-giving-users-home-addresses",
+          "independent": false,
+          "title": "Man Says Meta's Muse AI Gave His Home Address Out to Strangers",
+          "summary": "",
+          "published_at": "2026-09-28T21:08:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "df5728f39537c40a",
+      "title": "The New Guy Deleted Our Discounts on a Thursday. Nobody Got Fired, and I Would Do It Again.",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@codewar_with_me/the-new-guy-deleted-our-discounts-on-a-thursday-nobody-got-fired-and-i-would-do-it-again-2c888f056d0f",
+          "target_url": "https://medium.com/@codewar_with_me/the-new-guy-deleted-our-discounts-on-a-thursday-nobody-got-fired-and-i-would-do-it-again-2c888f056d0f",
+          "independent": false,
+          "title": "The New Guy Deleted Our Discounts on a Thursday. Nobody Got Fired, and I Would Do It Again.",
+          "summary": "The outage lasted 38 minutes. The real damage would have been the next one. Continue reading on Medium »",
+          "published_at": "2026-09-28T21:19:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "64e76464b4d1f333",
+      "title": "Beyond the Hype: How to Build an AI-Powered Investor Intelligence Engine for Web3 Assets",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rfj1/beyond-the-hype-how-to-build-an-ai-powered-investor-intelligence-engine-for-web3-assets-c0729d2d829b",
+          "target_url": "https://medium.com/@rfj1/beyond-the-hype-how-to-build-an-ai-powered-investor-intelligence-engine-for-web3-assets-c0729d2d829b",
+          "independent": false,
+          "title": "Beyond the Hype: How to Build an AI-Powered Investor Intelligence Engine for Web3 Assets",
+          "summary": "Why asking an AI if a token is a “good buy” fails, and the technical blueprint needed to build a disciplined decision support engine. Continue reading on Medium »",
+          "published_at": "2026-09-28T21:17:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "18d3cfc52eb640a6",
+      "title": "Making Database Optimization Measurable with Query Observability",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bdgeek/making-database-optimization-measurable-with-query-observability-19a379ca3d2d",
+          "target_url": "https://medium.com/@bdgeek/making-database-optimization-measurable-with-query-observability-19a379ca3d2d",
+          "independent": false,
+          "title": "Making Database Optimization Measurable with Query Observability",
+          "summary": "*Query Observability & Experimental Instrumentation* Continue reading on Medium »",
+          "published_at": "2026-09-28T21:16:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "452cca4220e1826a",
+      "title": "Every Dashboard Was Green. Checkout Was Still Broken.",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@codewar_with_me/every-dashboard-was-green-checkout-was-still-broken-bdd5d49b38a1",
+          "target_url": "https://medium.com/@codewar_with_me/every-dashboard-was-green-checkout-was-still-broken-bdd5d49b38a1",
+          "independent": false,
+          "title": "Every Dashboard Was Green. Checkout Was Still Broken.",
+          "summary": "For 47 minutes, the only thing that noticed was a customer. Continue reading on Medium »",
+          "published_at": "2026-09-28T21:16:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e44aab715dd8043a",
+      "title": "AI Scam Alert 2026: How a 3-Second Voice Clone Almost Cost Me $500",
+      "first_seen": "2026-09-29T06:27:46+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@rehabfarhan252/ai-scam-alert-2026-how-a-3-second-voice-clone-almost-cost-me-500-b88dba5ca02c",
+          "target_url": "https://medium.com/@rehabfarhan252/ai-scam-alert-2026-how-a-3-second-voice-clone-almost-cost-me-500-b88dba5ca02c",
+          "independent": false,
+          "title": "AI Scam Alert 2026: How a 3-Second Voice Clone Almost Cost Me $500",
+          "summary": "Figure: How a 3-second voice clip from TikTok can be cloned into a full AI scam call in 2026. Continue reading on Medium »",
+          "published_at": "2026-09-28T21:16:16+00:00",
           "date_precision": "time"
         }
       ],
