@@ -1,10 +1,28 @@
 {
-  "edition_date": "2026-09-27",
-  "window_start": "2026-07-28T11:01:05.679303+09:00",
-  "window_end": "2026-09-26T11:01:05.679303+09:00",
-  "collected_at": "2026-09-27T19:01:14.476102+09:00",
+  "edition_date": "2026-09-28",
+  "window_start": "2026-07-30T15:01:14.283892+09:00",
+  "window_end": "2026-09-28T15:01:14.283892+09:00",
+  "collected_at": "2026-09-28T15:01:14.283892+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "b6ce910accbcbcac",
+      "title": "0.158.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+      "source_summary": "## New Features - Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. (#47639, #47896, #48118) - Connect to MCP servers that require pre-registered OAuth client secrets, including through `codex mcp add --oauth-client-secret`. (#47891) - Secure direct exec-server WebSocket connections with bearer tokens, including connections configured through app-server. (#47601, #47648) - Image generation and editing can explicit",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-28T15:01:17+09:00",
+      "published_at": "2026-09-28T05:07:23+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.158.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 전체 화면 TUI에서 선택 시 복사 및 마우스 오른쪽 버튼 클릭 붙여넣기를 구성합니다. 복사된 대화록 선택은 이제 마크다운 서식을 유지합니다. (# 47639, # 47896, # 48118) - `codex mcp add --oauth-client-secret` 을 통해 사전 등록된 OAuth 클라이언트 암호가 필요한 MCP 서버에 연결합니다. (# 47891) - 앱 서버를 통해 구성된 연결을 포함하여 베어러 토큰으로 직접 실행 서버 웹 소켓 연결을 보호합니다. (# 47601, # 47648) - 이미지 생성 및 편집이 명시적일 수 있음",
+      "release_notes_ko": {
+        "new_features": "전체 화면 TUI에서 선택 시 복사 및 마우스 오른쪽 버튼 클릭 붙여넣기를 구성합니다. 복사된 성적표 선택 항목은 이제 마크다운 서식을 유지합니다.\n`codex mcp add --oauth-client-secret` 을 포함하여 사전 등록된 OAuth 클라이언트 암호가 필요한 MCP 서버에 연결합니다.\n앱 서버를 통해 구성된 연결을 포함하여 베어러 토큰으로 직접 실행 서버 WebSocket 연결을 보호합니다.",
+        "bug_fixes": "일반 Windows 10 경로, 거부된 저장된 자격 증명 및 대규모 사용 권한 정책과 관련된 Windows 샌드박스 오류가 수정되었습니다.\n중첩된 쓰기 가능 루트로 Linux 샌드박스 시작을 수정하고 Linux 및 macOS의 쓰기 가능 루트에서 Git 메타데이터 보호를 유지했습니다.\n이제 macOS 패치 작업은 기존 사용 권한이 적용되는 시스템 경로 별칭을 인식하여 불필요한 승인 프롬프트를 방지합니다."
+      }
+    },
     {
       "id": "2f20ff05fa98f6cd",
       "title": "0.157.1",
