@@ -1,9 +1,9 @@
 {
   "news": {
-    "checked_at": "2026-09-28T23:04:18.882898+09:00",
+    "checked_at": "2026-09-29T00:04:36.957844+09:00",
     "status": "partial",
     "candidate_count": 0,
-    "archive_count": 298,
+    "archive_count": 299,
     "sources": [
       {
         "id": "openai-news",
@@ -100,10 +100,10 @@
         "id": "hacker-news",
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-        "status": "partial",
-        "count": 7,
-        "held_count": 1,
-        "excluded_count": 31,
+        "status": "ok",
+        "count": 11,
+        "held_count": 0,
+        "excluded_count": 29,
         "skipped_count": 0,
         "coverage_limited": false
       },
@@ -134,9 +134,9 @@
         "name": "The Verge",
         "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
         "status": "ok",
-        "count": 7,
+        "count": 9,
         "held_count": 0,
-        "excluded_count": 3,
+        "excluded_count": 1,
         "skipped_count": 7,
         "coverage_limited": false
       },
@@ -148,7 +148,7 @@
         "count": 20,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 17,
+        "skipped_count": 18,
         "coverage_limited": false
       },
       {
@@ -181,7 +181,7 @@
         "count": 2,
         "held_count": 0,
         "excluded_count": 24,
-        "skipped_count": 1,
+        "skipped_count": 2,
         "coverage_limited": false
       },
       {
@@ -200,10 +200,10 @@
         "name": "InfoQ",
         "url": "https://feed.infoq.com/ai-ml-data-eng/",
         "status": "ok",
-        "count": 6,
+        "count": 5,
         "held_count": 0,
-        "excluded_count": 9,
-        "skipped_count": 6,
+        "excluded_count": 10,
+        "skipped_count": 5,
         "coverage_limited": false
       },
       {
@@ -277,7 +277,7 @@
         "coverage_limited": false
       }
     ],
-    "pending_event_count": 792
+    "pending_event_count": 795
   },
   "documents": {
     "checked_at": "2026-09-28T06:26:21.001688+09:00",

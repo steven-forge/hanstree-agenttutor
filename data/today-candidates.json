@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-09-28T23:03:53.794301+09:00",
-  "window_start": "2026-07-30T23:03:53.794301+09:00",
-  "window_end": "2026-09-28T23:03:53.794301+09:00",
-  "edition_date": "2026-09-28",
+  "collected_at": "2026-09-29T00:04:12.379344+09:00",
+  "window_start": "2026-07-31T00:04:12.379344+09:00",
+  "window_end": "2026-09-29T00:04:12.379344+09:00",
+  "edition_date": "2026-09-29",
   "sources": [
     {
       "id": "openai-news",
@@ -99,10 +99,10 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 7,
-      "held_count": 1,
-      "excluded_count": 31,
+      "status": "ok",
+      "count": 11,
+      "held_count": 0,
+      "excluded_count": 29,
       "skipped_count": 0,
       "coverage_limited": false
     },
@@ -133,9 +133,9 @@
       "name": "The Verge",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
-      "count": 7,
+      "count": 9,
       "held_count": 0,
-      "excluded_count": 3,
+      "excluded_count": 1,
       "skipped_count": 7,
       "coverage_limited": false
     },
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 17,
+      "skipped_count": 18,
       "coverage_limited": false
     },
     {
@@ -180,7 +180,7 @@
       "count": 2,
       "held_count": 0,
       "excluded_count": 24,
-      "skipped_count": 1,
+      "skipped_count": 2,
       "coverage_limited": false
     },
     {
@@ -199,10 +199,10 @@
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 6,
+      "count": 5,
       "held_count": 0,
-      "excluded_count": 9,
-      "skipped_count": 6,
+      "excluded_count": 10,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 298,
   "candidates": [],
-  "hourly_collected_at": "2026-09-28T23:04:18.882898+09:00",
-  "hourly_window_start": "2026-09-25T23:04:18.882898+09:00",
+  "hourly_collected_at": "2026-09-29T00:04:36.957844+09:00",
+  "hourly_window_start": "2026-09-26T00:04:36.957844+09:00",
   "events": [
     {
       "id": "b287b34a5390dd7e",
@@ -1426,6 +1426,17 @@
           "summary": "",
           "published_at": "2026-09-28T13:01:21+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49878837",
+          "target_url": "https://agentcat.app/",
+          "independent": false,
+          "title": "Show HN: Agent Cat – Claude Code, Codex and Gemini limits in your menu bar",
+          "summary": "",
+          "published_at": "2026-09-28T14:45:08+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2397,27 +2408,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "e71344fd8bf786ee",
-      "title": "AI boom could wipe 230M budget phones a year from the market",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845658",
-          "target_url": "https://www.theregister.com/personal-tech/2026/09/24/ai-boom-could-wipe-230-million-budget-phones-a-year-from-the-market/5298906",
-          "independent": false,
-          "title": "AI boom could wipe 230M budget phones a year from the market",
-          "summary": "",
-          "published_at": "2026-09-25T15:01:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "78427621d734c6da",
       "title": "LLM Policies: Progress at All Costs",
       "first_seen": "2026-09-26T00:02:12+09:00",
@@ -2442,237 +2432,6 @@
           "title": "LLM Policies: Progress at All Costs",
           "summary": "",
           "published_at": "2026-09-27T00:55:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5e917b53c8de45d3",
-      "title": "What's still manual when debugging AI agents?",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845366",
-          "target_url": "https://www.traser.dev/",
-          "independent": false,
-          "title": "What's still manual when debugging AI agents?",
-          "summary": "",
-          "published_at": "2026-09-25T14:43:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d04661336627ef91",
-      "title": "Show HN: Llama.cpp fork with 2-4x multiGPU speed for MoE models bigger than VRAM",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845314",
-          "target_url": "https://github.com/neurall/llama.cpp",
-          "independent": false,
-          "title": "Show HN: Llama.cpp fork with 2-4x multiGPU speed for MoE models bigger than VRAM",
-          "summary": "",
-          "published_at": "2026-09-25T14:40:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e133f9fa5ee553e0",
-      "title": "Show HN: PixelSniff – Check if a photo is AI-generated, no sign-up",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845249",
-          "target_url": "https://pixelsniff.com/",
-          "independent": false,
-          "title": "Show HN: PixelSniff – Check if a photo is AI-generated, no sign-up",
-          "summary": "",
-          "published_at": "2026-09-25T14:34:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "614ec90506ea7e8c",
-      "title": "Giving AI agents a voice at the table",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49845215",
-          "target_url": "https://www.highfidelity.com/blog/giving-our-a.i.-agents-a-voice-at-the-table",
-          "independent": false,
-          "title": "Giving AI agents a voice at the table",
-          "summary": "",
-          "published_at": "2026-09-25T14:32:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bb8cb954e062896c",
-      "title": "Affected by layoffs? Don’t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/disrupt-2026-layoff-expo-plus-passes-available-for-75-dollars",
-          "target_url": "https://techcrunch.com/2026/09/25/disrupt-2026-layoff-expo-plus-passes-available-for-75-dollars",
-          "independent": true,
-          "title": "Affected by layoffs? Don’t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass",
-          "summary": "Your next opportunity could be one conversation away. Get your Expo+ Pass for just $75. Limited to the first 100 qualifying people.",
-          "published_at": "2026-09-25T14:15:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "0236a178036dd467",
-      "title": "Home Made CobbleDB Replaces DynamoDB at Perplexity to Cut Query Latency 5x and Reduce Cloud Storage",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/09/cobbledb-perplexity",
-          "target_url": "https://www.infoq.com/news/2026/09/cobbledb-perplexity",
-          "independent": true,
-          "title": "Home Made CobbleDB Replaces DynamoDB at Perplexity to Cut Query Latency 5x and Reduce Cloud Storage",
-          "summary": "Perplexity has migrated its search infrastructure from Amazon DynamoDB to CobbleDB, an internally developed key-value store in Rust. This change reduced latency and costs associated with handling large document batches. The new architecture supports high query volumes more efficiently, achieving improved latency and reduced storage expenses while managing significant production traffic. By Olimpiu Pop",
-          "published_at": "2026-09-25T14:14:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "589460551c8c0ff6",
-      "title": "GPT-6 vs Claude 5.5:",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@abidalishah4821/gpt-6-vs-claude-5-5-db834d23aa4b",
-          "target_url": "https://medium.com/@abidalishah4821/gpt-6-vs-claude-5-5-db834d23aa4b",
-          "independent": false,
-          "title": "GPT-6 vs Claude 5.5:",
-          "summary": "Nineteen days. That is all that separated the two biggest AI launches of the year. On September 3, OpenAI released GPT-6 Astra, calling it… Continue reading on Medium »",
-          "published_at": "2026-09-25T14:52:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8fa52a838ff9e81a",
-      "title": "An AI agent: a technical component, an asset to be secured, or a risk in its entirety?",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@baya.lonqueux_30655/an-ai-agent-a-technical-component-an-asset-to-be-secured-or-a-risk-in-its-entirety-ab2c4aacbb68",
-          "target_url": "https://medium.com/@baya.lonqueux_30655/an-ai-agent-a-technical-component-an-asset-to-be-secured-or-a-risk-in-its-entirety-ab2c4aacbb68",
-          "independent": false,
-          "title": "An AI agent: a technical component, an asset to be secured, or a risk in its entirety?",
-          "summary": "Artificial intelligence is now entering a new phase in the business world. Following conversational assistants and content-generation… Continue reading on Medium »",
-          "published_at": "2026-09-25T14:51:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "159ba92846b89897",
-      "title": "AI Is Forecast to Create 170 Million Jobs and Displace 92 Million by 2030.",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://namanrohanidya.medium.com/ai-is-forecast-to-create-170-million-jobs-and-displace-92-million-by-2030-ca6e77fe8bb5",
-          "target_url": "https://namanrohanidya.medium.com/ai-is-forecast-to-create-170-million-jobs-and-displace-92-million-by-2030-ca6e77fe8bb5",
-          "independent": false,
-          "title": "AI Is Forecast to Create 170 Million Jobs and Displace 92 Million by 2030.",
-          "summary": "A net gain of 78 million jobs sounds like good news. The summary buries three things that actually matter for your career. Continue reading on Medium »",
-          "published_at": "2026-09-25T14:51:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "843bfcdf0dfe423a",
-      "title": "The First Contact: The Vibrate Secret Where Time Stands Still",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@tb2015yy/the-first-contact-the-vibrate-secret-where-time-stands-still-d047e521e7a5",
-          "target_url": "https://medium.com/@tb2015yy/the-first-contact-the-vibrate-secret-where-time-stands-still-d047e521e7a5",
-          "independent": false,
-          "title": "The First Contact: The Vibrate Secret Where Time Stands Still",
-          "summary": "When a human continues to walk through that dark nothingness behind the door, a moment comes when even the sound of their own footsteps… Continue reading on Medium »",
-          "published_at": "2026-09-25T14:50:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d09ba26affe89d09",
-      "title": "All Your Crates Are Belong to Us",
-      "first_seen": "2026-09-26T00:02:12+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://blog.jimmychandra.com/all-your-crates-are-belong-to-us-b63dc9693f5b",
-          "target_url": "https://blog.jimmychandra.com/all-your-crates-are-belong-to-us-b63dc9693f5b",
-          "independent": false,
-          "title": "All Your Crates Are Belong to Us",
-          "summary": "What happened when I asked several AI models to make a puzzle game with feel Continue reading on Incoherent Ramblings »",
-          "published_at": "2026-09-25T14:48:42+00:00",
           "date_precision": "time"
         }
       ],
@@ -3012,27 +2771,6 @@
           "title": "Anthropic’s founders seek voting control ahead of IPO",
           "summary": "Anthropic is asking its shareholders to approve a structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters.",
           "published_at": "2026-09-25T15:40:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
-      "id": "e8152c1305967697",
-      "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-      "first_seen": "2026-09-26T01:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware",
-          "target_url": "https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware",
-          "independent": true,
-          "title": "TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware",
-          "summary": "At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.",
-          "published_at": "2026-09-25T15:00:00+00:00",
           "date_precision": "time"
         }
       ],
@@ -17571,49 +17309,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "dd3480c18e77adf8",
-      "title": "Nvidia Launches Agent Safety Platform to Secure Agents, Testing to Deployment",
-      "first_seen": "2026-09-28T19:03:09+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49875565",
-          "target_url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
-          "independent": false,
-          "title": "Nvidia Launches Agent Safety Platform to Secure Agents, Testing to Deployment",
-          "summary": "",
-          "published_at": "2026-09-28T09:37:44+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49875500",
-          "target_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring",
-          "independent": false,
-          "title": "Nvidia Open Agent Safety Platform",
-          "summary": "",
-          "published_at": "2026-09-28T09:27:59+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/nvidia-openshell-sentry-agents",
-          "target_url": "https://thenewstack.io/nvidia-openshell-sentry-agents",
-          "independent": true,
-          "title": "Nvidia launches Open Agent Safety Platform to lock down rogue AI agents",
-          "summary": "OpenAI, Anthropic, Meta, and Google have all recently disclosed that their models broke out of their test environments and reached The post Nvidia launches Open Agent Safety Platform to lock down rogue AI agents appeared first on The New Stack .",
-          "published_at": "2026-09-28T10:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
-    },
-    {
       "id": "ddc7b4340c143d7d",
       "title": "Google: AI-Assisted Rewrites of C/C++ Dependencies to Rust",
       "first_seen": "2026-09-28T19:03:09+09:00",
@@ -18741,6 +18436,28 @@
           "summary": "Instinct has raised a $1 billion Series C, saying 'we're just getting started.' The company is now valued at $10 billion.",
           "published_at": "2026-09-28T13:38:48+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879152",
+          "target_url": "https://reuters.com/technology/ai-agent-firm-instinct-raises-1-billion-latest-funding-round-2026-09-28",
+          "independent": false,
+          "title": "AI agent startup Instinct raises $1B Series C at $10B valuation",
+          "summary": "",
+          "published_at": "2026-09-28T15:02:19+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879137",
+          "target_url": "https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation",
+          "independent": false,
+          "title": "Viral AI agent Instinct raises $1B Series C at a $10B valuation",
+          "summary": "",
+          "published_at": "2026-09-28T15:01:12+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -18893,7 +18610,364 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "aab675fc011070f8",
+      "title": "Show HN: Online RTSP camera simulator for testing AI vision or VMS",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879183",
+          "target_url": "https://illucam.com/",
+          "independent": false,
+          "title": "Show HN: Online RTSP camera simulator for testing AI vision or VMS",
+          "summary": "",
+          "published_at": "2026-09-28T15:04:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ee4af07bc9472ecf",
+      "title": "Cory Doctorow says Hugging Face attack was just \"a Python loop and a chatbot\"",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879160",
+          "target_url": "https://pluralistic.net/2026/09/12/god-in-the-box",
+          "independent": false,
+          "title": "Cory Doctorow says Hugging Face attack was just \"a Python loop and a chatbot\"",
+          "summary": "",
+          "published_at": "2026-09-28T15:02:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4f19348ce95610c",
+      "title": "What if automating AI R&D triggers an intelligence explosion?",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879079",
+          "target_url": "https://casp.ac/reports/intelligence-explosion",
+          "independent": false,
+          "title": "What if automating AI R&D triggers an intelligence explosion?",
+          "summary": "",
+          "published_at": "2026-09-28T14:57:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "81810cf2cfa93b35",
+      "title": "Jensen Huang says AI distillation is 'competition.'",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879032",
+          "target_url": "https://www.cnbc.com/2026/09/28/nvidias-jensen-huang-ai-distillation-china.html",
+          "independent": false,
+          "title": "Jensen Huang says AI distillation is 'competition.'",
+          "summary": "",
+          "published_at": "2026-09-28T14:55:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "551015797b6713a9",
+      "title": "Nvidia AI Agent Safety Stack",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49879006",
+          "target_url": "https://blogs.nvidia.com/blog/ai-security-agent-stack",
+          "independent": false,
+          "title": "Nvidia AI Agent Safety Stack",
+          "summary": "",
+          "published_at": "2026-09-28T14:54:33+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ce59e2009503b306",
+      "title": "Nvidia boosts share buyback by record $150B",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49878982",
+          "target_url": "https://www.reuters.com/business/nvidia-adds-150-billion-existing-share-repurchase-plan-2026-09-28",
+          "independent": false,
+          "title": "Nvidia boosts share buyback by record $150B",
+          "summary": "",
+          "published_at": "2026-09-28T14:53:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7a21b9c5237a8a16",
+      "title": "Anthropic: Emergent Misalignment from Reward Hacking",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49878806",
+          "target_url": "https://www.anthropic.com/research/emergent-misalignment-reward-hacking",
+          "independent": false,
+          "title": "Anthropic: Emergent Misalignment from Reward Hacking",
+          "summary": "",
+          "published_at": "2026-09-28T14:43:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b51f9afafff57342",
+      "title": "Opus 5.5 vs. GPT-6 in pi-agent: reasoning efforts and DeepSeek, GLM, Qwen",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49878767",
+          "target_url": "https://ibragim.dev/leaderboard",
+          "independent": false,
+          "title": "Opus 5.5 vs. GPT-6 in pi-agent: reasoning efforts and DeepSeek, GLM, Qwen",
+          "summary": "",
+          "published_at": "2026-09-28T14:41:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ae785329e8a58042",
+      "title": "The SaaSpocalypse that wasn’t, with Atlassian CEO Mike Cannon-Brookes",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira",
+          "target_url": "https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira",
+          "independent": true,
+          "title": "The SaaSpocalypse that wasn’t, with Atlassian CEO Mike Cannon-Brookes",
+          "summary": "Today, I’m talking with Mike Cannon-Brookes, who is cofounder and CEO of Atlassian. Atlassian is one of those companies that every other company runs on — it makes important platform tools like Jira and Trello that allow people to organize and manage big teams, create shared databases of company information, and generally allow work to […]",
+          "published_at": "2026-09-28T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "d3c128888a84b05e",
+      "title": "Next five VCs judging Startup Battlefield 200 contenders at TechCrunch Disrupt 2026",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/next-five-vcs-judging-startup-battlefield-200-contenders-at-techcrunch-disrupt-2026",
+          "target_url": "https://techcrunch.com/2026/09/28/next-five-vcs-judging-startup-battlefield-200-contenders-at-techcrunch-disrupt-2026",
+          "independent": true,
+          "title": "Next five VCs judging Startup Battlefield 200 contenders at TechCrunch Disrupt 2026",
+          "summary": "Thousands of applications. Multiple rounds of review. Hundreds of hours spent evaluating startups from around the world. Now comes the part everyone has been waiting for. Startup Battlefield 200 is almost here, and with today’s announcement, the judging panel is nearly complete. In just a couple of weeks, 200 carefully selected startups will gather at […]",
+          "published_at": "2026-09-28T14:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "a437996218ff1453",
+      "title": "Modulate raises $25M for its voice models and analysis suite",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/modulate-raises-25m-for-its-voice-models-and-analysis-suite",
+          "target_url": "https://techcrunch.com/2026/09/28/modulate-raises-25m-for-its-voice-models-and-analysis-suite",
+          "independent": true,
+          "title": "Modulate raises $25M for its voice models and analysis suite",
+          "summary": "Modulate deploys its models to detect deepfake, fraud and scam",
+          "published_at": "2026-09-28T14:05:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "0bfd9f80fa5f5a3b",
+      "title": "Microsoft Copilot",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/microsoft-copilot",
+          "target_url": "https://www.producthunt.com/products/microsoft-copilot",
+          "independent": false,
+          "title": "Microsoft Copilot",
+          "summary": "The Al built for work Discussion | Link",
+          "published_at": "2026-09-25T19:17:15+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0b36dbc88ffca4b5",
+      "title": "AI in Healthcare Is Working Quietly. The Hard Part Isn’t the Algorithm.",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@mehmetakrmehmet1/ai-in-healthcare-is-working-quietly-the-hard-part-isnt-the-algorithm-a1b1b24b2b19",
+          "target_url": "https://medium.com/@mehmetakrmehmet1/ai-in-healthcare-is-working-quietly-the-hard-part-isnt-the-algorithm-a1b1b24b2b19",
+          "independent": false,
+          "title": "AI in Healthcare Is Working Quietly. The Hard Part Isn’t the Algorithm.",
+          "summary": "When people imagine AI transforming medicine, they usually picture something dramatic: a machine that diagnoses a rare disease in seconds… Continue reading on Medium »",
+          "published_at": "2026-09-28T15:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1cd8b3b04fa6f8eb",
+      "title": "The API Revolution Nobody Saw Coming: How AI Agents Quietly Took Over the Internet’s Plumbing",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://pub.towardsai.net/the-api-revolution-nobody-saw-coming-how-ai-agents-quietly-took-over-the-internets-plumbing-9e7ffe221ff2",
+          "target_url": "https://pub.towardsai.net/the-api-revolution-nobody-saw-coming-how-ai-agents-quietly-took-over-the-internets-plumbing-9e7ffe221ff2",
+          "independent": false,
+          "title": "The API Revolution Nobody Saw Coming: How AI Agents Quietly Took Over the Internet’s Plumbing",
+          "summary": "AI agents are quietly becoming the primary consumers of APIs. Here’s how MCP, A2A, and agentic protocols are reshaping the API economy in… Continue reading on Towards AI »",
+          "published_at": "2026-09-28T15:01:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5ef23cb94646f568",
+      "title": "Sin.ai — Intelligence Without Hesitation",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@fxaiagent/sin-ai-intelligence-without-hesitation-b361efe4d82c",
+          "target_url": "https://medium.com/@fxaiagent/sin-ai-intelligence-without-hesitation-b361efe4d82c",
+          "independent": false,
+          "title": "Sin.ai — Intelligence Without Hesitation",
+          "summary": "Custom AI agents, autonomous market execution and onchain intelligence — built for a future where software does not just assist, but acts. Continue reading on Medium »",
+          "published_at": "2026-09-28T14:59:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "a8835481845bbfdb",
+      "title": "Generative AI Sadece İçerik Üretmiyor: Artık Olasılıkları Modelliyor",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ssenturkilayda/generative-ai-sadece-i%CC%87%C3%A7erik-%C3%BCretmiyor-art%C4%B1k-olas%C4%B1l%C4%B1klar%C4%B1-modelliyor-4ce2a771fe7d",
+          "target_url": "https://medium.com/@ssenturkilayda/generative-ai-sadece-i%CC%87%C3%A7erik-%C3%BCretmiyor-art%C4%B1k-olas%C4%B1l%C4%B1klar%C4%B1-modelliyor-4ce2a771fe7d",
+          "independent": false,
+          "title": "Generative AI Sadece İçerik Üretmiyor: Artık Olasılıkları Modelliyor",
+          "summary": "Generative AI denildiğinde aklımıza hâlâ ilk olarak metinler, görseller ve videolar geliyor. Oysa üretken modellerin veri bilimi açısından… Continue reading on Medium »",
+          "published_at": "2026-09-28T14:59:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "24d634b534a11e79",
+      "title": "The Hidden Cost of Poor Data Governance in the Age of AI",
+      "first_seen": "2026-09-29T00:04:36+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sandylewis353/the-hidden-cost-of-poor-data-governance-in-the-age-of-ai-682d41c69edd",
+          "target_url": "https://medium.com/@sandylewis353/the-hidden-cost-of-poor-data-governance-in-the-age-of-ai-682d41c69edd",
+          "independent": false,
+          "title": "The Hidden Cost of Poor Data Governance in the Age of AI",
+          "summary": "Why AI initiatives fail when organizations treat governance as an afterthought. Continue reading on Medium »",
+          "published_at": "2026-09-28T14:58:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
-  "auto_published_count": 0
+  "auto_published_count": 1
 }
