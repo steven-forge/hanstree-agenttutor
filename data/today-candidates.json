@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T12:01:50.521974+09:00",
-  "window_start": "2026-07-31T12:01:50.521974+09:00",
-  "window_end": "2026-09-29T12:01:50.521974+09:00",
+  "collected_at": "2026-09-29T12:13:29.213075+09:00",
+  "window_start": "2026-07-31T12:13:29.213075+09:00",
+  "window_end": "2026-09-29T12:13:29.213075+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -10,10 +10,12 @@
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 125,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "google-ai",
@@ -21,10 +23,12 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 20,
-      "coverage_limited": true
+      "coverage_limited": true,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "codex-releases",
@@ -32,10 +36,12 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 188,
       "skipped_count": 24,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "claude-releases",
@@ -43,10 +49,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 52,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "gemini-releases",
@@ -54,10 +62,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 69,
       "skipped_count": 10,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "grok-releases",
@@ -65,13 +75,15 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: Retry-After 대기시간 초과 (75465.0초)"
-      ]
+        "한국어 번역 실패: 한국어 번역에 실패했습니다."
+      ],
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "anthropic-news",
@@ -79,10 +91,12 @@
       "url": "https://www.anthropic.com/news",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 1,
       "skipped_count": 13,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "xai-news",
@@ -90,21 +104,25 @@
       "url": "https://x.ai/news",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 60,
       "skipped_count": 25,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     },
     {
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 7,
+      "count": 10,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
-      "excluded_count": 32,
-      "skipped_count": 4,
-      "coverage_limited": false
+      "excluded_count": 28,
+      "skipped_count": 7,
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "huggingface-blog",
@@ -112,10 +130,12 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
       "count": 1,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 29,
       "skipped_count": 1,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "wired-ai",
@@ -123,10 +143,12 @@
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
       "count": 6,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 4,
       "skipped_count": 6,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "the-verge-ai",
@@ -134,10 +156,12 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
       "count": 10,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 10,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "techcrunch-ai",
@@ -145,10 +169,12 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "status": "ok",
       "count": 20,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 20,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "ars-technica",
@@ -156,10 +182,12 @@
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 20,
       "skipped_count": 0,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "product-hunt",
@@ -167,10 +195,12 @@
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
       "count": 6,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 24,
       "skipped_count": 6,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "the-new-stack-ai",
@@ -178,10 +208,12 @@
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
       "count": 4,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 22,
       "skipped_count": 4,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "the-rundown-ai",
@@ -189,10 +221,12 @@
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
       "count": 1,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 19,
       "skipped_count": 1,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "infoq-ai",
@@ -200,10 +234,12 @@
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
       "count": 5,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 10,
       "skipped_count": 5,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "medium-ai",
@@ -211,10 +247,12 @@
       "url": "https://medium.com/feed/tag/artificial-intelligence",
       "status": "ok",
       "count": 5,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:58.889651+09:00"
     },
     {
       "id": "venturebeat-ai",
@@ -222,11 +260,13 @@
       "url": "https://venturebeat.com/category/ai/feed/",
       "status": "failed",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:58.889651+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "HTTP 429: Too Many Requests"
+      "error": "HTTP 429: Too Many Requests",
+      "last_success_at": null
     },
     {
       "id": "youtube",
@@ -234,11 +274,13 @@
       "url": "https://www.googleapis.com/youtube/v3/search",
       "status": "not_configured",
       "count": 0,
+      "checked_at": null,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "필요한 환경 변수 없음: YOUTUBE_API_KEY"
+      "error": "필요한 환경 변수 없음: YOUTUBE_API_KEY",
+      "last_success_at": null
     },
     {
       "id": "x",
@@ -246,11 +288,13 @@
       "url": "https://api.x.com/2/tweets/search/recent",
       "status": "not_configured",
       "count": 0,
+      "checked_at": null,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "필요한 환경 변수 없음: X_BEARER_TOKEN"
+      "error": "필요한 환경 변수 없음: X_BEARER_TOKEN",
+      "last_success_at": null
     },
     {
       "id": "reddit",
@@ -258,11 +302,13 @@
       "url": "https://oauth.reddit.com/r/artificial/new",
       "status": "not_configured",
       "count": 0,
+      "checked_at": null,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET"
+      "error": "필요한 환경 변수 없음: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET",
+      "last_success_at": null
     },
     {
       "id": "claude-dev-blog",
@@ -270,17 +316,19 @@
       "url": "https://claude.dev/",
       "status": "ok",
       "count": 0,
+      "checked_at": "2026-09-29T12:13:29.213075+09:00",
       "held_count": 0,
       "excluded_count": 4,
       "skipped_count": 6,
-      "coverage_limited": false
+      "coverage_limited": false,
+      "last_success_at": "2026-09-29T12:13:29.213075+09:00"
     }
   ],
   "new_count": 0,
   "archive_count": 311,
   "candidates": [],
-  "hourly_collected_at": "2026-09-29T12:02:16.419051+09:00",
-  "hourly_window_start": "2026-09-26T12:02:16.419051+09:00",
+  "hourly_collected_at": "2026-09-29T12:13:58.889651+09:00",
+  "hourly_window_start": "2026-09-26T12:13:58.889651+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -4135,6 +4183,17 @@
           "title": "Claude Opus 5.5 Should Raise Your Ambitions",
           "summary": "",
           "published_at": "2026-09-26T11:53:21+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://dibishks.medium.com/13-ai-updates-you-should-know-from-claude-opus-5-5-to-ai-agents-everywhere-3352ba4125d6",
+          "target_url": "https://dibishks.medium.com/13-ai-updates-you-should-know-from-claude-opus-5-5-to-ai-agents-everywhere-3352ba4125d6",
+          "independent": false,
+          "title": "13 AI Updates You Should Know: From Claude Opus 5.5 to AI Agents Everywhere",
+          "summary": "AI is moving incredibly fast. Continue reading on Medium »",
+          "published_at": "2026-09-29T03:01:35+00:00",
           "date_precision": "time"
         }
       ],
@@ -19717,6 +19776,153 @@
           "title": "Chasing Midnight",
           "summary": "Three Years of Prompting the Impossible Continue reading on Medium »",
           "published_at": "2026-09-29T02:45:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd43ed37073c9e9b",
+      "title": "Run Decision Models on vLLM and Red Hat AI Using DiffusionGemma",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887652",
+          "target_url": "https://developers.redhat.com/articles/2026/09/28/run-decision-model-vllm-and-red-hat-ai",
+          "independent": false,
+          "title": "Run Decision Models on vLLM and Red Hat AI Using DiffusionGemma",
+          "summary": "",
+          "published_at": "2026-09-29T03:13:02+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fbb4f83bd6bb23f3",
+      "title": "GodsView AI – Live flights, ships, weather and world events on one map",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887623",
+          "target_url": "https://godsviewai.com/",
+          "independent": false,
+          "title": "GodsView AI – Live flights, ships, weather and world events on one map",
+          "summary": "",
+          "published_at": "2026-09-29T03:09:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "759d4b73c6333712",
+      "title": "Sprite Creator – AI Powered Sprite Sheet Maker – SpriteGen",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887620",
+          "target_url": "https://spritegen.ai/",
+          "independent": false,
+          "title": "Sprite Creator – AI Powered Sprite Sheet Maker – SpriteGen",
+          "summary": "",
+          "published_at": "2026-09-29T03:09:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c6a5868863bf042d",
+      "title": "AI World Media Group Launches AI World Publishing to Help Authors Bring Books to Market",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@aiworldJournal/ai-world-media-group-launches-ai-world-publishing-to-help-authors-bring-books-to-market-3079fd99633d",
+          "target_url": "https://medium.com/@aiworldJournal/ai-world-media-group-launches-ai-world-publishing-to-help-authors-bring-books-to-market-3079fd99633d",
+          "independent": false,
+          "title": "AI World Media Group Launches AI World Publishing to Help Authors Bring Books to Market",
+          "summary": "New division supports independent authors from first idea through editing, design, publishing, and distribution, with a focus on AI… Continue reading on Medium »",
+          "published_at": "2026-09-29T03:04:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "684b13499d7d0032",
+      "title": "From Stateless Chat to Customer Memory: Building a Support Agent with Hindsight",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@siddudursetti1065/from-stateless-chat-to-customer-memory-building-a-support-agent-with-hindsight-a1bc5ae1efd9",
+          "target_url": "https://medium.com/@siddudursetti1065/from-stateless-chat-to-customer-memory-building-a-support-agent-with-hindsight-a1bc5ae1efd9",
+          "independent": false,
+          "title": "From Stateless Chat to Customer Memory: Building a Support Agent with Hindsight",
+          "summary": "The hardest part of a customer-support chatbot is not generating a response. It is knowing which information from a customer’s past is… Continue reading on Medium »",
+          "published_at": "2026-09-29T03:04:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "19732234890fc3f9",
+      "title": "Naver Map Learned to Plan Your Trip on September 17. October Gives It Two Long Weekends.",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kidscarebridge/naver-map-learned-to-plan-your-trip-on-september-17-october-gives-it-two-long-weekends-fbe9de8b36a0",
+          "target_url": "https://medium.com/@kidscarebridge/naver-map-learned-to-plan-your-trip-on-september-17-october-gives-it-two-long-weekends-fbe9de8b36a0",
+          "independent": false,
+          "title": "Naver Map Learned to Plan Your Trip on September 17. October Gives It Two Long Weekends.",
+          "summary": "Seoul flight bookings for China’s National Day week are up 91% year over year. The new planners don’t know that yet. Continue reading on Medium »",
+          "published_at": "2026-09-29T03:01:05+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5147ba0c13396162",
+      "title": "If Algorithms Can Predict What We Will Write, How Free Is Human Creativity in Dennis Tenen’s…",
+      "first_seen": "2026-09-29T12:13:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@discusswithme/if-algorithms-can-predict-what-we-will-write-how-free-is-human-creativity-in-dennis-tenens-1605ece786bd",
+          "target_url": "https://medium.com/@discusswithme/if-algorithms-can-predict-what-we-will-write-how-free-is-human-creativity-in-dennis-tenens-1605ece786bd",
+          "independent": false,
+          "title": "If Algorithms Can Predict What We Will Write, How Free Is Human Creativity in Dennis Tenen’s…",
+          "summary": "What if creativity is not as unpredictable as we like to believe? Continue reading on Medium »",
+          "published_at": "2026-09-29T03:01:05+00:00",
           "date_precision": "time"
         }
       ],
