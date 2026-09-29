@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T08:00:53.083805+09:00",
-  "window_start": "2026-07-31T08:00:53.083805+09:00",
-  "window_end": "2026-09-29T08:00:53.083805+09:00",
+  "collected_at": "2026-09-29T09:01:07.394546+09:00",
+  "window_start": "2026-07-31T09:01:07.394546+09:00",
+  "window_end": "2026-09-29T09:01:07.394546+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -12,7 +12,7 @@
       "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 125,
+      "skipped_count": 124,
       "coverage_limited": false
     },
     {
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 12,
+      "count": 13,
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 0,
+      "excluded_count": 26,
+      "skipped_count": 1,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 19,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 310,
   "candidates": [],
-  "hourly_collected_at": "2026-09-29T08:01:16.843527+09:00",
-  "hourly_window_start": "2026-09-26T08:01:16.843527+09:00",
+  "hourly_collected_at": "2026-09-29T09:01:33.234335+09:00",
+  "hourly_window_start": "2026-09-26T09:01:33.234335+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -1362,6 +1362,28 @@
           "title": "Show HN: A never-ending chess match between Claude and Codex",
           "summary": "",
           "published_at": "2026-09-28T21:02:46+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885848",
+          "target_url": "https://musetogether.ai/",
+          "independent": false,
+          "title": "Show HN: MuseTogether – let Meta's Muse agents coordinate plans with each other",
+          "summary": "",
+          "published_at": "2026-09-28T23:21:59+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885733",
+          "target_url": "https://chicken.wildcardlabs.tech",
+          "independent": false,
+          "title": "Show HN: LLMs Play Chicken in Realtime",
+          "summary": "",
+          "published_at": "2026-09-28T23:10:54+00:00",
           "date_precision": "time"
         }
       ],
@@ -2474,38 +2496,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "9d6e778168cd0a68",
-      "title": "5 AI Tools I Use Every Day to Save 3 Hours",
-      "first_seen": "2026-09-26T05:01:19+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ii4812357/5-ai-tools-i-use-every-day-to-save-3-hours-44aaa1b36f29",
-          "target_url": "https://medium.com/@ii4812357/5-ai-tools-i-use-every-day-to-save-3-hours-44aaa1b36f29",
-          "independent": false,
-          "title": "5 AI Tools I Use Every Day to Save 3 Hours",
-          "summary": "I am not a tech expert. I just found these tools and they changed my daily work. Continue reading on Medium »",
-          "published_at": "2026-09-25T19:47:03+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@ramshasajjad22/10-ai-tools-that-can-save-you-hours-every-week-in-2026-507ba4f8476a",
-          "target_url": "https://medium.com/@ramshasajjad22/10-ai-tools-that-can-save-you-hours-every-week-in-2026-507ba4f8476a",
-          "independent": false,
-          "title": "10 AI Tools That Can Save You Hours Every Week in 2026",
-          "summary": "Every week, a surprising amount of time disappears into repetitive work: answering emails, summarizing information, organizing notes… Continue reading on Medium »",
-          "published_at": "2026-09-25T23:39:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "e3f6721d5d12e107",
       "title": "Thieves Stole ‘Nvidia’ Trailers. They Got 20 Tons of Sand",
       "first_seen": "2026-09-26T06:01:26+09:00",
@@ -2677,27 +2667,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "8d36fbefec5e6769",
-      "title": "Nvidia 5090 DLSS 5 power hits 647W, power connector runs hotter than the GPU die",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851680",
-          "target_url": "https://www.tomshardware.com/pc-components/gpus/nvidia-dlss-5-upscales-frame-rates-and-flame-temps-on-16-pin-power-connector-ai-gaming-tech-pushes-connector-to-uncomfortable-thermal-and-power-limits",
-          "independent": false,
-          "title": "Nvidia 5090 DLSS 5 power hits 647W, power connector runs hotter than the GPU die",
-          "summary": "",
-          "published_at": "2026-09-25T23:55:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "4f78f6b3a12490c5",
       "title": "Jev Plays Pokémon Red (LIVE): an AI decision model plays the whole game [video]",
       "first_seen": "2026-09-26T09:01:28+09:00",
@@ -2741,132 +2710,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "e3d0487c73bd6a30",
-      "title": "Our Big Dumb AI Gods Are Wrong",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851475",
-          "target_url": "https://news.massopen.ai/our-big-dumb-ai-gods-were-wrong",
-          "independent": false,
-          "title": "Our Big Dumb AI Gods Are Wrong",
-          "summary": "",
-          "published_at": "2026-09-25T23:34:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1d02ebc38f690997",
-      "title": "Speculative Reward Hacking in Coding Agents",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851266",
-          "target_url": "https://joinhandshake.com/research/ai/deepswe-reward-hacking",
-          "independent": false,
-          "title": "Speculative Reward Hacking in Coding Agents",
-          "summary": "",
-          "published_at": "2026-09-25T23:13:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b1e2243deb098663",
-      "title": "Show HN: Gaia, an AI character trying to earn enough to stay online",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851265",
-          "target_url": "https://gaiabot.lol",
-          "independent": false,
-          "title": "Show HN: Gaia, an AI character trying to earn enough to stay online",
-          "summary": "",
-          "published_at": "2026-09-25T23:13:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "0593dd89eea6fb2a",
-      "title": "OpenAI Codex 401 Outage",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851205",
-          "target_url": "https://status.openai.com",
-          "independent": false,
-          "title": "OpenAI Codex 401 Outage",
-          "summary": "",
-          "published_at": "2026-09-25T23:07:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5ce0f465a6afcf52",
-      "title": "Issues with Codex – Identified – Full Outage",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851169",
-          "target_url": "https://status.openai.com/incidents/01M3DCNWMW57HYK8FJ5FBFPA39",
-          "independent": false,
-          "title": "Issues with Codex – Identified – Full Outage",
-          "summary": "",
-          "published_at": "2026-09-25T23:04:25+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2eb6055eff1ec93",
-      "title": "OpenAI investigating 'dozens' of instances of agents acting improperly",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851154",
-          "target_url": "https://www.bbc.co.uk/news/articles/cw62jje658dlo",
-          "independent": false,
-          "title": "OpenAI investigating 'dozens' of instances of agents acting improperly",
-          "summary": "",
-          "published_at": "2026-09-25T23:02:54+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "c356bc7c63b52221",
       "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
       "first_seen": "2026-09-26T09:01:28+09:00",
@@ -2897,80 +2740,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "77d9f16476f74359",
-      "title": "Agentic AI for Business: The Shift Toward Intelligent Operations",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@worthy_ruby_zebra_941/agentic-ai-for-business-the-shift-toward-intelligent-operations-3a5d3491cba0",
-          "target_url": "https://medium.com/@worthy_ruby_zebra_941/agentic-ai-for-business-the-shift-toward-intelligent-operations-3a5d3491cba0",
-          "independent": false,
-          "title": "Agentic AI for Business: The Shift Toward Intelligent Operations",
-          "summary": "Artificial intelligence is entering a new phase. Continue reading on Medium »",
-          "published_at": "2026-09-25T23:51:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7b64d0fdf1126df6",
-      "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e4ca3dcbbb78",
-          "target_url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e4ca3dcbbb78",
-          "independent": false,
-          "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
-          "summary": "Chapter 4 of 5: Customer Support Just Became Part of the Sale. Continue reading on Medium »",
-          "published_at": "2026-09-25T23:39:37+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e45fc07ed767",
-          "target_url": "https://logansivanasen.medium.com/the-ai-buyer-series-how-search-shopping-and-support-change-when-customers-start-with-ai-e45fc07ed767",
-          "independent": false,
-          "title": "The AI Buyer Series: How Search, Shopping and Support Change When Customers Start With AI.",
-          "summary": "Chapter 3 of 5: Your Product Page Is Not the Shelf Anymore. AI Is. Continue reading on Medium »",
-          "published_at": "2026-09-25T23:39:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "61882a3c51c78c7a",
-      "title": "AI Can Help You Build Faster. It Still Can’t Make People Buy.",
-      "first_seen": "2026-09-26T09:01:28+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://queenbee2024.medium.com/ai-can-help-you-build-faster-it-still-cant-make-people-buy-9b788e958dd0",
-          "target_url": "https://queenbee2024.medium.com/ai-can-help-you-build-faster-it-still-cant-make-people-buy-9b788e958dd0",
-          "independent": false,
-          "title": "AI Can Help You Build Faster. It Still Can’t Make People Buy.",
-          "summary": "How to close the gap between creating faster and building something people will actually pay for. Continue reading on Medium »",
-          "published_at": "2026-09-25T23:38:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "0ea3cb3e493419ae",
@@ -15109,6 +14878,17 @@
           "summary": "",
           "published_at": "2026-09-28T09:44:05+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885972",
+          "target_url": "https://huggingface.co/blog/Hcompany/holo4",
+          "independent": false,
+          "title": "Holo4: Powering generalist computer-use agents",
+          "summary": "",
+          "published_at": "2026-09-28T23:37:23+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19261,11 +19041,22 @@
           "summary": "",
           "published_at": "2026-09-28T22:07:59+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns",
+          "target_url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns",
+          "independent": true,
+          "title": "OpenAI reportedly ditches model over safety concerns",
+          "summary": "A top executive at the AI lab told the Wall Street Journal that the model in question had displayed a poor aptitude for following orders.",
+          "published_at": "2026-09-28T23:39:20+00:00",
+          "date_precision": "time"
         }
       ],
-      "independent_source_count": 0,
+      "independent_source_count": 1,
       "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "독립 출처 부족"
     },
     {
       "id": "bb4d2090672e3463",
@@ -19428,6 +19219,279 @@
           "title": "Strata: Run Qwen3.8-Flash-Next 120 tokens/s Just One Gaming RTX GPU",
           "summary": "How a new open-source framework runs a 125-billion-parameter model on a single 12–24 GB gaming card, and the three tricks that make it fast Continue reading on Medium »",
           "published_at": "2026-09-28T22:34:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2af7129910db85e3",
+      "title": "China broadens travel curbs to encompass family of top AI talent",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886040",
+          "target_url": "https://www.business-standard.com/world-news/china-broadens-travel-curbs-to-encompass-family-of-top-ai-talent-126092801465_1.html",
+          "independent": false,
+          "title": "China broadens travel curbs to encompass family of top AI talent",
+          "summary": "",
+          "published_at": "2026-09-28T23:46:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "85553be64181d3ba",
+      "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886005",
+          "target_url": "https://www.reuters.com/business/finance/anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs-2026-09-28",
+          "independent": false,
+          "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
+          "summary": "",
+          "published_at": "2026-09-28T23:40:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "98663a058e8b73da",
+      "title": "Pklm-sandbox – A lightweight open-source LogitsProcessor for local LLMs",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885964",
+          "target_url": "https://github.com/TheImmortalPython/pklm-sandbox",
+          "independent": false,
+          "title": "Pklm-sandbox – A lightweight open-source LogitsProcessor for local LLMs",
+          "summary": "",
+          "published_at": "2026-09-28T23:36:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1da31eb0626a57e0",
+      "title": "WSJ reports OpenAI scrapped GPT-6.1 Astra over safety concerns",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885916",
+          "target_url": "https://runtimewire.com/article/wsj-reports-openai-scrapped-gpt-6-1-astra-over-safety-concerns",
+          "independent": false,
+          "title": "WSJ reports OpenAI scrapped GPT-6.1 Astra over safety concerns",
+          "summary": "",
+          "published_at": "2026-09-28T23:30:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6a86b5da918a93b1",
+      "title": "Check twice, cut once with LLM search relevance eval",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885806",
+          "target_url": "https://softwaredoug.com/blog/2025/01/19/llm-as-judge-both-ways",
+          "independent": false,
+          "title": "Check twice, cut once with LLM search relevance eval",
+          "summary": "",
+          "published_at": "2026-09-28T23:18:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "dc2057550eede31d",
+      "title": "AI tools generated nearly $1B in extra costs, Blue Cross insurers say",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885780",
+          "target_url": "https://www.reuters.com/legal/litigation/ai-tools-generated-nearly-1-billion-extra-costs-blue-cross-insurers-say-2026-09-24",
+          "independent": false,
+          "title": "AI tools generated nearly $1B in extra costs, Blue Cross insurers say",
+          "summary": "",
+          "published_at": "2026-09-28T23:15:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "85426e9e9d3875a7",
+      "title": "Tech OpenAI abandons plan to release upcoming model as safety concerns escalate",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885703",
+          "target_url": "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html",
+          "independent": false,
+          "title": "Tech OpenAI abandons plan to release upcoming model as safety concerns escalate",
+          "summary": "",
+          "published_at": "2026-09-28T23:06:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "04fa447b39d583a7",
+      "title": "Go Pace Yourself (an example of what AI films done right looks like)",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49885670",
+          "target_url": "https://www.reddit.com/r/Anthropic/comments/1wnd5qh/go_pace_yourself",
+          "independent": false,
+          "title": "Go Pace Yourself (an example of what AI films done right looks like)",
+          "summary": "",
+          "published_at": "2026-09-28T23:03:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "0cbbfbd801f57135",
+      "title": "Jangan Asal Jadi! Mengapa Desain Instan AI Sering Bikin Brand Terlihat Kaku",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jafarzarkasyi/jangan-asal-jadi-mengapa-desain-instan-ai-sering-bikin-brand-terlihat-kaku-e60da8d10749",
+          "target_url": "https://medium.com/@jafarzarkasyi/jangan-asal-jadi-mengapa-desain-instan-ai-sering-bikin-brand-terlihat-kaku-e60da8d10749",
+          "independent": false,
+          "title": "Jangan Asal Jadi! Mengapa Desain Instan AI Sering Bikin Brand Terlihat Kaku",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-28T23:51:08+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "318e316cbd1038a1",
+      "title": "SAIMEMORY and Shinko Take ZAM Toward Commercialization: Standing DRAM Upright Instead of Stacking…",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://tai-semicon.medium.com/saimemory-and-shinko-take-zam-toward-commercialization-standing-dram-upright-instead-of-stacking-97a70d4d359d",
+          "target_url": "https://tai-semicon.medium.com/saimemory-and-shinko-take-zam-toward-commercialization-standing-dram-upright-instead-of-stacking-97a70d4d359d",
+          "independent": false,
+          "title": "SAIMEMORY and Shinko Take ZAM Toward Commercialization: Standing DRAM Upright Instead of Stacking…",
+          "summary": "Today’s 3-line summary Continue reading on Medium »",
+          "published_at": "2026-09-28T23:51:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ed4c5e5d89aefdcf",
+      "title": "9 Python Tools That Help You Find Bugs Before Users Do",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://blog.stackademic.com/9-python-tools-that-help-you-find-bugs-before-users-do-eb97eb442b15",
+          "target_url": "https://blog.stackademic.com/9-python-tools-that-help-you-find-bugs-before-users-do-eb97eb442b15",
+          "independent": false,
+          "title": "9 Python Tools That Help You Find Bugs Before Users Do",
+          "summary": "Catch the failures your happy path misses. Continue reading on Stackademic »",
+          "published_at": "2026-09-28T23:49:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8d9bb104fe442482",
+      "title": "The Phrase Is Not the Framework: Provenance Conditions for Lee Sharks’s Semantic Economy — Metadata…",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@leesharks00/the-phrase-is-not-the-framework-provenance-conditions-for-lee-sharkss-semantic-economy-metadata-c156403dbed0",
+          "target_url": "https://medium.com/@leesharks00/the-phrase-is-not-the-framework-provenance-conditions-for-lee-sharkss-semantic-economy-metadata-c156403dbed0",
+          "independent": false,
+          "title": "The Phrase Is Not the Framework: Provenance Conditions for Lee Sharks’s Semantic Economy — Metadata…",
+          "summary": "EA-MPAI-SEMANTIC-ECONOMY-01 v1.0 Continue reading on Medium »",
+          "published_at": "2026-09-28T23:46:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e5c2550684a5028a",
+      "title": "Kling 4.0 Flash Is Live. What Should Creators Do With It?",
+      "first_seen": "2026-09-29T09:01:33+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@j2983236233/kling-4-0-flash-is-live-what-should-creators-do-with-it-3247ba62583b",
+          "target_url": "https://medium.com/@j2983236233/kling-4-0-flash-is-live-what-should-creators-do-with-it-3247ba62583b",
+          "independent": false,
+          "title": "Kling 4.0 Flash Is Live. What Should Creators Do With It?",
+          "summary": "Ultra Yearly subscribers can access Flash now. The broader October release points toward more control over references, timing, sound, and… Continue reading on Medium »",
+          "published_at": "2026-09-28T23:42:17+00:00",
           "date_precision": "time"
         }
       ],
