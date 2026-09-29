@@ -1,10 +1,29 @@
 {
   "edition_date": "2026-09-30",
-  "window_start": "2026-08-01T04:02:46.294405+09:00",
-  "window_end": "2026-09-30T04:02:46.294405+09:00",
-  "collected_at": "2026-09-30T04:03:23.721254+09:00",
+  "window_start": "2026-08-01T05:02:37.093068+09:00",
+  "window_end": "2026-09-30T05:02:37.093068+09:00",
+  "collected_at": "2026-09-30T05:02:37.093068+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "ff1ca072bf39e471",
+      "title": "v2.1.285",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
+      "source_summary": "## What's changed - Added `CLAUDE_CODE_DISABLE_WEB_FETCH` environment variable to turn off the WebFetch tool - Added `claude --desktop` to open the Claude desktop app on the current directory, or on a session with `--continue` / `--resume ` - Added `claude plugin configure ` to show a plugin's options and which are unset, or save new values read from stdin with `--values-stdin` - Added ` . = ` to `claude plugin install --config`, so a bundled `.mcpb` MCP server's own settings can be set at insta",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-30T05:03:02+09:00",
+      "published_at": "2026-09-29T19:27:30+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.285 버전 출시",
+      "source_summary_ko": "# # 변경된 사항 - WebFetch 도구를 끌 수 있는 `CLAUDE_CODE_DISABLE_WEB_FETCH` 환경 변수 추가 - 현재 디렉토리 또는 `--continue'/'--resume` 세션에서 Claude 데스크톱 앱을 열 수 있는 `claude --desktop` 추가 - 플러그인의 옵션이 표시되고 설정되지 않은 `claude plugin configure` 추가 또는 stdin에서 읽은 새 값 저장 '--values-stdin` - 추가됨 `. =` to `claude plugin install --config`, so a bundled `.mcpb` MCP 서버의 자체 설정은 INSTA에서 설정할 수 있습니다.",
+      "release_notes_ko": {
+        "new_features": "WebFetch 도구를 끄기 위해 `CLAUDE_CODE_DISABLE_WEB_FETCH` 환경 변수 추가\n<id>`claude --desktop` 을 추가하여 현재 디렉토리 또는 '--continue`/'--resume` 세션에서 Claude 데스크톱 앱을 엽니다.\n플러그인의 <plugin>옵션과 설정되지 않은 값을 표시하거나 stdin에서 읽은 새 값을 `--values-stdin' 으로 저장하기 위해 'claude plugin configure` 추가",
+        "bug_fixes": "`claude_CODE_FORK_subagent = 1` 로 `claude -p' 수정: 하위 에이전트의 자체 에이전트 호출이 이제 포그라운드에서 실행되므로 하위 에이전트가 자식의 결과를 가져옵니다.\n`GIT_SSH' 또는 git config의 'core.sshCommand` 에 설정된 ssh 프로그램을 무시하는 SSH를 통한 플러그인 및 마켓플레이스 설치 및 업데이트 수정",
+        "chores": "WSL: 변경된 파일 이름에 콜론이 있거나 점 또는 공백으로 끝나는 경우 Linux 볼륨에서 체크 아웃 업로드를 거부하는 `/ultrareview' 수정\nWindows: 경우에 따라 홈 폴더에 루팅된 저장소의 연결된 작업 트리를 업로드하는 `/ultrareview' 수정\nChrome의 향상된 Claude: 이제 네이티브 호스트가 컴퓨터 이름을 보고하므로 연결된 브라우저가 \"브라우저 1\"/\"브라우저 2\" 대신 컴퓨터별로 레이블이 지정될 수 있습니다."
+      }
+    },
     {
       "id": "7a2b36a4880f0ce6",
       "title": "OpenAI’s Dots Are Always-On AI Agents—and Its Answer to Meta’s Muse",
