@@ -1,10 +1,29 @@
 {
   "edition_date": "2026-09-29",
-  "window_start": "2026-07-31T16:04:18.683721+09:00",
-  "window_end": "2026-09-29T16:04:18.683721+09:00",
-  "collected_at": "2026-09-29T16:04:53.956923+09:00",
+  "window_start": "2026-07-31T19:02:15.945751+09:00",
+  "window_end": "2026-09-29T19:02:15.945751+09:00",
+  "collected_at": "2026-09-29T19:02:15.945751+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "9b9d615d7fb6df0b",
+      "title": "0.159.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0",
+      "source_summary": "## New Features - Opt-in `instant_interrupt` lets new input steer Codex during model responses or long-running code-mode calls. (#48135, #48141) - New sessions get a compact welcome screen and consistent headers, with occasional tips during and after turns. (#48513, #48562, #48352) - The warnings viewer dismisses reviewed warnings when closed; press `k` to keep one for later. (#48205, #48206) - You can scroll the transcript while deciding whether to implement a plan. (#48805) - Native Mermaid re",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-29T19:02:19+09:00",
+      "published_at": "2026-09-29T08:05:42+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.159.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 옵트인 `instant_interrupt` 를 사용하면 모델 응답 또는 장기 실행 코드 모드 호출 중에 새로운 입력이 코덱스를 조종할 수 있습니다. (# 48135, # 48141) - 새로운 세션은 콤팩트한 환영 화면과 일관된 헤더를 제공하며, 턴 중 및 턴 후에 가끔 팁이 제공됩니다. (# 48513, # 48562, # 48352) - 경고 뷰어는 닫을 때 검토된 경고를 무시합니다. 나중에 보관하려면 `k` 를 누릅니다. (# 48205, # 48206) - 결정하는 동안 대화록을 스크롤할 수 있습니다. 계획을 실행할지 여부. (# 48805) - Native Mermaid re",
+      "release_notes_ko": {
+        "new_features": "옵트인 `instant_interrupt` 를 사용하면 모델 응답 또는 장기 실행 코드 모드 호출 중에 새로운 입력이 코덱스를 조종할 수 있습니다.\n새로운 세션은 컴팩트한 환영 화면과 일관된 헤더를 제공하며, 턴 중과 턴 후에 가끔 팁을 제공합니다.\n경고 뷰어는 닫을 때 검토된 경고를 무시합니다. 나중에 계속 사용하려면 `k` 를 누릅니다.",
+        "bug_fixes": "Windows 시작은 MCP 서버, 코드 모드 호스트 및 파이핑된 명령에 대한 분실 콘솔 창을 방지합니다. 제한적인 실행기는 임베디드 모드로 돌아갈 수 있습니다.\n성적표 선택 사항을 복사하면 마크다운 테이블, 서식 및 중요한 공백이 보존됩니다. 이제 더 많은 터미널이 선택 시 자동으로 복사됩니다.\n빈 세션은 작업을 전환할 때 초안을 유지하며, 첫 번째 턴 전에 스레드를 보관하고 나열할 수 있습니다.",
+        "chores": "자동 후속 조치 프롬프트 제안과 `tui.prompt_suggestions` 설정을 제거했습니다.\n번들로 제공된 `plugin-creator` 스킬을 제거했습니다."
+      }
+    },
     {
       "id": "50d71cd52400f551",
       "title": "How we will do better for Australia",
