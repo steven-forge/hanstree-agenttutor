@@ -465,7 +465,7 @@ def collect_hourly() -> int:
             except Exception as err:
                 error = str(err)
             status = "failed" if error else "partial" if stats["held_count"] > 0 else "ok"
-        report = {"id": sdef["id"], "name": sdef["name"], "url": sdef["url"], "status": status, "count": len(collected), **stats}
+        report = {"id": sdef["id"], "name": sdef["name"], "url": sdef["url"], "status": status, "count": len(collected), "checked_at": now.isoformat(), **stats}
         if not_configured_reason:
             report["error"] = not_configured_reason
         elif error:

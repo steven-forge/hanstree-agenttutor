@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
-import { todayData, contentHealth } from "../content";
+import { todayData, contentHealth, type ContentHealthSource } from "../content";
 import latestCollection from "../../data/today-candidates.json";
 
 export const metadata: Metadata = {
@@ -33,12 +33,31 @@ function formatKstTime(isoString: string | null | undefined): string {
   }
 }
 
-export default async function TodayPage({ searchParams }: { searchParams: Promise<{ page?: string | string[] }> }) {
-  const { page } = await searchParams;
+function checkedAtLabel(iso?: string | null): string {
+  return iso ? formatKstTime(iso) : "기록 없음";
+}
+
+function countLabel(s: ContentHealthSource): string {
+  if (s.status === "not_configured") return "미점검";
+  const base = `${s.count ?? 0}건`;
+  if (s.coverage_limited) return `${base} (이력 제한)`;
+  if (s.status === "ok" && (s.count ?? 0) === 0 && s.checked_at) return `${base} (이번 점검 정상)`;
+  return base;
+}
+
+export default async function TodayPage({ searchParams }: { searchParams: Promise<{ page?: string | string[]; source?: string | string[] }> }) {
+  const params = await searchParams;
+  const { page } = params;
   const { edition_date, window_start, window_end, collected_at, reviewed_at, articles } = todayData;
   const { news: newsHealth } = contentHealth;
 
-  const filteredArticles = (articles || []).filter((a) => !RELEASE_SOURCE_IDS.has(a.source_id));
+  const newsArticles = (articles || []).filter((a) => !RELEASE_SOURCE_IDS.has(a.source_id));
+  const newsSourceOptions = Array.from(new Map(newsArticles.map((a) => [a.source_id, a.source_name])).entries())
+    .map(([id, name]) => ({ id, name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const selectedSource =
+    typeof params.source === "string" && newsSourceOptions.some((s) => s.id === params.source) ? params.source : "all";
+  const filteredArticles = newsArticles.filter((a) => selectedSource === "all" || a.source_id === selectedSource);
   const filteredHealthSources = (newsHealth.sources || []).filter((s) => !RELEASE_SOURCE_IDS.has(s.id || ""));
   const newsCandidateCount = filteredHealthSources.reduce((acc, s) => acc + (s.count ?? 0), 0);
   const newsFailedCount = filteredHealthSources.filter((s) => s.status === "failed").length;
@@ -57,14 +76,21 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
   // 생략=1, 양의 정수 문자열만 유효, 그 외(배열·0·음수·소수·문자)는 0으로 무효 처리
   const pageNum = page === undefined ? 1 : typeof page === "string" && /^[1-9]\d*$/.test(page) ? Number(page) : 0;
   const pageOutOfRange = pageNum < 1 || pageNum > totalPages;
-  const pageHref = (n: number) => (n === 1 ? "/today" : `/today?page=${n}`);
+  const pageHref = (n: number) => {
+    const query = new URLSearchParams();
+    if (n > 1) query.set("page", String(n));
+    if (selectedSource !== "all") query.set("source", selectedSource);
+    const search = query.toString();
+    return search ? `/today?${search}` : "/today";
+  };
   const pageStart = (pageNum - 1) * PAGE_SIZE;
   const hasArticles = count > 0;
   const isReviewed = Boolean(reviewed_at);
   const isReviewedEmpty = isReviewed && count === 0;
   const hasNoCandidates = !isReviewed && newsStatus !== "failed" && Boolean(newsHealth.checked_at) && newsCandidateCount === 0;
 
-  const publishedCountText = `총 ${count}건`;
+  const selectedSourceName = newsSourceOptions.find((s) => s.id === selectedSource)?.name;
+  const publishedCountText = selectedSourceName ? `${selectedSourceName} · ${count}건` : `전체 · ${count}건`;
 
   return (
     <>
@@ -129,20 +155,46 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               </div>
             )}
 
+            {newsSourceOptions.length > 0 && (
+              <nav className="releases-tabs" aria-label="뉴스 출처 필터">
+                <Link
+                  href="/today"
+                  className={`releases-tab${selectedSource === "all" ? " active" : ""}`}
+                  aria-current={selectedSource === "all" ? "page" : undefined}
+                >
+                  전체
+                </Link>
+                {newsSourceOptions.map((s) => (
+                  <Link
+                    key={s.id}
+                    href={`/today?source=${encodeURIComponent(s.id)}`}
+                    className={`releases-tab${selectedSource === s.id ? " active" : ""}`}
+                    aria-current={selectedSource === s.id ? "page" : undefined}
+                  >
+                    {s.name}
+                  </Link>
+                ))}
+              </nav>
+            )}
+
             {!hasArticles ? (
               <div className="empty-state" style={{ marginTop: "32px" }}>
                 <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)" }}>
-                  {isReviewedEmpty ? "조건에 맞는 주요 뉴스가 없습니다." : hasNoCandidates ? "현재 발행 가능한 뉴스 후보는 0건입니다." : "아직 검토되지 않았습니다."}
+                  {selectedSource !== "all"
+                    ? "선택한 출처에 해당하는 기사가 없습니다."
+                    : isReviewedEmpty ? "조건에 맞는 주요 뉴스가 없습니다." : hasNoCandidates ? "현재 발행 가능한 뉴스 후보는 0건입니다." : "아직 검토되지 않았습니다."}
                 </p>
                 <p>
-                  {isReviewedEmpty
+                  {selectedSource !== "all"
+                    ? "다른 출처를 선택하거나 전체 보기로 돌아가세요."
+                    : isReviewedEmpty
                     ? "금일 수집된 후보 중 발행 기준(중요도 및 기술적 연관성)을 충족하는 주요 뉴스가 없습니다."
                     : hasNoCandidates ? "최근 수집 결과 중 발행 시각과 표시된 수집 기간 조건이 확인된 후보가 없습니다. 시각이 불명확한 항목과 수집 오류는 아래에 따로 표시하며, 개수를 맞추기 위해 기사를 만들지 않습니다."
                     : "뉴스 수집기 실행 대기 중이거나 편집자의 사실 확인 검토가 진행 중입니다. 검토 완료 후 실제 기사가 공개됩니다."}
                 </p>
                 <div style={{ marginTop: "16px" }}>
-                  <Link href="/learn" className="tag-link" style={{ padding: "6px 14px", fontSize: "0.85rem" }}>
-                    기초 개념 학습하러 가기 →
+                  <Link href={selectedSource !== "all" ? "/today" : "/learn"} className="tag-link" style={{ padding: "6px 14px", fontSize: "0.85rem" }}>
+                    {selectedSource !== "all" ? "전체 보기로 돌아가기 →" : "기초 개념 학습하러 가기 →"}
                   </Link>
                 </div>
               </div>
@@ -157,13 +209,10 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               </div>
             ) : (
               <div id="articles" style={{ display: "grid", gap: "20px", marginTop: "32px" }}>
-                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지</p>
-                {filteredArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
+                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지 · 최신순 정렬 (순위 아님)</p>
+                {filteredArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article) => (
                   <article key={article.id} className="card" style={{ padding: "24px" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--blue)" }}>
-                        #{pageStart + index + 1}
-                      </span>
+                    <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
                       <time dateTime={article.published_at || article.published_on} style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
                         발행 · {article.published_at ? formatKstTime(article.published_at) : article.published_on ? `${article.published_on} · 날짜만 확인` : "미정"}
                       </time>
@@ -271,7 +320,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px", marginTop: "16px" }}>
                 <div className="card" style={{ padding: "14px 18px" }}>
-                  <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>점검 시각</span>
+                  <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>전체 출처 중 최근 점검</span>
                   <strong style={{ fontSize: "0.95rem" }}>{formatKstTime(newsHealth.checked_at)}</strong>
                 </div>
                 <div className="card" style={{ padding: "14px 18px" }}>
@@ -308,7 +357,9 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       <tr>
                         <th>출처</th>
                         <th>상태</th>
-                        <th>새 기사</th>
+                        <th>수집 건수</th>
+                        <th>마지막 확인</th>
+                        <th>마지막 성공</th>
                         <th>보류 건수</th>
                       </tr>
                     </thead>
@@ -330,10 +381,12 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                               })}
                               {...(s.status === "not_configured" && { title: s.error || "공식 API 환경변수가 설정되지 않아 호출하지 않았습니다." })}
                             >
-                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : s.status === "not_configured" ? "미설정" : "수집 실패"}
+                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : s.status === "not_configured" ? "API 미설정" : "수집 실패"}
                             </span>
                           </td>
-                          <td>{s.count ?? 0}건</td>
+                          <td>{countLabel(s)}</td>
+                          <td style={{ fontSize: "0.82rem" }}>{checkedAtLabel(s.checked_at)}</td>
+                          <td style={{ fontSize: "0.82rem" }}>{checkedAtLabel(s.last_success_at)}</td>
                           <td>
                             {s.held_count !== undefined && s.held_count > 0 ? (
                               <span style={{ color: "#854d0e", fontWeight: 700, fontSize: "0.85rem" }}>

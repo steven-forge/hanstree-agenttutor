@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
-import { todayData, contentHealth } from "../content";
+import { todayData, contentHealth, type ContentHealthSource } from "../content";
 import latestCollection from "../../data/today-candidates.json";
 
 export const metadata: Metadata = {
@@ -38,6 +38,31 @@ function formatKstTime(isoString: string | null | undefined): string {
   }
 }
 
+function checkedAtLabel(iso?: string | null): string {
+  return iso ? formatKstTime(iso) : "기록 없음";
+}
+
+function countLabel(s: ContentHealthSource): string {
+  if (s.status === "not_configured") return "미점검";
+  const base = `${s.count ?? 0}건`;
+  if (s.coverage_limited) return `${base} (이력 제한)`;
+  if (s.status === "ok" && (s.count ?? 0) === 0 && s.checked_at) return `${base} (이번 점검 정상)`;
+  return base;
+}
+
+function latestIso(values: (string | null | undefined)[]): string | null {
+  const ms = values.map((v) => (v ? Date.parse(v) : NaN)).filter((n) => !isNaN(n));
+  return ms.length ? new Date(Math.max(...ms)).toISOString() : null;
+}
+
+// 릴리스 노트에서 실제로 확인된 첫 변경 한 줄만 카드 상단 요약으로 보여준다. 새 사실을 만들지 않는다.
+function firstReleaseNoteLine(notes: { new_features?: string; bug_fixes?: string; chores?: string } | undefined): string | null {
+  const text = [notes?.new_features, notes?.bug_fixes, notes?.chores].find((t) => t && t.trim().length > 0);
+  if (!text) return null;
+  const firstLine = text.split("\n").map((l) => l.trim()).find((l) => l.length > 0);
+  return firstLine || null;
+}
+
 export default async function ReleasesPage({ searchParams }: { searchParams: Promise<{ page?: string | string[]; agent?: string | string[] }> }) {
   const params = await searchParams;
   const { page } = params;
@@ -50,6 +75,7 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
     (a) => RELEASE_SOURCE_IDS.has(a.source_id) && (!selectedSourceId || a.source_id === selectedSourceId)
   );
   const releaseHealthSources = (newsHealth.sources || []).filter((s) => RELEASE_SOURCE_IDS.has(s.id || ""));
+  const releaseCheckedAt = latestIso(releaseHealthSources.map((s) => s.checked_at));
   const releaseCandidateCount = releaseHealthSources.reduce((acc, s) => acc + (s.count ?? 0), 0);
   const releaseFailedCount = releaseHealthSources.filter((s) => s.status === "failed").length;
   const releaseHasHeld = releaseHealthSources.some((s) => (s.held_count ?? 0) > 0);
@@ -193,55 +219,53 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
               </div>
             ) : (
               <div id="releases" style={{ display: "grid", gap: "20px", marginTop: "28px" }}>
-                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지</p>
-                {releaseArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article, index) => (
+                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지 · 최신순 정렬 (순위 아님)</p>
+                {releaseArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article) => {
+                  const noteFirstLine = firstReleaseNoteLine(article.release_notes_ko);
+                  const sections: { label: string; text?: string }[] = [
+                    { label: "새 기능 · New Features", text: article.release_notes_ko?.new_features },
+                    { label: "버그 수정 · Bug Fixes", text: article.release_notes_ko?.bug_fixes },
+                    { label: "기타 작업 · Chores", text: article.release_notes_ko?.chores }
+                  ].filter((s) => s.text && s.text.trim().length > 0);
+                  return (
                   <article key={article.id} className="card" style={{ padding: "24px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px", marginBottom: "8px" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                        <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--blue)" }}>
-                          #{pageStart + index + 1}
-                        </span>
-                        <span className="badge" style={{ fontSize: "0.78rem" }}>
-                          {article.source_name}
-                        </span>
-                      </div>
+                      <span className="badge" style={{ fontSize: "0.78rem" }}>
+                        {article.source_name}
+                      </span>
                       <time dateTime={article.published_at || article.published_on} style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
                         발행 · {article.published_at ? formatKstTime(article.published_at) : article.published_on ? `${article.published_on} · 날짜만 확인` : "미정"}
                       </time>
                     </div>
 
-                    <h2 style={{ fontSize: "1.25rem", margin: "0 0 16px", lineHeight: "1.4" }}>
+                    <h2 style={{ fontSize: "1.25rem", margin: "0 0 8px", lineHeight: "1.4" }}>
                       {article.title_ko || article.title}
                     </h2>
 
-                    <div style={{ display: "grid", gap: "12px", marginBottom: "16px" }}>
-                      <div style={{ background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
-                        <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--blue)", marginBottom: "4px" }}>
-                          새 기능 · New Features
-                        </div>
-                        <p style={{ margin: 0, fontSize: "0.9rem", color: article.release_notes_ko?.new_features ? "var(--ink)" : "var(--muted)", lineHeight: "1.6", whiteSpace: "pre-line" }}>
-                          {article.release_notes_ko?.new_features || "공식 릴리스 노트에 별도 항목 없음"}
-                        </p>
-                      </div>
+                    {noteFirstLine && (
+                      <p style={{ fontSize: "0.88rem", color: "var(--muted)", margin: "0 0 16px" }}>
+                        첫 변경 사항 · {noteFirstLine}
+                      </p>
+                    )}
 
-                      <div style={{ background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
-                        <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--blue)", marginBottom: "4px" }}>
-                          버그 수정 · Bug Fixes
-                        </div>
-                        <p style={{ margin: 0, fontSize: "0.9rem", color: article.release_notes_ko?.bug_fixes ? "var(--ink)" : "var(--muted)", lineHeight: "1.6", whiteSpace: "pre-line" }}>
-                          {article.release_notes_ko?.bug_fixes || "공식 릴리스 노트에 별도 항목 없음"}
-                        </p>
+                    {sections.length > 0 ? (
+                      <div style={{ display: "grid", gap: "12px", marginBottom: "16px" }}>
+                        {sections.map((s) => (
+                          <div key={s.label} style={{ background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
+                            <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--blue)", marginBottom: "4px" }}>
+                              {s.label}
+                            </div>
+                            <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--ink)", lineHeight: "1.6", whiteSpace: "pre-line" }}>
+                              {s.text}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-
-                      <div style={{ background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
-                        <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--blue)", marginBottom: "4px" }}>
-                          기타 작업 · Chores
-                        </div>
-                        <p style={{ margin: 0, fontSize: "0.9rem", color: article.release_notes_ko?.chores ? "var(--ink)" : "var(--muted)", lineHeight: "1.6", whiteSpace: "pre-line" }}>
-                          {article.release_notes_ko?.chores || "공식 릴리스 노트에 별도 항목 없음"}
-                        </p>
-                      </div>
-                    </div>
+                    ) : (
+                      <p style={{ fontSize: "0.9rem", color: "var(--muted)", margin: "0 0 16px" }}>
+                        공식 릴리스 노트에 구역별 항목이 없습니다.
+                      </p>
+                    )}
 
                     <details style={{ margin: "14px 0", background: "var(--wash)", padding: "12px 14px", borderRadius: "8px" }}>
                       <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.88rem" }}>
@@ -266,7 +290,8 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                       </a>
                     </div>
                   </article>
-                ))}
+                  );
+                })}
                 {totalPages > 1 && (
                   <nav aria-label="릴리스 페이지 이동" style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
                     {pageNum > 1 && <Link href={pageHref(pageNum - 1)} className="tag-link" rel="prev">← 이전</Link>}
@@ -295,8 +320,8 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px", marginTop: "16px" }}>
                 <div className="card" style={{ padding: "14px 18px" }}>
-                  <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>점검 시각</span>
-                  <strong style={{ fontSize: "0.95rem" }}>{formatKstTime(newsHealth.checked_at)}</strong>
+                  <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>릴리스 출처 점검 시각</span>
+                  <strong style={{ fontSize: "0.95rem" }}>{checkedAtLabel(releaseCheckedAt)}</strong>
                 </div>
                 <div className="card" style={{ padding: "14px 18px" }}>
                   <span style={{ fontSize: "0.8rem", color: "var(--muted)", display: "block" }}>수집 후보</span>
@@ -332,7 +357,9 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                       <tr>
                         <th>출처</th>
                         <th>상태</th>
-                        <th>새 기사</th>
+                        <th>수집 건수</th>
+                        <th>마지막 확인</th>
+                        <th>마지막 성공</th>
                         <th>보류 건수</th>
                       </tr>
                     </thead>
@@ -346,13 +373,19 @@ export default async function ReleasesPage({ searchParams }: { searchParams: Pro
                           </td>
                           <td>
                             <span
-                              className={s.status === "ok" ? "status-confirmed" : "status-unconfirmed"}
+                              className={s.status === "ok" ? "status-confirmed" : s.status === "not_configured" ? "status-conditional" : "status-unconfirmed"}
                               style={{ fontSize: "0.74rem" }}
+                              {...(s.status === "failed" && {
+                                title: s.error || "실패 사유가 기록되지 않았습니다.",
+                                "aria-label": `수집 실패: ${s.error || "실패 사유가 기록되지 않았습니다."}`,
+                              })}
                             >
-                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : "수집 실패"}
+                              {s.status === "ok" ? "정상" : s.status === "partial" ? "일부 보류" : s.status === "not_configured" ? "API 미설정" : "수집 실패"}
                             </span>
                           </td>
-                          <td>{s.count ?? 0}건</td>
+                          <td>{countLabel(s)}</td>
+                          <td style={{ fontSize: "0.82rem" }}>{checkedAtLabel(s.checked_at)}</td>
+                          <td style={{ fontSize: "0.82rem" }}>{checkedAtLabel(s.last_success_at)}</td>
                           <td>
                             {s.held_count !== undefined && s.held_count > 0 ? (
                               <span

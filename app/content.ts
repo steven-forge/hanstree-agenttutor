@@ -184,6 +184,7 @@ export type ContentHealthSource = {
   excluded_count?: number;
   coverage_limited?: boolean;
   checked_at?: string;
+  last_success_at?: string;
   changed_at?: string;
 };
 

@@ -689,10 +689,27 @@ def new_stats() -> dict:
 
 
 def merge_source_reports(previous: list, current: list) -> list:
-    """공식(일 1회)·외부(매시간) 수집이 같은 목록을 나눠 쓴다. 같은 id는 제자리 교체, 새 id는 뒤에 붙여 순서를 안정시킨다."""
-    by_id = {s.get("id"): s for s in current if isinstance(s, dict)}
+    """공식(일 1회)·외부(매시간) 수집이 같은 목록을 나눠 쓴다. 같은 id는 제자리 교체, 새 id는 뒤에 붙여 순서를 안정시킨다.
+    not_configured는 이번에 실제 점검하지 않았으므로 이전 checked_at·last_success_at을 그대로 보존하고,
+    ok/partial은 last_success_at을 이번 checked_at으로 갱신하며, failed는 last_success_at을 이전 값으로 보존한다."""
+    prev_by_id = {s.get("id"): s for s in previous if isinstance(s, dict)}
+    resolved = []
+    for s in current:
+        if not isinstance(s, dict):
+            continue
+        prev = prev_by_id.get(s.get("id")) or {}
+        entry = dict(s)
+        if entry.get("status") == "not_configured":
+            entry["checked_at"] = prev.get("checked_at")
+            entry["last_success_at"] = prev.get("last_success_at")
+        elif entry.get("status") in ("ok", "partial"):
+            entry["last_success_at"] = entry.get("checked_at")
+        else:
+            entry["last_success_at"] = prev.get("last_success_at")
+        resolved.append(entry)
+    by_id = {e.get("id"): e for e in resolved}
     merged = [by_id.pop(s.get("id"), s) for s in previous if isinstance(s, dict)]
-    return merged + [s for s in current if isinstance(s, dict) and s.get("id") in by_id]
+    return merged + [e for e in resolved if e.get("id") in by_id]
 
 
 def news_status(sources: list) -> str:
@@ -1470,6 +1487,7 @@ def collect_news() -> int:
             "url": surl,
             "status": source_status,
             "count": len(items),
+            "checked_at": collected_at,
             **stats
         }
         if error_msg:
