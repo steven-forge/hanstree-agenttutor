@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T10:03:44.375042+09:00",
-  "window_start": "2026-07-31T10:03:44.375042+09:00",
-  "window_end": "2026-09-29T10:03:44.375042+09:00",
+  "collected_at": "2026-09-29T11:01:23.297794+09:00",
+  "window_start": "2026-07-31T11:01:23.297794+09:00",
+  "window_end": "2026-09-29T11:01:23.297794+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -9,7 +9,7 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 0,
+      "count": 1,
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 124,
@@ -33,7 +33,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 187,
+      "excluded_count": 188,
       "skipped_count": 24,
       "coverage_limited": false
     },
@@ -55,7 +55,7 @@
       "status": "ok",
       "count": 0,
       "held_count": 0,
-      "excluded_count": 68,
+      "excluded_count": 69,
       "skipped_count": 10,
       "coverage_limited": false
     },
@@ -100,10 +100,10 @@
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "partial",
-      "count": 18,
+      "count": 13,
       "held_count": 1,
-      "excluded_count": 19,
-      "skipped_count": 5,
+      "excluded_count": 24,
+      "skipped_count": 7,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 18,
+      "skipped_count": 20,
       "coverage_limited": false
     },
     {
@@ -276,11 +276,26 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 0,
-  "archive_count": 310,
-  "candidates": [],
-  "hourly_collected_at": "2026-09-29T10:04:19.398453+09:00",
-  "hourly_window_start": "2026-09-26T10:04:19.398453+09:00",
+  "new_count": 1,
+  "archive_count": 311,
+  "candidates": [
+    {
+      "id": "50d71cd52400f551",
+      "title": "How we will do better for Australia",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/how-we-will-do-better-for-australia",
+      "source_summary": "OpenAI apologizes for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "fetched_at": "2026-09-29T11:01:23+09:00",
+      "published_at": "2026-09-29T01:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "호주를 위해 더 나은 서비스를 제공하는 방법",
+      "source_summary_ko": "OpenAI는 호주 정부 웹사이트와 관련된 사건에 대해 사과하고 호주의 사이버 방어를 강화하기 위한 더 강력한 안전 장치와 지원을 설명합니다."
+    }
+  ],
+  "hourly_collected_at": "2026-09-29T11:01:58.106883+09:00",
+  "hourly_window_start": "2026-09-26T11:01:58.106883+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -2775,195 +2790,6 @@
       "reason": "독립 출처 부족"
     },
     {
-      "id": "3b509e11ac9db5ff",
-      "title": "AI Safety's Disallowed Conclusion",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852267",
-          "target_url": "https://www.souprecipies.com/p/ai-safetys-disallowed-conclusion",
-          "independent": false,
-          "title": "AI Safety's Disallowed Conclusion",
-          "summary": "",
-          "published_at": "2026-09-26T01:31:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8b441e4c2730aeae",
-      "title": "Do we still enjoy software engineering in the age of AI?",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852203",
-          "target_url": "https://shubs.io/do-we-still-enjoy-software-engineering-in-the-age-of-ai",
-          "independent": false,
-          "title": "Do we still enjoy software engineering in the age of AI?",
-          "summary": "",
-          "published_at": "2026-09-26T01:21:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "40bca46e1a6fd8c0",
-      "title": "McDonald's turns to AI for drive-thru, inventory management, order accuracy",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852198",
-          "target_url": "https://www.restaurantdive.com/news/mcdonalds-archiq-drive-thru-artificial-intelligence-next-strategy/831256",
-          "independent": false,
-          "title": "McDonald's turns to AI for drive-thru, inventory management, order accuracy",
-          "summary": "",
-          "published_at": "2026-09-26T01:21:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2ca84aa9b092f0d9",
-      "title": "Reflex – run a Jev-like decision model locally on a 16GB Nvidia GPU",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852130",
-          "target_url": "https://github.com/lateos-ai/reflex",
-          "independent": false,
-          "title": "Reflex – run a Jev-like decision model locally on a 16GB Nvidia GPU",
-          "summary": "",
-          "published_at": "2026-09-26T01:11:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "480783a6dc020dc0",
-      "title": "The Skills I’m Learning Outside My BMS Syllabus",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://ambiyakhan.medium.com/the-skills-im-learning-outside-my-bms-syllabus-26f54e25881c",
-          "target_url": "https://ambiyakhan.medium.com/the-skills-im-learning-outside-my-bms-syllabus-26f54e25881c",
-          "independent": false,
-          "title": "The Skills I’m Learning Outside My BMS Syllabus",
-          "summary": "I looked at my college syllabus recently. Continue reading on Medium »",
-          "published_at": "2026-09-26T01:50:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8628e83f935758eb",
-      "title": "We Stayed Tuned. Here Is What Came.",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@signaloftheeye/we-stayed-tuned-here-is-what-came-0c6094804c4f",
-          "target_url": "https://medium.com/@signaloftheeye/we-stayed-tuned-here-is-what-came-0c6094804c4f",
-          "independent": false,
-          "title": "We Stayed Tuned. Here Is What Came.",
-          "summary": "Five days, September 21 to 25, 2026, played like Black Mirror written by the South Park room. Monday brought a teaser of television static… Continue reading on Medium »",
-          "published_at": "2026-09-26T01:43:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "46693070fab79424",
-      "title": "Why the Record Matters",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@eduard.deira/why-the-record-matters-3a5f54477ff3",
-          "target_url": "https://medium.com/@eduard.deira/why-the-record-matters-3a5f54477ff3",
-          "independent": false,
-          "title": "Why the Record Matters",
-          "summary": "A plain-language companion to the escalation record Continue reading on Medium »",
-          "published_at": "2026-09-26T01:41:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "559cac28ea3e0f90",
-      "title": "The Things We Tell AI That We Can't Tell Anyone Else",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/the-gravity/the-things-we-tell-ai-that-we-cant-tell-anyone-else-f4b456bb24fe",
-          "target_url": "https://medium.com/the-gravity/the-things-we-tell-ai-that-we-cant-tell-anyone-else-f4b456bb24fe",
-          "independent": false,
-          "title": "The Things We Tell AI That We Can't Tell Anyone Else",
-          "summary": "Something strange is happening in our lives: millions of people now have somewhere to say the things they were never able to say to the… Continue reading on The Gravity »",
-          "published_at": "2026-09-26T01:40:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a02254c3cc46d88f",
-      "title": "Your agent did not forget your instructions. It compressed them out.",
-      "first_seen": "2026-09-26T11:01:39+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@behrnt/your-agent-did-not-forget-your-instructions-it-compressed-them-out-e4d8e2ababd7",
-          "target_url": "https://medium.com/@behrnt/your-agent-did-not-forget-your-instructions-it-compressed-them-out-e4d8e2ababd7",
-          "independent": false,
-          "title": "Your agent did not forget your instructions. It compressed them out.",
-          "summary": "Long agent runs rarely fail at a tool call. They fail at a compaction boundary, and almost nobody instruments it. Continue reading on Medium »",
-          "published_at": "2026-09-26T01:38:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "fc482855c989ad39",
       "title": "Revelations of dozens more platforms hit by OpenAI agents",
       "first_seen": "2026-09-26T12:01:21+09:00",
@@ -3088,27 +2914,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "2a6767ccfa856603",
-      "title": "At Meta Connect, the company’s smart glasses were everywhere",
-      "first_seen": "2026-09-26T13:01:38+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere",
-          "target_url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere",
-          "independent": true,
-          "title": "At Meta Connect, the company’s smart glasses were everywhere",
-          "summary": "The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.",
-          "published_at": "2026-09-26T01:08:57+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "candidate",
-      "reason": "독립 출처 부족"
     },
     {
       "id": "d09ebb23857a7d44",
@@ -19674,6 +19479,237 @@
           "title": "AI Capital Expenditure Sanity Check",
           "summary": "Does the AI capex boom pass a cursory analysis? Continue reading on Terms of Consent »",
           "published_at": "2026-09-29T00:35:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "fe1ebdd8762ccd28",
+      "title": "Anthropic warns of 'existential risks to humanity' in IPO prospectus",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887124",
+          "target_url": "https://www.ft.com/content/c7685a7e-7745-4cbc-8053-4958d0ea449b",
+          "independent": false,
+          "title": "Anthropic warns of 'existential risks to humanity' in IPO prospectus",
+          "summary": "",
+          "published_at": "2026-09-29T01:58:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4c0eaf0034db9d3",
+      "title": "Claude Code's Next Era",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887096",
+          "target_url": "https://www.latent.space/p/thariq",
+          "independent": false,
+          "title": "Claude Code's Next Era",
+          "summary": "",
+          "published_at": "2026-09-29T01:54:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1e60555ab8918096",
+      "title": "The machine layer under Nvidia OpenShell: why containment is not safety",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887082",
+          "target_url": "https://endstop.systems/blog/nvidia-openshell-machine-layer",
+          "independent": false,
+          "title": "The machine layer under Nvidia OpenShell: why containment is not safety",
+          "summary": "",
+          "published_at": "2026-09-29T01:51:13+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "89d9f24b6d56d065",
+      "title": "AI agent memory can be poisoned – and later treated as the user's own past",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887024",
+          "target_url": "https://www.astraobscura.net/2026/09/28/the-memory-that-wasnt-yours",
+          "independent": false,
+          "title": "AI agent memory can be poisoned – and later treated as the user's own past",
+          "summary": "",
+          "published_at": "2026-09-29T01:43:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "827a5d0a1cdcb02b",
+      "title": "OpenAI shelves new AI model after internal safety tests: Report",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886753",
+          "target_url": "https://www.channelnewsasia.com/business/open-ai-new-model-safety-6416906",
+          "independent": false,
+          "title": "OpenAI shelves new AI model after internal safety tests: Report",
+          "summary": "",
+          "published_at": "2026-09-29T01:11:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "f7164e1744a385af",
+      "title": "How well do you know AI?",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886744",
+          "target_url": "https://www.reddit.com/r/airealist/s/uhwf0kKbP5",
+          "independent": false,
+          "title": "How well do you know AI?",
+          "summary": "",
+          "published_at": "2026-09-29T01:10:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "833f7d24961b0e06",
+      "title": "Your Biggest Competitor May Be a Company You’ve Never Considered",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@sasutton82/your-biggest-competitor-may-be-a-company-youve-never-considered-7ab4c06ae87d",
+          "target_url": "https://medium.com/@sasutton82/your-biggest-competitor-may-be-a-company-youve-never-considered-7ab4c06ae87d",
+          "independent": false,
+          "title": "Your Biggest Competitor May Be a Company You’ve Never Considered",
+          "summary": "AI-generated answers are changing the competitive landscape — and businesses need to understand who customers may encounter before they… Continue reading on Medium »",
+          "published_at": "2026-09-29T01:51:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6ab9ffd87c1d202e",
+      "title": "A Short History of AI",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bobjunior/a-short-history-of-ai-6b7b2c37d2e8",
+          "target_url": "https://medium.com/@bobjunior/a-short-history-of-ai-6b7b2c37d2e8",
+          "independent": false,
+          "title": "A Short History of AI",
+          "summary": "Major breakthrough and innovation for artificial intelligence Continue reading on Medium »",
+          "published_at": "2026-09-29T01:50:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6b2a934da35d0599",
+      "title": "Build a Playable Unreal Engine 5 Level with AI (MCP + Claude Code)",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/engineworks/build-a-playable-unreal-engine-5-level-with-ai-mcp-claude-code-666662917e75",
+          "target_url": "https://medium.com/engineworks/build-a-playable-unreal-engine-5-level-with-ai-mcp-claude-code-666662917e75",
+          "independent": false,
+          "title": "Build a Playable Unreal Engine 5 Level with AI (MCP + Claude Code)",
+          "summary": "Learn how to connect Claude Code to Unreal Engine 5.8 through the built-in Unreal MCP server, import a Fab environment pack, and use an AI… Continue reading on UnrealOps »",
+          "published_at": "2026-09-29T01:50:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "04cd8f40eb4235ed",
+      "title": "I Tested Figma + Claude on Real Projects. It Won’t Replace You, but It Changed What My Job Is",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@emadaldean.hs/i-tested-figma-claude-on-real-projects-it-wont-replace-you-but-it-changed-what-my-job-is-e17f48b520a7",
+          "target_url": "https://medium.com/@emadaldean.hs/i-tested-figma-claude-on-real-projects-it-wont-replace-you-but-it-changed-what-my-job-is-e17f48b520a7",
+          "independent": false,
+          "title": "I Tested Figma + Claude on Real Projects. It Won’t Replace You, but It Changed What My Job Is",
+          "summary": "A working designer’s honest look at what connects, what saves time, and where it still falls short. Continue reading on Medium »",
+          "published_at": "2026-09-29T01:46:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b505fb270d9f17fd",
+      "title": "Looking for a Midjourney API? Compare Production-Safe Options First",
+      "first_seen": "2026-09-29T11:01:58+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@thebasedai/looking-for-a-midjourney-api-compare-production-safe-options-first-0bcb060c5a75",
+          "target_url": "https://medium.com/@thebasedai/looking-for-a-midjourney-api-compare-production-safe-options-first-0bcb060c5a75",
+          "independent": false,
+          "title": "Looking for a Midjourney API? Compare Production-Safe Options First",
+          "summary": "A search for a Midjourney API often begins with a visual preference. Continue reading on Medium »",
+          "published_at": "2026-09-29T01:43:24+00:00",
           "date_precision": "time"
         }
       ],
