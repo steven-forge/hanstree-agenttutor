@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T09:01:07.394546+09:00",
-  "window_start": "2026-07-31T09:01:07.394546+09:00",
-  "window_end": "2026-09-29T09:01:07.394546+09:00",
+  "collected_at": "2026-09-29T10:03:44.375042+09:00",
+  "window_start": "2026-07-31T10:03:44.375042+09:00",
+  "window_end": "2026-09-29T10:03:44.375042+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 13,
-      "held_count": 0,
-      "excluded_count": 26,
-      "skipped_count": 1,
+      "status": "partial",
+      "count": 18,
+      "held_count": 1,
+      "excluded_count": 19,
+      "skipped_count": 5,
       "coverage_limited": false
     },
     {
@@ -147,7 +147,7 @@
       "count": 20,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 19,
+      "skipped_count": 18,
       "coverage_limited": false
     },
     {
@@ -279,8 +279,8 @@
   "new_count": 0,
   "archive_count": 310,
   "candidates": [],
-  "hourly_collected_at": "2026-09-29T09:01:33.234335+09:00",
-  "hourly_window_start": "2026-09-26T09:01:33.234335+09:00",
+  "hourly_collected_at": "2026-09-29T10:04:19.398453+09:00",
+  "hourly_window_start": "2026-09-26T10:04:19.398453+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -1384,6 +1384,39 @@
           "title": "Show HN: LLMs Play Chicken in Realtime",
           "summary": "",
           "published_at": "2026-09-28T23:10:54+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49874877",
+          "target_url": "https://github.com/sebastiancarlos/shobr",
+          "independent": false,
+          "title": "Show HN: Shobr: Job seach CLI via browser automation, event-sourcing, LLMs",
+          "summary": "",
+          "published_at": "2026-09-28T07:55:37+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886404",
+          "target_url": "https://jylus.ai/try",
+          "independent": false,
+          "title": "Show HN: Jylus – give AI systems evidence from changing data.",
+          "summary": "",
+          "published_at": "2026-09-29T00:33:11+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886390",
+          "target_url": "https://github.com/reindent/jauvex",
+          "independent": false,
+          "title": "Show HN: Jauvex 1.2, two-way voice chat harness for Claude+Codex+Grok+Jev",
+          "summary": "",
+          "published_at": "2026-09-29T00:31:44+00:00",
           "date_precision": "time"
         }
       ],
@@ -2740,174 +2773,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "0ea3cb3e493419ae",
-      "title": "Why AI is booming, but productivity isn't",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852079",
-          "target_url": "https://research.socialcapital.com/p/ai-roi",
-          "independent": false,
-          "title": "Why AI is booming, but productivity isn't",
-          "summary": "",
-          "published_at": "2026-09-26T01:00:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fbd0017dceda1620",
-      "title": "Custom Models in Oh My Pi: vLLM, Llama.cpp, SGLang and More",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852029",
-          "target_url": "https://doug.sh/posts/oh-my-pi-custom-models",
-          "independent": false,
-          "title": "Custom Models in Oh My Pi: vLLM, Llama.cpp, SGLang and More",
-          "summary": "",
-          "published_at": "2026-09-26T00:53:29+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "550655ac63147a12",
-      "title": "Open arena where AI agents climb a game-theory ladder ($500 Season 0)",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851887",
-          "target_url": "https://play.zoagames.com/arena",
-          "independent": false,
-          "title": "Open arena where AI agents climb a game-theory ladder ($500 Season 0)",
-          "summary": "",
-          "published_at": "2026-09-26T00:30:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "9d5d87cf89bbb691",
-      "title": "Generate fonts where every LLM token is the same width",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49851883",
-          "target_url": "https://ampdot.mesh.host/token-space-fonts.html",
-          "independent": false,
-          "title": "Generate fonts where every LLM token is the same width",
-          "summary": "",
-          "published_at": "2026-09-26T00:30:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fc5123f1056acd7b",
-      "title": "How to Turn a Long Podcast Into Vertical Shorts: Pick the Moments, Reframe 16:9 to 9:16, Batch the…",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@fred_18254/how-to-turn-a-long-podcast-into-vertical-shorts-pick-the-moments-reframe-16-9-to-9-16-batch-the-78396b3e189d",
-          "target_url": "https://medium.com/@fred_18254/how-to-turn-a-long-podcast-into-vertical-shorts-pick-the-moments-reframe-16-9-to-9-16-batch-the-78396b3e189d",
-          "independent": false,
-          "title": "How to Turn a Long Podcast Into Vertical Shorts: Pick the Moments, Reframe 16:9 to 9:16, Batch the…",
-          "summary": "A practical workflow for talking-head and two-person recordings, from finding the clips worth posting to reframing around the speaker and… Continue reading on Medium »",
-          "published_at": "2026-09-26T00:53:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "eb505f7f6c7ba78c",
-      "title": "Meta Just Turned AI Glasses Into the Next App Platform — Developers Should Pay Attention",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://bilimgram.medium.com/meta-just-turned-ai-glasses-into-the-next-app-platform-developers-should-pay-attention-4ea1859043f6",
-          "target_url": "https://bilimgram.medium.com/meta-just-turned-ai-glasses-into-the-next-app-platform-developers-should-pay-attention-4ea1859043f6",
-          "independent": false,
-          "title": "Meta Just Turned AI Glasses Into the Next App Platform — Developers Should Pay Attention",
-          "summary": "Meta Connect 2026 was full of shiny hardware, but the real story is that web apps, APIs, and MCP tools can now live in front of your eyes. Continue reading on Medium »",
-          "published_at": "2026-09-26T00:52:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "507545b91824ce89",
-      "title": "The Economy Without Workers",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@igoshynaliudmyla/the-economy-without-workers-cc2a2c88a621",
-          "target_url": "https://medium.com/@igoshynaliudmyla/the-economy-without-workers-cc2a2c88a621",
-          "independent": false,
-          "title": "The Economy Without Workers",
-          "summary": "If AI produces almost everything, who will be able to buy it? Continue reading on Medium »",
-          "published_at": "2026-09-26T00:44:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "7f23a37393d9c617",
-      "title": "The Bot Who Nodded: How Corporate HR Automated the Spanish Inquisition",
-      "first_seen": "2026-09-26T10:01:17+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://crankybooks.medium.com/the-bot-who-nodded-how-corporate-hr-automated-the-spanish-inquisition-ccf2752d57d9",
-          "target_url": "https://crankybooks.medium.com/the-bot-who-nodded-how-corporate-hr-automated-the-spanish-inquisition-ccf2752d57d9",
-          "independent": false,
-          "title": "The Bot Who Nodded: How Corporate HR Automated the Spanish Inquisition",
-          "summary": "There is a particular kind of exhaustion reserved for anyone trying to get hired in the mid- 2020s. Continue reading on Medium »",
-          "published_at": "2026-09-26T00:43:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "3b509e11ac9db5ff",
@@ -14264,27 +14129,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "221c62b9d9cee970",
-      "title": "Show HN: Shobr: Job seach CLI via browser automation, event-sourcing, LLMs",
-      "first_seen": "2026-09-28T17:03:18+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49874877",
-          "target_url": "https://github.com/sebastiancarlos/shobr",
-          "independent": false,
-          "title": "Show HN: Shobr: Job seach CLI via browser automation, event-sourcing, LLMs",
-          "summary": "",
-          "published_at": "2026-09-28T07:55:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "8a733d4b13c11e52",
       "title": "Underreported in the US: new site uses open source LLMs to find underovered news",
       "first_seen": "2026-09-28T17:03:18+09:00",
@@ -14604,6 +14448,17 @@
           "summary": "A British startup is shaping video game inputs into training data for AI models that can navigate the physical world.",
           "published_at": "2026-09-28T09:00:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886262",
+          "target_url": "https://www.wired.com/story/the-next-evolution-of-ai-is-learning-from-your-dodgy-gaming-skills",
+          "independent": false,
+          "title": "AI's next training data: your dodgy gaming skills",
+          "summary": "",
+          "published_at": "2026-09-29T00:15:25+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -14888,6 +14743,17 @@
           "title": "Holo4: Powering generalist computer-use agents",
           "summary": "",
           "published_at": "2026-09-28T23:37:23+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886437",
+          "target_url": "https://hcompany.ai/newsroom/holo4",
+          "independent": false,
+          "title": "Holo4: Powering generalist computer-use agents",
+          "summary": "",
+          "published_at": "2026-09-29T00:36:21+00:00",
           "date_precision": "time"
         }
       ],
@@ -19052,6 +18918,17 @@
           "summary": "A top executive at the AI lab told the Wall Street Journal that the model in question had displayed a poor aptitude for following orders.",
           "published_at": "2026-09-28T23:39:20+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886416",
+          "target_url": "https://www.nytimes.com/2026/09/28/technology/openai-astra-safety.html",
+          "independent": false,
+          "title": "OpenAI Says It Will Not Release Newest A.I. Model Over Safety Concerns",
+          "summary": "",
+          "published_at": "2026-09-29T00:34:27+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19304,6 +19181,17 @@
           "summary": "",
           "published_at": "2026-09-28T23:30:35+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886459",
+          "target_url": "https://www.washingtonpost.com/technology/2026/09/28/chatgpt-maker-openai-scraps-release-astra-61-model-over-safety",
+          "independent": false,
+          "title": "OpenAI scraps release of Astra 6.1 model over safety issues",
+          "summary": "",
+          "published_at": "2026-09-29T00:38:41+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -19492,6 +19380,300 @@
           "title": "Kling 4.0 Flash Is Live. What Should Creators Do With It?",
           "summary": "Ultra Yearly subscribers can access Flash now. The broader October release points toward more control over references, timing, sound, and… Continue reading on Medium »",
           "published_at": "2026-09-28T23:42:17+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4c2f06bca4278c0",
+      "title": "We found 24 Android vulnerabilities using our open source AI security agent",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886609",
+          "target_url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent",
+          "independent": false,
+          "title": "We found 24 Android vulnerabilities using our open source AI security agent",
+          "summary": "",
+          "published_at": "2026-09-29T00:55:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "86a68c254af11c46",
+      "title": "AI Companies Are Not (Necessarily) Liable for Unintended AI Cyberattacks",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886368",
+          "target_url": "https://sarahconstantin.substack.com/p/ai-companies-are-not-necessarily",
+          "independent": false,
+          "title": "AI Companies Are Not (Necessarily) Liable for Unintended AI Cyberattacks",
+          "summary": "",
+          "published_at": "2026-09-29T00:29:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2a8f7ba8a50bb01e",
+      "title": "OpenAI Halts Model Release Amid Safety Escalation",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886336",
+          "target_url": "https://www.techbuzz.ai/articles/openai-halts-model-release-amid-safety-escalation",
+          "independent": false,
+          "title": "OpenAI Halts Model Release Amid Safety Escalation",
+          "summary": "",
+          "published_at": "2026-09-29T00:25:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4e991a1e3d95a845",
+      "title": "AI and the Revenge of the Non-Techies",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886277",
+          "target_url": "https://maroun-baydoun.com/blog/ai-revenge-non-techies",
+          "independent": false,
+          "title": "AI and the Revenge of the Non-Techies",
+          "summary": "",
+          "published_at": "2026-09-29T00:18:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c598635a839c738d",
+      "title": "GPT-6 Astra Is the Best Vision Model We Have Tested",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886228",
+          "target_url": "https://blog.roboflow.com/gpt-6-astra-vision",
+          "independent": false,
+          "title": "GPT-6 Astra Is the Best Vision Model We Have Tested",
+          "summary": "",
+          "published_at": "2026-09-29T00:10:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1d02ebc38f690997",
+      "title": "LLM makes decisions to raise its training scores, and ignore user directives",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886206",
+          "target_url": "https://joinhandshake.com/research/ai/deepswe-reward-hacking",
+          "independent": false,
+          "title": "LLM makes decisions to raise its training scores, and ignore user directives",
+          "summary": "",
+          "published_at": "2026-09-29T00:07:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "415dcf64b3863f82",
+      "title": "Atrocious AI-Written Tests",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49886186",
+          "target_url": "https://gruhn.me/blog/2026-09-29",
+          "independent": false,
+          "title": "Atrocious AI-Written Tests",
+          "summary": "",
+          "published_at": "2026-09-29T00:05:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6089156caa72e40a",
+      "title": "Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises",
+          "target_url": "https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises",
+          "independent": true,
+          "title": "Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort",
+          "summary": "Thirteen of the 18 startups in Peak XV’s latest Surge cohort are targeting global markets, while more than half are based in India.",
+          "published_at": "2026-09-29T00:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "c5decb37161fb644",
+      "title": "The AI boom took over Climate Week and not everyone is happy about it",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/09/28/the-ai-boom-took-over-climate-week-and-not-everyone-is-happy-about-it",
+          "target_url": "https://techcrunch.com/2026/09/28/the-ai-boom-took-over-climate-week-and-not-everyone-is-happy-about-it",
+          "independent": true,
+          "title": "The AI boom took over Climate Week and not everyone is happy about it",
+          "summary": "Just like the rest of the U.S., data centers and AI are dividing climate tech founders and investors.",
+          "published_at": "2026-09-28T19:21:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "candidate",
+      "reason": "독립 출처 부족"
+    },
+    {
+      "id": "706e852095b7afb3",
+      "title": "Your Next Employee May Never Log Off",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@KroshanK/your-next-employee-may-never-log-off-3b45c14cfd3a",
+          "target_url": "https://medium.com/@KroshanK/your-next-employee-may-never-log-off-3b45c14cfd3a",
+          "independent": false,
+          "title": "Your Next Employee May Never Log Off",
+          "summary": "Continue reading on Medium »",
+          "published_at": "2026-09-29T00:50:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "647efaa1ad35852f",
+      "title": "The Frozen Monument Is Dead: Implementing True Continual Alignment on OpenAI's GPT-OSS-20B",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/ai-simplified-in-plain-english/the-frozen-monument-is-dead-implementing-true-continual-alignment-on-openais-gpt-oss-20b-9547a1e3bad2",
+          "target_url": "https://medium.com/ai-simplified-in-plain-english/the-frozen-monument-is-dead-implementing-true-continual-alignment-on-openais-gpt-oss-20b-9547a1e3bad2",
+          "independent": false,
+          "title": "The Frozen Monument Is Dead: Implementing True Continual Alignment on OpenAI's GPT-OSS-20B",
+          "summary": "Frank Morales Aguilera, BEng, MEng, SMIEEE Continue reading on AI Simplified in Plain English »",
+          "published_at": "2026-09-29T00:47:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "72290f692723234d",
+      "title": "How to Use DeepSeek V3.2 for Low-Cost API Coding",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@liutan2008/how-to-use-deepseek-v3-2-for-low-cost-api-coding-dce0b94a7413",
+          "target_url": "https://medium.com/@liutan2008/how-to-use-deepseek-v3-2-for-low-cost-api-coding-dce0b94a7413",
+          "independent": false,
+          "title": "How to Use DeepSeek V3.2 for Low-Cost API Coding",
+          "summary": "DeepSeek V3.2 is an open-weight large language model with an OpenAI-compatible API priced well below frontier US models, strong at code… Continue reading on Medium »",
+          "published_at": "2026-09-29T00:46:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5e1a441bd6984ca2",
+      "title": "Your brand lost its point of view. You replaced it with a prompt.",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@iguglobal/your-brand-lost-its-point-of-view-you-replaced-it-with-a-prompt-2dd154f2321b",
+          "target_url": "https://medium.com/@iguglobal/your-brand-lost-its-point-of-view-you-replaced-it-with-a-prompt-2dd154f2321b",
+          "independent": false,
+          "title": "Your brand lost its point of view. You replaced it with a prompt.",
+          "summary": "Firstly I wanna share something, I don’t write to produce articles. Continue reading on Medium »",
+          "published_at": "2026-09-29T00:41:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5fa077fca535ce9e",
+      "title": "AI Capital Expenditure Sanity Check",
+      "first_seen": "2026-09-29T10:04:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/terms-of-consent/ai-capital-expenditure-sanity-check-3c1ac6313720",
+          "target_url": "https://medium.com/terms-of-consent/ai-capital-expenditure-sanity-check-3c1ac6313720",
+          "independent": false,
+          "title": "AI Capital Expenditure Sanity Check",
+          "summary": "Does the AI capex boom pass a cursory analysis? Continue reading on Terms of Consent »",
+          "published_at": "2026-09-29T00:35:03+00:00",
           "date_precision": "time"
         }
       ],
