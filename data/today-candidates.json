@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T17:03:12.930173+09:00",
-  "window_start": "2026-07-31T17:03:12.930173+09:00",
-  "window_end": "2026-09-29T17:03:12.930173+09:00",
+  "collected_at": "2026-09-29T18:02:46.638882+09:00",
+  "window_start": "2026-07-31T18:02:46.638882+09:00",
+  "window_end": "2026-09-29T18:02:46.638882+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -10,12 +10,12 @@
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 125,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "google-ai",
@@ -23,24 +23,25 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 20,
       "coverage_limited": true,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "codex-releases",
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
-      "excluded_count": 189,
-      "skipped_count": 24,
+      "excluded_count": 0,
+      "skipped_count": 0,
       "coverage_limited": false,
+      "error": "한국어 번역 응답을 읽을 수 없습니다: argument of type 'NoneType' is not iterable",
       "last_success_at": "2026-09-29T17:03:12.930173+09:00"
     },
     {
@@ -49,12 +50,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 52,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "gemini-releases",
@@ -62,12 +63,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 69,
       "skipped_count": 10,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "grok-releases",
@@ -75,7 +76,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -83,7 +84,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "anthropic-news",
@@ -91,12 +92,12 @@
       "url": "https://www.anthropic.com/news",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 1,
       "skipped_count": 13,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "xai-news",
@@ -104,25 +105,25 @@
       "url": "https://x.ai/news",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 60,
       "skipped_count": 25,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     },
     {
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
       "status": "ok",
-      "count": 13,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "count": 11,
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 5,
+      "excluded_count": 28,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "huggingface-blog",
@@ -130,12 +131,12 @@
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
       "count": 1,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 29,
       "skipped_count": 1,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "wired-ai",
@@ -143,12 +144,12 @@
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
       "count": 6,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 4,
       "skipped_count": 6,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "the-verge-ai",
@@ -156,12 +157,12 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
       "count": 10,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 10,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "techcrunch-ai",
@@ -169,12 +170,12 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "status": "ok",
       "count": 20,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 20,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "ars-technica",
@@ -182,12 +183,12 @@
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 20,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "product-hunt",
@@ -195,12 +196,12 @@
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
       "count": 5,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 25,
-      "skipped_count": 2,
+      "skipped_count": 5,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "the-new-stack-ai",
@@ -208,12 +209,12 @@
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
       "count": 4,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 22,
       "skipped_count": 4,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "the-rundown-ai",
@@ -221,12 +222,12 @@
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
       "count": 1,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 19,
       "skipped_count": 1,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "infoq-ai",
@@ -234,12 +235,12 @@
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
       "count": 5,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 10,
       "skipped_count": 5,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "medium-ai",
@@ -247,12 +248,12 @@
       "url": "https://medium.com/feed/tag/artificial-intelligence",
       "status": "ok",
       "count": 5,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:44.748870+09:00"
+      "last_success_at": "2026-09-29T18:03:02.252355+09:00"
     },
     {
       "id": "venturebeat-ai",
@@ -260,7 +261,7 @@
       "url": "https://venturebeat.com/category/ai/feed/",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:44.748870+09:00",
+      "checked_at": "2026-09-29T18:03:02.252355+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -316,19 +317,19 @@
       "url": "https://claude.dev/",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-09-29T17:03:12.930173+09:00",
+      "checked_at": "2026-09-29T18:02:46.638882+09:00",
       "held_count": 0,
       "excluded_count": 4,
       "skipped_count": 6,
       "coverage_limited": false,
-      "last_success_at": "2026-09-29T17:03:12.930173+09:00"
+      "last_success_at": "2026-09-29T18:02:46.638882+09:00"
     }
   ],
   "new_count": 0,
   "archive_count": 312,
   "candidates": [],
-  "hourly_collected_at": "2026-09-29T17:03:44.748870+09:00",
-  "hourly_window_start": "2026-09-26T17:03:44.748870+09:00",
+  "hourly_collected_at": "2026-09-29T18:03:02.252355+09:00",
+  "hourly_window_start": "2026-09-26T18:03:02.252355+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -1499,6 +1500,39 @@
           "summary": "",
           "published_at": "2026-09-29T05:31:46+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49890195",
+          "target_url": "https://faqs.me",
+          "independent": false,
+          "title": "Show HN: Faqs.me – Let your AI agent build the FAQ properly",
+          "summary": "",
+          "published_at": "2026-09-29T08:59:51+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889817",
+          "target_url": "https://github.com/lemma-work/lemma-platform",
+          "independent": false,
+          "title": "Show HN: Lemma.work – Open-source AI coworkers your whole team can share",
+          "summary": "",
+          "published_at": "2026-09-29T08:12:01+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889782",
+          "target_url": "https://github.com/rsync-ai/rsync",
+          "independent": false,
+          "title": "Show HN: Rsync.ai – self-hosted CDC and ETL/ELT, source-available (ELv2)",
+          "summary": "",
+          "published_at": "2026-09-29T08:07:06+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -2076,38 +2110,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "d178c78a54857ad3",
-      "title": "EU Member States plan \"digital expropriation\" in the interest of AI companies",
-      "first_seen": "2026-09-25T22:03:45+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49843793",
-          "target_url": "https://noyb.eu/en/ai-eu-member-states-plan-digital-expropriation-europeans-interest-ai-companies",
-          "independent": false,
-          "title": "EU Member States plan \"digital expropriation\" in the interest of AI companies",
-          "summary": "",
-          "published_at": "2026-09-25T12:38:41+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854518",
-          "target_url": "https://noyb.eu/en/ai-eu-member-states-plan-digital-expropriation-europeans-interest-ai-companies",
-          "independent": false,
-          "title": "EU Member States plan \"digital expropriation\" of Europeans in the interest of AI",
-          "summary": "",
-          "published_at": "2026-09-26T08:51:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "bb8739a9d6a76e6d",
       "title": "The New Copilot with Home, Code and Autopilot",
       "first_seen": "2026-09-25T23:01:56+09:00",
@@ -2164,38 +2166,6 @@
           "title": "LLM Policies: Progress at All Costs",
           "summary": "",
           "published_at": "2026-09-27T00:55:05+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d5158f51ec389770",
-      "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
-      "first_seen": "2026-09-26T01:01:35+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49846177",
-          "target_url": "https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment",
-          "independent": false,
-          "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
-          "summary": "",
-          "published_at": "2026-09-25T15:45:57+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854528",
-          "target_url": "https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment",
-          "independent": false,
-          "title": "Trump admin using AI to deny medical care for seniors in disastrous experiment",
-          "summary": "",
-          "published_at": "2026-09-26T08:52:57+00:00",
           "date_precision": "time"
         }
       ],
@@ -2771,164 +2741,6 @@
       "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
-      "id": "1310fdec8b5fa5b6",
-      "title": "Using Pomodoro to limit interaction with AI",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854538",
-          "target_url": "https://anaivebidder.com/posts/the-agentic-pomodoro-iterating-faster",
-          "independent": false,
-          "title": "Using Pomodoro to limit interaction with AI",
-          "summary": "",
-          "published_at": "2026-09-26T08:53:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "48d3d0de3b2c53b1",
-      "title": "Linux Kernel Developers Consider Adding Agents.md to Help Guide AI/LLM Agents",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854439",
-          "target_url": "https://www.phoronix.com/news/Linux-Considers-AGENTS-MD",
-          "independent": false,
-          "title": "Linux Kernel Developers Consider Adding Agents.md to Help Guide AI/LLM Agents",
-          "summary": "",
-          "published_at": "2026-09-26T08:36:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "525da10dd3141891",
-      "title": "Nobody wanted an \"AI PC,\" so Microsoft stopped calling it that",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854382",
-          "target_url": "https://www.techspot.com/news/113985-nobody-wanted-ai-pc-microsoft-stopped-calling.html",
-          "independent": false,
-          "title": "Nobody wanted an \"AI PC,\" so Microsoft stopped calling it that",
-          "summary": "",
-          "published_at": "2026-09-26T08:23:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "625388daff9c5be7",
-      "title": "Who is behind the AI safety backlash?",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854282",
-          "target_url": "https://twitter.com/TheMidasProj/status/2103577207700365719",
-          "independent": false,
-          "title": "Who is behind the AI safety backlash?",
-          "summary": "",
-          "published_at": "2026-09-26T08:03:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "18f2b0eb38b67d7a",
-      "title": "Building a Real-Time Full-Duplex Voice Assistant with Gemini 3.8 Live and Python",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@anooshmughal471/building-a-real-time-full-duplex-voice-assistant-with-gemini-3-8-live-and-python-ff0d49b7fdcf",
-          "target_url": "https://medium.com/@anooshmughal471/building-a-real-time-full-duplex-voice-assistant-with-gemini-3-8-live-and-python-ff0d49b7fdcf",
-          "independent": false,
-          "title": "Building a Real-Time Full-Duplex Voice Assistant with Gemini 3.8 Live and Python",
-          "summary": "Real-time voice AI is moving beyond simple question-and-answer interactions. Continue reading on Medium »",
-          "published_at": "2026-09-26T08:52:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "062d12f5cd094c6a",
-      "title": "AI RumorBoard, Sept 26, Gemini 4 Pro is Coming! Google is Back?",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@mikesulka/ai-rumorboard-sept-26-gemini-4-pro-is-coming-google-is-back-daa6ea714e25",
-          "target_url": "https://medium.com/@mikesulka/ai-rumorboard-sept-26-gemini-4-pro-is-coming-google-is-back-daa6ea714e25",
-          "independent": false,
-          "title": "AI RumorBoard, Sept 26, Gemini 4 Pro is Coming! Google is Back?",
-          "summary": "For two weeks Gemini 4 has been like the way birders identify a rare owl: somebody hears an unusual call from inside Arena, three… Continue reading on Medium »",
-          "published_at": "2026-09-26T08:48:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "768c30df07bbd8b1",
-      "title": "Testing AI Agents: A Practical Quality Engineering Journey",
-      "first_seen": "2026-09-26T18:01:24+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rajesh.yemul_42550/testing-ai-agents-a-practical-quality-engineering-journey-c235982cc8d9",
-          "target_url": "https://medium.com/@rajesh.yemul_42550/testing-ai-agents-a-practical-quality-engineering-journey-c235982cc8d9",
-          "independent": false,
-          "title": "Testing AI Agents: A Practical Quality Engineering Journey",
-          "summary": "Part 5 : Negative Testing: What Happens When the Input Is Bad? Continue reading on Medium »",
-          "published_at": "2026-09-26T08:47:12+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@rajesh.yemul_42550/testing-ai-agents-a-practical-quality-engineering-journey-9839e454b04a",
-          "target_url": "https://medium.com/@rajesh.yemul_42550/testing-ai-agents-a-practical-quality-engineering-journey-9839e454b04a",
-          "independent": false,
-          "title": "Testing AI Agents: A Practical Quality Engineering Journey",
-          "summary": "Part 4: Writing Our First Functional Test for an AI Agent Continue reading on Medium »",
-          "published_at": "2026-09-26T08:46:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
       "id": "8ad4a42c9d066cf3",
       "title": "Can Jev Replace LLMs? Why Is It So Much Cheaper & Faster?",
       "first_seen": "2026-09-26T18:01:24+09:00",
@@ -3016,27 +2828,6 @@
           "title": "Flashcat – a local AI assistant for the Mac terminal that asks first",
           "summary": "",
           "published_at": "2026-09-26T09:24:14+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "101b0426acf830d1",
-      "title": "LLM Red-temaing vs. Agent Red teaming",
-      "first_seen": "2026-09-26T19:01:18+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49854557",
-          "target_url": "https://www.botgauge.com/blog/llm-red-teaming-vs-agent-red-teaming",
-          "independent": false,
-          "title": "LLM Red-temaing vs. Agent Red teaming",
-          "summary": "",
-          "published_at": "2026-09-26T08:56:02+00:00",
           "date_precision": "time"
         }
       ],
@@ -11167,6 +10958,17 @@
           "summary": "",
           "published_at": "2026-09-28T20:20:42+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889872",
+          "target_url": "https://www.nytimes.com/2026/09/27/science/anthropic-biology-enzyme-mestre.html",
+          "independent": false,
+          "title": "Did Anthropic's A.I. Make a Scientific Discovery on Its Own?",
+          "summary": "",
+          "published_at": "2026-09-29T08:18:56+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -18119,6 +17921,17 @@
           "summary": "",
           "published_at": "2026-09-28T23:46:50+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889887",
+          "target_url": "https://www.business-standard.com/world-news/china-broadens-travel-curbs-to-encompass-family-of-top-ai-talent-126092801465_1.html",
+          "independent": false,
+          "title": "China broadens travel curbs to encompass family of top AI talent",
+          "summary": "",
+          "published_at": "2026-09-29T08:20:37+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 0,
@@ -18139,6 +17952,17 @@
           "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
           "summary": "",
           "published_at": "2026-09-28T23:40:59+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889896",
+          "target_url": "https://www.tradingview.com/news/seekingalpha:c93966fce094b:0-anthropic-ipo-prospectus-reveals-surging-costs-42b-2025-net-loss-report",
+          "independent": false,
+          "title": "Anthropic IPO prospectus reveals surging costs, $42B 2025 net loss",
+          "summary": "",
+          "published_at": "2026-09-29T08:21:16+00:00",
           "date_precision": "time"
         }
       ],
@@ -19159,6 +18983,17 @@
           "title": "From Stateless Chat to Customer Memory: Building a Support Agent with Hindsight",
           "summary": "The hardest part of a customer-support chatbot is not generating a response. It is knowing which information from a customer’s past is… Continue reading on Medium »",
           "published_at": "2026-09-29T03:04:24+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jyothidevi198/why-my-agents-hindsight-memory-isn-t-a-chat-log-26156db7ce5f",
+          "target_url": "https://medium.com/@jyothidevi198/why-my-agents-hindsight-memory-isn-t-a-chat-log-26156db7ce5f",
+          "independent": false,
+          "title": "Why My Agent’s Hindsight Memory Isn’t a Chat Log",
+          "summary": "What TOM retains, what it recalls, and how one stored correction turns into a different file plan Continue reading on Medium »",
+          "published_at": "2026-09-29T08:51:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -20398,6 +20233,195 @@
           "title": "Title: Why My Incident Agent Can Recommend a Fix but Cannot Execute One Alone",
           "summary": "Subtitle: Separating AI reasoning from authorization, remediation, and recovery verification in an incident-response workflow. Continue reading on Medium »",
           "published_at": "2026-09-29T07:49:50+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3ffa231d978baa44",
+      "title": "Neuroevolution: Harnessing Creativity in AI Agent Design",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49890159",
+          "target_url": "https://neuroevolutionbook.com/",
+          "independent": false,
+          "title": "Neuroevolution: Harnessing Creativity in AI Agent Design",
+          "summary": "",
+          "published_at": "2026-09-29T08:53:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0fcdc91bf8c589f",
+      "title": "Exploring AI Agent Governance: Privilege Escalation and Security Boundaries",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49890152",
+          "target_url": "https://medium.com/@ddggxxlljj/my-fries-were-sanctioned-by-a-rogue-delivery-ai-on-public-facing-algorithmic-privilege-7f1f136e8c13",
+          "independent": false,
+          "title": "Exploring AI Agent Governance: Privilege Escalation and Security Boundaries",
+          "summary": "",
+          "published_at": "2026-09-29T08:52:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6a93559ccac61455",
+      "title": "Nvidia Vera SMT Performance Benchmarks Review",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49890148",
+          "target_url": "https://www.phoronix.com/review/nvidia-vera-smt",
+          "independent": false,
+          "title": "Nvidia Vera SMT Performance Benchmarks Review",
+          "summary": "",
+          "published_at": "2026-09-29T08:51:53+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c747b9cdc5718498",
+      "title": "OpenAI Reopens $200 Pro Tier with %50 Usage Adjustment",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49890078",
+          "target_url": "https://x.com/i/trending/2104844080178217375",
+          "independent": false,
+          "title": "OpenAI Reopens $200 Pro Tier with %50 Usage Adjustment",
+          "summary": "",
+          "published_at": "2026-09-29T08:44:52+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8fd8200b380ba11b",
+      "title": "Making AI helpful for everyone, including the planet",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49889969",
+          "target_url": "https://sustainability.google/intl/en",
+          "independent": false,
+          "title": "Making AI helpful for everyone, including the planet",
+          "summary": "",
+          "published_at": "2026-09-29T08:30:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "47739bee43d6f224",
+      "title": "Why AI Sales Agents Need Memory: What We Learned While Building DealMind",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@bethalajyoshna/why-ai-sales-agents-need-memory-what-we-learned-while-building-dealmind-424e2d09c478",
+          "target_url": "https://medium.com/@bethalajyoshna/why-ai-sales-agents-need-memory-what-we-learned-while-building-dealmind-424e2d09c478",
+          "independent": false,
+          "title": "Why AI Sales Agents Need Memory: What We Learned While Building DealMind",
+          "summary": "AI assistants can answer questions quickly, but answering a question is only one part of helping with a long-running sales process. Continue reading on Medium »",
+          "published_at": "2026-09-29T08:52:35+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b869c0550f4ce5a4",
+      "title": "OmniGent AI Review: Can Talking Video Avatars Replace Dead Chatbots?",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@muzammalpir360/omnigent-ai-review-can-talking-video-avatars-replace-dead-chatbots-edf5b5c1b885",
+          "target_url": "https://medium.com/@muzammalpir360/omnigent-ai-review-can-talking-video-avatars-replace-dead-chatbots-edf5b5c1b885",
+          "independent": false,
+          "title": "OmniGent AI Review: Can Talking Video Avatars Replace Dead Chatbots?",
+          "summary": "Up to 97% of online visitors bounce off websites without taking a single action. If you are an affiliate marketer, digital creator, or… Continue reading on Medium »",
+          "published_at": "2026-09-29T08:49:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6f140c4a7b75c51b",
+      "title": "Best AI Short Drama Generators in 2026",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@pixmax.ai1/best-ai-short-drama-generators-in-2026-a93cc377e783",
+          "target_url": "https://medium.com/@pixmax.ai1/best-ai-short-drama-generators-in-2026-a93cc377e783",
+          "independent": false,
+          "title": "Best AI Short Drama Generators in 2026",
+          "summary": "Compare the 9 best AI short drama generators in 2026, including Pixmax, Kling AI, Pippit, and Veo. Find the right tool for scripts… Continue reading on Medium »",
+          "published_at": "2026-09-29T08:49:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9ace72ae31b9b809",
+      "title": "The Future of Generative AI: Five Technologies That Could Define the Next Decade",
+      "first_seen": "2026-09-29T18:03:02+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@priyas_94924/the-future-of-generative-ai-five-technologies-that-could-define-the-next-decade-c41a0521edfd",
+          "target_url": "https://medium.com/@priyas_94924/the-future-of-generative-ai-five-technologies-that-could-define-the-next-decade-c41a0521edfd",
+          "independent": false,
+          "title": "The Future of Generative AI: Five Technologies That Could Define the Next Decade",
+          "summary": "Multimodal Models, Agents, World Models, Robotics and Personalised AI Continue reading on Medium »",
+          "published_at": "2026-09-29T08:48:37+00:00",
           "date_precision": "time"
         }
       ],
