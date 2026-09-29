@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-09-29T11:01:23.297794+09:00",
-  "window_start": "2026-07-31T11:01:23.297794+09:00",
-  "window_end": "2026-09-29T11:01:23.297794+09:00",
+  "collected_at": "2026-09-29T12:01:50.521974+09:00",
+  "window_start": "2026-07-31T12:01:50.521974+09:00",
+  "window_end": "2026-09-29T12:01:50.521974+09:00",
   "edition_date": "2026-09-29",
   "sources": [
     {
@@ -9,10 +9,10 @@
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
       "status": "ok",
-      "count": 1,
+      "count": 0,
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 124,
+      "skipped_count": 125,
       "coverage_limited": false
     },
     {
@@ -70,7 +70,7 @@
       "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: 한국어 번역에 실패했습니다."
+        "한국어 번역 실패: Retry-After 대기시간 초과 (75465.0초)"
       ]
     },
     {
@@ -99,11 +99,11 @@
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 13,
-      "held_count": 1,
-      "excluded_count": 24,
-      "skipped_count": 7,
+      "status": "ok",
+      "count": 7,
+      "held_count": 0,
+      "excluded_count": 32,
+      "skipped_count": 4,
       "coverage_limited": false
     },
     {
@@ -276,26 +276,11 @@
       "coverage_limited": false
     }
   ],
-  "new_count": 1,
+  "new_count": 0,
   "archive_count": 311,
-  "candidates": [
-    {
-      "id": "50d71cd52400f551",
-      "title": "How we will do better for Australia",
-      "source_id": "openai-news",
-      "source_name": "OpenAI News",
-      "source_url": "https://openai.com/index/how-we-will-do-better-for-australia",
-      "source_summary": "OpenAI apologizes for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
-      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
-      "fetched_at": "2026-09-29T11:01:23+09:00",
-      "published_at": "2026-09-29T01:00:00+00:00",
-      "date_precision": "time",
-      "title_ko": "호주를 위해 더 나은 서비스를 제공하는 방법",
-      "source_summary_ko": "OpenAI는 호주 정부 웹사이트와 관련된 사건에 대해 사과하고 호주의 사이버 방어를 강화하기 위한 더 강력한 안전 장치와 지원을 설명합니다."
-    }
-  ],
-  "hourly_collected_at": "2026-09-29T11:01:58.106883+09:00",
-  "hourly_window_start": "2026-09-26T11:01:58.106883+09:00",
+  "candidates": [],
+  "hourly_collected_at": "2026-09-29T12:02:16.419051+09:00",
+  "hourly_window_start": "2026-09-26T12:02:16.419051+09:00",
   "events": [
     {
       "id": "2388dbe9319557a4",
@@ -1432,6 +1417,17 @@
           "title": "Show HN: Jauvex 1.2, two-way voice chat harness for Claude+Codex+Grok+Jev",
           "summary": "",
           "published_at": "2026-09-29T00:31:44+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887154",
+          "target_url": "https://github.com/rohanprichard/talktome",
+          "independent": false,
+          "title": "Show HN: Talktome - let your AI Agent call you",
+          "summary": "",
+          "published_at": "2026-09-29T02:01:08+00:00",
           "date_precision": "time"
         }
       ],
@@ -2788,132 +2784,6 @@
       "independent_source_count": 1,
       "status": "candidate",
       "reason": "독립 출처 부족"
-    },
-    {
-      "id": "fc482855c989ad39",
-      "title": "Revelations of dozens more platforms hit by OpenAI agents",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49852728",
-          "target_url": "https://www.abc.net.au/news/2026-09-26/openai-review-rogue-agents-australia-medicare-hack/107199074",
-          "independent": false,
-          "title": "Revelations of dozens more platforms hit by OpenAI agents",
-          "summary": "",
-          "published_at": "2026-09-26T02:48:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e6d5544992b0f579",
-      "title": "I Gave AI Exactly 30 Days to Build Me an Income Stream. Here’s What Actually Happened",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/write-your-world/i-gave-ai-exactly-30-days-to-build-me-an-income-stream-heres-what-actually-happened-d0a117e4c270",
-          "target_url": "https://medium.com/write-your-world/i-gave-ai-exactly-30-days-to-build-me-an-income-stream-heres-what-actually-happened-d0a117e4c270",
-          "independent": false,
-          "title": "I Gave AI Exactly 30 Days to Build Me an Income Stream. Here’s What Actually Happened",
-          "summary": "No “$10K by Friday” promises. Just a real process, tracked day by day. Continue reading on Write Your World »",
-          "published_at": "2026-09-26T02:53:24+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a6587e7579eabf78",
-      "title": "After Gradient Descent: The Unexpected Flexibility of Neural Network Parameters.",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://siddiqueabusaleh.medium.com/after-gradient-descent-the-unexpected-flexibility-of-neural-network-parameters-e8ada10ac237",
-          "target_url": "https://siddiqueabusaleh.medium.com/after-gradient-descent-the-unexpected-flexibility-of-neural-network-parameters-e8ada10ac237",
-          "independent": false,
-          "title": "After Gradient Descent: The Unexpected Flexibility of Neural Network Parameters.",
-          "summary": "A neural network processes an input through successive layers of computation. Within each layer, units combine incoming signals using… Continue reading on Medium »",
-          "published_at": "2026-09-26T02:52:11+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b06b4710c45d25f5",
-      "title": "UGC-Style AI Video Prompts: 12 Copy-Paste Templates for Creator Ads",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/write-your-world/ugc-style-ai-video-prompts-12-copy-paste-templates-for-creator-ads-d230f5538ab0",
-          "target_url": "https://medium.com/write-your-world/ugc-style-ai-video-prompts-12-copy-paste-templates-for-creator-ads-d230f5538ab0",
-          "independent": false,
-          "title": "UGC-Style AI Video Prompts: 12 Copy-Paste Templates for Creator Ads",
-          "summary": "Ready-to-use UGC-Style AI Video prompts for content creators to make better-converting ads. Continue reading on Write Your World »",
-          "published_at": "2026-09-26T02:50:27+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "21dd0abda379e3bc",
-      "title": "Most AI Agents Work on Friday. They Fail on Monday.",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/system-design-mastery-series/most-ai-agents-work-on-friday-they-fail-on-monday-7fbf071697a1",
-          "target_url": "https://medium.com/system-design-mastery-series/most-ai-agents-work-on-friday-they-fail-on-monday-7fbf071697a1",
-          "independent": false,
-          "title": "Most AI Agents Work on Friday. They Fail on Monday.",
-          "summary": "Why the gap between an agent demo and a real deployment is creating one of the fastest-growing roles in AI, and the book I wrote about… Continue reading on Think in AI Agents »",
-          "published_at": "2026-09-26T02:48:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "f2d62d5fa2b92173",
-      "title": "Multi-Agent Systems: When Multiple Agents Collaborate",
-      "first_seen": "2026-09-26T12:01:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@scosmexs/multi-agent-systems-when-multiple-agents-collaborate-fb58942b6966",
-          "target_url": "https://medium.com/@scosmexs/multi-agent-systems-when-multiple-agents-collaborate-fb58942b6966",
-          "independent": false,
-          "title": "Multi-Agent Systems: When Multiple Agents Collaborate",
-          "summary": "A single AI agent can already combine models, tools, memory, retrieval and business logic. Continue reading on Medium »",
-          "published_at": "2026-09-26T02:42:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
     },
     {
       "id": "d09ebb23857a7d44",
@@ -14907,6 +14777,17 @@
           "summary": "Your next coworker might well be an AI agent—and will require a whole new model of workplace interactions.",
           "published_at": "2026-09-28T10:00:00+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887331",
+          "target_url": "https://www.wired.com/story/ai-agents-are-about-to-flood-the-workforce-no-ones-ready-for-it",
+          "independent": false,
+          "title": "AI Agents Are About to Flood the Workforce. No One's Ready for It",
+          "summary": "",
+          "published_at": "2026-09-29T02:25:51+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
@@ -19710,6 +19591,132 @@
           "title": "Looking for a Midjourney API? Compare Production-Safe Options First",
           "summary": "A search for a Midjourney API often begins with a visual preference. Continue reading on Medium »",
           "published_at": "2026-09-29T01:43:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "44ae464c5a0cf852",
+      "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49887186",
+          "target_url": "https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202",
+          "independent": false,
+          "title": "Meta's New Muse AI Agent Read My Private Messages. I Never Asked It To",
+          "summary": "",
+          "published_at": "2026-09-29T02:03:55+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7b412a03bf057b3c",
+      "title": "The Model Behind Your AI Tool Changed Last Tuesday. Would Your Team Have Noticed?",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@anurag.ydv36/the-model-behind-your-ai-tool-changed-last-tuesday-would-your-team-have-noticed-6412013204c8",
+          "target_url": "https://medium.com/@anurag.ydv36/the-model-behind-your-ai-tool-changed-last-tuesday-would-your-team-have-noticed-6412013204c8",
+          "independent": false,
+          "title": "The Model Behind Your AI Tool Changed Last Tuesday. Would Your Team Have Noticed?",
+          "summary": "It came up at Wednesday standup, almost as a joke. Continue reading on Medium »",
+          "published_at": "2026-09-29T02:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bb4bab0b4b9af409",
+      "title": "You’re Not Going to Like What AI Is Doing to Your Brain",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://thomas-oppong.medium.com/youre-not-going-to-like-what-ai-is-doing-to-your-brain-872279eec49c",
+          "target_url": "https://thomas-oppong.medium.com/youre-not-going-to-like-what-ai-is-doing-to-your-brain-872279eec49c",
+          "independent": false,
+          "title": "You’re Not Going to Like What AI Is Doing to Your Brain",
+          "summary": "This is cognitive surrender. And what you can do right now. Continue reading on Medium »",
+          "published_at": "2026-09-29T02:51:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4c8234c7983cfed7",
+      "title": "How to Audit Your AI Spend: A 5-Step FinOps Checklist for 2026",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@techverdict/how-to-audit-your-ai-spend-a-5-step-finops-checklist-for-2026-7bca56ffe0c2",
+          "target_url": "https://medium.com/@techverdict/how-to-audit-your-ai-spend-a-5-step-finops-checklist-for-2026-7bca56ffe0c2",
+          "independent": false,
+          "title": "How to Audit Your AI Spend: A 5-Step FinOps Checklist for 2026",
+          "summary": "Disclosure: This article was created with AI assistance — AI tools helped with research, drafting, and fact-checking. It contains no… Continue reading on Medium »",
+          "published_at": "2026-09-29T02:50:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "36ace1b76cc754a0",
+      "title": "Half the Company Gone in One Letter, and the Stock Went Up",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@akhan.adil050/half-the-company-gone-in-one-letter-and-the-stock-went-up-f821aa5c86ed",
+          "target_url": "https://medium.com/@akhan.adil050/half-the-company-gone-in-one-letter-and-the-stock-went-up-f821aa5c86ed",
+          "independent": false,
+          "title": "Half the Company Gone in One Letter, and the Stock Went Up",
+          "summary": "The letter landed after the market closed on a Thursday. By the next morning, more than 4,000 people at Block knew their jobs were gone… Continue reading on Medium »",
+          "published_at": "2026-09-29T02:48:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e137fa17780fb786",
+      "title": "Chasing Midnight",
+      "first_seen": "2026-09-29T12:02:16+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@dsobre/chasing-midnight-ff936fc68835",
+          "target_url": "https://medium.com/@dsobre/chasing-midnight-ff936fc68835",
+          "independent": false,
+          "title": "Chasing Midnight",
+          "summary": "Three Years of Prompting the Impossible Continue reading on Medium »",
+          "published_at": "2026-09-29T02:45:03+00:00",
           "date_precision": "time"
         }
       ],

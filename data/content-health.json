@@ -1,8 +1,8 @@
 {
   "news": {
-    "checked_at": "2026-09-29T11:01:58.106883+09:00",
+    "checked_at": "2026-09-29T12:02:16.419051+09:00",
     "status": "partial",
-    "candidate_count": 1,
+    "candidate_count": 0,
     "archive_count": 311,
     "sources": [
       {
@@ -10,10 +10,10 @@
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 1,
+        "count": 0,
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 124,
+        "skipped_count": 125,
         "coverage_limited": false
       },
       {
@@ -71,7 +71,7 @@
         "skipped_count": 7,
         "coverage_limited": false,
         "held_reasons": [
-          "한국어 번역 실패: 한국어 번역에 실패했습니다."
+          "한국어 번역 실패: Retry-After 대기시간 초과 (75465.0초)"
         ]
       },
       {
@@ -100,11 +100,11 @@
         "id": "hacker-news",
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-        "status": "partial",
-        "count": 13,
-        "held_count": 1,
-        "excluded_count": 24,
-        "skipped_count": 7,
+        "status": "ok",
+        "count": 7,
+        "held_count": 0,
+        "excluded_count": 32,
+        "skipped_count": 4,
         "coverage_limited": false
       },
       {
