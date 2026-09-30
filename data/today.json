@@ -2,7 +2,7 @@
   "edition_date": "2026-09-30",
   "window_start": "2026-08-01T09:01:13.330606+09:00",
   "window_end": "2026-09-30T09:01:13.330606+09:00",
-  "collected_at": "2026-09-30T21:03:05.872309+09:00",
+  "collected_at": "2026-09-30T22:06:45.118442+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -599,7 +599,24 @@
       "date_precision": "time",
       "title_ko": "팀 봇: 팀으로부터 배우는 AI 동료",
       "source_summary_ko": "팀이 공유하는 역할이나 워크플로를 중심으로 팀 봇을 구축합니다.\nSlack에서 팀 봇과 협업할 수도 있습니다.\nSpaceXAI의 모든 주요 영업 계정에는 전담 팀 봇이 있습니다.",
-      "source_summary_provenance": "article_full_text_3line"
+      "source_summary_provenance": "article_full_text_3line",
+      "sources": [
+        {
+          "source_id": "xai-news",
+          "name": "xAI News",
+          "url": "https://x.ai/news/team-bots",
+          "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49908197",
+          "independent": false,
+          "target_url": "https://x.ai/news/team-bots"
+        }
+      ],
+      "independent_source_count": 0,
+      "importance": "normal"
     },
     {
       "id": "833e9419a34f8836",
