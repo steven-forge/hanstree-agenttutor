@@ -11,7 +11,7 @@ TS 헬퍼를 파이썬으로 재구현해 비교하지 않는다. 대신 실행 
 from __future__ import annotations
 
 import argparse
-from datetime import datetime
+from datetime import datetime, timedelta
 from email.utils import parsedate_to_datetime
 from zoneinfo import ZoneInfo
 import json
@@ -29,6 +29,7 @@ from publish_news import apply_reviewed_edition  # noqa: E402
 from verify_live_site import normalize_base_url, visible_text  # noqa: E402
 
 ARTICLE_ID_RE = re.compile(r'id="article-([^"]+)"')
+KOREAN_RE = re.compile(r"[가-힣]")
 
 
 def read_json(path: Path) -> dict:
@@ -112,7 +113,8 @@ def check_editorial_links_resolve() -> None:
         return
     editorial = read_json(editorial_path)
     glossary_ids = {t["id"] for t in read_json(glossary_path).get("terms", [])} if glossary_path.exists() else set()
-    article_ids = {a["id"] for a in read_json(today_path).get("articles", []) if isinstance(a, dict)}
+    articles_by_id = {a["id"]: a for a in read_json(today_path).get("articles", []) if isinstance(a, dict)}
+    article_ids = set(articles_by_id)
 
     for art_id, entry in (editorial.get("articles") or {}).items():
         assert art_id in article_ids, f"편집 메모의 기사 {art_id}가 없다."
@@ -120,6 +122,10 @@ def check_editorial_links_resolve() -> None:
         for gid in ids:
             assert gid in glossary_ids, f"기사 {art_id}의 related_glossary_ids에 존재하지 않는 용어 id: {gid}"
         assert len(ids) == len(set(ids)), f"기사 {art_id}의 related_glossary_ids에 중복이 있다."
+
+        reading = entry.get("reading")
+        if reading is not None:
+            check_reading_shape(art_id, reading, articles_by_id.get(art_id))
 
     weekly = editorial.get("weekly")
     if weekly:
@@ -131,6 +137,49 @@ def check_editorial_links_resolve() -> None:
         for entry in story["entries"]:
             assert entry["article_id"] in article_ids, f"story entry의 {entry['article_id']}가 today.json에 없다."
 
+
+def check_reading_shape(art_id: str, reading: dict, article: dict | None) -> None:
+    assert isinstance(reading, dict), f"기사 {art_id}의 reading이 객체가 아니다."
+
+    summary_ko = reading.get("summary_ko")
+    assert isinstance(summary_ko, str) and summary_ko.strip(), f"기사 {art_id}의 reading.summary_ko가 비어 있다."
+    assert KOREAN_RE.search(summary_ko), f"기사 {art_id}의 reading.summary_ko에 한국어가 없다."
+
+    sections = reading.get("sections")
+    assert isinstance(sections, list) and len(sections) >= 1, f"기사 {art_id}의 reading.sections은 1개 이상이어야 한다."
+    section_word_count = 0
+    for sec in sections:
+        assert isinstance(sec, dict), f"기사 {art_id}의 reading.sections 항목이 객체가 아니다."
+        heading, body = sec.get("heading"), sec.get("body")
+        assert isinstance(heading, str) and heading.strip(), f"기사 {art_id}의 reading.sections heading이 비어 있다."
+        assert isinstance(body, str) and body.strip(), f"기사 {art_id}의 reading.sections body가 비어 있다."
+        assert KOREAN_RE.search(heading) and KOREAN_RE.search(body), f"기사 {art_id}의 reading.sections에 한국어가 없다."
+        section_word_count += len(heading.split()) + len(body.split())
+
+    total_ko_words = len(summary_ko.split()) + section_word_count
+    excerpt = reading.get("excerpt")
+    if excerpt is not None:
+        assert isinstance(excerpt, dict), f"기사 {art_id}의 reading.excerpt가 객체가 아니다."
+        original, ko = excerpt.get("original"), excerpt.get("ko")
+        assert isinstance(original, str) and original.strip(), f"기사 {art_id}의 reading.excerpt.original이 비어 있다."
+        original_words = len(original.split())
+        assert original_words <= 25, f"기사 {art_id}의 reading.excerpt.original이 25단어를 초과한다: {original_words}"
+        assert isinstance(ko, str) and ko.strip(), f"기사 {art_id}의 reading.excerpt.ko가 비어 있다."
+        assert KOREAN_RE.search(ko), f"기사 {art_id}의 reading.excerpt.ko에 한국어가 없다."
+        total_ko_words += len(ko.split()) + original_words
+
+    assert total_ko_words <= 200, f"기사 {art_id}의 reading 요약·인용·번역 총 단어 수가 200을 초과한다: {total_ko_words}"
+
+    source_url = reading.get("source_url")
+    assert isinstance(source_url, str) and source_url.strip(), f"기사 {art_id}의 reading.source_url이 비어 있다."
+    if article is not None:
+        assert source_url == article.get("source_url"), f"기사 {art_id}의 reading.source_url이 아카이브 source_url과 다르다."
+
+    checked_at = reading.get("checked_at")
+    assert isinstance(checked_at, str) and checked_at.strip(), f"기사 {art_id}의 reading.checked_at이 비어 있다."
+    parsed = datetime.fromisoformat(checked_at)
+    assert parsed.tzinfo is not None, f"기사 {art_id}의 reading.checked_at에 시간대 정보가 없다."
+    assert parsed <= datetime.now(parsed.tzinfo) + timedelta(minutes=5), f"기사 {art_id}의 원문 확인 시각이 미래다."
 
 # ---- 실행 중인 서버의 실제 HTML/RSS 응답 점검 ----
 
@@ -224,6 +273,22 @@ def check_article_detail(base_url: str, timeout: float, articles: list[dict]) ->
         assert note["check_now"]["text"] in text and note["reviewed_by"] in text
         for gid in note.get("related_glossary_ids", []):
             assert f'href="/glossary#{gid}"' in html, f"용어 링크 누락: {gid}"
+
+    # reading이 있는 기사는 일부만 골라 실제 표시 텍스트를 확인한다(전수 요청 방지).
+    reading_ids = [aid for aid, note in editorial["articles"].items() if note.get("reading")]
+    for aid in reading_ids[:3]:
+        note = editorial["articles"][aid]
+        reading = note["reading"]
+        html, _ = fetch_raw(base_url, f"/today/{aid}", timeout)
+        text = visible_text(html)
+        assert "핵심 요약" in text, f"기사 {aid}에 핵심 요약 제목이 없다."
+        assert reading["summary_ko"] in text, f"기사 {aid}의 reading.summary_ko가 화면에 없다."
+        assert "한국어로 자세히 읽기" in text, f"기사 {aid}에 상세 읽기 섹션이 없다."
+        for sec in reading["sections"]:
+            assert sec["heading"] in text and sec["body"] in text, f"기사 {aid}의 reading.sections 텍스트가 화면에 없다."
+        if reading.get("excerpt"):
+            assert "짧은 원문과 번역" in text
+            assert reading["excerpt"]["original"] in text and reading["excerpt"]["ko"] in text, f"기사 {aid}의 excerpt 텍스트가 화면에 없다."
 
 
 def check_rss_feed(base_url: str, timeout: float, articles: list[dict]) -> None:

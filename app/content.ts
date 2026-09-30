@@ -191,6 +191,15 @@ export type ArticleEditorial = {
     caveat: string;
     source_url: string;
   };
+  // 원문을 직접 대조해 작성한 재구성 요약. 원문 전체 번역이 아니다.
+  reading?: {
+    summary_ko: string;
+    sections: { heading: string; body: string }[];
+    excerpt?: { original: string; ko: string };
+    source_url: string;
+    checked_at: string;
+    reviewed_by?: string;
+  };
 };
 
 export type WeeklyEditorial = {
