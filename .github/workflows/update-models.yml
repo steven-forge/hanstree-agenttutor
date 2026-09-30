@@ -1,0 +1,70 @@
+name: Update Agent Models
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '.github/workflows/update-models.yml'
+      - 'scripts/update_agent_models.py'
+  schedule:
+    - cron: '35 21 * * *'  # 06:35 Asia/Seoul (UTC 21:35 previous day) - 공식 모델 카탈로그 점검
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-content
+  cancel-in-progress: false
+
+jobs:
+  update-models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update agent model catalogs
+        id: update_models
+        run: python3 scripts/update_agent_models.py
+        continue-on-error: true
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/agent-models.json)" ]; then
+            git add data/agent-models.json
+            git commit -m "chore(agents): 모델 카탈로그 자동 점검 갱신"
+            git pull --rebase origin master
+            git push origin master
+          else
+            echo "No changes detected in data/agent-models.json. Skipping push."
+          fi
+
+      - name: Check update step outcome
+        run: |
+          if [ "${{ steps.update_models.outcome }}" = "failure" ]; then
+            echo "Error: model catalog update encountered a failure (see data/agent-models.json auto_update for per-provider status)."
+            exit 1
+          fi

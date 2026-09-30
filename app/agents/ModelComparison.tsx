@@ -7,9 +7,9 @@ import type { AgentDoc, Source } from "../content";
 type AgentModel = {
   id: string;
   name: string;
-  input_cost: number;
-  output_cost: number;
-  cache_read_cost: number;
+  input_cost: number | null;
+  output_cost: number | null;
+  cache_read_cost: number | null;
   context_window: string;
   max_output: string;
   key_feature: string;
@@ -61,8 +61,8 @@ type AgentModelGroup = {
 const MAX_SELECTED = 5;
 const MAX_LISTED = 6;
 
-function formatUsd(value: number): string {
-  return `$${value}`;
+function formatUsd(value: number | null): string {
+  return value === null || value === undefined ? "공식 미확인" : `$${value}`;
 }
 
 function formatContextWindow(value: string): string {
@@ -139,7 +139,11 @@ const COMPARE_ROWS: CompareRow[] = [
     label: "지원 effort (추론 수준)",
     cell: ({ model, effort_note, effort_source }) => (
       <>
-        {model.effort_levels && model.effort_levels.length > 0 ? model.effort_levels.join(" · ") : "설정 미지원"}
+        {model.effort_levels === undefined
+          ? "공식 미확인"
+          : model.effort_levels.length > 0
+            ? model.effort_levels.join(" · ")
+            : "설정 미지원"}
         {effort_note && (
           <>
             <br />
@@ -160,7 +164,12 @@ const COMPARE_ROWS: CompareRow[] = [
       </>
     ),
     text: ({ model, effort_note, effort_source }) => {
-      const levels = model.effort_levels && model.effort_levels.length > 0 ? model.effort_levels.join(" · ") : "설정 미지원";
+      const levels =
+        model.effort_levels === undefined
+          ? "공식 미확인"
+          : model.effort_levels.length > 0
+            ? model.effort_levels.join(" · ")
+            : "설정 미지원";
       const note = effort_note ? ` (${effort_note})` : "";
       const source = effort_source.length > 0 ? ` ${sourcesText(effort_source)}` : "";
       return `${levels}${note}${source}`;
