@@ -1,5 +1,7 @@
 # 배치 작업 운영 문서
 
+> GitHub 연결·원격 커밋 관련 안전 수칙은 [GITHUB_CONNECTION.md](./GITHUB_CONNECTION.md)를 참고하세요.
+
 AgentTutor에서 실제로 설정된 배치(자동·수동 반복) 작업을 정리한 문서입니다.
 근거는 `.github/workflows/update-content.yml`, `.github/workflows/update-docs.yml`, `scripts/collect_content.py`, `scripts/update_docs.py`, `scripts/publish_news.py`, `scripts/check_content.py`입니다. 이 문서는 파일을 읽고 정리한 것이며, 작업을 실제로 실행해 확인한 결과는 아닙니다.
 
