@@ -250,6 +250,8 @@
             "xhigh",
             "max"
           ],
+          "codex_modes": ["ultra"],
+          "effort_note": "API reasoning.effort 기준입니다. Ultra는 Codex가 복잡한 작업을 하위 에이전트로 나눠 병렬 처리하는 별도 실행 모드로 API effort 값이 아니며, 표시 여부는 계정·클라이언트·설정에 따라 다릅니다.",
           "released_at": "2026-09-03",
           "release_source": "https://openai.com/index/safety-overview-gpt-6-astra/",
           "minimum_access": "Codex Plus 월 $20부터 · 포함 사용량 내",
@@ -276,6 +278,10 @@
             {
               "name": "gpt-6-astra 공식 문서",
               "url": "https://developers.openai.com/api/docs/models/gpt-6-astra.md"
+            },
+            {
+              "name": "Codex 모델 안내",
+              "url": "https://learn.chatgpt.com/docs/models"
             }
           ]
         },
@@ -289,11 +295,16 @@
             "xhigh",
             "max"
           ],
-          "effort_note": "API reasoning.effort 기준, 기본값은 medium입니다. none/minimal은 지원하지 않습니다.",
+          "effort_note": "API reasoning.effort 기준, 기본값은 medium입니다. none/minimal은 지원하지 않습니다. Ultra는 Codex가 복잡한 작업을 하위 에이전트로 나눠 병렬 처리하는 별도 실행 모드로 API effort 값이 아니며, 표시 여부는 계정·클라이언트·설정에 따라 다릅니다.",
+          "codex_modes": ["ultra"],
           "effort_source": [
             {
               "name": "GPT-6.1 Sol 모델 문서",
               "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+            },
+            {
+              "name": "Codex 모델 안내",
+              "url": "https://learn.chatgpt.com/docs/models"
             }
           ],
           "released_at": "2026-09-29",

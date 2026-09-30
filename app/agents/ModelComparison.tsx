@@ -23,6 +23,7 @@ type AgentModel = {
   effort_levels?: string[];
   effort_note?: string;
   effort_source?: Source[];
+  codex_modes?: string[];
 };
 
 const NEW_BADGE_DAYS = 30;
@@ -139,11 +140,18 @@ const COMPARE_ROWS: CompareRow[] = [
     label: "지원 effort (추론 수준)",
     cell: ({ model, effort_note, effort_source }) => (
       <>
+        {model.codex_modes && model.codex_modes.length > 0 ? "API: " : ""}
         {model.effort_levels === undefined
           ? "공식 미확인"
           : model.effort_levels.length > 0
             ? model.effort_levels.join(" · ")
             : "설정 미지원"}
+        {model.codex_modes && model.codex_modes.length > 0 && (
+          <>
+            <br />
+            {`Codex 추가 모드: ${model.codex_modes.join(" · ")}`}
+          </>
+        )}
         {effort_note && (
           <>
             <br />
@@ -170,9 +178,14 @@ const COMPARE_ROWS: CompareRow[] = [
           : model.effort_levels.length > 0
             ? model.effort_levels.join(" · ")
             : "설정 미지원";
+      const prefix = model.codex_modes && model.codex_modes.length > 0 ? "API: " : "";
+      const codexModes =
+        model.codex_modes && model.codex_modes.length > 0
+          ? ` Codex 추가 모드: ${model.codex_modes.join(" · ")}`
+          : "";
       const note = effort_note ? ` (${effort_note})` : "";
       const source = effort_source.length > 0 ? ` ${sourcesText(effort_source)}` : "";
-      return `${levels}${note}${source}`;
+      return `${prefix}${levels}${codexModes}${note}${source}`;
     }
   },
   {

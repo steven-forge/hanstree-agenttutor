@@ -10,6 +10,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 import math
@@ -1252,6 +1253,24 @@ def _self_check_body(fixtures: dict) -> None:
     for note in ("2026-09-30 확인 · 가격", "2026-09-30 공식 모델 목록 자동 조회 · 가격"):
         assert re.sub(pat, "2026-10-01 공식 모델 목록 자동 조회", note) == "2026-10-01 공식 모델 목록 자동 조회 · 가격"
     assert re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+09:00', now_kst_str())
+
+    # --- Astra/Luna: Codex ultra는 codex_modes 전용 필드이며 API effort_levels 갱신에도 섞이지 않는다 ---
+    real_data = read_json(DATA_PATH)
+    real_models = [m for g in real_data.get("agents", []) for m in g.get("models", [])]
+    astra = next(m for m in real_models if m["id"] == "gpt-6-astra")
+    luna = next(m for m in real_models if m["id"] == "gpt-6-luna")
+    assert astra.get("codex_modes") == ["ultra"], astra.get("codex_modes")
+    assert "ultra" not in astra["effort_levels"], astra["effort_levels"]
+    assert luna.get("codex_modes") is None, luna.get("codex_modes")
+    assert "ultra" not in luna["effort_levels"], luna["effort_levels"]
+
+    astra_copy = deepcopy(astra)
+    apply_known_fields(astra_copy, {"effort_levels": ["low", "medium", "high", "xhigh", "max"],
+                                    "effort_source": [{"name": "z", "url": "https://p/astra-effort"}]})
+    assert astra_copy["codex_modes"] == ["ultra"], astra_copy["codex_modes"]
+    assert "ultra" not in astra_copy["effort_levels"], astra_copy["effort_levels"]
+    assert astra_copy["effort_note"] == astra["effort_note"]
+    assert any("learn.chatgpt.com/docs/models" in s["url"] for s in astra_copy["effort_source"])
 
 
 if __name__ == "__main__":
