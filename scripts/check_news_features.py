@@ -183,7 +183,21 @@ def check_today_page(base_url: str, timeout: float, articles: list[dict]) -> Non
     for key, title in (("official_run", "공식 뉴스 실행별 집계"), ("hourly_run", "외부 매체 실행별 집계")):
         run = candidates.get(key)
         if run:
-            assert title in text and run["collected_at"][:10].replace("-", ". ") in text
+            section = text.split(title, 1)[1].split("위 집계", 1)[0]
+            if key == "official_run":
+                section = section.split("외부 매체 실행별 집계", 1)[0]
+            compact = re.sub(r"\s+", "", section)
+            assert "기록없음" not in compact, f"{key}: 운영 집계가 아직 반영되지 않았다."
+            stamp = datetime.fromisoformat(run["collected_at"]).astimezone(ZoneInfo("Asia/Seoul"))
+            assert stamp.strftime("%Y.%m.%d.%H:%M") in compact, f"{key}: 운영 집계 시각 불일치"
+            if key == "official_run":
+                assert f'반환된신규후보항목{run["candidate_count"]}건' in compact
+                assert f'신규게시{run["published_count"]}건' in compact
+            else:
+                assert f'기존기사에병합된것제외){run["candidate_count"]}건' in compact
+                assert f'대기{run["waiting_count"]}건' in compact
+                assert f'게시보류{run["held_count"]}건' in compact
+            assert f'실패{run["failed_source_count"]}곳' in compact
             assert run["candidate_count"] >= run["published_count"] >= 0
     if run := candidates.get("hourly_run"):
         assert run["candidate_count"] == run["waiting_count"] + run["eligible_count"]

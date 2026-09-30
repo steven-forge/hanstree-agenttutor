@@ -14,6 +14,8 @@
 - 날짜 탐색은 정확한 발행시각이 있으면 KST 날짜, 날짜만 확인됐으면 출처의 날짜를 쓴다. 주간 회고와 연표는 공개한 기간·주제만 다루는 수동 시범이며 정기 발행을 보장하지 않는다. 원문 링크와 개별 기사 링크를 함께 제공한다.
 - `/feed.xml`은 릴리스를 제외한 최신 공개 뉴스 최대 50건의 제목·짧은 설명·원문 링크를 제공한다. 날짜만 알려진 기사는 임의 시각을 만들지 않으므로 RSS `pubDate`를 생략한다. 이메일 주소를 수집하지 않는다.
 
+반영 확인은 `python3 scripts/check_news_features.py --base-url https://hanstree-agenttutor-jgwu.vercel.app`로 실행한다. 로컬 `today.json`의 기사 ID·순서·필터 결과, 편집 기록 보존, 용어 링크, RSS XML·발행시각과 실제 페이지 응답을 대조한다. 실행 집계가 로컬 데이터에 있으면 운영 집계의 시각·건수도 일치해야 통과한다. 원격 자동 수집 커밋을 먼저 동기화해야 하며, 브라우저의 실제 클릭·배치 확인을 대신하지는 않는다. RSS 날짜·고유 ID 형식은 [RSS 2.0 명세](https://www.rssboard.org/rss-specification)를 따른다.
+
 ## Claude.dev 블로그 수집
 
 매시 실행되는 `collect_content.py news`가 `https://claude.dev/` 홈페이지의 같은 호스트 `/blog/` 글을 공식 출처 `claude-dev-blog`로 수집한다. 상세 페이지의 공식 발행일과 제목·설명을 확인해 60일 아카이브에 중복 없이 추가하고, 실패·보류 상태는 기존 `data/content-health.json`에 남긴다. 2026-09-24 확인 당시 `https://claude.dev/robots.txt`는 `User-Agent: *`, `Allow: /`였다. 전문은 저장하지 않고 짧은 한국어 요약과 원문 링크를 표시한다. Opus 5.5 가이드는 편집 요약·핵심 키워드·핵심 내용 설명을 별도로 제공한다.
