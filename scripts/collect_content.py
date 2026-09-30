@@ -761,6 +761,7 @@ def make_candidate(title: str, source_id: str, source_name: str, canonical_url: 
         "source_url": canonical_url,
         "source_summary": source_summary,
         "why_it_matters": build_beginner_explanation(title, source_id, source_summary),
+        "why_it_matters_provenance": "automatic",
         "fetched_at": datetime.now(KST).isoformat(timespec="seconds"),
         **date_fields,
     }
@@ -792,6 +793,7 @@ def ensure_beginner_explanations(articles: list[dict]) -> bool:
                 str(article.get("source_id") or ""),
                 str(article.get("source_summary") or ""),
             )
+            article["why_it_matters_provenance"] = "automatic"
             changed = True
     return changed
 
@@ -1513,6 +1515,19 @@ def collect_news() -> int:
 
     official_status = news_status(sources_health)
 
+    # 공식(비릴리스) 출처만의 실행별 집계. RELEASE_SOURCE_IDS는 제외한다(공식 뉴스 지표가 아님).
+    official_news_sources = [s for s in sources_health if s["id"] not in RELEASE_SOURCE_IDS]
+    official_run = {
+        "collected_at": collected_at,
+        "window_start": window_start.isoformat(),
+        "window_end": window_end.isoformat(),
+        "candidate_count": sum(s["count"] for s in official_news_sources),
+        "published_count": sum(1 for c in candidates_list if c["source_id"] not in RELEASE_SOURCE_IDS),
+        "held_item_count": sum(s["held_count"] for s in official_news_sources),
+        "failed_source_count": sum(1 for s in official_news_sources if s["status"] == "failed"),
+        "checked_source_count": sum(1 for s in official_news_sources if s["status"] != "not_configured"),
+    }
+
     # Save candidates. 매시간 외부 수집의 events·출처 보고는 보존한다.
     previous_candidates = read_json(CANDIDATES_PATH)
     candidates_data = {
@@ -1524,7 +1539,8 @@ def collect_news() -> int:
         "sources": merge_source_reports(previous_candidates.get("sources") or [], sources_health),
         "new_count": len(candidates_list),
         "archive_count": len(today["articles"]),
-        "candidates": candidates_list
+        "candidates": candidates_list,
+        "official_run": official_run,
     }
     write_json(CANDIDATES_PATH, candidates_data)
 

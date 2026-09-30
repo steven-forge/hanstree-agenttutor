@@ -107,13 +107,26 @@ def validate_reviewed_edition(reviewed: dict, current_today: dict) -> None:
 
 
 def apply_reviewed_edition(reviewed: dict, current_today: dict) -> dict:
-    """검증된 판본의 편집 필드만 archive 사본에 반영한다. 다른 기사·필드·정렬은 그대로다."""
+    """검증된 판본의 편집 필드만 archive 사본에 반영한다. 다른 기사·필드·정렬은 그대로다.
+    편집 필드가 바뀌면 기사별 reviewed_at을, 해설 자체가 바뀌면 editorial 출처를 기록한다.
+    입력과 기존 값이 완전히 같으면(무변경 재제출) 검토 표시를 새로 붙이지 않는다."""
     edits = {art["id"]: art for art in reviewed["articles"]}
+
+    def apply_one(article):
+        if not isinstance(article, dict) or article.get("id") not in edits:
+            return article
+        edit = edits[article["id"]]
+        changed = any(article.get(f) != edit[f] for f in EDITORIAL_FIELDS)
+        why_changed = article.get("why_it_matters") != edit["why_it_matters"]
+        merged_article = {**article, **{f: edit[f] for f in EDITORIAL_FIELDS}}
+        if changed:
+            merged_article["reviewed_at"] = reviewed["reviewed_at"]
+        if why_changed:
+            merged_article["why_it_matters_provenance"] = "editorial"
+        return merged_article
+
     merged = dict(current_today, reviewed_at=reviewed["reviewed_at"])
-    merged["articles"] = [
-        {**a, **{f: edits[a["id"]][f] for f in EDITORIAL_FIELDS}} if isinstance(a, dict) and a.get("id") in edits else a
-        for a in current_today.get("articles") or []
-    ]
+    merged["articles"] = [apply_one(a) for a in current_today.get("articles") or []]
     return merged
 
 

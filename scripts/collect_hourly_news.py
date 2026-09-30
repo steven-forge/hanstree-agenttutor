@@ -380,6 +380,7 @@ def build_article(event: dict, count: int, high_at: int, now: datetime) -> dict:
         "source_id": primary["source_id"], "source_name": primary["name"], "source_url": primary["url"],
         "source_summary": summary,
         "why_it_matters": build_beginner_explanation(primary["title"], primary["source_id"], summary),
+        "why_it_matters_provenance": "automatic",
         "fetched_at": now.isoformat(timespec="seconds"),
         **date_fields,
         "importance": importance_for(count, high_at),
@@ -520,21 +521,29 @@ def collect_hourly() -> int:
             updated_articles += 1
     events = pending_events
 
-    new_articles, remaining = [], []
+    date_filtered_events = []
     for event in events:
         dates = [d for d in (article_datetime(s) for s in event["sources"]) if d is not None]
         if not dates or max(dates) < window_start:
             continue  # 창을 벗어난 후보는 버린다. 피드에 다시 나타나면 다시 후보가 된다.
+        date_filtered_events.append(event)
+
+    new_articles, remaining = [], []
+    eligible_count = waiting_count = held_count = 0
+    for event in date_filtered_events:
         count = independent_count(event["sources"])
         event["independent_source_count"] = count
         if count >= min_independent:
+            eligible_count += 1
             try:
                 new_articles.append(build_article(event, count, high_at, now))
                 continue
             except Exception as err:
                 event["status"], event["reason"] = "held", f"자동 게시 보류: {err}"
+                held_count += 1
         else:
             event["status"], event["reason"] = "candidate", "독립 출처 부족" if count else "커뮤니티·소셜 신호만 있음"
+            waiting_count += 1
         remaining.append(event)
 
     added, merged_changed = merge_archive(today, new_articles)
@@ -542,12 +551,30 @@ def collect_hourly() -> int:
         today.update(edition_date=now.strftime("%Y-%m-%d"), collected_at=now.isoformat())
         write_json(TODAY_PATH, today)
 
+    hourly_run = {
+        "collected_at": now.isoformat(),
+        "window_start": window_start.isoformat(),
+        "window_end": window_end.isoformat(),
+        "candidate_count": len(date_filtered_events),
+        "eligible_count": eligible_count,
+        "published_count": len(added),
+        "waiting_count": waiting_count,
+        "held_count": held_count,
+        "duplicate_count": len(new_articles) - len(added),
+        "held_item_count": sum(r["held_count"] for r in reports),
+        "failed_source_count": sum(1 for r in reports if r["status"] == "failed"),
+        "checked_source_count": sum(1 for r in reports if r["status"] != "not_configured"),
+        "not_configured_source_count": sum(1 for r in reports if r["status"] == "not_configured"),
+        "min_independent": min_independent,
+    }
+
     candidates_data.update(
         hourly_collected_at=now.isoformat(),
         hourly_window_start=window_start.isoformat(),
         sources=merge_source_reports(candidates_data.get("sources") or [], reports),
         events=remaining,
         auto_published_count=len(added),
+        hourly_run=hourly_run,
     )
     write_json(CANDIDATES_PATH, candidates_data)
 

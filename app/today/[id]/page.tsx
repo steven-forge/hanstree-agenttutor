@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "../../SiteHeader";
 import DocsSidebar from "../../DocsSidebar";
-import { todayData } from "../../content";
+import { todayData, glossaryTerms, newsEditorial } from "../../content";
+import { RELEASE_SOURCE_IDS, resolveGlossaryLinks, formatKstTime } from "../newsHelpers";
 
 function findArticle(id: string) {
-  return todayData.articles.find((item) => item.id === id && item.source_id === "claude-dev-blog");
+  return todayData.articles.find((item) => item.id === id && !RELEASE_SOURCE_IDS.has(item.source_id));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -23,6 +24,15 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
   const article = findArticle(id);
   if (!article) notFound();
 
+  const editorial = newsEditorial.articles?.[article.id];
+  const glossaryLinks = resolveGlossaryLinks(editorial?.related_glossary_ids, glossaryTerms);
+  const whyProvenanceLabel =
+    article.why_it_matters_provenance === "editorial"
+      ? "편집 해설"
+      : article.why_it_matters_provenance === "automatic"
+      ? "자동 생성 해설"
+      : "작성 방식 기록 없음";
+
   return (
     <>
       <SiteHeader currentPath="/today" />
@@ -34,13 +44,47 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
               <p className="eyebrow">NEWSLETTER · {article.source_name}</p>
               <h1>{article.title_ko || article.title}</h1>
               <p className="lead">{article.title}</p>
-              <span className="date">발행 · {article.published_on || article.published_at?.slice(0, 10) || "날짜 미확인"}</span>
+              <span className="date">발행 · {article.published_at ? formatKstTime(article.published_at) : article.published_on ? `${article.published_on} · 날짜만 확인` : "날짜 미확인"}</span>
             </header>
 
             <section className="section" id="summary">
               <h2>요약</h2>
+              <p className="section-note">{article.summary ? "별도 작성 요약" : article.source_summary_provenance === "article_full_text_3line" ? "원문 3줄 요약 (자동 추출)" : "출처 제공 설명"}</p>
               <p style={{ whiteSpace: "pre-line" }}>{article.summary || article.source_summary_ko || article.source_summary}</p>
+              <p className="section-note">
+                {editorial
+                  ? `편집 기록 · ${editorial.reviewed_by} · ${formatKstTime(editorial.reviewed_at)} · 범위: ${editorial.review_scope}`
+                  : article.reviewed_at
+                  ? `편집 기록 · ${formatKstTime(article.reviewed_at)} (제목·요약·해설 중 일부 필드 편집, 원문 전체 대조는 아닐 수 있음)`
+                  : "기사 단위 편집 기록 없음"}
+              </p>
             </section>
+
+            <section className="section" id="why-it-matters">
+              <h2>왜 중요한가요? ({whyProvenanceLabel})</h2>
+              <p style={{ whiteSpace: "pre-line" }}>{article.why_it_matters}</p>
+            </section>
+
+            {glossaryLinks.length > 0 && (
+              <section className="section" id="related-glossary">
+                <h2>관련 용어</h2>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                  {glossaryLinks.map((g) => (
+                    <a key={g.id} href={`/glossary#${g.id}`} className="tag-link">{g.term}</a>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {editorial?.check_now && (
+              <section className="section" id="check-now">
+                <h2>지금 확인할 것</h2>
+                <p>{editorial.check_now.text}</p>
+                <p>대상: {editorial.check_now.audience}</p>
+                <p>주의: {editorial.check_now.caveat}</p>
+                <a href={editorial.check_now.source_url} target="_blank" rel="noopener noreferrer">근거 원문 ↗</a>
+              </section>
+            )}
 
             <section className="section" id="keywords">
               <h2>핵심 키워드</h2>
@@ -60,7 +104,7 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
             {article.key_points_ko && (
               <section className="section" id="source-explainer">
                 <h2>원문 주요 내용 한국어 해설</h2>
-                <p>원문 전체를 번역한 것이 아니라, 확인된 내용을 바탕으로 편집진이 독자적으로 정리한 해설입니다.</p>
+                <p>원문의 주요 내용을 한국어로 정리한 별도 해설입니다. 기사별 편집 기록의 검토 범위를 함께 확인하세요.</p>
                 <ul>{article.key_points_ko.map((point) => <li key={point}>{point}</li>)}</ul>
               </section>
             )}
@@ -71,6 +115,9 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
           <p>이 페이지에서</p>
           <nav aria-label="페이지 목차">
             <a href="#summary">요약</a>
+            <a href="#why-it-matters">왜 중요한가요?</a>
+            {glossaryLinks.length > 0 && <a href="#related-glossary">관련 용어</a>}
+            {editorial?.check_now && <a href="#check-now">지금 확인할 것</a>}
             <a href="#keywords">핵심 키워드</a>
             <a href="#source">원문</a>
             {article.key_points_ko && <a href="#source-explainer">원문 주요 내용 한국어 해설</a>}

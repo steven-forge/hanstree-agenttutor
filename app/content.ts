@@ -6,6 +6,7 @@ import rawToday from "../data/today.json";
 import rawHealth from "../data/content-health.json";
 import rawDocs from "../data/docs.json";
 import rawAiBehavior from "../data/ai-behavior.json";
+import rawNewsEditorial from "../data/news-editorial.json";
 
 export type Source = {
   name: string;
@@ -160,6 +161,11 @@ export type TodayArticle = {
     target_url?: string;
     independent: boolean;
   }[];
+  // 자동 생성 이후 편집 필드(title/summary/why_it_matters)가 실제 변경됐을 때만 publish_news.py가 기록한다.
+  // 이 기사 개별 편집 기록이며, todayData.reviewed_at(전체 판본 시각)과는 다른 뜻이다. 사람이 직접 확인했다는 보장은 아니다.
+  reviewed_at?: string;
+  // 새로 생성될 때만 설정. 과거 기존 해설은 이 필드가 없으며 '작성 방식 기록 없음'으로 표시한다.
+  why_it_matters_provenance?: "automatic" | "editorial";
 };
 
 export type TodayData = {
@@ -169,6 +175,77 @@ export type TodayData = {
   collected_at: string | null;
   reviewed_at: string | null;
   articles: TodayArticle[];
+};
+
+export type NewsTopic = "model" | "tools" | "safety";
+
+export type ArticleEditorial = {
+  reviewed_at: string;
+  reviewed_by: string;
+  review_scope: string;
+  topics?: NewsTopic[];
+  related_glossary_ids?: string[];
+  check_now?: {
+    text: string;
+    audience: string;
+    caveat: string;
+    source_url: string;
+  };
+};
+
+export type WeeklyEditorial = {
+  id: string;
+  start_date: string;
+  end_date: string;
+  reviewed_at: string;
+  reviewed_by: string;
+  title: string;
+  summary: string;
+  article_ids: string[];
+};
+
+export type StoryEditorial = {
+  id: string;
+  title: string;
+  reviewed_at: string;
+  reviewed_by: string;
+  introduction: string;
+  interpretation: string;
+  entries: { date: string; article_id: string; fact: string }[];
+};
+
+export type NewsEditorialData = {
+  articles?: Record<string, ArticleEditorial>;
+  weekly?: WeeklyEditorial;
+  story?: StoryEditorial;
+};
+
+export type OfficialRunTelemetry = {
+  collected_at: string;
+  window_start: string;
+  window_end: string;
+  candidate_count: number;
+  published_count: number;
+  held_item_count: number;
+  failed_source_count: number;
+  checked_source_count: number;
+};
+
+export type HourlyRunTelemetry = {
+  collected_at: string;
+  window_start: string;
+  window_end: string;
+  candidate_count: number;
+  eligible_count: number;
+  published_count: number;
+  waiting_count: number;
+  held_count: number;
+  duplicate_count: number;
+  held_item_count: number;
+  failed_source_count: number;
+  checked_source_count: number;
+  not_configured_source_count: number;
+  min_independent: number;
 };
 
 export type ContentHealthSource = {
@@ -215,6 +292,13 @@ export const todayData = rawToday as unknown as TodayData;
 export const contentHealth = rawHealth as unknown as ContentHealthData;
 export const commandDocs = (rawDocs as unknown as { documents: { slug: string; title: string; description: string }[] }).documents;
 export const aiBehaviorDocs = rawAiBehavior as AIBehaviorDoc[];
+export const newsEditorial = rawNewsEditorial as unknown as NewsEditorialData;
+
+export const NEWS_TOPIC_LABELS: Record<NewsTopic, string> = {
+  model: "모델",
+  tools: "도구",
+  safety: "안전",
+};
 
 export function isDocFreshnessWarning(
   doc: { reviewed_at: string; sources: Source[] },
