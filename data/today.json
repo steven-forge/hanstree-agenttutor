@@ -1,10 +1,27 @@
 {
   "edition_date": "2026-09-30",
-  "window_start": "2026-08-01T06:28:07.798595+09:00",
-  "window_end": "2026-09-30T06:28:07.798595+09:00",
-  "collected_at": "2026-09-30T06:28:07.798595+09:00",
+  "window_start": "2026-08-01T09:01:13.330606+09:00",
+  "window_end": "2026-09-30T09:01:13.330606+09:00",
+  "collected_at": "2026-09-30T09:01:13.330606+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "094c4918ba5c2d38",
+      "title": "0.159.2",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.159.2",
+      "source_summary": "## Bug Fixes - Suppressed console windows flashing on Windows when Codex launches background processes and sandboxed commands. (#49385) ## Changelog Full Changelog: https://github.com/openai/codex/compare/rust-v0.159.1...rust-v0.159.2 - #49385 [0.159] Backport Windows console suppression for 0.159.2 @andrewgu-oai",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "fetched_at": "2026-09-30T09:01:17+09:00",
+      "published_at": "2026-09-29T23:57:16+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.159.2 버전 출시",
+      "source_summary_ko": "# # 버그 수정 - 코덱스가 백그라운드 프로세스와 샌드박스 명령어를 실행할 때 Windows에서 깜박이는 콘솔 창이 억제되었습니다. (# 49385) # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.159.1... rust-v0.159.2 - # 49385 [0.159] 0.159.2 @ andrewgu-oai에 대한 백포트 Windows 콘솔 억제",
+      "release_notes_ko": {
+        "bug_fixes": "코덱스가 백그라운드 프로세스와 샌드박스 명령을 실행하면 Windows에서 콘솔 창이 깜박이지 않습니다."
+      }
+    },
     {
       "id": "09bc1aebce65c96b",
       "title": "Release v0.62.0",
