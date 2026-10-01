@@ -1,6 +1,6 @@
 # Explore — 구성 및 운영 계획
 
-상태: Explore 메뉴와 빈 목록은 v0.9.4로 운영 반영됐다. 첫 문서 Decisions API의 본문·그림·조작 예제와 검색 목록을 v0.10.0으로 구현했고, 빌드와 예제 자체 확인을 통과했다. 새 문서의 운영 공개는 아직 완료하지 못했다. 현재 세션에는 작업실 규칙이 요구하는 프로젝트 GitHub 동기화 도구가 제공되지 않았다.
+상태: Explore 메뉴와 빈 목록은 v0.9.4로 운영 반영됐다. 첫 문서 Decisions API의 본문·그림·조작 예제와 검색 목록을 v0.10.0으로 구현했다. 후속 요청으로 기존 설명 웹툰과 TypeSafe Jev 비교 설명·웹툰을 추가했으며(v0.10.1), 빌드와 최소 자체 확인을 통과했다. 새 문서의 운영 공개는 아직 완료하지 못했다. 현재 세션에는 작업실 규칙이 요구하는 프로젝트 GitHub 동기화 도구가 제공되지 않았다.
 
 ## 1. 만들고 싶은 경험
 
@@ -185,3 +185,14 @@
 - `npm run build` 통과: TypeScript 검사와 51개 페이지 생성이 성공했고 `/explore`, `/explore/decisions-api`가 생성됐다. 실제 브라우저 조작·모바일 화면 배치는 확인하지 않았다.
 - 작업실 규칙상 GitHub 작업은 프로젝트 전용 `github_project` 도구로 해야 하지만 이번 세션의 도구 목록에는 해당 기능이 없었다. 직접 Git 푸시나 공유 연결로 대체하지 않았다. 새 문서의 GitHub 반영·배포는 미완료이며, 운영 상세 주소의 조회 결과는 HTTP 404였다.
 - 공개 전에도 읽을 수 있도록 [Decisions API 설명 문서](DECISIONS_API.md)를 함께 작성했다.
+
+## 웹툰과 Jev 비교 추가 (v0.10.1)
+
+- 사용자의 후속 요청으로 같은 `/explore/decisions-api` 문서에 설명 웹툰과 Jev 비교를 추가했다. Jev는 TypeSafe의 System One 판단 모델로 해석했다.
+- 가상의 쇼핑몰 문의를 다룬 8컷 설명 웹툰과 8컷 비교 웹툰을 생성했다. 두 PNG는 각각 `public/explore/decisions-api-webtoon.png`, `public/explore/decisions-api-vs-jev-webtoon.png`에 저장했으며 크기는 모두 724×2172다.
+- 비교는 OpenAI 공식 발표, TypeSafe의 Jev 소개·API 문서·Quickstart를 근거로 한다(확인일 2026-10-01 KST). API 제품과 모델의 구분, 입력, 공개 자료에서 확인한 답변 형식, Jev의 Choice·Noul·Score를 설명한다. 확인하지 못한 OpenAI 기능을 없다고 단정하지 않으며, 직접 성능을 비교한 결과는 제시하지 않는다.
+- 웹툰은 이해를 위한 가상 사례이며 실제 API 호출 결과가 아니다. API의 판단과 앱의 권한 확인·실행을 구분한다.
+- 비교 웹툰의 생성 지시는 `docs/knowledge/decisions-api-vs-jev-webtoon-prompt.txt`에 저장했다.
+- 두 웹툰의 설명·가상 사례 표시·크게 보기 링크, 비교표·질문 형식 설명·출처, 큰 화면과 모바일 목차를 연결했다. Jev·TypeSafe 태그로 목록에서 검색할 수 있다.
+- `node scripts/check-explore.mjs` 결과는 `check-explore: OK`다. 최종 `npm run build`는 TypeScript 검사와 51개 페이지 생성을 완료했다. 생성된 상세 HTML에 두 PNG의 경로·724×2172 크기·지연 로딩, 비교 본문과 두 목차 링크가 포함됨을 확인했다. 실제 브라우저 조작과 화면 배치는 확인하지 않았다.
+- GitHub 반영·운영 배포는 아직 수행하지 않았다. 이번 세션에 필수 프로젝트 GitHub 동기화 도구가 없으며 직접 Git 푸시는 작업실 규칙상 허용되지 않는다. 2026-10-01 17:32 KST 운영 상세 주소 조회 결과는 HTTP 404였다.

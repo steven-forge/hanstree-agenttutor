@@ -295,3 +295,8 @@ input[type="date"] { font-family: inherit; font-size: .85rem; padding: 3px 6px; 
   .decisions-diagram { flex-direction: column; }
   .decisions-diagram-arrow { transform: rotate(90deg); }
 }
+
+.explore-figure { margin: 16px 0 0; }
+.explore-figure-img { display: block; max-width: 100%; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+.explore-figure figcaption { margin-top: 8px; color: var(--muted); font-size: .82rem; }
+.explore-figure figcaption a { color: var(--blue); text-decoration: underline; }
