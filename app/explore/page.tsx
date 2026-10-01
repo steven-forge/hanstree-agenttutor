@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
+import ExploreListClient from "./ExploreListClient";
 
 export const metadata: Metadata = {
   title: "Explore · AgentTutor",
@@ -21,12 +22,9 @@ export default function ExplorePage() {
           </header>
 
           <section style={{ marginTop: "32px" }} id="documents">
-            <h2>전체 문서 (0)</h2>
-            <div className="empty-state" style={{ marginTop: "16px" }}>
-              <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--ink)" }}>
-                아직 등록된 문서가 없습니다.
-              </p>
-              <p>완성된 설명 문서가 이곳에 모입니다.</p>
+            <h2>전체 문서</h2>
+            <div style={{ marginTop: "16px" }}>
+              <ExploreListClient />
             </div>
           </section>
         </main>

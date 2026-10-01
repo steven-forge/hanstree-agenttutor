@@ -20,7 +20,10 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
         <details
           key={group.title}
           className="sidebar-group"
-          open={group.items.some((item) => item.href === current || item.children?.some((child) => child.href === current))}
+          open={
+            group.items.some((item) => item.href === current || item.children?.some((child) => child.href === current)) ||
+            (group.href !== undefined && current.startsWith(`${group.href}/`))
+          }
         >
           <summary>{group.title}</summary>
           <nav aria-label={`${group.title} navigation`}>
