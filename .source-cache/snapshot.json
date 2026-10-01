@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-02",
   "targets": {
     "codex": {
       "commands": [
@@ -435,6 +435,7 @@
         "--dangerously-skip-permissions",
         "--debug",
         "--debug-file",
+        "--desktop",
         "--disable-slash-commands",
         "--disallowed-tools",
         "--disallowedTools",
@@ -680,6 +681,8 @@
         "claude Code queued the command until the turn finished",
         "claude Code queued the command until the turn finished. Alias:",
         "claude Code queued those dialogs until the turn finished.",
+        "claude Code refused and printed the",
+        "claude Code refused and told you to open the session with",
         "claude Code rejects it and shows",
         "claude Code searches the current project directory and its git worktrees",
         "claude Code sends them to the Agent SDK host or the",
@@ -689,6 +692,7 @@
         "claude Code waits for still-pending servers to connect before running the first turn",
         "claude Code writes the report to a",
         "claude Design",
+        "claude Desktop app",
         "claude \\\"explain this project\\\"",
         "claude \\\"query\\\"",
         "claude agents",
@@ -863,6 +867,9 @@
         "--dangerously-load-development-channels": "옵션/플래그",
         "--debug": "옵션/플래그",
         "--debug-file": "옵션/플래그",
+        "--desktop": "옵션/플래그",
+        "--resume": "옵션/플래그",
+        "--verbose": "옵션/플래그",
         "--disable-slash-commands": "옵션/플래그",
         "--disallowedTools": "옵션/플래그",
         "--disallowed-tools": "옵션/플래그",
@@ -873,7 +880,6 @@
         "--system-prompt-file": "옵션/플래그",
         "--fallback-model": "옵션/플래그",
         "--fork-session": "옵션/플래그",
-        "--resume": "옵션/플래그",
         "--forward-subagent-text": "옵션/플래그",
         "--output-format": "옵션/플래그",
         "--from-pr": "옵션/플래그",
@@ -897,7 +903,6 @@
         "--permission-prompts": "옵션/플래그",
         "--plugin-url": "옵션/플래그",
         "--prompt-suggestions": "옵션/플래그",
-        "--verbose": "옵션/플래그",
         "--ref": "옵션/플래그",
         "--remote": "옵션/플래그",
         "--remote-control": "옵션/플래그",
@@ -1065,12 +1070,14 @@
         "claude stop \\u003cid\\u003e": "CLI 명령",
         "claude Code suggests the closest match and exits without starting a session. For example": "CLI 명령",
         "claude Code also opts the session in": "CLI 명령",
+        "claude Desktop app": "CLI 명령",
         "claude Code omits the text and thinking blocks of a subagent that runs in the": "CLI 명령",
         "claude Code still emits": "CLI 명령",
         "claude Code waits for still-pending servers to connect before running the first turn": "CLI 명령",
         "claude Code applies": "CLI 명령",
         "claude Code sends them to the Agent SDK host or the": "CLI 명령",
         "claude Code searches the current project directory and its git worktrees": "CLI 명령",
+        "claude Code refused and printed the": "CLI 명령",
         "claude Code also opts the session in. The flag doesn’t affect MCP tools; to deny those too": "CLI 명령",
         "claude Code generates one. Pass": "CLI 명령",
         "claude Code provides five flags for customizing the system prompt. Four set its text": "CLI 명령",
@@ -1092,10 +1099,18 @@
         "claude Code applies the new level to the next request in that turn. Before v2.1.242": "CLI 명령",
         "claude Code applies the change without waiting for the current response to finish. Before v2.1.242": "CLI 명령",
         "claude Code rejects it and shows": "CLI 명령",
+        "claude Code refused and told you to open the session with": "CLI 명령",
         "claude Code filters the": "CLI 명령",
         "claude Code shows": "CLI 명령"
       },
       "auto_managed": [
+        {
+          "command": "--desktop",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
         {
           "command": "/artifact-capabilities",
           "category": "슬래시 명령",
@@ -1130,6 +1145,27 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-09-23"
+        },
+        {
+          "command": "claude Code refused and printed the",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
+        {
+          "command": "claude Code refused and told you to open the session with",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
+        {
+          "command": "claude Desktop app",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
         },
         {
           "command": "/claude-api",
