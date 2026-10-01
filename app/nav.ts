@@ -13,6 +13,7 @@ export type NavGroup = {
 export const TOP_NAV_LINKS: NavItem[] = [
   { title: "Today", href: "/today" },
   { title: "Learn", href: "/learn" },
+  { title: "Explore", href: "/explore" },
   { title: "Agent Engineering", href: "/agent-engineering" },
   { title: "Agents", href: "/agents" },
   { title: "CLI Docs", href: "/docs/hanstree" },
@@ -57,6 +58,13 @@ export const NAV_GROUPS: NavGroup[] = [
           { title: "12. 사람들이 Claude의 작업을 확인하는 방법", href: "/learn/ai-behavior/discernment-toolkit" }
         ]
       }
+    ]
+  },
+  {
+    title: "Explore",
+    href: "/explore",
+    items: [
+      { title: "All Documents", href: "/explore" }
     ]
   },
   {
