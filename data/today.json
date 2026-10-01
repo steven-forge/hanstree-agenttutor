@@ -2,7 +2,7 @@
   "edition_date": "2026-10-02",
   "window_start": "2026-08-03T03:03:25.877203+09:00",
   "window_end": "2026-10-02T03:03:25.877203+09:00",
-  "collected_at": "2026-10-02T03:03:25.877203+09:00",
+  "collected_at": "2026-10-02T05:02:01.293923+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -202,7 +202,24 @@
       "published_on": "2026-10-01",
       "date_precision": "day",
       "title_ko": "Claude Code 모드 시작하기",
-      "source_summary_ko": "개조 부품은 플러그인 내부에 배송되고 클로드 코드 세션 내부에서 실행되는 후크입니다. 빈 폴더에서 하나를 만든 다음 두 개의 더 큰 모드를 둘러보세요."
+      "source_summary_ko": "개조 부품은 플러그인 내부에 배송되고 클로드 코드 세션 내부에서 실행되는 후크입니다. 빈 폴더에서 하나를 만든 다음 두 개의 더 큰 모드를 둘러보세요.",
+      "sources": [
+        {
+          "source_id": "claude-dev-blog",
+          "name": "Claude.dev Blog",
+          "url": "https://claude.dev/blog/getting-started-with-claude-code-mods",
+          "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49926243",
+          "independent": false,
+          "target_url": "https://claude.dev/blog/getting-started-with-claude-code-mods"
+        }
+      ],
+      "independent_source_count": 0,
+      "importance": "normal"
     },
     {
       "id": "90249c2a3882c6d3",
@@ -343,6 +360,13 @@
           "name": "Medium",
           "url": "https://medium.com/@nuthalapativarun/always-on-read-only-first-how-openais-dots-are-built-to-work-while-you-re-away-3aea037d70b4",
           "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49926047",
+          "independent": false,
+          "target_url": "https://www.youtube.com/watch?v=Am7IWP8IpEc"
         }
       ],
       "title_ko": "OpenAI의 점은 항상 AI 에이전트이며 메타의 뮤즈에 대한 해답입니다",
