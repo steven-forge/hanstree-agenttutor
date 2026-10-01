@@ -1,10 +1,30 @@
 {
   "edition_date": "2026-10-02",
-  "window_start": "2026-08-03T03:03:25.877203+09:00",
-  "window_end": "2026-10-02T03:03:25.877203+09:00",
-  "collected_at": "2026-10-02T05:02:01.293923+09:00",
+  "window_start": "2026-08-03T06:01:08.523724+09:00",
+  "window_end": "2026-10-02T06:01:08.523724+09:00",
+  "collected_at": "2026-10-02T06:01:43.590499+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "e61beeca9f37dec1",
+      "title": "0.160.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.160.0",
+      "source_summary": "## New Features - Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. (#49106) - Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. (#49112) - Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. (#49160) - Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. (",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-02T06:01:12+09:00",
+      "published_at": "2026-10-01T20:19:13+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.160.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 키보드로 액세스할 수 있는 \"더 보기\" 동작으로 에이전트 명령 센터에서 이전 작업을 탐색합니다. (# 49106) - 대화록 텍스트를 선택하고 지원되는 로컬 Linux X11 터미널에서 전체 화면 모드에서 중간 클릭으로 붙여넣습니다. (# 49112) - 정책이 허용될 때 작업 영역 기본값으로 프로젝트 외부에서 세션을 시작하고 다시 시작할 때 저장된 권한을 복원합니다. (# 49160) - 이전 사용자를 검색하기 위해 옵트인 Guardian 검토 기능 추가 상담원 핸드오프의 지침과 맥락을 포함합니다. (",
+      "release_notes_ko": {
+        "new_features": "상담원 명령 센터에서 키보드로 액세스할 수 있는 '더 보기' 동작으로 이전 작업을 찾아보세요.\n지원되는 로컬 Linux X11 터미널에서 전체 화면 모드에서 중간 클릭으로 성적표 텍스트를 선택하고 붙여넣습니다.\n정책이 허용될 때 작업 영역이 기본값인 프로젝트 외부에서 세션을 시작하고 재개할 때 저장된 권한을 복원합니다.",
+        "bug_fixes": "이제 불확실한 제출이 해결되고 중복 전송을 방지한 후 대기 중인 메시지를 다시 전송합니다.\n이제 터미널 UI는 서버 공급자, 추론 요약 및 세부 정보 설정을 유지하고 이력서 및 포크 기록에 올바른 세션을 표시합니다.\nWindows 샌드박스 PowerShell 대체 기능 및 긴 경로 권한 수리를 수정하고 백그라운드 헬퍼에서 원치 않는 콘솔 창을 차단했습니다.",
+        "chores": "구문 분석된 매니페스트를 캐싱하고 원격 플러그인 요청에 HTTP 연결을 재사용하여 반복적인 플러그인 로드 작업을 줄였습니다.\n디스크 사용을 줄이기 위해 사용되지 않는 로그 데이터베이스 공간의 백그라운드 재확보를 추가했습니다."
+      }
+    },
     {
       "id": "d320458473217aca",
       "title": "v2.1.287",
@@ -845,6 +865,13 @@
           "url": "https://news.ycombinator.com/item?id=49885977",
           "independent": false,
           "target_url": "https://www.theverge.com/tech/1001287/nvidia-ai-safety-platform-rogue-agents"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49926650",
+          "independent": false,
+          "target_url": "https://www.nvidia.com/en-us/ai/openshell"
         }
       ],
       "title_ko": "엔비디아, 악성 AI 에이전트 차단을 위한 오픈 에이전트 안전 플랫폼 출시",
