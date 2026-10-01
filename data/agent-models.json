@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-09-30",
-  "unit_note": "2026-09-30 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
+  "checked_at": "2026-10-01",
+  "unit_note": "2026-10-01 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
   "agents": [
     {
       "agent_slug": "claude",
@@ -1170,7 +1170,7 @@
   "auto_update": {
     "providers": {
       "claude": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
+        "checked_at": "2026-10-01T06:50:07+09:00",
         "status": "success",
         "discovered_ids": [
           "claude-fable-5",
@@ -1189,7 +1189,7 @@
         ]
       },
       "codex": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
+        "checked_at": "2026-10-01T06:50:07+09:00",
         "status": "success",
         "discovered_ids": [
           "gpt-3.5-turbo",
@@ -1226,7 +1226,7 @@
         ]
       },
       "grok": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
+        "checked_at": "2026-10-01T06:50:07+09:00",
         "status": "success",
         "discovered_ids": [
           "grok-4.3",
@@ -1236,7 +1236,7 @@
         ]
       },
       "gemini": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
+        "checked_at": "2026-10-01T06:50:07+09:00",
         "status": "success",
         "discovered_ids": [
           "gemini-2.0-flash",
@@ -1257,7 +1257,7 @@
         ]
       },
       "muse": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
+        "checked_at": "2026-10-01T06:50:07+09:00",
         "status": "success",
         "discovered_ids": [
           "muse-spark-1.1",
@@ -1268,17 +1268,16 @@
         ]
       },
       "deepseek": {
-        "checked_at": "2026-09-30T20:10:16+09:00",
-        "status": "partial",
+        "checked_at": "2026-10-01T06:50:07+09:00",
+        "status": "success",
         "discovered_ids": [
           "deepseek-flash",
           "deepseek-v4-pro"
-        ],
-        "error": "deepseek-flash: 파싱 예외: DeepSeek thinking_mode 문서 조회 실패; deepseek-v4-pro: 파싱 예외: DeepSeek thinking_mode 문서 조회 실패"
+        ]
       }
     },
-    "last_checked_at": "2026-09-30T20:10:16+09:00",
-    "last_successful_check_at": "2026-09-30T11:41:41+09:00",
-    "status": "partial"
+    "last_checked_at": "2026-10-01T06:50:07+09:00",
+    "last_successful_check_at": "2026-10-01T06:50:07+09:00",
+    "status": "success"
   }
 }

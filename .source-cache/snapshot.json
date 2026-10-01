@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "targets": {
     "codex": {
       "commands": [
@@ -526,6 +526,8 @@
         "/allowed-tools",
         "/android",
         "/app",
+        "/artifact-capabilities",
+        "/artifact-diagramming",
         "/artifacts",
         "/auto-mode-setup",
         "/autocompact",
@@ -541,7 +543,7 @@
         "/checkpoint",
         "/checkup",
         "/chrome",
-        "/claude-api",
+        "/claude-in-chrome",
         "/clear",
         "/code-review",
         "/color",
@@ -951,6 +953,8 @@
         "/upgrade": "슬래시 명령",
         "/advisor": "슬래시 명령",
         "/agents": "슬래시 명령",
+        "/artifact-capabilities": "슬래시 명령",
+        "/artifact-diagramming": "슬래시 명령",
         "/artifacts": "슬래시 명령",
         "/auto-mode-setup": "슬래시 명령",
         "/autofix-pr": "슬래시 명령",
@@ -960,7 +964,7 @@
         "/share": "슬래시 명령",
         "/cd": "슬래시 명령",
         "/chrome": "슬래시 명령",
-        "/claude-api": "슬래시 명령",
+        "/claude-in-chrome": "슬래시 명령",
         "/reset": "슬래시 명령",
         "/new": "슬래시 명령",
         "--comment": "옵션/플래그",
@@ -1093,6 +1097,27 @@
       },
       "auto_managed": [
         {
+          "command": "/artifact-capabilities",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-01"
+        },
+        {
+          "command": "/artifact-diagramming",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-01"
+        },
+        {
+          "command": "/claude-in-chrome",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-01"
+        },
+        {
           "command": "/slides",
           "category": "슬래시 명령",
           "status": "new",
@@ -1105,6 +1130,13 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-09-23"
+        },
+        {
+          "command": "/claude-api",
+          "category": "슬래시 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-01"
         }
       ]
     },
