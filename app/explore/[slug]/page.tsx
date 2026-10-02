@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import SiteHeader from "../../SiteHeader";
 import DocsSidebar from "../../DocsSidebar";
 import rawExplore from "../../../data/explore.json";
+import rawQuizzes from "../../../data/explore-quizzes.json";
+import { toPublicQuestions } from "../quizLogic.mjs";
+import QuizClient from "../QuizClient";
 
 type Source = { name: string; url: string };
 
@@ -45,6 +48,8 @@ type ExploreDoc = {
 };
 
 const exploreDocs = (rawExplore as unknown as { docs: ExploreDoc[] }).docs;
+type QuizQuestion = { text: string; options: string[]; answer: number; explanation: string };
+const quizzesFile = rawQuizzes as unknown as { quizzes: Record<string, { version: number; questions: QuizQuestion[] }> };
 
 // Author-controlled \n\n paragraph breaks only; no automatic sentence splitting.
 function Paragraphs({ text, className }: { text: string; className?: string }) {
@@ -73,6 +78,8 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
   if (!doc) notFound();
 
   const currentPath = `/explore/${doc.slug}`;
+  const quiz = quizzesFile.quizzes[doc.slug];
+  const publicQuizQuestions = quiz ? toPublicQuestions(quiz.questions) : [];
 
   return (
     <>
@@ -115,6 +122,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 <a href="#details">자세한 설명</a>
                 <a href="#pitfalls">헷갈리기 쉬운 점</a>
                 <a href="#sources">출처</a>
+                {publicQuizQuestions.length > 0 && <a href="#quiz">이해도 확인</a>}
               </nav>
             </details>
 
@@ -323,6 +331,26 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
               )}
               <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>확인일 · {doc.reviewed_at} KST</p>
             </section>
+
+            {publicQuizQuestions.length > 0 && (
+              <section className="section" id="quiz">
+                <div className="section-head">
+                  <div>
+                    <h2>8. 이해도 확인</h2>
+                    <p className="section-note">
+                      4지선다 {publicQuizQuestions.length}문항입니다. 모두 답하면 채점 결과와 해설, 공유 기록 대시보드를 볼 수 있습니다.
+                    </p>
+                  </div>
+                  <span className="badge">퀴즈</span>
+                </div>
+                <QuizClient
+                  key={`${doc.slug}:${quiz.version}`}
+                  slug={doc.slug}
+                  version={quiz.version}
+                  questions={publicQuizQuestions}
+                />
+              </section>
+            )}
           </article>
         </div>
 
@@ -336,6 +364,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
             <a href="#details">5. 자세한 설명</a>
             <a href="#pitfalls">6. 헷갈리기 쉬운 점</a>
             <a href="#sources">7. 출처</a>
+            {publicQuizQuestions.length > 0 && <a href="#quiz">8. 이해도 확인</a>}
           </nav>
         </aside>
       </div>

@@ -2,7 +2,7 @@
 
 ## 현재 운영 방식
 
-이 대화에 입력한 지식 주제·질문·자료는 핵심 요약, 쉬운 설명, 웹툰, 비슷한 제품 비교를 담은 문서로 정리한다. 완성 후 Explore에 등록하고 배포한 뒤 실제 운영 주소를 확인한다.
+이 대화에 입력한 지식 주제·질문·자료는 핵심 요약, 쉬운 설명, 웹툰, 비슷한 제품 비교, 이해도 확인 퀴즈를 담은 문서로 정리한다. 완성 후 Explore에 등록하고 배포한 뒤 실제 운영 주소를 확인한다.
 
 관련 후속 내용은 기존 문서에 추가한다. 작업 지시와 상태 확인 대화는 그 의도에 맞게 처리한다.
 
@@ -15,6 +15,9 @@
 5. 자세한 설명
 6. 헷갈리기 쉬운 점
 7. 출처와 확인일
+8. 이해도 확인 — 4지선다 3~5문항 퀴즈(`data/explore-quizzes.json`), 제출 후 정답·해설·공유 기록 대시보드 표시. 버전은 문서(slug)별로 독립 관리되며(`quizzes[slug].version`), 응시 이력 조회는 커서(직전 페이지 마지막 응시 순번) 기반 페이지네이션을 쓴다.
+
+앞으로 새로 추가하는 모든 Explore 문서는 8번 이해도 확인 섹션을 기본으로 포함한다. 문항은 `data/explore-quizzes.json`에 해당 문서 slug로 3~5개(텍스트·선택지 4개·정답 index·해설)를 추가하고, 정답과 해설은 제출 전까지 클라이언트에 노출하지 않는다.
 
 핵심 답변은 2~3문장으로 짧게 쓴다. 긴 설명은 한 문단에 한 주제, 보통 1~2문장씩 나누고 문단 사이에 여백을 둔다. 웹 화면과 Markdown 원고에 동일한 문단 구성을 반영한다.
 
@@ -42,7 +45,7 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 
 ## 과거 이력
 
-아래는 지금까지의 구현 과정을 시간순으로 남긴 기록이다. 각 항목은 그 시점의 상태이며, 현재 작성 기준은 위 "4. 문서 한 편의 작성 형식 (현재 운영 방식)"을 따른다.
+아래는 지금까지의 구현 과정을 시간순으로 남긴 기록이다. 각 항목은 그 시점의 상태이며, 현재 작성 기준은 위 "문서 한 편의 구성"을 따른다.
 
 ## Explore 메뉴 구현 이력 (v0.9.4)
 
@@ -92,3 +95,17 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - `scripts/check-explore.mjs`를 새 비교 스키마(열/행 개수 일치, notes·comparison_image는 있을 때만 검증)에 맞춰 갱신했다.
 - `package.json`/`package-lock.json` 버전을 0.10.3으로 올렸다. 조작 예제 컴포넌트(`DecisionsExample.tsx`, `decisionLogic.mjs`)는 범위 최소화를 위해 삭제하지 않고 남겨뒀으며, 더 이상 상세 페이지에서 import하지 않는다.
 - 빌드·테스트·배포는 팀장이 수행한다.
+
+## 이해도 확인 퀴즈 추가 (v0.11.0)
+
+- 세 문서 모두에 8번 "이해도 확인" 섹션을 추가했다. 각 문서 하단에 4지선다 5문항 퀴즈(`QuizClient`)가 표시되고, 데스크톱·모바일 목차에 모두 연결했다.
+- 문항·정답·해설은 `data/explore-quizzes.json`(slug별 5문항, `quizzes[slug].version`으로 문서별 버전 관리)에 저장했다. 서버 페이지는 `toPublicQuestions`로 정답·해설을 제거한 문항만 클라이언트에 전달한다(`app/explore/quizLogic.mjs`).
+- 채점·검증 순수 함수(`gradeQuiz`/`isValidAnswerShape`/`buildReview`/`answerFingerprint`)를 `app/explore/quizLogic.mjs`(+`.d.mts`)에 분리했다. 기존 `decisionLogic.mjs` 패턴을 따른다.
+- `app/api/explore/[slug]/quiz/route.ts`를 추가했다. GET은 slug·version·cursor를 검증해 해당 버전의 응시 통계(총 응시·평균·최고)와 최신순 페이지(20개)를 반환하고, POST는 익명 제출(uuid·version·answers)을 서버에서 다시 채점해 저장한다. 점수·시각은 항상 서버가 계산하며 클라이언트가 보낸 값은 쓰지 않는다.
+- 저장소는 Upstash Redis REST API(`app/api/explore/[slug]/quiz/upstash.mjs`, 네이티브 fetch만 사용, 새 의존성 없음)를 통해 연결한다. 같은 제출 uuid의 중복 제출·통계 이중 집계를 막기 위해 Lua `EVAL` 트랜잭션으로 응시 기록 저장·정렬 이력 추가·통계 갱신을 원자적으로 처리하고, 내부 답안 지문(fingerprint)으로 같은 uuid의 재사용·충돌을 구분한다(공개 이력에는 지문을 노출하지 않음).
+- Redis 환경변수(`UPSTASH_REDIS_REST_URL`/`UPSTASH_REDIS_REST_TOKEN`, 또는 Vercel 연동의 `KV_REST_API_URL`/`KV_REST_API_TOKEN`)가 없으면 채점과 시각 표시는 그대로 동작하되 `saved:false`와 "공유 기록 저장이 아직 준비되지 않았습니다." 안내와 재시도 버튼을 보여준다. 대시보드는 불러오기 실패 안내와 새로고침 버튼을 보여주며 가짜 통계를 표시하지 않는다. 이 세션에서는 실제 Redis 계정·환경변수를 만들거나 조회하지 않았다. 연결 가이드는 `docs/knowledge/QUIZ_SETUP.md`에 별도로 작성했다.
+- 원본 제출 IP는 응시 기록에 저장하지 않는다. 런타임 토큰으로 IP를 HMAC-SHA256 해시한 키에 60초 TTL 카운터(`INCR`+`EXPIRE`)를 둬 분당 10회로 제한하는 임시 요청 제한만 적용했다(복잡한 인증·캡차는 추가하지 않았다. 이 완화 수준을 넘는 악용 방지가 필요하면 별도 검토가 필요하다는 점을 팀장에게 전달한다).
+- `scripts/check-explore-quiz.mjs`로 문항 스키마(3~5문항, 선택지 4개, 정답 index 0~3, 해설 필수)와 `toPublicQuestions`/`isValidAnswerShape`/`gradeQuiz`/`buildReview`/`answerFingerprint` 순수 함수를 점검한다. 문항·채점 점검과 빌드는 통과했다. HTTP 점검은 저장소 연결을 끈 로컬 서버에서만 실행하도록 제한해 운영 이력에 확인용 기록이 섞이지 않게 했다.
+- `app/globals.css`에 퀴즈 전용 스타일(문항 카드, 진행률, 결과·해설 카드, 공유 기록 대시보드)만 추가했다.
+- `package.json`/`package-lock.json` 버전을 0.11.0으로 올렸다. `.gitignore`에 `.env*`를 추가했다(환경변수 파일 내용은 확인하지 않았다).
+- 실제 Redis 저장·통계·기록 조회와 브라우저 화면 조작은 아직 확인하지 않았다. 저장소는 사용자 본인 Vercel 계정에서 연결해야 하며, 연결 후 별도 확인이 필요하다.
