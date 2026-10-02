@@ -31,6 +31,8 @@
 
 재실행 시 `article_full_text_3line`이 이미 있는 기사는 덮어쓰지 않는다. 2026-09-23에는 최근 3일의 일반 기사 12건을 원문 확인 후 한국어 3줄로 검토했다.
 
+같은 본문 요청(`extract_full_text_data`)이 추출형 3줄 요약과 함께 짧은 원문 인용(25단어 이하 완전한 문장 1개)+한국어 번역을 `source_excerpt`(`{original, ko}`)로 만든다. 요약에 쓰인 문장 중 25단어 이하가 있으면 그 번역을 재사용해 번역 API를 중복 호출하지 않고, 없으면 본문의 다른 완전한 문장에서 찾는다. 요약과 인용은 서로 독립적으로 성공/실패하며, 인용 실패가 이미 성공한 요약을 지우지 않는다. 25단어를 넘는 문장은 자르지 않고 후보에서 제외한다. 적합한 문장을 찾지 못하거나 본문 접근(HTTP 상태 포함)·번역이 실패하면 `source_excerpt_error`에 사람이 읽을 수 있는 사유만 남기고 성공을 거짓으로 꾸미지 않는다. 이 필드는 `make_candidate`(공식)와 `build_article`(외부 매시간) 양쪽 새 기사에만 자동으로 붙으며, 기존 archive는 일괄 보강하지 않는다. 화면(`/today/[id]`)은 수동 `reading.excerpt`가 있으면 그것을 우선 보여주고, 없고 `source_excerpt`가 있으면 "자동 추출·자동 번역" 표시와 함께 보여주며, 둘 다 없고 `source_excerpt_error`만 있으면 실패 사유와 원문 링크를 보여준다. 수동 `reading` 전체 번역을 약속하거나 자동 생성 파이프라인이 과거 55건 수동 상세를 대체한다고 암시하지 않는다.
+
 ## -1. 외부 뉴스 매시간 자동 수집 (`scripts/collect_hourly_news.py`, 현재 운영 기준)
 
 - **주기**: GitHub Actions `.github/workflows/update-content.yml`이 매시 정각(UTC `0 * * * *`)에 공식 뉴스 수집(`collect_content.py news`)과 외부 뉴스 매시간 자동 수집(`scripts/collect_hourly_news.py`)을 이 순서로 매번 함께 실행해, 같은 모델을 다루는 외부 보도가 먼저 게시된 공식 기사에 이어 붙는다. 06:15 KST(UTC 21:15) 실행에서만 문서 출처 점검(`collect_content.py documents`)이 추가로 실행되고, `workflow_dispatch` 수동 실행은 세 단계를 모두 실행한다.

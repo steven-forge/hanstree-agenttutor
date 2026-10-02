@@ -11,8 +11,9 @@ TS 헬퍼를 파이썬으로 재구현해 비교하지 않는다. 대신 실행 
 from __future__ import annotations
 
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
+from unittest import mock
 from zoneinfo import ZoneInfo
 import json
 import re
@@ -27,6 +28,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from publish_news import apply_reviewed_edition  # noqa: E402
 from verify_live_site import normalize_base_url, visible_text  # noqa: E402
+import collect_content  # noqa: E402
+import collect_hourly_news  # noqa: E402
 
 ARTICLE_ID_RE = re.compile(r'id="article-([^"]+)"')
 KOREAN_RE = re.compile(r"[가-힣]")
@@ -329,6 +332,167 @@ def check_rss_feed(base_url: str, timeout: float, articles: list[dict]) -> None:
     assert 'application/rss+xml' in home and 'feed.xml' in home, "홈페이지에 RSS discovery 링크가 없다."
 
 
+# ---- extract_full_text_data: 자동 원문 발췌+번역 (가짜 HTML, 네트워크/번역만 모킹) ----
+
+def _fake_translate(text: str) -> str:
+    return f"한국어 번역: {text}"
+
+
+_HTML_SHORT = """
+<html><body><article>
+<p>The research team measured machine intelligence gains across several technology companies last year.</p>
+<p>Machine intelligence and institutional capacity together determine how quickly new technology ideas become real products.</p>
+<p>Institutional capacity often limits how fast machine intelligence can turn research ideas into working technology.</p>
+</article></body></html>
+"""
+
+_P1_LONG = (
+    "The extensive research initiative evaluated how growing machine intelligence capabilities interact with "
+    "institutional capacity constraints across many different scientific and engineering fields over several recent decades."
+)
+_P2_LONG = (
+    "Many engineering teams found that institutional capacity constraints limited how quickly machine intelligence "
+    "breakthroughs could be turned into working technology across large and complex international organizations."
+)
+_P3_LONG = (
+    "Across many organizations, institutional capacity and machine intelligence capabilities had to grow together "
+    "before engineering teams could turn research breakthroughs into real deployed commercial technology products."
+)
+_P4_SHORT_UNRELATED = "Many small teams quietly adopted newer digital tools during this particular season."
+
+_HTML_QUOTE_FAIL = f"""
+<html><body><article>
+<p>{_P1_LONG}</p>
+<p>{_P2_LONG}</p>
+<p>{_P3_LONG}</p>
+<p>{_P4_SHORT_UNRELATED}</p>
+</article></body></html>
+"""
+
+
+def check_extract_full_text_data_excerpt_success() -> None:
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=_fake_translate):
+        data = collect_content.extract_full_text_data(
+            "https://example.com/a", "example-source", prefetched_html=_HTML_SHORT
+        )
+    assert data["summary_lines"] and len(data["summary_lines"]) == 3, "짧은 문장 3개로 요약이 만들어지지 않았다."
+    excerpt = data["excerpt"]
+    assert excerpt is not None, "<=25단어 완전한 문장이 있는데 excerpt가 비어 있다."
+    assert len(excerpt["original"].split()) <= 25, "excerpt.original이 25단어를 초과한다."
+    assert excerpt["original"] in (
+        "The research team measured machine intelligence gains across several technology companies last year.",
+        "Machine intelligence and institutional capacity together determine how quickly new technology ideas become real products.",
+        "Institutional capacity often limits how fast machine intelligence can turn research ideas into working technology.",
+    ), "excerpt.original이 원문 문장을 그대로 쓰지 않고 잘라내거나 바꿨다."
+    assert data["excerpt_error"] is None
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=_fake_translate):
+        short = collect_content.extract_full_text_data(
+            "https://example.com/short", "example-source",
+            prefetched_html=f"<article><p>{_P4_SHORT_UNRELATED}</p></article>",
+        )
+    assert short["summary_lines"] is None and short["excerpt"]["original"] == _P4_SHORT_UNRELATED
+
+    def fail_last_summary_sentence(text: str) -> str:
+        if text.startswith("Institutional capacity often"):
+            raise RuntimeError("번역 실패")
+        return _fake_translate(text)
+
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=fail_last_summary_sentence):
+        partial = collect_content.extract_full_text_data(
+            "https://example.com/partial", "example-source", prefetched_html=_HTML_SHORT,
+        )
+    assert partial["summary_lines"] is None and partial["excerpt"], "요약 번역 실패가 성공 가능한 발췌를 막았다."
+
+
+def check_extract_full_text_data_long_excluded_and_quote_failure_visible() -> None:
+    calls = []
+
+    def translate_side_effect(text: str) -> str:
+        calls.append(text)
+        if text == _P4_SHORT_UNRELATED:
+            raise RuntimeError("translation backend unavailable")
+        return _fake_translate(text)
+
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=translate_side_effect):
+        data = collect_content.extract_full_text_data(
+            "https://example.com/b", "example-source", prefetched_html=_HTML_QUOTE_FAIL
+        )
+    # 25단어 넘는 긴 문장은 선택되지 않고(잘리지도 않고), 번역 실패로 excerpt가 비어야 한다.
+    assert data["excerpt"] is None, "25단어 초과 문장이 excerpt로 선택되었거나 잘못 잘렸다."
+    assert data["excerpt_error"], "번역 실패 사유가 기록되지 않았다."
+    assert "번역하지 못했습니다" in data["excerpt_error"]
+    # 요약(3문장)은 인용 실패와 무관하게 성공해야 한다.
+    assert data["summary_lines"] and len(data["summary_lines"]) == 3, "선택적 인용 실패가 성공한 요약까지 지워버렸다."
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=_fake_translate):
+        long_only = collect_content.extract_full_text_data(
+            "https://example.com/long", "example-source",
+            prefetched_html=_HTML_QUOTE_FAIL.replace(f"<p>{_P4_SHORT_UNRELATED}</p>", ""),
+        )
+    assert long_only["summary_lines"] and long_only["excerpt"] is None
+    assert "25단어" in long_only["excerpt_error"], "너무 긴 문장을 잘라 인용하거나 실패 사유를 잃었다."
+
+
+def check_extract_full_text_data_prefetched_skips_fetch() -> None:
+    with mock.patch.object(collect_content, "translate_to_korean", side_effect=_fake_translate), \
+         mock.patch.object(collect_content, "fetch_url", side_effect=AssertionError("prefetched_html이 있는데 fetch_url을 호출했다")):
+        data = collect_content.extract_full_text_data(
+            "https://example.com/a", "example-source", prefetched_html=_HTML_SHORT
+        )
+    assert data["summary_lines"], "prefetched_html 경로에서 요약이 만들어지지 않았다."
+
+
+def check_extract_full_text_data_body_fetch_failure_visible() -> None:
+    with mock.patch.object(collect_content, "registered_hosts_for_source", return_value=frozenset({"example.com"})), \
+         mock.patch.object(collect_content, "fetch_url", side_effect=RuntimeError("HTTP 403: Forbidden")):
+        data = collect_content.extract_full_text_data("https://example.com/c", "example-source")
+    assert data["summary_lines"] is None
+    assert data["excerpt"] is None
+    assert data["excerpt_error"] and "403" in data["excerpt_error"], "본문 접근 실패(HTTP 403)가 사유에 드러나지 않았다."
+
+
+def check_official_and_external_callers_persist_excerpt_fields() -> None:
+    fake_success = {
+        "summary_lines": ["요약1", "요약2", "요약3"],
+        "excerpt": {"original": "A short complete sentence under the limit.", "ko": "[KO] 문장"},
+        "excerpt_error": None,
+    }
+    fake_failure = {"summary_lines": None, "excerpt": None, "excerpt_error": "본문을 찾지 못함"}
+
+    with mock.patch.object(collect_content, "extract_full_text_data", return_value=fake_success):
+        candidate = collect_content.make_candidate(
+            "제목", "example-source", "출처", "https://example.com/d", "원문 요약", {"published_on": "2026-10-02", "date_precision": "day"},
+        )
+    assert candidate.get("source_excerpt") == fake_success["excerpt"], "공식 수집(make_candidate)이 source_excerpt를 저장하지 않았다."
+    assert "source_excerpt_error" not in candidate
+
+    with mock.patch.object(collect_content, "extract_full_text_data", return_value=fake_failure):
+        candidate2 = collect_content.make_candidate(
+            "제목2", "example-source", "출처", "https://example.com/e", "원문 요약2", {"published_on": "2026-10-02", "date_precision": "day"},
+        )
+    assert "source_excerpt" not in candidate2
+    assert candidate2.get("source_excerpt_error") == fake_failure["excerpt_error"]
+    # RSS 요약이 있으면 본문 발췌 실패가 기사 게시 자체를 막지 않는다.
+    assert candidate2.get("source_summary") == "원문 요약2"
+
+    event = {
+        "sources": [{
+            "independent": True, "source_id": "example-source", "name": "출처", "url": "https://example.com/f",
+            "target_url": "https://example.com/f", "title": "외부 제목", "summary": "외부 요약",
+            "published_at": datetime.now(timezone.utc).isoformat(), "date_precision": "time",
+        }],
+    }
+    with mock.patch.object(collect_hourly_news, "extract_full_text_data", return_value=fake_success), \
+         mock.patch.object(collect_hourly_news, "needs_korean_translation", return_value=False):
+        article = collect_hourly_news.build_article(event, count=2, high_at=3, now=datetime.now(timezone.utc))
+    assert article.get("source_excerpt") == fake_success["excerpt"], "외부 수집(build_article)이 source_excerpt를 저장하지 않았다."
+
+    with mock.patch.object(collect_hourly_news, "extract_full_text_data", return_value=fake_failure), \
+         mock.patch.object(collect_hourly_news, "needs_korean_translation", return_value=False):
+        article2 = collect_hourly_news.build_article(event, count=2, high_at=3, now=datetime.now(timezone.utc))
+    assert article2.get("source_excerpt_error") == fake_failure["excerpt_error"]
+    assert article2.get("source_summary") == "외부 요약", "본문 발췌 실패가 유효한 RSS 기사 게시를 막았다."
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default=None, help="점검할 서버 주소 (예: http://localhost:3000)")
@@ -338,6 +502,13 @@ def main() -> None:
     check_apply_reviewed_edition()
     check_editorial_links_resolve()
     print("[OK] apply_reviewed_edition, 용어집 링크 무결성 점검 통과")
+
+    check_extract_full_text_data_excerpt_success()
+    check_extract_full_text_data_long_excluded_and_quote_failure_visible()
+    check_extract_full_text_data_prefetched_skips_fetch()
+    check_extract_full_text_data_body_fetch_failure_visible()
+    check_official_and_external_callers_persist_excerpt_fields()
+    print("[OK] 자동 원문 발췌·번역(source_excerpt) 점검 통과")
 
     if args.base_url:
         base_url = normalize_base_url(args.base_url)

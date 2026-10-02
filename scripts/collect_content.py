@@ -638,13 +638,17 @@ def dedupe_blocks(blocks: list[str]) -> list[str]:
     return deduped
 
 
-def build_full_text_summary_ko(source_url: str, source_id: str, prefetched_html: str | None = None) -> str | None:
-    """원문 <article>/<main> 본문(aside 제외) 전체에서 완전한 문장만 후보로 삼아 추출형 3문장을 골라 한국어로 번역한다.
-    <article>/<main>이 없으면 FALLBACK_HOSTS에 등록된 호스트에 한해 nav/header/footer/aside 밖의 긴 p/h2/li로
-    대체 추출한다. 호출 측이 이미 원문을 받아온 경우(prefetched_html)에는 다시 요청하지 않는다. SSRF 방지를 위해
-    URL 자신의 hostname이 아니라 source_id에 등록된 호스트(registered_hosts_for_source)만 요청·리다이렉트를 허용한다.
-    등록되지 않은 호스트나 본문이 요약에 부적합하면(길이 부족, 완전한 문장 3개 미만 등) provenance를 설정하지
-    않도록 None을 반환(원래 설명 보존)."""
+QUOTE_MAX_WORDS = 25
+
+
+def extract_full_text_data(source_url: str, source_id: str, prefetched_html: str | None = None) -> dict:
+    """원문 본문을 한 번 받아와 추출형 3문장 요약과 짧은 원문 인용(<=25단어)+한국어 번역을 함께 만든다.
+    반환: {"summary_lines": list[str]|None, "excerpt": {"original","ko"}|None, "excerpt_error": str|None}.
+    인용은 요약에 쓰인 문장 중 자격이 되는 것을 우선 재사용해 번역 API를 중복 호출하지 않고, 없으면 본문의
+    다른 완전한 문장에서 찾는다. 요약과 인용은 서로 독립적으로 성공/실패할 수 있다(한쪽 실패가 다른 쪽을 지우지 않음).
+    SSRF 방지를 위해 URL 자신의 hostname이 아니라 source_id에 등록된 호스트만 요청·리다이렉트를 허용한다."""
+    result: dict = {"summary_lines": None, "excerpt": None, "excerpt_error": None}
+    stage = "본문 접근"
     try:
         if prefetched_html is not None:
             html_text = prefetched_html
@@ -652,15 +656,19 @@ def build_full_text_summary_ko(source_url: str, source_id: str, prefetched_html:
             allowed_hosts = registered_hosts_for_source(source_id)
             hostname = (urllib.parse.urlsplit(source_url).hostname or "").lower()
             if not hostname or hostname not in allowed_hosts:
-                return None
+                result["excerpt_error"] = "본문 출처 호스트가 허용 목록에 없어 원문을 가져오지 않음"
+                return result
             status, headers, body = fetch_url(source_url, allowed_hosts=allowed_hosts, max_retries=1)
             if status != 200:
-                return None
+                result["excerpt_error"] = f"원문 본문을 가져오지 못함 (HTTP {status})"
+                return result
             ctype = headers.get("content-type", "")
             if "text/html" not in ctype and not body.lstrip().startswith((b"<!DOCTYPE", b"<html")):
-                return None
+                result["excerpt_error"] = "원문 응답이 HTML 본문이 아님"
+                return result
             html_text = body.decode("utf-8", errors="replace")
 
+        stage = "본문 추출"
         extractor = ArticleBodyExtractor()
         extractor.feed(html_text)
         blocks = dedupe_blocks(extractor.blocks)
@@ -670,15 +678,51 @@ def build_full_text_summary_ko(source_url: str, source_id: str, prefetched_html:
                 fallback = FallbackBodyExtractor()
                 fallback.feed(html_text)
                 blocks = dedupe_blocks(fallback.blocks)
-        sentences_en = extractive_summary_sentences(blocks)
-        if not sentences_en:
-            return None
-        translated = [translate_to_korean(s) if needs_korean_translation(s) else s for s in sentences_en]
-        if len(translated) != 3:
-            return None
-        return "\n".join(translated)
+        if not blocks:
+            result["excerpt_error"] = "본문을 찾지 못함"
+            return result
+
+    except Exception as exc:
+        # fetch_url은 HTTPError를 RuntimeError("HTTP 403: ...")로 바꾼다. 상태 코드만 공개한다.
+        http_status = re.search(r"\bHTTP\s+(\d{3})\b", str(exc))
+        suffix = f" (HTTP {http_status.group(1)})" if http_status else ""
+        result["excerpt_error"] = f"원문 {stage}에 실패했습니다{suffix}"
+        return result
+
+    sentences_en = extractive_summary_sentences(blocks) or []
+    translations: dict[str, str] = {}
+    try:
+        for sentence in sentences_en:
+            translations[sentence] = translate_to_korean(sentence) if needs_korean_translation(sentence) else sentence
+        if len(sentences_en) == 3:
+            result["summary_lines"] = [translations[s] for s in sentences_en]
     except Exception:
-        return None
+        pass  # 기존 설명을 보존하되, 이미 번역된 짧은 문장은 아래에서 재사용한다.
+
+    # 블록별로 나눠 제목과 다음 문단을 이어 붙인 가짜 인용을 만들지 않는다.
+    quote_candidates = [
+        sentence for block in blocks for sentence in split_sentences(block)
+        if SENTENCE_END_RE.search(sentence) and len(SUMMARY_WORD_RE.findall(sentence)) >= 6
+        and len(sentence.split()) <= QUOTE_MAX_WORDS
+    ]
+    if not quote_candidates:
+        result["excerpt_error"] = f"{QUOTE_MAX_WORDS}단어 이하의 완전한 문장을 찾지 못했습니다."
+        return result
+    original = next((s for s in sentences_en if s in quote_candidates), quote_candidates[0])
+    try:
+        ko = translations.get(original)
+        if ko is None:
+            ko = translate_to_korean(original) if needs_korean_translation(original) else original
+        result["excerpt"] = {"original": original, "ko": ko}
+    except Exception:
+        result["excerpt_error"] = "짧은 원문을 한국어로 번역하지 못했습니다."
+    return result
+
+
+def build_full_text_summary_ko(source_url: str, source_id: str, prefetched_html: str | None = None) -> str | None:
+    """원문 <article>/<main> 본문(aside 제외) 전체에서 완전한 문장만 후보로 삼아 추출형 3문장을 골라 한국어로 번역한다.
+    extract_full_text_data의 호환 래퍼로, 요약 3줄만 필요한 호출자(backfill 등)를 위해 유지한다."""
+    return "\n".join(extract_full_text_data(source_url, source_id, prefetched_html=prefetched_html)["summary_lines"] or []) or None
 
 
 NO_KNOWN = (frozenset(), frozenset())
@@ -776,10 +820,14 @@ def make_candidate(title: str, source_id: str, source_name: str, canonical_url: 
     if needs_korean_translation(source_summary):
         candidate["source_summary_ko"] = translate_to_korean(source_summary)
     if source_id not in RELEASE_SOURCE_IDS:
-        full_summary = build_full_text_summary_ko(canonical_url, source_id, prefetched_html=article_html)
-        if full_summary:
-            candidate["source_summary_ko"] = full_summary
+        extraction = extract_full_text_data(canonical_url, source_id, prefetched_html=article_html)
+        if extraction["summary_lines"]:
+            candidate["source_summary_ko"] = "\n".join(extraction["summary_lines"])
             candidate["source_summary_provenance"] = "article_full_text_3line"
+        if extraction["excerpt"]:
+            candidate["source_excerpt"] = extraction["excerpt"]
+        elif extraction["excerpt_error"]:
+            candidate["source_excerpt_error"] = extraction["excerpt_error"]
     return candidate
 
 

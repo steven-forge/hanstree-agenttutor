@@ -137,6 +137,10 @@ export type TodayArticle = {
   source_summary_ko?: string;
   // 원문 <article>/<main> 전체 본문에서 만든 추출형 3문장 요약일 때만 "article_full_text_3line"
   source_summary_provenance?: "article_full_text_3line";
+  // 자동 추출·자동 번역한 짧은 원문 인용(<=25단어)+한국어 번역. 사람의 편집 검토가 아니다.
+  source_excerpt?: { original: string; ko: string };
+  // source_excerpt를 만들지 못한 이유(본문 접근 실패/본문 부족/적합 문장 없음/번역 실패 등).
+  source_excerpt_error?: string;
   keywords_ko?: string[];
   key_points_ko?: string[];
   source_id: string;

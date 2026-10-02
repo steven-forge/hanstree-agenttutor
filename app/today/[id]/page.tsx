@@ -74,13 +74,26 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
               </section>
             )}
 
-            {editorial?.reading?.excerpt && (
+            {editorial?.reading?.excerpt ? (
               <section className="section" id="reading-excerpt">
                 <h2>짧은 원문과 번역</h2>
                 <blockquote lang="en">{editorial.reading.excerpt.original}</blockquote>
                 <p><strong>번역:</strong> {editorial.reading.excerpt.ko}</p>
               </section>
-            )}
+            ) : article.source_excerpt ? (
+              <section className="section" id="reading-excerpt">
+                <h2>짧은 원문과 번역</h2>
+                <p className="section-note">자동 추출·자동 번역 (사람의 편집 검토 아님)</p>
+                <blockquote lang="en">{article.source_excerpt.original}</blockquote>
+                <p><strong>번역:</strong> {article.source_excerpt.ko}</p>
+              </section>
+            ) : article.source_excerpt_error ? (
+              <section className="section" id="reading-excerpt">
+                <h2>짧은 원문과 번역</h2>
+                <p>{article.source_excerpt_error}</p>
+                <a href={article.source_url} target="_blank" rel="noopener noreferrer">원문에서 직접 확인하기 ↗</a>
+              </section>
+            ) : null}
 
             <section className="section" id="why-it-matters">
               <h2>왜 중요한가요? ({whyProvenanceLabel})</h2>
@@ -144,7 +157,9 @@ export default async function TodayArticlePage({ params }: { params: Promise<{ i
           <nav aria-label="페이지 목차">
             <a href="#summary">{editorial?.reading ? "핵심 요약" : "요약"}</a>
             {editorial?.reading && <a href="#reading">한국어로 자세히 읽기</a>}
-            {editorial?.reading?.excerpt && <a href="#reading-excerpt">짧은 원문과 번역</a>}
+            {(editorial?.reading?.excerpt || article.source_excerpt || article.source_excerpt_error) && (
+              <a href="#reading-excerpt">짧은 원문과 번역</a>
+            )}
             <a href="#why-it-matters">왜 중요한가요?</a>
             {glossaryLinks.length > 0 && <a href="#related-glossary">관련 용어</a>}
             {editorial?.check_now && <a href="#check-now">지금 확인할 것</a>}
