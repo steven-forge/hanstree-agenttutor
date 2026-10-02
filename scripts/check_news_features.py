@@ -289,9 +289,8 @@ def check_article_detail(base_url: str, timeout: float, articles: list[dict]) ->
         assert "한국어로 자세히 읽기" in text, f"기사 {aid}에 상세 읽기 섹션이 없다."
         for sec in reading["sections"]:
             assert sec["heading"] in text and sec["body"] in text, f"기사 {aid}의 reading.sections 텍스트가 화면에 없다."
-        if reading.get("excerpt"):
-            assert "짧은 원문과 번역" in text
-            assert reading["excerpt"]["original"] in text and reading["excerpt"]["ko"] in text, f"기사 {aid}의 excerpt 텍스트가 화면에 없다."
+        assert "짧은 원문과 번역" not in text, f"기사 {aid}에 삭제된 짧은 원문과 번역 제목이 남아 있다."
+        assert 'id="reading-excerpt"' not in html, f"기사 {aid}에 삭제된 reading-excerpt 섹션/앵커가 남아 있다."
 
 
 def check_rss_feed(base_url: str, timeout: float, articles: list[dict]) -> None:
