@@ -23,7 +23,7 @@ const slugs = new Set();
 const requiredFields = [
   "slug", "title", "summary", "topic", "tags", "created_at", "updated_at",
   "reviewed_at", "question", "core_answer", "easy_explanation", "api_explanation",
-  "details", "comparison_note", "pitfalls", "sources"
+  "details", "comparison", "pitfalls", "sources"
 ];
 
 for (const doc of explore.docs) {
@@ -36,16 +36,22 @@ for (const doc of explore.docs) {
 
   if (doc.diagram_image) checkImage(doc.diagram_image, `${doc.slug} diagram_image`);
 
-  if (doc.comparison) {
-    const { table, jev_outcomes, comparison_image, sources } = doc.comparison;
-    assert.ok(Array.isArray(table?.rows) && table.rows.length > 0, `${doc.slug} comparison.table.rows가 필요합니다`);
-    for (const row of table.rows) {
-      assert.ok(row.label && row.decisions && row.jev, `${doc.slug} comparison 표의 각 행에 label/decisions/jev가 필요합니다`);
-    }
-    assert.ok(Array.isArray(jev_outcomes) && jev_outcomes.length === 3, `${doc.slug} comparison.jev_outcomes는 3개여야 합니다`);
-    assert.ok(Array.isArray(sources) && sources.length > 0, `${doc.slug} comparison.sources가 필요합니다`);
-    checkImage(comparison_image, `${doc.slug} comparison_image`);
+  const { intro, table, notes, interpretation, comparison_image, sources } = doc.comparison;
+  assert.ok(intro && interpretation, `${doc.slug} comparison에는 intro/interpretation이 필요합니다`);
+  assert.ok(Array.isArray(table?.columns) && table.columns.length >= 2, `${doc.slug} comparison.table.columns는 2개 이상이어야 합니다`);
+  assert.ok(Array.isArray(table?.rows) && table.rows.length > 0, `${doc.slug} comparison.table.rows가 필요합니다`);
+  for (const row of table.rows) {
+    assert.ok(row.label, `${doc.slug} comparison 표의 각 행에 label이 필요합니다`);
+    assert.ok(Array.isArray(row.values) && row.values.length === table.columns.length, `${doc.slug} comparison 표 행 "${row.label}"의 values 개수가 columns와 일치해야 합니다`);
   }
+  assert.ok(Array.isArray(sources) && sources.length > 0, `${doc.slug} comparison.sources가 필요합니다`);
+  if (notes) {
+    assert.ok(notes.heading && Array.isArray(notes.items) && notes.items.length > 0, `${doc.slug} comparison.notes에는 heading과 items가 필요합니다`);
+    for (const item of notes.items) {
+      assert.ok(item.name && item.explanation, `${doc.slug} comparison.notes의 각 항목에 name/explanation이 필요합니다`);
+    }
+  }
+  if (comparison_image) checkImage(comparison_image, `${doc.slug} comparison_image`);
 }
 
 // decideOutcome pure logic: cover every preset outcome combination

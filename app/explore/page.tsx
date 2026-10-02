@@ -5,7 +5,7 @@ import ExploreListClient from "./ExploreListClient";
 
 export const metadata: Metadata = {
   title: "Explore · AgentTutor",
-  description: "궁금한 내용을 쉬운 설명과 그림, 직접 조작하는 예제로 알아보세요."
+  description: "궁금한 내용을 쉬운 설명·웹툰·제품 비교로 알아보세요."
 };
 
 export default function ExplorePage() {
@@ -18,7 +18,7 @@ export default function ExplorePage() {
           <header className="home-hero" id="overview">
             <p className="brand-kicker">EXPLORE</p>
             <h1>Explore</h1>
-            <p>궁금한 내용을 쉬운 설명과 그림, 직접 조작하는 예제로 알아보세요.</p>
+            <p>궁금한 내용을 쉬운 설명·웹툰·제품 비교로 알아보세요.</p>
           </header>
 
           <section style={{ marginTop: "32px" }} id="documents">

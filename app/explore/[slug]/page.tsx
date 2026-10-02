@@ -2,25 +2,23 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SiteHeader from "../../SiteHeader";
 import DocsSidebar from "../../DocsSidebar";
-import DecisionsExample from "../DecisionsExample";
 import rawExplore from "../../../data/explore.json";
 
 type Source = { name: string; url: string };
 
 type DiagramImage = { src: string; alt: string; caption: string; width: number; height: number };
 
-type ComparisonRow = { label: string; decisions: string; jev: string };
+type ComparisonRow = { label: string; values: string[] };
 
-type JevOutcome = { name: string; explanation: string };
-
-type ExampleStep = { title: string; body: string };
+type ComparisonNote = { heading: string; items: { name: string; explanation: string }[] };
 
 type Comparison = {
   intro: string;
-  table: { caption: string; rows: ComparisonRow[] };
-  jev_outcomes: JevOutcome[];
+  table: { caption: string; columns: string[]; rows: ComparisonRow[] };
+  table_note?: string;
+  notes?: ComparisonNote;
   interpretation: string;
-  comparison_image: DiagramImage;
+  comparison_image?: DiagramImage;
   sources: Source[];
 };
 
@@ -39,17 +37,25 @@ type ExploreDoc = {
   api_explanation_title?: string;
   api_explanation: string;
   details: string;
-  comparison_note: string;
   diagram_image?: DiagramImage;
-  comparison?: Comparison;
-  example_intro?: string;
-  example_steps?: ExampleStep[];
+  comparison: Comparison;
   pitfalls: string[];
   sources: Source[];
   dev_reference_links: Source[];
 };
 
 const exploreDocs = (rawExplore as unknown as { docs: ExploreDoc[] }).docs;
+
+// Author-controlled \n\n paragraph breaks only; no automatic sentence splitting.
+function Paragraphs({ text, className }: { text: string; className?: string }) {
+  return (
+    <div className={className ?? "explore-paragraphs"}>
+      {text.split("\n\n").map((paragraph, idx) => (
+        <p key={idx}>{paragraph}</p>
+      ))}
+    </div>
+  );
+}
 
 export function generateStaticParams() {
   return exploreDocs.map(({ slug }) => ({ slug }));
@@ -105,9 +111,8 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 <a href="#answer">핵심 답변</a>
                 <a href="#easy">쉬운 설명</a>
                 <a href="#diagram">그림으로 이해하기</a>
-                <a href="#example">직접 조작해 보기</a>
+                <a href="#comparison">비슷한 제품과 비교</a>
                 <a href="#details">자세한 설명</a>
-                {doc.comparison && <a href="#comparison">Jev와 비교하기</a>}
                 <a href="#pitfalls">헷갈리기 쉬운 점</a>
                 <a href="#sources">출처</a>
               </nav>
@@ -121,7 +126,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 </div>
                 <span className="badge">핵심 답변</span>
               </div>
-              <p style={{ fontSize: "1rem", lineHeight: "1.75", color: "var(--ink)" }}>{doc.core_answer}</p>
+              <Paragraphs text={doc.core_answer} className="explore-paragraphs explore-paragraphs-lg" />
             </section>
 
             <section className="section" id="easy">
@@ -133,13 +138,13 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 <span className="badge">일상 비유</span>
               </div>
               <div className="card" style={{ padding: "20px 24px", background: "var(--wash)" }}>
-                <p style={{ margin: 0, fontSize: "0.95rem", lineHeight: "1.7", color: "#374151" }}>{doc.easy_explanation}</p>
+                <Paragraphs text={doc.easy_explanation} />
               </div>
               <div className="card" style={{ padding: "20px 24px", marginTop: "12px" }}>
                 <strong style={{ display: "block", marginBottom: "6px", color: "var(--blue)" }}>
                   {doc.api_explanation_title ?? "API란?"}
                 </strong>
-                <p style={{ margin: 0, fontSize: "0.95rem", lineHeight: "1.7", color: "#374151" }}>{doc.api_explanation}</p>
+                <Paragraphs text={doc.api_explanation} />
               </div>
             </section>
 
@@ -171,111 +176,65 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
               )}
             </section>
 
-            <section className="section" id="example">
+            <section className="section" id="comparison">
               <div className="section-head">
                 <div>
-                  <h2>4. 직접 조작해 보기</h2>
-                  <p className="section-note">{doc.slug === "decisions-api" ? "문의 내용과 조건을 바꿔보며 결과가 어떻게 달라지는지 확인합니다." : "단계를 펼쳐보며 가상의 흐름을 이해합니다."}</p>
+                  <h2>4. 비슷한 제품과 비교</h2>
+                  <p className="section-note">같은 목적을 가진 다른 제품과 어떤 점이 다른지 정리합니다.</p>
                 </div>
-                <span className="badge">조작 예제</span>
+                <span className="badge">비교</span>
               </div>
-              {doc.slug === "decisions-api" ? (
-                <DecisionsExample />
-              ) : doc.example_steps ? (
-                <div className="card decisions-example">
-                  <p className="status-unconfirmed" style={{ marginBottom: "14px" }}>
-                    설명을 돕기 위한 가상 예시 · 실제 서비스 연결 아님
-                  </p>
-                  {doc.example_intro && (
-                    <p style={{ margin: "0 0 14px", fontSize: "0.92rem", color: "#374151", lineHeight: "1.65" }}>
-                      {doc.example_intro}
-                    </p>
-                  )}
-                  <div style={{ display: "grid", gap: "10px" }}>
-                    {doc.example_steps.map((step, idx) => (
-                      <details key={step.title} className="card" style={{ padding: "14px 18px" }}>
-                        <summary style={{ cursor: "pointer", fontWeight: 700 }}>
-                          {idx + 1}. {step.title}
-                        </summary>
-                        <p style={{ margin: "10px 0 0", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
-                          {step.body}
-                        </p>
-                      </details>
-                    ))}
-                  </div>
-                  <p className="decisions-note" style={{ marginTop: "14px" }}>
-                    이 단계는 이해를 돕기 위한 가상의 흐름이며, 실제 제품의 화면이나 내부 동작과 다를 수 있습니다.
-                  </p>
-                </div>
-              ) : null}
-            </section>
+              <Paragraphs text={doc.comparison.intro} />
 
-            <section className="section" id="details">
-              <div className="section-head">
-                <div>
-                  <h2>5. 자세한 설명</h2>
-                  <p className="section-note">발표에서 확인된 내용과 아직 확인되지 않은 부분을 구분합니다.</p>
-                </div>
-                <span className="badge">자세히 보기</span>
-              </div>
-              <p style={{ fontSize: "0.95rem", lineHeight: "1.75", color: "var(--ink)" }}>{doc.details}</p>
-              <div className="callout" style={{ marginTop: "16px" }}>
-                <strong>비교:</strong> {doc.comparison_note}
-              </div>
-            </section>
-
-            {doc.comparison && (
-              <section className="section" id="comparison">
-                <div className="section-head">
-                  <div>
-                    <h2>6. Jev와 비교하기</h2>
-                    <p className="section-note">같은 목적을 가진 다른 제품과 어떤 점이 다른지 정리합니다.</p>
-                  </div>
-                  <span className="badge">비교</span>
-                </div>
-                <p style={{ fontSize: "0.95rem", lineHeight: "1.75", color: "var(--ink)" }}>{doc.comparison.intro}</p>
-
-                <div className="table-wrap" style={{ marginTop: "14px" }}>
-                  <table>
-                    <caption style={{ textAlign: "left", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "8px" }}>
-                      {doc.comparison.table.caption}
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">비교 항목</th>
-                        <th scope="col">Decisions API</th>
-                        <th scope="col">Jev</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {doc.comparison.table.rows.map((row) => (
-                        <tr key={row.label}>
-                          <th scope="row">{row.label}</th>
-                          <td>{row.decisions}</td>
-                          <td>{row.jev}</td>
-                        </tr>
+              <div className="table-wrap explore-compare-table" style={{ marginTop: "14px" }} tabIndex={0} role="region" aria-label="제품 비교표">
+                <table>
+                  <caption style={{ textAlign: "left", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "8px" }}>
+                    {doc.comparison.table.caption}
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">비교 항목</th>
+                      {doc.comparison.table.columns.map((col) => (
+                        <th scope="col" key={col}>{col}</th>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {doc.comparison.table.rows.map((row) => (
+                      <tr key={row.label}>
+                        <th scope="row">{row.label}</th>
+                        {row.values.map((value, idx) => (
+                          <td key={idx}>{value}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {doc.comparison.table_note && (
+                <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "8px" }}>{doc.comparison.table_note}</p>
+              )}
 
+              {doc.comparison.notes && (
                 <div className="card" style={{ padding: "20px 24px", marginTop: "16px" }}>
                   <strong style={{ display: "block", marginBottom: "10px", color: "var(--ink)" }}>
-                    Jev의 결과 형태 3가지(문서 작성자의 예시)
+                    {doc.comparison.notes.heading}
                   </strong>
                   <div style={{ display: "grid", gap: "10px" }}>
-                    {doc.comparison.jev_outcomes.map((item) => (
+                    {doc.comparison.notes.items.map((item) => (
                       <p key={item.name} style={{ margin: 0, fontSize: "0.92rem", color: "#374151", lineHeight: "1.65" }}>
                         <strong>{item.name}</strong> — {item.explanation}
                       </p>
                     ))}
                   </div>
                 </div>
+              )}
 
-                <p style={{ fontSize: "0.92rem", lineHeight: "1.75", color: "var(--ink)", marginTop: "14px" }}>
-                  {doc.comparison.interpretation}
-                </p>
+              <div style={{ marginTop: "14px" }}>
+                <Paragraphs text={doc.comparison.interpretation} />
+              </div>
 
+              {doc.comparison.comparison_image && (
                 <figure className="explore-figure" style={{ marginTop: "18px" }}>
                   <img
                     src={doc.comparison.comparison_image.src}
@@ -292,23 +251,34 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                     </a>
                   </figcaption>
                 </figure>
+              )}
 
-                <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "10px" }}>
-                  참고한 자료:{" "}
-                  {doc.comparison.sources.map((source, idx) => (
-                    <span key={source.url}>
-                      {idx > 0 && ", "}
-                      <a href={source.url} target="_blank" rel="noopener noreferrer">{source.name}</a>
-                    </span>
-                  ))}
-                </p>
-              </section>
-            )}
+              <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginTop: "10px" }}>
+                참고한 자료:{" "}
+                {doc.comparison.sources.map((source, idx) => (
+                  <span key={source.url}>
+                    {idx > 0 && ", "}
+                    <a href={source.url} target="_blank" rel="noopener noreferrer">{source.name}</a>
+                  </span>
+                ))}
+              </p>
+            </section>
+
+            <section className="section" id="details">
+              <div className="section-head">
+                <div>
+                  <h2>5. 자세한 설명</h2>
+                  <p className="section-note">발표에서 확인된 내용과 아직 확인되지 않은 부분을 구분합니다.</p>
+                </div>
+                <span className="badge">자세히 보기</span>
+              </div>
+              <Paragraphs text={doc.details} className="explore-paragraphs explore-paragraphs-lg" />
+            </section>
 
             <section className="section" id="pitfalls">
               <div className="section-head">
                 <div>
-                  <h2>{doc.comparison ? "7" : "6"}. 헷갈리기 쉬운 점</h2>
+                  <h2>6. 헷갈리기 쉬운 점</h2>
                 </div>
                 <span className="badge">주의사항</span>
               </div>
@@ -318,7 +288,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                     <span className="status-unconfirmed" style={{ marginBottom: "8px", display: "inline-block" }}>
                       확인 필요
                     </span>
-                    <p style={{ margin: 0, fontSize: "0.92rem", color: "#374151", lineHeight: "1.6" }}>{pitfall}</p>
+                    <Paragraphs text={pitfall} />
                   </div>
                 ))}
               </div>
@@ -327,7 +297,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
             <section className="section" id="sources">
               <div className="section-head">
                 <div>
-                  <h2>{doc.comparison ? "8" : "7"}. 출처와 확인일</h2>
+                  <h2>7. 출처와 확인일</h2>
                 </div>
                 <span className="badge">출처</span>
               </div>
@@ -362,11 +332,10 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
             <a href="#answer">1. 핵심 답변</a>
             <a href="#easy">2. 쉬운 설명</a>
             <a href="#diagram">3. 그림으로 이해하기</a>
-            <a href="#example">4. 직접 조작해 보기</a>
+            <a href="#comparison">4. 비슷한 제품과 비교</a>
             <a href="#details">5. 자세한 설명</a>
-            {doc.comparison && <a href="#comparison">6. Jev와 비교하기</a>}
-            <a href="#pitfalls">{doc.comparison ? "7" : "6"}. 헷갈리기 쉬운 점</a>
-            <a href="#sources">{doc.comparison ? "8" : "7"}. 출처</a>
+            <a href="#pitfalls">6. 헷갈리기 쉬운 점</a>
+            <a href="#sources">7. 출처</a>
           </nav>
         </aside>
       </div>
