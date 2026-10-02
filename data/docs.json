@@ -390,8 +390,8 @@
           "url": "https://code.claude.com/docs/en/commands"
         }
       ],
-      "updated": "2026년 10월 01일",
-      "updatedIso": "2026-10-01",
+      "updated": "2026년 10월 02일",
+      "updatedIso": "2026-10-02",
       "sections": [
         "1. 시작·질문·세션 이어 하기",
         "2. 자동화·출력·권한",
@@ -785,6 +785,13 @@
       ],
       "autoManaged": [
         {
+          "command": "--desktop",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
+        {
           "command": "/artifact-capabilities",
           "category": "슬래시 명령",
           "status": "new",
@@ -818,6 +825,27 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-09-23"
+        },
+        {
+          "command": "claude Code refused and printed the",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
+        {
+          "command": "claude Code refused and told you to open the session with",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
+        },
+        {
+          "command": "claude Desktop app",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-02"
         },
         {
           "command": "/claude-api",
