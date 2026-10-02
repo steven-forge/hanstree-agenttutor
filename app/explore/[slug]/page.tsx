@@ -338,7 +338,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                   <div>
                     <h2>8. 이해도 확인</h2>
                     <p className="section-note">
-                      4지선다 {publicQuizQuestions.length}문항입니다. 모두 답하면 채점 결과와 해설, 공유 기록 대시보드를 볼 수 있습니다.
+                      4지선다 {publicQuizQuestions.length}문항입니다. 모두 답하면 점수와 정답 해설을 볼 수 있습니다. 응시 기록은 저장하지 않습니다.
                     </p>
                   </div>
                   <span className="badge">퀴즈</span>

@@ -11,4 +11,3 @@ export declare function buildReview(
   questions: Pick<QuizQuestion, "answer" | "explanation">[],
   answers: number[]
 ): { selected: number; correct: number; isCorrect: boolean; explanation: string }[];
-export declare function answerFingerprint(uuid: string, version: number, answers: number[]): string;

@@ -15,7 +15,7 @@
 5. 자세한 설명
 6. 헷갈리기 쉬운 점
 7. 출처와 확인일
-8. 이해도 확인 — 4지선다 3~5문항 퀴즈(`data/explore-quizzes.json`), 제출 후 정답·해설·공유 기록 대시보드 표시. 버전은 문서(slug)별로 독립 관리되며(`quizzes[slug].version`), 응시 이력 조회는 커서(직전 페이지 마지막 응시 순번) 기반 페이지네이션을 쓴다.
+8. 이해도 확인 — 4지선다 3~5문항 퀴즈(`data/explore-quizzes.json`), 제출 후 서버가 다시 채점한 정답·해설을 현재 화면에만 표시한다. 버전은 문서(slug)별로 독립 관리되며(`quizzes[slug].version`), 응시 기록은 저장하지 않는다(상태 없는 서버 채점).
 
 앞으로 새로 추가하는 모든 Explore 문서는 8번 이해도 확인 섹션을 기본으로 포함한다. 문항은 `data/explore-quizzes.json`에 해당 문서 slug로 3~5개(텍스트·선택지 4개·정답 index·해설)를 추가하고, 정답과 해설은 제출 전까지 클라이언트에 노출하지 않는다.
 
@@ -96,7 +96,7 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - `package.json`/`package-lock.json` 버전을 0.10.3으로 올렸다. 조작 예제 컴포넌트(`DecisionsExample.tsx`, `decisionLogic.mjs`)는 범위 최소화를 위해 삭제하지 않고 남겨뒀으며, 더 이상 상세 페이지에서 import하지 않는다.
 - 빌드·테스트·배포는 팀장이 수행한다.
 
-## 이해도 확인 퀴즈 추가 (v0.11.0)
+## 이해도 확인 퀴즈 추가 (v0.11.0, 저장소 연결은 v0.11.1에서 제거됨)
 
 - 세 문서 모두에 8번 "이해도 확인" 섹션을 추가했다. 각 문서 하단에 4지선다 5문항 퀴즈(`QuizClient`)가 표시되고, 데스크톱·모바일 목차에 모두 연결했다.
 - 문항·정답·해설은 `data/explore-quizzes.json`(slug별 5문항, `quizzes[slug].version`으로 문서별 버전 관리)에 저장했다. 서버 페이지는 `toPublicQuestions`로 정답·해설을 제거한 문항만 클라이언트에 전달한다(`app/explore/quizLogic.mjs`).
@@ -108,4 +108,19 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - `scripts/check-explore-quiz.mjs`로 문항 스키마(3~5문항, 선택지 4개, 정답 index 0~3, 해설 필수)와 `toPublicQuestions`/`isValidAnswerShape`/`gradeQuiz`/`buildReview`/`answerFingerprint` 순수 함수를 점검한다. 문항·채점 점검과 빌드는 통과했다. HTTP 점검은 저장소 연결을 끈 로컬 서버에서만 실행하도록 제한해 운영 이력에 확인용 기록이 섞이지 않게 했다.
 - `app/globals.css`에 퀴즈 전용 스타일(문항 카드, 진행률, 결과·해설 카드, 공유 기록 대시보드)만 추가했다.
 - `package.json`/`package-lock.json` 버전을 0.11.0으로 올렸다. `.gitignore`에 `.env*`를 추가했다(환경변수 파일 내용은 확인하지 않았다).
-- 실제 Redis 저장·통계·기록 조회와 브라우저 화면 조작은 아직 확인하지 않았다. 저장소는 사용자 본인 Vercel 계정에서 연결해야 하며, 연결 후 별도 확인이 필요하다.
+- 당시 실제 Redis 저장·통계·기록 조회는 확인하지 않았다. 이후 사용자가 기록 저장을 취소하여 v0.11.1에서 연결 작업도 취소했다.
+
+## 퀴즈 응시 기록 저장 제거 (v0.11.1)
+
+- 사용자 요청("응시 기록은 저장소에 남기지 말고 결과만 보여주자")에 따라 v0.11.0의 Upstash Redis 연동을 전부 제거했다. 퀴즈는 이제 상태 없는(stateless) 서버 채점만 수행하며 응시 기록·통계·공유 대시보드를 저장하지 않는다.
+- `app/api/explore/[slug]/quiz/route.ts`에서 GET(이력 조회)을 제거해 기본 405가 되며, POST는 `{ version, answers }`만 받아 채점 결과(`correct`/`total`/`score`/`timestamp`/`timestampKst`/`review`)만 반환한다. UUID·제출 번호·IP 기반 HMAC 횟수 제한·Redis EVAL 트랜잭션을 모두 제거했다.
+- `app/api/explore/[slug]/quiz/upstash.mjs`, `upstash.d.mts` 파일을 삭제했다.
+- `app/explore/quizLogic.mjs`/`.d.mts`에서 더 이상 쓰지 않는 `answerFingerprint`를 제거했다. 나머지 `toPublicQuestions`/`isValidAnswerShape`/`gradeQuiz`/`buildReview`는 그대로 재사용한다.
+- `app/explore/QuizClient.tsx`를 결과 전용 state(`answers`/`result`/`submitting`/`errorMessage`/`staleVersion`)로 단순화했다. 대시보드·페이지네이션·제출 번호·저장 재시도 UI를 모두 제거하고 "응시 기록은 저장하지 않습니다. 결과는 현재 화면에서만 확인할 수 있습니다." 안내 문구를 추가했다.
+- `app/globals.css`에서 대시보드·이력·저장 안내·제출 번호 전용 클래스를 제거하고 안내 문구용 `.quiz-note`만 남겼다.
+- `scripts/check-explore-quiz.mjs`를 GET 405 기대, 응답에 uuid/saved/publicId/fingerprint가 없음을 확인하도록 갱신했다. 기존 잘못된 본문/버전/오리진/용량 초과 점검은 그대로 유지한다.
+- `docs/knowledge/QUIZ_SETUP.md`를 Upstash 연결 가이드에서 저장소 없는 현재 동작 설명으로 다시 썼다.
+- `package.json`/`package-lock.json` 버전을 0.11.1로 올렸다. `.gitignore`의 `.env*`는 그대로 둔다(다른 환경변수 보호에 계속 유용).
+- 빌드·테스트·배포는 팀장이 수행한다.
+
+- v0.11.1의 문항·채점 자체 점검, 로컬 HTTP 채점/입력 오류/GET 405 확인과 최종 빌드가 통과했다. 저장 관련 외부 호출·브라우저 저장·응시 ID가 없음을 별도 소스 검토로 확인했다. 실제 브라우저 클릭·화면 배치는 별도로 확인하지 않았다.

@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import assert from "node:assert/strict";
-import { toPublicQuestions, isValidAnswerShape, gradeQuiz, buildReview, answerFingerprint } from "../app/explore/quizLogic.mjs";
+import { toPublicQuestions, isValidAnswerShape, gradeQuiz, buildReview } from "../app/explore/quizLogic.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const explore = JSON.parse(readFileSync(join(here, "../data/explore.json"), "utf8"));
@@ -66,41 +66,38 @@ for (const slug of exploreSlugs) {
   assert.ok(review.every((r) => r.isCorrect), `${slug} 정답으로 채점하면 모두 맞아야 합니다`);
 }
 
-// fingerprint is stable for identical submissions and differs when answers change
-const fp1 = answerFingerprint("uuid-1", 1, [0, 1, 2]);
-const fp2 = answerFingerprint("uuid-1", 1, [0, 1, 2]);
-const fp3 = answerFingerprint("uuid-1", 1, [0, 1, 3]);
-assert.equal(fp1, fp2);
-assert.notEqual(fp1, fp3);
-
 console.log("check-explore-quiz: OK");
 
-// Optional HTTP check against a local server with all Redis variables explicitly empty.
-// Never submit check records to production/shared history.
+// Optional HTTP check against a local server. Never submit check records anywhere persistent;
+// the API is stateless so there is nothing to disable before running this.
 if (process.argv[2]) {
   const base = new URL(process.argv[2]);
   assert.ok(["127.0.0.1", "localhost", "[::1]"].includes(base.hostname), "HTTP 점검은 로컬 서버에서만 실행합니다");
   const endpoint = new URL("/api/explore/decisions-api/quiz", base);
-  assert.equal((await fetch(endpoint)).status, 503, "저장소를 끈 로컬 서버가 필요합니다");
+  assert.equal((await fetch(endpoint)).status, 405, "GET은 더 이상 지원하지 않습니다");
   for (const [slug, quiz] of Object.entries(quizFile.quizzes)) {
     for (const kind of ["perfect", "wrong", "mixed"]) {
       const answers = quiz.questions.map((q, i) => kind === "perfect" || (kind === "mixed" && i % 2 === 0) ? q.answer : (q.answer + 1) % 4);
       const response = await fetch(new URL(`/api/explore/${slug}/quiz`, base), {
         method: "POST", headers: { "Content-Type": "application/json", Origin: base.origin },
-        body: JSON.stringify({ uuid: crypto.randomUUID(), version: quiz.version, answers, score: 999, timestamp: 0 })
+        body: JSON.stringify({ version: quiz.version, answers, score: 999, timestamp: 0 })
       });
       assert.equal(response.status, 200);
       const result = await response.json();
-      assert.equal(result.saved, false);
+      assert.ok(!("uuid" in result), "응답에 uuid가 없어야 합니다");
+      assert.ok(!("saved" in result), "응답에 saved가 없어야 합니다");
+      assert.ok(!("publicId" in result), "응답에 publicId가 없어야 합니다");
+      assert.ok(!("fingerprint" in result), "응답에 fingerprint가 없어야 합니다");
       assert.equal(result.score, gradeQuiz(quiz.questions, answers).score);
+      assert.equal(result.correct, gradeQuiz(quiz.questions, answers).correct);
       assert.equal(result.review.length, quiz.questions.length);
       assert.ok(result.timestamp > Date.now() - 60000 && result.timestamp <= Date.now());
-      assert.match(result.publicId, /^[0-9a-f]{16}$/);
+      assert.ok(result.timestampKst && result.timestampKst.trim() !== "");
       assert.equal(response.headers.get("cache-control"), "no-store");
     }
   }
-  const valid = { uuid: crypto.randomUUID(), version: quizFile.quizzes["decisions-api"].version, answers: [0, 0, 0, 0, 0] };
-  const invalidBodies = ["null", "[]", "42", "{", JSON.stringify({ ...valid, answers: [0] }), JSON.stringify({ ...valid, answers: [0, 1.5, 2, 3, 0] }), JSON.stringify({ ...valid, uuid: "bad" })];
+  const valid = { version: quizFile.quizzes["decisions-api"].version, answers: [0, 0, 0, 0, 0] };
+  const invalidBodies = ["null", "[]", "42", "{", JSON.stringify({ ...valid, answers: [0] }), JSON.stringify({ ...valid, answers: [0, 1.5, 2, 3, 0] })];
   for (const body of invalidBodies) {
     assert.equal((await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body })).status, 400);
   }
@@ -114,8 +111,5 @@ if (process.argv[2]) {
   }
   const oversizedStream = new ReadableStream({ start(controller) { controller.enqueue(new TextEncoder().encode("가".repeat(2000))); controller.close(); } });
   assert.equal((await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: oversizedStream, duplex: "half" })).status, 413);
-  assert.equal((await fetch(new URL("?cursor=", endpoint))).status, 400);
-  assert.equal((await fetch(new URL("?cursor=1e3", endpoint))).status, 400);
-  assert.equal((await fetch(new URL("?version=999", endpoint))).status, 400);
-  console.log("check-explore-quiz HTTP: OK (local, storage disabled)");
+  console.log("check-explore-quiz HTTP: OK (stateless)");
 }

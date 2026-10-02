@@ -51,13 +51,3 @@ export function buildReview(questions, answers) {
     explanation: q.explanation
   }));
 }
-
-/**
- * @param {string} uuid
- * @param {number} version
- * @param {number[]} answers
- * @returns {string}
- */
-export function answerFingerprint(uuid, version, answers) {
-  return `${uuid}:${version}:${answers.join(",")}`;
-}
