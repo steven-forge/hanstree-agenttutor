@@ -39,7 +39,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교)의 세 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교)의 네 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -146,3 +146,15 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - `docs/knowledge/DECISIONS_API.md`/`OPENAI_DOTS.md`/`GEMINI_4_ARGON.md`의 8번 섹션을 새 문항·보기·해설로 다시 갱신했고, `docs/knowledge/QUIZ_SETUP.md`의 진행 표시·버튼 비활성화 설명도 함께 갱신했다.
 
 - 최종 문항·원고 일치와 기존 1~7번 본문 보존을 확인했다. 최종 빌드(53개 정적 페이지)와 로컬 HTTP 채점 확인이 통과했다. 오답→정답 재선택, 입력 범위·버전·오리진 검증, GET 405를 확인했으며 실제 브라우저 클릭·모바일 배치는 직접 확인하지 않았다.
+
+## 네 번째 문서(Exa) 추가
+
+- 사용자의 'EXA 에 대해서 알려줘' 요청에 따라 네 번째 문서를 작성했다. Exa 공식 문서(Search·Contents·MCP·Websets·Agent·Pricing, 확인일 2026-10-02 KST)를 근거로 썼고, Tavily·Firecrawl 공식 문서를 비교 출처로 함께 썼다.
+- `data/explore.json`에 slug `exa` 문서 1건(8번 구성: 핵심 답변·쉬운 설명·그림·Tavily·Firecrawl 비교·자세한 설명·헷갈리는 점·출처·퀴즈)을 추가했다. 기존 세 문서 값은 그대로 두었다.
+- `data/explore-quizzes.json`에 `exa` 퀴즈(`version: 1`, 5문항)를 추가했다. 개념은 검색의 외부 자료 조회 역할, Contents의 URL 본문 가져오기, 출처·날짜 재확인의 필요성, MCP의 연결 표준 역할, Websets의 조건 기반 검증·보강을 다룬다.
+- 설명 웹툰 이미지(`public/explore/exa-webtoon.png`, 1024×1536)를 내장 imagegen으로 생성해 저장했다. 가상 사례이며 실제 제품 화면이나 검색 결과가 아니다.
+- `docs/knowledge/EXA.md`를 기존 문서와 같은 8개 섹션 구성으로 작성했다.
+- 빌드·테스트·배포는 팀장이 수행한다.
+
+- v0.11.4: 본문 문단과 요금 설명을 짧게 나누고 MCP 표준과 Exa MCP 연결 도구를 구분했다. 비교표는 검색·본문 수집의 공통 기능을 명시하고 Firecrawl의 접근 가능한 하위 페이지 수집 설명과 공식 출처를 보완했다.
+- 기존 세 문서·퀴즈 값 보존, 새 원고와 5문항 일치, Explore 무결성·채점 점검, 최종 빌드(54개 정적 페이지)가 통과했다. 로컬 Exa 문서·목록과 개별 오답→정답 재선택을 HTTP로 확인했다. 실제 브라우저 클릭·모바일 화면 배치는 직접 확인하지 않았다.
