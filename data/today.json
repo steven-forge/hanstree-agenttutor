@@ -1,10 +1,30 @@
 {
   "edition_date": "2026-10-03",
-  "window_start": "2026-08-04T03:02:41.939681+09:00",
-  "window_end": "2026-10-03T03:02:41.939681+09:00",
-  "collected_at": "2026-10-03T03:03:18.981367+09:00",
+  "window_start": "2026-08-04T06:02:17.023694+09:00",
+  "window_end": "2026-10-03T06:02:17.023694+09:00",
+  "collected_at": "2026-10-03T06:02:17.023694+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "da2d811b9d25331f",
+      "title": "v2.1.288",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+      "source_summary": "## What's changed - Added `$.ui.selection()` for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row - Added a built-in `gh api` to cloud sessions whose image has no GitHub CLI, and fixed the built-in sending control characters from file names, jq filters or GitHub errors to the terminal - Added recovery for a prompt cleared with Ctrl+C: pressing Up on the empty prompt brings the draft back, including pasted text and images",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-03T06:02:39+09:00",
+      "published_at": "2026-10-02T20:19:57+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.288 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - mods에 대한 `$ .ui.selection ()` 추가: 전체 화면 모드에서 마지막으로 선택한 텍스트를 반환하고 선택 항목이 하나의 스크립트 행 내에 있을 때 해당 행 - 이미지에 GitHub CLI가 없는 클라우드 세션에 내장된 `gh api` 를 추가하고 파일 이름, jq 필터 또는 GitHub 오류의 내장 전송 제어 문자를 터미널에 수정 - Ctrl + C로 지운 프롬프트에 대한 복구 추가: 빈 프롬프트를 위로 누름 붙여넣은 텍스트와 이미지를 포함하여 초안을 다시 가져옵니다.",
+      "release_notes_ko": {
+        "new_features": "Mods에 대한 `$ .ui.selection' 추가: 전체 화면 모드에서 마지막으로 선택한 텍스트를 반환하고 선택 항목이 한 성적표 행 내에 있을 때 해당 행을 반환합니다.\n이미지에 GitHub CLI가 없는 클라우드 세션에 내장 `gh api` 를 추가하고 파일 이름, jq 필터 또는 GitHub 오류의 제어 문자를 터미널로 전송하는 내장 문자를 수정했습니다.",
+        "bug_fixes": "턴에 실패하는 중간 응답 API 시간 초과 수정: 비대화형 세션 및 하위 에이전트가 이제 부분 응답에서 계속되고 사고 전용 응답이 다시 시도됩니다.\n마지막 회신에서 토큰 사용량 제로를 보고했을 때 자동 압축 대신 \"프롬프트가 너무 깁니다\" 로 긴 대화가 실패하는 문제 수정\n압축이 방금 복원한 파일 및 기타 컨텍스트를 삭제하는 `--resume' 수정",
+        "chores": "자동 모드 개선: 대화가 클라이언트 측 안전 분류기가 검토하기에는 너무 길어지면 이제 모든 도구 호출을 묻거나 실패하는 대신 압축됩니다.\n화면 판독기 모드 개선: 삭제된 단어와 같은 짧은 공지사항이 이제 다음 키를 누르거나 화면에 표시되는 내용이 변경될 때까지 화면에 표시됩니다."
+      }
+    },
     {
       "id": "c38af6e5cae43e23",
       "title": "A model guide for the GPT-6 family",
