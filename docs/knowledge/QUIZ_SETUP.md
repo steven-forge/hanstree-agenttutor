@@ -5,11 +5,17 @@ Explore 문서의 "8. 이해도 확인" 퀴즈는 상태 없는(stateless) 서�
 ## 동작 방식
 
 - 문항·정답·해설은 `data/explore-quizzes.json`(slug별 5문항, `quizzes[slug].version`으로 문서별 버전 관리)에 있습니다. 서버 페이지는 `toPublicQuestions`로 정답·해설을 제거한 문항만 클라이언트에 전달합니다(`app/explore/quizLogic.mjs`).
-- 클라이언트(`app/explore/QuizClient.tsx`)는 답안을 모으고 `POST /api/explore/[slug]/quiz`로 `{ version, answers }`만 보냅니다. 서버는 `gradeQuiz`/`buildReview`로 항상 다시 채점하며 클라이언트가 보낸 점수는 신뢰하지 않습니다.
-- 응답은 `correct`/`total`/`score`/`timestamp`/`timestampKst`/`review`만 포함합니다. 저장 여부·제출 번호·공유 이력 관련 필드는 없습니다.
+- `POST /api/explore/[slug]/quiz`는 두 가지 모드를 지원합니다. 본문에 `answers`와 `questionIndex`/`answer`를 섞으면 400을 반환합니다(모드 혼용 거부).
+  - 개별 채점: `{ version, questionIndex, answer }`. 보기를 고를 때마다 클라이언트(`app/explore/QuizClient.tsx`)가 즉시 보냅니다. `isValidQuestionIndex`/`isValidSingleAnswer`로 정수·범위를 검증하고, `gradeSingle`로 채점합니다. 응답은 `{ questionIndex, isCorrect, explanation? }`이며, **오답일 때는 `explanation` 필드 자체가 없어** 정답이나 해설이 노출되지 않습니다. 오답이면 화면에 "오답입니다. 다른 보기를 다시 선택해 보세요."를 보여주고 같은 문항에서 바로 다른 보기를 다시 선택할 수 있습니다(선택 자체를 막거나 초기화하지 않음).
+  - 전체 채점(요약): `{ version, answers }`. 모든 문항에 첫 선택을 마치면 클라이언트가 각 문항의 **첫 번째로 성공적으로 채점된 선택**(`firstAnswers`)을 모아 한 번 보냅니다. 서버는 `gradeQuiz`/`buildReview`로 항상 다시 채점하며 클라이언트가 보낸 점수는 신뢰하지 않습니다.
+- 두 모드 모두 서버가 항상 다시 채점하며, 클라이언트가 보낸 점수·정답 여부는 신뢰하지 않습니다.
+- 전체 채점 응답은 `correct`/`total`/`score`/`timestamp`/`timestampKst`/`review`만 포함합니다. 저장 여부·제출 번호·공유 이력 관련 필드는 없습니다.
 - 응답 헤더는 항상 `Cache-Control: no-store`입니다. GET은 지원하지 않으며 기본 405를 반환합니다.
-- 문항 버전(`version`)이 맞지 않으면 409를 반환하고, 클라이언트는 새로고침을 안내합니다.
+- 문항 버전(`version`)이 맞지 않으면 두 모드 모두 409를 반환하고, 클라이언트는 새로고침을 안내합니다.
+- 점수는 "첫 선택 기준 점수"입니다 — 각 문항에서 네트워크 오류 없이 처음 채점에 성공한 선택(오답이어도 포함)이 점수에 반영되며, 이후 같은 문항을 다시 풀어 보는 연습 선택은 점수를 바꾸지 않습니다. 네트워크 오류로 채점에 실패한 시도는 "첫 선택"으로 기록되지 않습니다.
+- 화면에는 "답변 완료 N/총 문항"(첫 선택을 마친 문항 수)과 "현재 맞힌 문항 N/총 문항"(지금 표시 중인 선택 기준 정답 문항 수)을 함께 보여주고, 점수 계산 기준("첫 선택 기준 점수")은 별도 안내 문구로 설명합니다. 결과가 보인 뒤에도 문항과 선택지는 계속 보이고 다시 풀어볼 수 있으며, 정답을 맞힌 문항도 잠그지 않습니다.
 - 결과는 현재 화면의 React state에만 있습니다. 새로고침이나 "새로 응시하기"를 누르면 사라지며, 브라우저에도 별도로 남기지 않습니다(localStorage/sessionStorage/cookie 등 미사용).
+- 같은 문항에 대한 빠른 연속 클릭이나 중복 제출은 문항별 요청 중(in-flight) 잠금으로 막습니다. 채점 중에는 해당 문항의 라디오를 비활성화해 클릭이 조용히 무시되는 것을 방지하고, 오답이면 즉시 다시 활성화합니다. "새로 응시하기"는 임의 문항 채점이나 요약 제출이 진행 중일 때 비활성화됩니다. 네트워크 오류 시에는 같은 선택으로도, 다른 보기를 골라도 바로 다시 시도할 수 있습니다.
 
 ## 점검 명령
 

@@ -11,3 +11,9 @@ export declare function buildReview(
   questions: Pick<QuizQuestion, "answer" | "explanation">[],
   answers: number[]
 ): { selected: number; correct: number; isCorrect: boolean; explanation: string }[];
+export declare function isValidQuestionIndex(value: unknown, length: number): value is number;
+export declare function isValidSingleAnswer(value: unknown): value is number;
+export declare function gradeSingle(
+  question: Pick<QuizQuestion, "answer" | "explanation">,
+  answer: number
+): { isCorrect: boolean; explanation?: string };

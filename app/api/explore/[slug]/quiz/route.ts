@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import rawExplore from "../../../../../data/explore.json";
 import rawQuizzes from "../../../../../data/explore-quizzes.json";
-import { gradeQuiz, isValidAnswerShape, buildReview } from "../../../../explore/quizLogic.mjs";
+import {
+  gradeQuiz,
+  isValidAnswerShape,
+  buildReview,
+  isValidQuestionIndex,
+  isValidSingleAnswer,
+  gradeSingle
+} from "../../../../explore/quizLogic.mjs";
 
 export const dynamic = "force-dynamic";
 
@@ -102,11 +109,33 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ slu
   }
 
   const questions = quiz.questions;
-  const { version, answers } = parsedBody;
+  const { version, answers, questionIndex, answer } = parsedBody;
 
   if (!Number.isInteger(version) || version !== quiz.version) {
     return NextResponse.json({ error: "stale_version" }, { status: 409, headers: { "Cache-Control": "no-store" } });
   }
+
+  const hasAnswers = Object.prototype.hasOwnProperty.call(parsedBody, "answers");
+  const hasQuestionIndex = Object.prototype.hasOwnProperty.call(parsedBody, "questionIndex");
+  const hasAnswer = Object.prototype.hasOwnProperty.call(parsedBody, "answer");
+
+  // Reject bodies that mix full-quiz and single-question fields.
+  if (hasAnswers && (hasQuestionIndex || hasAnswer)) {
+    return NextResponse.json({ error: "invalid_body" }, { status: 400, headers: { "Cache-Control": "no-store" } });
+  }
+
+  if (hasQuestionIndex || hasAnswer) {
+    if (!hasQuestionIndex || !hasAnswer || !isValidQuestionIndex(questionIndex, questions.length) || !isValidSingleAnswer(answer)) {
+      return NextResponse.json({ error: "invalid_answers" }, { status: 400, headers: { "Cache-Control": "no-store" } });
+    }
+    // Correct option/explanation are only included when the selection is correct.
+    const singleGrade = gradeSingle(questions[questionIndex as number], answer as number);
+    return NextResponse.json(
+      { questionIndex, ...singleGrade },
+      { headers: { "Cache-Control": "no-store" } }
+    );
+  }
+
   if (!isValidAnswerShape(answers, questions.length)) {
     return NextResponse.json({ error: "invalid_answers" }, { status: 400, headers: { "Cache-Control": "no-store" } });
   }

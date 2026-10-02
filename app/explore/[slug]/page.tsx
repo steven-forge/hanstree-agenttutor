@@ -338,7 +338,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                   <div>
                     <h2>8. 이해도 확인</h2>
                     <p className="section-note">
-                      4지선다 {publicQuizQuestions.length}문항입니다. 모두 답하면 점수와 정답 해설을 볼 수 있습니다. 응시 기록은 저장하지 않습니다.
+                      4지선다 {publicQuizQuestions.length}문항입니다. 보기를 고르면 바로 채점되며, 오답이면 다른 보기를 바로 다시 선택할 수 있습니다. 점수는 각 문항의 첫 선택을 기준으로 계산합니다(첫 선택 기준 점수). 응시 기록은 저장하지 않습니다.
                     </p>
                   </div>
                   <span className="badge">퀴즈</span>

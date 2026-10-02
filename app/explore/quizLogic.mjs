@@ -51,3 +51,31 @@ export function buildReview(questions, answers) {
     explanation: q.explanation
   }));
 }
+
+/**
+ * @param {unknown} value
+ * @param {number} length
+ * @returns {value is number}
+ */
+export function isValidQuestionIndex(value, length) {
+  return Number.isInteger(value) && value >= 0 && value < length;
+}
+
+/**
+ * @param {unknown} value
+ * @returns {value is number}
+ */
+export function isValidSingleAnswer(value) {
+  return Number.isInteger(value) && value >= 0 && value <= 3;
+}
+
+/**
+ * Grades one question without ever disclosing the correct option/explanation on a wrong answer.
+ * @param {{ answer: number, explanation: string }} question
+ * @param {number} answer
+ * @returns {{ isCorrect: boolean, explanation?: string }}
+ */
+export function gradeSingle(question, answer) {
+  const isCorrect = answer === question.answer;
+  return isCorrect ? { isCorrect, explanation: question.explanation } : { isCorrect };
+}
