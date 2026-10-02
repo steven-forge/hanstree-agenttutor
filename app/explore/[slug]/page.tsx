@@ -34,6 +34,7 @@ type ExploreDoc = {
   question: string;
   core_answer: string;
   easy_explanation: string;
+  api_explanation_title?: string;
   api_explanation: string;
   details: string;
   comparison_note: string;
@@ -131,7 +132,9 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 <p style={{ margin: 0, fontSize: "0.95rem", lineHeight: "1.7", color: "#374151" }}>{doc.easy_explanation}</p>
               </div>
               <div className="card" style={{ padding: "20px 24px", marginTop: "12px" }}>
-                <strong style={{ display: "block", marginBottom: "6px", color: "var(--blue)" }}>API란?</strong>
+                <strong style={{ display: "block", marginBottom: "6px", color: "var(--blue)" }}>
+                  {doc.api_explanation_title ?? "API란?"}
+                </strong>
                 <p style={{ margin: 0, fontSize: "0.95rem", lineHeight: "1.7", color: "#374151" }}>{doc.api_explanation}</p>
               </div>
             </section>
@@ -140,7 +143,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
               <div className="section-head">
                 <div>
                   <h2>3. 그림으로 이해하기</h2>
-                  <p className="section-note">맥락과 질문이 들어가 선택지 하나가 정해지고, 앱이 실제로 처리하는 흐름입니다.</p>
+                  <p className="section-note">{doc.slug === "decisions-api" ? "맥락과 질문이 들어가 선택지 하나가 정해지고, 앱이 실제로 처리하는 흐름입니다." : "책임을 맡긴 뒤 자료 확인부터 결과 보고까지 이어지는 가상의 흐름입니다."}</p>
                 </div>
                 <span className="badge">흐름도</span>
               </div>
@@ -168,11 +171,51 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
               <div className="section-head">
                 <div>
                   <h2>4. 직접 조작해 보기</h2>
-                  <p className="section-note">문의 내용과 조건을 바꿔보며 결과가 어떻게 달라지는지 확인합니다.</p>
+                  <p className="section-note">{doc.slug === "decisions-api" ? "문의 내용과 조건을 바꿔보며 결과가 어떻게 달라지는지 확인합니다." : "단계를 펼쳐보며 일을 맡기는 과정을 이해합니다."}</p>
                 </div>
                 <span className="badge">조작 예제</span>
               </div>
-              <DecisionsExample />
+              {doc.slug === "decisions-api" ? (
+                <DecisionsExample />
+              ) : (
+                <div className="card decisions-example">
+                  <p className="status-unconfirmed" style={{ marginBottom: "14px" }}>
+                    설명을 돕기 위한 가상 예시 · 실제 서비스 연결 아님
+                  </p>
+                  <p style={{ margin: "0 0 14px", fontSize: "0.92rem", color: "#374151", lineHeight: "1.65" }}>
+                    사용자가 &quot;이번 주 보고서 초안을 챙겨줘. 공유하기 전에는 내 승인을 받아줘&quot;라고 책임을 맡기면, dot은 아래 단계를 거쳐 작업을 이어갑니다. 각 단계를 펼쳐보세요.
+                  </p>
+                  <div style={{ display: "grid", gap: "10px" }}>
+                    <details className="card" style={{ padding: "14px 18px" }}>
+                      <summary style={{ cursor: "pointer", fontWeight: 700 }}>1. 자료 확인</summary>
+                      <p style={{ margin: "10px 0 0", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                        연결이 허락된 자료(예: 지난 보고서, 관련 메모)를 읽기 권한 안에서 살펴보고 필요한 내용을 정리합니다.
+                      </p>
+                    </details>
+                    <details className="card" style={{ padding: "14px 18px" }}>
+                      <summary style={{ cursor: "pointer", fontWeight: 700 }}>2. 초안 작성</summary>
+                      <p style={{ margin: "10px 0 0", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                        정리한 내용을 바탕으로 보고서 초안을 작성합니다. 이 예시에서는 초안만 준비하고 원본 자료의 변경이나 외부 공유는 맡기지 않았습니다.
+                      </p>
+                    </details>
+                    <details className="card" style={{ padding: "14px 18px" }}>
+                      <summary style={{ cursor: "pointer", fontWeight: 700 }}>3. 승인 요청</summary>
+                      <p style={{ margin: "10px 0 0", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                        초안을 메시지로 보내 사용자의 확인을 기다립니다. 실제로 전송하거나 공유하는 행동은 승인 전에는 일어나지 않습니다.
+                      </p>
+                    </details>
+                    <details className="card" style={{ padding: "14px 18px" }}>
+                      <summary style={{ cursor: "pointer", fontWeight: 700 }}>4. 결과 보고</summary>
+                      <p style={{ margin: "10px 0 0", fontSize: "0.9rem", color: "#374151", lineHeight: "1.6" }}>
+                        승인한 대로 처리한 뒤, 무엇을 했는지와 다음에 확인이 필요한 사항을 메시지로 알립니다.
+                      </p>
+                    </details>
+                  </div>
+                  <p className="decisions-note" style={{ marginTop: "14px" }}>
+                    이 네 단계는 이해를 돕기 위한 가상의 흐름이며, 실제 dots 제품의 화면이나 내부 동작과 다를 수 있습니다.
+                  </p>
+                </div>
+              )}
             </section>
 
             <section className="section" id="details">
