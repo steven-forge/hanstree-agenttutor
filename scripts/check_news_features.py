@@ -265,7 +265,7 @@ def check_article_detail(base_url: str, timeout: float, articles: list[dict]) ->
     assert "요약" in text, "기사 상세에 요약 섹션이 없다."
     assert "왜 중요한가요" in text, "기사 상세에 '왜 중요한가요' 섹션이 없다."
     assert "원문" in text, "기사 상세에 원문 링크 섹션이 없다."
-    assert "편집 기록" in text or "검토 기록" in text or "기록 없음" in text, \
+    assert any(label in text for label in ("편집 기록", "검토 기록", "기록 없음", "작성·원문 대조")), \
         "기사 상세에 편집/검토 기록 표시가 없다."
     editorial = read_json(ROOT / "data/news-editorial.json")
     for aid, note in editorial["articles"].items():
