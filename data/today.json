@@ -1,8 +1,8 @@
 {
   "edition_date": "2026-10-03",
-  "window_start": "2026-08-04T02:02:22.211713+09:00",
-  "window_end": "2026-10-03T02:02:22.211713+09:00",
-  "collected_at": "2026-10-03T02:02:22.211713+09:00",
+  "window_start": "2026-08-04T03:02:41.939681+09:00",
+  "window_end": "2026-10-03T03:02:41.939681+09:00",
+  "collected_at": "2026-10-03T03:03:18.981367+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -40,6 +40,22 @@
         "original": "Say hello to Gemini 3.8 Flash-Lite TTS and Gemini 3.8 Flash TTS.",
         "ko": "Gemini 3.8 Flash-Lite TTS와 Gemini 3.8 Flash TTS를 만나보세요."
       }
+    },
+    {
+      "id": "882596cbc7639eb4",
+      "title": "Chatham scales its capital markets expertise with OpenAI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/chatham-financial",
+      "source_summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-03T03:02:42+09:00",
+      "published_at": "2026-10-02T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Chatham은 OpenAI로 자본 시장 전문성을 확장합니다",
+      "source_summary_ko": "채텀 파이낸셜은 코덱스와 GPT-5.6을 사용하여 기술을 구축하고 워크플로우를 재설계하여 거래 유효성 검사를 30분에서 4분 미만으로 줄입니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
     },
     {
       "id": "e61beeca9f37dec1",
@@ -361,6 +377,49 @@
       "source_summary_ko": "# # 버그 수정 - 코덱스가 백그라운드 프로세스와 샌드박스 명령어를 실행할 때 Windows에서 깜박이는 콘솔 창이 억제되었습니다. (# 49385) # # 변경 로그 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.159.1... rust-v0.159.2 - # 49385 [0.159] 0.159.2 @ andrewgu-oai에 대한 백포트 Windows 콘솔 억제",
       "release_notes_ko": {
         "bug_fixes": "코덱스가 백그라운드 프로세스와 샌드박스 명령을 실행하면 Windows에서 콘솔 창이 깜박이지 않습니다."
+      }
+    },
+    {
+      "id": "1f2684ece82a4b59",
+      "title": "Trump orders US government to call AI ‘Super Intelligence’",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai",
+      "source_summary": "The US executive branch is no longer acknowledging the existence of \"artificial intelligence.\" Going forward, official policy websites, policy documents, and press releases will refer only to \"Super Intelligence,\" thanks to a new executive order signed by President Donald Trump. \"The word super is the best word of all, and it's the simplest,\" Trump said […]",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-03T03:03:18+09:00",
+      "published_at": "2026-09-29T22:25:45+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49901874",
+          "independent": false,
+          "target_url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/policy/1002468/trump-ai-superintelligence-executive-order-ai",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/podcast/call-it-ai-call-it-super-intelligence-only-2-of-consumers-are-buying-it",
+          "independent": true
+        }
+      ],
+      "title_ko": "트럼프는 미국 정부에 AI를 ‘슈퍼 인텔리전스 (Super Intelligence)‘ 라고 부르",
+      "source_summary_ko": "정책 AI 뉴스 ‘슈퍼라는 단어는 그 중에서도 가장 좋은 단어’ 라고 트럼프는 말합니다.\n매우 강력하고 훌륭합니다.\n그것은 대부분 잘 사용될 것이고 우리는 나쁜 사용을 막을 것입니다. 그는 \"인공은 뉴스와 같다\" 고 덧붙였다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "It’s very powerful, it’s very brilliant.",
+        "ko": "매우 강력하고 훌륭합니다."
       }
     },
     {
