@@ -23,8 +23,10 @@ from collect_content import (  # noqa: E402
     CANDIDATES_PATH, DATA_DIR, HEALTH_PATH, KST, RELEASE_SOURCE_IDS, ROOT, SUMMARY_MAX, TODAY_PATH,
     build_beginner_explanation, extract_full_text_data, canonicalize_url, classify_date, clean_html_text,
     fetch_url, merge_archive, merge_source_reports, needs_korean_translation, new_stats, news_status, parse_iso,
-    read_json, translate_to_korean, url_id, validate_url, write_json,
+    read_json, translate_to_korean, url_id, validate_url, write_json, policy_news_candidate,
+    daily_news_progress, is_model_launch, OFFICIAL_NEWS_SOURCE_IDS,
 )
+from news_policy import load_policy  # noqa: E402
 
 SOURCES_PATH = DATA_DIR / "news-sources.json"
 LOCK_PATH = ROOT / ".source-cache" / "news-hourly.lock"
@@ -164,7 +166,7 @@ def matches_event(title: str, event: dict) -> bool:
 
 
 def rebuild_events(stored_events: list[dict], now: datetime) -> list[dict]:
-    """병합 규칙이 바뀌어도 오래된 오분류 후보가 남지 않도록 출처 단위로 다시 묶는다."""
+    """기존 첫 매칭 규칙을 유지하며 출처 단위로 다시 묶는다."""
     events: list[dict] = []
     for old in stored_events:
         for source in old.get("sources") or []:
@@ -193,6 +195,41 @@ def article_datetime(article: dict) -> datetime | None:
         except ValueError:
             return None
     return None
+
+
+def apply_event_policy(events: list[dict], policy: dict, now: datetime, keyword_re) -> list[dict]:
+    """저장 출처도 현재 활성화·기간·키워드·독립성으로 다시 평가한다."""
+    filtered = []
+    start = now - timedelta(hours=policy["window_hours"])
+    for event in events:
+        sources = []
+        for source in event.get("sources") or []:
+            sid = source.get("source_id")
+            if sid in policy["official_sources"]:
+                if policy_news_candidate(source, policy, now):
+                    sources.append({**source, "independent": False})
+                continue
+            settings = policy["sources"].get(sid)
+            published = article_datetime(source)
+            if not settings or not settings["enabled"] or published is None or published.tzinfo is None or not start <= published <= now:
+                continue
+            if settings["keyword_filter"] and not keyword_re.search(f"{source.get('title') or ''} {source.get('summary') or ''}"):
+                continue
+            sources.append({**source, "independent": settings["independent"]})
+        if sources:
+            filtered.append({**event, "title": sources[0]["title"], "sources": sources})
+    return filtered
+
+
+def official_event(article: dict, now: datetime) -> dict:
+    source = {
+        "source_id": article["source_id"], "name": article["source_name"], "url": article["source_url"],
+        "target_url": article["source_url"], "independent": False, "title": article["title"],
+        "summary": article.get("source_summary") or article.get("source_summary_ko") or article.get("summary") or "",
+        "official_article": article,
+        **{key: article[key] for key in ("published_at", "published_on", "date_precision") if key in article},
+    }
+    return {"id": article["id"], "title": article["title"], "first_seen": article.get("fetched_at") or now.isoformat(), "sources": [source]}
 
 
 # ---------- 피드·API 읽기 ----------
@@ -365,8 +402,16 @@ def normalize_item(sdef: dict, raw: dict, window_start: datetime, window_end: da
 
 # ---------- 게시 ----------
 
-def build_article(event: dict, count: int, high_at: int, now: datetime) -> dict:
+def build_article(event: dict, count: int, high_at: int, now: datetime, policy: dict | None = None) -> dict:
     """번역·요약·날짜 중 하나라도 빠지면 예외를 던져 후보로 남긴다. 원문 밖의 사실은 만들지 않는다."""
+    official = next((s["official_article"] for s in event["sources"] if s.get("official_article") and policy and policy_news_candidate(s["official_article"], policy, now)), None)
+    if official is not None:
+        article = {key: value for key, value in official.items() if key not in ("status", "reason")}
+        article.update(independent_source_count=count, importance=importance_for(count, high_at),
+                       sources=[public_source_from_event(s) for s in event["sources"]])
+        if policy["publish"]["official_model_high"] and article["source_id"] in OFFICIAL_NEWS_SOURCE_IDS and is_model_launch(article["title"], article["source_url"]):
+            article["importance"] = "high"
+        return article
     primary = next(s for s in event["sources"] if s.get("independent"))
     summary = (primary.get("summary") or next((s.get("summary") for s in event["sources"] if s.get("summary")), "")).strip()[:SUMMARY_MAX]
     if not summary:
@@ -412,16 +457,17 @@ def event_source(item: dict) -> dict:
 
 
 def collect_hourly() -> int:
+    policy = load_policy()
     config = read_json(SOURCES_PATH)
-    sources = [s for s in config.get("sources", []) if isinstance(s, dict) and s.get("enabled", True)]
+    sources = [{**s, **policy["sources"][s["id"]]} for s in config.get("sources", []) if isinstance(s, dict) and s.get("id") in policy["sources"]]
     if not sources:
         raise ValueError("data/news-sources.json에 사용할 출처가 없습니다.")
     now = datetime.now(KST)
-    window_hours = int(config.get("window_hours", 72))
+    window_hours = policy["window_hours"]
     window_start, window_end = now - timedelta(hours=window_hours), now
-    publish_cfg = config.get("publish") or {}
-    min_independent, high_at = int(publish_cfg.get("min_independent", 2)), int(publish_cfg.get("high_importance_at", 3))
-    keywords = [k for k in config.get("ai_keywords", []) if k]
+    publish_cfg = policy["publish"]
+    min_independent, high_at = publish_cfg["min_independent"], publish_cfg["high_importance_at"]
+    keywords = policy["ai_keywords"]
     keyword_re = re.compile(r"\b(?:" + "|".join(re.escape(k) for k in keywords) + r")\b", re.I) if keywords else None
 
     today = {"edition_date": None, "window_start": None, "window_end": None, "collected_at": None, "reviewed_at": None, "articles": [], **read_json(TODAY_PATH)}
@@ -429,7 +475,8 @@ def collect_hourly() -> int:
         raise ValueError("data/today.json의 articles가 배열이 아닙니다. 공개 archive를 보호하기 위해 중단합니다.")
     candidates_data = read_json(CANDIDATES_PATH)
     stored_events = [e for e in candidates_data.get("events") or [] if isinstance(e, dict) and isinstance(e.get("sources"), list) and e.get("title")]
-    events = rebuild_events(stored_events, now)
+    stored_events.extend(official_event(a, now) for a in candidates_data.get("official_pending") or [] if isinstance(a, dict) and policy_news_candidate(a, policy, now))
+    events = rebuild_events(apply_event_policy(stored_events, policy, now, keyword_re), now)
 
     # URL 색인: 이미 어떤 사건에 속한 링크는 다시 사건을 만들지 않는다.
     known: dict[str, tuple[str, dict]] = {}
@@ -452,7 +499,7 @@ def collect_hourly() -> int:
     reports, items = [], []
     for sdef in sources:
         stats, collected, error = new_stats(), [], None
-        not_configured_reason = sdef.get("not_configured_reason") or (
+        not_configured_reason = ("뉴스 정책에서 수집 중지" if not sdef["enabled"] else None) or sdef.get("not_configured_reason") or (
             f"필요한 환경 변수 없음: {', '.join(v for v in sdef.get('required_env', []) if not os.environ.get(v))}"
             if [v for v in sdef.get("required_env", []) if not os.environ.get(v)] else None
         )
@@ -494,6 +541,9 @@ def collect_hourly() -> int:
             hit = ("event", event)
         else:
             kind, obj = hit
+            if kind == "article" and not publish_cfg["auto_publish"]:
+                report_by_id[item["source_id"]]["skipped_count"] += 1
+                continue
             sources_list = article_sources(obj) if kind == "article" else obj["sources"]
             if has_source(sources_list, item):
                 report_by_id[item["source_id"]]["skipped_count"] += 1
@@ -506,12 +556,19 @@ def collect_hourly() -> int:
         for u in (item["url"], item["target_url"]):
             known[u] = hit
 
+    # 새 출처가 후보 두 개를 연결했을 수 있으므로 게시 판단 직전에 다시 묶는다.
+    events = rebuild_events(apply_event_policy(events, policy, now, keyword_re), now)
     # 먼저 후보가 된 출처도 이후 게시된 같은 사건이 있으면 새 글을 만들지 않고 기존 기사에 합친다.
     pending_events = []
     for event in events:
-        article = next((a for a in recent_articles if matches_event(str(a.get("title") or ""), event)), None)
+        event_urls = source_urls(event["sources"])
+        article = next((a for a in today["articles"] if a.get("source_id") not in RELEASE_SOURCE_IDS and
+                        (event_urls & (source_urls(a.get("sources") or []) | {a.get("source_url")}) or
+                         (a in recent_articles and matches_event(str(a.get("title") or ""), event)))), None)
         if article is None:
             pending_events.append(event)
+            continue
+        if not publish_cfg["auto_publish"]:
             continue
         sources_list = article_sources(article)
         changed = False
@@ -525,12 +582,7 @@ def collect_hourly() -> int:
             updated_articles += 1
     events = pending_events
 
-    date_filtered_events = []
-    for event in events:
-        dates = [d for d in (article_datetime(s) for s in event["sources"]) if d is not None]
-        if not dates or max(dates) < window_start:
-            continue  # 창을 벗어난 후보는 버린다. 피드에 다시 나타나면 다시 후보가 된다.
-        date_filtered_events.append(event)
+    date_filtered_events = events  # 각 출처의 날짜·정책을 이미 재검사했다.
 
     new_articles, remaining = [], []
     eligible_count = waiting_count = held_count = 0
@@ -539,12 +591,16 @@ def collect_hourly() -> int:
         event["independent_source_count"] = count
         if count >= min_independent:
             eligible_count += 1
-            try:
-                new_articles.append(build_article(event, count, high_at, now))
-                continue
-            except Exception as err:
-                event["status"], event["reason"] = "held", f"자동 게시 보류: {err}"
-                held_count += 1
+            if publish_cfg["auto_publish"]:
+                try:
+                    new_articles.append(build_article(event, count, high_at, now, policy))
+                    continue
+                except Exception as err:
+                    event["status"], event["reason"] = "held", f"자동 게시 보류: {err}"
+                    held_count += 1
+            else:
+                event["status"], event["reason"] = "candidate", "자동 게시 중지"
+                waiting_count += 1
         else:
             event["status"], event["reason"] = "candidate", "독립 출처 부족" if count else "커뮤니티·소셜 신호만 있음"
             waiting_count += 1
@@ -570,7 +626,17 @@ def collect_hourly() -> int:
         "checked_source_count": sum(1 for r in reports if r["status"] != "not_configured"),
         "not_configured_source_count": sum(1 for r in reports if r["status"] == "not_configured"),
         "min_independent": min_independent,
+        "policy_revision": policy["revision"],
+        "policy_updated_at": policy["updated_at"],
+        **daily_news_progress(today["articles"], policy, now),
     }
+
+    archived_urls = {a.get("source_url") for a in today["articles"]}
+    for article in today["articles"]:
+        archived_urls.update(source_urls(article.get("sources") or []))
+    old_official_pending = candidates_data.get("official_pending") or []
+    official_pending = [a for a in old_official_pending if a.get("source_url") not in archived_urls]
+    pending_ids = {a["id"] for a in old_official_pending}
 
     candidates_data.update(
         hourly_collected_at=now.isoformat(),
@@ -579,6 +645,8 @@ def collect_hourly() -> int:
         events=remaining,
         auto_published_count=len(added),
         hourly_run=hourly_run,
+        official_pending=official_pending,
+        candidates=[a for a in candidates_data.get("candidates") or [] if a.get("id") not in pending_ids] + official_pending,
     )
     write_json(CANDIDATES_PATH, candidates_data)
 

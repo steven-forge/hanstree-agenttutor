@@ -6,9 +6,11 @@ on:
     paths:
       - '.github/workflows/update-content.yml'
       - 'scripts/collect_content.py'
+      - 'scripts/collect_hourly_news.py'
+      - 'scripts/news_policy.py'
   schedule:
-    - cron: '15 21 * * *'  # 06:15 Asia/Seoul (UTC 21:15 previous day) - 공식 뉴스/문서 수집
-    - cron: '0 * * * *'    # 매시 정각 - 외부 뉴스 매시간 수집
+    - cron: '15 21 * * *'  # 06:15 Asia/Seoul - 문서 확인 (뉴스 주기와 별개)
+    - cron: '0 * * * *'    # 매시간 정책 동기화 후 KST 기준 뉴스 주기 판정
   workflow_dispatch:
     inputs:
       force_docs:
@@ -47,11 +49,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Collect news (60-day window, merged into data/today.json)
+      - name: Sync public newsletter policy (fail closed)
+        run: python3 scripts/news_policy.py sync
+
+      - name: Check newsletter collection interval
+        id: news_schedule
+        env:
+          POLICY_EVENT_NAME: ${{ github.event_name }}
+          POLICY_EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          NEWS_DUE="$(python3 scripts/news_policy.py due --event "$POLICY_EVENT_NAME" --schedule "$POLICY_EVENT_SCHEDULE")"
+          echo "run=$NEWS_DUE" >> "$GITHUB_OUTPUT"
+
+      - name: Collect official news and releases with synced policy
         id: collect_news
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 scripts/collect_content.py news
+          NEWS_COLLECTION_DUE: ${{ steps.news_schedule.outputs.run }}
+        run: |
+          if [ "$NEWS_COLLECTION_DUE" = "true" ]; then
+            python3 scripts/collect_content.py news
+          else
+            python3 scripts/collect_content.py news --releases-only
+          fi
         continue-on-error: true
 
       - name: Check document sources
@@ -69,6 +89,7 @@ jobs:
 
       - name: Collect hourly news (external sources, auto-publish)
         id: collect_hourly
+        if: steps.news_schedule.outputs.run == 'true'
         env:
           YOUTUBE_API_KEY: ${{ vars.ENABLE_YOUTUBE_NEWS == 'true' && secrets.YOUTUBE_API_KEY || '' }}
           X_BEARER_TOKEN: ${{ vars.ENABLE_X_NEWS == 'true' && secrets.X_BEARER_TOKEN || '' }}
@@ -84,8 +105,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
-            git add data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json
+          if [ -n "$(git status --porcelain data/news-policy.json data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
+            git add data/news-policy.json data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json
             git commit -m "chore(content): 뉴스 archive·후보 및 문서 출처 점검 갱신"
             git pull --rebase origin master
             git push origin master

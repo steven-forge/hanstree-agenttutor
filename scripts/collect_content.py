@@ -17,6 +17,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+from news_policy import load_policy
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -1442,10 +1443,32 @@ def parse_html_news(index_url: str, source_id: str, source_name: str, window_sta
     return candidates, stats
 
 
-def collect_news() -> int:
+def policy_news_candidate(article: dict, policy: dict, now: datetime) -> bool:
+    """공식 보류 원고에도 현재 출처·기간 조건을 재적용한다."""
+    if not policy["official_sources"].get(article.get("source_id"), False):
+        return False
+    published = parse_iso(article.get("published_at") or article.get("published_on"))
+    return published is not None and classify_date(published, now - timedelta(days=policy["official_window_days"]), now)[0] == "ok"
+
+
+def daily_news_progress(articles: list[dict], policy: dict, now: datetime) -> dict:
+    count = 0
+    for article in articles:
+        if article.get("source_id") in RELEASE_SOURCE_IDS:
+            continue
+        published = parse_iso(article.get("published_at") or article.get("published_on"))
+        if published is not None and (published.astimezone(KST).date() if published.tzinfo else published.date()) == now.astimezone(KST).date():
+            count += 1
+    return {"daily_target": policy["daily_target"], "published_today": count, "shortfall": max(0, policy["daily_target"] - count)}
+
+
+def collect_news(releases_only: bool = False) -> int:
+    policy = load_policy()
     now_kst = datetime.now(KST)
     window_end = now_kst
-    window_start = now_kst - timedelta(days=WINDOW_DAYS)
+    window_start = now_kst - timedelta(days=policy["official_window_days"])
+    release_window_start = now_kst - timedelta(days=WINDOW_DAYS)
+    publish_official = not releases_only and policy["publish"]["auto_publish"] and policy["publish"]["official_single_source"]
     edition_date = window_end.strftime("%Y-%m-%d")
     collected_at = now_kst.isoformat()
 
@@ -1456,8 +1479,20 @@ def collect_news() -> int:
              "reviewed_at": None, "articles": [], **read_json(TODAY_PATH)}
     if not isinstance(today["articles"], list):
         raise ValueError("data/today.json의 articles가 배열이 아닙니다. 공개 archive를 보호하기 위해 중단합니다.")
-    explanations_changed = ensure_beginner_explanations(today["articles"])
+    explanations_changed = ensure_beginner_explanations([a for a in today["articles"] if a.get("source_id") in RELEASE_SOURCE_IDS] if not publish_official else today["articles"])
     known = archive_keys(today["articles"])
+    previous_candidates = read_json(CANDIDATES_PATH)
+    archived_ids, archived_urls = known
+    pending_by_id = {}
+    for article in previous_candidates.get("official_pending") or []:
+        if not isinstance(article, dict) or article.get("source_id") not in policy["official_sources"] or not article.get("id") or not article.get("source_url"):
+            continue
+        if article["id"] not in archived_ids and canonicalize_url(article["source_url"]) not in archived_urls:
+            pending_by_id[article["id"]] = dict(article)
+    active_pending = [a for a in pending_by_id.values() if policy_news_candidate(a, policy, now_kst)]
+    # 완료된 번역을 매시간 다시 만들지 않고 공개된 URL과 별도로 보존한다.
+    pending_ids, pending_urls = archive_keys(active_pending)
+    known = (archived_ids | pending_ids, archived_urls | pending_urls)
 
     archive_release_lookup = {}
     for a in today["articles"]:
@@ -1496,17 +1531,26 @@ def collect_news() -> int:
         items = []
         stats = new_stats()
         error_msg = None
-        # 60일 수집은 조건부 요청(304)을 쓰지 않고 항상 전체 재조회한다.
-        cache_entry = {"last_checked": collected_at, "window_days": WINDOW_DAYS}
+        is_release = sid in RELEASE_SOURCE_IDS
+        if releases_only and not is_release:
+            continue
+        source_start = release_window_start if is_release else window_start
+        source_days = WINDOW_DAYS if is_release else policy["official_window_days"]
+        if not is_release and not policy["official_sources"][sid]:
+            news_cache[sid] = {**news_cache.get(sid, {}), "policy_enabled": False}
+            sources_health.append({"id": sid, "name": sname, "url": surl, "status": "not_configured", "count": 0,
+                                   "checked_at": None, "error": "뉴스 정책에서 수집 중지", **stats})
+            continue
+        cache_entry = {"last_checked": collected_at, "window_days": source_days, "policy_enabled": True}
 
         try:
             if stype == "rss":
                 status, _, body = fetch_url(surl)
                 if status != 200:
                     raise RuntimeError(f"HTTP {status}: {surl}")
-                items, stats = parse_rss_feed(body, sid, sname, window_start, window_end, known)
+                items, stats = parse_rss_feed(body, sid, sname, source_start, window_end, known)
             elif stype == "releases":
-                items, stats = parse_github_releases(sdef["repo"], sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
+                items, stats = parse_github_releases(sdef["repo"], sid, sname, source_start, window_end, known, archive_by_url=archive_release_lookup)
             elif stype == "xai_releases":
                 status, headers, body = fetch_url(surl)
                 if status != 200:
@@ -1514,10 +1558,12 @@ def collect_news() -> int:
                 ctype = headers.get("content-type", "")
                 if "text/html" not in ctype and not body.lstrip().startswith((b"<!DOCTYPE", b"<html")):
                     raise RuntimeError(f"예상치 못한 Content-Type: {ctype}")
-                items, stats = parse_xai_releases(body, sid, sname, window_start, window_end, known, archive_by_url=archive_release_lookup)
+                items, stats = parse_xai_releases(body, sid, sname, source_start, window_end, known, archive_by_url=archive_release_lookup)
             elif stype == "html":
-                old_urls = set(news_cache.get(sid, {}).get("old_urls", []))
-                items, stats = parse_html_news(surl, sid, sname, window_start, window_end, known, old_urls, article_path_prefix=sdef.get("path_prefix", "/news/"))
+                previous_cache = news_cache.get(sid, {})
+                same_window = previous_cache.get("window_days") == source_days and previous_cache.get("policy_enabled", True)
+                old_urls = set(previous_cache.get("old_urls", [])) if same_window else set()
+                items, stats = parse_html_news(surl, sid, sname, source_start, window_end, known, old_urls, article_path_prefix=sdef.get("path_prefix", "/news/"))
                 cache_entry["old_urls"] = sorted(old_urls)
             news_cache[sid] = cache_entry
         except Exception as error:
@@ -1552,13 +1598,37 @@ def collect_news() -> int:
     )
     releases_enriched = (releases_missing_after < releases_missing_before)
 
-    # archive 및 동일 실행 내부의 id/정규화 URL 중복을 제거하며 새 항목만 누적
-    candidates_list, merged_changed = merge_archive(today, all_candidates)
+    for article in all_candidates:
+        if article["source_id"] not in RELEASE_SOURCE_IDS:
+            pending_by_id[article["id"]] = article
+    active_pending = [dict(a) for a in pending_by_id.values() if policy_news_candidate(a, policy, now_kst)]
+    for article in active_pending:
+        article.pop("status", None)
+        article.pop("reason", None)
+        if not policy["publish"]["official_model_high"]:
+            article.pop("importance", None)
+        elif article["source_id"] in OFFICIAL_NEWS_SOURCE_IDS and is_model_launch(article["title"], article["source_url"]):
+            article["importance"] = "high"
+        pending_by_id[article["id"]] = article
+    publishable = [a for a in all_candidates if a["source_id"] in RELEASE_SOURCE_IDS]
+    if publish_official:
+        publishable.extend(active_pending)
+    candidates_list, merged_changed = merge_archive(today, publishable)
+    archive_ids, archive_urls = archive_keys(today["articles"])
+    pending = []
+    for article in pending_by_id.values():
+        if article["id"] in archive_ids or canonicalize_url(article["source_url"]) in archive_urls:
+            continue
+        reason = "자동 게시 중지" if not policy["publish"]["auto_publish"] else "공식 단독 게시 중지: 외부 독립 출처 확인 대기"
+        if not policy_news_candidate(article, policy, now_kst):
+            reason = "현재 출처 또는 수집 기간 조건 제외"
+        pending.append({**article, "status": "held", "reason": reason})
     archive_changed = explanations_changed or merged_changed or releases_enriched
     candidates_list.sort(key=article_sort_key)
     if archive_changed:
-        today.update(edition_date=edition_date, window_start=window_start.isoformat(),
-                     window_end=window_end.isoformat(), collected_at=collected_at)
+        if not releases_only:
+            today.update(edition_date=edition_date, window_start=window_start.isoformat(),
+                         window_end=window_end.isoformat(), collected_at=collected_at)
         write_json(TODAY_PATH, today)
 
     official_status = news_status(sources_health)
@@ -1574,10 +1644,13 @@ def collect_news() -> int:
         "held_item_count": sum(s["held_count"] for s in official_news_sources),
         "failed_source_count": sum(1 for s in official_news_sources if s["status"] == "failed"),
         "checked_source_count": sum(1 for s in official_news_sources if s["status"] != "not_configured"),
+        "waiting_count": sum(1 for a in pending if policy_news_candidate(a, policy, now_kst)),
+        "policy_revision": policy["revision"],
+        "policy_updated_at": policy["updated_at"],
+        **daily_news_progress(today["articles"], policy, now_kst),
     }
 
     # Save candidates. 매시간 외부 수집의 events·출처 보고는 보존한다.
-    previous_candidates = read_json(CANDIDATES_PATH)
     candidates_data = {
         **previous_candidates,
         "collected_at": collected_at,
@@ -1587,14 +1660,23 @@ def collect_news() -> int:
         "sources": merge_source_reports(previous_candidates.get("sources") or [], sources_health),
         "new_count": len(candidates_list),
         "archive_count": len(today["articles"]),
-        "candidates": candidates_list,
+        "candidates": candidates_list + pending,
+        "official_pending": pending,
         "official_run": official_run,
     }
+    if releases_only:
+        candidates_data = {
+            **previous_candidates,
+            "sources": merge_source_reports(previous_candidates.get("sources") or [], sources_health),
+            "archive_count": len(today["articles"]),
+            "candidates": [a for a in previous_candidates.get("candidates") or [] if a.get("source_id") not in RELEASE_SOURCE_IDS] + candidates_list,
+        }
     write_json(CANDIDATES_PATH, candidates_data)
 
     # Update content health (news section only)
     current_health = read_json(HEALTH_PATH)
-    merged_sources = merge_source_reports((current_health.get("news") or {}).get("sources") or [], sources_health)
+    previous_news = current_health.get("news") or {}
+    merged_sources = merge_source_reports(previous_news.get("sources") or [], sources_health)
     current_health["news"] = {
         **(current_health.get("news") or {}),
         "checked_at": collected_at,
@@ -1603,6 +1685,9 @@ def collect_news() -> int:
         "archive_count": len(today["articles"]),
         "sources": merged_sources
     }
+    if releases_only:
+        current_health["news"] = {**previous_news, "status": news_status(merged_sources),
+                                  "archive_count": len(today["articles"]), "sources": merged_sources}
     if "documents" not in current_health:
         current_health["documents"] = {"checked_at": None, "sources": []}
     write_json(HEALTH_PATH, current_health)
@@ -1611,11 +1696,12 @@ def collect_news() -> int:
     source_cache["updated_at"] = collected_at
     write_json(SOURCE_CACHE_PATH, source_cache)
 
-    print(f"[뉴스 수집 완료] 상태: {official_status}, 최근 {WINDOW_DAYS}일 신규: {len(candidates_list)}건, archive: {len(today['articles'])}건, 실패 출처: {failed_sources}/{len(sources_def)}")
+    mode = "릴리스만 수집" if releases_only else "뉴스 수집"
+    print(f"[{mode} 완료] 정책 {policy['revision']}, 상태: {official_status}, 뉴스 최근 {policy['official_window_days']}일·릴리스 {WINDOW_DAYS}일, 신규 {len(candidates_list)}건, 공식 대기 {len(pending)}건, archive {len(today['articles'])}건")
     for s in sources_health:
         info = f"  - {s['name']}: {s['status']} (신규 {s['count']}건, 기존 건너뜀 {s['skipped_count']}건, 보류 {s['held_count']}건)"
         if s["coverage_limited"]:
-            info += " [출처 제공 범위가 60일에 못 미침]"
+            info += " [출처 제공 범위가 설정 수집 기간에 못 미침]"
         if s.get("unrecognized_model_links"):
             info += f" [수집 규칙에 없는 모델 링크: {', '.join(s['unrecognized_model_links'])}]"
         if "error" in s:
@@ -1881,7 +1967,8 @@ def main():
     parser = argparse.ArgumentParser(description="AgentTutor 뉴스 및 문서 출처 수집·점검 도구")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    subparsers.add_parser("news", help="최근 60일 뉴스를 수집해 archive(data/today.json)에 누적하고 헬스 정보를 갱신합니다.")
+    news_parser = subparsers.add_parser("news", help="정책 기간의 공식 뉴스와 최근 60일 릴리스를 수집해 archive에 누적합니다.")
+    news_parser.add_argument("--releases-only", action="store_true", help="일반 뉴스 주기 밖에서는 릴리스만 수집하고 뉴스 집계는 보존합니다.")
 
     doc_parser = subparsers.add_parser("documents", help="학습 자료 출처의 변경 사항을 점검합니다.")
     doc_parser.add_argument("--force", action="store_true", help="점검 주기와 관계없이 모든 출처를 강제 점검합니다.")
@@ -1891,7 +1978,7 @@ def main():
 
     args = parser.parse_args()
     if args.command == "news":
-        sys.exit(collect_news())
+        sys.exit(collect_news(releases_only=args.releases_only))
     elif args.command == "documents":
         sys.exit(collect_documents(force=args.force))
     elif args.command == "backfill-summaries":
