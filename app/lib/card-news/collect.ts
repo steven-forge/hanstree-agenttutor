@@ -4,7 +4,7 @@ import { todayData, newsEditorial } from "../../content";
 import preparedCopy from "../../../data/card-news-copy.json";
 import { fitCardCopy } from "./copy";
 import { RELEASE_SOURCE_IDS } from "../../today/newsHelpers";
-import { preserveDraft, type Edition, type NewsCandidate } from "./types";
+import { captionFor, preserveDraft, type Edition, type NewsCandidate } from "./types";
 import { AdminError } from "./server";
 
 function clean(value: unknown, length: number) {
@@ -54,5 +54,5 @@ export async function collectEdition(date: string, old: Edition | null): Promise
   if (earliest) window.windowStart = earliest.datePrecision === "day" ? `${earliest.publishedAt}T00:00:00+09:00` : earliest.publishedAt;
   const now = new Date().toISOString();
   return preserveDraft({ date, revision: old?.revision || 0, status: "draft", ...window, candidateSource: "newsletter", collectedAt: now, candidates,
-    sources: [{ name: "AgentTutor 뉴스레터", status: "ok", count: candidates.length }], cards: [], caption: "", updatedAt: old?.updatedAt || now }, old);
+    sources: [{ name: "AgentTutor 뉴스레터", status: "ok", count: candidates.length }], cards: [], caption: captionFor([]), updatedAt: old?.updatedAt || now }, old);
 }

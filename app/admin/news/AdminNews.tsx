@@ -275,13 +275,13 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     const found = edition.cards.findIndex(item => item.candidateId === candidate.id);
     if (found < 0 && edition.cards.length >= 10) { setError("이미 10개를 선정했습니다. 다른 뉴스를 먼저 해제하세요."); return; }
     const cards = found >= 0 ? edition.cards.filter(item => item.candidateId !== candidate.id) : [...edition.cards, candidateCard(candidate)];
-    setEdition({ ...edition, cards }); setMessage(""); setError("");
+    setEdition({ ...edition, cards, caption: captionFor(cards, edition.candidates) }); setMessage(""); setError("");
     if (found < 0 && !cards.at(-1)?.title) setMessage("이 기사는 카드용 요약이 준비되지 않았습니다. 후보의 내용과 원문을 참고해 제목 2줄·본문 6줄 이내로 작성하세요.");
     if (found < 0) setActiveIndex(cards.length - 1);
   }
   async function composeCards() {
     if (!canEdit || !edition || !selected.length || operation.current) return;
-    if (!window.confirm("선정한 카드의 제목·본문을 짧은 카드용 요약으로 바꿀까요? 기존 편집 내용을 보관하려면 먼저 원고 JSON을 내보내 주세요. 적용 후 원고를 저장하고 다시 검토해야 합니다.")) return;
+    if (!window.confirm("선정한 카드의 제목·본문을 짧은 카드용 요약으로 바꾸고 설명도 다시 만들까요? 기존 편집 내용을 보관하려면 먼저 원고 JSON을 내보내 주세요. 적용 후 원고를 저장하고 다시 검토해야 합니다.")) return;
     operation.current = true; setPending("compose"); setError(""); setMessage("");
     try {
       const response = await fetch(`/api/card-news-candidates?date=${date}`, { cache: "no-store" });
@@ -295,7 +295,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         applied++;
         return { ...card, ...copy, verified: false };
       });
-      setEdition({ ...edition, candidates: refreshed.candidates, cards }); setShowJpg(false);
+      setEdition({ ...edition, candidates: refreshed.candidates, cards, caption: captionFor(cards, refreshed.candidates) }); setShowJpg(false);
       setMessage(`${applied}개 카드에 제목 최대 2줄·본문 최대 6줄 요약을 적용했습니다. 원고를 저장하고 내용을 다시 확인하세요.`);
       if (applied < cards.length) setError(`카드 ${cards.length - applied}개는 짧은 요약이 준비되지 않아 기존 원고를 유지했습니다. 해당 기사 내용을 직접 정리해 주세요.`);
     } catch (caught) { setError(caught instanceof Error ? caught.message : "카드 원고를 정리하지 못했습니다."); }
@@ -303,7 +303,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   }
   function changeCard(changes: Partial<NewsCard>) {
     if (!canEdit || !edition || !card) return;
-    setEdition({ ...edition, cards: edition.cards.map((item, index) => index === currentIndex ? { ...item, verified: false, ...changes } : item) });
+    const cards = edition.cards.map((item, index) => index === currentIndex ? { ...item, verified: false, ...changes } : item);
+    setEdition({ ...edition, cards, caption: changes.title === undefined ? edition.caption : captionFor(cards, edition.candidates) });
     setMessage("");
   }
   function moveCard(offset: number) {
@@ -312,12 +313,18 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     if (next < 0 || next >= edition.cards.length) return;
     const cards = [...edition.cards];
     [cards[currentIndex], cards[next]] = [cards[next], cards[currentIndex]];
-    setEdition({ ...edition, cards }); setActiveIndex(next); setMessage("");
+    setEdition({ ...edition, cards, caption: captionFor(cards, edition.candidates) }); setActiveIndex(next); setMessage("");
+  }
+  function removeCard() {
+    if (!canEdit || !edition || !card) return;
+    if (!window.confirm("이 카드 선택을 해제하고 설명의 번호 목록을 갱신할까요? 편집한 내용이 필요하면 먼저 원고 JSON을 내보내 주세요.")) return;
+    const cards = edition.cards.filter((_, index) => index !== currentIndex);
+    setEdition({ ...edition, cards, caption: captionFor(cards, edition.candidates) }); setMessage("");
   }
   function regenerateCaption() {
     if (!canEdit || !edition) return;
-    if (edition.caption.trim() && !window.confirm("현재 설명을 선택한 뉴스와 출처 목록으로 바꿀까요?")) return;
-    setEdition({ ...edition, caption: captionFor(date, edition.cards) }); setMessage("");
+    if (edition.caption.trim() && !window.confirm("현재 설명을 기본 소개 문구와 선택한 뉴스 제목 목록으로 바꿀까요? 직접 수정한 설명도 바뀝니다.")) return;
+    setEdition({ ...edition, caption: captionFor(edition.cards, edition.candidates) }); setMessage("");
   }
 
   const canApprove = canEdit && !dirty && !issues.length && edition?.status === "draft";
@@ -390,7 +397,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
             {selected.length ? <>
               <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>
               {card && <>
-                <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><button className="cn-button cn-button-small" disabled={!canEdit} onClick={() => { if (window.confirm("이 카드 선택을 해제할까요? 편집한 내용이 필요하면 먼저 원고 JSON을 내보내 주세요.")) { setEdition({ ...edition, cards: edition.cards.filter((_, index) => index !== currentIndex) }); setMessage(""); } }}>카드 선택 해제</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
+                <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><button className="cn-button cn-button-small" disabled={!canEdit} onClick={removeCard}>카드 선택 해제</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
                     <label className="cn-field">제목 · {card.title.split("\n").length}/2줄<textarea rows={2} value={card.title} onChange={event => changeCard({ title: event.target.value })} disabled={!canEdit} /><small>줄바꿈 위치가 이미지에 그대로 반영됩니다.</small></label>
@@ -416,9 +423,10 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
           </section>
 
           <section className="cn-panel cn-caption-panel" aria-labelledby="cn-publish-heading">
-            <div className="cn-section-head"><div><h2 id="cn-publish-heading">3. 설명 검토와 발행</h2><p className="cn-muted">날짜와 원문 출처는 게시글 설명에 함께 남깁니다.</p></div></div>
+            <div className="cn-section-head"><div><h2 id="cn-publish-heading">3. 설명 검토와 발행</h2><p className="cn-muted">소개 문구 아래에 선택한 뉴스 제목이 카드 순서대로 자동 입력됩니다.</p></div></div>
             <label className="cn-field">게시글 설명 · {Array.from(edition.caption).length.toLocaleString()}/2,200자<textarea rows={8} value={edition.caption} onChange={event => { if (canEdit) { setEdition({ ...edition, caption: event.target.value }); setMessage(""); } }} disabled={!canEdit} /></label>
-            <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit || !selected.length}>선정 뉴스·출처로 설명 만들기</button></div>
+            <p className="cn-help">설명을 직접 수정할 수 있습니다. 뉴스 선택·해제·순서·제목을 바꾸거나 카드 원고를 정리하면 설명이 다시 만들어집니다.</p>
+            <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit}>선택한 뉴스 제목으로 설명 다시 만들기</button></div>
             {!!issues.length && !locked && <details className="cn-details"><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
             {dirty && <p className="cn-alert">원고를 먼저 저장하세요. 승인 후 수정하면 다시 검토해야 합니다.</p>}
             {!snapshot.setup.instagram && <p className="cn-alert">Instagram 연결은 나중에 진행할 수 있습니다. 지금은 원고 작성·검토와 ZIP 다운로드를 이용하세요.{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading">연결 준비 상태 보기</a></>}</p>}

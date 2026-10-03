@@ -51,8 +51,14 @@ export function editionWindow(date: string) {
   const end = new Date(`${date}T08:00:00+09:00`);
   return { windowStart: new Date(end.getTime() - 86400000).toISOString(), windowEnd: end.toISOString() };
 }
-export function captionFor(date: string, cards: NewsCard[]) {
-  return `AI News 10 · ${date}\n\n${cards.map((c, i) => `${i + 1}. ${c.title.replace(/\n/g, " ")}\n출처: ${c.sourceUrl}`).join("\n\n")}\n\n#AgentTutor #AI뉴스 #인공지능`;
+export const CAPTION_INTRO = "AgentTutor가 정리한, 오늘 아침 꼭 읽어야 할 뉴스 10개.";
+export function captionFor(cards: NewsCard[], candidates: NewsCandidate[] = []) {
+  const normalizeTitle = (title: string) => title.replace(/\s+/g, " ").trim();
+  const titles = cards.map((card, index) => {
+    const title = normalizeTitle(card.title) || normalizeTitle(candidates.find(candidate => candidate.id === card.candidateId)?.title || "");
+    return `${index + 1}. ${title}`;
+  });
+  return titles.length ? `${CAPTION_INTRO}\n\n${titles.join("\n")}` : CAPTION_INTRO;
 }
 export function cardIssues(card: NewsCard): string[] {
   const issues = copyIssues(card);
