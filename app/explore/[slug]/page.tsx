@@ -16,6 +16,7 @@ type ComparisonRow = { label: string; values: string[] };
 type ComparisonNote = { heading: string; items: { name: string; explanation: string }[] };
 
 type Comparison = {
+  title?: string;
   intro: string;
   table: { caption: string; columns: string[]; rows: ComparisonRow[] };
   table_note?: string;
@@ -80,6 +81,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
   const currentPath = `/explore/${doc.slug}`;
   const quiz = quizzesFile.quizzes[doc.slug];
   const publicQuizQuestions = quiz ? toPublicQuestions(quiz.questions) : [];
+  const comparisonTitle = doc.comparison.title ?? "비슷한 제품과 비교";
 
   return (
     <>
@@ -118,7 +120,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
                 <a href="#answer">핵심 답변</a>
                 <a href="#easy">쉬운 설명</a>
                 <a href="#diagram">그림으로 이해하기</a>
-                <a href="#comparison">비슷한 제품과 비교</a>
+                <a href="#comparison">{comparisonTitle}</a>
                 <a href="#details">자세한 설명</a>
                 <a href="#pitfalls">헷갈리기 쉬운 점</a>
                 <a href="#sources">출처</a>
@@ -187,14 +189,14 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
             <section className="section" id="comparison">
               <div className="section-head">
                 <div>
-                  <h2>4. 비슷한 제품과 비교</h2>
-                  <p className="section-note">같은 목적을 가진 다른 제품과 어떤 점이 다른지 정리합니다.</p>
+                  <h2>4. {comparisonTitle}</h2>
+                  <p className="section-note">{doc.comparison.title ? "관련 개념의 역할과 차이를 비교합니다." : "같은 목적을 가진 다른 제품과 어떤 점이 다른지 정리합니다."}</p>
                 </div>
                 <span className="badge">비교</span>
               </div>
               <Paragraphs text={doc.comparison.intro} />
 
-              <div className="table-wrap explore-compare-table" style={{ marginTop: "14px" }} tabIndex={0} role="region" aria-label="제품 비교표">
+              <div className="table-wrap explore-compare-table" style={{ marginTop: "14px" }} tabIndex={0} role="region" aria-label={comparisonTitle}>
                 <table>
                   <caption style={{ textAlign: "left", fontSize: "0.85rem", color: "var(--muted)", marginBottom: "8px" }}>
                     {doc.comparison.table.caption}
@@ -360,7 +362,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
             <a href="#answer">1. 핵심 답변</a>
             <a href="#easy">2. 쉬운 설명</a>
             <a href="#diagram">3. 그림으로 이해하기</a>
-            <a href="#comparison">4. 비슷한 제품과 비교</a>
+            <a href="#comparison">4. {comparisonTitle}</a>
             <a href="#details">5. 자세한 설명</a>
             <a href="#pitfalls">6. 헷갈리기 쉬운 점</a>
             <a href="#sources">7. 출처</a>

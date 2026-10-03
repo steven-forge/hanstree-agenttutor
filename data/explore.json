@@ -658,6 +658,277 @@
           "url": "https://docs.typesafe.ai/introduction/quickstart"
         }
       ]
+    },
+    {
+      "slug": "harness-engineering",
+      "title": "하네스 엔지니어링: AI가 일을 끝까지 하도록 만드는 작업 환경",
+      "summary": "하네스 엔지니어링은 AI가 필요한 자료와 도구를 쓰고, 정해진 범위에서 작업하며, 결과를 확인하고 다음 작업으로 이어가게 만드는 주변 실행 환경을 설계·개선하는 일입니다. 공식 표준 정의가 아니라 OpenAI·Anthropic이 공개한 사례를 종합해 쉽게 푼 설명이며, 자동차 배선 하네스가 아니라 AI 에이전트가 일하는 환경을 가리킵니다.",
+      "topic": "AI 개발",
+      "tags": [
+        "하네스",
+        "Harness engineering",
+        "프롬프트",
+        "컨텍스트",
+        "AI 에이전트"
+      ],
+      "created_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "reviewed_at": "2026-10-04",
+      "question": "하네스 엔지니어링은 무엇이고 왜 필요한가요?",
+      "core_answer": "하네스 엔지니어링은 AI가 필요한 자료와 도구를 쓰고, 정해진 범위에서 작업하며, 결과를 확인하고 다음 작업으로 이어가게 만드는 주변 실행 환경을 설계·개선하는 일입니다. 이 설명은 공식 표준 정의가 아니라, OpenAI와 Anthropic이 공개한 사례들을 종합해 쉽게 풀어 쓴 것입니다.\n\n여기서 말하는 하네스는 자동차의 배선 뭉치가 아니라, AI 에이전트가 일하는 주변 환경을 가리키는 말입니다. AI 에이전트는 계획을 세우고 도구를 실행하고 결과를 관찰하는 과정을 반복하는 프로그램입니다.",
+      "easy_explanation": "이 설명은 이해를 돕기 위한 비유입니다. 요리사는 AI 모델, 손님이 보낸 주문서는 프롬프트에 해당합니다.\n\n오늘의 레시피, 냉장고에 있는 재료, 손님의 알레르기 정보는 컨텍스트입니다. 지금 이 요청에 필요한 정보만 요리사에게 전달해야 요리가 제대로 나옵니다.\n\n주방의 도구, 정해진 작업 절차, 중간 점검, 교대할 때 남기는 기록 전체를 합친 것이 하네스입니다. 요리사가 바뀌어도 주방 환경과 절차가 잘 갖춰져 있으면 일이 끝까지 이어집니다.",
+      "api_explanation_title": "AI 에이전트란?",
+      "api_explanation": "AI 에이전트는 한 번 대답하고 끝나는 것이 아니라, 계획을 세우고 도구를 실행하고 결과를 관찰하는 과정을 여러 번 반복하는 프로그램입니다.\n\n하네스 엔지니어링은 이 반복 과정에서 AI가 무엇을 읽고, 어디까지 손댈 수 있고, 결과를 어떻게 확인하고, 다음 단계로 어떻게 이어갈지를 미리 설계하는 일입니다.",
+      "details": "목표와 완료 기준: 가상의 예약 페이지 예제에서 완료 기준은 '이름과 날짜를 입력하고 신청하면 확인 화면이 뜬다'처럼 명확하게 정합니다. 완료 기준이 분명해야 AI도, 확인하는 사람도 같은 잣대로 일이 끝났는지 판단할 수 있습니다.\n\n정보 찾기: AI에게는 지금 작업에 필요한 현재 규칙과 화면 자료만 전달합니다. 오래된 문서나 관련 없는 코드까지 한꺼번에 주면 오히려 헷갈리므로, 작업에 맞는 자료를 그때그때 골라 주는 것이 좋습니다.\n\n도구와 권한 제한: 이 예제에서는 AI가 정해진 폴더의 파일만 편집할 수 있고, 화면을 직접 확인할 수 있는 브라우저 확인 도구만 쓸 수 있도록 제한합니다. 배포나 결제 같은 되돌리기 어려운 작업 권한은 주지 않고, 그 단계는 사람이 맡습니다.\n\n결과 관찰·확인·피드백: 작업은 큰 덩어리로 한꺼번에 시키지 않고 작은 단위로 나눠 시킵니다. 예약 신청 버튼을 눌러본 뒤 확인 화면이 뜨는지 직접 관찰하고, 실패하면 그 내용을 기록해 다음 수정에 반영합니다.\n\n진행 보존·복구와 중복 방지: 작업을 교대하거나 다음 세션으로 넘길 때는 완료한 일, 아직 남은 일, 실패한 시도를 함께 남깁니다. 이렇게 기록을 남겨야 다음에 같은 조사나 수정을 처음부터 반복하지 않습니다.\n\n비용·시간·반복 횟수와 중단 조건: 작업에 맞는 사용량·시간 한도와, 같은 실패가 반복될 때 멈추거나 사람에게 알릴 조건을 정할 수 있습니다. 이는 운영 설계의 예이며 모든 작업에 같은 한도가 맞는 것은 아닙니다. 이 예약 예제에서는 배포 전 사람 승인을 거칩니다.\n\n모델이 좋아질수록 하네스도 바뀝니다: OpenAI의 하네스 엔지니어링 글에서는, 더 나은 모델일수록 세세하게 단계를 나눠주는 보조 장치를 줄이고 더 큰 단위의 작업을 맡길 수 있다고 설명합니다. 구체적인 성능 수치보다는, 하네스를 한 번 정해두고 끝내는 것이 아니라 모델이 좋아지는 만큼 다시 손봐야 한다는 점이 핵심입니다.",
+      "diagram_image": {
+        "src": "/explore/harness-engineering-webtoon.png",
+        "alt": "가상의 예약 페이지 제작 사례로 완료 기준·정보 찾기·도구와 권한 제한·결과 확인·진행 기록·중단 조건을 보여주는 8컷 웹툰",
+        "caption": "이해를 위한 가상 사례 · 실제 실행 결과나 제품 화면 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "comparison": {
+        "title": "관련 개념과 비교",
+        "intro": "프롬프트 엔지니어링, 컨텍스트 엔지니어링, 하네스 엔지니어링은 경쟁하는 제품이 아니라 서로 겹치는 관점입니다. 무엇을 설계 대상으로 보느냐가 다를 뿐, 우열을 가릴 성격의 비교는 아닙니다.\n\n아래 표는 가상의 예약 페이지 예제를 기준으로 세 관점이 각각 어디에 집중하는지 비교합니다.",
+        "table": {
+          "caption": "세 관점 비교(경쟁 제품이 아닌 겹치는 관점)",
+          "columns": [
+            "프롬프트 엔지니어링",
+            "컨텍스트 엔지니어링",
+            "하네스 엔지니어링"
+          ],
+          "rows": [
+            {
+              "label": "주로 묻는 질문",
+              "values": [
+                "지시를 어떻게 더 명확하게 쓸까?",
+                "지금 이 작업에 어떤 정보를 선별해 전달할까?",
+                "AI가 어떤 도구·권한·확인 절차 안에서 일하게 할까?"
+              ]
+            },
+            {
+              "label": "설계 대상",
+              "values": [
+                "지시문 작성과 구성",
+                "모델에게 줄 지시·문서·도구 결과·기록 등 정보의 선별과 관리",
+                "자료 접근·도구·권한 범위·진행 기록·결과 확인까지 포함한 실행 흐름 전체"
+              ]
+            },
+            {
+              "label": "예약 페이지 예시",
+              "values": [
+                "'이름·날짜 입력 후 신청 시 확인 화면을 보여줘'처럼 요청 문장을 명확히 쓴다",
+                "현재 예약 규칙과 관련 화면 코드만 골라 전달한다",
+                "편집 가능한 폴더를 정하고, 브라우저 확인 도구로 결과를 보고, 실패를 기록하고, 배포 전 사람 승인을 거치게 한다"
+              ]
+            },
+            {
+              "label": "실패했을 때 살펴볼 것",
+              "values": [
+                "지시 문장이 모호하거나 빠진 조건이 있는지",
+                "전달한 정보가 오래됐거나 필요한 자료가 빠지지 않았는지",
+                "권한 범위, 확인 절차, 기록·중단 조건 같은 실행 환경 자체에 문제가 없는지"
+              ]
+            }
+          ]
+        },
+        "interpretation": "지시가 모호하면 문장을 다듬고, 자료가 오래됐으면 정보를 갱신하며, 실행·복구가 끊기면 작업 환경을 고칩니다.\n\n하네스 엔지니어링은 지시문과 전달 정보를 포함해 활용하면서, 거기에 더해 실행 흐름·도구 권한·결과 확인·경계까지 함께 설계합니다. 상황에 맞게 세 관점을 함께 쓰는 것이 자연스럽습니다.",
+        "sources": [
+          {
+            "name": "OpenAI: Harness engineering",
+            "url": "https://openai.com/index/harness-engineering/"
+          },
+          {
+            "name": "Anthropic: Effective harnesses for long-running agents",
+            "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+          },
+          {
+            "name": "Anthropic: Effective context engineering for AI agents",
+            "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+          },
+          {
+            "name": "Anthropic: Harness design for long-running apps",
+            "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+          }
+        ]
+      },
+      "pitfalls": [
+        "긴 프롬프트를 쓰는 것과 하네스를 설계하는 일은 같지 않습니다. 지시문을 길게 쓰는 것만으로 도구 권한·확인 절차·진행 기록까지 갖춰지지는 않습니다.",
+        "하네스를 손본다고 모델 자체가 다시 학습되는 것은 아닙니다. 모델의 학습 가중치는 그대로이고, 주변 실행 환경만 바뀝니다.",
+        "AI에게 제한 없는 권한을 주는 것이 하네스 엔지니어링은 아닙니다. 어떤 작업을 자동으로 허용하고 어떤 작업에 승인이 필요한지는 정책과 실행 환경에서 정합니다. 이 예약 예제에서는 배포 전 사람 승인을 거칩니다.",
+        "참여하는 AI나 팀원이 많다고 항상 더 좋은 결과가 나오는 것은 아닙니다. 실패 원인과 작업 난이도에 맞는 최소한의 구조로 설계하는 것이 중요합니다.",
+        "AI가 '완료했다'고 말하는 것 자체는 완료의 증거가 아닙니다. 정해둔 완료 기준으로 실제 결과를 확인해야 합니다.",
+        "이 문서의 예약 페이지 예제에서 설명한 방식이 모든 작업에서 같은 성과를 보장하지는 않습니다. 실패 원인과 작업 조건에 맞게 구조를 다시 설계해야 합니다."
+      ],
+      "sources": [
+        {
+          "name": "OpenAI: Harness engineering",
+          "url": "https://openai.com/index/harness-engineering/"
+        },
+        {
+          "name": "Anthropic: Effective harnesses for long-running agents",
+          "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+        },
+        {
+          "name": "Anthropic: Effective context engineering for AI agents",
+          "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+        },
+        {
+          "name": "Anthropic: Harness design for long-running apps",
+          "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps"
+        }
+      ],
+      "dev_reference_links": []
+    },
+    {
+      "slug": "herdr",
+      "title": "Herdr: 여러 AI 코딩 작업을 한곳에서 관리하는 도구",
+      "summary": "Herdr는 Claude Code, Codex 같은 기존 터미널 AI 도구들을 작업공간·탭·창(진짜 터미널) 구조로 모아 상태를 보여주는 터미널 작업공간 관리 도구입니다. 상태 표시는 참고용 신호일 뿐, 업무 정확도나 완료를 보장하지 않습니다.",
+      "topic": "AI 개발",
+      "tags": [
+        "Herdr",
+        "터미널",
+        "Claude Code",
+        "Codex",
+        "tmux",
+        "Zellij"
+      ],
+      "created_at": "2026-10-04",
+      "updated_at": "2026-10-04",
+      "reviewed_at": "2026-10-04",
+      "question": "Herdr는 무엇이고 여러 AI 코딩 작업을 관리할 때 어떻게 쓰나요?",
+      "core_answer": "Herdr는 Claude Code·Codex 등 여러 코딩 에이전트의 터미널과 작업 상태를 한곳에서 관리하는 도구입니다. 기존 AI 도구를 각 창에서 실행하고, 어느 작업이 진행 중이거나 입력을 기다리는지 살펴볼 수 있습니다.\n\n터미널은 명령어를 입력하고 실행 결과를 보는 창입니다. Herdr는 이 창들과 실행 중인 프로그램을 관리하며, AI 모델 자체를 제공하거나 다시 학습시키는 도구는 아닙니다.",
+      "easy_explanation": "책상 위에 여러 프로젝트 창을 띄워 놓고 일하는 상황을 떠올려 보세요. 한 창에서는 Claude Code가 코드를 작성하고, 다른 창에서는 Codex가 내용을 살펴보는 가상 사례입니다.\n\nHerdr에서 입력을 기다리는 창을 찾아 어떤 질문이나 승인이 필요한지 확인할 수 있습니다. 작업이 끝났다는 표시가 보이면 실제 산출물과 동작을 따로 확인합니다. 이 예시는 실제로 이 프로젝트에 Herdr를 연결한 결과가 아닙니다.",
+      "api_explanation_title": "작업공간·탭·창과 상태값",
+      "api_explanation": "Herdr의 구조는 작업공간(workspace) 안에 여러 탭(tab)이 있고, 각 탭 안에 창(pane, 실제 터미널)이 있는 형태입니다. Claude Code나 Codex 같은 CLI 도구는 이 창 안에서 그대로 실행됩니다.\n\n공식 문서에 나오는 상태값은 working(작업 중), blocked(입력·승인·결정을 기다림), done(끝난 후 아직 확인하지 않음), idle(입력 가능), unknown(상태를 판별하지 못함) 다섯 가지입니다. 이 상태는 화면 아래쪽 정보나 프로세스를 읽어 판별하거나, 지원하는 에이전트와의 연동으로 보고받아 표시되며, 업무 정확도나 완료 검증을 보장하는 신호는 아닙니다.",
+      "details": "Herdr는 실제 작업을 백그라운드 서버에서 실행하고, 사용자가 보는 접속 화면(클라이언트)과 분리합니다. 한 컴퓨터에서 둘 다 실행할 수도 있고, 노트북에서 별도 원격 서버에 접속할 수도 있습니다.\n\n서버가 계속 실행되는 동안 접속 창만 닫으면 그 안의 기존 작업은 계속 실행됩니다. 반면 실제 작업을 실행하는 컴퓨터가 잠들거나 꺼지는 것은 접속만 끊는 것과 다릅니다.\n\nHerdr 서버를 종료했다가 다시 시작하면 기존 프로세스는 종료된 상태입니다. 저장된 작업공간·탭·창 배치와 작업 폴더는 복원할 수 있지만, 모든 프로그램이 중단 전 상태 그대로 살아나는 것은 아닙니다.\n\n에이전트와의 대화를 다시 이어가는 기능은 지원되는 에이전트, 유효한 세션 정보, 필요한 연동 조건에 따라 작동합니다. 화면의 과거 내용을 다시 보여주는 기능과 실제 대화 재개도 구분해야 합니다.\n\n원격으로 쓸 때는 SSH라는 원격 접속 방식을 이용합니다. 각 실행 서버의 접속 권한과 Herdr·에이전트 실행 환경을 준비하면, 여러 컴퓨터의 작업을 한 화면에서 살펴볼 수 있습니다.\n\n공식 자동화 기능은 스크립트나 에이전트가 창을 만들고, 다른 에이전트에 작업을 전달하고, 상태를 기다리거나 출력을 읽게 합니다. 실제로 어떤 일을 맡기고 어떤 결과를 받을지는 사용하는 쪽에서 정해야 합니다.\n\n앞서 설명한 하네스 엔지니어링은 AI가 일하는 환경을 설계하는 방법이고, Herdr는 그 환경에서 터미널·연결·상태 관리를 맡길 수 있는 구체적인 도구입니다. Herdr를 설치하는 것만으로 업무의 완료 기준이나 권한 정책, 결과 검증이 모두 완성되지는 않습니다.\n\nHerdr는 Apache 2.0 라이선스로 코드가 공개돼 있습니다. 연결하는 AI 에이전트의 계정·이용 요금과 실행 서버의 운영 비용은 별도로 고려해야 합니다.\n\n확인일인 2026-10-04 기준 공식 설치 문서는 Linux·macOS·Windows 배포를 안내합니다. 운영체제별 지원 범위와 제약은 공식 설치 문서에서 확인할 수 있으며, 이 설명을 작성하면서 Herdr를 설치하거나 실행하지는 않았습니다.",
+      "diagram_image": {
+        "src": "/explore/herdr-webtoon.png",
+        "alt": "프로젝트 A의 Claude Code 작업과 프로젝트 B의 Codex 검토를 각각 다른 창에서 관리하며 작업 중·승인 대기·완료 상태를 확인하는 과정을 그린 8컷 웹툰",
+        "caption": "이해를 위한 가상 사례 · 실제 Herdr 화면 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "comparison": {
+        "intro": "Herdr, tmux, Zellij는 모두 터미널 화면 접속을 끊어도(detach) 뒤에서 계속 실행해 둘 수 있는 터미널 관리 도구입니다. 다만 각자 중심으로 두는 역할과 재시작 후 복원되는 범위가 다릅니다.\n\n아래 표는 공식 문서를 바탕으로 정리한 비교이며, 같은 조건으로 직접 성능을 측정한 결과는 아닙니다.",
+        "table": {
+          "caption": "Herdr·tmux·Zellij 비교(공개 문서 기준, 직접 성능 비교 아님)",
+          "columns": [
+            "Herdr",
+            "tmux",
+            "Zellij"
+          ],
+          "rows": [
+            {
+              "label": "중심 역할",
+              "values": [
+                "AI 에이전트 CLI의 터미널·상태를 작업공간·탭·창으로 관리",
+                "여러 프로그램을 터미널 안에서 전환하며 다루는 범용 터미널 관리",
+                "탭·창·레이아웃과 플러그인 중심의 터미널 관리"
+              ]
+            },
+            {
+              "label": "화면 연결 해제",
+              "values": [
+                "접속 화면을 끊어도 서버의 프로세스는 계속 실행",
+                "detach로 접속을 끊어도 백그라운드에서 계속 실행",
+                "접속을 끊어도 세션이 백그라운드에서 유지"
+              ]
+            },
+            {
+              "label": "재시작·복원",
+              "values": [
+                "서버 재시작 시 원래 프로세스는 사라짐, 창 배치는 복원 가능, 대화 재개는 지원 에이전트·연동 조건에 따름",
+                "공식 위키 기준 접속 해제·재접속(reattach) 중심, 서버 재시작 후 복원은 이 비교에서 다루지 않음",
+                "세션 종료 후 레이아웃과 명령을 다시 구성하며, 기본적으로 ENTER로 확인해야 명령이 다시 실행됨(기존 프로세스가 그대로 살아나는 것은 아님)"
+              ]
+            },
+            {
+              "label": "어떤 때 살펴볼지",
+              "values": [
+                "여러 AI 에이전트 CLI의 상태를 한곳에서 보고 싶을 때",
+                "여러 프로그램을 터미널에서 전환하며 쓰고 싶을 때",
+                "탭·레이아웃 구성과 플러그인, 세션 복원을 함께 쓰고 싶을 때"
+              ]
+            }
+          ]
+        },
+        "interpretation": "셋 다 화면 접속을 끊어도 작업을 이어갈 수 있다는 점은 비슷하지만, Herdr는 에이전트 상태 인식과 조작에, tmux는 범용 터미널 관리에, Zellij는 탭·레이아웃·플러그인과 세션 복원에 더 강점을 둡니다.\n\n여러 AI 코딩 에이전트를 동시에 다루며 상태를 보고 싶다면 Herdr를, 범용 터미널 관리를 원한다면 tmux를, 레이아웃과 플러그인·복원을 중시한다면 Zellij를 살펴볼 수 있습니다. 이는 선택의 문제이며 성능 우열을 가린 비교는 아닙니다.",
+        "sources": [
+          {
+            "name": "Herdr: Concepts",
+            "url": "https://herdr.dev/docs/concepts/"
+          },
+          {
+            "name": "tmux wiki",
+            "url": "https://github.com/tmux/tmux/wiki"
+          },
+          {
+            "name": "Zellij: Documentation",
+            "url": "https://zellij.dev/documentation/"
+          },
+          {
+            "name": "Zellij: Session resurrection",
+            "url": "https://zellij.dev/documentation/session-resurrection"
+          }
+        ]
+      },
+      "pitfalls": [
+        "working·blocked·done 같은 상태는 에이전트의 진행 신호입니다. done 표시만으로 요구한 기능이 정확하게 완성됐다고 판단할 수는 없습니다.",
+        "접속 화면만 닫는 것과 실행 서버를 종료하는 것은 다릅니다. 서버가 계속 실행돼야 접속을 끊은 동안에도 작업을 이어갈 수 있습니다.",
+        "서버 재시작 후 창 배치 복원과 AI 대화 재개는 서로 다른 기능입니다. 대화 재개는 지원되는 에이전트와 유효한 세션 정보·연동 조건을 확인해야 합니다.",
+        "Herdr는 같은 컴퓨터에서 쓸 수도 있고 원격 서버에 접속해 쓸 수도 있습니다. 원격 작업에는 접속 권한과 각 서버의 실행 환경이 필요합니다.",
+        "Herdr의 공개 라이선스가 AI 이용료나 서버 비용까지 없애 주는 것은 아닙니다. 에이전트별 계정과 사용 조건은 따로 적용됩니다.",
+        "웹툰은 이해를 위한 가상 사례이며 실제 Herdr 화면이나 이 프로젝트에 연결한 결과가 아닙니다."
+      ],
+      "sources": [
+        {
+          "name": "Herdr: Concepts",
+          "url": "https://herdr.dev/docs/concepts/"
+        },
+        {
+          "name": "Herdr: Agents",
+          "url": "https://herdr.dev/docs/agents/"
+        },
+        {
+          "name": "Herdr: Session state",
+          "url": "https://herdr.dev/docs/session-state/"
+        },
+        {
+          "name": "Herdr: How to work",
+          "url": "https://herdr.dev/docs/how-to-work/"
+        },
+        {
+          "name": "Herdr: Connecting machines",
+          "url": "https://herdr.dev/docs/connecting-machines/"
+        },
+        {
+          "name": "Herdr: Integrations",
+          "url": "https://herdr.dev/docs/integrations/"
+        },
+        {
+          "name": "Herdr GitHub",
+          "url": "https://github.com/herdrdev/herdr"
+        },
+        {
+          "name": "Herdr: Install",
+          "url": "https://herdr.dev/docs/install/"
+        },
+        {
+          "name": "Herdr: Agent automation",
+          "url": "https://herdr.dev/docs/agent-automation/"
+        }
+      ],
+      "dev_reference_links": [
+        {
+          "name": "Herdr GitHub",
+          "url": "https://github.com/herdrdev/herdr"
+        },
+        {
+          "name": "Herdr: Install",
+          "url": "https://herdr.dev/docs/install/"
+        }
+      ]
     }
   ]
 }

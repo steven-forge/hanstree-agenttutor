@@ -39,7 +39,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교)의 다섯 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교)의 일곱 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -110,6 +110,17 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - `package.json`/`package-lock.json` 버전을 0.11.0으로 올렸다. `.gitignore`에 `.env*`를 추가했다(환경변수 파일 내용은 확인하지 않았다).
 - 당시 실제 Redis 저장·통계·기록 조회는 확인하지 않았다. 이후 사용자가 기록 저장을 취소하여 v0.11.1에서 연결 작업도 취소했다.
 
+## 여섯 번째 문서(하네스 엔지니어링) 추가
+
+- 기존 다섯 문서는 그대로 두고 여섯 번째 문서를 추가했다. 이 문서는 특정 제품이 아니라 작업 방법을 다루므로 4번 섹션 제목을 "비슷한 제품과 비교"가 아닌 "관련 개념과 비교"로 바꿨다.
+- `data/explore.json`의 `Comparison` 스키마에 선택 필드 `title`을 추가했다. `app/explore/[slug]/page.tsx`는 `comparisonTitle = doc.comparison.title ?? "비슷한 제품과 비교"`를 두 목차(모바일·큰 화면)와 본문 h2, 비교표 `aria-label`에 공통으로 쓴다. `title`이 있으면 section-note도 "세 접근의 역할과 연결을 비교합니다."로 바뀌고, 없으면 기존 문구를 그대로 쓴다. 기존 다섯 문서는 `title`을 쓰지 않아 화면이 그대로 유지된다.
+- `data/explore.json`에 slug `harness-engineering` 문서 1건(8번 구성: 핵심 답변·요리사 비유·AI 에이전트 설명·그림·관련 개념 비교·6항목 자세한 설명·헷갈리는 점·출처·퀴즈)을 추가했다. 근거는 OpenAI "Harness engineering"(2026-02-11), Anthropic "Effective harnesses for long-running agents"(2025-11-26), "Effective context engineering for AI agents"(2025-09-29), "Harness design for long-running apps"(2026-03-24)이며 확인일은 2026-10-04 KST다.
+- 비교표는 프롬프트 엔지니어링·컨텍스트 엔지니어링·하네스 엔지니어링 세 관점을 "주로 묻는 질문/설계 대상/예약 페이지 예시/실패했을 때 살펴볼 것" 행으로 비교하며, 경쟁 제품이 아닌 겹치는 관점임을 본문에 명시했다.
+- `data/explore-quizzes.json`에 `harness-engineering` 퀴즈(`version: 1`, 5문항)를 지정된 문항·보기·정답·해설 그대로 추가했다. 개념은 하네스/모델 학습 가중치 구분, 컨텍스트 엔지니어링의 정보 선택 역할, 완료 기준의 직접 근거, 세션 간 진행 기록의 필요성, 이 예제의 배포 전 사람 승인 정책을 다룬다.
+- `docs/knowledge/HARNESS_ENGINEERING.md`를 기존 문서와 같은 8개 섹션 구성으로 작성했다. 비용·시간·반복 횟수 한도는 출처 사례에 없는 숫자를 지어내지 않고 "문서 작성자가 실무에서 설계할 수 있는 예시"로 표시했다.
+- 웹툰 이미지(`public/explore/harness-engineering-webtoon.png`, 1024×1536)는 가상의 예약 페이지 제작 사례이며 실제 실행 결과나 제품 화면이 아니라고 본문에 명시했다. 이미지 생성·버전 올림·빌드·테스트·배포는 팀장이 수행한다.
+- 기존 다섯 문서·퀴즈 값, `app/explore/[slug]/page.tsx`의 다른 화면·기능은 그대로 보존했다.
+
 ## 퀴즈 응시 기록 저장 제거 (v0.11.1)
 
 - 사용자 요청("응시 기록은 저장소에 남기지 말고 결과만 보여주자")에 따라 v0.11.0의 Upstash Redis 연동을 전부 제거했다. 퀴즈는 이제 상태 없는(stateless) 서버 채점만 수행하며 응시 기록·통계·공유 대시보드를 저장하지 않는다.
@@ -169,3 +180,14 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - laya-ai.com·Laya Studio 같은 비공식 커뮤니티·독립 호스팅 서비스는 공식 출처로 쓰지 않았고, 본문에 공식 모델과 구분된다는 점을 명시했다. Jev와의 속도·정확도 우열은 단정하지 않았다.
 - `package.json`/`package-lock.json` 버전을 0.11.6으로 올렸다.
 - 기존 4문서·퀴즈 값 보존, 새 원고와 5문항 일치, 웹툰 치수를 확인했다. 최종 빌드가 통과했고 55개 정적 페이지에 Laya 상세 페이지가 포함됐다. 실제 Laya 모델을 설치하거나 실행한 작업은 아니며 설명 문서 추가다. 실제 브라우저 클릭·모바일 화면 배치는 확인하지 않았다.
+
+## 하네스 엔지니어링·Herdr 문서 추가 (2026-10-04)
+
+- 사용자의 하네스 엔지니어링 설명 요청과 이어진 Herdr 설명 요청을 각각 독립 문서로 작성했다. 기존 다섯 문서와 퀴즈는 유지했다.
+- 하네스 문서는 OpenAI·Anthropic의 공식 사례를 바탕으로 프롬프트·컨텍스트·하네스의 역할, 작업 환경·권한·진행 기록·결과 확인을 설명한다. 세 접근은 겹치는 설계 관점이며, 특정 사례의 성과나 다중 에이전트 구성을 보편적인 필수 조건으로 제시하지 않는다.
+- Herdr 문서는 공식 Concepts·Agents·Session state·How to work·Connecting machines·Integrations·Agent automation·Install 및 저장소를 확인했다. 로컬/원격 사용, 접속 해제와 서버 종료의 차이, 조건부 대화 재개, 상태 표시와 결과 검증의 차이를 설명한다. tmux·Zellij 공식 문서로 제품 비교를 정리했다.
+- 두 문서 각각 8컷 웹툰(1024×1536)을 내장 imagegen으로 생성해 `public/explore/harness-engineering-webtoon.png`, `public/explore/herdr-webtoon.png`에 저장했다. 모두 가상 사례이며 실제 제품 화면이나 실행 결과가 아니다. 제작 지시는 같은 이름의 `docs/knowledge/*-webtoon-prompt.txt`에 있다.
+- 각 문서에 4지선다 5문항을 추가했다. 오답 즉시 재선택·첫 선택 기준 점수·응시 기록 미저장 방식을 유지한다. 원고는 `HARNESS_ENGINEERING.md`, `HERDR.md`이며 웹 본문과 문제·보기·해설을 맞췄다.
+- 비교 제목을 문서별로 지정할 수 있게 최소 수정했다. 하네스는 '관련 개념과 비교', 기존 제품 문서와 Herdr는 '비슷한 제품과 비교'이며 본문·모바일 목차·큰 화면 목차를 함께 맞췄다.
+- 기존 뉴스 관리 작업의 완료 커밋과 자동 갱신을 유지한 상태로 통합했다. 버전은 0.13.1이다. 이 작업은 설명 문서 추가이며 Herdr 설치나 새 에이전트 실행 환경 구축은 수행하지 않았다.
+- 최종 빌드가 통과해 58개 정적 페이지를 생성했다. 새 두 페이지의 비교 제목·웹툰 참조·각 5문항과 20개 선택지를 생성 HTML에서 확인했다. 실제 브라우저 클릭·모바일 화면 배치는 확인하지 않았다.
