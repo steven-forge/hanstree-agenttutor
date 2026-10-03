@@ -1,6 +1,8 @@
 import "server-only";
 import { createHash } from "node:crypto";
-import { todayData } from "../../content";
+import { todayData, newsEditorial } from "../../content";
+import preparedCopy from "../../../data/card-news-copy.json";
+import { fitCardCopy } from "./copy";
 import { RELEASE_SOURCE_IDS } from "../../today/newsHelpers";
 import { preserveDraft, type Edition, type NewsCandidate } from "./types";
 import { AdminError } from "./server";
@@ -38,7 +40,13 @@ export async function collectEdition(date: string, old: Edition | null): Promise
     if (RELEASE_SOURCE_IDS.has(a.source_id)) continue;
     const published = a.date_precision === "day" ? a.published_on || a.published_at?.slice(0, 10) : a.published_at || a.published_on;
     const c = candidate(a.title_ko || a.title, a.summary || a.source_summary_ko || a.source_summary || a.why_it_matters, a.source_url, a.source_name, published, window, "newsletter");
-    if (c && !unique.has(c.sourceUrl)) unique.set(c.sourceUrl, { ...c, newsletterId: a.id });
+    if (c && !unique.has(c.sourceUrl)) {
+      const sourceHash = createHash("sha256").update(JSON.stringify([c.title, c.summary])).digest("hex").slice(0, 24);
+      const prepared = (preparedCopy as Record<string, { sourceHash: string; title: string; body: string }>)[a.id];
+      const copy = prepared?.sourceHash === sourceHash ? prepared : { title: c.title, body: newsEditorial.articles?.[a.id]?.reading?.summary_ko || c.summary };
+      const cardCopy = fitCardCopy(copy);
+      unique.set(c.sourceUrl, { ...c, newsletterId: a.id, ...(cardCopy ? { cardCopy } : {}) });
+    }
   }
   const time = (c: NewsCandidate) => Date.parse(c.datePrecision === "day" ? `${c.publishedAt}T00:00:00+09:00` : c.publishedAt);
   const candidates = Array.from(unique.values()).sort((a, b) => time(b) - time(a));

@@ -1,7 +1,10 @@
+import { copyIssues, type CardCopy } from "./copy";
+
 export type NewsCandidate = {
   id: string; title: string; summary: string; sourceName: string; sourceUrl: string;
   publishedAt: string; datePrecision: "time" | "day"; origin: "newsletter" | "archive" | "feed" | "manual";
   newsletterId?: string;
+  cardCopy?: CardCopy;
 };
 export type NewsCard = {
   candidateId: string; title: string; body: string; sourceUrl: string;
@@ -52,14 +55,7 @@ export function captionFor(date: string, cards: NewsCard[]) {
   return `AI News 10 · ${date}\n\n${cards.map((c, i) => `${i + 1}. ${c.title.replace(/\n/g, " ")}\n출처: ${c.sourceUrl}`).join("\n\n")}\n\n#AgentTutor #AI뉴스 #인공지능`;
 }
 export function cardIssues(card: NewsCard): string[] {
-  const issues: string[] = [];
-  const title = card.title.split("\n"), body = card.body.split("\n");
-  if (!card.title.trim() || title.length > 2) issues.push("제목은 1~2줄로 작성하세요.");
-  if (!card.body.trim() || body.length > 6) issues.push("본문은 1~6줄로 작성하세요.");
-  // Conservative line budget preserves the approved type size without shrinking text.
-  const width = (line: string) => Array.from(line).reduce((n, ch) => n + (/[^\u0000-\u007f]/.test(ch) || /[MW@%]/.test(ch) ? 1 : 0.65), 0);
-  if (title.some(l => width(l) > 16)) issues.push("제목 한 줄이 너무 깁니다. 줄을 나눠 주세요.");
-  if (body.some(l => width(l) > 18)) issues.push("본문 한 줄이 너무 깁니다. 줄을 나눠 주세요.");
+  const issues = copyIssues(card);
   if (!card.verified) issues.push("원문·발행일·다른 카드와의 사건 중복을 확인하세요.");
   try { const u = new URL(card.sourceUrl); if (u.protocol !== "https:" || u.username || u.password) throw 0; } catch { issues.push("https 원문 주소가 필요합니다."); }
   return issues;

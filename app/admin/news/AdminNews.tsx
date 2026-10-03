@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
-import { cardIssues, captionFor, editionIssues, selectableCandidates, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
+import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
+import { fitCardCopy, copyIssues } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import "./admin-news.css";
 
@@ -10,7 +11,7 @@ const STATUS: Record<Edition["status"], string> = {
   draft: "초안", approved: "검토 완료", publishing: "발행 처리 중", published: "발행 완료", needs_check: "발행 결과 확인 필요",
 };
 const ACTION_LABEL: Record<string, string> = {
-  load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
+  compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
   approve: "카드 10장의 JPG와 검토 결과를 확인하는 중…", publish: "Instagram 발행을 요청하는 중…", reconcile: "최초 발행 요청을 이어 처리하고 결과를 확인하는 중…", check_connection: "연결된 Instagram 계정을 확인하는 중…", logout: "로그아웃 중…",
 };
 type ApiResult = Partial<AdminSnapshot> & { error?: string; id?: string; username?: string };
@@ -41,22 +42,9 @@ function timeIssue(card: NewsCard, edition: Edition) {
   if (time < Date.parse(edition.windowStart) || time > Date.parse(edition.windowEnd)) return "발행 시각이 이 판본의 후보 기간 밖입니다.";
   return "";
 }
-// All source text remains available; long drafts are flagged for editing rather than silently cut.
-function draftLines(text: string, budget: number) {
-  const lines: string[] = [];
-  for (const paragraph of text.trim().split(/\n+/)) {
-    let line = "", width = 0;
-    for (const character of Array.from(paragraph.replace(/\s+/g, " "))) {
-      const next = /[^\u0000-\u007f]/.test(character) || /[MW@%]/.test(character) ? 1 : .65;
-      if (line && width + next > budget) { lines.push(line.trim()); line = ""; width = 0; }
-      line += character; width += next;
-    }
-    if (line.trim()) lines.push(line.trim());
-  }
-  return lines.join("\n");
-}
 function candidateCard(candidate: NewsCandidate): NewsCard {
-  return { candidateId: candidate.id, title: draftLines(candidate.title, 16), body: draftLines(candidate.summary, 18), sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" ? candidate.publishedAt : "", verified: false };
+  const copy = fitCardCopy(candidate.cardCopy || { title: candidate.title, body: candidate.summary });
+  return { candidateId: candidate.id, title: copy?.title || "", body: copy?.body || "", sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" ? candidate.publishedAt : "", verified: false };
 }
 function editableContent(edition: Edition | null) {
   return edition ? JSON.stringify({ cards: edition.cards, caption: edition.caption, candidates: edition.candidates }) : "";
@@ -288,7 +276,30 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     if (found < 0 && edition.cards.length >= 10) { setError("이미 10개를 선정했습니다. 다른 뉴스를 먼저 해제하세요."); return; }
     const cards = found >= 0 ? edition.cards.filter(item => item.candidateId !== candidate.id) : [...edition.cards, candidateCard(candidate)];
     setEdition({ ...edition, cards }); setMessage(""); setError("");
+    if (found < 0 && !cards.at(-1)?.title) setMessage("이 기사는 카드용 요약이 준비되지 않았습니다. 후보의 내용과 원문을 참고해 제목 2줄·본문 6줄 이내로 작성하세요.");
     if (found < 0) setActiveIndex(cards.length - 1);
+  }
+  async function composeCards() {
+    if (!canEdit || !edition || !selected.length || operation.current) return;
+    if (!window.confirm("선정한 카드의 제목·본문을 짧은 카드용 요약으로 바꿀까요? 기존 편집 내용을 보관하려면 먼저 원고 JSON을 내보내 주세요. 적용 후 원고를 저장하고 다시 검토해야 합니다.")) return;
+    operation.current = true; setPending("compose"); setError(""); setMessage("");
+    try {
+      const response = await fetch(`/api/card-news-candidates?date=${date}`, { cache: "no-store" });
+      const result = await response.json(); if (!response.ok) throw new Error(result.error || "카드용 요약을 가져오지 못했습니다.");
+      const refreshed = preserveDraft(result.edition, edition);
+      let applied = 0;
+      const cards = edition.cards.map(card => {
+        const candidate = refreshed.candidates.find(c => c.id === card.candidateId);
+        const copy = candidate?.origin === "newsletter" && candidate.cardCopy && fitCardCopy(candidate.cardCopy);
+        if (!copy) return card;
+        applied++;
+        return { ...card, ...copy, verified: false };
+      });
+      setEdition({ ...edition, candidates: refreshed.candidates, cards }); setShowJpg(false);
+      setMessage(`${applied}개 카드에 제목 최대 2줄·본문 최대 6줄 요약을 적용했습니다. 원고를 저장하고 내용을 다시 확인하세요.`);
+      if (applied < cards.length) setError(`카드 ${cards.length - applied}개는 짧은 요약이 준비되지 않아 기존 원고를 유지했습니다. 해당 기사 내용을 직접 정리해 주세요.`);
+    } catch (caught) { setError(caught instanceof Error ? caught.message : "카드 원고를 정리하지 못했습니다."); }
+    finally { operation.current = false; setPending(""); }
   }
   function changeCard(changes: Partial<NewsCard>) {
     if (!canEdit || !edition || !card) return;
@@ -312,6 +323,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const canApprove = canEdit && !dirty && !issues.length && edition?.status === "draft";
   const canPublish = !localMode && !publishUncertain && !!edition && edition.status === "approved" && !dirty && !issues.length && snapshot.setup.instagram && !pending && !sessionExpired;
   const canDownload = !!saved && ["approved", "published"].includes(saved.status) && !dirty && !pending && !sessionExpired;
+  const previewIssues = card ? copyIssues(card) : [];
   const currentIssues = card && edition ? [...cardIssues(card), ...(timeIssue(card, edition) ? [timeIssue(card, edition)] : [])] : [];
 
   return <main className="cn-shell">
@@ -373,7 +385,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
         <div>
           <section className="cn-panel" aria-labelledby="cn-editor-heading">
-            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. 카드 원고와 순서</h2><p className="cn-muted">제목 1~2줄 · 본문 1~6줄 · 카드 1080 × 1350</p></div></div>
+            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. 카드 원고와 순서</h2><p className="cn-muted">제목 최대 2줄 · 본문 최대 6줄 · 말줄임표 없이 핵심 내용 정리</p></div></div>
+            <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>선정한 카드 원고 정리</button>
             {selected.length ? <>
               <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>
               {card && <>
@@ -391,7 +404,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">
-                    <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy"><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body">{card.body || "본문을 입력하세요"}</p></div></div></div>
+                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 6줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy"><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body">{card.body || "본문을 입력하세요"}</p></div></div></div>}
                     <p className="cn-preview-label">편집 미리보기 · 최종 줄바꿈과 넘침은 저장본 JPG에서 확인하세요.</p>
                     <button className="cn-button cn-button-small" onClick={() => { setJpgError(false); setShowJpg(value => !value); }} disabled={!hasSavedImage || !!pending || sessionExpired}>{showJpg ? "저장본 JPG 접기" : "실제 저장본 JPG 보기"}</button>
                     {!hasSavedImage && <p className="cn-help">이 카드를 저장하면 실제 JPG를 볼 수 있습니다.</p>}

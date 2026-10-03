@@ -20,11 +20,18 @@ function parseCandidates(input: unknown): NewsCandidate[] {
     return { id: str(c.id, 100, "후보 번호"), title: str(c.title, 200, "후보 제목"), summary: str(c.summary, 600, "요약"), sourceName: str(c.sourceName, 100, "출처"), sourceUrl: url, publishedAt: str(c.publishedAt, 40, "발행일"), datePrecision: c.datePrecision === "time" ? "time" : "day", origin: "manual" };
   });
 }
-function editedEdition(old: Edition, body: Record<string, unknown>): Edition {
+async function editedEdition(old: Edition, body: Record<string, unknown>): Promise<Edition> {
   if (!["draft", "approved"].includes(old.status)) throw new AdminError("발행이 시작된 원고는 수정할 수 없습니다.", 409);
   if (!Array.isArray(body.cards) || body.cards.length > 10) throw new AdminError("카드는 최대 10장입니다.");
   const inputCandidates = body.candidates === undefined ? old.candidates : parseCandidates(body.candidates);
-  const candidates = inputCandidates.map(c => old.candidates.find(existing => existing.id === c.id) || c);
+  // Refresh only from trusted newsletter data, never from client-supplied copy metadata.
+  const latest = old.candidateSource === "newsletter" ? (await collectEdition(old.date, null)).candidates : [];
+  const candidates = inputCandidates.map(c => {
+    const existing = old.candidates.find(n => n.id === c.id);
+    const sourceUrl = canonicalUrl(existing?.sourceUrl || c.sourceUrl).replace(/\/$/, "");
+    const current = latest.find(n => n.sourceUrl.replace(/\/$/, "") === sourceUrl);
+    return current ? { ...current, id: c.id } : existing || c;
+  });
   if (new Set(candidates.map(c => c.id)).size !== candidates.length) throw new AdminError("후보 번호가 중복됐습니다.");
   const cards: NewsCard[] = body.cards.map(c => {
     if (!c || typeof c !== "object") throw new AdminError("카드 형식을 확인하세요.");
@@ -80,7 +87,7 @@ export async function POST(request: Request) {
     else {
       if (!old) throw new AdminError("먼저 뉴스 후보를 수집해 주세요.", 404);
       switch (body.action) {
-        case "save": await putEdition(editedEdition(old, body), old.revision); break;
+        case "save": await putEdition(await editedEdition(old, body), old.revision); break;
         case "approve": {
           if (old.status !== "draft") throw new AdminError("검토할 초안이 없습니다.", 409);
           ready(old);
