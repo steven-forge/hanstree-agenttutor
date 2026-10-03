@@ -83,6 +83,21 @@
 .cn-jpg { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; background: #000; }
 .cn-jpg-section { margin-top: 18px; }
 .cn-caption-panel { margin-top: 20px; }
+.cn-policy { margin-bottom: 20px; }
+.cn-policy > summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; }
+.cn-policy > summary .cn-tag { margin-left: 8px; }
+.cn-policy-status { color: #475569; font-size: .8rem; }
+.cn-policy-status p { margin: 6px 0; }
+.cn-policy-fields { min-width: 0; border: 0; border-top: 1px solid #e5e7eb; margin: 22px 0 0; padding: 16px 0 0; }
+.cn-policy-fields legend { padding: 0 10px 0 0; font-weight: 700; }
+.cn-policy-fields > .cn-check { margin-top: 12px; }
+.cn-policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 16px; margin-bottom: 16px; }
+.cn-policy select { width: 100%; min-width: 0; padding: 10px; font: inherit; font-size: .85rem; border: 1px solid #cbd5e1; border-radius: 7px; background: #fff; color: #334155; }
+.cn-policy-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 12px; margin-bottom: 18px; }
+.cn-policy-source { min-width: 0; padding: 14px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: .85rem; }
+.cn-policy-source > small { display: block; margin-top: 5px; color: #64748b; }
+.cn-policy-source-options { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.cn-policy-source-options .cn-field { max-width: 105px; }
 .cn-publish-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 16px; }
 .cn-empty { padding: 38px 20px; text-align: center; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; color: #64748b; }
 .cn-empty h2 { color: #334155; }

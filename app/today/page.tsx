@@ -5,14 +5,15 @@ import DocsSidebar from "../DocsSidebar";
 import { todayData, contentHealth, glossaryTerms, newsEditorial, NEWS_TOPIC_LABELS, type ContentHealthSource, type NewsTopic, type OfficialRunTelemetry, type HourlyRunTelemetry } from "../content";
 import { RELEASE_SOURCE_IDS, OFFICIAL_NEWS_SOURCE_IDS, isValidDateParam, articleDateKey, resolveGlossaryLinks, formatKstTime } from "./newsHelpers";
 import latestCollection from "../../data/today-candidates.json";
+import { bundledNewsPolicy as policy } from "../lib/news-policy";
 
 export const metadata: Metadata = {
   title: "뉴스레터 · AgentTutor",
-  description: "최근 60일간 수집한 AI 및 Agent 관련 공식 뉴스를 최신순으로 모아 보는 뉴스레터",
+  description: "설정한 수집·게시 기준으로 모은 AI 및 Agent 관련 뉴스레터",
   alternates: { types: { "application/rss+xml": "/feed.xml" } }
 };
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = policy.display.page_size;
 const TOPIC_OPTIONS: (NewsTopic | "unclassified")[] = ["model", "tools", "safety", "unclassified"];
 
 function checkedAtLabel(iso?: string | null): string {
@@ -52,6 +53,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
     return Boolean(topics?.includes(selectedTopic));
   });
   const filteredArticles = byTopic.filter((a) => selectedDate === "" || articleDateKey(a) === selectedDate);
+  if (policy.display.sort === "importance") filteredArticles.sort((a, b) => Number(b.importance === "high") - Number(a.importance === "high"));
   const filteredHealthSources = (newsHealth.sources || []).filter((s) => !RELEASE_SOURCE_IDS.has(s.id || ""));
   const newsCandidateCount = filteredHealthSources.reduce((acc, s) => acc + (s.count ?? 0), 0);
   const newsFailedCount = filteredHealthSources.filter((s) => s.status === "failed").length;
@@ -123,7 +125,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               <p className="eyebrow">NEWSLETTER</p>
               <h1>뉴스레터</h1>
               <p className="lead">
-                공식 출처의 최근 60일 범위에서 수집해 누적한 AI·Agent 소식과, 외부 매체의 독립 출처 2곳 이상이 확인된 뉴스를 최신순으로 보여줍니다.
+                공식 출처 최근 {policy.official_window_days}일, 외부 출처 최근 {policy.window_hours}시간을 살펴 게시 기준을 통과한 AI·Agent 소식을 누적합니다. 목록은 {policy.display.sort === "importance" ? "중요도 높은 기사 우선, 같은 중요도는 최신순" : "최신순"}입니다.
               </p>
               <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 <span className="date">
@@ -147,7 +149,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
             {newsStatus === "not_collected" && (
               <div className="health-notice" style={{ marginTop: "24px" }}>
                 <strong>안내:</strong> 뉴스 자동 수집이 아직 실행되지 않아 초기 대기 상태입니다.
-                수집 실행 후 공식 뉴스 또는 외부 뉴스의 발행 기준을 통과한 기사만 자동 공개됩니다.
+                {policy.publish.auto_publish ? "수집 실행 후 게시 기준을 통과한 기사만 자동 공개됩니다." : "자동 게시는 일시정지되어 있으며 수집한 뉴스는 후보로 보관합니다."}
               </div>
             )}
 
@@ -256,7 +258,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               </div>
             ) : (
               <div id="articles" style={{ display: "grid", gap: "20px", marginTop: "32px" }}>
-                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지 · 최신순 정렬 (순위 아님)</p>
+                <p className="section-note" style={{ margin: 0 }}>{pageNum} / {totalPages} 페이지 · {policy.display.sort === "importance" ? "중요도 높은 기사 우선 · 같은 중요도는 최신순" : "최신순 정렬 (순위 아님)"}</p>
                 {filteredArticles.slice(pageStart, pageStart + PAGE_SIZE).map((article, idx, pageArticles) => {
                   const dateKey = articleDateKey(article);
                   const prevDateKey = idx > 0 ? articleDateKey(pageArticles[idx - 1]) : null;
@@ -363,8 +365,8 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                               style={{ marginLeft: "8px", fontSize: "0.72rem" }}
                               title={
                                 OFFICIAL_NEWS_SOURCE_IDS.has(article.source_id) && article.importance === "high"
-                                  ? "공식 출처 원문으로 확인된 새 모델 출시는 높음"
-                                  : "서로 독립된 매체 2곳 이상에서 확인되면 보통, 3곳 이상이면 높음"
+                                  ? "게시 당시 공식 모델 발표 또는 출처 수 기준으로 지정한 중요도"
+                                  : "게시 당시 설정된 매체 수 기준으로 지정한 중요도. 설정 변경 시 과거 기사는 일괄 재평가하지 않습니다."
                               }
                             >
                               중요도 {article.importance === "high" ? "높음" : "보통"} ·{" "}
@@ -460,6 +462,7 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
                       실행 시각 {formatKstTime(officialRun.collected_at)}<br />
                       발행 창 {formatKstTime(officialRun.window_start)} ~ {formatKstTime(officialRun.window_end)}<br />
                       반환된 신규 후보 항목 {officialRun.candidate_count}건 → 중복 제외 후 신규 게시 {officialRun.published_count}건 (보류 항목 {officialRun.held_item_count}건, 별도 집계)<br />
+                      {officialRun.waiting_count !== undefined && <>현재 정책으로 게시 대기 {officialRun.waiting_count}건 (이월 포함)<br /></>}
                       점검 출처 {officialRun.checked_source_count}곳 중 실패 {officialRun.failed_source_count}곳
                     </span>
                   ) : (
@@ -490,8 +493,10 @@ export default async function TodayPage({ searchParams }: { searchParams: Promis
               <details id="how-we-collect" style={{ margin: "24px 0 0", background: "var(--wash)", padding: "14px 16px", borderRadius: "8px" }}>
                 <summary style={{ cursor: "pointer", fontWeight: 700, color: "var(--blue)", fontSize: "0.95rem" }}>어떻게 모았나</summary>
                 <p style={{ marginTop: "10px", fontSize: "0.9rem", color: "#374151", lineHeight: "1.7" }}>
-                  공식 뉴스 출처의 날짜·번역 조건을 통과한 항목은 자동 공개합니다.
-                  외부 매체는 같은 사건을 서로 독립된 출처 2곳 이상이 전할 때 자동 공개하며, 같은 매체의 재인용이나 커뮤니티·소셜 신호만으로는 세지 않습니다.
+                  현재 설정은 {policy.collection_interval_hours}시간마다 수집이며, 예약 실행은 지연될 수 있습니다. {policy.publish.auto_publish ? "게시 조건을 통과한 기사는 자동 공개합니다." : "자동 게시는 일시정지되어 있으며 후보만 보관합니다."}
+                  {policy.publish.official_single_source ? "공식 뉴스는 단독 발표도 게시할 수 있습니다." : "공식 발표도 외부 매체의 게시 근거가 필요합니다."}
+                  외부 뉴스는 같은 사건을 게시 근거로 지정된 서로 다른 도메인 {policy.publish.min_independent}곳 이상이 전해야 하며, {policy.publish.high_importance_at}곳 이상이면 중요도 높음으로 분류합니다.
+                  {policy.publish.official_model_high && "주요 공식 출처의 새 모델 발표도 중요도 높음으로 분류합니다."} 매체 수는 사실 검증 완료를 뜻하지 않습니다.
                   날짜·필수 설명·번역이 불명확한 항목은 보류하고, 요청 실패는 출처 수집 실패로 기록합니다.
                   본문 추출 요약을 만들지 못하면 출처 제공 설명을 쓸 수 있습니다.
                   자동 해설·원문 추출과 별도로 남긴 편집 메모는 기사별 기록으로 구분해 표시합니다.

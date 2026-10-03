@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "revision": 0,
+  "updated_at": null,
+  "collection_interval_hours": 1,
+  "official_window_days": 60,
+  "window_hours": 72,
+  "publish": {
+    "auto_publish": true,
+    "official_single_source": true,
+    "min_independent": 2,
+    "high_importance_at": 3,
+    "official_model_high": true
+  },
+  "ai_keywords": [
+    "ai",
+    "artificial intelligence",
+    "machine learning",
+    "deep learning",
+    "llm",
+    "llms",
+    "gpt",
+    "chatgpt",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "grok",
+    "xai",
+    "copilot",
+    "hugging face",
+    "transformer",
+    "diffusion",
+    "neural",
+    "agents",
+    "ai agent",
+    "mcp",
+    "codex",
+    "mistral",
+    "llama",
+    "deepseek",
+    "nvidia"
+  ],
+  "official_sources": {
+    "openai-news": true,
+    "google-ai": true,
+    "anthropic-news": true,
+    "xai-news": true,
+    "claude-dev-blog": true
+  },
+  "sources": {
+    "hacker-news": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": true,
+      "max_items": 40
+    },
+    "huggingface-blog": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "wired-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "the-verge-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "techcrunch-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "ars-technica": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": true,
+      "max_items": 30
+    },
+    "product-hunt": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": true,
+      "max_items": 30
+    },
+    "the-new-stack-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "the-rundown-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 20
+    },
+    "infoq-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 30
+    },
+    "medium-ai": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": false,
+      "max_items": 5
+    },
+    "venturebeat-ai": {
+      "enabled": true,
+      "independent": true,
+      "keyword_filter": false,
+      "max_items": 5
+    },
+    "youtube": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": true,
+      "max_items": 10
+    },
+    "x": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": true,
+      "max_items": 10
+    },
+    "reddit": {
+      "enabled": true,
+      "independent": false,
+      "keyword_filter": true,
+      "max_items": 10
+    }
+  },
+  "display": {
+    "page_size": 10,
+    "sort": "latest"
+  },
+  "daily_target": 10
+}

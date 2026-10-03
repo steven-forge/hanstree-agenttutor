@@ -234,6 +234,12 @@ export type NewsEditorialData = {
 };
 
 export type OfficialRunTelemetry = {
+  waiting_count?: number;
+  policy_revision?: number;
+  policy_updated_at?: string | null;
+  daily_target?: number;
+  published_today?: number;
+  shortfall?: number;
   collected_at: string;
   window_start: string;
   window_end: string;
@@ -245,6 +251,11 @@ export type OfficialRunTelemetry = {
 };
 
 export type HourlyRunTelemetry = {
+  policy_revision?: number;
+  policy_updated_at?: string | null;
+  daily_target?: number;
+  published_today?: number;
+  shortfall?: number;
   collected_at: string;
   window_start: string;
   window_end: string;
