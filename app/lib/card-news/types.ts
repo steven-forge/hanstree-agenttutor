@@ -14,7 +14,7 @@ export type Edition = {
   updatedAt: string; approvedAt?: string; publishedAt?: string;
   publication?: { attempt: string; children: string[]; containerId?: string; mediaId?: string; permalink?: string; message?: string; publishRequestedAt?: string };
 };
-export type AdminSetup = { auth: boolean; storage: boolean; instagram: boolean; scheduler: boolean };
+export type AdminSetup = { auth: boolean; authIssue?: "password_missing" | "password_length" | "signing_missing" | "signing_length"; storage: boolean; instagram: boolean; scheduler: boolean };
 export type AdminSnapshot = { edition: Edition | null; setup: AdminSetup; history: { date: string; status: Edition["status"]; updatedAt: string }[] };
 
 export function kstDate(now = new Date()): string { return new Date(now.getTime() + 9 * 3600000).toISOString().slice(0, 10); }

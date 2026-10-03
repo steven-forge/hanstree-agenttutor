@@ -28,8 +28,14 @@ function passwordVersion() { return sessionSignature("server-session-v1"); }
 export function setupStatus(): AdminSetup {
   const storage = Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
   const passwordLength = process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0;
+  const signingLength = process.env.CARD_NEWS_SIGNING_SECRET?.length || 0;
+  const authIssue: AdminSetup["authIssue"] = !passwordLength ? "password_missing"
+    : passwordLength < 4 || passwordLength > 256 ? "password_length"
+    : !storage && !signingLength ? "signing_missing"
+    : !storage && signingLength < 32 ? "signing_length" : undefined;
   return {
-    auth: passwordLength >= 4 && passwordLength <= 256 && (storage || (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
+    auth: !authIssue,
+    authIssue,
     storage,
     instagram: Boolean(process.env.INSTAGRAM_USER_ID && process.env.INSTAGRAM_ACCESS_TOKEN && process.env.CARD_NEWS_PUBLIC_URL && (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
     scheduler: Boolean(process.env.CARD_NEWS_CRON_SECRET),

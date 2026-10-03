@@ -22,6 +22,6 @@ export default async function CardNewsAdmin() {
   }
   return <><SiteHeader /><div className="docs-shell card-news-layout"><DocsSidebar currentPath="/admin/news" /><div style={{ minWidth: 0 }}>
     {admin && unavailable && <p role="status">서버 저장소에 연결하지 못했습니다. 로그인한 관리자는 브라우저에 저장된 원고로 작업할 수 있습니다.</p>}
-    {admin ? <AdminNews initial={initial} initialDate={date} localMode={localMode} /> : <AdminLogin setup={{ auth: setup.auth, storage: false, instagram: false, scheduler: false }} />}
+    {admin ? <AdminNews initial={initial} initialDate={date} localMode={localMode} /> : <AdminLogin setup={{ auth: setup.auth, authIssue: setup.authIssue, storage: false, instagram: false, scheduler: false }} />}
   </div></div></>;
 }

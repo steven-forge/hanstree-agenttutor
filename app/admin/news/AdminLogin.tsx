@@ -9,6 +9,12 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const ready = setup.auth;
+  const setupMessage = {
+    password_missing: "운영 서버에 CARD_NEWS_ADMIN_PASSWORD가 적용되지 않았습니다. 이 사이트의 Vercel 프로젝트에서 Production 대상으로 등록한 뒤 재배포해 주세요.",
+    password_length: "CARD_NEWS_ADMIN_PASSWORD는 4~256자여야 합니다. 값을 수정한 뒤 재배포해 주세요.",
+    signing_missing: "운영 서버에 CARD_NEWS_SIGNING_SECRET이 적용되지 않았습니다. 이 사이트의 Vercel 프로젝트에서 Production 대상으로 등록한 뒤 재배포해 주세요.",
+    signing_length: "CARD_NEWS_SIGNING_SECRET은 비밀번호와 별개인 무작위 32자 이상 문자열이어야 합니다. 값을 수정한 뒤 재배포해 주세요.",
+  };
 
   async function login(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,7 +47,7 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
     </div>
     <section className="cn-panel cn-login-panel" aria-labelledby="cn-login-heading">
       <h2 id="cn-login-heading">관리자 로그인</h2>
-      {!ready && <p className="cn-alert">관리자 로그인 설정이 필요합니다. 운영 담당자가 배포 서버에 비밀번호와 로그인 보호 설정을 등록하면 진입할 수 있습니다.</p>}
+      {!ready && <p className="cn-alert">{setup.authIssue ? setupMessage[setup.authIssue] : "운영 담당자가 관리자 로그인 설정을 확인해 주세요."}</p>}
       <form className="cn-form" onSubmit={login}>
         <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required minLength={4} maxLength={256} value={password} onChange={event => setPassword(event.target.value)} disabled={pending || !ready} /></label>
         {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
