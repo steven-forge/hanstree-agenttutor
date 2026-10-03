@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
-import { fitCardCopy, copyIssues } from "../../lib/card-news/copy";
+import { fitCardCopy, copyIssues, CARD_SOURCE, cardSourceLines } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import "./admin-news.css";
 
@@ -404,7 +404,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">
-                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 6줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy"><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body">{card.body || "본문을 입력하세요"}</p></div></div></div>}
+                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 6줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy"><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body">{card.body || "본문을 입력하세요"}</p></div><p className="cn-card-source" style={{ left: `${CARD_SOURCE.left / 10.8}cqw`, top: `${CARD_SOURCE.top / 10.8}cqw`, width: `${CARD_SOURCE.width / 10.8}cqw`, fontSize: `${CARD_SOURCE.fontSize / 10.8}cqw`, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: `${CARD_SOURCE.letterSpacing / CARD_SOURCE.fontSize}em`, color: CARD_SOURCE.color }}>{cardSourceLines(card).join("\n")}</p></div></div>}
                     <p className="cn-preview-label">편집 미리보기 · 최종 줄바꿈과 넘침은 저장본 JPG에서 확인하세요.</p>
                     <button className="cn-button cn-button-small" onClick={() => { setJpgError(false); setShowJpg(value => !value); }} disabled={!hasSavedImage || !!pending || sessionExpired}>{showJpg ? "저장본 JPG 접기" : "실제 저장본 JPG 보기"}</button>
                     {!hasSavedImage && <p className="cn-help">이 카드를 저장하면 실제 JPG를 볼 수 있습니다.</p>}
