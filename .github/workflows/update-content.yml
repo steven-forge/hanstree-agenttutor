@@ -50,22 +50,26 @@ jobs:
         run: npm ci
 
       - name: Sync public newsletter policy (fail closed)
+        id: sync_policy
         run: python3 scripts/news_policy.py sync
+        continue-on-error: true
 
       - name: Check newsletter collection interval
         id: news_schedule
+        if: steps.sync_policy.outcome == 'success'
         env:
           POLICY_EVENT_NAME: ${{ github.event_name }}
           POLICY_EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
           NEWS_DUE="$(python3 scripts/news_policy.py due --event "$POLICY_EVENT_NAME" --schedule "$POLICY_EVENT_SCHEDULE")"
           echo "run=$NEWS_DUE" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
 
       - name: Collect official news and releases with synced policy
         id: collect_news
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          NEWS_COLLECTION_DUE: ${{ steps.news_schedule.outputs.run }}
+          NEWS_COLLECTION_DUE: ${{ steps.sync_policy.outcome == 'success' && steps.news_schedule.outcome == 'success' && steps.news_schedule.outputs.run == 'true' }}
         run: |
           if [ "$NEWS_COLLECTION_DUE" = "true" ]; then
             python3 scripts/collect_content.py news
@@ -89,7 +93,7 @@ jobs:
 
       - name: Collect hourly news (external sources, auto-publish)
         id: collect_hourly
-        if: steps.news_schedule.outputs.run == 'true'
+        if: steps.sync_policy.outcome == 'success' && steps.news_schedule.outcome == 'success' && steps.news_schedule.outputs.run == 'true'
         env:
           YOUTUBE_API_KEY: ${{ vars.ENABLE_YOUTUBE_NEWS == 'true' && secrets.YOUTUBE_API_KEY || '' }}
           X_BEARER_TOKEN: ${{ vars.ENABLE_X_NEWS == 'true' && secrets.X_BEARER_TOKEN || '' }}
@@ -115,8 +119,9 @@ jobs:
           fi
 
       - name: Check collection step outcome
+        if: always()
         run: |
-          if [ "${{ steps.collect_news.outcome }}" = "failure" ] || [ "${{ steps.collect_docs.outcome }}" = "failure" ] || [ "${{ steps.collect_hourly.outcome }}" = "failure" ]; then
-            echo "Error: One or more content collection tasks encountered total failure."
+          if [ "${{ steps.sync_policy.outcome }}" = "failure" ] || [ "${{ steps.news_schedule.outcome }}" = "failure" ] || [ "${{ steps.collect_news.outcome }}" = "failure" ] || [ "${{ steps.collect_docs.outcome }}" = "failure" ] || [ "${{ steps.collect_hourly.outcome }}" = "failure" ]; then
+            echo "Error: Policy synchronization, scheduling, or content collection failed. Newsletter publishing stays blocked when policy synchronization fails."
             exit 1
           fi
