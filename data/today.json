@@ -2,7 +2,7 @@
   "edition_date": "2026-10-03",
   "window_start": "2026-08-04T09:01:37.658149+09:00",
   "window_end": "2026-10-03T09:01:37.658149+09:00",
-  "collected_at": "2026-10-03T10:03:39.921435+09:00",
+  "collected_at": "2026-10-03T11:01:15.790200+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -43,6 +43,56 @@
         "new_features": "Mods에 대한 `$ .ui.selection' 추가: 전체 화면 모드에서 마지막으로 선택한 텍스트를 반환하고 선택 항목이 한 성적표 행 내에 있을 때 해당 행을 반환합니다.\n이미지에 GitHub CLI가 없는 클라우드 세션에 내장 `gh api` 를 추가하고 파일 이름, jq 필터 또는 GitHub 오류의 제어 문자를 터미널로 전송하는 내장 문자를 수정했습니다.",
         "bug_fixes": "턴에 실패하는 중간 응답 API 시간 초과 수정: 비대화형 세션 및 하위 에이전트가 이제 부분 응답에서 계속되고 사고 전용 응답이 다시 시도됩니다.\n마지막 회신에서 토큰 사용량 제로를 보고했을 때 자동 압축 대신 \"프롬프트가 너무 깁니다\" 로 긴 대화가 실패하는 문제 수정\n압축이 방금 복원한 파일 및 기타 컨텍스트를 삭제하는 `--resume' 수정",
         "chores": "자동 모드 개선: 대화가 클라이언트 측 안전 분류기가 검토하기에는 너무 길어지면 이제 모든 도구 호출을 묻거나 실패하는 대신 압축됩니다.\n화면 판독기 모드 개선: 삭제된 단어와 같은 짧은 공지사항이 이제 다음 키를 누르거나 화면에 표시되는 내용이 변경될 때까지 화면에 표시됩니다."
+      }
+    },
+    {
+      "id": "b3857f26daabd24c",
+      "title": "Apple says it’s tightening macOS ‘Full Disk Access’ controls due to new risks from AI agents",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents",
+      "source_summary": "Apple says it will add new controls around macOS’s Full Disk Access permission, warning that increasingly capable AI agents make broad access to users’ files, messages, mail, and browsing history riskier.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-03T11:01:15+09:00",
+      "published_at": "2026-10-02T18:11:27+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49937239",
+          "independent": false,
+          "target_url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents",
+          "independent": true
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49939300",
+          "independent": false,
+          "target_url": "https://daringfireball.net/2026/10/apple_full_disk_access"
+        },
+        {
+          "source_id": "ars-technica",
+          "name": "Ars Technica",
+          "url": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents",
+          "independent": true
+        }
+      ],
+      "title_ko": "Apple은 AI 에이전트의 새로운 위험으로 인해 macOS ‘전체 디스크 액세스’ 제어를 강화하고 있다고 말합니다.",
+      "source_summary_ko": "이 기능은 백업이 제대로 작동하도록 설계되었지만, 이제 AI 에이전트가 \"이러한 수준의 액세스와 관련된 위험\" 을 증가시켰다고 Apple은 말합니다.\n데스크톱에서 실행되는 AI 에이전트를 사용하면 macOS 설정을 조정하여 컴퓨터의 파일, 메시지 및 기타 개인 콘텐츠에 대한 액세스 권한을 각 앱에 제공할 수 있습니다.\nMuse의 경우, AI는 사용자가 전체 디스크 액세스를 활성화할 수 있도록 선택적으로 허용합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "In Muse’s case, the AI optionally allows users to enable Full Disk Access.",
+        "ko": "Muse의 경우, AI는 사용자가 전체 디스크 액세스를 활성화할 수 있도록 선택적으로 허용합니다."
       }
     },
     {
