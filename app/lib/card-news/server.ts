@@ -10,17 +10,27 @@ const prefix = "cardnews:{admin}:";
 const cookieName = "agenttutor_card_admin";
 const sessionSeconds = 28800;
 let localAttempts = { count: 0, expires: 0 };
-let signingKey: { password: string; key: Buffer } | undefined;
+let signingKey: { password: string; secret: string; key: Buffer } | undefined;
 function sessionSignature(value: string): string {
   const password = process.env.CARD_NEWS_ADMIN_PASSWORD!;
-  if (signingKey?.password !== password) signingKey = { password, key: scryptSync(password, "agenttutor-card-admin-session-v1", 32) };
+  const secret = process.env.CARD_NEWS_SIGNING_SECRET || "";
+  if (signingKey?.password !== password || signingKey?.secret !== secret) {
+    // A browser session needs a server secret independent of the login password.
+    // The password-only version is used solely to bind opaque Redis sessions.
+    const key = secret.length >= 32
+      ? createHmac("sha256", secret).update(`agenttutor-card-admin-session-v2:${password}`).digest()
+      : scryptSync(password, "agenttutor-card-admin-session-v1", 32);
+    signingKey = { password, secret, key };
+  }
   return createHmac("sha256", signingKey.key).update(value).digest("hex");
 }
 function passwordVersion() { return sessionSignature("server-session-v1"); }
 export function setupStatus(): AdminSetup {
+  const storage = Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
+  const passwordLength = process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0;
   return {
-    auth: (process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0) >= 16 && (process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0) <= 256,
-    storage: Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN),
+    auth: passwordLength >= 4 && passwordLength <= 256 && (storage || (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
+    storage,
     instagram: Boolean(process.env.INSTAGRAM_USER_ID && process.env.INSTAGRAM_ACCESS_TOKEN && process.env.CARD_NEWS_PUBLIC_URL && (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
     scheduler: Boolean(process.env.CARD_NEWS_CRON_SECRET),
   };
@@ -85,7 +95,7 @@ export async function isAdmin(): Promise<boolean> {
 }
 export async function requireAdmin() { if (!await isAdmin()) throw new AdminError("관리자 로그인이 필요합니다.", 401); }
 export async function login(password: unknown) {
-  if (!setupStatus().auth) throw new AdminError("운영 담당자가 관리자 비밀번호를 먼저 등록해야 합니다.", 503);
+  if (!setupStatus().auth) throw new AdminError("운영 담당자가 관리자 비밀번호와 로그인 보호 설정을 먼저 등록해야 합니다.", 503);
   let attempts: number;
   if (setupStatus().storage) {
     attempts = await redis<number>("EVAL", "local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],900) end; return n", 1, `${prefix}login-limit`);

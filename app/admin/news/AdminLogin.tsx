@@ -41,9 +41,9 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
     </div>
     <section className="cn-panel cn-login-panel" aria-labelledby="cn-login-heading">
       <h2 id="cn-login-heading">관리자 로그인</h2>
-      {!ready && <p className="cn-alert">관리자 비밀번호 설정이 필요합니다. 운영 담당자가 배포 서버의 보안 설정에 비밀번호를 등록하면 진입할 수 있습니다.</p>}
+      {!ready && <p className="cn-alert">관리자 로그인 설정이 필요합니다. 운영 담당자가 배포 서버에 비밀번호와 로그인 보호 설정을 등록하면 진입할 수 있습니다.</p>}
       <form className="cn-form" onSubmit={login}>
-        <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required maxLength={256} value={password} onChange={event => setPassword(event.target.value)} disabled={pending || !ready} /></label>
+        <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required minLength={4} maxLength={256} value={password} onChange={event => setPassword(event.target.value)} disabled={pending || !ready} /></label>
         {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
         <button className="cn-button cn-button-primary" type="submit" disabled={pending || !password || !ready}>{pending ? "비밀번호 확인 중…" : "관리자 화면 진입"}</button>
       </form>
