@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { AdminError, getEdition, login, logout, putEdition, readBody, requireAdmin, requireSameOrigin, snapshot, validDate } from "../../../lib/card-news/server";
 import { collectEdition, canonicalUrl } from "../../../lib/card-news/collect";
-import { editionIssues, kstDate, type Edition, type NewsCandidate, type NewsCard } from "../../../lib/card-news/types";
+import { editionIssues, kstDate, MAX_CANDIDATES, type Edition, type NewsCandidate, type NewsCard } from "../../../lib/card-news/types";
 import { renderBundle, renderCard } from "../../../lib/card-news/render";
 import { instagramAccount, publishEdition, reconcileEdition } from "../../../lib/card-news/instagram";
 
@@ -13,7 +13,7 @@ function json(value: unknown, status = 200) { return NextResponse.json(value, { 
 function failure(error: unknown) { return json({ error: error instanceof AdminError ? error.message : "처리를 완료하지 못했습니다. 저장 상태를 확인한 뒤 다시 시도해 주세요." }, error instanceof AdminError ? error.status : 500); }
 function str(value: unknown, max: number, label: string) { if (typeof value !== "string" || value.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value)) throw new AdminError(`${label} 입력을 확인해 주세요.`); return value.trim(); }
 function parseCandidates(input: unknown): NewsCandidate[] {
-  if (!Array.isArray(input) || input.length > 200) throw new AdminError("후보 목록은 200개까지 저장할 수 있습니다.");
+  if (!Array.isArray(input) || input.length > MAX_CANDIDATES) throw new AdminError("후보 목록은 1,000개까지 저장할 수 있습니다.");
   return input.map(c => {
     if (!c || typeof c !== "object") throw new AdminError("후보 형식을 확인하세요.");
     const url = canonicalUrl(c.sourceUrl); if (!url) throw new AdminError("원문 주소는 https 주소를 입력하세요.");

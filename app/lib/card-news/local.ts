@@ -1,6 +1,6 @@
 "use client";
 import { zipSync, strToU8 } from "fflate";
-import { editionIssues, editionWindow, cardIssues, type AdminSnapshot, type Edition } from "./types";
+import { editionIssues, editionWindow, cardIssues, preserveDraft, MAX_CANDIDATES, type AdminSnapshot, type Edition } from "./types";
 
 const key = "agenttutor-card-news-v1:";
 const setup = { auth: true, storage: false, instagram: false, scheduler: false };
@@ -26,6 +26,11 @@ export async function localAction(body: Record<string, unknown>): Promise<AdminS
   if (!navigator.locks) throw new Error("탭 간 원고 보호를 지원하는 최신 브라우저에서 열어 주세요.");
   return navigator.locks.request(`${key}${String(body.date)}`, () => lockedAction(body));
 }
+async function newsletterEdition(date: string): Promise<Edition> {
+  const response = await fetch(`/api/card-news-candidates?date=${date}`, { cache: "no-store" });
+  const data = await response.json(); if (!response.ok) throw new Error(data.error || "뉴스레터를 가져오지 못했습니다.");
+  return data.edition as Edition;
+}
 async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapshot> {
   const date = String(body.date), old = read(date);
   if (!/^20\d{2}-\d{2}-\d{2}$/.test(date)) throw new Error("날짜를 확인하세요.");
@@ -33,22 +38,16 @@ async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapsho
   let edition: Edition;
   if (body.action === "collect") {
     if (old && old.status !== "draft") throw new Error("원고를 수정·저장해 검토를 해제한 뒤 다시 수집하세요.");
-    const response = await fetch(`/api/card-news-candidates?date=${date}`, { cache: "no-store" });
-    const data = await response.json(); if (!response.ok) throw new Error(data.error || "후보를 가져오지 못했습니다.");
-    edition = data.edition as Edition;
-    if (old) {
-      const preserved = old.candidates.filter(c => c.origin === "manual" || old.cards.some(card => card.candidateId === c.id));
-      edition.candidates = [...preserved, ...edition.candidates.filter(c => !preserved.some(p => p.id === c.id || p.sourceUrl === c.sourceUrl))].slice(0, 200);
-      edition.cards = old.cards; edition.caption = old.caption;
-    }
+    edition = preserveDraft(await newsletterEdition(date), old);
   } else if (body.action === "import") {
     const incoming = body.edition as Edition;
-    if (!incoming || incoming.date !== date || !Array.isArray(incoming.cards) || incoming.cards.length > 10 || !Array.isArray(incoming.candidates) || incoming.candidates.length > 200 || typeof incoming.caption !== "string" || incoming.caption.length > 5000) throw new Error("이 날짜의 카드뉴스 원고 JSON을 선택하세요.");
+    if (!incoming || incoming.date !== date || !Array.isArray(incoming.cards) || incoming.cards.length > 10 || !Array.isArray(incoming.candidates) || incoming.candidates.length > MAX_CANDIDATES || typeof incoming.caption !== "string" || incoming.caption.length > 5000) throw new Error("이 날짜의 카드뉴스 원고 JSON을 선택하세요.");
     const text = (value: unknown, limit: number) => typeof value === "string" && value.length <= limit;
     const url = (value: unknown) => { try { const u = new URL(String(value)); return u.protocol === "https:" && !u.username && !u.password; } catch { return false; } };
     for (const c of incoming.candidates) if (!c || !text(c.id, 100) || !text(c.title, 200) || !text(c.summary, 600) || !text(c.sourceName, 100) || !url(c.sourceUrl) || !text(c.publishedAt, 40)) throw new Error("후보 기록의 형식을 확인하세요.");
     for (const c of incoming.cards) if (!c || !text(c.candidateId, 100) || !text(c.title, 180) || !text(c.body, 600) || !text(c.sourceName, 100) || !url(c.sourceUrl) || !text(c.publishedAt, 40) || !incoming.candidates.some(n => n.id === c.candidateId)) throw new Error("카드 원고의 형식을 확인하세요.");
     edition = { date, revision: 0, status: "draft", ...editionWindow(date), collectedAt: "", candidates: incoming.candidates.map(c => ({ id: c.id, title: c.title, summary: c.summary, sourceName: c.sourceName, sourceUrl: c.sourceUrl, publishedAt: c.publishedAt, origin: "manual", datePrecision: c.datePrecision === "time" ? "time" : "day" })), sources: [], cards: incoming.cards.map(c => ({ candidateId: c.candidateId, title: c.title, body: c.body, sourceName: c.sourceName, sourceUrl: c.sourceUrl, publishedAt: c.publishedAt, verified: false })), caption: incoming.caption, updatedAt: "" };
+    edition = preserveDraft(await newsletterEdition(date), edition);
   } else if (body.action === "save" && old) {
     edition = { ...old, cards: body.cards as Edition["cards"], candidates: body.candidates as Edition["candidates"] || old.candidates, caption: String(body.caption || ""), status: "draft", approvedAt: undefined };
   } else if (body.action === "approve" && old) {

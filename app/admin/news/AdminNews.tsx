@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent } from "react";
-import { cardIssues, captionFor, editionIssues, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
+import { cardIssues, captionFor, editionIssues, selectableCandidates, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import "./admin-news.css";
 
@@ -10,12 +10,10 @@ const STATUS: Record<Edition["status"], string> = {
   draft: "초안", approved: "검토 완료", publishing: "발행 처리 중", published: "발행 완료", needs_check: "발행 결과 확인 필요",
 };
 const ACTION_LABEL: Record<string, string> = {
-  load: "판본을 불러오는 중…", collect: "뉴스 후보를 수집하는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
+  load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
   approve: "카드 10장의 JPG와 검토 결과를 확인하는 중…", publish: "Instagram 발행을 요청하는 중…", reconcile: "최초 발행 요청을 이어 처리하고 결과를 확인하는 중…", check_connection: "연결된 Instagram 계정을 확인하는 중…", logout: "로그아웃 중…",
 };
 type ApiResult = Partial<AdminSnapshot> & { error?: string; id?: string; username?: string };
-type ManualInput = { title: string; summary: string; sourceUrl: string; sourceName: string; publishedAt: string };
-const EMPTY_MANUAL: ManualInput = { title: "", summary: "", sourceUrl: "", sourceName: "", publishedAt: "" };
 
 function safeHref(value?: string): string | undefined {
   try { const url = new URL(value || ""); return url.protocol === "https:" && !url.username && !url.password ? url.href : undefined; } catch { return undefined; }
@@ -40,7 +38,7 @@ function needsExactTime(card: NewsCard, candidate?: NewsCandidate) {
 function timeIssue(card: NewsCard, edition: Edition) {
   if (needsExactTime(card, edition.candidates.find(candidate => candidate.id === card.candidateId))) return "원문에서 정확한 발행 시각을 확인해 입력하세요.";
   const time = Date.parse(card.publishedAt);
-  if (time < Date.parse(edition.windowStart) || time > Date.parse(edition.windowEnd)) return "발행 시각이 이 판본의 24시간 선정 구간 밖입니다.";
+  if (time < Date.parse(edition.windowStart) || time > Date.parse(edition.windowEnd)) return "발행 시각이 이 판본의 후보 기간 밖입니다.";
   return "";
 }
 // All source text remains available; long drafts are flagged for editing rather than silently cut.
@@ -82,8 +80,6 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const [publishUncertain, setPublishUncertain] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [search, setSearch] = useState("");
-  const [manual, setManual] = useState<ManualInput>(EMPTY_MANUAL);
-  const [manualError, setManualError] = useState("");
   const [showJpg, setShowJpg] = useState(false);
   const [jpgError, setJpgError] = useState(false);
   const [jpgPending, setJpgPending] = useState(false);
@@ -99,6 +95,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const locked = publishUncertain || (!!edition && ["publishing", "published", "needs_check"].includes(edition.status));
   const canEdit = !!edition && !locked && !pending && !sessionExpired && (localMode || snapshot.setup.storage);
   const selected = edition?.cards || [];
+  const candidateCount = edition ? selectableCandidates(edition).length : 0;
+  const retainedCount = edition ? edition.candidates.length - candidateCount : 0;
   const currentIndex = Math.min(activeIndex, Math.max(0, selected.length - 1));
   const card = selected[currentIndex];
   const currentCandidate = edition?.candidates.find(candidate => candidate.id === card?.candidateId);
@@ -113,7 +111,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const verifiedCount = edition?.cards.filter(item => item.verified && !timeIssue(item, edition)).length || 0;
   const candidates = useMemo(() => {
     const query = search.trim().toLocaleLowerCase();
-    return (edition?.candidates || []).filter(candidate => !query || `${candidate.title} ${candidate.summary} ${candidate.sourceName}`.toLocaleLowerCase().includes(query));
+    return (edition ? selectableCandidates(edition) : []).filter(candidate => !query || `${candidate.title} ${candidate.summary} ${candidate.sourceName}`.toLocaleLowerCase().includes(query));
   }, [edition?.candidates, search]);
 
   useEffect(() => {
@@ -198,15 +196,15 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     try {
       const result = localMode ? await localSnapshot(nextDate) : await readResponse(await fetch(`${API}?${new URLSearchParams({ date: nextDate })}`, { cache: "no-store", credentials: "same-origin" }));
       if (result.edition === undefined) throw new Error("판본 정보가 응답에 없습니다. 다시 시도해 주세요.");
-      accept(result, nextDate); setActiveIndex(0); setSearch(""); setManual(EMPTY_MANUAL); setManualError(""); setShowJpg(false);
-      setMessage(result.edition ? "저장된 판본을 불러왔습니다." : "아직 이 날짜의 판본이 없습니다. 후보 수집부터 시작하세요.");
+      accept(result, nextDate); setActiveIndex(0); setSearch(""); setShowJpg(false);
+      setMessage(result.edition ? "저장된 판본을 불러왔습니다." : "아직 이 날짜의 판본이 없습니다. 뉴스레터 불러오기부터 시작하세요.");
     } catch (caught) { setError(caught instanceof Error ? caught.message : "판본을 불러오지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
   }
 
   async function act(action: string, extra: Record<string, unknown> = {}) {
     if (operation.current || (sessionExpired && action !== "logout")) return;
-    if (action === "collect" && dirty && !window.confirm("저장하지 않은 수정이 있습니다. 수정을 버리고 새 후보를 수집할까요? 저장된 원고와 선택은 유지됩니다.")) return;
+    if (action === "collect" && dirty && !window.confirm("저장하지 않은 수정이 있습니다. 수정을 버리고 뉴스레터 후보를 다시 불러올까요? 저장된 원고와 선택은 유지됩니다.")) return;
     if (action === "logout" && dirty && !window.confirm("저장하지 않은 수정이 있습니다. 수정을 버리고 로그아웃할까요?")) return;
     operation.current = true; setPending(action); setError(""); setMessage("");
     try {
@@ -221,9 +219,9 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       if (action === "collect") { setActiveIndex(0); setShowJpg(false); }
       const next = result.edition;
       if (action === "collect") {
-        const count = next?.candidates.length || 0;
-        if (count < 10) setError(`후보 수집 미달: ${count}개입니다. 제작 완료로 처리할 수 없습니다. 같은 24시간 구간의 새 원문을 추가하거나 실패한 출처를 복구해 주세요.`);
-        else setMessage(`${count}개 후보를 가져왔습니다. 원문과 발행 시각을 확인해 10개를 선정하세요.`);
+        const count = next ? selectableCandidates(next).length : 0;
+        if (count < 10) setError(`후보 수집 미달: ${count}개입니다. 제작 완료로 처리할 수 없습니다. 뉴스레터의 공개 기사와 수집 상태를 확인해 주세요.`);
+        else setMessage(`${count}개 뉴스레터 후보를 가져왔습니다. 원문과 발행 시각을 확인해 10개를 선정하세요.`);
       }
       if (action === "save") setMessage("원고를 저장했습니다. 변경된 원고의 검토 상태는 초안입니다.");
       if (action === "approve") setMessage("검토를 완료했습니다. 저장본 JPG를 확인한 뒤 발행 버튼을 눌러 주세요.");
@@ -305,21 +303,6 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     [cards[currentIndex], cards[next]] = [cards[next], cards[currentIndex]];
     setEdition({ ...edition, cards }); setActiveIndex(next); setMessage("");
   }
-  function addManual(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!canEdit || !edition) return;
-    setManualError("");
-    const sourceUrl = safeHref(manual.sourceUrl.trim());
-    const publishedAt = fromKstInput(manual.publishedAt);
-    if (!sourceUrl || !manual.title.trim() || !manual.summary.trim() || !publishedAt) { setManualError("https 원문 주소, 제목, 요약, 실제 발행 시각을 모두 입력하세요."); return; }
-    if (Date.parse(publishedAt) < Date.parse(edition.windowStart) || Date.parse(publishedAt) > Date.parse(edition.windowEnd)) { setManualError("실제 발행 시각이 이 판본의 선정 구간 밖입니다. 오래된 기사를 최신 뉴스로 추가할 수 없습니다."); return; }
-    if (edition.candidates.some(candidate => candidate.sourceUrl.replace(/\/$/, "") === sourceUrl.replace(/\/$/, ""))) { setManualError("이미 같은 원문 주소의 후보가 있습니다. 후보 목록에서 선택하세요."); return; }
-    const candidate: NewsCandidate = { id: `manual-${crypto.randomUUID()}`, title: manual.title.trim(), summary: manual.summary.trim(), sourceName: manual.sourceName.trim() || new URL(sourceUrl).hostname, sourceUrl, publishedAt, datePrecision: "time", origin: "manual" };
-    const cards = edition.cards.length < 10 ? [...edition.cards, candidateCard(candidate)] : edition.cards;
-    setEdition({ ...edition, candidates: [...edition.candidates, candidate], cards });
-    if (cards.length > edition.cards.length) setActiveIndex(cards.length - 1);
-    setManual(EMPTY_MANUAL); setMessage("수동 후보를 추가했습니다. 원고 저장 후 원문 검토를 완료하세요.");
-  }
   function regenerateCaption() {
     if (!canEdit || !edition) return;
     if (edition.caption.trim() && !window.confirm("현재 설명을 선택한 뉴스와 출처 목록으로 바꿀까요?")) return;
@@ -333,7 +316,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
   return <main className="cn-shell">
     <header className="cn-header">
-      <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">수집부터 원고 검토, Instagram 발행까지 하루 판본으로 관리합니다.</p><div className="cn-targets"><span><strong>08:30</strong> 검토 준비 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div></div>
+      <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">뉴스레터에서 뉴스를 골라 카드 원고를 검토하고 Instagram 발행을 준비합니다.</p><div className="cn-targets"><span><strong>08:30</strong> 검토 준비 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div></div>
       <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
     </header>
 
@@ -346,30 +329,33 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         {dirty && <span className="cn-tag cn-tag-warn">저장하지 않은 수정</span>}
         <div className="cn-toolbar-actions">
           <button className="cn-button" onClick={() => loadDate(date)} disabled={!!pending}>상태 새로 확인</button>
-          <button className="cn-button" onClick={() => act("collect")} disabled={!!pending || locked || edition?.status === "approved" || sessionExpired || (!localMode && !snapshot.setup.storage)}>{edition ? "후보 다시 수집" : "후보 수집 시작"}</button>
+          <button className="cn-button" onClick={() => act("collect")} disabled={!!pending || locked || edition?.status === "approved" || sessionExpired || (!localMode && !snapshot.setup.storage)}>{edition ? "뉴스레터 다시 불러오기" : "뉴스레터 불러오기"}</button>
           <button className="cn-button cn-button-primary" onClick={() => edition && act("save", { cards: edition.cards, caption: edition.caption, candidates: edition.candidates })} disabled={!canEdit || !dirty}>원고 저장</button>
         </div>
       </div>
-      <p className="cn-help">{edition ? `선정 구간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 수집 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : "전날 08:00부터 해당 날짜 08:00까지의 뉴스를 모읍니다. 날짜와 원문이 확인된 서로 다른 뉴스 10개가 필요합니다."}</p>
+      <p className="cn-help">{edition ? `후보 발행 기간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 불러옴 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : "뉴스레터에 공개된 전체 기사를 최신순으로 불러옵니다. 판본 날짜 이후의 기사는 제외합니다."}</p>
+      <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 후보는 뉴스레터 공개 기사만 사용합니다. 최신순이며 중요도 순위는 아닙니다.</p>
+      {retainedCount > 0 && <p className="cn-alert cn-alert-info">이전 후보 {retainedCount}개는 원고 보존용으로 남겨 두었습니다. 새 뉴스레터 후보 수에는 포함하지 않으며, 해당 카드는 뉴스레터 후보로 다시 선정해야 합니다.</p>}
+      {edition && !edition.candidateSource && <p className="cn-alert cn-alert-info">이전 방식으로 저장한 판본입니다. 뉴스레터 다시 불러오기를 누르면 저장한 카드와 설명을 유지하며 후보를 갱신합니다.</p>}
       <p className="cn-help">현재 발행 방식: 관리자 검토 후 버튼으로 발행. 화면의 목표 시각에 자동으로 게시되지는 않습니다.</p>
       {pending && <p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!dirty || window.confirm("저장하지 않은 수정은 사라집니다. 원고를 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
       {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
-      {edition && edition.candidates.length < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {edition.candidates.length}/10</strong><p>정상 제작 완료 상태가 아닙니다. 실패한 출처를 확인하고, 같은 24시간 구간의 새 출처를 추가해 주세요. 원문·날짜 확인을 통과한 서로 다른 뉴스가 최소 10개 필요합니다.</p></div>}
+      {edition && candidateCount < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {candidateCount}/10</strong><p>정상 제작 완료 상태가 아닙니다. 뉴스레터의 공개 기사와 수집 상태를 확인한 뒤 다시 불러오세요. 원문·날짜 확인을 통과한 서로 다른 뉴스가 최소 10개 필요합니다.</p></div>}
       {edition?.status === "needs_check" && <div className="cn-alert"><strong>중복 발행을 막기 위해 편집과 재발행을 잠갔습니다.</strong><p>{edition.publication?.message || "Instagram이 이전 요청을 처리했는지 먼저 확인해야 합니다."}</p><p>아래 버튼은 최초 요청한 발행을 이어서 처리합니다. 이미지 준비가 끝났다면 실제 게시까지 진행할 수 있습니다.</p><button className="cn-button" onClick={() => act("reconcile")} disabled={!!pending || sessionExpired}>발행 계속 및 확인</button></div>}
       {edition?.status === "publishing" && <div className="cn-alert cn-alert-info"><p>발행 요청을 처리하고 있습니다. 원고는 잠겨 있습니다. 아래 버튼으로 최초 발행 요청을 이어 처리하고 결과를 확인할 수 있습니다.</p><button className="cn-button" onClick={() => act("reconcile")} disabled={!!pending || sessionExpired}>발행 계속 및 확인</button></div>}
       {edition?.status === "published" && <p className="cn-alert cn-alert-success">{formatTime(edition.publishedAt)} KST 발행 완료. 이 판본의 원고는 잠겨 있습니다. {safeHref(edition.publication?.permalink) && <a className="cn-text-link" href={safeHref(edition.publication?.permalink)} target="_blank" rel="noopener noreferrer">Instagram 게시물 보기</a>}</p>}
     </section>
 
-    {!edition ? <section className="cn-empty" style={{ marginTop: 22 }}><h2>아직 준비된 판본이 없습니다</h2><p>‘후보 수집 시작’을 누르면 이 날짜의 뉴스 후보를 가져옵니다. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요.</p></section> : <>
+    {!edition ? <section className="cn-empty" style={{ marginTop: 22 }}><h2>아직 준비된 판본이 없습니다</h2><p>‘뉴스레터 불러오기’를 누르면 뉴스레터에 올라온 기사를 가져옵니다. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요.</p></section> : <>
       <div className="cn-stats" aria-label="제작 진행 상황">
-        <div className={`cn-stat ${edition.candidates.length < 10 ? "cn-stat-warn" : ""}`}><span>수집 후보</span><strong>{edition.candidates.length}개</strong></div>
+        <div className={`cn-stat ${candidateCount < 10 ? "cn-stat-warn" : ""}`}><span>뉴스레터 후보</span><strong>{candidateCount}개</strong></div>
         <div className={`cn-stat ${selected.length !== 10 ? "cn-stat-warn" : ""}`}><span>선정한 뉴스</span><strong>{selected.length}/10</strong></div>
         <div className={`cn-stat ${verifiedCount !== 10 ? "cn-stat-warn" : ""}`}><span>원문 검토</span><strong>{verifiedCount}/10</strong></div>
       </div>
       <div className="cn-workspace">
         <section className="cn-panel" aria-labelledby="cn-candidates-heading">
-          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. 뉴스 후보 선정</h2><p className="cn-muted">같은 사건의 중복 보도를 하나로 골라 주세요.</p></div></div>
+          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. 뉴스 후보 선정</h2><p className="cn-muted">뉴스레터 공개 기사에서 서로 다른 뉴스 10개를 골라 주세요.</p></div></div>
           <label className="cn-field">후보 검색<input type="search" placeholder="제목·출처·내용 검색" value={search} onChange={event => setSearch(event.target.value)} /></label>
           <div className="cn-candidates">
             {candidates.length ? candidates.map(candidate => {
@@ -377,23 +363,12 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
               return <div className="cn-candidate" key={candidate.id}>
                 <label className="cn-candidate-label"><input type="checkbox" checked={index >= 0} disabled={!canEdit || (selected.length >= 10 && index < 0)} onChange={() => toggleCandidate(candidate)} /><span className="cn-candidate-title">{candidate.title} {index >= 0 && <span className="cn-tag cn-tag-info">카드 {index + 1}</span>}</span></label>
                 <p>{candidate.summary || "요약이 없습니다. 원문을 읽고 카드 본문을 작성하세요."}</p>
-                <div className="cn-candidate-meta">{safeHref(candidate.sourceUrl) ? <a className="cn-text-link" href={safeHref(candidate.sourceUrl)} target="_blank" rel="noopener noreferrer">{candidate.sourceName || "원문 보기"}</a> : <span>유효한 원문 주소 필요</span>}<span>{candidate.datePrecision === "time" ? `${formatTime(candidate.publishedAt)} KST` : "날짜만 확인 · 정확한 시각 입력 필요"}</span>{candidate.origin === "manual" && <span className="cn-tag">수동 추가</span>}</div>
+                <div className="cn-candidate-meta">{safeHref(candidate.sourceUrl) ? <a className="cn-text-link" href={safeHref(candidate.sourceUrl)} target="_blank" rel="noopener noreferrer">{candidate.sourceName || "원문 보기"}</a> : <span>유효한 원문 주소 필요</span>}<span>{candidate.datePrecision === "time" ? `${formatTime(candidate.publishedAt)} KST` : `${candidate.publishedAt} · 날짜만 확인`}</span>{candidate.newsletterId && <a className="cn-text-link" href={`/today/${encodeURIComponent(candidate.newsletterId)}`} target="_blank" rel="noopener noreferrer">뉴스레터 보기</a>}</div>
               </div>;
-            }) : <p className="cn-muted">{search ? "검색 결과가 없습니다." : "수집된 후보가 없습니다. 출처 상태를 확인하거나 원문을 직접 추가하세요."}</p>}
+            }) : <p className="cn-muted">{search ? "검색 결과가 없습니다." : "뉴스레터 후보가 없습니다. 뉴스레터의 수집 상태를 확인해 주세요."}</p>}
           </div>
           {selected.length >= 10 && <p className="cn-help">10개를 선정했습니다. 다른 후보를 고르려면 기존 선택을 해제하세요.</p>}
-          <details className="cn-manual"><summary>원문으로 후보 직접 추가</summary>
-            <form className="cn-form" onSubmit={addManual}>
-              <p className="cn-help">같은 선정 구간 안의 뉴스만 추가하세요. 제목이 달라도 같은 사건이면 별개 뉴스로 세지 않습니다.</p>
-              <label className="cn-field">원문 주소<input type="url" required placeholder="https://" value={manual.sourceUrl} onChange={event => setManual({ ...manual, sourceUrl: event.target.value })} disabled={!canEdit} /></label>
-              <label className="cn-field">출처 이름<input value={manual.sourceName} placeholder="회사·매체 이름 (선택)" onChange={event => setManual({ ...manual, sourceName: event.target.value })} disabled={!canEdit} /></label>
-              <label className="cn-field">실제 발행 시각 · KST<input type="datetime-local" step="1" required value={manual.publishedAt} onChange={event => setManual({ ...manual, publishedAt: event.target.value })} disabled={!canEdit} /><small>원문의 시간대를 한국 시간으로 변환해 입력하세요.</small></label>
-              <label className="cn-field">뉴스 제목<input required value={manual.title} onChange={event => setManual({ ...manual, title: event.target.value })} disabled={!canEdit} /></label>
-              <label className="cn-field">원문에서 확인한 요약<textarea rows={4} required value={manual.summary} onChange={event => setManual({ ...manual, summary: event.target.value })} disabled={!canEdit} /></label>
-              {manualError && <p className="cn-alert cn-alert-error" role="alert">{manualError}</p>}
-              <button className="cn-button" disabled={!canEdit} type="submit">후보 추가{selected.length < 10 ? " 및 카드 선택" : ""}</button>
-            </form>
-          </details>
+
         </section>
 
         <div>
@@ -402,7 +377,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
             {selected.length ? <>
               <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>
               {card && <>
-                <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
+                <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><button className="cn-button cn-button-small" disabled={!canEdit} onClick={() => { if (window.confirm("이 카드 선택을 해제할까요? 편집한 내용이 필요하면 먼저 원고 JSON을 내보내 주세요.")) { setEdition({ ...edition, cards: edition.cards.filter((_, index) => index !== currentIndex) }); setMessage(""); } }}>카드 선택 해제</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
                     <label className="cn-field">제목 · {card.title.split("\n").length}/2줄<textarea rows={2} value={card.title} onChange={event => changeCard({ title: event.target.value })} disabled={!canEdit} /><small>줄바꿈 위치가 이미지에 그대로 반영됩니다.</small></label>
