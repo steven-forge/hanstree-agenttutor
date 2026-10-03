@@ -2,7 +2,7 @@
   "edition_date": "2026-10-03",
   "window_start": "2026-08-04T09:01:37.658149+09:00",
   "window_end": "2026-10-03T09:01:37.658149+09:00",
-  "collected_at": "2026-10-03T16:09:15.885232+09:00",
+  "collected_at": "2026-10-03T17:02:24.185270+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -23,7 +23,24 @@
       "source_excerpt": {
         "original": "Engineers start with a multi-day in-person program with Anthropic engineers and licensed instructors.",
         "ko": "엔지니어는 Anthropic 엔지니어와 면허를 소지한 강사와 함께 며칠 동안 진행되는 대면 프로그램으로 시작합니다."
-      }
+      },
+      "sources": [
+        {
+          "source_id": "anthropic-news",
+          "name": "Anthropic News",
+          "url": "https://www.anthropic.com/news/claude-frontier-academy",
+          "independent": false
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49942155",
+          "independent": false,
+          "target_url": "https://www.unite.ai/new-anthropic-academy-backs-10-000-engineer-residencies-with-100m"
+        }
+      ],
+      "independent_source_count": 0,
+      "importance": "normal"
     },
     {
       "id": "da2d811b9d25331f",
@@ -85,6 +102,13 @@
           "name": "Ars Technica",
           "url": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents",
           "independent": true
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49942045",
+          "independent": false,
+          "target_url": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents"
         }
       ],
       "title_ko": "Apple은 AI 에이전트의 새로운 위험으로 인해 macOS ‘전체 디스크 액세스’ 제어를 강화하고 있다고 말합니다.",
