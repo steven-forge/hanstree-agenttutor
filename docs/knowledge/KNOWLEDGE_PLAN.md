@@ -39,7 +39,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교)의 네 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교)의 다섯 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -158,3 +158,14 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 
 - v0.11.4: 본문 문단과 요금 설명을 짧게 나누고 MCP 표준과 Exa MCP 연결 도구를 구분했다. 비교표는 검색·본문 수집의 공통 기능을 명시하고 Firecrawl의 접근 가능한 하위 페이지 수집 설명과 공식 출처를 보완했다.
 - 기존 세 문서·퀴즈 값 보존, 새 원고와 5문항 일치, Explore 무결성·채점 점검, 최종 빌드(54개 정적 페이지)가 통과했다. 로컬 Exa 문서·목록과 개별 오답→정답 재선택을 HTTP로 확인했다. 실제 브라우저 클릭·모바일 화면 배치는 직접 확인하지 않았다.
+
+## 다섯 번째 문서(Laya) 추가
+
+- 사용자 요청에 따라 Laya 설명 문서를 작성했다. Laya 공식 소개·GitHub README·Benchmarks(확인일 2026-10-03 KST), TypeSafe 공식 문서를 근거로 썼다.
+- `data/explore.json`에 slug `laya` 문서 1건(8번 구성: 핵심 답변·쉬운 설명·Router/체크포인트 설명·그림·Jev 비교·자세한 설명·헷갈리는 점·출처·퀴즈)을 추가했다. 기존 네 문서 값은 그대로 두었다.
+- `data/explore-quizzes.json`에 `laya` 퀴즈(`version: 1`, 5문항)를 추가했다. 개념은 choice가 실제 처리 완료가 아닌 분류 결과라는 점, choice/score/noul의 형식 구분, 로컬 실행 준비와 첫 다운로드·운영 비용, 벤치마크의 조건 의존성과 검증 필요성을 다룬다.
+- 내장 imagegen으로 8컷 웹툰(`public/explore/laya-webtoon.png`, 1024×1536)을 생성해 저장했다. 가상 쇼핑몰 문의로 선택·점수·확률과 판단/실행의 차이를 설명한다.
+- `docs/knowledge/LAYA.md`를 기존 문서와 같은 8개 섹션 구성으로 작성했다.
+- laya-ai.com·Laya Studio 같은 비공식 커뮤니티·독립 호스팅 서비스는 공식 출처로 쓰지 않았고, 본문에 공식 모델과 구분된다는 점을 명시했다. Jev와의 속도·정확도 우열은 단정하지 않았다.
+- `package.json`/`package-lock.json` 버전을 0.11.6으로 올렸다.
+- 기존 4문서·퀴즈 값 보존, 새 원고와 5문항 일치, 웹툰 치수를 확인했다. 최종 빌드가 통과했고 55개 정적 페이지에 Laya 상세 페이지가 포함됐다. 실제 Laya 모델을 설치하거나 실행한 작업은 아니며 설명 문서 추가다. 실제 브라우저 클릭·모바일 화면 배치는 확인하지 않았다.

@@ -516,6 +516,148 @@
           "url": "https://exa.ai/docs/reference/pricing"
         }
       ]
+    },
+    {
+      "slug": "laya",
+      "title": "Laya: 내 서버에서 실행하는 판단용 AI",
+      "summary": "Laya는 글을 길게 쓰는 대신, 주어진 내용을 읽고 선택·점수·확률로 답하는 AI 모델입니다. Convai Innovations가 공개했으며, 판단할 내용(state)과 답변 형식을 정한 질문(typed questions)을 받아 choice·score·noul 같은 정해진 형태의 값만 돌려줍니다. Apache 2.0 오픈소스라 모델 파일을 준비하면 내 하드웨어에서 직접 실행할 수 있습니다.",
+      "topic": "AI 모델",
+      "tags": [
+        "Laya",
+        "Jev",
+        "판단 모델",
+        "로컬 실행",
+        "오픈소스"
+      ],
+      "created_at": "2026-10-03",
+      "updated_at": "2026-10-03",
+      "reviewed_at": "2026-10-03",
+      "question": "Laya는 무엇이고 어떤 판단 작업에 쓰이나요?",
+      "core_answer": "Laya는 글을 길게 쓰는 대신, 주어진 내용을 읽고 선택·점수·확률로 답하는 AI 모델입니다. 판단할 내용인 state(텍스트·이메일·문의·JSON)와 답변 형식을 정한 질문인 typed questions를 함께 보내면, choice(선택), score(점수), noul(참일 확률 0~1) 중 정해진 형태의 값을 돌려줍니다.\n\n일반적인 생성형 AI(LLM)는 길게 글을 쓰거나 대화를 이어가는 데 쓰이지만, Laya는 글을 쓰지 않고 미리 정한 질문에 선택·점수·확률 값만 답하는 역할을 맡습니다.\n\n긴 문장을 생성하지 않고 정해진 구조의 판단값만 내놓으며, 모델 파일과 실행 환경을 준비하면 내 서버·내 하드웨어에서 실행할 수 있습니다.",
+      "easy_explanation": "가상 쇼핑몰에 '결제가 두 번 됐어요. 확인해 주세요.'라는 문의가 왔다고 가정해 보세요. Laya에 이 문의를 판단할 내용(state)으로 보내고, '담당 부서는?'(choice), '긴급도는?'(score), '중복 결제를 주장하는가?'(noul) 같은, 답변 형식을 정한 질문(typed questions)을 함께 보내면 각각에 맞는 판단값을 받습니다.\n\n이 출력값은 실제 호출 결과가 아니라 이해를 돕기 위한 가상 예시입니다. Laya는 부서 추천이나 긴급도 같은 판단 결과만 주며, 실제 주문 조회·환불 정책 검증·승인 처리는 이 판단값을 받은 앱이 따로 수행합니다.",
+      "api_explanation_title": "Router와 체크포인트",
+      "api_explanation": "체크포인트는 저장된 모델 파일을 뜻하고, Router는 입력에 맞는 모델을 고르는 도우미입니다. Laya 공식 README에 따르면 Python 3.10+ 환경에 pip로 설치하며, 기본 영어 모델·다국어 모델·typed-decisions 모델 세 가지를 공개하고 있습니다. Router는 입력 언어와 작업 종류에 맞춰 적절한 체크포인트를 선택합니다.\n\n모델 파일이 없는 상태에서 처음 실행하면 다운로드에 인터넷이 필요합니다. 모델 파일을 미리 준비해 두면 이후에는 오프라인에서도 실행할 수 있지만, 실제 데이터가 어떻게 흐르고 기록되는지는 이 모델을 호출하는 앱과 로깅·연동 설정에 달려 있습니다.",
+      "details": "공식 소개 페이지는 Laya가 100개 이상의 언어를 지원한다고 안내합니다. 다만 이 문서에서는 한국어를 포함한 특정 언어의 정확도를 직접 측정하지 않았으므로, 언어별 정확도는 단정하지 않습니다.\n\n오픈소스로 공개돼 있다는 것이 운영 비용이 0원이라는 뜻은 아닙니다. 모델을 실행할 CPU·GPU, 서버, 메모리, 그리고 이를 운영·관리하는 비용이 별도로 듭니다.\n\n공식 벤치마크 페이지는 결과가 체크포인트 종류, 질문 표현 방식, 보기 순서·개수, 언어, 실행 하드웨어에 따라 달라질 수 있다고 밝히고 있습니다. 기본 모델에서도 확신도가 지나치게 높게 나오는 사례가 보고돼, 확률이나 점수가 높다고 해서 결과가 항상 맞는다는 뜻은 아닙니다.\n\n벤치마크의 처리 속도(예: 특정 GPU에서 수십 ms 수준)는 해당 측정 환경 기준이며, 다른 하드웨어에서 같은 속도를 보장하지 않습니다. 공개된 Jev와의 비교 수치도 서로 다른 연구가 각자의 질문 구성과 표본으로 측정한 것이라, 같은 조건에서 직접 맞대결한 결과가 아닙니다. 따라서 Laya와 Jev 중 어느 쪽이 더 빠르거나 정확하다고 단정하지 않습니다.\n\nLaya는 긴 문장을 생성하지 않지만, 이것이 '틀린 판단이 없다'는 뜻은 아닙니다. 실제로 쓰려는 데이터로 직접 품질을 확인해 보는 것이 권장됩니다.",
+      "diagram_image": {
+        "src": "/explore/laya-webtoon.png",
+        "alt": "쇼핑몰 문의로 choice·score·noul과 Laya 자체 실행·Jev API 차이, 높은 확신도와 실행 권한의 한계를 설명하는 8컷 웹툰",
+        "caption": "이해를 위한 가상 사례 · 실제 실행 결과나 제품 화면 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "comparison": {
+        "intro": "Laya와 TypeSafe의 Jev는 모두 state와 typed questions를 받아 choice·score·noul 형태의 값을 돌려주는 공통 형식을 씁니다. 다만 제공 형태와 실행 환경, 운영 주체가 달라 직접 비교할 때 이 차이를 구분해야 합니다.\n\n아래 표는 Laya 자체 운영과 Jev 공식 API 사용 경로를 비교합니다.",
+        "table": {
+          "caption": "Laya·Jev 비교(공개 자료 기준, 직접 성능 비교 아님)",
+          "columns": [
+            "Laya",
+            "TypeSafe Jev"
+          ],
+          "rows": [
+            {
+              "label": "공통 역할",
+              "values": [
+                "state + typed questions → choice·score·noul 판단값 반환",
+                "state + typed questions → choice·score·noul 판단값 반환"
+              ]
+            },
+            {
+              "label": "제공 형태",
+              "values": [
+                "Apache 2.0 오픈소스 모델(공개 체크포인트)",
+                "TypeSafe의 공식 API 제품"
+              ]
+            },
+            {
+              "label": "실행 환경·운영",
+              "values": [
+                "직접 설치해 자체 서버·하드웨어에서 구동, Router가 체크포인트 선택, 설치·운영 관리는 사용자 책임",
+                "TypeSafe 공식 API를 호출, 실행 인프라 운영은 TypeSafe가 담당"
+              ]
+            },
+            {
+              "label": "결과 형식",
+              "values": [
+                "choice·score(확률분포·확신도 포함)·noul(참일 확률)",
+                "choice·score(확률분포·확신도 포함)·noul(참일 확률)"
+              ]
+            },
+            {
+              "label": "비용 판단",
+              "values": [
+                "모델은 무료로 공개되지만 하드웨어·서버·관리 비용이 별도로 든다",
+                "API 사용량에 따른 요금(세부 금액은 공식 문서에서 확인)"
+              ]
+            },
+            {
+              "label": "검증 항목",
+              "values": [
+                "실제 업무 자료·언어·질문 구성을 자체 데이터로 확인하고, 실행 환경(하드웨어)에 따른 속도도 함께 측정",
+                "실제 업무 자료·언어·질문 구성을 자체 데이터로 확인"
+              ]
+            }
+          ]
+        },
+        "interpretation": "내 서버에서 직접 실행하며 설치·운영을 관리할 수 있다면 Laya처럼 공개된 모델을 쓰는 경로를 고려할 수 있습니다. 반대로 인프라 운영 부담 없이 공식 API 호출만으로 판단 기능을 쓰고 싶다면 Jev 같은 API 제품이 맞을 수 있습니다.\n\nLaya를 쓸 때는 체크포인트·질문 구성·언어·실행 하드웨어 조건이 결과에 영향을 주므로 실제 데이터로 직접 검증하는 것이 좋습니다. Jev를 쓸 때도 질문 구성과 언어 조건에 따라 결과가 달라질 수 있으므로 자체 데이터로 확인하는 것이 좋습니다. 속도나 정확도의 우열은 공개된 비교 수치만으로 단정하지 않습니다.",
+        "sources": [
+          {
+            "name": "Laya: Introduction",
+            "url": "https://nandhakishorm.github.io/laya/"
+          },
+          {
+            "name": "Laya: GitHub README",
+            "url": "https://github.com/NandhaKishorM/laya"
+          },
+          {
+            "name": "Laya: Benchmarks",
+            "url": "https://nandhakishorm.github.io/laya/benchmarks/"
+          },
+          {
+            "name": "TypeSafe: Docs",
+            "url": "https://docs.typesafe.ai/"
+          },
+          {
+            "name": "TypeSafe: Quickstart",
+            "url": "https://docs.typesafe.ai/introduction/quickstart"
+          }
+        ]
+      },
+      "pitfalls": [
+        "Laya의 choice 결과는 미리 정한 선택지 중 하나를 고른 분류값이며, 실제 환불·처리 완료를 뜻하지 않습니다. 실행은 이 판단값을 받은 앱이 따로 담당합니다.",
+        "noul은 특정 명제가 참일 확률(0~1)이며, 확률이 높다고 해서 사실로 확정되는 것은 아닙니다. 중요한 판단은 추가 검증이 필요합니다.",
+        "오픈소스로 공개돼 있다는 것이 운영 비용이 없다는 뜻은 아닙니다. 모델을 내려받아 실행할 하드웨어·서버·관리 비용이 별도로 듭니다.",
+        "체크포인트·질문 표현·보기 순서·언어·하드웨어가 바뀌면 결과도 달라질 수 있으므로, 공식 벤치마크 수치를 다른 환경에 그대로 보장되는 값으로 단정하면 안 됩니다.",
+        "공개된 Jev 비교 수치는 서로 다른 연구의 다른 조건에서 나온 것이라 직접 대결한 결과가 아닙니다. 속도나 정확도의 우열을 단정하지 않습니다.",
+        "laya-ai.com처럼 이름이 비슷한 사이트는 공식 모델 제공자와 무관한 별도 커뮤니티 사이트입니다."
+      ],
+      "sources": [
+        {
+          "name": "Laya: Introduction",
+          "url": "https://nandhakishorm.github.io/laya/"
+        },
+        {
+          "name": "Laya: GitHub README",
+          "url": "https://github.com/NandhaKishorM/laya"
+        },
+        {
+          "name": "Laya: Benchmarks",
+          "url": "https://nandhakishorm.github.io/laya/benchmarks/"
+        },
+        {
+          "name": "Laya: Staged Adoption",
+          "url": "https://nandhakishorm.github.io/laya/staged-adoption/"
+        },
+        {
+          "name": "TypeSafe: Docs",
+          "url": "https://docs.typesafe.ai/"
+        }
+      ],
+      "dev_reference_links": [
+        {
+          "name": "TypeSafe: Quickstart",
+          "url": "https://docs.typesafe.ai/introduction/quickstart"
+        }
+      ]
     }
   ]
 }
