@@ -12,6 +12,9 @@
   --amber-soft: #fffbeb;
 }
 
+.docs-shell.card-news-layout { grid-template-columns: 256px minmax(0, 1fr); }
+@media (max-width: 900px) { .docs-shell.card-news-layout { grid-template-columns: 1fr; } .card-news-layout > .docs-sidebar { display: none; } }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, sans-serif; line-height: 1.7; }

@@ -1,0 +1,42 @@
+name: Prepare morning card news
+on:
+  workflow_dispatch:
+  schedule:
+    # KST 08:05 and 08:20. GitHub scheduled jobs may start late.
+    - cron: '5,20 23 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: prepare-card-news
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: ${{ vars.CARD_NEWS_AUTOMATION_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Prepare candidates only; never publish to Instagram
+        env:
+          CARD_NEWS_PUBLIC_URL: ${{ vars.CARD_NEWS_PUBLIC_URL }}
+          CARD_NEWS_CRON_SECRET: ${{ secrets.CARD_NEWS_CRON_SECRET }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+          base = os.environ.get('CARD_NEWS_PUBLIC_URL', '').rstrip('/')
+          secret = os.environ.get('CARD_NEWS_CRON_SECRET', '')
+          if not base.startswith('https://') or len(secret) < 32:
+              raise SystemExit('Card news connection settings are missing.')
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, *args, **kwargs):
+                  return None
+          request = urllib.request.Request(base + '/api/admin/news/prepare', method='POST', headers={'Authorization': 'Bearer ' + secret})
+          try:
+              with urllib.request.build_opener(NoRedirect).open(request, timeout=80) as response:
+                  result = json.load(response)
+              print(json.dumps(result, ensure_ascii=False))
+          except urllib.error.HTTPError as error:
+              print('Morning collection failed, HTTP', error.code)
+              raise SystemExit(1)
+          except Exception:
+              raise SystemExit('Morning collection did not complete; inspect admin status.')
+          PY

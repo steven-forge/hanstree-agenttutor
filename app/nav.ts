@@ -26,7 +26,8 @@ export const NAV_GROUPS: NavGroup[] = [
     href: "/today",
     items: [
       { title: "Newsletter", href: "/today" },
-      { title: "Releases", href: "/releases" }
+      { title: "Releases", href: "/releases" },
+      { title: "카드뉴스 관리", href: "/admin/news" }
     ]
   },
   {
