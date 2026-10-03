@@ -47,6 +47,7 @@ function ready(edition: Edition) {
 export async function GET(request: Request) {
   try {
     await requireAdmin();
+    if (new URL(request.url).searchParams.get("session") === "1") return json({ authenticated: true });
     const params = new URL(request.url).searchParams, date = validDate(params.get("date") || kstDate());
     if (params.has("image") || params.get("download") === "zip") {
       const edition = await getEdition(date); if (!edition) throw new AdminError("저장된 원고가 없습니다.", 404);
@@ -69,8 +70,8 @@ export async function POST(request: Request) {
     const body = await readBody(request);
     if (!body || typeof body !== "object") throw new AdminError("요청 형식을 확인하세요.");
     if (body.action === "login") { await login(body.password); return json({ ok: true }); }
-    await requireAdmin();
     if (body.action === "logout") { await logout(); return json({ ok: true }); }
+    await requireAdmin();
     if (body.action === "check_connection") return json(await instagramAccount());
     const date = validDate(body.date);
     const old = await getEdition(date);

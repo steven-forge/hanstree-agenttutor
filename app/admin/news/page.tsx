@@ -9,13 +9,19 @@ import "./admin-news.css";
 
 export const metadata: Metadata = { title: "카드뉴스 관리 | AgentTutor", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
-export default async function CardNewsAdmin({ searchParams }: { searchParams: Promise<{ mode?: string }> }) {
-  const { mode } = await searchParams, date = kstDate(), setup = setupStatus();
+export default async function CardNewsAdmin() {
+  const date = kstDate(), setup = setupStatus();
   let admin = false, unavailable = false;
-  let initial = { edition: null, setup: { auth: false, storage: false, instagram: false, scheduler: false }, history: [] } as Awaited<ReturnType<typeof snapshot>>;
-  try { admin = await isAdmin(); if (admin) initial = await snapshot(date); } catch { unavailable = true; admin = false; }
+  // Authentication must succeed before either server or browser drafts can be shown.
+  try { admin = await isAdmin(); } catch { admin = false; }
+  let localMode = !setup.storage;
+  let initial = { edition: null, setup: { ...setup, auth: admin, storage: false }, history: [] } as Awaited<ReturnType<typeof snapshot>>;
+  if (admin && setup.storage) {
+    try { initial = await snapshot(date); }
+    catch { unavailable = true; localMode = true; }
+  }
   return <><SiteHeader /><div className="docs-shell card-news-layout"><DocsSidebar currentPath="/admin/news" /><div style={{ minWidth: 0 }}>
-    {unavailable && <p role="status">서버 저장소에 연결하지 못했습니다. 브라우저 작업 공간은 계속 사용할 수 있습니다.</p>}
-    {mode === "server" && !admin ? <AdminLogin setup={setup} /> : <AdminNews initial={initial} initialDate={date} localMode={!admin} />}
+    {admin && unavailable && <p role="status">서버 저장소에 연결하지 못했습니다. 로그인한 관리자는 브라우저에 저장된 원고로 작업할 수 있습니다.</p>}
+    {admin ? <AdminNews initial={initial} initialDate={date} localMode={localMode} /> : <AdminLogin setup={{ auth: setup.auth, storage: false, instagram: false, scheduler: false }} />}
   </div></div></>;
 }

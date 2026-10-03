@@ -8,7 +8,7 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
-  const ready = setup.auth && setup.storage;
+  const ready = setup.auth;
 
   async function login(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -36,25 +36,18 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
   return <main className="cn-shell cn-login-shell">
     <div className="cn-login-intro">
       <p className="cn-eyebrow">AgentTutor · AI News 10</p>
-      <h1>매일의 AI 뉴스, 한곳에서 준비하세요.</h1>
-      <p className="cn-muted">뉴스 10개를 골라 카드와 설명을 검토하고, 확인 버튼으로 Instagram에 발행하는 관리자 공간입니다.</p>
-      <div className="cn-targets"><span><strong>08:30</strong> 카드 검토 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div>
+      <h1>카드뉴스 관리</h1>
+      <p className="cn-muted">관리자 비밀번호를 확인한 뒤 뉴스 선정과 카드 제작을 시작할 수 있습니다.</p>
     </div>
     <section className="cn-panel cn-login-panel" aria-labelledby="cn-login-heading">
-      <h2 id="cn-login-heading">{ready ? "관리자 로그인" : "관리자 페이지 준비"}</h2>
-      <p className="cn-muted">{ready ? "등록된 관리자 비밀번호로 로그인하세요." : "카드 원고와 발행 기록을 안전하게 관리하려면 아래 설정이 필요합니다."}</p>
-      <ul className="cn-setup-list">
-        <li><span>관리자 인증</span><span className={setup.auth ? "cn-tag cn-tag-ok" : "cn-tag cn-tag-warn"}>{setup.auth ? "설정됨" : "준비 필요"}</span></li>
-        <li><span>원고·발행 기록 저장소</span><span className={setup.storage ? "cn-tag cn-tag-ok" : "cn-tag cn-tag-warn"}>{setup.storage ? "설정됨" : "준비 필요"}</span></li>
-        <li><span>Instagram 발행 연결</span><span className={setup.instagram ? "cn-tag cn-tag-ok" : "cn-tag"}>{setup.instagram ? "설정됨" : "준비 필요"}</span></li>
-        <li><span>일일 제작 예약</span><span className={setup.scheduler ? "cn-tag cn-tag-ok" : "cn-tag"}>{setup.scheduler ? "설정됨" : "준비 필요"}</span></li>
-      </ul>
-      {ready ? <form className="cn-form" onSubmit={login}>
-        <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required value={password} onChange={event => setPassword(event.target.value)} disabled={pending} /></label>
+      <h2 id="cn-login-heading">관리자 로그인</h2>
+      {!ready && <p className="cn-alert">관리자 비밀번호 설정이 필요합니다. 운영 담당자가 배포 서버의 보안 설정에 비밀번호를 등록하면 진입할 수 있습니다.</p>}
+      <form className="cn-form" onSubmit={login}>
+        <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required maxLength={256} value={password} onChange={event => setPassword(event.target.value)} disabled={pending || !ready} /></label>
         {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
-        <button className="cn-button cn-button-primary" type="submit" disabled={pending || !password}>{pending ? "로그인 중…" : "로그인"}</button>
-      </form> : <p className="cn-alert">운영 담당자가 서버의 보안 설정에서 관리자 인증과 영속 저장소를 연결하면 로그인이 열립니다. Instagram 연결과 제작 예약도 이곳에서 준비 상태를 확인할 수 있습니다.</p>}
-      <div className="cn-publish-actions"><a className="cn-text-link" href="/admin/news">브라우저에서 카드 작업하기</a><a className="cn-text-link" href="/today">뉴스 페이지로 돌아가기</a></div>
+        <button className="cn-button cn-button-primary" type="submit" disabled={pending || !password || !ready}>{pending ? "비밀번호 확인 중…" : "관리자 화면 진입"}</button>
+      </form>
+      <div className="cn-publish-actions"><a className="cn-text-link" href="/today">뉴스 페이지로 돌아가기</a></div>
     </section>
   </main>;
 }

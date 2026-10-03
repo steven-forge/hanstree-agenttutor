@@ -1,5 +1,5 @@
 import "server-only";
-import { createHash, createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import type { AdminSetup, AdminSnapshot, Edition } from "./types";
 
@@ -8,11 +8,20 @@ export class AdminError extends Error {
 }
 const prefix = "cardnews:{admin}:";
 const cookieName = "agenttutor_card_admin";
+const sessionSeconds = 28800;
+let localAttempts = { count: 0, expires: 0 };
+let signingKey: { password: string; key: Buffer } | undefined;
+function sessionSignature(value: string): string {
+  const password = process.env.CARD_NEWS_ADMIN_PASSWORD!;
+  if (signingKey?.password !== password) signingKey = { password, key: scryptSync(password, "agenttutor-card-admin-session-v1", 32) };
+  return createHmac("sha256", signingKey.key).update(value).digest("hex");
+}
+function passwordVersion() { return sessionSignature("server-session-v1"); }
 export function setupStatus(): AdminSetup {
   return {
-    auth: (process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0) >= 16 && (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32,
+    auth: (process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0) >= 16 && (process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0) <= 256,
     storage: Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN),
-    instagram: Boolean(process.env.INSTAGRAM_USER_ID && process.env.INSTAGRAM_ACCESS_TOKEN && process.env.CARD_NEWS_PUBLIC_URL),
+    instagram: Boolean(process.env.INSTAGRAM_USER_ID && process.env.INSTAGRAM_ACCESS_TOKEN && process.env.CARD_NEWS_PUBLIC_URL && (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
     scheduler: Boolean(process.env.CARD_NEWS_CRON_SECRET),
   };
 }
@@ -60,25 +69,47 @@ export function requireSameOrigin(request: Request) {
   if (!origin || origin !== expected || request.headers.get("sec-fetch-site") === "cross-site") throw new AdminError("이 사이트에서 다시 로그인한 뒤 실행해 주세요.", 403);
 }
 export async function isAdmin(): Promise<boolean> {
-  if (!setupStatus().auth || !setupStatus().storage) return false;
+  if (!setupStatus().auth) return false;
   const token = (await cookies()).get(cookieName)?.value;
-  if (!token || !/^[a-f0-9]{64}$/.test(token)) return false;
-  return (await redis("GET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`)) === "1";
+  if (!token) return false;
+  if (setupStatus().storage) {
+    if (!/^[a-f0-9]{64}$/.test(token)) return false;
+    return (await redis("GET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`)) === passwordVersion();
+  }
+  // Browser-only workspaces do not require an external database. The server signs
+  // the short-lived cookie; changing the password invalidates every existing one.
+  const match = /^(v1\.(\d{10})\.[a-f0-9]{64})\.([a-f0-9]{64})$/.exec(token);
+  if (!match) return false;
+  const expires = Number(match[2]), now = Math.floor(Date.now() / 1000);
+  return expires > now && expires <= now + sessionSeconds && equalSecret(match[3], sessionSignature(match[1]));
 }
 export async function requireAdmin() { if (!await isAdmin()) throw new AdminError("관리자 로그인이 필요합니다.", 401); }
 export async function login(password: unknown) {
-  if (!setupStatus().auth || !setupStatus().storage) throw new AdminError("관리자 인증과 저장소 설정을 먼저 완료해 주세요.", 503);
-  const attempts = await redis<number>("EVAL", "local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],900) end; return n", 1, `${prefix}login-limit`);
+  if (!setupStatus().auth) throw new AdminError("운영 담당자가 관리자 비밀번호를 먼저 등록해야 합니다.", 503);
+  let attempts: number;
+  if (setupStatus().storage) {
+    attempts = await redis<number>("EVAL", "local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],900) end; return n", 1, `${prefix}login-limit`);
+  } else {
+    // Best-effort per-instance limit until the shared store is connected.
+    if (Date.now() >= localAttempts.expires) localAttempts = { count: 0, expires: Date.now() + 900000 };
+    attempts = ++localAttempts.count;
+  }
   if (attempts > 20) throw new AdminError("로그인 시도가 많습니다. 15분 뒤 다시 시도해 주세요.", 429);
   if (typeof password !== "string" || password.length > 256 || !equalSecret(password, process.env.CARD_NEWS_ADMIN_PASSWORD!)) throw new AdminError("비밀번호를 확인해 주세요.", 401);
-  const token = randomBytes(32).toString("hex");
-  await redis("SET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`, "1", "EX", 28800);
-  (await cookies()).set(cookieName, token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: 28800 });
+  let token = randomBytes(32).toString("hex");
+  if (setupStatus().storage) {
+    await redis("SET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`, passwordVersion(), "EX", sessionSeconds);
+  } else {
+    const value = `v1.${Math.floor(Date.now() / 1000) + sessionSeconds}.${token}`;
+    token = `${value}.${sessionSignature(value)}`;
+  }
+  (await cookies()).set(cookieName, token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: sessionSeconds });
 }
 export async function logout() {
   const jar = await cookies(), token = jar.get(cookieName)?.value;
-  if (token) await redis("DEL", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`);
-  jar.delete(cookieName);
+  try {
+    if (setupStatus().storage && token && /^[a-f0-9]{64}$/.test(token)) await redis("DEL", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`);
+  } finally { jar.delete(cookieName); }
 }
 export function signAsset(date: string, attempt: string, index: number, expires: number) {
   const secret = process.env.CARD_NEWS_SIGNING_SECRET;

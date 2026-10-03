@@ -122,13 +122,35 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     window.addEventListener("beforeunload", protect);
     return () => window.removeEventListener("beforeunload", protect);
   }, [dirty]);
+  useEffect(() => {
+    let disposed = false, checking = false;
+    const controller = new AbortController();
+    async function checkSession() {
+      if (checking || disposed) return;
+      checking = true;
+      try {
+        const response = await fetch(`${API}?session=1`, { cache: "no-store", credentials: "same-origin", signal: controller.signal });
+        if (response.status === 401 && !disposed) {
+          setSessionExpired(true);
+          suppressUnload.current = true;
+          // Only reload the view; saved browser drafts remain in localStorage.
+          window.location.reload();
+        }
+      } catch { /* A temporary network failure must not erase browser drafts. */ }
+      finally { checking = false; }
+    }
+    const onPageShow = (event: PageTransitionEvent) => { if (event.persisted) void checkSession(); };
+    window.addEventListener("focus", checkSession);
+    window.addEventListener("pageshow", onPageShow);
+    return () => { disposed = true; controller.abort(); window.removeEventListener("focus", checkSession); window.removeEventListener("pageshow", onPageShow); };
+  }, []);
   useEffect(() => { setJpgError(false); }, [jpgUrl]);
   useEffect(() => {
     if (!localMode) return;
     let cancelled = false;
     operation.current = true; setPending("load");
     localSnapshot(initialDate).then(result => {
-      if (!cancelled) { setSnapshot(result); setEdition(result.edition); setDate(initialDate); }
+      if (!cancelled) { setSnapshot({ ...result, setup: { ...result.setup, auth: true } }); setEdition(result.edition); setDate(initialDate); }
     }).catch(caught => {
       if (!cancelled) setError(caught instanceof Error ? caught.message : "브라우저에 저장된 원고를 불러오지 못했습니다.");
     }).finally(() => { if (!cancelled) { operation.current = false; setPending(""); } });
@@ -150,7 +172,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   }, [confirmPublish]);
 
   function accept(result: ApiResult, nextDate = date) {
-    setSnapshot(previous => ({ edition: result.edition !== undefined ? result.edition : previous.edition, setup: result.setup || previous.setup, history: result.history || previous.history }));
+    setSnapshot(previous => ({ edition: result.edition !== undefined ? result.edition : previous.edition, setup: result.setup ? { ...result.setup, auth: localMode ? true : result.setup.auth } : previous.setup, history: result.history || previous.history }));
     if (result.edition !== undefined) setEdition(result.edition);
     setDate(nextDate);
     setSessionExpired(false);
@@ -183,13 +205,13 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   }
 
   async function act(action: string, extra: Record<string, unknown> = {}) {
-    if (operation.current || sessionExpired) return;
+    if (operation.current || (sessionExpired && action !== "logout")) return;
     if (action === "collect" && dirty && !window.confirm("저장하지 않은 수정이 있습니다. 수정을 버리고 새 후보를 수집할까요? 저장된 원고와 선택은 유지됩니다.")) return;
     if (action === "logout" && dirty && !window.confirm("저장하지 않은 수정이 있습니다. 수정을 버리고 로그아웃할까요?")) return;
     operation.current = true; setPending(action); setError(""); setMessage("");
     try {
       const request = { action, date, revision: saved?.revision ?? 0, ...extra };
-      const result = localMode ? await localAction(request) : await readResponse(await fetch(API, {
+      const result = localMode && action !== "logout" ? await localAction(request) : await readResponse(await fetch(API, {
         method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
       }));
@@ -207,6 +229,14 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       if (action === "approve") setMessage("검토를 완료했습니다. 저장본 JPG를 확인한 뒤 발행 버튼을 눌러 주세요.");
       if (action === "publish" || action === "reconcile") setMessage(next?.status === "published" ? "Instagram 발행 완료 기록을 확인했습니다." : next?.status === "needs_check" ? "발행 결과 확인이 필요합니다. 중복 발행을 막기 위해 결과 확인 버튼을 사용하세요." : "요청을 처리했습니다. 아래 판본 상태와 발행 기록을 확인하세요.");
     } catch (caught) {
+      if (action === "logout") {
+        try {
+          // The server may have cleared this browser's cookie even if removing
+          // the stored session failed. Do not leave the editor open in that case.
+          const response = await fetch(`${API}?session=1`, { cache: "no-store", credentials: "same-origin" });
+          if (response.status === 401) { suppressUnload.current = true; window.location.reload(); return; }
+        } catch { /* Keep the original error if the session cannot be checked. */ }
+      }
       const detail = caught instanceof Error ? caught.message : "서버에 연결하지 못했습니다.";
       if (action === "publish") setPublishUncertain(true);
       setError(action === "publish" ? `${detail} 게시 요청이 이미 접수됐을 수 있습니다. 먼저 ‘상태 새로 확인’을 눌러 결과를 확인하세요.` : detail);
@@ -304,10 +334,10 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   return <main className="cn-shell">
     <header className="cn-header">
       <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">수집부터 원고 검토, Instagram 발행까지 하루 판본으로 관리합니다.</p><div className="cn-targets"><span><strong>08:30</strong> 검토 준비 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div></div>
-      {localMode ? <a className="cn-button" href="/admin/news?mode=server" target="_blank" rel="noopener noreferrer">서버 관리자 로그인</a> : <button className="cn-button" onClick={() => act("logout")} disabled={!!pending || sessionExpired}>로그아웃</button>}
+      <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
     </header>
 
-    {localMode && <div className="cn-alert cn-alert-info"><strong>이 브라우저에 저장</strong><p>계정 연결 없이 뉴스 선정과 카드 제작을 할 수 있습니다. 원고는 현재 브라우저에만 저장되며, 기기를 바꾸거나 브라우저 데이터를 삭제하면 사용할 수 없습니다. JSON 내보내기로 원고를 보관하세요.</p><p>Instagram 연결은 나중에 진행합니다. 현재는 JPG·ZIP을 내려받아 사용할 수 있습니다.</p><div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={exportJson} disabled={!edition || !!pending}>원고 JSON 내보내기</button><button className="cn-button cn-button-small" onClick={() => importInput.current?.click()} disabled={!!pending || locked}>원고 JSON 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={importJson} /></div></div>}
+    {localMode && <div className="cn-alert cn-alert-info"><strong>관리자 로그인됨 · 이 브라우저에 저장</strong><p>Instagram 연결 전에 뉴스 선정과 카드 제작을 할 수 있습니다. 원고는 현재 브라우저에만 저장되며, 기기를 바꾸거나 브라우저 데이터를 삭제하면 사용할 수 없습니다. JSON 내보내기로 원고를 보관하세요.</p><p>로그아웃해도 저장한 원고는 유지됩니다. 다시 관리자 비밀번호로 로그인하면 이어서 작업할 수 있습니다.</p><div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={exportJson} disabled={!edition || !!pending}>원고 JSON 내보내기</button><button className="cn-button cn-button-small" onClick={() => importInput.current?.click()} disabled={!!pending || locked}>원고 JSON 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={importJson} /></div></div>}
 
     <section className="cn-panel" aria-label="날짜와 판본 상태">
       <div className="cn-toolbar">
@@ -403,7 +433,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
             <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit || !selected.length}>선정 뉴스·출처로 설명 만들기</button></div>
             {!!issues.length && !locked && <details className="cn-details"><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
             {dirty && <p className="cn-alert">원고를 먼저 저장하세요. 승인 후 수정하면 다시 검토해야 합니다.</p>}
-            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 연결은 나중에 진행할 수 있습니다. 지금은 원고 작성·검토와 ZIP 다운로드를 이용하세요.{localMode && <> 서버에 연결할 때는 원고를 JSON으로 보관한 뒤 <a className="cn-text-link" href="/admin/news?mode=server" target="_blank" rel="noopener noreferrer">서버 관리자 로그인</a>을 새 탭에서 열어 주세요.</>}</p>}
+            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 연결은 나중에 진행할 수 있습니다. 지금은 원고 작성·검토와 ZIP 다운로드를 이용하세요.{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading">연결 준비 상태 보기</a></>}</p>}
             <div className="cn-publish-actions">
               <button className="cn-button" onClick={() => act("approve")} disabled={!canApprove}>{edition.status === "approved" && !dirty ? "검토 완료됨" : "10개 원고 검토 완료"}</button>
               {canDownload ? localMode ? <button className="cn-button" onClick={downloadLocalBundle}>JPG 10장 ZIP 받기</button> : <a className="cn-button" href={`${API}?${new URLSearchParams({ date, download: "zip", revision: String(saved!.revision) })}`}>JPG 10장 ZIP 받기</a> : <button className="cn-button" disabled>검토 후 ZIP 받기</button>}
@@ -418,7 +448,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     <div className="cn-bottom">
       <section className="cn-panel" aria-labelledby="cn-setup-heading"><h2 id="cn-setup-heading">연결 준비 상태</h2><ul className="cn-setup-list">{([
         ["auth", "관리자 인증"], ["storage", "원고·발행 기록 저장소"], ["instagram", "Instagram 발행 연결"], ["scheduler", "일일 제작 예약"],
-      ] as const).map(([key, label]) => <li key={key}><span>{localMode && key === "storage" ? "현재 브라우저 원고 저장" : label}</span><span className={`cn-tag ${snapshot.setup[key] || (localMode && key === "storage") ? "cn-tag-ok" : "cn-tag-warn"}`}>{localMode && key === "storage" ? "이 브라우저" : snapshot.setup[key] ? "설정됨" : "준비 필요"}</span></li>)}</ul><p className="cn-help">{localMode ? "브라우저에서 카드 제작을 먼저 진행할 수 있습니다. 서버 인증·Instagram 연결·일일 예약은 나중에 설정합니다." : "설정 여부를 표시합니다. 실제 수집·게시 성공 여부는 각 실행 결과에서 확인하세요."}</p>
+      ] as const).map(([key, label]) => <li key={key}><span>{localMode && key === "storage" ? "현재 브라우저 원고 저장" : label}</span><span className={`cn-tag ${snapshot.setup[key] || (localMode && key === "storage") ? "cn-tag-ok" : "cn-tag-warn"}`}>{localMode && key === "storage" ? "이 브라우저" : snapshot.setup[key] ? "설정됨" : "준비 필요"}</span></li>)}</ul><p className="cn-help">{localMode ? "관리자 로그인 후 브라우저에서 카드 제작을 할 수 있습니다. 서버 저장소·Instagram 연결·일일 예약은 나중에 설정합니다." : "설정 여부를 표시합니다. 실제 수집·게시 성공 여부는 각 실행 결과에서 확인하세요."}</p>
         {!!edition?.sources.length && <details className="cn-details"><summary>최근 수집 출처 {edition.sources.length}곳 확인</summary><div className="cn-source-status">{edition.sources.map((source, index) => <span className={`cn-tag ${source.status === "ok" ? "cn-tag-ok" : "cn-tag-warn"}`} key={`${source.name}-${index}`} title={source.message}>{source.name} · {source.status === "ok" ? `${source.count}개` : "실패"}</span>)}</div>{edition.sources.filter(source => source.status === "failed").map((source, index) => <p className="cn-help" key={`${source.name}-${index}`}>{source.name}: {source.message || "가져오지 못했습니다. 출처 상태를 확인한 뒤 재수집하세요."}</p>)}</details>}
       </section>
       <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.map(item => <li key={item.date}><div><button className="cn-history-date" disabled={!!pending} onClick={() => loadDate(item.date)}>{item.date}{item.date === date ? " · 현재 판본" : ""}</button><small>최근 변경 {formatTime(item.updatedAt)} KST</small></div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>)}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>

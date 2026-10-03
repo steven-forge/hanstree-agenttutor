@@ -3,12 +3,17 @@ import { zipSync, strToU8 } from "fflate";
 import { editionIssues, editionWindow, cardIssues, type AdminSnapshot, type Edition } from "./types";
 
 const key = "agenttutor-card-news-v1:";
-const setup = { auth: false, storage: false, instagram: false, scheduler: false };
+const setup = { auth: true, storage: false, instagram: false, scheduler: false };
+async function requireSession() {
+  const response = await fetch("/api/admin/news?session=1", { cache: "no-store", credentials: "same-origin" });
+  if (!response.ok) throw new Error(response.status === 401 ? "로그인이 만료됐습니다. 다시 로그인해 주세요. 저장된 원고는 유지됩니다." : "로그인 상태를 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.");
+}
 function read(date: string): Edition | null {
   const raw = localStorage.getItem(key + date);
   return raw ? JSON.parse(raw) as Edition : null;
 }
 export async function localSnapshot(date: string): Promise<AdminSnapshot> {
+  await requireSession();
   const history: AdminSnapshot["history"] = [];
   for (let i = 0; i < localStorage.length; i++) {
     const name = localStorage.key(i)!; if (!name.startsWith(key)) continue;
@@ -17,6 +22,7 @@ export async function localSnapshot(date: string): Promise<AdminSnapshot> {
   return { edition: read(date), setup, history: history.sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30) };
 }
 export async function localAction(body: Record<string, unknown>): Promise<AdminSnapshot> {
+  await requireSession();
   if (!navigator.locks) throw new Error("탭 간 원고 보호를 지원하는 최신 브라우저에서 열어 주세요.");
   return navigator.locks.request(`${key}${String(body.date)}`, () => lockedAction(body));
 }
