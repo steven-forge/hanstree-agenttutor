@@ -1,10 +1,80 @@
 {
   "edition_date": "2026-10-04",
-  "window_start": "2026-08-04T09:01:37.658149+09:00",
-  "window_end": "2026-10-03T09:01:37.658149+09:00",
-  "collected_at": "2026-10-04T03:46:16.821166+09:00",
+  "window_start": "2026-08-05T08:41:06.174285+09:00",
+  "window_end": "2026-10-04T08:41:06.174285+09:00",
+  "collected_at": "2026-10-04T08:41:45.149994+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "ec08581411bc9dc6",
+      "title": "v2.1.289",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+      "source_summary": "## What's changed - Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines - Fixed the terminal freezing on short code blocks with many unclosed ` ` tags or deeply nested `${` substitutions - Fixed `Read` deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink - [VSCode] Reverted a 2.1.288 change to `claude auth status` that may have made sign-outs more frequent - Improved ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-04T08:41:32+09:00",
+      "published_at": "2026-10-03T23:07:17+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.289 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - 복합 셸 명령의 중첩된 부분에 대한 거부 또는 요청 규칙이 관리되는 시스템에 대한 사용자 설치 모드의 승인을 유지하지 못하도록 수정 - 닫히지 않은 `` 태그가 많거나 깊게 중첩된 '$ {` 대체가 많은 짧은 코드 블록에서 터미널 동결을 수정 - 심볼릭 링크를 통해 IDE에서 @ -mentioned, changed, or selected 파일에 적용되지 않는 `Read` 거부 규칙 수정 - [VSCode] 2.1.288 변경을 'claude auth status` 로 되돌림 로그아웃을 더 자주 만들었을 수 있음 - 개선됨",
+      "release_notes_ko": {
+        "new_features": "팀원을 위한 `agent.spawn`, 플러그인 훅 이벤트에서 하나의 에이전트 ID, `$ .agent.list` 의 유휴 및 대기 상태 추가",
+        "bug_fixes": "복합 셸 명령의 중첩된 부분에 대한 거부 또는 요청 규칙이 관리되는 시스템에 대한 사용자 설치 모드의 승인을 유지하지\n못하도록 수정 ''<script> 태그가 닫히지 않거나 깊게 중첩된 '$ {` 대체가\n많은 짧은 코드 블록에서 터미널 동결을 수정 `읽기` 거부 규칙이 심볼릭 링크를 통해 IDE에서 파일에 적용되지 않거나 변경되거나 선택되지 않도록 수정",
+        "chores": "[VSCode] 로그아웃이 더 빈번해졌을 수 있는 2.1.288 변경 사항을 `CLAUDE AUTH STATUS` 로 되돌렸습니다.\n강조 표시된 뷰를 최종 너비에 한 번 배치하여 플러그인 코드 창에서 대용량 파일을 빠르게 여는 방법을 개선했습니다.\n모드의 작성자가 밴드 또는 창을 그릴 수 없을 때 표시되는 라인을 개선했습니다. 모드의 이름을 지정하고 아무것도 그려지지 않았다고 말합니다."
+      }
+    },
+    {
+      "id": "801ec396652be12b",
+      "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken",
+      "source_summary": "By his own admission, David Robinson is “something of a cliché”: an employee at a leading AI company who issues a dire warning while resigning from their job.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-04T08:41:45+09:00",
+      "published_at": "2026-10-03T16:30:01+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49944227",
+          "independent": false,
+          "target_url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken",
+          "independent": true
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004408/openai-safety-quits-sounding-the-alarm",
+          "independent": true
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49948332",
+          "independent": false,
+          "target_url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken"
+        }
+      ],
+      "title_ko": "OpenAI 안전 직원은 회사의 ‘문화가 깨졌다‘ 고 주장하며 사임합니다.",
+      "source_summary_ko": "로빈슨의 퇴사는 비즈니스 인사이더가 처음 보고했습니다.\n앤서니 하 (Anthony Ha) 는 테크크런치의 주말 에디터입니다.\n이메일 (anthony.ha@techcrunch.com) 을 통해 앤서니에게 연락하거나 연락을 확인할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Robinson’s departure was first reported by Business Insider.",
+        "ko": "로빈슨의 퇴사는 비즈니스 인사이더가 처음 보고했습니다."
+      }
+    },
     {
       "id": "bfc4355d370530a8",
       "title": "Claude Frontier Academy: $100M to train 10,000 engineers",
