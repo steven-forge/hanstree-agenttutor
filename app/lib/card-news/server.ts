@@ -101,16 +101,23 @@ export async function isAdmin(): Promise<boolean> {
   if (!setupStatus().auth) return false;
   const token = (await cookies()).get(cookieName)?.value;
   if (!token) return false;
-  if (setupStatus().storage) {
-    if (!/^[a-f0-9]{64}$/.test(token)) return false;
+  // Existing signed sessions keep their original expiry when Redis is first connected.
+  if (signedSessionExpiry(token) !== null) {
+    return !setupStatus().storage || !await redis("GET", `${prefix}revoked-session:${createHash("sha256").update(token).digest("hex")}`);
+  }
+  if (setupStatus().storage && /^[a-f0-9]{64}$/.test(token)) {
     return (await redis("GET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`)) === passwordVersion();
   }
+  return false;
+}
+function signedSessionExpiry(token: string): number | null {
   // Browser-only workspaces do not require an external database. The server signs
   // the short-lived cookie; changing the password invalidates every existing one.
+  if ((process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) < 32) return null;
   const match = /^(v1\.(\d{10})\.[a-f0-9]{64})\.([a-f0-9]{64})$/.exec(token);
-  if (!match) return false;
+  if (!match) return null;
   const expires = Number(match[2]), now = Math.floor(Date.now() / 1000);
-  return expires > now && expires <= now + rememberedSessionSeconds && equalSecret(match[3], sessionSignature(match[1]));
+  return expires > now && expires <= now + rememberedSessionSeconds && equalSecret(match[3], sessionSignature(match[1])) ? expires : null;
 }
 export async function requireAdmin() { if (!await isAdmin()) throw new AdminError("관리자 로그인이 필요합니다.", 401); }
 // A cross-site OAuth redirect cannot carry the Strict admin cookie at all, so the callback
@@ -122,8 +129,18 @@ export async function beginOAuthState(expectedConnectionRevision: number): Promi
   await requireAdmin();
   const token = (await cookies()).get(cookieName)?.value;
   if (!token) throw new AdminError("관리자 로그인이 필요합니다.", 401);
+  const sessionHash = createHash("sha256").update(token).digest("hex");
+  const signedExpiry = signedSessionExpiry(token);
+  if (signedExpiry !== null) {
+    // A session issued before Redis was connected also needs a callback binding.
+    // Never extend its original expiry or recreate it in the OAuth callback.
+    const remaining = signedExpiry - Math.floor(Date.now() / 1000);
+    if (remaining <= 0) throw new AdminError("관리자 로그인이 만료됐습니다.", 401);
+    const bound = await redis<number>("EVAL", "if redis.call('EXISTS',KEYS[1])==1 then return 0 end; redis.call('SET',KEYS[2],ARGV[1],'EX',ARGV[2]); return 1", 2, `${prefix}revoked-session:${sessionHash}`, `${prefix}session:${sessionHash}`, passwordVersion(), remaining);
+    if (bound !== 1) throw new AdminError("관리자 로그인이 만료됐습니다.", 401);
+  }
   const state = randomBytes(32).toString("hex");
-  const record = JSON.stringify({ sessionHash: createHash("sha256").update(token).digest("hex"), passwordVersion: passwordVersion(), revision: expectedConnectionRevision });
+  const record = JSON.stringify({ sessionHash, passwordVersion: passwordVersion(), revision: expectedConnectionRevision });
   await redis("SET", `${oauthKeyPrefix}${createHash("sha256").update(state).digest("hex")}`, record, "EX", oauthStateSeconds);
   (await cookies()).set(oauthCookieName, state, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/api/admin/news/instagram", maxAge: oauthStateSeconds });
   return state;
@@ -186,7 +203,14 @@ export async function login(password: unknown, remember: unknown = false) {
 export async function logout() {
   const jar = await cookies(), token = jar.get(cookieName)?.value;
   try {
-    if (setupStatus().storage && token && /^[a-f0-9]{64}$/.test(token)) await redis("DEL", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`);
+    if (setupStatus().storage && token) {
+      const hash = createHash("sha256").update(token).digest("hex");
+      const remaining = (signedSessionExpiry(token) ?? 0) - Math.floor(Date.now() / 1000);
+      if (remaining > 0) {
+        // Atomically cancel pending OAuth starts as well as already-bound sessions.
+        await redis("EVAL", "redis.call('SET',KEYS[1],'1','EX',ARGV[1]); return redis.call('DEL',KEYS[2])", 2, `${prefix}revoked-session:${hash}`, `${prefix}session:${hash}`, remaining);
+      } else if (/^[a-f0-9]{64}$/.test(token)) await redis("DEL", `${prefix}session:${hash}`);
+    }
   } finally { jar.delete(cookieName); }
 }
 export function signAsset(date: string, attempt: string, index: number, expires: number) {

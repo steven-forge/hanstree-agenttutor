@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { EXTERNAL_SOURCES, OFFICIAL_SOURCES, defaultSourceRule, externalSources, validateNewsPolicy, type NewsPolicy, type SourceRule } from "../../lib/news-policy";
+import { EXTERNAL_SOURCES, OFFICIAL_SOURCES, channelUrlKey, defaultSourceRule, externalSources, validateNewsPolicy, type NewsPolicy, type SourceRule } from "../../lib/news-policy";
 
 type Snapshot = {
   policy: NewsPolicy; storageConfigured: boolean;
@@ -10,6 +10,7 @@ type Snapshot = {
 const endpoint = "/api/admin/news-policy";
 const time = (value: string | null) => value ? new Date(value).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", hour12: false }) : "기록 없음";
 const keywords = (value: string) => value.split(/[\n,]+/).map(k => k.trim()).filter(Boolean);
+function publicLink(value: string) { try { channelUrlKey(value); return value; } catch { return undefined; } }
 
 export default function NewsPolicySettings() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
@@ -109,6 +110,17 @@ export default function NewsPolicySettings() {
   function update(changes: Partial<NewsPolicy>) { setDraft(p => p ? { ...p, ...changes } : p); setMessage(""); }
   function publish(changes: Partial<NewsPolicy["publish"]>) { if (draft) update({ publish: { ...draft.publish, ...changes } }); }
   function source(id: string, changes: Partial<SourceRule>) { if (draft) update({ sources: { ...draft.sources, [id]: { ...draft.sources[id], ...changes } } }); }
+  function channelUrl(id: string, field: "url" | "site_url", value: string) {
+    if (!draft) return;
+    const builtin = EXTERNAL_SOURCES.find(s => s.id === id);
+    if (builtin) {
+      const urls = { ...(draft.source_urls[id] ?? { url: builtin.url, site_url: builtin.site_url }), [field]: value };
+      const source_urls = { ...draft.source_urls, [id]: urls };
+      if (urls.url === builtin.url && urls.site_url === builtin.site_url) delete source_urls[id];
+      update({ source_urls });
+    } else update({ custom_sources: draft.custom_sources.map(s => s.id === id ? { ...s, [field]: value } : s) });
+    setChannelError(""); setChannelMessage("");
+  }
   function addChannel() {
     if (!draft || busy || disabled) return;
     setChannelError(""); setChannelMessage("");
@@ -124,7 +136,8 @@ export default function NewsPolicySettings() {
   function removeChannel(id: string, name: string) {
     if (!draft || busy || disabled || !window.confirm(`${name}을 수집 채널에서 삭제할까요? 기준을 저장하면 다음 수집부터 제외됩니다. 이미 발행된 뉴스는 유지됩니다.`)) return;
     const sources = { ...draft.sources }; delete sources[id];
-    update({ sources, custom_sources: draft.custom_sources.filter(s => s.id !== id) });
+    const source_urls = { ...draft.source_urls }; delete source_urls[id];
+    update({ sources, source_urls, custom_sources: draft.custom_sources.filter(s => s.id !== id) });
     setChannelError(""); setChannelMessage(`${name}을 수정안에서 삭제했습니다. ‘기준 저장’ 전에는 실제 수집 설정이 바뀌지 않습니다.`);
   }
   function restoreChannel(id: string) {
@@ -173,10 +186,14 @@ export default function NewsPolicySettings() {
       <fieldset disabled={busy || disabled} className="cn-policy-fields">
         <legend>외부 매체와 참고 채널</legend>
         <p className="cn-help">사용 여부, 게시 근거 포함 여부, 키워드 필터, 실행당 최대 수집 수를 수정합니다. 게시 근거 표시는 사실 검증 완료를 뜻하지 않습니다.</p>
-        <p className="cn-help">채널 추가·삭제도 아래 ‘기준 저장’ 후 다음 수집부터 적용됩니다. 삭제해도 이미 발행된 뉴스는 유지됩니다.</p>
+        <p className="cn-help">주소 수정과 채널 추가·삭제는 아래 ‘기준 저장’ 후 다음 수집부터 적용됩니다. 이미 발행된 뉴스는 유지됩니다.</p>
         <div className="cn-policy-sources">{externalSources(draft).map(s => <div className="cn-policy-source" key={s.id}>
           <div className="cn-policy-source-head"><strong>{s.name}{s.custom && <span className="cn-tag">추가 채널</span>}</strong><button type="button" className="cn-button cn-button-small" aria-label={`${s.name} 채널 삭제`} onClick={() => removeChannel(s.id, s.name)}>삭제</button></div>
-          <div className="cn-policy-source-links"><span>홈페이지</span><a className="cn-text-link" href={s.site_url} target="_blank" rel="noopener noreferrer">{s.site_url}</a><span>{s.feed ? "RSS / Atom" : "수집 API"}</span><a className="cn-text-link" href={s.url} target="_blank" rel="noopener noreferrer">{s.url}</a></div>
+          <div className="cn-policy-source-links">{(["site_url", "url"] as const).map(field => <div className="cn-policy-source-url" key={field}>
+            <label className="cn-field">{field === "site_url" ? "홈페이지 주소" : s.feed ? "RSS / Atom 주소" : "수집 API 주소"}<input aria-label={`${s.name} ${field === "site_url" ? "홈페이지 주소" : "수집 주소"}`} inputMode="url" autoCapitalize="none" spellCheck={false} maxLength={2048} required value={s[field]} onChange={e => channelUrl(s.id, field, e.target.value)} /></label>
+            {publicLink(s[field]) && <a className="cn-text-link" href={publicLink(s[field])} target="_blank" rel="noopener noreferrer" aria-label={`${s.name} ${field === "site_url" ? "홈페이지" : "수집 주소"} 열기`}>주소 열기 ↗</a>}
+          </div>)}</div>
+          {!s.feed && <small>수집 API는 해당 서비스의 공식 조회 주소만 지원합니다. 로그인 정보·검색 조건은 주소에 넣지 않습니다.</small>}
           {s.needsConnection && <small>사용 설정과 별도로 해당 서비스 연결이 필요합니다.</small>}
           <div className="cn-policy-source-options">
             <label className="cn-check"><input type="checkbox" aria-label={`${s.name} 수집`} checked={draft.sources[s.id].enabled} onChange={e => source(s.id, { enabled: e.target.checked })} />수집</label>

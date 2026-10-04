@@ -100,7 +100,9 @@
 .cn-policy-source-head strong { min-width: 0; overflow-wrap: anywhere; }
 .cn-policy-source-head .cn-tag { margin-left: 6px; }
 .cn-policy-source-head button { flex-shrink: 0; }
-.cn-policy-source-links { display: grid; grid-template-columns: 65px minmax(0, 1fr); gap: 7px; margin-top: 12px; color: #64748b; font-size: .75rem; }
+.cn-policy-source-links { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 12px; color: #64748b; font-size: .75rem; }
+.cn-policy-source-url { min-width: 0; }
+.cn-policy-source-url .cn-field { margin-bottom: 4px; }
 .cn-policy-source-links a { font-size: .77rem; }
 .cn-policy-add { margin: 18px 0; padding: 16px; border: 1px solid #dbeafe; border-radius: 8px; background: #f8fafc; }
 .cn-policy-add h3 { margin: 0 0 10px; font-size: .95rem; }

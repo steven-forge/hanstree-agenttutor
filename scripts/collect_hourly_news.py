@@ -26,7 +26,7 @@ from collect_content import (  # noqa: E402
     read_json, translate_to_korean, url_id, validate_url, write_json, policy_news_candidate,
     daily_news_progress, is_model_launch, OFFICIAL_NEWS_SOURCE_IDS,
 )
-from news_policy import load_policy, effective_sources, validate_public_url, EXTERNAL_SOURCE_IDS  # noqa: E402
+from news_policy import load_policy, effective_sources, validate_public_url, EXTERNAL_SOURCE_IDS, SOURCE_REGISTRY  # noqa: E402
 from news_public_fetch import fetch_public_url  # noqa: E402
 
 SOURCES_PATH = DATA_DIR / "news-sources.json"
@@ -202,8 +202,7 @@ def apply_event_policy(events: list[dict], policy: dict, now: datetime, keyword_
     """저장 출처도 현재 활성화·기간·키워드·독립성으로 다시 평가한다."""
     filtered = []
     start = now - timedelta(hours=policy["window_hours"])
-    custom_hosts = {source["id"]: {validate_public_url(source[key]) for key in ("url", "site_url")}
-                    for source in policy.get("custom_sources", [])}
+    public_hosts = {source["id"]: set(source["hosts"]) for source in effective_sources(policy, SOURCE_REGISTRY) if source.get("public_fetch")}
     for event in events:
         sources = []
         for source in event.get("sources") or []:
@@ -216,9 +215,9 @@ def apply_event_policy(events: list[dict], policy: dict, now: datetime, keyword_
             published = article_datetime(source)
             if not settings or not settings["enabled"] or published is None or published.tzinfo is None or not start <= published <= now:
                 continue
-            if str(sid).startswith("custom-"):
+            if sid in public_hosts:
                 try:
-                    if any(validate_public_url(source.get(key) or source.get("url")) not in custom_hosts.get(sid, set()) for key in ("url", "target_url")):
+                    if any(validate_public_url(source.get(key) or source.get("url")) not in public_hosts[sid] for key in ("url", "target_url")):
                         continue
                 except ValueError:
                     continue
@@ -344,7 +343,7 @@ def fetch_json(url: str, hosts: set, headers: dict = None, data: bytes = None):
 
 
 def fetch_feed_items(sdef: dict, hosts: set) -> list[dict]:
-    fetcher = fetch_public_url if sdef.get("custom") else fetch_url
+    fetcher = fetch_public_url if sdef.get("public_fetch") else fetch_url
     status, _, body = fetcher(sdef["url"], allowed_hosts=hosts)
     if status != 200:
         raise RuntimeError(f"HTTP {status}: {sdef['url']}")
@@ -433,7 +432,7 @@ def normalize_item(sdef: dict, raw: dict, window_start: datetime, window_end: da
     try:
         validate_url(url, None)
         validate_url(target, None)
-        if sdef.get("custom") and any(validate_public_url(link) not in sdef["hosts"] for link in (url, target)):
+        if sdef.get("public_fetch") and any(validate_public_url(link) not in sdef["hosts"] for link in (url, target)):
             raise ValueError("등록되지 않은 기사 호스트입니다.")
     except ValueError:
         stats["held_count"] += 1

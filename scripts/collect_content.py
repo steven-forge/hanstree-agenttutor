@@ -17,7 +17,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from news_policy import load_policy
+from news_policy import load_policy, effective_sources, EXTERNAL_SOURCE_IDS
 from news_public_fetch import fetch_public_url
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -70,22 +70,19 @@ ALLOWED_HOSTS = {
 TRANSLATION_HOST = "api.mymemory.translated.net"
 
 
+def registered_external_source(source_id: str, policy: dict | None = None) -> dict | None:
+    if source_id not in EXTERNAL_SOURCE_IDS and not source_id.startswith("custom-"):
+        return None
+    policy = policy if policy is not None else load_policy()
+    return next((source for source in effective_sources(policy, read_json(NEWS_SOURCES_PATH))
+                 if source["id"] == source_id and source["enabled"]), None)
+
+
 def registered_hosts_for_source(source_id: str, policy: dict | None = None) -> frozenset[str]:
-    """source_id에 등록된 호스트만 허용한다. data/news-sources.json에 등록된 외부 출처는 그 hosts,
-    그 외(공식 6개 출처)는 ALLOWED_HOSTS로 제한한다. URL 자체의 hostname을 허용 목록으로 쓰지 않는다."""
-    if source_id.startswith("custom-"):
-        policy = policy if policy is not None else load_policy()
-        settings = policy["sources"].get(source_id)
-        if not settings or not settings["enabled"]:
-            return frozenset()
-        for source in policy.get("custom_sources", []):
-            if source["id"] == source_id:
-                return frozenset(urllib.parse.urlsplit(source[key]).hostname.lower() for key in ("url", "site_url"))
-        return frozenset()
-    config = read_json(NEWS_SOURCES_PATH)
-    for sdef in config.get("sources") or []:
-        if isinstance(sdef, dict) and sdef.get("id") == source_id:
-            return frozenset(str(h).lower() for h in sdef.get("hosts") or [])
+    """수정된 피드는 현재 등록 URL의 호스트만, 고정 API는 원래 호스트만 허용한다."""
+    source = registered_external_source(source_id, policy)
+    if source is not None:
+        return frozenset(str(host).lower() for host in source.get("hosts") or [])
     return frozenset(ALLOWED_HOSTS) if source_id in OFFICIAL_NEWS_SOURCE_IDS | {"claude-dev-blog"} | RELEASE_SOURCE_IDS else frozenset()
 
 
@@ -664,12 +661,13 @@ def extract_full_text_data(source_url: str, source_id: str, prefetched_html: str
         if prefetched_html is not None:
             html_text = prefetched_html
         else:
-            allowed_hosts = registered_hosts_for_source(source_id, policy)
+            registered = registered_external_source(source_id, policy)
+            allowed_hosts = frozenset(registered.get("hosts") or []) if registered is not None else registered_hosts_for_source(source_id, policy)
             hostname = (urllib.parse.urlsplit(source_url).hostname or "").lower()
             if not hostname or hostname not in allowed_hosts:
                 result["excerpt_error"] = "본문 출처 호스트가 허용 목록에 없어 원문을 가져오지 않음"
                 return result
-            if source_id.startswith("custom-"):
+            if registered is not None and registered.get("public_fetch"):
                 status, headers, body = fetch_public_url(source_url, allowed_hosts=allowed_hosts)
             else:
                 status, headers, body = fetch_url(source_url, allowed_hosts=allowed_hosts, max_retries=1)

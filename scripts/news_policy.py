@@ -56,12 +56,35 @@ def feed_url_key(url: str) -> tuple:
     return (parsed.scheme.lower(), (parsed.hostname or "").lower(), parsed.path or "/", parsed.query)
 
 
+def validate_source_url(source_id: str, value: object) -> tuple:
+    """기본 API는 원래 호스트의 지원되는 읽기 경로만 허용한다."""
+    validate_public_url(value)
+    key = feed_url_key(value)
+    api_paths = {
+        "hacker-news": r"https://hacker-news\.firebaseio\.com/v0/(?:newstories|topstories|beststories|askstories|showstories|jobstories)\.json",
+        "youtube": r"https://www\.googleapis\.com/youtube/v3/search",
+        "x": r"https://api\.x\.com/2/tweets/search/(?:recent|all)",
+        "reddit": r"https://oauth\.reddit\.com/r/[A-Za-z0-9_]{2,21}/(?:new|hot|top|rising)",
+    }
+    canonical = urllib.parse.urlunsplit((key[0], key[1], key[2], key[3], ""))
+    if source_id in api_paths and ("?" in value or not re.fullmatch(api_paths[source_id], canonical)):
+        raise ValueError("채널 URL: 해당 서비스의 지원되는 공식 수집 API 주소만 허용합니다.")
+    return key
+
+
 def effective_sources(policy: dict, registry: dict) -> list[dict]:
-    """삭제된 기본 출처는 제외하고 추가 채널은 고정된 익명 피드 유형으로만 구성한다."""
-    sources = [{**source, **policy["sources"][source["id"]]} for source in registry.get("sources", [])
-               if isinstance(source, dict) and source.get("id") in policy["sources"]]
+    """수정된 피드·추가 채널만 익명 공개 요청을 쓰고 API의 고정 호스트는 유지한다."""
+    sources = []
+    for source in registry.get("sources", []):
+        if not isinstance(source, dict) or source.get("id") not in policy["sources"]:
+            continue
+        override = policy.get("source_urls", {}).get(source["id"], {})
+        effective = {**source, **policy["sources"][source["id"]], **override}
+        if source.get("type") == "feed" and any(override.get(key, source.get(key)) != source.get(key) for key in ("url", "site_url")):
+            effective.update(public_fetch=True, hosts=sorted({validate_public_url(effective[key]) for key in ("url", "site_url")}))
+        sources.append(effective)
     for source in policy.get("custom_sources", []):
-        sources.append({**source, **policy["sources"][source["id"]], "type": "feed", "custom": True,
+        sources.append({**source, **policy["sources"][source["id"]], "type": "feed", "custom": True, "public_fetch": True,
                         "hosts": sorted({validate_public_url(source["url"]), validate_public_url(source["site_url"])})})
     return sources
 
@@ -86,8 +109,8 @@ def validate_policy(value: object) -> dict:
     if not isinstance(value, dict):
         raise ValueError("정책: 객체가 필요합니다.")
     version = value.get("schema_version")
-    _integer(version, 1, 2, "schema_version")
-    _keys(value, TOP_KEYS | ({"custom_sources"} if version == 2 else set()), "정책")
+    _integer(version, 1, 3, "schema_version")
+    _keys(value, TOP_KEYS | ({"custom_sources"} if version != 1 else set()) | ({"source_urls"} if version == 3 else set()), "정책")
     _integer(value["revision"], 0, 9007199254740990, "revision")
     updated = value["updated_at"]
     if updated is not None:
@@ -122,7 +145,21 @@ def validate_policy(value: object) -> dict:
     custom = value.get("custom_sources", [])
     if not isinstance(custom, list) or len(custom) > 20:
         raise ValueError("custom_sources: 추가 채널은 최대 20개입니다.")
-    feed_keys = {feed_url_key(source["url"]) for source in SOURCE_REGISTRY.get("sources", []) if source.get("url")}
+    source_urls = value.get("source_urls", {})
+    if not isinstance(source_urls, dict):
+        raise ValueError("source_urls: 기본 채널 주소 객체가 필요합니다.")
+    for sid, urls in source_urls.items():
+        if sid not in EXTERNAL_SOURCE_IDS or not isinstance(value["sources"], dict) or sid not in value["sources"]:
+            raise ValueError("source_urls: 현재 등록된 기본 채널 주소만 수정할 수 있습니다.")
+        _keys(urls, {"url", "site_url"}, "source_urls")
+        validate_source_url(sid, urls["url"])
+        validate_public_url(urls["site_url"])
+    feed_keys = set()
+    for source in SOURCE_REGISTRY.get("sources", []):
+        key = validate_source_url(source["id"], source_urls.get(source["id"], {}).get("url", source["url"]))
+        if key in feed_keys:
+            raise ValueError("source_urls: 이미 등록된 수집 주소입니다.")
+        feed_keys.add(key)
     custom_ids = set()
     for source in custom:
         _keys(source, {"id", "name", "url", "site_url"}, "custom_sources")
@@ -152,7 +189,7 @@ def validate_policy(value: object) -> dict:
     if value["display"]["page_size"] not in (10, 20, 30, 50) or value["display"]["sort"] not in ("latest", "importance"):
         raise ValueError("display: 허용된 페이지 크기와 정렬 방식이 필요합니다.")
     _integer(value["daily_target"], 1, 100, "daily_target")
-    result = {**value, "schema_version": 2, "custom_sources": custom}
+    result = {**value, "schema_version": 3, "custom_sources": custom, "source_urls": source_urls}
     if len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode("utf-8")) > MAX_POLICY_BYTES:
         raise ValueError("정책 전체 크기는 120000바이트 이하여야 합니다.")
     return result
