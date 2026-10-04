@@ -42,6 +42,7 @@ type ExploreDoc = {
   api_explanation: string;
   details: string;
   diagram_image?: DiagramImage;
+  diagram_description?: string;
   comparison: Comparison;
   pitfalls: string[];
   sources: Source[];
@@ -162,7 +163,7 @@ export default async function ExploreDetailPage({ params }: { params: Promise<{ 
               <div className="section-head">
                 <div>
                   <h2>3. 그림으로 이해하기</h2>
-                  <p className="section-note">{doc.slug === "decisions-api" ? "맥락과 질문이 들어가 선택지 하나가 정해지고, 앱이 실제로 처리하는 흐름입니다." : "책임을 맡긴 뒤 자료 확인부터 결과 보고까지 이어지는 가상의 흐름입니다."}</p>
+                  <p className="section-note">{doc.diagram_description ?? (doc.slug === "decisions-api" ? "맥락과 질문이 들어가 선택지 하나가 정해지고, 앱이 실제로 처리하는 흐름입니다." : "책임을 맡긴 뒤 자료 확인부터 결과 보고까지 이어지는 가상의 흐름입니다.")}</p>
                 </div>
                 <span className="badge">흐름도</span>
               </div>

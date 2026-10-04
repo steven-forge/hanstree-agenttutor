@@ -39,7 +39,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교)의 일곱 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교), 온톨로지(분류체계·데이터베이스 스키마·지식그래프 비교), Hermes Agent(Herdr·Claude Code 비교), FDE(제품 개발 엔지니어·솔루션 엔지니어 비교)의 열 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -191,3 +191,23 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - 비교 제목을 문서별로 지정할 수 있게 최소 수정했다. 하네스는 '관련 개념과 비교', 기존 제품 문서와 Herdr는 '비슷한 제품과 비교'이며 본문·모바일 목차·큰 화면 목차를 함께 맞췄다.
 - 기존 뉴스 관리 작업의 완료 커밋과 자동 갱신을 유지한 상태로 통합했다. 버전은 0.13.1이다. 이 작업은 설명 문서 추가이며 Herdr 설치나 새 에이전트 실행 환경 구축은 수행하지 않았다.
 - 최종 빌드가 통과해 58개 정적 페이지를 생성했다. 새 두 페이지의 비교 제목·웹툰 참조·각 5문항과 20개 선택지를 생성 HTML에서 확인했다. 실제 브라우저 클릭·모바일 화면 배치는 확인하지 않았다.
+
+## 여덟 번째 문서(온톨로지) 추가 (2026-10-04)
+
+- 비개발자용 온톨로지 설명 문서를 추가했다. W3C OWL2 Primer·RDF1.1 Primer, Stanford Ontology101(Noy & McGuinness)을 주요 근거로, SHACL·SKOS·Palantir Foundry Ontology·Stanford 철학 백과를 추가 참고로 썼다(확인일 2026-10-04 KST).
+- `data/explore.json`에 slug `ontology` 문서 1건(8번 구성: 핵심 답변·쉬운 설명·용어 풀이·그림·관련 개념 비교·자세한 설명·헷갈리는 점·출처·퀴즈)을 추가했다. `comparison`에 온톨로지·분류체계·데이터베이스 스키마·지식그래프 4열 비교표를 뒀다.
+- 공통 상세 화면의 그림 안내 문구를 문서별로 바꿀 수 있도록 `ExploreDoc`에 선택 필드 `diagram_description`을 추가하고 `app/explore/[slug]/page.tsx`의 section-note를 `doc.diagram_description ?? 기존 문구`로 처리했다. 온톨로지 문서에만 전용 문구를 지정했고 기존 7개 문서의 안내는 그대로 유지된다.
+- `data/explore-quizzes.json`에 `ontology` 퀴즈(`version: 1`, 5문항)를 추가했다. 개념은 온톨로지 설계 vs 실제 운영 업무 구분, 클래스/개체 용어 구분, 공리로부터의 안전한 추론 범위, OWL 열린 세계 가정, 온톨로지·지식그래프의 역할 차이를 다룬다.
+- `docs/knowledge/ONTOLOGY.md`를 기존 문서와 같은 8개 섹션 구성으로 작성하고 JSON 본문과 문단·표·퀴즈를 동일하게 맞췄다. 웹툰 이미지(`public/explore/ontology-webtoon.png`, 1024×1536)는 가상 도서관 사례이며 실제 제품 화면이 아니라고 본문에 명시했다. 내장 imagegen으로 생성한 8컷 웹툰을 연결했다.
+- 이후 가독성 보완: `core_answer`·`api_explanation`·`details`의 문장·문단을 다시 다듬고 RDF(일반 데이터 모델)와 OWL(온톨로지 언어)의 구분을 명확히 했으며, 퀴즈 4·5번은 정답 의미를 바꾸지 않고 보기 순서만 재배치했다(`ONTOLOGY.md` 동기화).
+
+## 아홉·열 번째 문서(Hermes Agent, FDE) 추가 (2026-10-04)
+
+- 사용자 요청에 따라 Hermes Agent, FDE 두 문서를 추가했다. 기존 일곱 문서·퀴즈를 보존했고, 같은 작업에서 온톨로지의 표현과 보기 순서를 보완했다.
+- Hermes Agent는 NousResearch 공식 문서(Memory·Skills·Cron·Quickstart·Security·FAQ)와 GitHub, Herdr·Claude Code 문서를 비교 출처로 썼다. memory·skills·cron의 역할, 메신저 연결과 실제 실행 환경의 구분, 외부 모델 연결 시 데이터 전달 가능성을 설명한다.
+- FDE는 Palantir·OpenAI 공식 채용 공고를 근거로, 사람의 역할이라는 점과 가상 배송 지연 사례, 제품 개발 엔지니어·솔루션 엔지니어(사전영업)와의 역할 비교를 설명한다. 급여·채용 여부·학력·출장 비율 같은 공고별 변동 조건은 일반화하지 않았다.
+- `data/explore.json`에 slug `hermes-agent`, `fde` 문서를 추가하고, `data/explore-quizzes.json`에 각각 5문항(`version: 1`)을 추가했다. `docs/knowledge/HERMES_AGENT.md`, `FDE.md`를 같은 8개 섹션 구성으로 작성해 JSON 본문과 맞췄다.
+- 웹툰 이미지(`public/explore/hermes-agent-webtoon.png`, `public/explore/fde-webtoon.png`, 각 1024×1536)는 가상 사례이며 실제 제품 화면이나 측정된 성과가 아니라고 본문에 명시했다. 내장 imagegen으로 생성한 8컷 웹툰을 각각 연결했다.
+
+- 세 원고의 문단·비교표·문제·보기·해설을 웹 자료와 맞췄다. 속성과 속성값, Hermes의 메모·스킬과 모델 학습, FDE의 현장 적용 책임을 분명히 구분하고 직무 비교에 제품 개발 엔지니어의 공식 출처도 추가했다. 퀴즈는 각 5문항이며 기존 즉시 재선택·첫 선택 점수·기록 미저장 방식을 유지한다.
+- v0.13.5 빌드가 통과해 61개 정적 페이지를 생성했다. 새 세 페이지에서 웹툰 참조와 각 5문항·20개 선택지, 문서별 그림 안내·비교 제목을 확인했다. 실제 브라우저 클릭과 모바일 화면 배치는 직접 확인하지 않았다.
