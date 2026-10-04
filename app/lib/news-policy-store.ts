@@ -25,7 +25,7 @@ export async function getNewsPolicy(): Promise<NewsPolicy> {
   const raw = await command<string | null>("GET", currentKey);
   if (raw === null) return bundledNewsPolicy;
   try {
-    if (typeof raw !== "string" || raw.length > 50000) throw 0;
+    if (typeof raw !== "string" || Buffer.byteLength(raw, "utf8") > 128 * 1024) throw 0;
     const policy = validateNewsPolicy(JSON.parse(raw));
     if (policy.revision < bundledNewsPolicy.revision) throw 0;
     return policy;
@@ -38,7 +38,9 @@ export async function saveNewsPolicy(input: unknown): Promise<NewsPolicy> {
   const current = await getNewsPolicy();
   if (current.revision >= Number.MAX_SAFE_INTEGER - 1) throw new AdminError("저장 버전의 허용 범위를 초과했습니다.", 409);
   if (current.revision !== policy.revision) throw new AdminError("다른 탭에서 기준을 변경했습니다. 최신 기준을 다시 불러온 뒤 수정해 주세요.", 409);
-  const next = { ...policy, revision: current.revision + 1, updated_at: new Date().toISOString() };
+  let next: NewsPolicy;
+  try { next = validateNewsPolicy({ ...policy, revision: current.revision + 1, updated_at: new Date().toISOString() }); }
+  catch { throw new AdminError("기준 전체 용량이 너무 큽니다. 채널 주소나 키워드 길이를 줄여 주세요."); }
   const result = await command<number>("EVAL", "local old=redis.call('GET',KEYS[1]); local rev=tonumber(ARGV[3]); if old then rev=cjson.decode(old).revision end; if rev~=tonumber(ARGV[1]) then return 0 end; if old then redis.call('LPUSH',KEYS[2],old); redis.call('LTRIM',KEYS[2],0,19) end; redis.call('SET',KEYS[1],ARGV[2]); return 1", 2, currentKey, historyKey, current.revision, JSON.stringify(next), bundledNewsPolicy.revision);
   if (result !== 1) throw new AdminError("다른 탭에서 기준을 변경했습니다. 최신 기준을 다시 불러와 주세요.", 409);
   return next;

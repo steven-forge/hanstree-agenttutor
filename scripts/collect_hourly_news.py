@@ -26,7 +26,8 @@ from collect_content import (  # noqa: E402
     read_json, translate_to_korean, url_id, validate_url, write_json, policy_news_candidate,
     daily_news_progress, is_model_launch, OFFICIAL_NEWS_SOURCE_IDS,
 )
-from news_policy import load_policy  # noqa: E402
+from news_policy import load_policy, effective_sources, validate_public_url, EXTERNAL_SOURCE_IDS  # noqa: E402
+from news_public_fetch import fetch_public_url  # noqa: E402
 
 SOURCES_PATH = DATA_DIR / "news-sources.json"
 LOCK_PATH = ROOT / ".source-cache" / "news-hourly.lock"
@@ -201,6 +202,8 @@ def apply_event_policy(events: list[dict], policy: dict, now: datetime, keyword_
     """저장 출처도 현재 활성화·기간·키워드·독립성으로 다시 평가한다."""
     filtered = []
     start = now - timedelta(hours=policy["window_hours"])
+    custom_hosts = {source["id"]: {validate_public_url(source[key]) for key in ("url", "site_url")}
+                    for source in policy.get("custom_sources", [])}
     for event in events:
         sources = []
         for source in event.get("sources") or []:
@@ -213,12 +216,54 @@ def apply_event_policy(events: list[dict], policy: dict, now: datetime, keyword_
             published = article_datetime(source)
             if not settings or not settings["enabled"] or published is None or published.tzinfo is None or not start <= published <= now:
                 continue
+            if str(sid).startswith("custom-"):
+                try:
+                    if any(validate_public_url(source.get(key) or source.get("url")) not in custom_hosts.get(sid, set()) for key in ("url", "target_url")):
+                        continue
+                except ValueError:
+                    continue
             if settings["keyword_filter"] and not keyword_re.search(f"{source.get('title') or ''} {source.get('summary') or ''}"):
                 continue
             sources.append({**source, "independent": settings["independent"]})
         if sources:
             filtered.append({**event, "title": sources[0]["title"], "sources": sources})
     return filtered
+
+
+def retired_events(events: list[dict], policy: dict) -> list[dict]:
+    """삭제된 채널의 미게시 원문은 보존하되 현재 게시 후보와 집계에서 분리한다."""
+    retired = []
+    seen = set()
+    for event in events:
+        sources = []
+        for source in event.get("sources") or []:
+            sid = source.get("source_id") or ""
+            key = (sid, source.get("url"))
+            if (sid in EXTERNAL_SOURCE_IDS or sid.startswith("custom-")) and sid not in policy["sources"] and key not in seen:
+                sources.append(source)
+                seen.add(key)
+        if sources:
+            retired.append({**event, "title": sources[0].get("title") or event["title"], "sources": sources,
+                            "status": "retired", "reason": "관리자가 삭제한 채널의 과거 후보", "independent_source_count": 0})
+    return retired
+
+
+def retired_source_reports(previous: list[dict], policy: dict) -> list[dict]:
+    reports = []
+    seen = set()
+    for report in previous:
+        sid = report.get("id") or ""
+        if (sid in EXTERNAL_SOURCE_IDS or sid.startswith("custom-")) and sid not in policy["sources"] and sid not in seen:
+            reports.append({**report, "status": "not_configured", "removed": True, "count": 0,
+                            **new_stats(), "error": "관리자가 삭제한 채널 · 과거 점검 기록 보존"})
+            seen.add(sid)
+    return reports
+
+
+def current_independent_count(sources: list[dict], policy: dict) -> int:
+    """공개 원문의 과거 출처는 남기면서 삭제·중지 출처를 새 중요도 판단에서 제외한다."""
+    return independent_count([{**source, "independent": policy["sources"][source["source_id"]]["independent"]}
+                              for source in sources if policy["sources"].get(source.get("source_id"), {}).get("enabled")])
 
 
 def official_event(article: dict, now: datetime) -> dict:
@@ -272,11 +317,15 @@ def parse_feed_date(text: str) -> datetime | None:
 
 def parse_feed(xml_bytes: bytes) -> list[dict]:
     """RSS 2.0·RSS 1.0·Atom 항목을 {title,url,date,summary}로 통일한다. 날짜는 RFC 2822·ISO 8601 모두 받는다."""
+    if len(xml_bytes) > 3 * 1024 * 1024 or b"\x00" in xml_bytes or re.search(br"<!\s*(?:DOCTYPE|ENTITY)\b", xml_bytes, re.I):
+        raise RuntimeError("피드 크기·문자 인코딩 또는 XML 선언이 허용 범위를 벗어났습니다.")
     try:
         root = ET.fromstring(xml_bytes)
     except ET.ParseError as error:
         raise RuntimeError(f"피드 XML 파싱 실패: {error}")
-    entries = [el for el in root.iter() if _local(el.tag) in ("item", "entry")]
+    if _local(root.tag) not in ("rss", "rdf", "feed"):
+        raise RuntimeError("RSS 또는 Atom 피드가 아닙니다.")
+    entries = [el for el in root.iter() if _local(el.tag) in ("item", "entry")][:1000]
     if not entries:
         raise RuntimeError("피드 항목이 없습니다. 빈 수집 성공으로 처리하지 않습니다.")
     return [{
@@ -295,7 +344,8 @@ def fetch_json(url: str, hosts: set, headers: dict = None, data: bytes = None):
 
 
 def fetch_feed_items(sdef: dict, hosts: set) -> list[dict]:
-    status, _, body = fetch_url(sdef["url"], allowed_hosts=hosts)
+    fetcher = fetch_public_url if sdef.get("custom") else fetch_url
+    status, _, body = fetcher(sdef["url"], allowed_hosts=hosts)
     if status != 200:
         raise RuntimeError(f"HTTP {status}: {sdef['url']}")
     return parse_feed(body)
@@ -383,6 +433,8 @@ def normalize_item(sdef: dict, raw: dict, window_start: datetime, window_end: da
     try:
         validate_url(url, None)
         validate_url(target, None)
+        if sdef.get("custom") and any(validate_public_url(link) not in sdef["hosts"] for link in (url, target)):
+            raise ValueError("등록되지 않은 기사 호스트입니다.")
     except ValueError:
         stats["held_count"] += 1
         return None
@@ -436,7 +488,7 @@ def build_article(event: dict, count: int, high_at: int, now: datetime, policy: 
         article["title_ko"] = translate_to_korean(article["title"])
     if needs_korean_translation(summary):
         article["source_summary_ko"] = translate_to_korean(summary)
-    extraction = extract_full_text_data(primary["url"], primary["source_id"])
+    extraction = extract_full_text_data(primary["url"], primary["source_id"], policy=policy)
     if extraction["summary_lines"]:
         article["source_summary_ko"] = "\n".join(extraction["summary_lines"])
         article["source_summary_provenance"] = "article_full_text_3line"
@@ -459,9 +511,7 @@ def event_source(item: dict) -> dict:
 def collect_hourly() -> int:
     policy = load_policy()
     config = read_json(SOURCES_PATH)
-    sources = [{**s, **policy["sources"][s["id"]]} for s in config.get("sources", []) if isinstance(s, dict) and s.get("id") in policy["sources"]]
-    if not sources:
-        raise ValueError("data/news-sources.json에 사용할 출처가 없습니다.")
+    sources = effective_sources(policy, config)
     now = datetime.now(KST)
     window_hours = policy["window_hours"]
     window_start, window_end = now - timedelta(hours=window_hours), now
@@ -474,7 +524,11 @@ def collect_hourly() -> int:
     if not isinstance(today["articles"], list):
         raise ValueError("data/today.json의 articles가 배열이 아닙니다. 공개 archive를 보호하기 위해 중단합니다.")
     candidates_data = read_json(CANDIDATES_PATH)
-    stored_events = [e for e in candidates_data.get("events") or [] if isinstance(e, dict) and isinstance(e.get("sources"), list) and e.get("title")]
+    health = read_json(HEALTH_PATH)
+    news = health.get("news") or {}
+    stored_events = [e for e in [*(candidates_data.get("events") or []), *(candidates_data.get("retired_events") or [])]
+                     if isinstance(e, dict) and isinstance(e.get("sources"), list) and e.get("title")]
+    retired = retired_events(stored_events, policy)
     stored_events.extend(official_event(a, now) for a in candidates_data.get("official_pending") or [] if isinstance(a, dict) and policy_news_candidate(a, policy, now))
     events = rebuild_events(apply_event_policy(stored_events, policy, now, keyword_re), now)
 
@@ -496,7 +550,8 @@ def collect_hourly() -> int:
         for u in source_urls(event["sources"]):
             known[u] = ("event", event)
 
-    reports, items = [], []
+    reports = retired_source_reports([*(candidates_data.get("sources") or []), *(news.get("sources") or [])], policy)
+    items = []
     for sdef in sources:
         stats, collected, error = new_stats(), [], None
         not_configured_reason = ("뉴스 정책에서 수집 중지" if not sdef["enabled"] else None) or sdef.get("not_configured_reason") or (
@@ -550,7 +605,7 @@ def collect_hourly() -> int:
                 continue
             sources_list.append(public_source(item) if kind == "article" else event_source(item))
             if kind == "article":
-                count = independent_count(sources_list)
+                count = current_independent_count(sources_list, policy)
                 obj["independent_source_count"], obj["importance"] = count, merged_importance(obj.get("importance"), count, high_at)
                 updated_articles += 1
         for u in (item["url"], item["target_url"]):
@@ -577,7 +632,7 @@ def collect_hourly() -> int:
                 sources_list.append(public_source_from_event(source))
                 changed = True
         if changed:
-            count = independent_count(sources_list)
+            count = current_independent_count(sources_list, policy)
             article["independent_source_count"], article["importance"] = count, merged_importance(article.get("importance"), count, high_at)
             updated_articles += 1
     events = pending_events
@@ -624,7 +679,7 @@ def collect_hourly() -> int:
         "held_item_count": sum(r["held_count"] for r in reports),
         "failed_source_count": sum(1 for r in reports if r["status"] == "failed"),
         "checked_source_count": sum(1 for r in reports if r["status"] != "not_configured"),
-        "not_configured_source_count": sum(1 for r in reports if r["status"] == "not_configured"),
+        "not_configured_source_count": sum(1 for r in reports if r["status"] == "not_configured" and not r.get("removed")),
         "min_independent": min_independent,
         "policy_revision": policy["revision"],
         "policy_updated_at": policy["updated_at"],
@@ -643,6 +698,7 @@ def collect_hourly() -> int:
         hourly_window_start=window_start.isoformat(),
         sources=merge_source_reports(candidates_data.get("sources") or [], reports),
         events=remaining,
+        retired_events=retired,
         auto_published_count=len(added),
         hourly_run=hourly_run,
         official_pending=official_pending,
@@ -650,8 +706,6 @@ def collect_hourly() -> int:
     )
     write_json(CANDIDATES_PATH, candidates_data)
 
-    health = read_json(HEALTH_PATH)
-    news = health.get("news") or {}
     merged_sources = merge_source_reports(news.get("sources") or [], reports)
     health["news"] = {**news, "checked_at": now.isoformat(), "status": news_status(merged_sources), "archive_count": len(today["articles"]),
                       "pending_event_count": len(remaining), "sources": merged_sources}

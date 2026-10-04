@@ -15,7 +15,9 @@ ROOT = Path(__file__).resolve().parent.parent
 POLICY_PATH = ROOT / "data" / "news-policy.json"
 POLICY_URL = "https://hanstree-agenttutor-jgwu.vercel.app/api/news-policy"
 POLICY_HOST = "hanstree-agenttutor-jgwu.vercel.app"
-MAX_BYTES = 64 * 1024
+SOURCE_REGISTRY = json.loads((ROOT / "data" / "news-sources.json").read_text(encoding="utf-8"))
+MAX_BYTES = 128 * 1024
+MAX_POLICY_BYTES = 120000
 KST = timezone(timedelta(hours=9))
 OFFICIAL_SOURCE_IDS = frozenset({"openai-news", "google-ai", "anthropic-news", "xai-news", "claude-dev-blog"})
 EXTERNAL_SOURCE_IDS = frozenset({
@@ -25,6 +27,43 @@ EXTERNAL_SOURCE_IDS = frozenset({
 })
 TOP_KEYS = {"schema_version", "revision", "updated_at", "collection_interval_hours", "official_window_days",
             "window_hours", "publish", "ai_keywords", "official_sources", "sources", "display", "daily_target"}
+LOCAL_SUFFIXES = {"localhost", "local", "localdomain", "internal", "intranet", "lan", "home", "test", "invalid", "example", "onion"}
+SECRET_QUERY_KEYS = {"apikey", "accesskey", "accesstoken", "token", "key", "password", "passwd", "secret", "signature", "auth", "authorization", "code"}
+
+
+def validate_public_url(value: object) -> str:
+    """공개 정책에 저장할 익명 HTTPS URL 문법만 검사한다. DNS 검사는 요청 시 별도로 한다."""
+    if not isinstance(value, str) or not 1 <= len(value) <= 2048 or not re.fullmatch(r"[\x21-\x7e]+", value) or "#" in value or "\\" in value:
+        raise ValueError("채널 URL: 공백·인증 정보 없는 공개 HTTPS 주소가 필요합니다.")
+    match = re.match(r"^https://([A-Za-z0-9.-]+)(?::443)?(?=/|\?|$)", value)
+    if not match:
+        raise ValueError("채널 URL: 표준 HTTPS 호스트와 443 포트만 허용합니다.")
+    host = match.group(1).lower()
+    labels = host.split(".")
+    if len(host) > 253 or len(labels) < 2 or any(not re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", label) for label in labels) or not re.fullmatch(r"[a-z]{2,63}", labels[-1]) or labels[-1] in LOCAL_SUFFIXES:
+        raise ValueError("채널 URL: 공용 DNS 도메인만 허용합니다.")
+    parsed = urllib.parse.urlsplit(value)
+    if parsed.username or parsed.password or parsed.port not in (None, 443):
+        raise ValueError("채널 URL: 인증 정보나 별도 포트는 허용하지 않습니다.")
+    for key, _ in urllib.parse.parse_qsl(parsed.query, keep_blank_values=True):
+        if re.sub(r"[-_]", "", key.lower()) in SECRET_QUERY_KEYS:
+            raise ValueError("채널 URL: 비밀값을 전달하는 쿼리는 공개 정책에 저장할 수 없습니다.")
+    return host
+
+
+def feed_url_key(url: str) -> tuple:
+    parsed = urllib.parse.urlsplit(url)
+    return (parsed.scheme.lower(), (parsed.hostname or "").lower(), parsed.path or "/", parsed.query)
+
+
+def effective_sources(policy: dict, registry: dict) -> list[dict]:
+    """삭제된 기본 출처는 제외하고 추가 채널은 고정된 익명 피드 유형으로만 구성한다."""
+    sources = [{**source, **policy["sources"][source["id"]]} for source in registry.get("sources", [])
+               if isinstance(source, dict) and source.get("id") in policy["sources"]]
+    for source in policy.get("custom_sources", []):
+        sources.append({**source, **policy["sources"][source["id"]], "type": "feed", "custom": True,
+                        "hosts": sorted({validate_public_url(source["url"]), validate_public_url(source["site_url"])})})
+    return sources
 
 
 def _keys(value, expected: set | frozenset, label: str) -> None:
@@ -44,8 +83,11 @@ def _boolean(value, label: str) -> None:
 
 def validate_policy(value: object) -> dict:
     """입력을 변경하지 않고 검증한다. 알 수 없는 필드·출처·자료형은 거부한다."""
-    _keys(value, TOP_KEYS, "정책")
-    _integer(value["schema_version"], 1, 1, "schema_version")
+    if not isinstance(value, dict):
+        raise ValueError("정책: 객체가 필요합니다.")
+    version = value.get("schema_version")
+    _integer(version, 1, 2, "schema_version")
+    _keys(value, TOP_KEYS | ({"custom_sources"} if version == 2 else set()), "정책")
     _integer(value["revision"], 0, 9007199254740990, "revision")
     updated = value["updated_at"]
     if updated is not None:
@@ -77,7 +119,29 @@ def validate_policy(value: object) -> dict:
     _keys(value["official_sources"], OFFICIAL_SOURCE_IDS, "official_sources")
     for key, enabled in value["official_sources"].items():
         _boolean(enabled, f"official_sources.{key}")
-    _keys(value["sources"], EXTERNAL_SOURCE_IDS, "sources")
+    custom = value.get("custom_sources", [])
+    if not isinstance(custom, list) or len(custom) > 20:
+        raise ValueError("custom_sources: 추가 채널은 최대 20개입니다.")
+    feed_keys = {feed_url_key(source["url"]) for source in SOURCE_REGISTRY.get("sources", []) if source.get("url")}
+    custom_ids = set()
+    for source in custom:
+        _keys(source, {"id", "name", "url", "site_url"}, "custom_sources")
+        sid, name = source["id"], source["name"]
+        if not isinstance(sid, str) or not re.fullmatch(r"custom-[0-9a-f]{32}", sid) or sid in custom_ids:
+            raise ValueError("custom_sources: 고유한 추가 채널 ID가 필요합니다.")
+        if not isinstance(name, str) or not name.strip() or name != name.strip() or re.search(r"[\x00-\x1f\x7f\ud800-\udfff]", name) or len(name.encode("utf-16-le")) // 2 > 80:
+            raise ValueError("custom_sources: 이름은 앞뒤 공백 없는 1~80자여야 합니다.")
+        validate_public_url(source["url"])
+        validate_public_url(source["site_url"])
+        key = feed_url_key(source["url"])
+        if key in feed_keys:
+            raise ValueError("custom_sources: 이미 등록된 피드 주소입니다. 기본 채널은 복원해 주세요.")
+        feed_keys.add(key)
+        custom_ids.add(sid)
+    if version == 1:
+        _keys(value["sources"], EXTERNAL_SOURCE_IDS, "sources")
+    elif not isinstance(value["sources"], dict) or not custom_ids <= set(value["sources"]) or not set(value["sources"]) <= EXTERNAL_SOURCE_IDS | custom_ids:
+        raise ValueError("sources: 등록된 채널만 허용하며 모든 추가 채널의 규칙이 필요합니다.")
     for key, source in value["sources"].items():
         _keys(source, {"enabled", "independent", "keyword_filter", "max_items"}, f"sources.{key}")
         for flag in ("enabled", "independent", "keyword_filter"):
@@ -88,7 +152,10 @@ def validate_policy(value: object) -> dict:
     if value["display"]["page_size"] not in (10, 20, 30, 50) or value["display"]["sort"] not in ("latest", "importance"):
         raise ValueError("display: 허용된 페이지 크기와 정렬 방식이 필요합니다.")
     _integer(value["daily_target"], 1, 100, "daily_target")
-    return value
+    result = {**value, "schema_version": 2, "custom_sources": custom}
+    if len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode("utf-8")) > MAX_POLICY_BYTES:
+        raise ValueError("정책 전체 크기는 120000바이트 이하여야 합니다.")
+    return result
 
 
 def load_policy() -> dict:

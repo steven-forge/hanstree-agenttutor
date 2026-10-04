@@ -18,6 +18,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from news_policy import load_policy
+from news_public_fetch import fetch_public_url
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -69,14 +70,23 @@ ALLOWED_HOSTS = {
 TRANSLATION_HOST = "api.mymemory.translated.net"
 
 
-def registered_hosts_for_source(source_id: str) -> frozenset[str]:
+def registered_hosts_for_source(source_id: str, policy: dict | None = None) -> frozenset[str]:
     """source_id에 등록된 호스트만 허용한다. data/news-sources.json에 등록된 외부 출처는 그 hosts,
     그 외(공식 6개 출처)는 ALLOWED_HOSTS로 제한한다. URL 자체의 hostname을 허용 목록으로 쓰지 않는다."""
+    if source_id.startswith("custom-"):
+        policy = policy if policy is not None else load_policy()
+        settings = policy["sources"].get(source_id)
+        if not settings or not settings["enabled"]:
+            return frozenset()
+        for source in policy.get("custom_sources", []):
+            if source["id"] == source_id:
+                return frozenset(urllib.parse.urlsplit(source[key]).hostname.lower() for key in ("url", "site_url"))
+        return frozenset()
     config = read_json(NEWS_SOURCES_PATH)
     for sdef in config.get("sources") or []:
         if isinstance(sdef, dict) and sdef.get("id") == source_id:
             return frozenset(str(h).lower() for h in sdef.get("hosts") or [])
-    return ALLOWED_HOSTS
+    return frozenset(ALLOWED_HOSTS) if source_id in OFFICIAL_NEWS_SOURCE_IDS | {"claude-dev-blog"} | RELEASE_SOURCE_IDS else frozenset()
 
 
 def read_json(path: Path) -> dict:
@@ -642,7 +652,7 @@ def dedupe_blocks(blocks: list[str]) -> list[str]:
 QUOTE_MAX_WORDS = 25
 
 
-def extract_full_text_data(source_url: str, source_id: str, prefetched_html: str | None = None) -> dict:
+def extract_full_text_data(source_url: str, source_id: str, prefetched_html: str | None = None, policy: dict | None = None) -> dict:
     """원문 본문을 한 번 받아와 추출형 3문장 요약과 짧은 원문 인용(<=25단어)+한국어 번역을 함께 만든다.
     반환: {"summary_lines": list[str]|None, "excerpt": {"original","ko"}|None, "excerpt_error": str|None}.
     인용은 요약에 쓰인 문장 중 자격이 되는 것을 우선 재사용해 번역 API를 중복 호출하지 않고, 없으면 본문의
@@ -654,12 +664,15 @@ def extract_full_text_data(source_url: str, source_id: str, prefetched_html: str
         if prefetched_html is not None:
             html_text = prefetched_html
         else:
-            allowed_hosts = registered_hosts_for_source(source_id)
+            allowed_hosts = registered_hosts_for_source(source_id, policy)
             hostname = (urllib.parse.urlsplit(source_url).hostname or "").lower()
             if not hostname or hostname not in allowed_hosts:
                 result["excerpt_error"] = "본문 출처 호스트가 허용 목록에 없어 원문을 가져오지 않음"
                 return result
-            status, headers, body = fetch_url(source_url, allowed_hosts=allowed_hosts, max_retries=1)
+            if source_id.startswith("custom-"):
+                status, headers, body = fetch_public_url(source_url, allowed_hosts=allowed_hosts)
+            else:
+                status, headers, body = fetch_url(source_url, allowed_hosts=allowed_hosts, max_retries=1)
             if status != 200:
                 result["excerpt_error"] = f"원문 본문을 가져오지 못함 (HTTP {status})"
                 return result

@@ -95,6 +95,16 @@
 .cn-policy-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 12px; margin-bottom: 18px; }
 .cn-policy-source { min-width: 0; padding: 14px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: .85rem; }
 .cn-policy-source > small { display: block; margin-top: 5px; color: #64748b; }
+.cn-policy-source-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.cn-policy-source-head strong { min-width: 0; overflow-wrap: anywhere; }
+.cn-policy-source-head .cn-tag { margin-left: 6px; }
+.cn-policy-source-head button { flex-shrink: 0; }
+.cn-policy-source-links { display: grid; grid-template-columns: 65px minmax(0, 1fr); gap: 7px; margin-top: 12px; color: #64748b; font-size: .75rem; }
+.cn-policy-source-links a { font-size: .77rem; }
+.cn-policy-add { margin: 18px 0; padding: 16px; border: 1px solid #dbeafe; border-radius: 8px; background: #f8fafc; }
+.cn-policy-add h3 { margin: 0 0 10px; font-size: .95rem; }
+.cn-policy-restore { margin-bottom: 18px; }
+.cn-policy-clear { margin-left: 8px; }
 .cn-policy-source-options { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .cn-policy-source-options .cn-field { max-width: 105px; }
 .cn-publish-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 16px; }

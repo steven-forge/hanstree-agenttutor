@@ -8,6 +8,7 @@ on:
       - 'scripts/collect_content.py'
       - 'scripts/collect_hourly_news.py'
       - 'scripts/news_policy.py'
+      - 'scripts/news_public_fetch.py'
   schedule:
     - cron: '15 21 * * *'  # 06:15 Asia/Seoul - 문서 확인 (뉴스 주기와 별개)
     - cron: '0 * * * *'    # 매시간 정책 동기화 후 KST 기준 뉴스 주기 판정
