@@ -99,4 +99,4 @@ https://hanstree-agenttutor-jgwu.vercel.app/api/admin/news/instagram/callback
 
 - 실제 Meta 앱 생성, OAuth 동의 화면 진행, 토큰 발급·교환, `/me`·`content_publishing_limit` 실제 응답, 실제 발행은 수행하지 않았다. 응답 형식 검증(`/me`의 `user_id`·`username`·`account_type`, 게시 한도의 `data[0].quota_usage`)은 공식 문서의 예시를 기준으로 작성했으며, 실제 응답이 다르면 연결 또는 확인이 실패로 표시될 수 있다.
 - 앱 검토(App Review) 통과 여부와 실제 배포 범위는 운영자가 Meta 개발자 콘솔에서 별도로 진행해야 하며, 검토 통과를 보장하지 않는다.
-- 운영용 빌드·타입 검사는 통과했다. 실제 계정이 연결된 브라우저 동작, 운영 배포 반영과 실게시 성공은 아직 확인하지 않았다.
+- 운영용 빌드·타입 검사는 통과했다. v0.13.6 `2982c5b` 통합 배포 후 2026-10-04 10:18 KST 운영 `/admin/news/instagram`의 관리자 로그인 화면·로그인 유지 체크박스와 비로그인 연결 API 401을 확인했다. 실제 계정이 연결된 브라우저 동작과 실게시 성공은 아직 확인하지 않았다.
