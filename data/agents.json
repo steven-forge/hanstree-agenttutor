@@ -391,6 +391,136 @@
       ],
       "reviewed_at": "2026-09-23T08:44:00+09:00",
       "updated_at": "2026-09-23T08:44:00+09:00"
+    },
+    {
+      "id": "qwen",
+      "slug": "qwen",
+      "title": "Qwen",
+      "provider": "Alibaba Cloud (Model Studio)",
+      "tool_modes": [],
+      "tagline": "Alibaba Cloud Model Studio API로 제공되는 Qwen3.8 시리즈 플래그십·경량·멀티모달 모델",
+      "suitable_for": [
+        "장기 실행 자율 코딩·엔지니어링 작업(qwen3.8-max)",
+        "빠른 응답이 필요한 고동시성 코딩·에이전트 워크플로우(qwen3.8-flash)",
+        "이미지·오디오·비디오 입력을 다루는 멀티모달 이해 작업(qwen3.8-omni-flash)"
+      ],
+      "workflow_and_strengths": [
+        "qwen3.8-max는 2.4조 파라미터 MoE 플래그십으로 Model Studio API를 통해 공식 제공됩니다.",
+        "qwen3.8-max-0902 스냅샷(별칭 qwen3.8-max-2026-09-02)은 코딩·에이전트 성능이 강화된 업그레이드 버전입니다.",
+        "qwen3.8-flash는 OpenAI·Anthropic API 프로토콜과 호환되어 Claude Code·Codex 같은 개발 도구에 통합하기 쉽습니다.",
+        "qwen3.8-omni-flash는 텍스트·이미지·오디오·비디오 입력을 받아 텍스트로 출력하는 멀티모달 모델입니다."
+      ],
+      "cautions": [
+        "가격은 Singapore(International) 리전의 표준 유료 요금 기준이며, China/Global 리전 요금과 다릅니다.",
+        "앱·서비스에서 개별 모델을 선택할 수 있는 최소 요금제는 공식 자료로 확인되지 않았습니다.",
+        "qwen3.8-max-0902은 qwen3.8-max의 스냅샷이므로 중복 모델로 혼동하지 않아야 합니다."
+      ],
+      "form_factors": [
+        {
+          "type": "API",
+          "status": "공식지원확인",
+          "notes": "Alibaba Cloud Model Studio API로 공식 제공 (https://www.alibabacloud.com/help/en/model-studio/models)"
+        },
+        {
+          "type": "App",
+          "status": "미확인",
+          "notes": "앱 요금제 및 모델 선택 가능 여부 공식 미확인"
+        },
+        {
+          "type": "CLI",
+          "status": "미확인",
+          "notes": "공식 CLI 확인되지 않음"
+        }
+      ],
+      "differences": "Qwen은 Alibaba Cloud Model Studio API를 통해 리전별 요금이 다르게 제공되며, 이 비교에서는 Singapore(International) 리전의 표준 유료 요금을 기준으로 합니다.",
+      "sources": [
+        {
+          "name": "Model Studio Models",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/models"
+        },
+        {
+          "name": "qwen3.8-max Model Info",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"
+        },
+        {
+          "name": "qwen3.8-flash Model Info",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash"
+        },
+        {
+          "name": "qwen3.8-omni-flash Model Info",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-omni-flash"
+        }
+      ],
+      "reviewed_at": "2026-10-04T10:29:00+09:00",
+      "updated_at": "2026-10-04T10:29:00+09:00"
+    },
+    {
+      "id": "glm",
+      "slug": "glm",
+      "title": "GLM",
+      "provider": "Z.ai (Zhipu)",
+      "tool_modes": [
+        "Terminal"
+      ],
+      "tagline": "Z.ai의 GLM-5.3/5.2/5.1/5/4.7 계열과 GLM Coding Plan 구독으로 제공되는 코딩·에이전트 모델",
+      "suitable_for": [
+        "복잡한 소프트웨어 엔지니어링·장기 실행 에이전트 작업(GLM-5.3)",
+        "GLM Coding Plan 구독으로 코딩 에이전트에 연결하는 작업",
+        "이전 GLM 모델과의 코딩·추론 기능 비교"
+      ],
+      "workflow_and_strengths": [
+        "GLM-5.3은 GLM-5.2와 동일한 베이스 모델에 post-training을 더해 코딩·장기 작업 성능을 크게 높였습니다.",
+        "GLM-5.3/GLM-5.3-Flash는 항상 thinking이 켜져 있으며 reasoning_effort는 low/high/max만 지원합니다(disable 불가).",
+        "GLM-5.2는 none/minimal로 추론을 생략하며, low/medium은 high로, xhigh는 max로 매핑합니다.",
+        "GLM Coding Plan은 포인트 기반 정액 요금으로 OpenAI Chat Completion 호환 프로토콜을 통해 코딩 에이전트에 연결됩니다."
+      ],
+      "cautions": [
+        "GLM-5.3 계열은 thinking.type을 disabled로 설정할 수 없으므로 기존 연동 코드를 확인해야 합니다.",
+        "캐시 입력은 토큰당 유료이며, 한시적 무료 안내는 캐시 저장(storage) 비용에 해당합니다.",
+        "종량제 API 가격과 GLM Coding Plan의 구독료·포인트 사용 조건은 별개입니다."
+      ],
+      "form_factors": [
+        {
+          "type": "API",
+          "status": "공식지원확인",
+          "notes": "OpenAI Chat Completion/Response, Anthropic Message 프로토콜 호환 API 공식 제공 (https://docs.z.ai/guides/llm/glm-5.3)"
+        },
+        {
+          "type": "CLI",
+          "status": "조건부",
+          "notes": "GLM Coding Plan을 외부 코딩 에이전트에 연결하는 방식입니다. 독립 GLM CLI 제공 여부와는 구분합니다."
+        },
+        {
+          "type": "App",
+          "status": "미확인",
+          "notes": "앱 형태의 공식 지원은 확인되지 않음"
+        }
+      ],
+      "differences": "GLM은 종량제 API 요금과 포인트 기반 GLM Coding Plan 구독을 함께 제공하며, GLM-5.3 계열부터는 thinking을 끌 수 없고 reasoning_effort 허용 값이 모델별로 다릅니다.",
+      "sources": [
+        {
+          "name": "GLM-5.3",
+          "url": "https://docs.z.ai/guides/llm/glm-5.3"
+        },
+        {
+          "name": "GLM-5.2",
+          "url": "https://docs.z.ai/guides/llm/glm-5.2"
+        },
+        {
+          "name": "Deep Thinking",
+          "url": "https://docs.z.ai/guides/capabilities/thinking"
+        },
+        {
+          "name": "Z.ai Pricing",
+          "url": "https://docs.z.ai/guides/overview/pricing"
+        },
+        {
+          "name": "Z.ai New Released Models",
+          "url": "https://docs.z.ai/release-notes/new-released"
+        }
+      ],
+      "reviewed_at": "2026-10-04T10:29:00+09:00",
+      "updated_at": "2026-10-04T10:29:00+09:00"
     }
   ]
 }

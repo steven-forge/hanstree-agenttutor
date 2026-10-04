@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""매일 06:35 KST, 6개 제공사 공식 카탈로그를 조회해 data/agent-models.json을 갱신한다.
+"""매일 06:35 KST, 8개 제공사 공식 카탈로그를 조회해 data/agent-models.json을 갱신한다.
 
 - 기존 collect_content.fetch_url/read_json/write_json(원자적 쓰기, 호스트 허용목록,
   리다이렉트 검증)을 재사용한다.
@@ -12,6 +12,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
+from html import unescape
 from html.parser import HTMLParser
 import math
 import re
@@ -28,6 +29,7 @@ UNCONFIRMED = "공식 미확인"
 ALLOWED_HOSTS = frozenset({
     "developers.openai.com", "platform.claude.com", "ai.google.dev",
     "docs.x.ai", "dev.meta.ai", "api-docs.deepseek.com",
+    "www.alibabacloud.com", "docs.z.ai",
 })
 
 
@@ -757,6 +759,431 @@ def deepseek_parse_thinking(text: str, model_id: str) -> list[str] | None:
 
 
 # --------------------------------------------------------------------------
+# Qwen / GLM 공용 헬퍼
+# --------------------------------------------------------------------------
+
+_EFFORT_ORDER = ("none", "minimal", "low", "medium", "high", "xhigh", "max")
+_MODALITY_KO = {"text": "텍스트", "image": "이미지", "audio": "오디오", "video": "비디오", "file": "파일"}
+
+
+def _effort_in(text: str) -> list[str]:
+    found = set(re.findall(r'\b(none|minimal|low|medium|high|xhigh|max)\b', text.lower()))
+    return [lv for lv in _EFFORT_ORDER if lv in found]
+
+
+def _html_text(fragment: str) -> str:
+    return re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]+>', ' ', fragment))).strip()
+
+
+def _html_rows(fragment: str) -> list[list[str]]:
+    parser = _TableRowCollector()
+    parser.feed(fragment)
+    return [[re.sub(r'\s+', ' ', c).strip() for c in row] for row in parser.rows]
+
+
+def _ko_modalities(value: str) -> str:
+    """'Image Text Video'/'Text, images, audio, and video' → '텍스트 · 이미지 · 비디오'.
+    모르는 단어가 섞이면 원문을 그대로 둔다."""
+    words = [re.sub(r's$', '', w.lower()) for w in re.findall(r'[A-Za-z]+', value) if w.lower() != 'and']
+    if words and all(w in _MODALITY_KO for w in words):
+        return " · ".join(ko for en, ko in _MODALITY_KO.items() if en in words)
+    return value
+
+
+# --------------------------------------------------------------------------
+# Qwen (Alibaba Cloud Model Studio, Singapore · International 기준)
+# --------------------------------------------------------------------------
+
+QWEN_BASE = "https://www.alibabacloud.com/help/en/model-studio/"
+QWEN_RELEASES_URL = QWEN_BASE + "newly-released-models"
+QWEN_PRICING_URL = QWEN_BASE + "model-pricing"
+QWEN_THINKING_URL = QWEN_BASE + "deep-thinking"
+QWEN_OMNI_URL = QWEN_BASE + "qwen-omni"
+QWEN_ID_RE = re.compile(r'^qwen\d+(?:\.\d+)?-[a-z0-9.-]+$')
+QWEN_EXCLUDE_RE = re.compile(r'realtime|embedding|rerank|asr|tts|image|audio|translate')
+_QWEN_SNAPSHOT_RE = re.compile(r'-(?:\d{4}-\d{2}-\d{2}|\d{4})$')
+
+
+def _qwen_detail_url(model_id: str) -> str:
+    """스냅샷 접미사(-YYYY-MM-DD/-MMDD)를 뗀 계열 문서 URL. 정확한 ID 확인은 qwen_parse가 한다."""
+    return QWEN_BASE + _QWEN_SNAPSHOT_RE.sub('', model_id).replace('.', '-')
+
+
+def _qwen_singapore(fragment: str) -> str | None:
+    """지역 탭 중 Singapore 구간(다음 지역 h4 전까지). 지역 탭이 없으면 None."""
+    m = re.search(r'<h4 id="singapore[^"]*-h4"', fragment)
+    if not m:
+        return None
+    rest = fragment[m.end():]
+    end = re.search(r'<h4 id="[^"]*-h4"', rest)
+    return rest[: end.start()] if end else rest
+
+
+def _qwen_release_rows() -> list[tuple[str, str, list[str], str]] | None:
+    """newly-released-models의 Singapore 표에서 International 행만: (모델 유형, 날짜, ID 목록, 설명)."""
+    r = get(QWEN_RELEASES_URL)
+    section = _qwen_singapore(text_of(r[1])) if r else None
+    if not section:
+        return None
+    return [(row[0], row[1], row[3].split(), row[4]) for row in _html_rows(section)
+            if len(row) == 5 and row[2] == "International" and re.fullmatch(r'\d{4}-\d{2}-\d{2}', row[1])]
+
+
+def qwen_discover() -> dict[str, str] | None:
+    """텍스트 생성/추론 또는 텍스트 출력 Omni-modal 유형의 qwen<숫자> ID만 채택한다.
+    같은 행에 함께 적힌 날짜형 ID, 설명에 alias로 적힌 ID는 중복 별칭이라 건너뛴다."""
+    rows = _qwen_release_rows()
+    if not rows:
+        return None
+    aliases = {a for row in rows for a in re.findall(r'\balias\s+(qwen[\w.-]*\w)', row[3])}
+    out: dict[str, str] = {}
+    for kind, _day, ids, _desc in rows:
+        if not (re.search(r'(?i)\b(text generation|reasoning)\b', kind) or kind.lower() == "omni-modal"):
+            continue
+        for model_id in ids:
+            if not QWEN_ID_RE.match(model_id) or QWEN_EXCLUDE_RE.search(model_id):
+                continue
+            if model_id in aliases or (len(ids) > 1 and re.search(r'-\d{4}-\d{2}-\d{2}$', model_id)):
+                continue
+            out.setdefault(model_id, _qwen_detail_url(model_id))
+    return out or None
+
+
+def _qwen_model_section(page: str, model_id: str) -> str | None:
+    """제목(h1)이 정확히 model_id면 Snapshot Versions 앞까지, 아니면 정확히 일치하는 h3 스냅샷
+    구간(다음 h3 전까지)만 돌려준다. 형제 모델 구간은 읽지 않는다."""
+    title = re.search(r'<h1\b[^>]*>(.*?)</h1>', page, re.S)
+    if title and _html_text(title.group(1)).rsplit(':', 1)[-1].strip() == model_id:
+        end = re.search(r'<h2 id="snapshot-versions"', page)
+        return page[title.start(): end.start()] if end else page[title.start():]
+    for m in re.finditer(r'<h3\b[^>]*>(.*?)</h3>', page, re.S):
+        if _html_text(m.group(1)) == model_id:
+            rest = page[m.end():]
+            end = re.search(r'<h3\b', rest)
+            return rest[: end.start()] if end else rest
+    return None
+
+
+def _qwen_subsection(section: str, title: str) -> str | None:
+    """제목 heading부터 다음 heading 전까지. 지역 탭 h4(id가 -h4로 끝남)는 경계로 보지 않는다."""
+    m = re.search(rf'(?i)<h[2-4]\b[^>]*>\s*{title}\b', section)
+    if not m:
+        return None
+    rest = section[m.end():]
+    end = re.search(r'<h[2-4]\b(?![^>]*-h4")', rest)
+    return rest[: end.start()] if end else rest
+
+
+def _qwen_pairs(fragment: str) -> dict[str, str]:
+    """Parameter|Value|Parameter|Value 표를 {소문자 label: value}로."""
+    return {row[i].lower(): row[i + 1] for row in _html_rows(fragment) for i in range(0, len(row) - 1, 2)}
+
+
+def _qwen_tokens(value: str) -> str:
+    """'1000000'/'1M tokens' → '1M', '131072' → '128K(131072)' (기존 데이터 표기)."""
+    v = re.sub(r'(?i)\s*tokens?$', '', value.strip())
+    if v.isdigit() and int(v) % 1000 and int(v) % 1024 == 0:
+        return f"{int(v) // 1024}K({v})"
+    return _short_tokens(v)
+
+
+def _qwen_detail_pricing(section: str, model_id: str) -> dict:
+    """Pricing → Singapore(Scope: International) → 첫 표(=첫 요금 구간)에서 Input/Output/
+    Explicit Cache Read(Hit) 행만 읽는다. Creation·Implicit·Batch·다른 지역은 쓰지 않는다."""
+    singapore = _qwen_singapore(_qwen_subsection(section, "(?:Model )?pricing") or "")
+    if not singapore or "<table" not in singapore:
+        return {}
+    head, table = singapore.split("<table", 1)
+    intro = _html_text(head)
+    if "Scope:" in intro and "International" not in intro:
+        return {}
+    labels = {"input": "input_cost", "output": "output_cost",
+              "explicit cache read": "cache_read_cost", "explicit cache hit": "cache_read_cost"}
+    fields: dict = {}
+    for row in _html_rows("<table" + table.split("</table>", 1)[0] + "</table>"):
+        key = labels.get(row[0].lower()) if len(row) >= 2 else None
+        price = _num(r'^\$?([\d.]+)$', row[1]) if key else None
+        if price is not None:
+            fields[key] = price
+    if not fields:
+        return {}
+    tier = _str(r'(Input\s*<=\s*\w+)', intro)
+    fields["price_note"] = ("Singapore(International) 리전, "
+                            + (f"첫 요금 구간({tier})" if tier else "표준 요금")
+                            + ". Explicit Cache Read 기준.")
+    fields["price_source"] = [{"name": f"{model_id} Model Info", "url": _qwen_detail_url(model_id)}]
+    return fields
+
+
+def _qwen_shared_pricing(model_id: str) -> dict:
+    """상세 문서에 요금표가 없는 모델(omni): 공유 model-pricing 문서에서 Model ID가 정확히 같고
+    Deployment scope가 International인 행의 input/cache-hit/output 열만 읽는다."""
+    r = get(QWEN_PRICING_URL)
+    if not r:
+        raise ValueError("Qwen model-pricing 문서 조회 실패")
+    columns = {"input price": "input_cost", "cache-hit input price": "cache_read_cost",
+               "output price": "output_cost"}
+    header: list[str] = []
+    for row in _html_rows(text_of(r[1])):
+        if row and row[0] == "Model ID":
+            header = [re.sub(r'\s*\(.*$', '', c).lower() for c in row]
+        elif len(row) == len(header) and row[0] == model_id and row[1:2] == ["International"]:
+            fields: dict = {columns[h]: _num(r'([\d.]+)', c) for h, c in zip(header, row) if h in columns}
+            if len(fields) == 3 and None not in fields.values():
+                fields["price_note"] = "Singapore(International) 리전 요금. 캐시는 implicit cache 적중가(cache-hit input) 기준."
+                fields["price_source"] = [{"name": "Qwen Model Pricing", "url": QWEN_PRICING_URL}]
+                return fields
+    return {}
+
+
+def qwen_parse_thinking(page: str, model_id: str) -> dict | None:
+    """deep-thinking 문서 Supported Models에서 model_id가 정확히 나열된 문단만 읽는다.
+    문단에 없거나(스냅샷 포함) reasoning_effort 조절 모델이면 None(미확인) — 형제 모델로 추론하지 않는다."""
+    m = re.search(r'<h2 id="supported-models"', page)
+    if not m:
+        raise ValueError("deep-thinking 문서에서 Supported Models 절을 찾지 못함")
+    rest = page[m.end():]
+    end = re.search(r'<h2\b', rest)
+    id_re = re.compile(r'(?<![\w.-])' + re.escape(model_id) + r'(?![\w-]|\.\w)')
+    for para in re.findall(r'<p\b[^>]*>(.*?)</p>', rest[: end.start()] if end else rest, re.S):
+        head, _sep, tail = _html_text(para).partition(':')
+        if not id_re.search(tail):
+            continue
+        if "reasoning_effort" in tail:
+            return None
+        if re.search(r'(?i)thinking mode only', head):
+            return {"effort_levels": [],
+                    "effort_note": "thinking-only 모델로 항상 사고가 켜져 있으며 비활성화할 수 없습니다."}
+        if re.search(r'(?i)hybrid thinking', head):
+            return {"effort_levels": [],
+                    "effort_note": "enable_thinking true/false로 하이브리드 사고 모드 전환. 별도 effort 단계 없음."}
+        return None
+    return None
+
+
+def qwen_parse_omni_effort(page: str, model_id: str) -> dict | None:
+    """qwen-omni 가이드에서 제목이 model_id와 같은 h3 절의 'reasoning_effort accepts …' 문장만 읽는다."""
+    for m in re.finditer(r'<h3\b[^>]*>(.*?)</h3>', page, re.S):
+        if _html_text(m.group(1)).lower() != model_id:
+            continue
+        rest = page[m.end():]
+        end = re.search(r'<h[23]\b', rest)
+        text = _html_text(rest[: end.start()] if end else rest)
+        levels = _effort_in(_str(r'reasoning_effort\s+accepts\s+([^.]*)\.', text) or '')
+        if model_id not in text or not levels:
+            continue
+        note = "reasoning_effort 허용 입력: " + "/".join(levels)
+        default = _str(r'reasoning_effort\s+defaulting to\s+(\w+)', text)
+        if default:
+            note += f"(기본값 {default})"
+        tiers = _effort_in(_str(r'Choose\s+([^.]*?)\s+for the thinking effort', text) or '')
+        if tiers:
+            note += f". 실제 사고 단계는 {'/'.join(tiers)}이며 그 외 값은 호환용 별칭으로 매핑됩니다"
+        return {"effort_levels": levels, "effort_note": note + "."}
+    return None
+
+
+def qwen_parse(page: str, model_id: str) -> dict:
+    section = _qwen_model_section(page, model_id)
+    if section is None:
+        return {}
+    fields: dict = {"id": model_id}
+    limits = _qwen_pairs(_qwen_subsection(section, "Context limits") or "")
+    ctx = limits.get("context window") or limits.get("context length")
+    if ctx:
+        fields["context_window"] = _qwen_tokens(ctx)
+    max_out = limits.get("max output length") or limits.get("maximum output length")
+    if max_out:
+        fields["max_output"] = _qwen_tokens(max_out)
+    caps = _qwen_subsection(section, "Model capabilities") or ""
+    caps = _qwen_pairs(_qwen_singapore(caps) or caps)
+    modality = caps.get("input modality") or caps.get("input modalities")
+    if modality:
+        fields["input_modalities"] = _ko_modalities(modality)
+
+    fields.update(_qwen_detail_pricing(section, model_id) or _qwen_shared_pricing(model_id))
+
+    effort_url = QWEN_OMNI_URL if "-omni" in model_id else QWEN_THINKING_URL
+    doc = get(effort_url)
+    if not doc:
+        raise ValueError(f"Qwen effort 문서 조회 실패: {effort_url}")
+    effort = (qwen_parse_omni_effort if "-omni" in model_id else qwen_parse_thinking)(text_of(doc[1]), model_id)
+    if effort:
+        fields.update(effort)
+        fields["effort_source"] = [{"name": "Qwen 사고(thinking) 공식 문서", "url": effort_url}]
+
+    days = [day for _kind, day, ids, _desc in (_qwen_release_rows() or []) if model_id in ids]
+    if days:
+        fields["released_at"] = min(days)
+        fields["release_source"] = QWEN_RELEASES_URL
+    return fields
+
+
+# --------------------------------------------------------------------------
+# GLM (Z.ai)
+# --------------------------------------------------------------------------
+
+GLM_BASE = "https://docs.z.ai/"
+GLM_OVERVIEW_URL = GLM_BASE + "guides/overview/overview.md"
+GLM_INDEX_URL = GLM_BASE + "llms.txt"
+GLM_PRICING_URL = GLM_BASE + "guides/overview/pricing.md"
+GLM_PARAMS_URL = GLM_BASE + "guides/overview/concept-param.md"
+GLM_RELEASES_URL = GLM_BASE + "release-notes/new-released.md"
+_GLM_GUIDE_RE = re.compile(r'/guides/(llm|vlm)/(glm-\d[a-z0-9.-]*?)(?:\.md)?[)"#\s]')
+_GLM_DATE_RE = re.compile(r'\d{4}-\d{2}-\d{2}|[A-Z][a-z]+\.? \d{1,2}, \d{4}')
+
+
+def glm_discover() -> dict[str, str] | None:
+    """overview + llms.txt의 /guides/llm|vlm/glm-<숫자>… 가이드 링크. 가이드 slug가 곧 후보 ID이며
+    (OCR·음성·이미지 가이드는 패턴 밖), 같은 가이드를 공유하는 변형(FlashX 등)은 후보로 만들지 않는다."""
+    out: dict[str, str] = {}
+    for url in (GLM_OVERVIEW_URL, GLM_INDEX_URL):
+        r = get(url)
+        for kind, slug in _GLM_GUIDE_RE.findall(text_of(r[1]) if r else ''):
+            out.setdefault(slug, f"{GLM_BASE}guides/{kind}/{slug}.md")
+    return out or None
+
+
+def _glm_cells(line: str) -> list[str]:
+    return [c.strip() for c in _strip_md(line).replace('\\', '').strip().strip('|').split('|')]
+
+
+def _glm_name_re(model_id: str) -> re.Pattern:
+    """GLM-5.3이 GLM-5.3-Flash/GLM-5.3.1로 오인되지 않게 이름 전체 일치(대소문자 무시)."""
+    return re.compile(r'(?i)(?<![\w.-])' + re.escape(model_id) + r'(?![\w-]|\.\d)')
+
+
+def _glm_table_row(text: str, model_id: str) -> dict[str, str] | None:
+    """markdown 표에서 첫 셀이 model_id와 같은(대소문자 무시) 행을 {소문자 헤더: 셀}로."""
+    header: list[str] = []
+    for line in text.splitlines():
+        if not line.strip().startswith('|'):
+            continue
+        cells = _glm_cells(line)
+        if cells[0].lower() in ("model", "model code"):
+            header = [c.lower() for c in cells]
+        elif cells[0].strip('*').lower() == model_id and len(cells) == len(header):
+            return dict(zip(header, cells))
+    return None
+
+
+def _glm_dates(text: str) -> set[date]:
+    out: set[date] = set()
+    for raw in _GLM_DATE_RE.findall(text):
+        for fmt in ("%Y-%m-%d", "%B %d, %Y", "%b %d, %Y"):
+            try:
+                out.add(datetime.strptime(raw.replace('.', ''), fmt).date())
+                break
+            except ValueError:
+                continue
+    return out
+
+
+def _glm_price(cell: str, as_of: date, context: str) -> float | None:
+    """금액이 하나면 그대로('Free'는 0). 정가+할인가가 함께 적혀 있으면 종료일이 정확히 하나
+    명시된 경우에만 날짜로 고른다(종료일까지=낮은 할인가, 지난 뒤=높은 정가).
+    종료일이 없거나 모호하면 ValueError — 지난 할인가를 쓰지 않고 기존 값을 유지한다."""
+    if re.fullmatch(r'(?i)free', cell.strip('~* ')):
+        return 0.0
+    amounts = sorted({float(a) for a in re.findall(r'\$\s*(\d*\.?\d+)', cell)})
+    if not amounts:
+        return None
+    struck = '~~' in cell or re.search(r'(?i)<(s|del|strike)\b', cell)
+    if len(amounts) == 1 and not struck:
+        return amounts[0]
+    dates = _glm_dates(cell) or _glm_dates(context)
+    if len(amounts) != 2 or len(dates) != 1:
+        raise ValueError(f"할인/정가 구분 불가: {cell!r}")
+    return amounts[1] if as_of > next(iter(dates)) else amounts[0]
+
+
+def glm_parse_pricing(pricing_md: str, model_id: str, as_of: date | None = None) -> dict:
+    as_of = as_of or datetime.now(KST).date()
+    row = _glm_table_row(pricing_md, model_id)
+    if not row:
+        return {}
+    name_re = _glm_name_re(model_id)
+    context = " ".join(line for line in pricing_md.splitlines() if name_re.search(line))
+    fields: dict = {"name": row.get("model")}
+    for column, key in (("input", "input_cost"), ("cached input", "cache_read_cost"), ("output", "output_cost")):
+        price = _glm_price(row.get(column, ''), as_of, context)
+        if price is not None:
+            fields[key] = price
+    fields["price_note"] = f"Z.ai 공식 가격표(USD/1M 토큰), {as_of.isoformat()} 조회일에 유효한 요금 기준."
+    fields["price_source"] = [{"name": "Z.ai Pricing", "url": GLM_PRICING_URL}]
+    return fields
+
+
+def glm_parse_effort(detail_md: str, params_md: str, model_id: str) -> tuple[list[str], str] | None:
+    """(levels, 출처 URL 종류). 모델 자체 문서의 reasoning_effort 표 행을 먼저 보고, 없으면
+    concept-param의 reasoning_effort 절에서 모델 이름이 'support(s)' 앞에 정확히 명시된 문장만
+    인정한다. 'GLM-5.2 and above' 같은 범위 표현으로는 추론하지 않는다(없으면 None)."""
+    for line in detail_md.splitlines():
+        cells = _glm_cells(line)
+        if len(cells) >= 2 and cells[0] == "reasoning_effort" and _effort_in(cells[1]):
+            return _effort_in(cells[1]), "detail"
+    section = _str(r'(?ms)^###\s+reasoning\\?_effort\s*$(.*?)(?=^#{2,3}\s|^\*\*\*|\Z)', params_md) or ''
+    name_re = _glm_name_re(model_id)
+    for line in _strip_md(section).splitlines():
+        m = re.search(r'(?i)\bsupports?\b', line)
+        if m and name_re.search(line[: m.start()]):
+            levels = _effort_in(line[m.end():].split(';')[0])
+            if levels:
+                return levels, "params"
+    return None
+
+
+def _glm_card(text: str, title: str) -> str | None:
+    """<Card title="…"> 값. 변형별 카드가 여러 개면 값이 모두 같을 때만 인정한다."""
+    values = set(re.findall(rf'<Card\b[^>]*title="{title}"[^>]*>\s*([^<\n]+?)\s*</Card>', text))
+    return values.pop() if len(values) == 1 else None
+
+
+def glm_parse(text: str, model_id: str) -> dict:
+    if model_id not in set(re.findall(r'[`"]([a-z0-9.-]+)[`"]', text)):
+        return {}  # 가이드 본문(Model Code/요청 예시)에 정확한 ID가 없으면 채택하지 않는다
+    fields: dict = {"id": model_id}
+    name_re = _glm_name_re(model_id)
+    own_lines = " ".join(line for line in text.splitlines() if name_re.search(line))
+
+    ctx = _glm_card(text, "Context Length") or _str(r'(\d+[KM])-token context window', own_lines)
+    if not ctx:
+        overview = get(GLM_OVERVIEW_URL)
+        row = _glm_table_row(text_of(overview[1]), model_id) if overview else None
+        ctx = row.get("context") if row and re.fullmatch(r'\d+[KM]', row.get("context", '')) else None
+    fields["context_window"] = ctx
+    fields["max_output"] = (_glm_card(text, "Maximum Output Tokens")
+                            or _str(r'maximum output length of (\d+[KM])', own_lines))
+    modality = _glm_card(text, "Input Modalit(?:y|ies)")
+    if modality:
+        fields["input_modalities"] = _ko_modalities(modality)
+
+    pricing = get(GLM_PRICING_URL)
+    if not pricing:
+        raise ValueError("GLM pricing 문서 조회 실패")
+    fields.update(glm_parse_pricing(text_of(pricing[1]), model_id))
+
+    params = get(GLM_PARAMS_URL)
+    if not params:
+        raise ValueError("GLM concept-param 문서 조회 실패")
+    effort = glm_parse_effort(text, text_of(params[1]), model_id)
+    if effort:
+        fields["effort_levels"] = effort[0]
+        fields["effort_source"] = ([{"name": "GLM 파라미터 문서", "url": GLM_PARAMS_URL}]
+                                   if effort[1] == "params" else [])
+
+    releases = get(GLM_RELEASES_URL)
+    for day, description in re.findall(
+            r'<Update\s+label="(\d{4}-\d{2}-\d{2})"\s+description="\s*([^"]*?)\s*"',
+            text_of(releases[1]) if releases else ''):
+        if description.lower() == model_id:
+            fields["released_at"] = day
+            fields["release_source"] = GLM_RELEASES_URL.removesuffix(".md")
+            break
+    return fields
+
+
+# --------------------------------------------------------------------------
 # 병합 로직
 # --------------------------------------------------------------------------
 
@@ -786,6 +1213,9 @@ def _useful(parsed: dict) -> dict:
 def apply_known_fields(model: dict, parsed: dict) -> None:
     """None/빈 값은 무시하고 명시적으로 파싱된 값만 덮어쓴다(공식 무료 요금 0은 유효). 한국어로 검수된 텍스트나
     표기만 다른 동일 값(128K vs 128,000)은 유지한다. effort_source/price_source는 URL 중복 없이 합친다."""
+    # 릴리스일이 실제로 바뀔 때만 출처도 함께 바꾼다(같은 날짜면 기존 수동 출처 유지).
+    if parsed.get("released_at") and parsed.get("release_source") and parsed["released_at"] != model.get("released_at"):
+        model["release_source"] = parsed["release_source"]
     for key in ("input_cost", "output_cost", "cache_read_cost", "released_at"):
         value = parsed.get(key)
         if value not in (None, "", UNCONFIRMED):
@@ -808,8 +1238,9 @@ def new_model_stub(model_id: str, parsed: dict, sources: list[dict]) -> dict:
         "id": model_id,
         "name": parsed.get("name") or model_id,
         # 그룹 기본 effort_note를 물려받지 않도록 미확인 문구를 명시한다.
-        "effort_note": "지원 수준과 사용 조건은 공식 문서를 확인하세요." if "effort_levels" in parsed else "공식 지원 수준 확인 필요",
-        "release_source": sources[0]["url"] if sources else None,
+        "effort_note": parsed.get("effort_note") or (
+            "지원 수준과 사용 조건은 공식 문서를 확인하세요." if "effort_levels" in parsed else "공식 지원 수준 확인 필요"),
+        "release_source": parsed.get("release_source") or (sources[0]["url"] if sources else None),
         "minimum_access": "앱 요금제 미확인 · API 이용 조건은 공식 문서 확인",
         "access_source": sources[0]["url"] if sources else None,
         "input_cost": parsed.get("input_cost"),
@@ -820,7 +1251,7 @@ def new_model_stub(model_id: str, parsed: dict, sources: list[dict]) -> dict:
         "input_modalities": parsed.get("input_modalities") or UNCONFIRMED,
         "key_feature": parsed.get("key_feature") or UNCONFIRMED,
         "sources": _merge_sources(sources, parsed.get("price_source") or []),
-        "price_note": UNCONFIRMED,
+        "price_note": parsed.get("price_note") or UNCONFIRMED,
     }
     if "effort_levels" in parsed:
         stub["effort_levels"] = parsed["effort_levels"]
@@ -925,6 +1356,8 @@ PROVIDERS = {
     "gemini": (gemini_discover, gemini_parse),
     "muse": (muse_discover, muse_parse),
     "deepseek": (deepseek_discover, deepseek_parse),
+    "qwen": (qwen_discover, qwen_parse),
+    "glm": (glm_discover, glm_parse),
 }
 
 

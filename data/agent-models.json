@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-03",
-  "unit_note": "2026-10-03 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
+  "checked_at": "2026-10-04",
+  "unit_note": "2026-10-04 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
   "agents": [
     {
       "agent_slug": "claude",
@@ -1165,12 +1165,437 @@
           ]
         }
       ]
+    },
+    {
+      "agent_slug": "qwen",
+      "input_modalities": "텍스트 · 이미지 · 비디오",
+      "effort_source": [
+        {
+          "name": "Qwen Deep Thinking 문서",
+          "url": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking"
+        }
+      ],
+      "effort_note": "qwen3.8-max/flash/qwen3.7-plus는 enable_thinking true/false로 사고를 켜고 끌 수 있습니다(effort 단계 없음). qwen3.8-2.4t-a95b는 thinking-only로 항상 사고가 켜져 있어 끌 수 없습니다.",
+      "models": [
+        {
+          "id": "qwen3.8-max-0902",
+          "name": "Qwen3.8-Max-0902",
+          "effort_levels": [],
+          "effort_note": "enable_thinking true/false로 하이브리드 사고 모드 전환. 별도 effort 단계 없음.",
+          "released_at": "2026-09-02",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "input_cost": 2.0,
+          "output_cost": 6.0,
+          "cache_read_cost": 0.17,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "qwen3.8-max의 업그레이드 스냅샷(별칭 qwen3.8-max-2026-09-02). 코딩·에이전트 협업·멀티모달 이해 강화",
+          "input_modalities": "텍스트 · 이미지 · 비디오",
+          "sources": [
+            {
+              "name": "qwen3.8-max Model Info (Snapshot Versions: qwen3.8-max-0902)",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"
+            }
+          ],
+          "price_note": "Singapore(International) 리전 표준 유료 요금. Explicit Cache Read 기준. 스냅샷이며 qwen3.8-max와 요금 동일."
+        },
+        {
+          "id": "qwen3.8-max",
+          "name": "Qwen3.8-Max",
+          "effort_levels": [],
+          "effort_note": "enable_thinking true/false로 하이브리드 사고 모드 전환. 별도 effort 단계 없음.",
+          "released_at": "2026-08-02",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+          "input_cost": 2.0,
+          "output_cost": 6.0,
+          "cache_read_cost": 0.17,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "2.4조 파라미터 MoE 플래그십. 장기 자율 코딩·수백 종 전문 업무 처리",
+          "input_modalities": "텍스트 · 이미지 · 비디오",
+          "sources": [
+            {
+              "name": "qwen3.8-max Model Info",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max"
+            }
+          ],
+          "price_note": "Singapore(International) 리전 표준 유료 요금. Explicit Cache Read 기준.",
+          "effort_source": [
+            {
+              "name": "Qwen 사고(thinking) 공식 문서",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking"
+            }
+          ]
+        },
+        {
+          "id": "qwen3.8-2.4t-a95b",
+          "name": "Qwen3.8-2.4T-A95B",
+          "effort_levels": [],
+          "effort_note": "thinking-only 모델로 항상 사고가 켜져 있으며 비활성화할 수 없습니다.",
+          "released_at": "2026-08-12",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제(오픈소스 가중치 공개)",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-2-4t-a95b",
+          "input_cost": 2.0,
+          "output_cost": 6.0,
+          "cache_read_cost": 0.17,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "Qwen 최신 플래그십의 오픈소스 공개판. 2.4T 파라미터 중 ~95B 활성, 하이브리드 어텐션",
+          "input_modalities": "텍스트",
+          "sources": [
+            {
+              "name": "qwen3.8-2.4t-a95b Model Info",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-2-4t-a95b"
+            },
+            {
+              "name": "Qwen Model Pricing",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+            }
+          ],
+          "price_note": "Singapore(International) 리전 요금. Explicit Cache Hit 기준.",
+          "effort_source": [
+            {
+              "name": "Qwen 사고(thinking) 공식 문서",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking"
+            }
+          ]
+        },
+        {
+          "id": "qwen3.7-plus",
+          "name": "Qwen3.7-Plus",
+          "effort_levels": [],
+          "effort_note": "enable_thinking true/false로 하이브리드 사고 모드 전환. 별도 effort 단계 없음.",
+          "released_at": "2026-06-01",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-7-plus",
+          "input_cost": 0.4,
+          "output_cost": 1.6,
+          "cache_read_cost": 0.04,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "균형 잡힌 범용 모델. 코딩·에이전트 작업에 비용 효율적",
+          "input_modalities": "텍스트 · 이미지 · 비디오",
+          "sources": [
+            {
+              "name": "qwen3.7-plus Model Info",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-7-plus"
+            }
+          ],
+          "price_note": "Singapore(International) 리전, 입력 256K 이하 기본 요금 구간. Explicit Cache Read 기준.",
+          "effort_source": [
+            {
+              "name": "Qwen 사고(thinking) 공식 문서",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking"
+            }
+          ]
+        },
+        {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8-Flash",
+          "effort_levels": [],
+          "effort_note": "enable_thinking true/false로 하이브리드 사고 모드 전환. 별도 effort 단계 없음.",
+          "released_at": "2026-08-26",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash",
+          "input_cost": 0.15,
+          "output_cost": 0.47,
+          "cache_read_cost": 0.016,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "OpenAI·Anthropic API 프로토콜과 호환되는 고속·고동시성 코딩·에이전트 모델",
+          "input_modalities": "텍스트 · 이미지 · 비디오",
+          "sources": [
+            {
+              "name": "qwen3.8-flash Model Info",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash"
+            }
+          ],
+          "price_note": "Singapore(International) 리전 표준 유료 요금. Explicit Cache Read 기준.",
+          "effort_source": [
+            {
+              "name": "Qwen 사고(thinking) 공식 문서",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking"
+            }
+          ]
+        },
+        {
+          "id": "qwen3.8-omni-flash",
+          "name": "Qwen3.8-Omni-Flash",
+          "effort_levels": [
+            "none",
+            "minimal",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "effort_note": "reasoning_effort로 조절(기본값 xhigh). 허용 입력은 none/minimal/low/medium/high/xhigh/max이며 실제 사고 단계는 low/medium/xhigh입니다. minimal→low, high/max→xhigh로 매핑되고 none은 사고를 비활성화합니다. thinking_budget과는 함께 쓸 수 없습니다.",
+          "released_at": "2026-09-17",
+          "release_source": "https://www.alibabacloud.com/help/en/model-studio/deep-thinking",
+          "minimum_access": "앱 플랜 확인되지 않음 · API 종량제",
+          "access_source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-omni-flash",
+          "input_cost": 0.15,
+          "output_cost": 0.47,
+          "cache_read_cost": 0.016,
+          "context_window": "1M",
+          "max_output": "128K(131072)",
+          "key_feature": "텍스트·이미지·오디오·비디오 입력을 받아 텍스트로 출력하는 멀티모달 모델",
+          "input_modalities": "텍스트 · 이미지 · 오디오 · 비디오",
+          "sources": [
+            {
+              "name": "Qwen Model Pricing (Qwen-Omni)",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing"
+            },
+            {
+              "name": "Qwen-Omni Model Info",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
+            }
+          ],
+          "price_note": "Singapore(International) 리전 요금, 캐시 적중가(cache hit) 기준.",
+          "effort_source": [
+            {
+              "name": "Qwen-Omni 가이드 (Thinking mode configuration)",
+              "url": "https://www.alibabacloud.com/help/en/model-studio/qwen-omni"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "agent_slug": "glm",
+      "input_modalities": "텍스트",
+      "effort_source": [
+        {
+          "name": "GLM-5.3 가이드",
+          "url": "https://docs.z.ai/guides/llm/glm-5.3"
+        },
+        {
+          "name": "GLM Deep Thinking 문서",
+          "url": "https://docs.z.ai/guides/capabilities/thinking"
+        }
+      ],
+      "effort_note": "GLM-5.3/5.3-Flash는 항상 thinking이 켜져 있으며 reasoning_effort는 low/high/max만 허용합니다. GLM-5.2는 none/minimal/low/medium/high/xhigh/max를 받지만 내부적으로 high/max 두 단계로 매핑됩니다. GLM-5.1/5/4.7은 reasoning_effort 대신 thinking.type을 enabled/disabled로 설정합니다(OpenAI effort 방식 아님).",
+      "models": [
+        {
+          "id": "glm-5.3",
+          "name": "GLM-5.3",
+          "effort_levels": [
+            "low",
+            "high",
+            "max"
+          ],
+          "effort_note": "thinking.type은 enabled만 지원(disabled 불가). reasoning_effort 기본값은 max.",
+          "released_at": "2026-08-18",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 1.4,
+          "output_cost": 4.4,
+          "cache_read_cost": 0.26,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "복잡한 소프트웨어 엔지니어링·장기 에이전트 작업 강화. GLM-5.2 대비 코딩 성능 50% 개선",
+          "sources": [
+            {
+              "name": "GLM-5.3 가이드",
+              "url": "https://docs.z.ai/guides/llm/glm-5.3"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing"
+            }
+          ],
+          "price_note": "텍스트만 입력 가능. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "effort_source": [
+            {
+              "name": "glm-5.3 공식 문서",
+              "url": "https://docs.z.ai/guides/llm/glm-5.3.md"
+            }
+          ]
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3-Flash",
+          "effort_levels": [
+            "low",
+            "high",
+            "max"
+          ],
+          "effort_note": "thinking.type은 enabled만 지원(disabled 불가). reasoning_effort 기본값은 max. 텍스트 파라미터는 GLM-5.3과 동일.",
+          "released_at": "2026-08-26",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반, GLM-5.3 대비 3배 쿼터) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 0.15,
+          "output_cost": 0.5,
+          "cache_read_cost": 0.03,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "GLM-5 계열 최초의 네이티브 멀티모달 모델. 텍스트·이미지·비디오·파일 입력으로 비전 기반 코딩·오피스 업무 지원",
+          "input_modalities": "텍스트 · 이미지 · 비디오 · 파일",
+          "sources": [
+            {
+              "name": "GLM-5.3-Flash 가이드",
+              "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing"
+            }
+          ],
+          "price_note": "2026-09-09 50% 할인 프로모션 종료 후 현재가 기준. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "effort_source": [
+            {
+              "name": "GLM 파라미터 문서",
+              "url": "https://docs.z.ai/guides/overview/concept-param.md"
+            }
+          ]
+        },
+        {
+          "id": "glm-5.2",
+          "name": "GLM-5.2",
+          "effort_levels": [
+            "none",
+            "minimal",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "effort_note": "none/minimal은 사고를 건너뛰고, low/medium은 high로, xhigh는 max로 매핑됩니다.",
+          "released_at": "2026-06-16",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 1.4,
+          "output_cost": 4.4,
+          "cache_read_cost": 0.26,
+          "context_window": "1M",
+          "max_output": "128K",
+          "key_feature": "장기 작업에 맞춘 플래그십. 실사용 가능한 1M 컨텍스트로 프로젝트 규모 엔지니어링 처리",
+          "sources": [
+            {
+              "name": "GLM-5.2 가이드",
+              "url": "https://docs.z.ai/guides/llm/glm-5.2"
+            },
+            {
+              "name": "GLM 파라미터 호환성 매핑",
+              "url": "https://docs.z.ai/guides/overview/concept-param"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing.md"
+            }
+          ],
+          "price_note": "텍스트만 입력 가능. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "input_modalities": "텍스트",
+          "effort_source": [
+            {
+              "name": "GLM 파라미터 문서",
+              "url": "https://docs.z.ai/guides/overview/concept-param.md"
+            }
+          ]
+        },
+        {
+          "id": "glm-5.1",
+          "name": "GLM-5.1",
+          "effort_levels": [],
+          "effort_note": "reasoning_effort가 아닌 thinking.type(enabled/disabled)으로 사고를 켜고 끕니다.",
+          "released_at": "2026-04-07",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 1.4,
+          "output_cost": 4.4,
+          "cache_read_cost": 0.26,
+          "context_window": "200K",
+          "max_output": "128K",
+          "key_feature": "장기 작업에 최적화되어 단일 실행으로 최대 8시간 독립 작업 가능",
+          "sources": [
+            {
+              "name": "GLM-5.1 가이드",
+              "url": "https://docs.z.ai/guides/llm/glm-5.1"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing"
+            }
+          ],
+          "price_note": "텍스트만 입력 가능. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "input_modalities": "텍스트"
+        },
+        {
+          "id": "glm-5",
+          "name": "GLM-5",
+          "effort_levels": [],
+          "effort_note": "reasoning_effort가 아닌 thinking.type(enabled/disabled)으로 사고를 켜고 끕니다.",
+          "released_at": "2026-02-12",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 1.0,
+          "output_cost": 3.2,
+          "cache_read_cost": 0.2,
+          "context_window": "200K",
+          "max_output": "128K",
+          "key_feature": "복잡한 시스템 엔지니어링·장기 에이전트 작업에 맞춘 백엔드 아키텍처·알고리즘·버그 수정 강화",
+          "sources": [
+            {
+              "name": "Z.ai New Released Models",
+              "url": "https://docs.z.ai/release-notes/new-released"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing"
+            }
+          ],
+          "price_note": "텍스트만 입력 가능. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "input_modalities": "텍스트"
+        },
+        {
+          "id": "glm-4.7",
+          "name": "GLM-4.7",
+          "effort_levels": [],
+          "effort_note": "reasoning_effort가 아닌 thinking.type(enabled/disabled)으로 사고를 켜고 끕니다.",
+          "released_at": "2025-12-22",
+          "release_source": "https://docs.z.ai/release-notes/new-released",
+          "minimum_access": "GLM Coding Plan 구독(포인트 기반) 또는 API 종량제",
+          "access_source": "https://docs.z.ai/guides/overview/pricing",
+          "input_cost": 0.6,
+          "output_cost": 2.2,
+          "cache_read_cost": 0.11,
+          "context_window": "200K",
+          "max_output": "128K",
+          "key_feature": "비용 효율적인 파운데이션 모델. 코딩·추론·에이전트 작업 전반에서 개선된 안정성",
+          "sources": [
+            {
+              "name": "Z.ai New Released Models",
+              "url": "https://docs.z.ai/release-notes/new-released"
+            },
+            {
+              "name": "Z.ai Pricing",
+              "url": "https://docs.z.ai/guides/overview/pricing"
+            }
+          ],
+          "price_note": "텍스트만 입력 가능. 캐시 저장(storage) 비용은 한시적 무료 프로모션.",
+          "input_modalities": "텍스트"
+        }
+      ]
     }
   ],
   "auto_update": {
     "providers": {
       "claude": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "claude-fable-5",
@@ -1189,7 +1614,7 @@
         ]
       },
       "codex": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "gpt-3.5-turbo",
@@ -1226,7 +1651,7 @@
         ]
       },
       "grok": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "grok-4.3",
@@ -1236,7 +1661,7 @@
         ]
       },
       "gemini": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "gemini-2.0-flash",
@@ -1257,7 +1682,7 @@
         ]
       },
       "muse": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "muse-spark-1.1",
@@ -1268,16 +1693,93 @@
         ]
       },
       "deepseek": {
-        "checked_at": "2026-10-03T06:48:59+09:00",
+        "checked_at": "2026-10-04T10:29:00+09:00",
         "status": "success",
         "discovered_ids": [
           "deepseek-flash",
           "deepseek-v4-pro"
         ]
+      },
+      "qwen": {
+        "checked_at": "2026-10-04T10:29:00+09:00",
+        "status": "success",
+        "discovered_ids": [
+          "qwen2.5-omni-7b",
+          "qwen3-14b",
+          "qwen3-235b-a22b",
+          "qwen3-235b-a22b-instruct-2507",
+          "qwen3-235b-a22b-thinking-2507",
+          "qwen3-30b-a3b",
+          "qwen3-30b-a3b-instruct-2507",
+          "qwen3-30b-a3b-thinking-2507",
+          "qwen3-32b",
+          "qwen3-8b",
+          "qwen3-coder-30b-a3b-instruct",
+          "qwen3-coder-480b-a35b-instruct",
+          "qwen3-coder-flash",
+          "qwen3-coder-next",
+          "qwen3-coder-plus",
+          "qwen3-coder-plus-2025-09-23",
+          "qwen3-max",
+          "qwen3-max-2026-01-23",
+          "qwen3-max-preview",
+          "qwen3-next-80b-a3b-instruct",
+          "qwen3-next-80b-a3b-thinking",
+          "qwen3-omni-flash",
+          "qwen3-omni-flash-2025-09-15",
+          "qwen3-vl-235b-a22b-thinking",
+          "qwen3-vl-30b-a3b-thinking",
+          "qwen3-vl-32b-thinking",
+          "qwen3-vl-8b-thinking",
+          "qwen3-vl-flash",
+          "qwen3-vl-plus-2025-12-19",
+          "qwen3.5-122b-a10b",
+          "qwen3.5-27b",
+          "qwen3.5-35b-a3b",
+          "qwen3.5-397b-a17b",
+          "qwen3.5-flash",
+          "qwen3.5-omni-flash",
+          "qwen3.5-omni-plus",
+          "qwen3.5-plus",
+          "qwen3.5-plus-2026-04-20",
+          "qwen3.6-27b",
+          "qwen3.6-35b-a3b",
+          "qwen3.6-flash",
+          "qwen3.6-max-preview",
+          "qwen3.6-plus",
+          "qwen3.7-flash",
+          "qwen3.7-max",
+          "qwen3.7-max-2026-06-08",
+          "qwen3.7-max-preview",
+          "qwen3.7-plus",
+          "qwen3.8-2.4t-a95b",
+          "qwen3.8-27b",
+          "qwen3.8-flash",
+          "qwen3.8-max",
+          "qwen3.8-max-0902",
+          "qwen3.8-omni-flash"
+        ]
+      },
+      "glm": {
+        "checked_at": "2026-10-04T10:29:00+09:00",
+        "status": "success",
+        "discovered_ids": [
+          "glm-4-32b-0414-128k",
+          "glm-4.5",
+          "glm-4.5v",
+          "glm-4.6",
+          "glm-4.6v",
+          "glm-4.7",
+          "glm-5",
+          "glm-5.1",
+          "glm-5.2",
+          "glm-5.3",
+          "glm-5.3-flash"
+        ]
       }
     },
-    "last_checked_at": "2026-10-03T06:48:59+09:00",
-    "last_successful_check_at": "2026-10-03T06:48:59+09:00",
+    "last_checked_at": "2026-10-04T10:29:00+09:00",
+    "last_successful_check_at": "2026-10-04T10:29:00+09:00",
     "status": "success"
   }
 }

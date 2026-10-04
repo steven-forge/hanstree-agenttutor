@@ -3,7 +3,7 @@
 ## 무엇을 하나
 
 매일 06:35(KST, GitHub 스케줄은 지연 가능)에 `scripts/update_agent_models.py`가
-Claude, Codex, Gemini, Grok, DeepSeek, Muse 6개 제공사의 공식 공개 카탈로그를
+Claude, Codex, Gemini, Grok, DeepSeek, Muse, Qwen, GLM 8개 제공사의 공식 공개 카탈로그를
 조회해 `data/agent-models.json`을 갱신하고 master에 커밋·푸시한다(이후 Vercel 자동 배포).
 
 - 새로 게시된 일반 텍스트/코딩 모델은 공식 상세 문서에서 정확한 모델 ID가
@@ -16,8 +16,8 @@ Claude, Codex, Gemini, Grok, DeepSeek, Muse 6개 제공사의 공식 공개 카�
   그대로 보존한다. 개별 모델 상세 조회/파싱 실패는 `partial`로 기록되며
   기존 데이터는 보존하고 해당 모델은 baseline에 넣지 않아 다음 실행에서
   재시도된다. 일부 제공사가 실패해도 나머지 제공사는 정상 갱신된다.
-- `data.checked_at`/`unit_note`의 날짜는 6개 제공사가 모두 성공한 "전체 성공"
-  실행에서만 앞당긴다. 6개 모두 실패하면 전체 상태는 `failure`, 일부만
+- `data.checked_at`/`unit_note`의 날짜는 8개 제공사가 모두 성공한 "전체 성공"
+  실행에서만 앞당긴다. 8개 모두 실패하면 전체 상태는 `failure`, 일부만
   실패/부분실패면 `partial`이다.
 - `released_at`은 "Released"/"Launched" 문맥의 날짜만 인정하며, 문서에 섞인
   knowledge-cutoff나 경로상의 일반 날짜는 채택하지 않는다(불명확하면 필드
@@ -28,7 +28,7 @@ Claude, Codex, Gemini, Grok, DeepSeek, Muse 6개 제공사의 공식 공개 카�
 ## 상태 필드 (`data/agent-models.json` → `auto_update`)
 
 - `last_checked_at`: 가장 최근 실행(성공/부분실패 무관) 시각.
-- `last_successful_check_at`: 6개 제공사 모두 성공한 가장 최근 시각.
+- `last_successful_check_at`: 8개 제공사 모두 성공한 가장 최근 시각.
 - `providers.<slug>`: `{ checked_at, status, discovered_ids, error? }`.
   `discovered_ids`는 지금까지 확인된 카탈로그 ID의 누적 집합으로, 첫 실행 시
   기존 수동 검증 모델까지 부트스트랩해 과거 카탈로그가 한꺼번에 UI에
@@ -67,5 +67,19 @@ python3 scripts/update_agent_models.py --self-check
   열 개수가 바뀌면 재검증이 필요하다.
 - Gemini의 기간 한정 가격은 조회 날짜에 유효한 표준 요금으로 선택한다.
   캐시 저장 시간당 요금은 캐시 읽기 토큰 단가에 섞지 않는다.
+- Qwen은 공식 newly-released-models의 Singapore·International 행(텍스트 생성/추론,
+  텍스트 출력 Omni)만 후보로 삼고, 계열 상세 문서의 제목 또는 스냅샷 h3에서 정확한
+  ID가 확인된 구간만 읽는다(형제 모델 값으로 추론하지 않음). 요금은 Singapore
+  (International) 첫 요금 구간의 Input/Output/Explicit Cache Read(Hit)이다. 상세
+  문서에 요금표가 없는 qwen3.8-omni-flash는 공유 model-pricing 문서의 International
+  행을 쓰며, 이때 캐시 값은 implicit cache 적중가다. effort는 deep-thinking 문서에
+  해당 ID가 명시된 문단(하이브리드/thinking-only)이나 qwen-omni 가이드의 해당 모델
+  절만 인정하고, 명시되지 않은 스냅샷·새 모델은 미확인으로 둔다.
+- GLM은 overview와 llms.txt의 `/guides/llm|vlm/glm-<숫자>…` 가이드 링크를 후보로
+  삼는다(OCR·음성·이미지 제외, FlashX처럼 가이드를 공유하는 변형은 제외). 요금은
+  공유 pricing 문서의 정확한 모델 행이며, 한 셀에 정가와 할인가가 함께 있으면
+  종료일이 하나로 명시된 경우에만 조회 날짜로 고른다(종료 후에는 정가). 종료일이
+  없거나 모호하면 실패로 보고하고 기존 값을 유지한다. effort는 모델 자체 문서의
+  표나 concept-param에 모델 이름이 정확히 명시된 문장만 인정한다.
 - GitHub 예약 실행은 지연될 수 있으며, 실행·빌드·배포 서비스 장애가 있으면
   페이지가 새로 갱신되지 않을 수 있다. 표시된 마지막 조회 시각으로 확인한다.
