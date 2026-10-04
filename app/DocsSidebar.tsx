@@ -4,17 +4,19 @@ import { NAV_GROUPS, resolveCurrentPath } from "./nav";
 
 export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: string; currentPath?: string }) {
   const current = resolveCurrentPath(activeSlug, currentPath);
+  // Full navigation keeps the admin editors' unsaved-change protection active.
+  const NavLink = current.startsWith("/admin/") ? "a" : Link;
 
   return (
     <aside className="docs-sidebar">
       <nav aria-label="Overview">
-        <Link
+        <NavLink
           aria-current={current === "/" ? "page" : undefined}
           className={current === "/" ? "selected" : ""}
           href="/"
         >
           Overview
-        </Link>
+        </NavLink>
       </nav>
       {NAV_GROUPS.map((group) => (
         <details
@@ -31,26 +33,26 @@ export default function DocsSidebar({ activeSlug, currentPath }: { activeSlug?: 
               const isSelected = item.href === current;
               return (
                 <div key={item.title} className="sidebar-item-group">
-                  <Link
+                  <NavLink
                     aria-current={isSelected ? "page" : undefined}
                     className={isSelected ? "selected" : ""}
                     href={item.href}
                   >
                     {item.title}
-                  </Link>
+                  </NavLink>
                   {item.children && (
                     <div className="sidebar-nested">
                       {item.children.map((child) => {
                         const isChildSelected = child.href === current;
                         return (
-                          <Link
+                          <NavLink
                             key={child.href}
                             aria-current={isChildSelected ? "page" : undefined}
                             className={isChildSelected ? "selected" : ""}
                             href={child.href}
                           >
                             {child.title}
-                          </Link>
+                          </NavLink>
                         );
                       })}
                     </div>

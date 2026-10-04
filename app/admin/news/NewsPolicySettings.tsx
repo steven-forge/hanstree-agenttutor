@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { EXTERNAL_SOURCES, OFFICIAL_SOURCES, validateNewsPolicy, type NewsPolicy, type SourceRule } from "../../lib/news-policy";
 
 type Snapshot = {
@@ -11,18 +11,22 @@ const endpoint = "/api/admin/news-policy";
 const time = (value: string | null) => value ? new Date(value).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", hour12: false }) : "기록 없음";
 const keywords = (value: string) => value.split(/[\n,]+/).map(k => k.trim()).filter(Boolean);
 
-export default function NewsPolicySettings({ disabled = false }: { disabled?: boolean }) {
+export default function NewsPolicySettings() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [draft, setDraft] = useState<NewsPolicy | null>(null);
   const [keywordText, setKeywordText] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [sessionExpired, setSessionExpired] = useState(false);
+  const suppressUnload = useRef(false);
+  const disabled = sessionExpired;
   const proposed = draft ? { ...draft, ai_keywords: keywords(keywordText) } : null;
   const dirty = !!snapshot && !!proposed && JSON.stringify(proposed) !== JSON.stringify(snapshot.policy);
   function accept(data: Snapshot) { setSnapshot(data); setDraft(data.policy); setKeywordText(data.policy.ai_keywords.join("\n")); }
   async function read(signal?: AbortSignal) {
     const response = await fetch(endpoint, { cache: "no-store", signal }); const data = await response.json();
+    if (response.status === 401) setSessionExpired(true);
     if (!response.ok) throw new Error(data.error || "뉴스레터 기준을 불러오지 못했습니다.");
     return { ...data, policy: validateNewsPolicy(data.policy) } as Snapshot;
   }
@@ -32,8 +36,25 @@ export default function NewsPolicySettings({ disabled = false }: { disabled?: bo
     return () => controller.abort();
   }, []);
   useEffect(() => {
+    const controller = new AbortController();
+    let checking = false;
+    async function checkSession() {
+      if (checking) return;
+      checking = true;
+      try {
+        const response = await fetch("/api/admin/news?session=1", { cache: "no-store", signal: controller.signal });
+        if (response.status === 401 && !controller.signal.aborted) setSessionExpired(true);
+      } catch { /* Keep unsaved settings during a temporary connection failure. */ }
+      finally { checking = false; }
+    }
+    const onPageShow = (event: PageTransitionEvent) => { if (event.persisted) void checkSession(); };
+    window.addEventListener("focus", checkSession);
+    window.addEventListener("pageshow", onPageShow);
+    return () => { controller.abort(); window.removeEventListener("focus", checkSession); window.removeEventListener("pageshow", onPageShow); };
+  }, []);
+  useEffect(() => {
     if (!dirty) return;
-    const protect = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ""; };
+    const protect = (event: BeforeUnloadEvent) => { if (!suppressUnload.current) { event.preventDefault(); event.returnValue = ""; } };
     window.addEventListener("beforeunload", protect);
     return () => window.removeEventListener("beforeunload", protect);
   }, [dirty]);
@@ -53,20 +74,44 @@ export default function NewsPolicySettings({ disabled = false }: { disabled?: bo
     setBusy(true);
     try {
       const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(policy) });
-      const data = await response.json(); if (!response.ok) throw new Error(data.error || "저장 결과를 확인하지 못했습니다. 최신 기준을 다시 불러와 주세요.");
+      const data = await response.json();
+      if (response.status === 401) setSessionExpired(true);
+      if (!response.ok) throw new Error(data.error || "저장 결과를 확인하지 못했습니다. 최신 기준을 다시 불러와 주세요.");
       accept({ ...snapshot, policy: validateNewsPolicy(data.policy), storageConfigured: data.storageConfigured });
       setMessage("기준을 저장했습니다. 다음 수집부터 적용되며, 수집과 사이트 반영이 끝나면 적용 버전이 갱신됩니다.");
     } catch (caught) { setError(caught instanceof Error ? caught.message : "저장 결과를 확인하지 못했습니다. 최신 기준을 다시 불러와 주세요."); }
     finally { setBusy(false); }
   }
+  function loginAgain() {
+    if (dirty && !window.confirm("저장하지 않은 기준 수정은 사라집니다. 로그인 화면으로 이동할까요?")) return;
+    suppressUnload.current = true; window.location.reload();
+  }
+  async function logout() {
+    if (busy || (dirty && !window.confirm("저장하지 않은 기준 수정을 버리고 로그아웃할까요?"))) return;
+    setBusy(true); setError("");
+    try {
+      const response = await fetch("/api/admin/news", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "logout" }) });
+      if (!response.ok) throw new Error("로그아웃을 완료하지 못했습니다. 다시 시도해 주세요.");
+      suppressUnload.current = true; window.location.reload();
+    } catch (caught) {
+      try {
+        const session = await fetch("/api/admin/news?session=1", { cache: "no-store" });
+        if (session.status === 401) { suppressUnload.current = true; window.location.reload(); return; }
+      } catch { /* Keep the original error when session status is unavailable. */ }
+      setError(caught instanceof Error ? caught.message : "로그아웃하지 못했습니다.");
+    } finally { setBusy(false); }
+  }
   function update(changes: Partial<NewsPolicy>) { setDraft(p => p ? { ...p, ...changes } : p); setMessage(""); }
   function publish(changes: Partial<NewsPolicy["publish"]>) { if (draft) update({ publish: { ...draft.publish, ...changes } }); }
   function source(id: string, changes: Partial<SourceRule>) { if (draft) update({ sources: { ...draft.sources, [id]: { ...draft.sources[id], ...changes } } }); }
 
-  return <details className="cn-panel cn-policy" id="newsletter-policy">
-    <summary>뉴스레터 기준 설정 <span className="cn-tag cn-tag-info">{dirty ? "저장하지 않은 수정" : snapshot ? `저장 버전 ${snapshot.policy.revision}` : "불러오는 중"}</span></summary>
+  return <main className="cn-shell">
+    <header className="cn-header"><div><p className="cn-eyebrow">AgentTutor · 카드뉴스</p><h1>뉴스레터 기준 설정</h1><a className="cn-text-link" href="/admin/news">← 카드뉴스 관리로 돌아가기</a></div><button className="cn-button" onClick={logout} disabled={busy}>로그아웃</button></header>
+    <section className="cn-panel cn-policy" id="newsletter-policy" aria-labelledby="newsletter-policy-heading">
+    <h2 id="newsletter-policy-heading">수집·게시 기준 <span className="cn-tag cn-tag-info">{dirty ? "저장하지 않은 수정" : snapshot ? `저장 버전 ${snapshot.policy.revision}` : error ? "불러오기 실패" : "불러오는 중"}</span></h2>
     <p className="cn-muted">뉴스를 수집하고 뉴스레터에 공개하는 기준입니다. 인스타그램 카드 10장과 관리자 검토 후 발행 방식은 별도로 유지됩니다.</p>
     {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
+    {sessionExpired && <div className="cn-alert cn-alert-error" role="alert"><p>관리자 로그인이 만료됐습니다. 수정한 내용을 따로 보관한 뒤 다시 로그인해 주세요.</p><button className="cn-button" onClick={loginAgain}>다시 로그인</button></div>}
     {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
     {snapshot && <>
       {!snapshot.storageConfigured && <div className="cn-alert"><strong>뉴스레터 설정 저장소 연결 필요</strong><p>현재 기준을 확인하고 수정안을 작성할 수 있습니다. 서버 저장소가 연결되기 전에는 변경 사항이 저장되거나 수집에 적용되지 않습니다.</p><a className="cn-text-link" href="#newsletter-policy-setup">저장소 연결 안내</a></div>}
@@ -122,5 +167,6 @@ export default function NewsPolicySettings({ disabled = false }: { disabled?: bo
     </form>}
     {!draft && <button className="cn-button" onClick={reload} disabled={busy || disabled}>기준 다시 불러오기</button>}
     {snapshot && !snapshot.storageConfigured && <details className="cn-details" id="newsletter-policy-setup"><summary>저장소 연결 안내</summary><p className="cn-help">운영 담당자가 Vercel 프로젝트에 Upstash Redis를 연결하고, 뉴스레터 전용 NEWSLETTER_REDIS_REST_URL과 NEWSLETTER_REDIS_REST_TOKEN을 Production 환경에 등록한 뒤 재배포해야 합니다. 값은 이 화면이나 채팅에 입력하지 않습니다. 카드 원고와 Instagram 연결은 변경하지 않습니다.</p></details>}
-  </details>;
+    </section>
+  </main>;
 }

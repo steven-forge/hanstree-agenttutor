@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import type { AdminSetup } from "../../lib/card-news/types";
 import "./admin-news.css";
 
-export default function AdminLogin({ setup }: { setup: AdminSetup }) {
+export default function AdminLogin({ setup, title = "카드뉴스 관리", description = "관리자 비밀번호를 확인한 뒤 뉴스 선정과 카드 제작을 시작할 수 있습니다." }: { setup: AdminSetup; title?: string; description?: string }) {
   const [password, setPassword] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
@@ -42,8 +42,8 @@ export default function AdminLogin({ setup }: { setup: AdminSetup }) {
   return <main className="cn-shell cn-login-shell">
     <div className="cn-login-intro">
       <p className="cn-eyebrow">AgentTutor · AI News 10</p>
-      <h1>카드뉴스 관리</h1>
-      <p className="cn-muted">관리자 비밀번호를 확인한 뒤 뉴스 선정과 카드 제작을 시작할 수 있습니다.</p>
+      <h1>{title}</h1>
+      <p className="cn-muted">{description}</p>
     </div>
     <section className="cn-panel cn-login-panel" aria-labelledby="cn-login-heading">
       <h2 id="cn-login-heading">관리자 로그인</h2>

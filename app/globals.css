@@ -13,7 +13,7 @@
 }
 
 .docs-shell.card-news-layout { grid-template-columns: 256px minmax(0, 1fr); }
-@media (max-width: 900px) { .docs-shell.card-news-layout { grid-template-columns: 1fr; } .card-news-layout > .docs-sidebar { display: none; } }
+@media (max-width: 880px) { .docs-shell.card-news-layout { grid-template-columns: 1fr; } .card-news-layout > .docs-sidebar { display: none; } }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
