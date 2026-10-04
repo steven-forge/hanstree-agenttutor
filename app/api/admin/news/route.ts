@@ -76,7 +76,7 @@ export async function POST(request: Request) {
     requireSameOrigin(request);
     const body = await readBody(request);
     if (!body || typeof body !== "object") throw new AdminError("요청 형식을 확인하세요.");
-    if (body.action === "login") { await login(body.password); return json({ ok: true }); }
+    if (body.action === "login") { await login(body.password, body.remember); return json({ ok: true }); }
     if (body.action === "logout") { await logout(); return json({ ok: true }); }
     await requireAdmin();
     if (body.action === "check_connection") return json(await instagramAccount());

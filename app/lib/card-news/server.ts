@@ -6,9 +6,13 @@ import type { AdminSetup, AdminSnapshot, Edition } from "./types";
 export class AdminError extends Error {
   constructor(message: string, public status = 400) { super(message); }
 }
-const prefix = "cardnews:{admin}:";
+export const prefix = "cardnews:{admin}:";
 const cookieName = "agenttutor_card_admin";
+const oauthCookieName = "agenttutor_ig_oauth_state";
+const oauthKeyPrefix = `${prefix}ig-oauth:`;
 const sessionSeconds = 28800;
+const rememberedSessionSeconds = 24 * 60 * 60;
+const oauthStateSeconds = 600;
 let localAttempts = { count: 0, expires: 0 };
 let signingKey: { password: string; secret: string; key: Buffer } | undefined;
 function sessionSignature(value: string): string {
@@ -24,7 +28,7 @@ function sessionSignature(value: string): string {
   }
   return createHmac("sha256", signingKey.key).update(value).digest("hex");
 }
-function passwordVersion() { return sessionSignature("server-session-v1"); }
+export function passwordVersion() { return sessionSignature("server-session-v1"); }
 export function setupStatus(): AdminSetup {
   const storage = Boolean(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
   const passwordLength = process.env.CARD_NEWS_ADMIN_PASSWORD?.length || 0;
@@ -37,7 +41,8 @@ export function setupStatus(): AdminSetup {
     auth: !authIssue,
     authIssue,
     storage,
-    instagram: Boolean(process.env.INSTAGRAM_USER_ID && process.env.INSTAGRAM_ACCESS_TOKEN && process.env.CARD_NEWS_PUBLIC_URL && (process.env.CARD_NEWS_SIGNING_SECRET?.length || 0) >= 32),
+    // Env presence alone never means publishing is ready; snapshot() fills this from the stored connection state.
+    instagram: false,
     scheduler: Boolean(process.env.CARD_NEWS_CRON_SECRET),
   };
 }
@@ -71,9 +76,17 @@ export async function putEdition(edition: Edition, expected: number): Promise<Ed
   if (result !== 1) throw new AdminError("다른 작업에서 내용이 바뀌었습니다. 새로고침해 최신 내용을 확인하세요.", 409);
   return next;
 }
+// Publishing readiness for every snapshot (page load and each save/approve/publish response):
+// usable non-expired, non-disabled credentials plus public URL, signing key and storage.
+// Fails closed. The live account check still happens right before an actual publish.
+// Imported lazily because instagram-connection imports this module.
+async function publishReady(): Promise<boolean> {
+  try { return (await (await import("./instagram-connection")).connectionView()).publishReady; } catch { return false; }
+}
 export async function snapshot(date: string): Promise<AdminSnapshot> {
-  const setup = setupStatus();
-  if (!setup.storage) return { setup, edition: null, history: [] };
+  const base = setupStatus();
+  if (!base.storage) return { setup: base, edition: null, history: [] };
+  const setup = { ...base, instagram: await publishReady() };
   const dates = await redis<string[]>("ZREVRANGE", `${prefix}history`, 0, 29);
   const history: AdminSnapshot["history"] = [];
   for (const day of dates) { const e = await getEdition(day); if (e) history.push({ date: e.date, status: e.status, updatedAt: e.updatedAt }); }
@@ -97,11 +110,59 @@ export async function isAdmin(): Promise<boolean> {
   const match = /^(v1\.(\d{10})\.[a-f0-9]{64})\.([a-f0-9]{64})$/.exec(token);
   if (!match) return false;
   const expires = Number(match[2]), now = Math.floor(Date.now() / 1000);
-  return expires > now && expires <= now + sessionSeconds && equalSecret(match[3], sessionSignature(match[1]));
+  return expires > now && expires <= now + rememberedSessionSeconds && equalSecret(match[3], sessionSignature(match[1]));
 }
 export async function requireAdmin() { if (!await isAdmin()) throw new AdminError("관리자 로그인이 필요합니다.", 401); }
-export async function login(password: unknown) {
+// A cross-site OAuth redirect cannot carry the Strict admin cookie at all, so the callback
+// must never read it. A short-lived Lax state cookie plus a server-side Redis record (keyed
+// by a hash of the random state, holding a hash of the session token and the connection
+// revision at authorization start) binds the eventual callback to the admin session and the
+// connection state that were current when the flow began, without weakening the Strict cookie.
+export async function beginOAuthState(expectedConnectionRevision: number): Promise<string> {
+  await requireAdmin();
+  const token = (await cookies()).get(cookieName)?.value;
+  if (!token) throw new AdminError("관리자 로그인이 필요합니다.", 401);
+  const state = randomBytes(32).toString("hex");
+  const record = JSON.stringify({ sessionHash: createHash("sha256").update(token).digest("hex"), passwordVersion: passwordVersion(), revision: expectedConnectionRevision });
+  await redis("SET", `${oauthKeyPrefix}${createHash("sha256").update(state).digest("hex")}`, record, "EX", oauthStateSeconds);
+  (await cookies()).set(oauthCookieName, state, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/api/admin/news/instagram", maxAge: oauthStateSeconds });
+  return state;
+}
+export type OAuthBinding = { sessionHash: string; revision: number };
+// Validated purely from the Lax state cookie and the stored record: the Strict admin cookie
+// never arrives on this cross-site redirect, so it must never be required here.
+export async function consumeOAuthState(stateFromQuery: string): Promise<OAuthBinding> {
+  const jar = await cookies();
+  const cookieState = jar.get(oauthCookieName)?.value;
+  jar.set(oauthCookieName, "", { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/api/admin/news/instagram", maxAge: 0 });
+  if (!cookieState || !stateFromQuery || !equalSecret(cookieState, stateFromQuery)) throw new AdminError("연결 요청 확인에 실패했습니다. 다시 시도해 주세요.", 400);
+  const key = `${oauthKeyPrefix}${createHash("sha256").update(cookieState).digest("hex")}`;
+  const raw = await redis<string | null>("EVAL", "local v=redis.call('GET',KEYS[1]); if v then redis.call('DEL',KEYS[1]) end; return v", 1, key);
+  if (!raw) throw new AdminError("연결 요청이 만료되었거나 이미 처리됐습니다. 다시 시도해 주세요.", 400);
+  let record: { sessionHash: string; passwordVersion: string; revision: number };
+  try { record = JSON.parse(raw); } catch { throw new AdminError("연결 요청 확인에 실패했습니다. 다시 시도해 주세요.", 400); }
+  if (!/^[a-f0-9]{64}$/.test(record.sessionHash) || typeof record.revision !== "number") throw new AdminError("연결 요청 확인에 실패했습니다. 다시 시도해 주세요.", 400);
+  const sessionValue = await redis<string | null>("GET", `${prefix}session:${record.sessionHash}`);
+  if (!sessionValue || sessionValue !== record.passwordVersion || sessionValue !== passwordVersion()) {
+    throw new AdminError("로그인 세션이 바뀌었습니다. 다시 로그인한 뒤 연결해 주세요.", 401);
+  }
+  return { sessionHash: record.sessionHash, revision: record.revision };
+}
+// Atomically commits an OAuth connection write only if the bound admin session is still
+// current and the connection is still at exactly the revision recorded when the flow began.
+// Session and connection keys share the same {admin} hash tag, so Upstash can EVAL this in one shot.
+export async function commitOAuthConnection(binding: OAuthBinding, record: Record<string, unknown>): Promise<void> {
+  const result = await redis<number>(
+    "EVAL",
+    "local sess=redis.call('GET',KEYS[1]); if not sess or sess~=ARGV[1] then return 0 end; local old=redis.call('GET',KEYS[2]); local rev=0; if old then rev=cjson.decode(old).revision end; if rev~=tonumber(ARGV[2]) then return 0 end; redis.call('SET',KEYS[2],ARGV[3]); return 1",
+    2, `${prefix}session:${binding.sessionHash}`, `${prefix}instagram:connection`,
+    passwordVersion(), binding.revision, JSON.stringify({ ...record, revision: binding.revision + 1 }),
+  );
+  if (result !== 1) throw new AdminError("연결 상태가 변경되어 이번 연결 결과를 저장하지 않았습니다. 다시 연결해 주세요.", 409);
+}
+export async function login(password: unknown, remember: unknown = false) {
   if (!setupStatus().auth) throw new AdminError("운영 담당자가 관리자 비밀번호와 로그인 보호 설정을 먼저 등록해야 합니다.", 503);
+  if (typeof remember !== "boolean") throw new AdminError("로그인 유지 설정을 확인해 주세요.");
   let attempts: number;
   if (setupStatus().storage) {
     attempts = await redis<number>("EVAL", "local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],900) end; return n", 1, `${prefix}login-limit`);
@@ -112,14 +173,15 @@ export async function login(password: unknown) {
   }
   if (attempts > 20) throw new AdminError("로그인 시도가 많습니다. 15분 뒤 다시 시도해 주세요.", 429);
   if (typeof password !== "string" || password.length > 256 || !equalSecret(password, process.env.CARD_NEWS_ADMIN_PASSWORD!)) throw new AdminError("비밀번호를 확인해 주세요.", 401);
+  const duration = remember ? rememberedSessionSeconds : sessionSeconds;
   let token = randomBytes(32).toString("hex");
   if (setupStatus().storage) {
-    await redis("SET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`, passwordVersion(), "EX", sessionSeconds);
+    await redis("SET", `${prefix}session:${createHash("sha256").update(token).digest("hex")}`, passwordVersion(), "EX", duration);
   } else {
-    const value = `v1.${Math.floor(Date.now() / 1000) + sessionSeconds}.${token}`;
+    const value = `v1.${Math.floor(Date.now() / 1000) + duration}.${token}`;
     token = `${value}.${sessionSignature(value)}`;
   }
-  (await cookies()).set(cookieName, token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: sessionSeconds });
+  (await cookies()).set(cookieName, token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "strict", path: "/", maxAge: duration });
 }
 export async function logout() {
   const jar = await cookies(), token = jar.get(cookieName)?.value;

@@ -6,6 +6,7 @@ import "./admin-news.css";
 
 export default function AdminLogin({ setup, title = "카드뉴스 관리", description = "관리자 비밀번호를 확인한 뒤 뉴스 선정과 카드 제작을 시작할 수 있습니다." }: { setup: AdminSetup; title?: string; description?: string }) {
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const ready = setup.auth;
@@ -26,7 +27,7 @@ export default function AdminLogin({ setup, title = "카드뉴스 관리", descr
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "same-origin",
-        body: JSON.stringify({ action: "login", password }),
+        body: JSON.stringify({ action: "login", password, remember }),
       });
       const result = await response.json().catch(() => ({}));
       if (!result || typeof result !== "object") throw new Error("로그인 응답을 확인하지 못했습니다. 다시 시도해 주세요.");
@@ -50,6 +51,8 @@ export default function AdminLogin({ setup, title = "카드뉴스 관리", descr
       {!ready && <p className="cn-alert">{setup.authIssue ? setupMessage[setup.authIssue] : "운영 담당자가 관리자 로그인 설정을 확인해 주세요."}</p>}
       <form className="cn-form" onSubmit={login}>
         <label className="cn-field">관리자 비밀번호<input type="password" autoComplete="current-password" required minLength={4} maxLength={256} value={password} onChange={event => setPassword(event.target.value)} disabled={pending || !ready} /></label>
+        <label className="cn-check"><input type="checkbox" checked={remember} onChange={event => setRemember(event.target.checked)} disabled={pending || !ready} aria-describedby="cn-remember-help" />하루 동안 로그인 유지</label>
+        <p className="cn-help" id="cn-remember-help">체크하면 같은 브라우저에서 로그인한 시점부터 24시간 동안 비밀번호를 다시 묻지 않습니다.</p>
         {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
         <button className="cn-button cn-button-primary" type="submit" disabled={pending || !password || !ready}>{pending ? "비밀번호 확인 중…" : "관리자 화면 진입"}</button>
       </form>

@@ -342,6 +342,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     {localMode && <div className="cn-alert cn-alert-info"><strong>관리자 로그인됨 · 이 브라우저에 저장</strong><p>Instagram 연결 전에 뉴스 선정과 카드 제작을 할 수 있습니다. 원고는 현재 브라우저에만 저장되며, 기기를 바꾸거나 브라우저 데이터를 삭제하면 사용할 수 없습니다. JSON 내보내기로 원고를 보관하세요.</p><p>로그아웃해도 저장한 원고는 유지됩니다. 다시 관리자 비밀번호로 로그인하면 이어서 작업할 수 있습니다.</p><div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={exportJson} disabled={!edition || !!pending}>원고 JSON 내보내기</button><button className="cn-button cn-button-small" onClick={() => importInput.current?.click()} disabled={!!pending || locked}>원고 JSON 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={importJson} /></div></div>}
 
     <p><a className="cn-text-link" href="/admin/news/settings">뉴스레터 기준 설정으로 이동 →</a></p>
+    <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리로 이동 →</a></p>
 
     <section className="cn-panel" aria-label="날짜와 판본 상태">
       <div className="cn-toolbar">
@@ -431,7 +432,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
             <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit}>선택한 뉴스 제목으로 설명 다시 만들기</button></div>
             {!!issues.length && !locked && <details className="cn-details"><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
             {dirty && <p className="cn-alert">원고를 먼저 저장하세요. 승인 후 수정하면 다시 검토해야 합니다.</p>}
-            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 연결은 나중에 진행할 수 있습니다. 지금은 원고 작성·검토와 ZIP 다운로드를 이용하세요.{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading">연결 준비 상태 보기</a></>}</p>}
+            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 발행 연결이 준비되지 않았습니다. 원고 작성·검토와 ZIP 다운로드는 지금도 이용할 수 있습니다. <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리에서 상태 확인</a>{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading">연결 준비 상태 보기</a></>}</p>}
             <div className="cn-publish-actions">
               <button className="cn-button" onClick={() => act("approve")} disabled={!canApprove}>{edition.status === "approved" && !dirty ? "검토 완료됨" : "10개 원고 검토 완료"}</button>
               {canDownload ? localMode ? <button className="cn-button" onClick={downloadLocalBundle}>JPG 10장 ZIP 받기</button> : <a className="cn-button" href={`${API}?${new URLSearchParams({ date, download: "zip", revision: String(saved!.revision) })}`}>JPG 10장 ZIP 받기</a> : <button className="cn-button" disabled>검토 후 ZIP 받기</button>}
