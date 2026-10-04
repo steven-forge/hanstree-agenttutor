@@ -153,7 +153,7 @@ export default function NewsPolicySettings() {
     {draft && <form onSubmit={save}>
       <fieldset disabled={busy || disabled} className="cn-policy-fields">
         <legend>수집과 게시</legend>
-        <div className="cn-policy-grid">
+        <div className="cn-policy-grid cn-policy-grid-single">
           <label className="cn-field">수집 주기<select value={draft.collection_interval_hours} onChange={e => update({ collection_interval_hours: Number(e.target.value) })}>{[1, 2, 3, 6, 12, 24].map(n => <option key={n} value={n}>{n}시간마다</option>)}</select><small>KST 정각 기준. 예약 실행과 배포는 지연될 수 있습니다.</small></label>
           <label className="cn-field">공식 뉴스 수집 기간 · 일<input type="number" min={1} max={60} required value={draft.official_window_days} onChange={e => update({ official_window_days: Number(e.target.value) })} /></label>
           <label className="cn-field">외부 뉴스 수집 기간 · 시간<input type="number" min={1} max={168} required value={draft.window_hours} onChange={e => update({ window_hours: Number(e.target.value) })} /></label>
