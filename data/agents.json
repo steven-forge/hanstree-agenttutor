@@ -522,5 +522,86 @@
       "reviewed_at": "2026-10-04T10:29:00+09:00",
       "updated_at": "2026-10-04T10:29:00+09:00"
     }
+  ],
+  "overview_only": [
+    {
+      "slug": "kimi",
+      "title": "Kimi",
+      "provider": "Moonshot AI",
+      "tool_modes": ["Terminal", "IDE"],
+      "tagline": "Kimi K3: 장기 코딩·추론·문서와 이미지 이해에 초점을 둔 모델. Kimi Code에서 터미널·IDE 작업 지원.",
+      "form_factors": [
+        { "type": "App", "status": "공식지원확인", "notes": "Kimi 웹/모바일/Work 데스크톱" },
+        { "type": "CLI", "status": "공식지원확인", "notes": "Kimi Code" },
+        { "type": "API", "status": "공식지원확인", "notes": "Kimi API" }
+      ],
+      "sources": [{ "name": "Kimi K3 공식 소개", "url": "https://www.kimi.ai/ai-models/kimi-k3" }],
+      "reviewed_at": "2026-10-05T00:00:00+09:00"
+    },
+    {
+      "slug": "minimax",
+      "title": "MiniMax",
+      "provider": "MiniMax",
+      "tool_modes": ["Terminal"],
+      "tagline": "MiniMax M3: 코딩·도구 호출·여러 단계 작업과 이미지·영상 이해에 초점. CLI는 Claude Code 등 외부 도구 연결이 필요.",
+      "form_factors": [
+        { "type": "App", "status": "공식지원확인", "notes": "MiniMax Agent 웹" },
+        { "type": "CLI", "status": "조건부", "notes": "Claude Code 등 외부 도구 연결 필요" },
+        { "type": "API", "status": "공식지원확인", "notes": "MiniMax API" }
+      ],
+      "sources": [
+        { "name": "MiniMax M3 공식 소개", "url": "https://www.minimax.io/models/text/m3" },
+        { "name": "Claude Code 연동", "url": "https://platform.minimax.io/docs/token-plan/claude-code" }
+      ],
+      "reviewed_at": "2026-10-05T00:00:00+09:00"
+    },
+    {
+      "slug": "mistral",
+      "title": "Mistral",
+      "provider": "Mistral AI",
+      "tool_modes": ["Terminal", "IDE"],
+      "tagline": "Mistral Medium 3.5: 코딩·에이전트 작업에 최적화한 멀티모달 모델. Vibe에서 장시간 코딩과 여러 단계 업무 지원.",
+      "form_factors": [
+        { "type": "App", "status": "공식지원확인", "notes": "Vibe 웹/모바일" },
+        { "type": "CLI", "status": "공식지원확인", "notes": "Vibe CLI·VSCode 통합" },
+        { "type": "API", "status": "공식지원확인", "notes": "Mistral API" }
+      ],
+      "sources": [
+        { "name": "Mistral Medium 3.5", "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04" },
+        { "name": "Vibe 제공 형태", "url": "https://docs.mistral.ai/vibe" }
+      ],
+      "reviewed_at": "2026-10-05T00:00:00+09:00"
+    },
+    {
+      "slug": "stepfun",
+      "title": "StepFun",
+      "provider": "StepFun",
+      "tool_modes": ["Terminal", "IDE"],
+      "tagline": "Step 3.7 Flash: 빠른 추론과 이미지·영상 이해, 도구 호출을 결합한 모델. CLI·IDE는 외부 코딩 도구에 연결해 사용.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "공식 자료에서 확인하지 못함" },
+        { "type": "CLI", "status": "조건부", "notes": "Claude Code·OpenCode·Hermes 등 외부 CLI 연결" },
+        { "type": "API", "status": "공식지원확인", "notes": "StepFun API" }
+      ],
+      "sources": [{ "name": "Step 3.7 Flash 모델 안내", "url": "https://platform.stepfun.ai/docs/en/guides/models/step-3.7-flash" }],
+      "reviewed_at": "2026-10-05T00:00:00+09:00"
+    },
+    {
+      "slug": "mimo",
+      "title": "Xiaomi MiMo",
+      "provider": "Xiaomi",
+      "tool_modes": [],
+      "tagline": "MiMo-V2.6-Pro: 복잡한 프로젝트·장기 작업·조사와 다양한 입력 이해를 위한 주력 모델. OpenAI·Anthropic 호환 API 제공.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "공식 자료에서 확인하지 못함" },
+        { "type": "CLI", "status": "미확인", "notes": "공식 자료에서 확인하지 못함" },
+        { "type": "API", "status": "공식지원확인", "notes": "OpenAI·Anthropic 호환 API" }
+      ],
+      "sources": [
+        { "name": "MiMo 모델 출시 기록", "url": "https://mimo.mi.com/docs/en-US/updates/model" },
+        { "name": "MiMo API 시작하기", "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/first-api-call" }
+      ],
+      "reviewed_at": "2026-10-05T00:00:00+09:00"
+    }
   ]
 }

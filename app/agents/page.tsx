@@ -4,7 +4,8 @@ import SiteHeader from "../SiteHeader";
 import DocsSidebar from "../DocsSidebar";
 import ModelComparison from "./ModelComparison";
 import agentModelData from "../../data/agent-models.json";
-import { agentDocs, agentsMetadata, isDocFreshnessWarning } from "../content";
+import { agentDocs, agentsMetadata, isDocFreshnessWarning, overviewOnlyAgents } from "../content";
+import type { AgentOverview } from "../content";
 
 export const metadata: Metadata = {
   title: "AI 모델 비교 · AgentTutor",
@@ -60,7 +61,7 @@ export default async function AgentsIndexPage({
     hour: "2-digit", minute: "2-digit", hourCycle: "h23"
   }).format(new Date(value));
 
-  const filteredAgents = agentDocs.filter((agent) => {
+  const matchesFilter = (agent: AgentOverview) => {
     if (selectedForm) {
       const matchForm = agent.form_factors.some(
         (f) => f.type === selectedForm && f.status !== "미확인"
@@ -74,7 +75,10 @@ export default async function AgentsIndexPage({
     }
 
     return true;
-  });
+  };
+  const filteredAgents = agentDocs.filter(matchesFilter);
+  const allTableAgents = [...agentDocs, ...overviewOnlyAgents];
+  const filteredTableAgents = allTableAgents.filter(matchesFilter);
 
   return (
     <>
@@ -160,13 +164,14 @@ export default async function AgentsIndexPage({
             </form>
 
             <div className="filter-count">
-              전체 {agentDocs.length}개 중 {filteredAgents.length}개 에이전트 표시
+              모델 선택: 전체 {agentDocs.length}개 중 {filteredAgents.length}개 · 목록형 표: 전체 {allTableAgents.length}개 중 {filteredTableAgents.length}개
             </div>
 
-            {filteredAgents.length > 0 ? (
+            {filteredTableAgents.length > 0 ? (
               <ModelComparison
                 key={`${selectedForm}-${selectedTool}`}
                 agents={filteredAgents}
+                tableAgents={filteredTableAgents}
                 modelGroups={agentModelData.agents.filter((g) => filteredAgents.some((a) => a.slug === g.agent_slug))}
                 unitNote={agentModelData.unit_note}
               />

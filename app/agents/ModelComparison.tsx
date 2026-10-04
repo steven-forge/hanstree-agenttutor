@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import type { AgentDoc, Source } from "../content";
+import type { AgentDoc, AgentOverview, Source } from "../content";
 
 type AgentModel = {
   id: string;
@@ -224,10 +224,12 @@ function escapeCsvCell(value: string): string {
 
 export default function ModelComparison({
   agents,
+  tableAgents,
   modelGroups,
   unitNote
 }: {
   agents: AgentDoc[];
+  tableAgents: AgentOverview[];
   modelGroups: AgentModelGroup[];
   unitNote: string;
 }) {
@@ -467,6 +469,9 @@ export default function ModelComparison({
 
       <div style={{ marginTop: "36px" }} id="agent-overview-table">
         <h3 style={{ margin: "0 0 10px" }}>에이전트 목록형 비교</h3>
+        <p className="section-note" style={{ marginBottom: "8px" }}>
+          코딩·추론·에이전트 활용 관점의 비교 후보 목록이며, 성능 동급이나 순위를 뜻하지 않습니다. 제공 형태의 &apos;미확인&apos;은 미지원이 아니라 공식 자료에서 확인하지 못했다는 뜻입니다.
+        </p>
         <div className="table-wrap agents-table-wrap" tabIndex={0} role="region" aria-label="에이전트 비교 목록">
           <table className="agents-table">
             <thead>
@@ -479,10 +484,16 @@ export default function ModelComparison({
               </tr>
             </thead>
             <tbody>
-              {agents.map((agent) => (
+              {tableAgents.map((agent) => {
+                const hasDetail = agents.some((a) => a.slug === agent.slug);
+                return (
                 <tr key={agent.slug} className="agent-table-row">
                   <td>
-                    <a href={`/agents/${agent.slug}`} className="agent-row-link"><strong>{agent.title}</strong></a>
+                    <a
+                      href={hasDetail ? `/agents/${agent.slug}` : agent.sources[0].url}
+                      {...(hasDetail ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                      className="agent-row-link"
+                    ><strong>{agent.title}</strong></a>
                     <span className="agent-provider-tag">{agent.provider}</span>
                   </td>
                   <td>
@@ -490,6 +501,7 @@ export default function ModelComparison({
                       {agent.form_factors.map((f) => (
                         <span
                           key={f.type}
+                          title={f.notes}
                           className={f.status === "공식지원확인" ? "status-confirmed" : f.status.startsWith("조건부") ? "status-conditional" : "status-unconfirmed"}
                           style={{ fontSize: "0.72rem", padding: "1px 6px" }}
                         >
@@ -518,12 +530,22 @@ export default function ModelComparison({
                         >공식 문서 ↗</a>
                       )}
                     </div>
+                    {!hasDetail && agent.sources.slice(1).map((source) => (
+                      <a
+                        key={source.url}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ display: "block", color: "var(--blue)", textDecoration: "none" }}
+                      >{source.name} ↗</a>
+                    ))}
                     <time dateTime={agent.reviewed_at} style={{ display: "block", marginTop: "2px" }}>
                       {agent.reviewed_at.split("T")[0]}
                     </time>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>

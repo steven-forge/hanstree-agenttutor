@@ -307,6 +307,8 @@ export type ContentHealthData = {
 export const learnDocs = (rawLearn as unknown as { documents: LearnDoc[] }).documents;
 export const engineeringDocs = (rawEngineering as unknown as { documents: AgentEngineeringDoc[] }).documents;
 export const agentDocs = (rawAgents as unknown as { documents: AgentDoc[] }).documents;
+export type AgentOverview = Pick<AgentDoc, "slug" | "title" | "provider" | "tool_modes" | "tagline" | "form_factors" | "sources" | "reviewed_at">;
+export const overviewOnlyAgents = (rawAgents as unknown as { overview_only: AgentOverview[] }).overview_only;
 export const agentsMetadata = {
   reviewed_at: (rawAgents as unknown as { reviewed_at: string }).reviewed_at,
   updated_at: (rawAgents as unknown as { updated_at: string }).updated_at
