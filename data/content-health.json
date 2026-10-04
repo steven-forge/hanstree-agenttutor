@@ -37,12 +37,12 @@
         "url": "https://github.com/openai/codex/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-04T11:23:50.322563+09:00",
+        "checked_at": "2026-10-04T11:48:00.548203+09:00",
         "held_count": 0,
         "excluded_count": 207,
         "skipped_count": 29,
         "coverage_limited": false,
-        "last_success_at": "2026-10-04T11:23:50.322563+09:00"
+        "last_success_at": "2026-10-04T11:48:00.548203+09:00"
       },
       {
         "id": "claude-releases",
@@ -50,12 +50,12 @@
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-04T11:23:50.322563+09:00",
+        "checked_at": "2026-10-04T11:48:00.548203+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 55,
         "coverage_limited": false,
-        "last_success_at": "2026-10-04T11:23:50.322563+09:00"
+        "last_success_at": "2026-10-04T11:48:00.548203+09:00"
       },
       {
         "id": "gemini-releases",
@@ -63,12 +63,12 @@
         "url": "https://github.com/google-gemini/gemini-cli/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-04T11:23:50.322563+09:00",
+        "checked_at": "2026-10-04T11:48:00.548203+09:00",
         "held_count": 0,
         "excluded_count": 70,
         "skipped_count": 10,
         "coverage_limited": false,
-        "last_success_at": "2026-10-04T11:23:50.322563+09:00"
+        "last_success_at": "2026-10-04T11:48:00.548203+09:00"
       },
       {
         "id": "grok-releases",
@@ -76,15 +76,15 @@
         "url": "https://docs.x.ai/developers/release-notes",
         "status": "partial",
         "count": 0,
-        "checked_at": "2026-10-04T11:23:50.322563+09:00",
+        "checked_at": "2026-10-04T11:48:00.548203+09:00",
         "held_count": 1,
         "excluded_count": 0,
         "skipped_count": 7,
         "coverage_limited": false,
         "held_reasons": [
-          "한국어 번역 실패: Retry-After 대기시간 초과 (77736.0초)"
+          "한국어 번역 실패: 한국어 번역에 실패했습니다."
         ],
-        "last_success_at": "2026-10-04T11:23:50.322563+09:00"
+        "last_success_at": "2026-10-04T11:48:00.548203+09:00"
       },
       {
         "id": "anthropic-news",
@@ -328,12 +328,12 @@
     "pending_event_count": 808
   },
   "documents": {
-    "checked_at": "2026-10-03T06:28:28.168381+09:00",
+    "checked_at": "2026-10-04T11:48:26.130029+09:00",
     "sources": [
       {
         "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-01T06:29:50.863919+09:00"
       },
       {
@@ -344,33 +344,33 @@
       {
         "url": "https://ai.google.dev/gemini-api/docs",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
         "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/news/news250115",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/news/news260813",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/quick_start/pricing",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://api-docs.deepseek.com/updates",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://code.claude.com/docs/en/context-window.md",
@@ -423,23 +423,23 @@
       {
         "url": "https://code.claude.com/docs/llms.txt",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/models",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/overview",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://dev.meta.ai/docs/pricing-rate-limits",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://developers.google.com/machine-learning/glossary",
@@ -450,25 +450,55 @@
       {
         "url": "https://docs.x.ai/build/cli/reference",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-22T06:26:19.366483+09:00"
       },
       {
         "url": "https://docs.x.ai/overview",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
-        "changed_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "changed_at": "2026-10-04T11:48:26.130029+09:00"
+      },
+      {
+        "url": "https://docs.z.ai/guides/capabilities/thinking",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.z.ai"
+      },
+      {
+        "url": "https://docs.z.ai/guides/llm/glm-5.2",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.z.ai"
+      },
+      {
+        "url": "https://docs.z.ai/guides/llm/glm-5.3",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.z.ai"
+      },
+      {
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.z.ai"
+      },
+      {
+        "url": "https://docs.z.ai/release-notes/new-released",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
         "url": "https://gemini.google/overview",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-27T06:26:16.321511+09:00"
       },
       {
         "url": "https://geminicli.com/docs",
         "status": "unchanged",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://huggingface.co/learn/llm-course/chapter1/1",
@@ -478,37 +508,37 @@
       {
         "url": "https://learn.chatgpt.com/docs/app-server.md",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-30T06:28:50.121154+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/changelog",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
-        "changed_at": "2026-10-03T06:28:28.168381+09:00"
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "changed_at": "2026-10-04T11:48:26.130029+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/cloud.md",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/codex-sdk.md",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-30T06:28:50.121154+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/codex/cli.md",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       },
       {
         "url": "https://learn.chatgpt.com/docs/quickstart.md",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       },
       {
@@ -530,8 +560,32 @@
       {
         "url": "https://platform.claude.com/docs/en/intro",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-09-29T06:27:28.773825+09:00"
+      },
+      {
+        "url": "https://www.alibabacloud.com/help/en/model-studio/models",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
+      },
+      {
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
+      },
+      {
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
+      },
+      {
+        "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-omni-flash",
+        "status": "failed",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
+        "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
       },
       {
         "url": "https://www.anthropic.com/engineering/building-effective-agents",
@@ -546,13 +600,13 @@
       {
         "url": "https://www.anthropic.com/news",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       },
       {
         "url": "https://x.ai/news",
         "status": "changed",
-        "checked_at": "2026-10-03T06:28:28.168381+09:00",
+        "checked_at": "2026-10-04T11:48:26.130029+09:00",
         "changed_at": "2026-10-03T06:28:28.168381+09:00"
       }
     ]
