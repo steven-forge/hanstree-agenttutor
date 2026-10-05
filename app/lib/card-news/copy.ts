@@ -1,5 +1,9 @@
 export type CardCopy = { title: string; body: string };
-export const CARD_TEXT = { title: { lines: 2, width: 16 }, body: { lines: 6, width: 18 } } as const;
+export const CARD_TEXT = { title: { lines: 2, width: 16 }, body: { lines: 7, width: 18 } } as const;
+export const CARD_LAYOUT = { titleTop: 391, titleLineHeight: 81, titleBodyGap: 48 } as const;
+export function cardBodyTop(title: string): number {
+  return CARD_LAYOUT.titleTop + title.split("\n").length * CARD_LAYOUT.titleLineHeight + CARD_LAYOUT.titleBodyGap;
+}
 export const CARD_SOURCE = { left: 140, top: 1240, width: 870, fontSize: 26, lineHeight: 34, color: "#858585", letterSpacing: -.52 } as const;
 export const hasEllipsis = (text: string) => /[\u2026\u22ef]|\.(?:\s*\.){2,}/.test(text);
 export const lineWidth = (text: string) => Array.from(text).reduce((n, c) => n + (/[^\u0000-\u007f]/.test(c) || /[MW@%]/.test(c) ? 1 : .65), 0);

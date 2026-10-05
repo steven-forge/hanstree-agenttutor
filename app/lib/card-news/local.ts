@@ -1,6 +1,6 @@
 "use client";
 import { zipSync, strToU8 } from "fflate";
-import { CARD_SOURCE, cardSourceLines } from "./copy";
+import { CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "./copy";
 import { editionIssues, editionWindow, cardIssues, preserveDraft, MAX_CANDIDATES, type AdminSnapshot, type Edition } from "./types";
 
 const key = "agenttutor-card-news-v1:";
@@ -86,8 +86,8 @@ async function cardBlob(card: Edition["cards"][number]) {
   ctx.fillStyle = "#111111"; draw("AI News 10", 154, 133, 126, "CardLatin", -8.19);
   ctx.textAlign = "right"; draw("AgentTutor", 1024, 216, 32, "CardLatin", -1.12, true); ctx.textAlign = "left";
   ctx.fillStyle = "#CCFF00";
-  card.title.split("\n").forEach((line, i) => draw(line, 140, 391 + i * 81, 54, "CardGothic", -2.43, false, 870, 900));
-  card.body.split("\n").forEach((line, i) => draw(line, 140, 660 + i * 83.52, 48, "CardGothic", -1.68, false, 870));
+  card.title.split("\n").forEach((line, i) => draw(line, 140, CARD_LAYOUT.titleTop + i * CARD_LAYOUT.titleLineHeight, 54, "CardGothic", -2.43, false, 870, 900));
+  card.body.split("\n").forEach((line, i) => draw(line, 140, cardBodyTop(card.title) + i * 83.52, 48, "CardGothic", -1.68, false, 870));
   ctx.fillStyle = CARD_SOURCE.color;
   cardSourceLines(card).forEach((line, i) => draw(line, CARD_SOURCE.left, CARD_SOURCE.top + i * CARD_SOURCE.lineHeight, CARD_SOURCE.fontSize, "CardGothic", CARD_SOURCE.letterSpacing, false, CARD_SOURCE.width));
   return new Promise<Blob>((resolve, reject) => canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("JPG 생성에 실패했습니다.")), "image/jpeg", 0.96));

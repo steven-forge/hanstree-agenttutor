@@ -3,6 +3,7 @@
 @font-face { font-family: "cn-CardLatin"; src: url("/fonts/Arimo-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "cn-CardLatin"; src: url("/fonts/Arimo-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
 .cn-shell { max-width: 1380px; margin: 0 auto; padding: 40px 28px 80px; color: var(--ink, #111827); }
+.cn-admin-shell { width: 100%; max-width: none; margin: 0; }
 .cn-shell *, .cn-dialog * { box-sizing: border-box; }
 .cn-shell h1 { margin: 7px 0 10px; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.25; letter-spacing: -.045em; }
 .cn-shell h2, .cn-dialog h2 { margin: 0; font-size: 1.15rem; line-height: 1.5; letter-spacing: -.025em; }
@@ -75,9 +76,9 @@
 .cn-card-band { position: relative; display: flex; align-items: center; height: 12.22222cqw; margin-left: 12.963cqw; padding-left: 1.2963cqw; background: #ccff00; color: #000; }
 .cn-card-series { white-space: nowrap; font-family: "cn-CardLatin", Arial, sans-serif; font-size: 11.6667cqw; font-weight: 700; line-height: 1; letter-spacing: -.065em; }
 .cn-card-brand { position: absolute; right: 5.18519cqw; bottom: 1.11111cqw; font-family: "cn-CardLatin", Arial, sans-serif; font-size: 2.963cqw; font-style: italic; font-weight: 700; line-height: 1; white-space: nowrap; }
-.cn-card-copy { position: absolute; top: 36.2037cqw; right: 6.48cqw; left: 12.963cqw; }
+.cn-card-copy { position: absolute; right: 6.48cqw; left: 12.963cqw; }
 .cn-card-headline { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 5cqw; font-weight: 900; line-height: 1.5; letter-spacing: -.045em; }
-.cn-card-body { position: absolute; top: 24.9074cqw; width: 100%; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 4.4444cqw; font-weight: 700; line-height: 1.74; letter-spacing: -.035em; }
+.cn-card-body { position: absolute; width: 100%; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 4.4444cqw; font-weight: 700; line-height: 1.74; letter-spacing: -.035em; }
 .cn-card-source { position: absolute; margin: 0; white-space: pre; font-weight: 700; }
 .cn-preview-label { margin: 9px 0; color: #64748b; font-size: .76rem; }
 .cn-jpg { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; background: #000; }

@@ -6,7 +6,7 @@ import sharp from "sharp";
 import { zipSync, strToU8 } from "fflate";
 import type { Edition, NewsCard } from "./types";
 import { cardIssues } from "./types";
-import { CARD_SOURCE, cardSourceLines } from "./copy";
+import { CARD_SOURCE, cardBodyTop, cardSourceLines } from "./copy";
 import { AdminError } from "./server";
 
 let fontPromise: Promise<Buffer[]> | undefined;
@@ -23,7 +23,7 @@ export async function renderCard(card: NewsCard): Promise<Buffer> {
       <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 140, top: 376, width: 870, fontSize: 54, fontWeight: 900, lineHeight: 1.5, letterSpacing: -2.43 }}>
         {card.title.split("\n").map((line, i) => <div key={i} style={{ display: "flex", height: 81, whiteSpace: "pre" }}>{line || " "}</div>)}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 140, top: 642, width: 870, fontSize: 48, lineHeight: 1.74, letterSpacing: -1.68 }}>
+      <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: 140, top: cardBodyTop(card.title) - 18, width: 870, fontSize: 48, lineHeight: 1.74, letterSpacing: -1.68 }}>
         {card.body.split("\n").map((line, i) => <div key={i} style={{ display: "flex", height: 83.52, whiteSpace: "pre" }}>{line || " "}</div>)}
       </div>
       <div style={{ display: "flex", flexDirection: "column", position: "absolute", left: CARD_SOURCE.left, top: CARD_SOURCE.top, width: CARD_SOURCE.width, fontFamily: "CardGothic", fontWeight: 700, fontSize: CARD_SOURCE.fontSize, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: CARD_SOURCE.letterSpacing, color: CARD_SOURCE.color }}>

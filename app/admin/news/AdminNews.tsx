@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
-import { fitCardCopy, copyIssues, CARD_SOURCE, cardSourceLines } from "../../lib/card-news/copy";
+import { fitCardCopy, copyIssues, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import "./admin-news.css";
 
@@ -276,7 +276,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     if (found < 0 && edition.cards.length >= 10) { setError("이미 10개를 선정했습니다. 다른 뉴스를 먼저 해제하세요."); return; }
     const cards = found >= 0 ? edition.cards.filter(item => item.candidateId !== candidate.id) : [...edition.cards, candidateCard(candidate)];
     setEdition({ ...edition, cards, caption: captionFor(cards, edition.candidates) }); setMessage(""); setError("");
-    if (found < 0 && !cards.at(-1)?.title) setMessage("이 기사는 카드용 요약이 준비되지 않았습니다. 후보의 내용과 원문을 참고해 제목 2줄·본문 6줄 이내로 작성하세요.");
+    if (found < 0 && !cards.at(-1)?.title) setMessage("이 기사는 카드용 요약이 준비되지 않았습니다. 후보의 내용과 원문을 참고해 제목 2줄·본문 7줄 이내로 작성하세요.");
     if (found < 0) setActiveIndex(cards.length - 1);
   }
   async function composeCards() {
@@ -296,7 +296,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         return { ...card, ...copy, verified: false };
       });
       setEdition({ ...edition, candidates: refreshed.candidates, cards, caption: captionFor(cards, refreshed.candidates) }); setShowJpg(false);
-      setMessage(`${applied}개 카드에 제목 최대 2줄·본문 최대 6줄 요약을 적용했습니다. 원고를 저장하고 내용을 다시 확인하세요.`);
+      setMessage(`${applied}개 카드에 제목 최대 2줄·본문 최대 7줄 요약을 적용했습니다. 원고를 저장하고 내용을 다시 확인하세요.`);
       if (applied < cards.length) setError(`카드 ${cards.length - applied}개는 짧은 요약이 준비되지 않아 기존 원고를 유지했습니다. 해당 기사 내용을 직접 정리해 주세요.`);
     } catch (caught) { setError(caught instanceof Error ? caught.message : "카드 원고를 정리하지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
@@ -333,7 +333,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const previewIssues = card ? copyIssues(card) : [];
   const currentIssues = card && edition ? [...cardIssues(card), ...(timeIssue(card, edition) ? [timeIssue(card, edition)] : [])] : [];
 
-  return <main className="cn-shell">
+  return <main className="cn-shell cn-admin-shell">
     <header className="cn-header">
       <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">뉴스레터에서 뉴스를 골라 카드 원고를 검토하고 Instagram 발행을 준비합니다.</p><div className="cn-targets"><span><strong>08:30</strong> 검토 준비 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div></div>
       <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
@@ -395,7 +395,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
         <div>
           <section className="cn-panel" aria-labelledby="cn-editor-heading">
-            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. 카드 원고와 순서</h2><p className="cn-muted">제목 최대 2줄 · 본문 최대 6줄 · 말줄임표 없이 핵심 내용 정리</p></div></div>
+            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. 카드 원고와 순서</h2><p className="cn-muted">제목 최대 2줄 · 본문 최대 7줄 · 말줄임표 없이 핵심 내용 정리</p></div></div>
             <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>선정한 카드 원고 정리</button>
             {selected.length ? <>
               <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>
@@ -404,7 +404,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
                     <label className="cn-field">제목 · {card.title.split("\n").length}/2줄<textarea rows={2} value={card.title} onChange={event => changeCard({ title: event.target.value })} disabled={!canEdit} /><small>줄바꿈 위치가 이미지에 그대로 반영됩니다.</small></label>
-                    <label className="cn-field">본문 · {card.body.split("\n").length}/6줄<textarea rows={6} value={card.body} onChange={event => changeCard({ body: event.target.value })} disabled={!canEdit} /></label>
+                    <label className="cn-field">본문 · {card.body.split("\n").length}/7줄<textarea rows={7} value={card.body} onChange={event => changeCard({ body: event.target.value })} disabled={!canEdit} /></label>
                     {(!/[가-힣]/.test(card.title) || !/[가-힣]/.test(card.body)) && <p className="cn-alert">영문 원문이 그대로 들어간 초안은 한국어 제목과 본문으로 편집한 뒤 검토하세요.</p>}
                     <label className="cn-field">출처 이름<input value={card.sourceName} onChange={event => changeCard({ sourceName: event.target.value })} disabled={!canEdit} /></label>
                     <label className="cn-field">원문 주소<input type="url" value={card.sourceUrl} onChange={event => changeCard({ sourceUrl: event.target.value })} disabled={!canEdit} /></label>
@@ -414,7 +414,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">
-                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 6줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy"><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body">{card.body || "본문을 입력하세요"}</p></div><p className="cn-card-source" style={{ left: `${CARD_SOURCE.left / 10.8}cqw`, top: `${CARD_SOURCE.top / 10.8}cqw`, width: `${CARD_SOURCE.width / 10.8}cqw`, fontSize: `${CARD_SOURCE.fontSize / 10.8}cqw`, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: `${CARD_SOURCE.letterSpacing / CARD_SOURCE.fontSize}em`, color: CARD_SOURCE.color }}>{cardSourceLines(card).join("\n")}</p></div></div>}
+                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 7줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">AI News 10</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy" style={{ top: `${CARD_LAYOUT.titleTop / 10.8}cqw` }}><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body" style={{ top: `${(cardBodyTop(card.title) - CARD_LAYOUT.titleTop) / 10.8}cqw` }}>{card.body || "본문을 입력하세요"}</p></div><p className="cn-card-source" style={{ left: `${CARD_SOURCE.left / 10.8}cqw`, top: `${CARD_SOURCE.top / 10.8}cqw`, width: `${CARD_SOURCE.width / 10.8}cqw`, fontSize: `${CARD_SOURCE.fontSize / 10.8}cqw`, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: `${CARD_SOURCE.letterSpacing / CARD_SOURCE.fontSize}em`, color: CARD_SOURCE.color }}>{cardSourceLines(card).join("\n")}</p></div></div>}
                     <p className="cn-preview-label">편집 미리보기 · 최종 줄바꿈과 넘침은 저장본 JPG에서 확인하세요.</p>
                     <button className="cn-button cn-button-small" onClick={() => { setJpgError(false); setShowJpg(value => !value); }} disabled={!hasSavedImage || !!pending || sessionExpired}>{showJpg ? "저장본 JPG 접기" : "실제 저장본 JPG 보기"}</button>
                     {!hasSavedImage && <p className="cn-help">이 카드를 저장하면 실제 JPG를 볼 수 있습니다.</p>}
