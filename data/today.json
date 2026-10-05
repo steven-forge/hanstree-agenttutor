@@ -1,10 +1,26 @@
 {
   "edition_date": "2026-10-05",
-  "window_start": "2026-08-05T08:41:06.174285+09:00",
-  "window_end": "2026-10-04T08:41:06.174285+09:00",
-  "collected_at": "2026-10-05T17:04:30.111282+09:00",
+  "window_start": "2026-08-06T20:03:30.757855+09:00",
+  "window_end": "2026-10-05T20:03:30.757855+09:00",
+  "collected_at": "2026-10-05T20:03:57.752763+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "2d8e70fb45cef747",
+      "title": "Building advertising for the way people use AI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "source_summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-05T20:03:30+09:00",
+      "published_at": "2026-10-05T10:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "사람들이 AI를 사용하는 방식에 대한 광고 구축",
+      "source_summary_ko": "OpenAI는 ChatGPT에 새로운 시각적 광고 형식을 도입하고 측정 도구, 어트리뷰션 파트너십 및 광고주에 대한 브랜드 적합성을 확장합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
     {
       "id": "ec08581411bc9dc6",
       "title": "v2.1.289",
@@ -1438,6 +1454,13 @@
           "source_id": "hacker-news",
           "name": "Hacker News",
           "url": "https://news.ycombinator.com/item?id=49920520",
+          "independent": false,
+          "target_url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49962903",
           "independent": false,
           "target_url": "https://claude.dev/blog/automating-eval-design-and-hillclimbing"
         }
