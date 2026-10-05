@@ -39,7 +39,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교), 온톨로지(분류체계·데이터베이스 스키마·지식그래프 비교), Hermes Agent(Herdr·Claude Code 비교), FDE(제품 개발 엔지니어·솔루션 엔지니어 비교)의 열 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교), 온톨로지(분류체계·데이터베이스 스키마·지식그래프 비교), Hermes Agent(Herdr·Claude Code 비교), FDE(제품 개발 엔지니어·솔루션 엔지니어 비교), ElevenLabs(Cartesia·Google Cloud TTS 비교), Osmo Film Emulation(Dehancer·FilmConvert Nitrate 비교)의 열두 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -211,3 +211,13 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 
 - 세 원고의 문단·비교표·문제·보기·해설을 웹 자료와 맞췄다. 속성과 속성값, Hermes의 메모·스킬과 모델 학습, FDE의 현장 적용 책임을 분명히 구분하고 직무 비교에 제품 개발 엔지니어의 공식 출처도 추가했다. 퀴즈는 각 5문항이며 기존 즉시 재선택·첫 선택 점수·기록 미저장 방식을 유지한다.
 - v0.13.5 빌드가 통과해 61개 정적 페이지를 생성했다. 새 세 페이지에서 웹툰 참조와 각 5문항·20개 선택지, 문서별 그림 안내·비교 제목을 확인했다. 실제 브라우저 클릭과 모바일 화면 배치는 직접 확인하지 않았다.
+
+## 열한·열두 번째 문서(ElevenLabs, Osmo Film Emulation) 추가 (2026-10-05)
+
+- 'Eleven'은 AI 음성 맥락에서 ElevenLabs로 잠정 해석했고 본문 첫머리에 가정을 밝혔다. 기존 열 문서와 퀴즈는 그대로 두고 두 문서만 추가했다.
+- ElevenLabs는 공식 모델·받아쓰기·더빙·Agents Platform·목소리 도움말·생성물 이용 안내를 근거로 TTS·STT·더빙·대화 에이전트의 역할과 이용 조건을 설명한다. Cartesia·Google Cloud TTS와는 읽은 문서 범위의 기능만 비교했고 속도·발음은 비교하지 않았다.
+- Osmo Film Emulation은 공식 도구 페이지를 근거로 기존 영상 후처리 역할, 입력 형식 확인, 스톡·룩, 그레인·할레이션, 기기 내 처리 공식 설명을 설명한다. Dehancer·FilmConvert Nitrate는 공식 자료 범위로 비교했다. 도구를 직접 실행하거나 통신을 측정하지 않았다.
+- `data/explore.json`에 slug `elevenlabs`, `osmo-film-emulation` 문서를, `data/explore-quizzes.json`에 각각 5문항(`version: 1`)을 추가했다. 정답 위치는 elevenlabs 2·0·3·1·2, osmo-film-emulation 1·3·0·2·1(0부터 센 index)이다. `docs/knowledge/ELEVENLABS.md`, `OSMO_FILM_EMULATION.md`를 같은 8개 섹션 구성으로 작성해 웹 자료와 맞췄다.
+- 내장 imagegen으로 생성한 8컷 웹툰 두 편(`public/explore/elevenlabs-webtoon.png`, `public/explore/osmo-film-emulation-webtoon.png`, 각 1024×1536)을 저장하고 본문에 연결했다. 제작 지시는 `docs/knowledge/elevenlabs-webtoon-prompt.txt`, `docs/knowledge/osmo-film-emulation-webtoon-prompt.txt`에 있다.
+- 반복 설명을 줄이고 한국어 음성 확인 예시, 입력 색상 설정과 Log 처리, 할레이션·그레인의 차이를 보완했다. 두 원고의 본문·문항과 웹 자료의 일치, 기존 열 문서·퀴즈 보존을 확인했다.
+- v0.13.11의 배포용 빌드가 통과해 65개 정적 페이지를 생성했다. 새 두 페이지의 HTML에서 웹툰과 각 5문항·20개 선택지, 버전 표시를 확인했다. 실제 브라우저 클릭·모바일 화면 배치와 원제품의 음성·영상 처리 실행은 수행하지 않았다.

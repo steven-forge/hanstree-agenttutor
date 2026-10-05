@@ -1319,6 +1319,273 @@
           "url": "https://jobs.lever.co/palantir/2458ba08-de79-4e8f-b553-060f9568727e"
         }
       ]
+    },
+    {
+      "slug": "elevenlabs",
+      "title": "ElevenLabs: 글을 목소리로 만드는 AI 음성 서비스",
+      "summary": "질문의 'Eleven'을 AI 음성 서비스 ElevenLabs로 해석했습니다. 글을 음성으로 만드는 기능을 중심으로 받아쓰기, 다른 언어 더빙, 대화형 음성 에이전트를 제공하며 기능마다 목적이 다릅니다.",
+      "topic": "AI 음성",
+      "tags": [
+        "ElevenLabs",
+        "Eleven",
+        "TTS",
+        "STT",
+        "더빙",
+        "음성 에이전트",
+        "Cartesia",
+        "Google Cloud TTS"
+      ],
+      "created_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "reviewed_at": "2026-10-05",
+      "question": "Eleven(ElevenLabs)은 무엇이고 음성 합성·받아쓰기·더빙·대화 기능은 어떻게 다른가요?",
+      "core_answer": "ElevenLabs는 글을 음성으로 만드는 기능과 받아쓰기, 다른 언어로 더빙하기, 대화형 에이전트 기능을 제공하는 AI 음성 서비스입니다. 영상 내레이션을 만들거나 앱에 말로 대화하는 기능을 연결할 때 활용할 수 있습니다.\n\n여기서는 질문의 'Eleven'을 ElevenLabs로 해석해 설명합니다.",
+      "easy_explanation": "카페 홍보 영상 1분을 만드는 가상의 사례입니다. 준비한 원고를 읽어 줄 목소리를 골라 글을 음성 파일로 만드는 기능이 TTS입니다.\n\n사장님 인터뷰 녹음은 STT로 글로 옮겨 자막 초안을 만듭니다. STT는 말을 글로 적는 기능이며 번역 기능이 아닙니다.\n\n영어권 손님용 영상이 필요하면 완성된 음성을 다른 언어로 바꾸는 더빙을 사용합니다.\n\n손님 질문에 말로 답하는 안내 창구는 음성 인식, 언어 모델, 음성 합성을 묶은 대화 에이전트로 따로 구성합니다.",
+      "api_explanation_title": "용어: TTS·STT·더빙·에이전트",
+      "api_explanation": "TTS는 글을 음성으로, STT는 음성을 글로 바꾸는 기능입니다. 더빙은 음성을 다른 언어로 옮기고, 에이전트는 듣고 답하는 대화 흐름을 맡습니다.\n\n목소리 선택은 어떻게 들릴지를 정하는 일이고, 대화 에이전트의 언어 모델 선택은 무슨 내용으로 답할지를 정하는 일입니다.",
+      "details": "음성 합성에서는 읽을 원고, 목소리, 생성 모델을 선택합니다. 같은 목소리를 골라도 모델과 설정에 따라 표현 방식과 지원 언어가 달라질 수 있습니다.\n\n한국어를 지원하는 모델에는 Multilingual v2와 Flash v2.5 등이 있습니다. 영어 전용 모델도 있으므로 한국어 원고에는 해당 언어를 지원하는 모델을 선택해야 합니다.\n\n짧은 원고로 발음과 억양을 듣고 숫자, 날짜, 고유명사가 의도대로 읽히는지 확인하면 좋습니다. 예를 들어 카페 이름과 영업시간을 넣은 문장으로 시작할 수 있습니다.\n\nScribe는 녹음을 글로 옮기며 화자 구분과 단어별 시각 정보를 제공합니다. 실시간 받아쓰기와 영상 전체를 다른 언어 음성으로 바꾸는 더빙은 서로 다른 기능입니다.\n\n더빙은 원래 화자의 특징과 배경음을 유지하며 다른 언어의 음성을 만드는 기능입니다. 공식 문서는 Dubbing v2를 Alpha 단계로 안내하며, 실시간 라이브 더빙은 지원하지 않는다고 설명합니다.\n\nElevenAgents는 음성 인식, 언어 모델, 음성 합성, 말 차례 조절을 연결합니다. 자료 검색과 외부 도구를 붙여 웹·전화·앱의 대화 흐름을 구성할 수 있습니다.\n\nVoice Design은 글로 설명한 특징을 바탕으로 합성 목소리를 만듭니다. Instant Voice Cloning은 녹음에서 목소리를 복제하며, 그 목소리를 복제할 권한이 필요합니다.\n\nProfessional Voice Cloning은 본인 확인을 거쳐 자신의 목소리만 직접 만들 수 있습니다. 타인이 동의했더라도 대신 생성할 수 없으며, 상대방이 자기 계정에서 만들고 확인한 목소리를 공유하는 방식이 안내돼 있습니다.\n\n공식 안내상 무료 요금제에서 만든 콘텐츠는 상업적으로 사용할 수 없고, 비상업 공개 시에도 출처 표시가 필요합니다. 나중에 유료로 가입해도 이전 무료 생성물의 조건은 바뀌지 않습니다.\n\n유료 구독 중 생성한 콘텐츠는 필요한 권리를 보유하고 약관을 지키는 조건으로 상업 이용할 수 있습니다. 베타 서비스는 이 일반 허용에서 제외되며, 기능별 추가 조건도 확인해야 합니다.",
+      "diagram_image": {
+        "src": "/explore/elevenlabs-webtoon.png",
+        "alt": "카페 홍보 영상 1분을 만들며 원고를 음성으로 만들고, 인터뷰 받아쓰기, 다른 언어 더빙, 손님 질문에 답하는 대화 안내를 구분하는 8컷 웹툰",
+        "caption": "이해를 위한 가상 영상 제작 사례 · 실제 제품 화면이나 음성 생성 결과가 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "diagram_description": "글을 음성으로 만들고, 받아쓰기·더빙·대화 기능을 구분하는 가상 제작 사례입니다.",
+      "comparison": {
+        "title": "비슷한 제품과 비교",
+        "intro": "ElevenLabs, Cartesia, Google Cloud TTS를 음성 합성과 제작 흐름의 범위로 한정해 비교합니다. 세 제품의 속도·발음·음질을 직접 비교한 결과는 아닙니다.\n\n아래 표는 공식 문서에서 확인한 기능을 정리한 것이며, 표에 없는 기능이 없다는 뜻은 아닙니다.",
+        "table": {
+          "caption": "ElevenLabs·Cartesia·Google Cloud TTS 비교(공식 문서 기반, 직접 성능 비교 아님)",
+          "columns": [
+            "ElevenLabs",
+            "Cartesia",
+            "Google Cloud TTS"
+          ],
+          "rows": [
+            {
+              "label": "한국어 합성",
+              "values": [
+                "일부 TTS 모델이 한국어를 지원하며 모델마다 언어 범위가 다름",
+                "Sonic 시리즈가 한국어를 지원",
+                "Chirp 3: HD 음성이 한국어를 지원"
+              ]
+            },
+            {
+              "label": "목소리 만들기·복제",
+              "values": [
+                "글로 묘사해 만드는 Voice Design, 녹음에서 복제하는 Instant Voice Cloning",
+                "Playground나 API로 목소리를 복제",
+                "Chirp 3 Instant Custom Voice가 동의 녹음으로 맞춤 음성을 생성"
+              ]
+            },
+            {
+              "label": "연결 방식",
+              "values": [
+                "웹 제작 도구·API, 웹·전화·앱의 대화형 에이전트",
+                "Playground에서 목소리를 다루고 API로 음성 합성 연결",
+                "Cloud TTS API와 스트리밍 음성 합성"
+              ]
+            }
+          ]
+        },
+        "interpretation": "활용 목적을 기준으로 살펴보면, 음성 제작·받아쓰기·더빙을 함께 알아볼 때는 ElevenLabs의 제작 기능을 참고할 수 있습니다. 앱에 음성 응답을 붙일 때는 Cartesia의 Sonic과 API를, Google Cloud 환경에서는 Cloud TTS를 함께 비교할 수 있습니다.\n\n기능 범위는 서로 겹칠 수 있습니다. 실제 선택은 같은 한국어 원고로 발음·응답 속도를 확인하고 필요한 기능과 이용 조건을 비교하는 편이 좋습니다.",
+        "sources": [
+          {
+            "name": "ElevenLabs: Models",
+            "url": "https://elevenlabs.io/docs/overview/models"
+          },
+          {
+            "name": "Cartesia: TTS models",
+            "url": "https://docs.cartesia.ai/build-with-cartesia/tts-models/latest"
+          },
+          {
+            "name": "Cartesia: Clone voices",
+            "url": "https://docs.cartesia.ai/build-with-cartesia/capability-guides/clone-voices"
+          },
+          {
+            "name": "Google Cloud: Chirp 3 HD voices",
+            "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd"
+          },
+          {
+            "name": "Google Cloud: Chirp 3 Instant Custom Voice",
+            "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice"
+          }
+        ]
+      },
+      "pitfalls": [
+        "음성 합성 모델과 목소리는 다릅니다. 모델은 음성을 만드는 방식이고, 목소리는 들리는 음색과 화자의 특성입니다.",
+        "한국어 지원 범위는 모델·기능마다 다릅니다. 서비스 이름만 보고 모든 모델이 한국어를 지원한다고 가정하면 안 됩니다.",
+        "자연스럽게 말하는 것과 답변 내용이 정확한 것은 별개입니다. 대화형 에이전트에는 필요한 자료와 업무 기준도 연결해야 합니다.",
+        "목소리 복제 권한과 콘텐츠의 상업 이용 조건은 따로 확인해야 합니다. 무료 생성물은 나중에 유료 가입만으로 상업 이용이 허용되지 않습니다.",
+        "이 문서와 웹툰은 공식 자료를 바탕으로 한 설명입니다. 실제 음성 생성·복제나 제품별 음질 측정은 수행하지 않았습니다."
+      ],
+      "sources": [
+        {
+          "name": "ElevenLabs: Models",
+          "url": "https://elevenlabs.io/docs/overview/models"
+        },
+        {
+          "name": "ElevenLabs: Agents Platform overview",
+          "url": "https://elevenlabs.io/docs/agents-platform/overview"
+        },
+        {
+          "name": "ElevenLabs Help: Can I publish the content I generate on the platform?",
+          "url": "https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform"
+        }
+      ],
+      "dev_reference_links": [
+        {
+          "name": "ElevenLabs: Speech to Text",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/speech-to-text"
+        },
+        {
+          "name": "ElevenLabs: Dubbing",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/dubbing"
+        },
+        {
+          "name": "ElevenLabs Help: What is My Voices?",
+          "url": "https://help.elevenlabs.io/hc/en-us/articles/13313587528849-What-is-My-Voices"
+        },
+        {
+          "name": "ElevenLabs Help: Professional Voice Clone of someone else's voice",
+          "url": "https://help.elevenlabs.io/hc/en-us/articles/36842751624209-Can-I-create-a-Professional-Voice-Clone-of-someone-else-s-voice"
+        },
+        {
+          "name": "Cartesia: TTS models",
+          "url": "https://docs.cartesia.ai/build-with-cartesia/tts-models/latest"
+        },
+        {
+          "name": "Cartesia: Clone voices",
+          "url": "https://docs.cartesia.ai/build-with-cartesia/capability-guides/clone-voices"
+        },
+        {
+          "name": "Google Cloud: Chirp 3 HD voices",
+          "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd"
+        },
+        {
+          "name": "Google Cloud: Chirp 3 Instant Custom Voice",
+          "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice"
+        }
+      ]
+    },
+    {
+      "slug": "osmo-film-emulation",
+      "title": "Osmo Film Emulation: 영상에 필름의 색감과 질감을 입히는 도구",
+      "summary": "Osmo Film Emulation은 이미 촬영한 영상의 색감·대비·질감을 필름처럼 처리하는 브라우저 도구입니다. 새 영상을 만드는 AI가 아니라 기존 영상을 후처리하며, DJI Osmo 카메라 전용 기능과는 구분해야 합니다.",
+      "topic": "영상 후처리",
+      "tags": [
+        "Osmo",
+        "Film Emulation",
+        "필름 느낌",
+        "색보정",
+        "그레인",
+        "할레이션",
+        "Dehancer",
+        "FilmConvert Nitrate"
+      ],
+      "created_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "reviewed_at": "2026-10-05",
+      "question": "Osmo Film Emulation은 무엇이고 영상에 필름 느낌을 만드는 방법은 색 변환표와 어떻게 다른가요?",
+      "core_answer": "Osmo Film Emulation은 촬영한 영상의 색감·대비·입자감·빛 번짐을 조절해 필름으로 찍은 듯한 분위기를 만드는 색보정 도구입니다. 공식 안내에 따르면 브라우저에서 무료로 사용할 수 있고, 영상은 업로드 없이 기기 안에서 처리됩니다.\n\n촬영해 둔 영상을 가져와 원하는 필름 느낌을 고르고 조절하는 방식입니다.",
+      "easy_explanation": "카페에서 찍은 영상을 따뜻한 필름 영화처럼 꾸미는 가상 사례를 생각해 보세요. 먼저 영상이 어떤 촬영 설정으로 기록됐는지 확인합니다.\n\nLog는 밝기 정보를 후보정하기 좋게 기록하는 방식입니다. 일반 Rec.709 영상과 입력 해석이 다르므로 실제 촬영한 형식을 맞춰야 하며, Osmo는 파일에 해당 메타데이터가 있으면 입력을 자동으로 선택한다고 안내합니다.\n\n필름 스톡이나 완성된 룩을 고르고 밝기와 색온도, 대비를 조절합니다. 필름의 느낌을 결정하는 색감과 질감을 따로 생각하면 이해하기 쉽습니다.\n\n마지막으로 입자감인 그레인과 밝은 경계 주변의 빛 번짐인 할레이션을 조절하고, 전후 모습을 비교한 뒤 저장합니다.",
+      "api_explanation_title": "용어: 스톡·룩·그레인·할레이션·LUT",
+      "api_explanation": "필름 스톡(stock)은 특정 필름의 색과 밝기 반응을 본뜬 설정입니다. 룩(look)은 그 스톡을 바탕으로 완성한 색보정 분위기나 템플릿입니다.\n\n그레인(grain)은 필름 특유의 입자감입니다. 할레이션(halation)은 밝은 광원이나 경계 주변에 나타나는 붉은색·주황색 계열의 빛 번짐을 재현하는 효과입니다.\n\n3D LUT는 입력 색을 정해진 출력 색으로 바꾸는 색 대응표입니다. 색감과 대비를 바꾸는 데 유용하지만, 프레임마다 달라지는 입자나 주변 픽셀로 퍼지는 빛 번짐까지 LUT 하나로 만들 수는 없습니다.",
+      "details": "공식 페이지는 필름 스톡과 룩을 합쳐 126개의 선택지를 안내합니다. 영화용 필름 느낌, 흑백, 오래된 인화물 같은 분위기를 골라 조절할 수 있습니다.\n\n노출·색온도·색조·대비·채도 등으로 색을 맞추고 그레인·할레이션으로 질감을 더합니다. 효과를 많이 넣는 것보다 인물과 장면이 원하는 분위기로 보이는지 전후를 비교하는 것이 사용 순서를 이해하는 데 도움이 됩니다.\n\n입력 색상 설정은 실제 촬영한 프로파일과 맞아야 합니다. Osmo는 그 입력을 바탕으로 Log 변환과 필름 처리를 연결하므로, 별도 변환을 무조건 한 번 더 적용하는 방식으로 이해하지 않아야 합니다.\n\n공식 안내에는 Sony S-Log3, Canon Log, DJI D-Log, Apple Log 등 다양한 입력과 일반 Rec.709 영상이 포함됩니다. 자동 감지에 필요한 정보가 없으면 카메라 설정이나 촬영 기록을 참고해 입력을 확인할 수 있습니다.\n\n브라우저판은 로그인과 워터마크 없이 쓰고, 원본 해상도로 MP4 또는 ProRes 4444를 내보낼 수 있다고 안내합니다. 영상의 기기 내 처리 역시 제작사의 설명이며, 이번 문서 작성에서 실제 영상 처리나 통신 측정은 하지 않았습니다.\n\nDaVinci Resolve·Premiere Pro용 플러그인과 Resolve용 DCTL도 안내합니다. 편집기에 연결해 쓰려면 해당 배포물의 설치 방법과 호환 버전·이용 조건을 확인해야 합니다.",
+      "diagram_image": {
+        "src": "/explore/osmo-film-emulation-webtoon.png",
+        "alt": "카페 영상의 촬영 색 형식 확인부터 필름 스톡과 룩 선택, 색 조절, 그레인과 할레이션 추가, 영상 저장까지 그린 8컷 웹툰",
+        "caption": "이해를 위한 가상 카페 영상 사례 · 실제 제품 화면이나 실제 결과 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "diagram_description": "촬영한 색상 형식 확인부터 필름 느낌 선택과 영상 저장까지 설명하는 가상 사례입니다.",
+      "comparison": {
+        "title": "비슷한 제품과 비교",
+        "intro": "세 제품 모두 영상에 필름 느낌을 더하며, 올바른 카메라 입력과 색상 설정이 필요합니다. 아래는 공식 자료에서 확인한 작업 방식의 비교이며, 같은 영상으로 품질을 측정한 결과는 아닙니다.",
+        "table": {
+          "caption": "Osmo Film Emulation·Dehancer·FilmConvert Nitrate 비교(공식 자료 기반, 직접 성능 비교 아님)",
+          "columns": [
+            "Osmo Film Emulation",
+            "Dehancer",
+            "FilmConvert Nitrate"
+          ],
+          "rows": [
+            {
+              "label": "작업 환경",
+              "values": [
+                "브라우저에서 시작하며 Resolve·Premiere 플러그인도 안내",
+                "여러 편집기 플러그인과 데스크톱·모바일·온라인 제품군",
+                "영상 편집기에 연결하는 플러그인"
+              ]
+            },
+            {
+              "label": "주요 조절 기능",
+              "values": [
+                "필름 스톡·룩, 밝기와 색, 그레인·할레이션",
+                "필름·인화 모사, 그레인·할레이션·빛의 확산·필름 손상 등",
+                "카메라 팩, 필름 스톡, 밝기 영역별 그레인 조절·LUT 내보내기"
+              ]
+            },
+            {
+              "label": "시작할 때 확인",
+              "values": [
+                "브라우저판 무료 안내, 촬영한 입력 프로파일 확인",
+                "제품·편집기별 지원 효과와 호환 조건 확인",
+                "카메라 모델·촬영 프로파일 선택, 일회성 구매 및 Halation 상품 조건 확인"
+              ]
+            }
+          ]
+        },
+        "interpretation": "짧은 영상으로 필름 느낌을 익히려면 Osmo의 브라우저 작업 흐름을 살펴볼 수 있습니다. 다양한 필름 효과를 세부 조절하려면 Dehancer를, 카메라별 입력과 입자 조절을 중심으로 작업하려면 Nitrate를 함께 비교할 수 있습니다.\n\n이는 활용 목적에 따른 비교입니다. 제공하는 설정 수나 가격만으로 결과의 품질 순위를 정할 수는 없습니다.",
+        "sources": [
+          {
+            "name": "Osmo: Film Emulation",
+            "url": "https://osmo.inc/tools/film-emulation"
+          },
+          {
+            "name": "Dehancer: Features",
+            "url": "https://www.dehancer.com/features"
+          },
+          {
+            "name": "FilmConvert: Nitrate",
+            "url": "https://www.filmconvert.com/nitrate"
+          },
+          {
+            "name": "FilmConvert: Nitrate tutorials",
+            "url": "https://www.filmconvert.com/tutorials?Product=nitrate"
+          }
+        ],
+        "table_note": "Dehancer의 모든 효과가 모든 제품에 공통으로 들어가는 것은 아닙니다. FilmConvert도 Halation 기능을 안내하며, 구매한 상품에 포함되는지는 별도 확인이 필요합니다."
+      },
+      "pitfalls": [
+        "이 문서의 Osmo는 다양한 카메라 영상을 다루는 색보정 도구입니다. DJI Osmo 카메라 전용 기능을 뜻하지 않습니다.",
+        "126개는 필름 스톡과 룩을 합친 안내 수치입니다. 서로 다른 실물 필름만 126종이라는 뜻은 아닙니다.",
+        "Log와 일반 영상의 입력 설정을 잘못 맞추면 색과 대비가 의도와 달라질 수 있습니다. 효과를 고르기 전에 촬영한 형식을 확인하세요.",
+        "원본 해상도로 저장한다는 말은 가로·세로 픽셀 크기를 유지한다는 뜻입니다. 압축 손실이 없거나 원본에 없던 세부 정보가 복원된다는 의미는 아닙니다.",
+        "영상의 기기 내 처리는 브라우저판에 대한 공식 설명입니다. 사이트가 모든 상황에서 오프라인으로 동작한다는 보장은 별개입니다."
+      ],
+      "sources": [
+        {
+          "name": "Osmo: Film Emulation",
+          "url": "https://osmo.inc/tools/film-emulation"
+        },
+        {
+          "name": "FilmConvert: Nitrate tutorials",
+          "url": "https://www.filmconvert.com/tutorials?Product=nitrate"
+        }
+      ],
+      "dev_reference_links": [
+        {
+          "name": "Dehancer: Features",
+          "url": "https://www.dehancer.com/features"
+        },
+        {
+          "name": "FilmConvert: Nitrate",
+          "url": "https://www.filmconvert.com/nitrate"
+        }
+      ]
     }
   ]
 }
