@@ -1714,6 +1714,139 @@
           "url": "https://github.com/CopilotKit/OpenGenerativeUI"
         }
       ]
+    },
+    {
+      "slug": "claude-mods",
+      "title": "Claude Mods: Claude Code의 동작과 화면을 바꾸는 확장 기능",
+      "summary": "Mods는 Claude Code 안의 이벤트에 반응하는 JavaScript·TypeScript 함수 확장입니다. 새 모델이 아니라 Claude Code의 화면과 동작을 내 업무에 맞게 바꾸는 기능이며, 플러그인에 담아 설치합니다.",
+      "topic": "AI 개발 도구",
+      "tags": [
+        "Claude Mods",
+        "Claude Code",
+        "Anthropic",
+        "플러그인",
+        "Hooks",
+        "Skills",
+        "MCP",
+        "확장 기능"
+      ],
+      "created_at": "2026-10-06",
+      "updated_at": "2026-10-06",
+      "reviewed_at": "2026-10-06",
+      "question": "Claude Mods는 무엇이고, Claude Code의 동작과 화면을 어떻게 바꾸나요?",
+      "core_answer": "Claude Mods는 Claude Code의 동작과 화면을 내 업무에 맞게 바꾸는 JavaScript·TypeScript 확장 기능입니다. 도구 호출을 지켜보며 사용량 표시창을 갱신하거나, 실행 흐름에 확인 단계를 넣을 수 있습니다.\n\n플러그인에 담아 설치하고 다른 사람과 공유합니다.",
+      "easy_explanation": "일하는 동안 Claude가 도구를 몇 번 썼는지 한눈에 보고 싶다고 해 봅시다. 도구가 호출될 때 횟수를 기록하고, 작은 표시창에 보여 주는 mod를 만들 수 있습니다.\n\nClaude Code는 프롬프트 제출, 도구 호출, 화면 그리기 같은 일이 생길 때 이벤트를 만듭니다. 이벤트는 “이런 일이 일어났다”는 알림이고, mod의 함수가 그 알림에 반응합니다.\n\n함수는 이벤트를 지켜보고 그대로 진행시키거나, 내용을 바꿔 진행시키거나, 기본 동작 대신 직접 처리할 수 있습니다. 도구 실행 전과 결과를 받은 뒤에 각각 일을 하도록 구성하는 것도 가능합니다.\n\n이 사례는 구현할 수 있는 기능을 설명한 것입니다. 어떤 이벤트를 다루고 무슨 화면을 보여 줄지는 각 mod의 코드가 정합니다.",
+      "api_explanation_title": "용어: 컨텍스트·플러그인·실행 순서",
+      "api_explanation": "컨텍스트는 Claude가 이번 응답을 만들 때 참고하는 대화와 자료입니다. 컨텍스트 사용량 표시는 그 공간이 얼마나 찼는지 보여 주는 것이며, 남은 구독 요금이나 답의 정확도와는 다릅니다.\n\n플러그인은 mod와 여러 확장 기능을 담아 설치하고 공유하는 꾸러미입니다. /plugin 화면에서 설치하고 관리합니다.\n\n여러 mod가 같은 이벤트에 개입하면 불러온 순서대로 실행됩니다. 먼저 불러온 mod가 입력을 먼저 보고, 결과는 나중에 받는 구조라 순서에 따라 동작이 달라질 수 있습니다.",
+      "details": "mod로 만들 수 있는 기능의 예는 이렇습니다. 컨텍스트 사용량 띠, 도구 호출 횟수, 빌드 상태창을 화면에 보여 줍니다. 도구를 실행하기 전에 사용자에게 확인을 받거나, 프롬프트를 보완하거나, 도구 결과의 민감한 값을 가릴 수도 있습니다.\n\n모델의 답변을 기다리지 않고 코드로 바로 실행되는 사용자 명령도 만들 수 있습니다. 기본 제공 기능인 /diff도 mod로 제공됩니다.\n\n원하는 기능을 Claude에게 말하면 mod를 만들어 주고, 같은 세션에서 바로 반영(핫 리로드)할 수 있습니다. 예를 들어 '컨텍스트가 얼마나 찼는지 입력창 위에 보여 주는 mod를 만들어 줘'라고 요청하면 됩니다.\n\n플러그인은 /plugin에서 설치하고 관리합니다. Claude Code 세션 바깥의 셸에서 설치하거나 업데이트했다면 열려 있는 세션에서 /reload-plugins를 실행하거나 다시 시작해야 반영됩니다.\n\n추가 화면 표시는 터미널의 Claude Code CLI와 Claude Desktop의 Code 탭에서 지원됩니다. 공식 개요 문서 기준으로 터미널은 v2.1.287 이상, Desktop의 내장 Claude Code는 v2.1.286부터 지원하며 Mods 지원은 기본으로 켜져 있습니다.\n\n터미널과 Desktop은 각자 사용하는 Claude Code 버전을 확인해야 합니다. 일반 Claude 채팅 전체에 표시창을 붙이는 기능으로 이해하면 안 됩니다.\n\nVS Code 확장의 채팅 패널, claude -p, Agent SDK에서는 플러그인이 로드되면 함수는 동작하지만 mod가 그리는 추가 화면은 나타나지 않습니다. Desktop의 WSL 세션은 플러그인을 지원하지 않습니다. 모든 화면에서 같은 UI가 보이는 것은 아닙니다.\n\nmod는 사용자 권한으로 파일, 프로세스, 네트워크에 접근할 수 있는 코드입니다. Mods는 보안 샌드박스로 격리되지 않으며, Bash 샌드박스를 켜도 mod가 시작한 프로세스까지 격리되지는 않습니다.\n\n모델을 호출하는 mod는 사용량이 추가될 수 있습니다. 공식 권한 확인 창은 mod가 바꿀 수 없지만, 일반 질문창과 도구 표시 같은 화면 대부분은 바꿀 수 있습니다.\n\nclaude plugin validate는 소스를 실행하지 않고 mod가 선언한 이벤트와 호출을 보여 줍니다. 무엇을 하는 코드인지 파악하는 데 도움이 되지만, 통과가 코드의 안전을 보증하지는 않습니다.\n\n작성자와 출처, 코드를 확인한 뒤 설치하세요. 조직에서는 허용할 범위를 제한할 수 있습니다. 개별 mod는 /plugin에서 끌 수 있습니다. --safe-mode는 한 세션에서 사용자 설치 mod와 다른 사용자 맞춤 기능도 함께 끄지만, 내장 mod와 조직 관리 정책까지 모두 해제하는 것은 아닙니다.\n\n이 문서는 공식 자료를 정리한 설명입니다. 실제 mod를 만들거나 설치·실행한 결과는 아닙니다.",
+      "diagram_image": {
+        "src": "/explore/claude-mods-webtoon.png",
+        "alt": "mod로 사용량 표시창과 도구 확인 흐름을 만드는 과정을 그린 8컷 웹툰",
+        "caption": "이해를 위한 가상 예시 · 실제 제품 화면이나 설치·실행 결과 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "diagram_description": "일하는 중 사용량 표시창과 도구 확인 흐름을 만드는 가상 예시입니다. 구현할 수 있는 예이며 모든 mod의 기본 동작이 아닙니다.",
+      "comparison": {
+        "title": "비슷한 확장 기능과 비교",
+        "intro": "아래 다섯 가지는 목적이 겹치거나 함께 쓸 수 있습니다. 기능의 우열이나 성능을 비교한 표가 아닙니다.",
+        "table": {
+          "caption": "Mods·Skills·설정 Hooks·MCP·Plugins 비교(공식 문서 기반, 성능 비교 아님)",
+          "columns": [
+            "주로 담당하는 일",
+            "사용 예"
+          ],
+          "rows": [
+            {
+              "label": "Mods",
+              "values": [
+                "Claude Code 안의 이벤트에 개입하고 화면을 바꿈",
+                "입력창 위 사용량 띠 표시, 도구 실행 전 확인"
+              ]
+            },
+            {
+              "label": "Skills",
+              "values": [
+                "작업 지침·절차·자료를 필요할 때 읽게 함. 스크립트도 포함 가능",
+                "문서 작성 절차를 매번 붙여넣지 않고 불러 쓰기"
+              ]
+            },
+            {
+              "label": "설정 Hooks",
+              "values": [
+                "정해진 시점에 명령·HTTP·판단 작업을 실행. 도구 인수와 결과도 고칠 수 있음",
+                "위험한 명령 차단, 실행 기록 남기기"
+              ]
+            },
+            {
+              "label": "MCP",
+              "values": [
+                "외부 도구와 자료를 연결",
+                "사내 문서 저장소나 이슈 관리 도구 조회"
+              ]
+            },
+            {
+              "label": "Plugins",
+              "values": [
+                "Skills·Hooks·MCP·Mods 등을 담는 설치·배포 꾸러미",
+                "팀원에게 여러 기능을 한 번에 설치해 배포"
+              ]
+            }
+          ]
+        },
+        "interpretation": "표시창을 추가하거나 더 넓은 내부 이벤트에 개입하려면 Mods를 살펴볼 수 있습니다. 이미 가진 스크립트를 특정 시점에 실행해 기록하거나 차단하는 목적이라면 설정 Hooks로 해결할 수 있는지 먼저 살펴보면 됩니다.\n\n반복해서 쓰는 업무 지침은 Skills로 정리하고, 외부 시스템의 도구와 자료는 MCP로 연결합니다. 이 기능들을 플러그인 하나에 함께 담아 배포할 수도 있습니다.",
+        "sources": [
+          {
+            "name": "Claude Code Docs: Mods overview",
+            "url": "https://code.claude.com/docs/en/plugins/mods/overview"
+          },
+          {
+            "name": "Claude Code Docs: Skills",
+            "url": "https://code.claude.com/docs/en/skills"
+          },
+          {
+            "name": "Claude Code Docs: Hooks",
+            "url": "https://code.claude.com/docs/en/hooks"
+          },
+          {
+            "name": "Claude Code Docs: MCP",
+            "url": "https://code.claude.com/docs/en/mcp"
+          },
+          {
+            "name": "Claude Code Docs: Plugins",
+            "url": "https://code.claude.com/docs/en/plugins"
+          }
+        ]
+      },
+      "pitfalls": [
+        "Mods는 새 모델이 아닙니다. 모델의 능력이 아니라 Claude Code의 화면과 동작을 바꿉니다.",
+        "설정 Hooks도 도구 인수와 결과를 고칠 수 있습니다. Mods는 더 넓은 내부 이벤트에 개입하고 화면까지 바꿀 수 있다는 점이 다릅니다.",
+        "VS Code 확장 채팅 패널에서 mod의 표시창이 보이지 않아도 함수가 꺼진 것은 아닙니다. 추가 화면을 그리는 곳이 아닐 뿐입니다.",
+        "--safe-mode는 사용자 설치 mod 외의 다른 맞춤 기능도 함께 끕니다. 특정 mod 하나만 끄려면 /plugin에서 그 플러그인을 관리합니다."
+      ],
+      "sources": [
+        {
+          "name": "Claude: Customize Claude Code with mods",
+          "url": "https://claude.com/blog/claude-code-mods"
+        },
+        {
+          "name": "Claude Code Docs: Mods overview",
+          "url": "https://code.claude.com/docs/en/plugins/mods/overview"
+        },
+        {
+          "name": "Claude Code Docs: Manage mods for your organization",
+          "url": "https://code.claude.com/docs/en/plugins/mods/admin"
+        },
+        {
+          "name": "claude.dev: Getting started with Claude Code mods",
+          "url": "https://claude.dev/blog/getting-started-with-claude-code-mods/"
+        },
+        {
+          "name": "Claude Code Docs: Plugins",
+          "url": "https://code.claude.com/docs/en/plugins"
+        }
+      ],
+      "dev_reference_links": []
     }
   ]
 }
