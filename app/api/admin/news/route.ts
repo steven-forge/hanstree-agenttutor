@@ -4,6 +4,7 @@ import { collectEdition, canonicalUrl } from "../../../lib/card-news/collect";
 import { editionIssues, kstDate, MAX_CANDIDATES, type Edition, type NewsCandidate, type NewsCard } from "../../../lib/card-news/types";
 import { renderBundle, renderCard } from "../../../lib/card-news/render";
 import { instagramAccount, publishEdition, reconcileEdition } from "../../../lib/card-news/instagram";
+import { appendManualCandidate, candidateUrlKey } from "../../../lib/card-news/manual";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -28,10 +29,14 @@ async function editedEdition(old: Edition, body: Record<string, unknown>): Promi
   const latest = old.candidateSource === "newsletter" ? (await collectEdition(old.date, null)).candidates : [];
   const candidates = inputCandidates.map(c => {
     const existing = old.candidates.find(n => n.id === c.id);
-    const sourceUrl = canonicalUrl(existing?.sourceUrl || c.sourceUrl).replace(/\/$/, "");
-    const current = latest.find(n => n.sourceUrl.replace(/\/$/, "") === sourceUrl);
-    return current ? { ...current, id: c.id } : existing || c;
+    if (existing?.origin === "manual") return existing;
+    const sourceUrl = candidateUrlKey(existing?.sourceUrl || c.sourceUrl);
+    const current = latest.find(n => candidateUrlKey(n.sourceUrl) === sourceUrl);
+    if (!current && !existing) throw new AdminError("새 뉴스는 직접 등록 기능으로 추가하세요.");
+    return current ? { ...current, id: c.id } : existing!;
   });
+  for (const candidate of old.candidates) if (candidate.origin === "manual" && !candidates.some(c => c.id === candidate.id)) candidates.push(candidate);
+  if (candidates.length > MAX_CANDIDATES) throw new AdminError("후보 목록은 1,000개까지 저장할 수 있습니다.");
   if (new Set(candidates.map(c => c.id)).size !== candidates.length) throw new AdminError("후보 번호가 중복됐습니다.");
   const cards: NewsCard[] = body.cards.map(c => {
     if (!c || typeof c !== "object") throw new AdminError("카드 형식을 확인하세요.");
@@ -84,6 +89,14 @@ export async function POST(request: Request) {
     const old = await getEdition(date);
     if (!Number.isInteger(body.revision) || body.revision !== (old?.revision || 0)) throw new AdminError("원고가 변경됐습니다. 새로고침해 주세요.", 409);
     if (body.action === "collect") await putEdition(await collectEdition(date, old), body.revision);
+    else if (body.action === "add_manual") {
+      if (old && !["draft", "approved"].includes(old.status)) throw new AdminError("발행이 시작된 원고에는 뉴스를 등록할 수 없습니다.", 409);
+      let edition = old || await collectEdition(date, null);
+      if (old && (body.cards !== undefined || body.candidates !== undefined || body.caption !== undefined)) edition = await editedEdition(old, body);
+      try { edition = appendManualCandidate(edition, body.candidate); }
+      catch (error) { throw new AdminError(error instanceof Error ? error.message : "뉴스 내용을 확인하세요."); }
+      await putEdition(edition, body.revision);
+    }
     else {
       if (!old) throw new AdminError("먼저 뉴스 후보를 수집해 주세요.", 404);
       switch (body.action) {
