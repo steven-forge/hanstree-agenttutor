@@ -602,6 +602,116 @@
         { "name": "MiMo API 시작하기", "url": "https://mimo.mi.com/docs/en-US/quick-start/summary/first-api-call" }
       ],
       "reviewed_at": "2026-10-05T00:00:00+09:00"
+    },
+    {
+      "slug": "nemotron",
+      "title": "NVIDIA Nemotron",
+      "provider": "NVIDIA",
+      "tool_modes": [],
+      "tagline": "Nemotron 3 Ultra: 장기 에이전트 작업의 계획·코드 생성·심층 조사에 초점. 경량 작업용 3.5 Lightning도 제공하며, API는 제공업체 이용 또는 자체 배포가 필요.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "조건부", "notes": "Ultra는 공식 안내의 호스팅 제공업체 또는 vLLM·SGLang 등 자체 배포로 이용. NVIDIA NIM 제공 여부는 모델별로 다름." }
+      ],
+      "sources": [
+        { "name": "Nemotron 공식 모델 목록", "url": "https://developer.nvidia.com/topics/ai/nemotron" },
+        { "name": "Nemotron 3 Ultra 소개", "url": "https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/" }
+      ],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "cohere",
+      "title": "Cohere Command",
+      "provider": "Cohere",
+      "tool_modes": [],
+      "tagline": "Command A+: 이미지 이해·추론·다국어 번역·도구 사용을 결합한 기업용 에이전트 모델. Cohere API와 기업용 비공개 배포를 지원.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "공식지원확인", "notes": "command-a-plus-05-2026을 Cohere 표준 API에서 제공. 기업용 비공개 배포 선택 가능." }
+      ],
+      "sources": [{ "name": "Command A+ 공식 출시 안내", "url": "https://docs.cohere.com/changelog/command-a-plus-05-2026" }],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "hunyuan",
+      "title": "Tencent Hunyuan",
+      "provider": "Tencent",
+      "tool_modes": [],
+      "tagline": "Hy3: 빠른 응답과 깊은 추론을 결합해 코딩·검색·여러 단계의 에이전트 작업을 지원. Yuanbao 등 제품과 Tencent Cloud TokenHub API에서 제공.",
+      "form_factors": [
+        { "type": "App", "status": "공식지원확인", "notes": "공식 Hy3 소개에서 Yuanbao·WorkBuddy·CodeBuddy 등 제품 채택 확인. 제품별 제공 조건 확인 필요." },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "공식지원확인", "notes": "Hy3 API는 Tencent Cloud TokenHub에서 제공. 이전 Hunyuan 콘솔과 구분." }
+      ],
+      "sources": [
+        { "name": "Hy3 공식 모델 저장소", "url": "https://github.com/Tencent-Hunyuan/Hy3" },
+        { "name": "Hy3 제품·API 제공 안내", "url": "https://www.tencentcloud.com/techpedia/144773" }
+      ],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "ernie",
+      "title": "Baidu ERNIE",
+      "provider": "Baidu",
+      "tool_modes": [],
+      "tagline": "ERNIE 5.1: 지식 활용·추론·심층 검색·에이전트 작업을 강화한 모델. Baidu Qianfan API를 통해 복잡한 업무 흐름에 연결.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "공식지원확인", "notes": "Baidu Qianfan 공식 모델 목록에 ernie-5.1 엔드포인트가 등재됨." }
+      ],
+      "sources": [{ "name": "Qianfan 공식 모델 목록", "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stp0j" }],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "nova",
+      "title": "Amazon Nova",
+      "provider": "Amazon Web Services",
+      "tool_modes": [],
+      "tagline": "Nova 2 Lite: 텍스트·이미지·영상 기반 문서 처리, 고객 지원, 업무 자동화를 위한 모델. Amazon Bedrock API로 제공.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "공식지원확인", "notes": "공식 Bedrock 문서에서 Active 상태의 amazon.nova-2-lite-v1:0 확인. 지역별 제공 범위 확인 필요." }
+      ],
+      "sources": [{ "name": "Nova 2 Lite 공식 모델 문서", "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-lite.html" }],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "granite",
+      "title": "IBM Granite",
+      "provider": "IBM",
+      "tool_modes": [],
+      "tagline": "Granite 4.2 30B: 기업 업무의 단계별 추론·코드 생성·도구 호출을 위한 공개 모델. API로 사용하려면 vLLM 등으로 직접 배포해야 함.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "조건부", "notes": "공식 모델 카드에서 vLLM 기반 OpenAI 호환 API 서버 예제 확인. 사용자가 서버를 직접 구성해야 함." }
+      ],
+      "sources": [
+        { "name": "Granite 4.2 공식 소개", "url": "https://research.ibm.com/blog/introducing-granite-4-2" },
+        { "name": "Granite 4.2 30B 모델·배포 안내", "url": "https://huggingface.co/ibm-granite/granite-4.2-30b" }
+      ],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
+    },
+    {
+      "slug": "exaone",
+      "title": "LG EXAONE",
+      "provider": "LG AI연구원",
+      "tool_modes": [],
+      "tagline": "EXAONE 4.5 33B: 이미지와 텍스트를 함께 이해하며 전문 문서·한국어 맥락 추론에 초점. 공개 가중치를 직접 배포해 API로 사용 가능.",
+      "form_factors": [
+        { "type": "App", "status": "미확인", "notes": "해당 대표 모델의 일반 사용자용 앱 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "CLI", "status": "미확인", "notes": "해당 대표 모델의 전용 CLI 제공 여부는 이번 공식 자료에서 미확인" },
+        { "type": "API", "status": "조건부", "notes": "공식 모델 카드에서 vLLM 기반 OpenAI 호환 API 서버 제공 방법 확인. 자체 배포와 모델 이용 조건 확인 필요." }
+      ],
+      "sources": [
+        { "name": "EXAONE 공식 소개", "url": "https://www.lgresearch.ai/exaone/" },
+        { "name": "EXAONE 4.5 33B 모델·배포 안내", "url": "https://huggingface.co/LGAI-EXAONE/EXAONE-4.5-33B" }
+      ],
+      "reviewed_at": "2026-10-06T08:07:00+09:00"
     }
   ]
 }
