@@ -125,6 +125,7 @@ export type GlossaryTerm = {
   related_ids: string[];
   links: { label: string; href: string }[];
   sources: Source[];
+  is_new?: boolean;
 };
 
 export type TodayArticle = {

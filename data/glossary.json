@@ -1,6 +1,6 @@
 {
-  "reviewed_at": "2026-09-20T01:03:07.237Z",
-  "updated_at": "2026-09-20T01:03:07.237Z",
+  "reviewed_at": "2026-10-05T23:27:47.000Z",
+  "updated_at": "2026-10-05T23:27:47.000Z",
   "terms": [
     {
       "id": "agent",
@@ -633,6 +633,178 @@
           "url": "https://code.claude.com/docs/en/context-window.md"
         }
       ]
+    },
+    {
+      "id": "embedding",
+      "term": "Embedding",
+      "korean": "임베딩",
+      "aliases": ["벡터 표현", "임베딩 벡터"],
+      "category": "기본 개념",
+      "definition": "텍스트나 이미지 같은 데이터를 의미가 비슷할수록 가까워지는 숫자 목록(벡터)으로 바꾼 것입니다. 컴퓨터가 뜻의 유사함을 계산할 수 있게 해 줍니다.",
+      "example": "'강아지'와 '멍멍이'는 서로 가까운 숫자로, '냉장고'는 먼 숫자로 바뀝니다.",
+      "related_ids": ["vector-store", "rag", "token"],
+      "links": [],
+      "sources": [
+        {
+          "name": "AWS Well-Architected Generative AI Lens: Definitions",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html"
+        },
+        {
+          "name": "Google Cloud: Generative AI glossary",
+          "url": "https://cloud.google.com/docs/generative-ai/glossary"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "vector-store",
+      "term": "Vector Store",
+      "korean": "벡터 저장소",
+      "aliases": ["벡터 데이터베이스", "Vector Database"],
+      "category": "구성 요소",
+      "definition": "임베딩 벡터를 저장해 두고, 질문과 뜻이 가까운 항목을 빠르게 찾아 주는 저장소입니다. 검색 증강 생성(RAG)에서 자료 검색에 자주 쓰입니다.",
+      "example": "'환불은 어떻게 하나요?'라고 물으면 환불 규정 문단을 찾아 주는 문서 보관함입니다.",
+      "related_ids": ["embedding", "rag", "memory"],
+      "links": [
+        {
+          "label": "Learn: Memory",
+          "href": "/learn/memory"
+        }
+      ],
+      "sources": [
+        {
+          "name": "AWS Well-Architected Generative AI Lens: Definitions",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "hallucination",
+      "term": "Hallucination",
+      "korean": "환각",
+      "aliases": ["할루시네이션", "AI 환각"],
+      "category": "기본 개념",
+      "definition": "AI가 사실이 아닌 내용을 그럴듯하고 자신 있게 만들어 내는 현상입니다. 그래서 중요한 답은 근거를 확인해야 합니다.",
+      "example": "존재하지 않는 책 제목을 실제 있는 것처럼 추천하는 경우입니다.",
+      "related_ids": ["grounding", "rag", "llm"],
+      "links": [
+        {
+          "label": "Learn: LLM",
+          "href": "/learn/llm"
+        }
+      ],
+      "sources": [
+        {
+          "name": "AWS Well-Architected Generative AI Lens: Definitions",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "grounding",
+      "term": "Grounding",
+      "korean": "근거 연결",
+      "aliases": ["그라운딩", "근거 기반 답변"],
+      "category": "기본 개념",
+      "definition": "AI의 답변을 믿을 만한 문서나 데이터 같은 실제 근거와 연결하는 방법입니다. 답이 어디서 나왔는지 확인하기 쉬워집니다.",
+      "example": "회사 규정 문서를 함께 보여 주고, 그 문서 안에서만 답하도록 하는 방식입니다.",
+      "related_ids": ["hallucination", "rag", "context"],
+      "links": [
+        {
+          "label": "Learn: Context",
+          "href": "/learn/context"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud: Generative AI glossary",
+          "url": "https://cloud.google.com/docs/generative-ai/glossary"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "multimodal-ai",
+      "term": "Multimodal AI",
+      "korean": "멀티모달 AI",
+      "aliases": ["멀티모달", "다중 모달 AI"],
+      "category": "기본 개념",
+      "definition": "텍스트, 이미지, 음성, 영상처럼 서로 다른 종류의 데이터를 함께 이해하거나 만들어 내는 AI입니다.",
+      "example": "냉장고 사진을 보여 주며 '이걸로 만들 요리를 알려줘'라고 묻는 경우입니다.",
+      "related_ids": ["model", "llm", "token"],
+      "links": [],
+      "sources": [
+        {
+          "name": "Google Cloud: Multimodal AI",
+          "url": "https://cloud.google.com/use-cases/multimodal-ai"
+        },
+        {
+          "name": "Google Cloud: Generative AI glossary",
+          "url": "https://cloud.google.com/docs/generative-ai/glossary"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "fine-tuning",
+      "term": "Fine-tuning",
+      "korean": "미세 조정",
+      "aliases": ["파인튜닝", "추가 학습"],
+      "category": "기본 개념",
+      "definition": "이미 학습된 모델에 특정 목적의 데이터를 더 학습시켜 그 분야에 맞게 다듬는 일입니다.",
+      "example": "일반 챗봇에 우리 회사 상담 대화를 추가로 학습시켜 말투와 업무에 맞추는 것입니다.",
+      "related_ids": ["model", "llm", "model-evaluation"],
+      "links": [],
+      "sources": [
+        {
+          "name": "AWS Well-Architected Generative AI Lens: Definitions",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "model-evaluation",
+      "term": "Model Evaluation",
+      "korean": "모델 평가",
+      "aliases": ["모델 평가하기", "Evaluation", "Eval"],
+      "category": "구조·운영",
+      "definition": "모델이 과제를 얼마나 정확하고 안전하게 해내는지 정해 둔 기준과 시험 문제로 측정하는 일입니다. 모델을 고르거나 바꾼 뒤 좋아졌는지 확인할 때 씁니다.",
+      "example": "같은 질문 50개를 두 모델에 던져 어느 쪽 답이 더 정확한지 점수를 매기는 것입니다.",
+      "related_ids": ["model", "fine-tuning", "agent-pattern"],
+      "links": [],
+      "sources": [
+        {
+          "name": "AWS Well-Architected Generative AI Lens: Definitions",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html"
+        }
+      ],
+      "is_new": true
+    },
+    {
+      "id": "guardrail",
+      "term": "Guardrail",
+      "korean": "가드레일",
+      "aliases": ["안전 장치", "AI 안전 가드레일"],
+      "category": "구조·운영",
+      "definition": "AI의 입력이나 출력에서 위험하거나 원치 않는 내용을 줄이거나 차단하기 위한 안전 규칙과 장치입니다.",
+      "example": "개인정보가 들어간 답변은 사용자에게 보여 주기 전에 차단하는 규칙입니다.",
+      "related_ids": ["hook", "agent", "hallucination"],
+      "links": [
+        {
+          "label": "Engineering: Hooks",
+          "href": "/agent-engineering/hooks"
+        }
+      ],
+      "sources": [
+        {
+          "name": "AWS Bedrock: Guardrails",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
+        }
+      ],
+      "is_new": true
     }
   ]
 }

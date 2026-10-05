@@ -154,6 +154,11 @@ export default function GlossaryClient() {
                 <div className="glossary-header">
                   <div>
                     <span className="glossary-term">{item.term}</span>
+                    {item.is_new && (
+                      <span className="new-badge" role="img" aria-label="새로 추가된 용어" style={{ marginLeft: "6px" }}>
+                        NEW
+                      </span>
+                    )}
                     <span className="glossary-korean">{item.korean}</span>
                   </div>
                   <span className="badge" style={{ margin: 0 }}>
