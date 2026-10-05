@@ -35,13 +35,13 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 0,
-      "checked_at": "2026-10-06T03:03:54.071470+09:00",
+      "count": 1,
+      "checked_at": "2026-10-06T06:38:30.217116+09:00",
       "held_count": 0,
-      "excluded_count": 206,
+      "excluded_count": 207,
       "skipped_count": 28,
       "coverage_limited": false,
-      "last_success_at": "2026-10-06T03:03:54.071470+09:00"
+      "last_success_at": "2026-10-06T06:38:30.217116+09:00"
     },
     {
       "id": "claude-releases",
@@ -49,12 +49,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-06T03:03:54.071470+09:00",
+      "checked_at": "2026-10-06T06:38:30.217116+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 54,
       "coverage_limited": false,
-      "last_success_at": "2026-10-06T03:03:54.071470+09:00"
+      "last_success_at": "2026-10-06T06:38:30.217116+09:00"
     },
     {
       "id": "gemini-releases",
@@ -62,12 +62,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-06T03:03:54.071470+09:00",
+      "checked_at": "2026-10-06T06:38:30.217116+09:00",
       "held_count": 0,
       "excluded_count": 69,
       "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-06T03:03:54.071470+09:00"
+      "last_success_at": "2026-10-06T06:38:30.217116+09:00"
     },
     {
       "id": "grok-releases",
@@ -75,7 +75,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-06T03:03:54.071470+09:00",
+      "checked_at": "2026-10-06T06:38:30.217116+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -83,7 +83,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-06T03:03:54.071470+09:00"
+      "last_success_at": "2026-10-06T06:38:30.217116+09:00"
     },
     {
       "id": "anthropic-news",
@@ -325,8 +325,27 @@
     }
   ],
   "new_count": 0,
-  "archive_count": 347,
-  "candidates": [],
+  "archive_count": 348,
+  "candidates": [
+    {
+      "id": "0e1dc4b876f48358",
+      "title": "0.160.1",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+      "source_summary": "## Bug Fixes - Preserve `SYSTEMROOT`, `TEMP`, and `TMP` when launching remote stdio MCP servers with explicitly configured remote environment variables, allowing Unix hosts to retain the Windows executor's startup environment. ## Changelog - [#51121](https://github.com/openai/codex/pull/51121): Backport Windows remote MCP environment preservation to 0.160.",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-06T06:38:33+09:00",
+      "published_at": "2026-10-05T18:29:37+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.160.1 버전 출시",
+      "source_summary_ko": "# # 버그 수정 - 명시적으로 구성된 원격 환경 변수가 있는 원격 stdio MCP 서버를 실행할 때 `SYSTEMROOT', 'TEMP' 및 `TMP` 를 유지하여 Unix 호스트가 Windows 실행기의 시작 환경을 유지할 수 있도록 합니다. # # 변경 로그 - [# 51121] (https://github.com/openai/codex/pull/51121): Windows 원격 MCP 환경 보존을 0.160으로 백포트합니다.",
+      "release_notes_ko": {
+        "bug_fixes": "명시적으로 구성된 원격 환경 변수가 있는 원격 stdio MCP 서버를 시작할 때 `SYSTEMROOT', 'TEMP' 및 `TMP` 를 유지하여 Unix 호스트가 Windows 실행기의 시작 환경을 유지할 수 있도록 합니다."
+      }
+    }
+  ],
   "hourly_collected_at": "2026-10-06T03:04:24.854134+09:00",
   "hourly_window_start": "2026-10-03T03:04:24.854134+09:00",
   "events": [
