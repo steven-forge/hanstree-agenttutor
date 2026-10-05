@@ -5,6 +5,7 @@ import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDr
 import { fitCardCopy, copyIssues, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import type { ExtractedArticle } from "../../lib/card-news/article-extract";
+import PublicationProgress, { publicationSummary } from "./PublicationProgress";
 import "./admin-news.css";
 
 const API = "/api/admin/news";
@@ -13,7 +14,7 @@ const STATUS: Record<Edition["status"], string> = {
 };
 const ACTION_LABEL: Record<string, string> = {
   add_manual: "직접 입력한 뉴스를 등록하는 중…",
-  extract: "원문에서 제목과 본문을 가져오는 중…",
+  extract: "원문을 요약하고 제목과 본문을 한국어로 옮기는 중…",
   compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
   approve: "카드 10장의 JPG와 검토 결과를 확인하는 중…", publish: "Instagram 발행을 요청하는 중…", reconcile: "최초 발행 요청을 이어 처리하고 결과를 확인하는 중…", check_connection: "연결된 Instagram 계정을 확인하는 중…", logout: "로그아웃 중…",
 };
@@ -64,6 +65,7 @@ function downloadBlob(blob: Blob, filename: string) {
 export default function AdminNews({ initial, initialDate, localMode = false }: { initial: AdminSnapshot; initialDate: string; localMode?: boolean }) {
   const [snapshot, setSnapshot] = useState(initial);
   const [date, setDate] = useState(initialDate);
+  const viewDate = useRef(initialDate);
   const [edition, setEdition] = useState<Edition | null>(initial.edition);
   const [pending, setPending] = useState("");
   const [error, setError] = useState("");
@@ -169,6 +171,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   }, [confirmPublish]);
 
   function accept(result: ApiResult, nextDate = date) {
+    viewDate.current = nextDate;
     setSnapshot(previous => ({ edition: result.edition !== undefined ? result.edition : previous.edition, setup: result.setup ? { ...result.setup, auth: localMode ? true : result.setup.auth } : previous.setup, history: result.history || previous.history }));
     if (result.edition !== undefined) setEdition(result.edition);
     setDate(nextDate);
@@ -185,6 +188,16 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     }
     if (!response.ok || result.error) throw new Error(result.error || "요청을 처리하지 못했습니다.");
     return result;
+  }
+
+  function acceptProgress(next: Edition) {
+    if (next.date !== viewDate.current) return;
+    setSnapshot(previous => {
+      if (next.date !== viewDate.current || (previous.edition && (previous.edition.date !== next.date || previous.edition.revision > next.revision))) return previous;
+      return { ...previous, edition: next, history: previous.history.map(item => item.date === next.date ? { date: next.date, status: next.status, updatedAt: next.updatedAt } : item) };
+    });
+    setEdition(previous => next.date !== viewDate.current || (previous && (previous.date !== next.date || previous.revision > next.revision)) ? previous : next);
+    if (["publishing", "needs_check", "published"].includes(next.status)) setPublishUncertain(false);
   }
 
   async function loadDate(nextDate: string) {
@@ -246,19 +259,19 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
   async function extractManualArticle() {
     if (!canRegister || operation.current || !safeHref(manual.sourceUrl)) return;
-    if ((manual.title || manual.summary || manual.sourceName || manual.publishedAt) && !window.confirm("작성 중인 제목·내용·출처·발행 시각을 원문에서 가져온 값으로 바꿀까요? 확인되지 않는 발행 시각은 비워집니다.")) return;
+    if ((manual.title || manual.summary || manual.sourceName || manual.publishedAt) && !window.confirm("작성 중인 제목·내용을 한국어 제목과 핵심 요약으로 바꿀까요? 출처·발행 시각도 원문에서 가져오며, 확인되지 않는 시각은 비워집니다.")) return;
     operation.current = true; setPending("extract"); setError(""); setMessage(""); setExtractError(""); setExtractNotice("");
     try {
       const result = await readResponse(await fetch(`${API}/extract`, {
         method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sourceUrl: manual.sourceUrl.trim() }), signal: AbortSignal.timeout(30000),
+        body: JSON.stringify({ sourceUrl: manual.sourceUrl.trim() }), signal: AbortSignal.timeout(65000),
       }));
       const article = result.article;
       if (!article || typeof article.title !== "string" || typeof article.body !== "string" || typeof article.sourceName !== "string" || typeof article.publishedAt !== "string" || !safeHref(article.sourceUrl)) throw new Error("가져온 기사 형식을 확인하지 못했습니다. 내용을 직접 입력해 주세요.");
       setManual({ title: article.title, summary: article.body, sourceName: article.sourceName, sourceUrl: article.sourceUrl, publishedAt: kstInput(article.publishedAt) });
-      setExtractNotice(`원문에서 제목과 본문을 가져왔습니다. 내용을 확인하고 필요한 부분을 정리한 뒤 등록하세요.${article.publishedAt ? " 발행 시각도 원문과 대조해 주세요." : " 정확한 발행 시각을 찾지 못했습니다. 원문에서 확인해 직접 입력해 주세요."}`);
+      setExtractNotice(`한국어 제목과 핵심 요약을 가져왔습니다. 본문에서 핵심 문장을 골라 한국어로 정리했습니다. 번역과 수치·조건을 원문과 대조한 뒤 등록하세요.${article.publishedAt ? " 발행 시각도 확인해 주세요." : " 정확한 발행 시각을 찾지 못했습니다. 원문에서 확인해 직접 입력해 주세요."}`);
     } catch (caught) {
-      setExtractError(caught instanceof Error && caught.name === "TimeoutError" ? "원문 응답이 늦어 가져오기를 중단했습니다. 다시 시도하거나 직접 입력해 주세요." : caught instanceof Error ? caught.message : "원문을 가져오지 못했습니다. 직접 입력해 주세요.");
+      setExtractError(caught instanceof Error && caught.name === "TimeoutError" ? "원문 또는 번역 응답이 늦어 처리를 중단했습니다. 다시 시도하거나 직접 입력해 주세요." : caught instanceof Error ? caught.message : "한국어 제목과 요약을 가져오지 못했습니다. 직접 입력해 주세요.");
     } finally { operation.current = false; setPending(""); }
   }
 
@@ -398,9 +411,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
       {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
       {edition && candidateCount < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {candidateCount}/10</strong><p>정상 제작 완료 상태가 아닙니다. 뉴스레터의 공개 기사와 수집 상태를 확인한 뒤 다시 불러오세요. 원문·날짜 확인을 통과한 서로 다른 뉴스가 최소 10개 필요합니다.</p></div>}
-      {edition?.status === "needs_check" && <div className="cn-alert"><strong>중복 발행을 막기 위해 편집과 재발행을 잠갔습니다.</strong><p>{edition.publication?.message || "Instagram이 이전 요청을 처리했는지 먼저 확인해야 합니다."}</p><p>아래 버튼은 최초 요청한 발행을 이어서 처리합니다. 이미지 준비가 끝났다면 실제 게시까지 진행할 수 있습니다.</p><button className="cn-button" onClick={() => act("reconcile")} disabled={!!pending || sessionExpired}>발행 계속 및 확인</button></div>}
-      {edition?.status === "publishing" && <div className="cn-alert cn-alert-info"><p>발행 요청을 처리하고 있습니다. 원고는 잠겨 있습니다. 아래 버튼으로 최초 발행 요청을 이어 처리하고 결과를 확인할 수 있습니다.</p><button className="cn-button" onClick={() => act("reconcile")} disabled={!!pending || sessionExpired}>발행 계속 및 확인</button></div>}
-      {edition?.status === "published" && <p className="cn-alert cn-alert-success">{formatTime(edition.publishedAt)} KST 발행 완료. 이 판본의 원고는 잠겨 있습니다. {safeHref(edition.publication?.permalink) && <a className="cn-text-link" href={safeHref(edition.publication?.permalink)} target="_blank" rel="noopener noreferrer">Instagram 게시물 보기</a>}</p>}
+      {!localMode && edition && (edition.publication || pending === "publish" || publishUncertain || ["publishing", "needs_check", "published"].includes(edition.status)) && <PublicationProgress key={edition.date} edition={edition} pending={pending} uncertain={publishUncertain} sessionExpired={sessionExpired} onEdition={acceptProgress} onExpired={() => setSessionExpired(true)} onContinue={() => act("reconcile")} />}
     </section>
 
     <details className="cn-panel cn-manual-panel">
@@ -416,9 +427,9 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       }}>
         <div className="cn-url-extract">
           <label className="cn-field">원문 URL<input required type="url" maxLength={2000} placeholder="https://" value={manual.sourceUrl} onChange={event => { setManual({ ...manual, sourceUrl: event.target.value }); setExtractNotice(""); setExtractError(""); }} disabled={!canRegister} /></label>
-          <button className="cn-button" type="button" onClick={extractManualArticle} disabled={!canRegister || !safeHref(manual.sourceUrl)}>{pending === "extract" ? "가져오는 중…" : "제목·본문 가져오기"}</button>
+          <button className="cn-button" type="button" onClick={extractManualArticle} disabled={!canRegister || !safeHref(manual.sourceUrl)}>{pending === "extract" ? "요약·번역 중…" : "한국어 제목·요약 가져오기"}</button>
         </div>
-        <p className="cn-help">공개 HTTPS 기사에서 원문 언어 그대로 가져옵니다. 자동 등록되지는 않으며, 로그인이나 화면 실행이 필요한 사이트는 가져오지 못할 수 있습니다.</p>
+        <p className="cn-help">제목은 한국어로 번역하고, 본문은 핵심 문장을 추려 한국어로 요약합니다. 이미 한국어인 기사는 요약만 합니다. 결과를 검토한 뒤 등록하세요.</p>
         {extractNotice && <p className="cn-alert cn-alert-success" role="status">{extractNotice}</p>}
         {extractError && <p className="cn-alert cn-alert-error" role="alert">{extractError} 기존 입력은 유지했습니다.</p>}
         <label className="cn-field">뉴스 제목<input aria-label="뉴스 제목" required maxLength={200} value={manual.title} onChange={event => setManual({ ...manual, title: event.target.value })} disabled={!canRegister} /><small>{manual.title.length.toLocaleString()}/200자</small></label>
@@ -518,7 +529,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       ] as const).map(([key, label]) => <li key={key}><span>{localMode && key === "storage" ? "현재 브라우저 원고 저장" : label}</span><span className={`cn-tag ${snapshot.setup[key] || (localMode && key === "storage") ? "cn-tag-ok" : "cn-tag-warn"}`}>{localMode && key === "storage" ? "이 브라우저" : snapshot.setup[key] ? "설정됨" : "준비 필요"}</span></li>)}</ul><p className="cn-help">{localMode ? "관리자 로그인 후 브라우저에서 카드 제작을 할 수 있습니다. 서버 저장소·Instagram 연결·일일 예약은 나중에 설정합니다." : "설정 여부를 표시합니다. 실제 수집·게시 성공 여부는 각 실행 결과에서 확인하세요."}</p>
         {!!edition?.sources.length && <details className="cn-details"><summary>최근 수집 출처 {edition.sources.length}곳 확인</summary><div className="cn-source-status">{edition.sources.map((source, index) => <span className={`cn-tag ${source.status === "ok" ? "cn-tag-ok" : "cn-tag-warn"}`} key={`${source.name}-${index}`} title={source.message}>{source.name} · {source.status === "ok" ? `${source.count}개` : "실패"}</span>)}</div>{edition.sources.filter(source => source.status === "failed").map((source, index) => <p className="cn-help" key={`${source.name}-${index}`}>{source.name}: {source.message || "가져오지 못했습니다. 출처 상태를 확인한 뒤 재수집하세요."}</p>)}</details>}
       </section>
-      <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.map(item => <li key={item.date}><div><button className="cn-history-date" disabled={!!pending} onClick={() => loadDate(item.date)}>{item.date}{item.date === date ? " · 현재 판본" : ""}</button><small>최근 변경 {formatTime(item.updatedAt)} KST</small></div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>)}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>
+      <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.map(item => <li key={item.date}><div><button className="cn-history-date" disabled={!!pending} onClick={() => loadDate(item.date)}>{item.date}{item.date === date ? " · 현재 판본" : ""}</button><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{item.date === edition?.date && edition.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress">발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>)}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>
     </div>
 
     <dialog ref={dialog} className="cn-dialog" onCancel={() => setConfirmPublish(false)} onClose={() => setConfirmPublish(false)} aria-labelledby="cn-confirm-heading">

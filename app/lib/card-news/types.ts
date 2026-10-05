@@ -18,8 +18,9 @@ export type Edition = {
   candidateSource?: "newsletter";
   candidates: NewsCandidate[]; sources: FeedStatus[]; cards: NewsCard[]; caption: string;
   updatedAt: string; approvedAt?: string; publishedAt?: string;
-  publication?: { attempt: string; children: string[]; containerId?: string; mediaId?: string; permalink?: string; message?: string; publishRequestedAt?: string; accountId?: string };
+  publication?: { attempt: string; children: string[]; containerId?: string; mediaId?: string; permalink?: string; message?: string; publishRequestedAt?: string; accountId?: string; startedAt?: string; stage?: "images" | "carousel" | "processing" | "publish" | "done" };
 };
+export type PublicationProgress = { edition: Edition | null; checkedAt: string; remoteStatus?: string; remoteCheckedAt?: string; statusError?: string };
 export type AdminSetup = { auth: boolean; authIssue?: "password_missing" | "password_length" | "signing_missing" | "signing_length"; storage: boolean; instagram: boolean; scheduler: boolean };
 export type AdminSnapshot = { edition: Edition | null; setup: AdminSetup; history: { date: string; status: Edition["status"]; updatedAt: string }[] };
 

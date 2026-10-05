@@ -116,6 +116,18 @@
 .cn-policy-source-options { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .cn-policy-source-options .cn-field { max-width: 105px; }
 .cn-publish-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 16px; }
+.cn-publication-progress { margin-top: 20px; padding: 20px; border: 1px solid #bfdbfe; border-radius: 10px; background: #f8fbff; scroll-margin-top: 80px; }
+.cn-progress-title { font-size: 1rem; font-weight: 700; color: #1e40af; }
+.cn-progress-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; list-style: none; margin: 18px 0; padding: 0; }
+.cn-progress-steps li { display: flex; gap: 7px; align-items: center; padding: 10px; border-radius: 7px; background: #e9eef5; color: #64748b; font-size: .8rem; }
+.cn-progress-steps li.is-current { background: #dbeafe; color: #1e40af; font-weight: 700; }
+.cn-progress-steps li.is-done { background: #dcfce7; color: #166534; }
+.cn-progress-steps li > span { flex-shrink: 0; }
+.cn-progress-count { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; font-size: .85rem; }
+.cn-progress-count progress { width: 100%; height: 10px; accent-color: #2563eb; }
+.cn-progress-detail { font-size: .88rem; overflow-wrap: anywhere; }
+.cn-progress-times { display: flex; flex-wrap: wrap; gap: 6px 18px; color: #64748b; font-size: .78rem; }
+@media (max-width: 600px) { .cn-publication-progress { padding: 14px; } .cn-progress-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .cn-empty { padding: 38px 20px; text-align: center; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 10px; color: #64748b; }
 .cn-empty h2 { color: #334155; }
 .cn-empty p { max-width: 560px; margin: 10px auto; font-size: .9rem; }

@@ -1,7 +1,7 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
 import { AdminError, equalSecret, getEdition, putEdition, signAsset } from "./server";
-import { editionIssues, type Edition } from "./types";
+import { editionIssues, type Edition, type PublicationProgress } from "./types";
 import { apiVersion, assertCredentialsCurrent, resolveCredentials, verifyIdentity, type InstagramCredentials } from "./instagram-connection";
 
 class InstagramAuthRejection extends AdminError {}
@@ -37,6 +37,25 @@ export async function instagramAccount(creds?: InstagramCredentials) {
   const identity = await verifyIdentity(creds ?? await resolveCredentials());
   return { id: identity.user_id, username: identity.username };
 }
+// Observation only: no edition writes, container creation, or publish/reconcile calls.
+export async function publicationRemoteStatus(edition: Edition): Promise<Pick<PublicationProgress, "remoteStatus" | "remoteCheckedAt" | "statusError">> {
+  const publication = edition.publication;
+  const updated = Date.parse(edition.updatedAt);
+  if (!["publishing", "needs_check"].includes(edition.status) || !publication?.containerId || !Number.isFinite(updated) || Date.now() - updated < 60000) return {};
+  if (!publication.accountId) return { statusError: "이전 발행 작업의 계정 기록이 없어 자동 조회할 수 없습니다. Instagram 앱에서 게시 여부를 확인하거나 ‘발행 계속 및 확인’을 눌러 주세요." };
+  let remoteCheckedAt: string | undefined;
+  try {
+    const creds = await resolveCredentials();
+    if (publication.accountId !== creds.userId) return { statusError: "이 발행 작업을 시작한 Instagram 계정과 현재 연결 계정이 다릅니다. 원래 계정으로 다시 연결해 주세요." };
+    const containerId = checkedId(publication.containerId);
+    remoteCheckedAt = new Date().toISOString();
+    const data = await graph(creds, `${containerId}?fields=status_code`);
+    if (typeof data.status_code !== "string" || !["IN_PROGRESS", "FINISHED", "PUBLISHED", "ERROR", "EXPIRED"].includes(data.status_code)) throw new Error("invalid status");
+    return { remoteStatus: data.status_code, remoteCheckedAt };
+  } catch {
+    return { ...(remoteCheckedAt ? { remoteCheckedAt } : {}), statusError: "Instagram 처리 상태를 확인하지 못했습니다. 연결 상태를 확인한 뒤 잠시 후 다시 조회해 주세요." };
+  }
+}
 async function save(edition: Edition) { return putEdition(edition, edition.revision); }
 // The caller has already confirmed the live /me identity for exactly these credentials.
 async function publishContainer(edition: Edition, creds: InstagramCredentials) {
@@ -49,7 +68,7 @@ async function publishContainer(edition: Edition, creds: InstagramCredentials) {
   // were resolved stops here, before the fence, so the request stays safely retryable.
   await assertCredentialsCurrent(creds);
   // Durable fence before the external side effect. Never retry an ambiguous media_publish call.
-  edition = await save({ ...edition, publication: { ...edition.publication, publishRequestedAt: new Date().toISOString(), message: "인스타그램에 최종 발행 요청 중입니다." } });
+  edition = await save({ ...edition, publication: { ...edition.publication, stage: "publish", publishRequestedAt: new Date().toISOString(), message: "인스타그램에 최종 발행 요청 중입니다." } });
   let data: Awaited<ReturnType<typeof graph>>;
   try { data = await graph(creds, `${pinnedId}/media_publish`, { creation_id: edition.publication!.containerId! }); }
   catch (error) {
@@ -57,7 +76,7 @@ async function publishContainer(edition: Edition, creds: InstagramCredentials) {
     throw error;
   }
   const mediaId = checkedId(data.id);
-  edition = await save({ ...edition, status: "published", publishedAt: new Date().toISOString(), publication: { ...edition.publication!, mediaId, message: "인스타그램에서 게시물 발행을 확인했습니다." } });
+  edition = await save({ ...edition, status: "published", publishedAt: new Date().toISOString(), publication: { ...edition.publication!, stage: "done", mediaId, message: "인스타그램에서 게시물 발행을 확인했습니다." } });
   try {
     const media = await graph(creds, `${mediaId}?fields=permalink`);
     if (media.permalink && /^https:\/\/(www\.)?instagram\.com\//.test(media.permalink)) edition = await save({ ...edition, publication: { ...edition.publication!, permalink: media.permalink } });
@@ -72,7 +91,7 @@ export async function publishEdition(edition: Edition, accountId: unknown) {
   const account = await instagramAccount(creds);
   if (typeof accountId !== "string" || !equalSecret(account.id, accountId)) throw new AdminError("연결 계정을 확인한 후 발행해 주세요.", 409);
   const pinnedId = creds.userId;
-  edition = await save({ ...edition, status: "publishing", publication: { attempt: randomUUID(), children: [], accountId: pinnedId, message: "카드 10장을 인스타그램에 준비하고 있습니다." } });
+  edition = await save({ ...edition, status: "publishing", publication: { attempt: randomUUID(), children: [], accountId: pinnedId, startedAt: new Date().toISOString(), stage: "images", message: "카드 준비 0/10장 완료. 1번 카드를 인스타그램에 보내고 있습니다." } });
   try {
     const expires = Math.floor(Date.now() / 1000) + 86400;
     const origin = assetOrigin();
@@ -81,13 +100,13 @@ export async function publishEdition(edition: Edition, accountId: unknown) {
       const signature = signAsset(edition.date, attempt, i, expires);
       const imageUrl = `${origin}/api/instagram-assets/${edition.date}/${i}?attempt=${attempt}&expires=${expires}&signature=${signature}`;
       const child = await graph(creds, `${pinnedId}/media`, { image_url: imageUrl, is_carousel_item: true, alt_text: `${edition.cards[i].title.replace(/\n/g, " ")} ${edition.cards[i].body.replace(/\n/g, " ")}` });
-      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, checkedId(child.id)] } });
+      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, checkedId(child.id)], stage: i === 9 ? "carousel" : "images", message: i === 9 ? "카드 준비 10/10장 완료. 게시물 한 개로 묶고 있습니다." : `카드 준비 ${i + 1}/10장 완료. ${i + 2}번 카드를 인스타그램에 보내고 있습니다.` } });
     }
     const parent = await graph(creds, `${pinnedId}/media`, { media_type: "CAROUSEL", children: edition.publication!.children.join(","), caption: edition.caption });
-    edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id) } });
+    edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id), stage: "processing", message: "카드 10장을 묶었습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다." } });
     const status = await graph(creds, `${edition.publication!.containerId}?fields=status_code`);
     if (status.status_code === "FINISHED") return await publishContainer(edition, creds);
-    return await save({ ...edition, status: "needs_check", publication: { ...edition.publication!, message: "이미지 처리 중입니다. 1분 뒤 발행 계속 및 확인을 눌러 주세요." } });
+    return await save({ ...edition, status: "needs_check", publication: { ...edition.publication!, stage: "processing", message: "이미지 처리 중입니다. 1분 뒤 발행 계속 및 확인을 눌러 주세요." } });
   } catch (error) {
     const latest = await getEdition(edition.date);
     if (!latest || latest.status === "published") return latest || edition;
@@ -109,7 +128,7 @@ export async function reconcileEdition(edition: Edition) {
   // Read-only status query; also allowed for older attempts without a recorded account so a
   // completed publication can still be confirmed. Continuing to publish is gated below.
   const data = await graph(creds, `${publication.containerId}?fields=status_code`);
-  if (data.status_code === "PUBLISHED") return save({ ...edition, status: "published", publishedAt: new Date().toISOString(), publication: { ...publication, message: "인스타그램에서 발행 완료 상태를 확인했습니다." } });
+  if (data.status_code === "PUBLISHED") return save({ ...edition, status: "published", publishedAt: new Date().toISOString(), publication: { ...publication, stage: "done", message: "인스타그램에서 발행 완료 상태를 확인했습니다." } });
   if (!publication.publishRequestedAt && data.status_code === "FINISHED") {
     try {
       if (publication.accountId) await instagramAccount(creds);
@@ -120,5 +139,5 @@ export async function reconcileEdition(edition: Edition) {
     }
   }
   if (!publication.publishRequestedAt && ["ERROR", "EXPIRED"].includes(data.status_code || "")) return save({ ...edition, status: "approved", publication: undefined });
-  return save({ ...edition, status: "needs_check", publication: { ...publication, message: publication.publishRequestedAt ? "최종 발행 요청의 결과가 아직 확정되지 않았습니다. 인스타그램 계정에서 확인하세요. 중복 방지를 위해 재발행을 차단했습니다." : "이미지 처리 중입니다. 1분 뒤 다시 확인해 주세요." } });
+  return save({ ...edition, status: "needs_check", publication: { ...publication, stage: publication.publishRequestedAt ? "publish" : "processing", message: publication.publishRequestedAt ? "최종 발행 요청의 결과가 아직 확정되지 않았습니다. 인스타그램 계정에서 확인하세요. 중복 방지를 위해 재발행을 차단했습니다." : "이미지 처리 중입니다. 1분 뒤 다시 확인해 주세요." } });
 }
