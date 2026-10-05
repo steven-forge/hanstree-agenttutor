@@ -1,0 +1,80 @@
+.section {
+  min-width: 0;
+  margin-top: 32px;
+  scroll-margin-top: 76px;
+}
+
+.section h2 {
+  margin: 0;
+}
+
+.section > p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.strip {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  margin: 16px 0 0;
+  padding: 4px 4px 16px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 4px;
+}
+
+.item {
+  flex: 0 0 88%;
+  max-width: 22rem;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid var(--line, currentColor);
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: var(--blue);
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  max-height: min(64svh, 33rem);
+  margin-inline: auto;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
