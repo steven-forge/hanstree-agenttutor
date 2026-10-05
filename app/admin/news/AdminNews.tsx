@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
 import { fitCardCopy, copyIssues, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
+import type { ExtractedArticle } from "../../lib/card-news/article-extract";
 import "./admin-news.css";
 
 const API = "/api/admin/news";
@@ -12,10 +13,11 @@ const STATUS: Record<Edition["status"], string> = {
 };
 const ACTION_LABEL: Record<string, string> = {
   add_manual: "직접 입력한 뉴스를 등록하는 중…",
+  extract: "원문에서 제목과 본문을 가져오는 중…",
   compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
   approve: "카드 10장의 JPG와 검토 결과를 확인하는 중…", publish: "Instagram 발행을 요청하는 중…", reconcile: "최초 발행 요청을 이어 처리하고 결과를 확인하는 중…", check_connection: "연결된 Instagram 계정을 확인하는 중…", logout: "로그아웃 중…",
 };
-type ApiResult = Partial<AdminSnapshot> & { error?: string; id?: string; username?: string };
+type ApiResult = Partial<AdminSnapshot> & { error?: string; id?: string; username?: string; article?: ExtractedArticle };
 const EMPTY_MANUAL = { title: "", summary: "", sourceName: "", sourceUrl: "", publishedAt: "" };
 
 function safeHref(value?: string): string | undefined {
@@ -71,6 +73,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const [activeIndex, setActiveIndex] = useState(0);
   const [search, setSearch] = useState("");
   const [manual, setManual] = useState(EMPTY_MANUAL);
+  const [extractNotice, setExtractNotice] = useState("");
+  const [extractError, setExtractError] = useState("");
   const [showJpg, setShowJpg] = useState(false);
   const [jpgError, setJpgError] = useState(false);
   const [jpgPending, setJpgPending] = useState(false);
@@ -84,6 +88,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   const saved = snapshot.edition;
   const dirty = editableContent(edition) !== editableContent(saved);
   const manualDirty = Object.values(manual).some(value => value.length > 0);
+  const manualTooLong = manual.title.length > 200 || manual.summary.length > 600 || manual.sourceName.length > 100;
   const unsaved = dirty || manualDirty;
   const locked = publishUncertain || (!!edition && ["publishing", "published", "needs_check"].includes(edition.status));
   const canRegister = !locked && !pending && !sessionExpired && (localMode || snapshot.setup.storage);
@@ -190,7 +195,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
     try {
       const result = localMode ? await localSnapshot(nextDate) : await readResponse(await fetch(`${API}?${new URLSearchParams({ date: nextDate })}`, { cache: "no-store", credentials: "same-origin" }));
       if (result.edition === undefined) throw new Error("판본 정보가 응답에 없습니다. 다시 시도해 주세요.");
-      accept(result, nextDate); setActiveIndex(0); setSearch(""); setShowJpg(false); setManual(EMPTY_MANUAL);
+      accept(result, nextDate); setActiveIndex(0); setSearch(""); setShowJpg(false); setManual(EMPTY_MANUAL); setExtractNotice(""); setExtractError("");
       setMessage(result.edition ? "저장된 판본을 불러왔습니다." : "아직 이 날짜의 판본이 없습니다. 뉴스레터를 불러오거나 뉴스를 직접 등록하세요.");
     } catch (caught) { setError(caught instanceof Error ? caught.message : "판본을 불러오지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
@@ -218,7 +223,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         else setMessage(`직접 등록한 뉴스를 포함해 후보 ${count}개가 준비됐습니다. 원문과 발행 시각을 확인해 10개를 선정하세요.`);
       }
       if (action === "add_manual") {
-        setManual(EMPTY_MANUAL); setSearch(""); setShowJpg(false);
+        setManual(EMPTY_MANUAL); setSearch(""); setShowJpg(false); setExtractNotice(""); setExtractError("");
         setMessage("뉴스를 후보에 등록했습니다. 작성 중인 원고도 함께 저장했습니다. 후보 목록에서 선택해 카드로 만드세요.");
       }
       if (action === "save") setMessage("원고를 저장했습니다. 변경된 원고의 검토 상태는 초안입니다.");
@@ -236,6 +241,24 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       const detail = caught instanceof Error ? caught.message : "서버에 연결하지 못했습니다.";
       if (action === "publish") setPublishUncertain(true);
       setError(action === "publish" ? `${detail} 게시 요청이 이미 접수됐을 수 있습니다. 먼저 ‘상태 새로 확인’을 눌러 결과를 확인하세요.` : detail);
+    } finally { operation.current = false; setPending(""); }
+  }
+
+  async function extractManualArticle() {
+    if (!canRegister || operation.current || !safeHref(manual.sourceUrl)) return;
+    if ((manual.title || manual.summary || manual.sourceName || manual.publishedAt) && !window.confirm("작성 중인 제목·내용·출처·발행 시각을 원문에서 가져온 값으로 바꿀까요? 확인되지 않는 발행 시각은 비워집니다.")) return;
+    operation.current = true; setPending("extract"); setError(""); setMessage(""); setExtractError(""); setExtractNotice("");
+    try {
+      const result = await readResponse(await fetch(`${API}/extract`, {
+        method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sourceUrl: manual.sourceUrl.trim() }), signal: AbortSignal.timeout(30000),
+      }));
+      const article = result.article;
+      if (!article || typeof article.title !== "string" || typeof article.body !== "string" || typeof article.sourceName !== "string" || typeof article.publishedAt !== "string" || !safeHref(article.sourceUrl)) throw new Error("가져온 기사 형식을 확인하지 못했습니다. 내용을 직접 입력해 주세요.");
+      setManual({ title: article.title, summary: article.body, sourceName: article.sourceName, sourceUrl: article.sourceUrl, publishedAt: kstInput(article.publishedAt) });
+      setExtractNotice(`원문에서 제목과 본문을 가져왔습니다. 내용을 확인하고 필요한 부분을 정리한 뒤 등록하세요.${article.publishedAt ? " 발행 시각도 원문과 대조해 주세요." : " 정확한 발행 시각을 찾지 못했습니다. 원문에서 확인해 직접 입력해 주세요."}`);
+    } catch (caught) {
+      setExtractError(caught instanceof Error && caught.name === "TimeoutError" ? "원문 응답이 늦어 가져오기를 중단했습니다. 다시 시도하거나 직접 입력해 주세요." : caught instanceof Error ? caught.message : "원문을 가져오지 못했습니다. 직접 입력해 주세요.");
     } finally { operation.current = false; setPending(""); }
   }
 
@@ -275,7 +298,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       const draft: unknown = JSON.parse(await file.text());
       if (!draft || typeof draft !== "object" || !("date" in draft) || draft.date !== date) throw new Error("파일의 판본 날짜가 현재 선택 날짜와 다릅니다. 해당 날짜를 먼저 선택해 주세요.");
       const result = await localAction({ action: "import", date, revision: saved?.revision ?? 0, edition: draft });
-      accept(result); setActiveIndex(0); setShowJpg(false); setManual(EMPTY_MANUAL); setMessage("원고를 초안으로 가져왔습니다. 원문 검토를 다시 확인한 뒤 승인하세요.");
+      accept(result); setActiveIndex(0); setShowJpg(false); setManual(EMPTY_MANUAL); setExtractNotice(""); setExtractError(""); setMessage("원고를 초안으로 가져왔습니다. 원문 검토를 다시 확인한 뒤 승인하세요.");
     } catch (caught) { setError(caught instanceof Error ? caught.message : "원고 JSON을 가져오지 못했습니다."); }
     finally { input.value = ""; operation.current = false; setPending(""); }
   }
@@ -385,22 +408,29 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       <p className="cn-muted">제목·내용·출처·발행 시각을 입력해 이 날짜의 카드뉴스 후보에 추가하세요. 공개 뉴스레터에는 올라가지 않습니다.</p>
       <form className="cn-form" onSubmit={event => {
         event.preventDefault();
-        if (!canRegister) return;
+        if (!canRegister || manualTooLong) return;
         void act("add_manual", {
           candidate: { ...manual, publishedAt: fromKstInput(manual.publishedAt) },
           ...(edition ? { cards: edition.cards, candidates: edition.candidates, caption: edition.caption } : {}),
         });
       }}>
-        <label className="cn-field">뉴스 제목<input required maxLength={200} value={manual.title} onChange={event => setManual({ ...manual, title: event.target.value })} disabled={!canRegister} /></label>
-        <label className="cn-field">뉴스 내용<textarea required rows={4} maxLength={600} value={manual.summary} onChange={event => setManual({ ...manual, summary: event.target.value })} disabled={!canRegister} /><small>카드에는 제목 최대 2줄·본문 최대 7줄로 정리합니다. 긴 내용은 등록 후 카드 편집에서 직접 줄여 주세요.</small></label>
+        <div className="cn-url-extract">
+          <label className="cn-field">원문 URL<input required type="url" maxLength={2000} placeholder="https://" value={manual.sourceUrl} onChange={event => { setManual({ ...manual, sourceUrl: event.target.value }); setExtractNotice(""); setExtractError(""); }} disabled={!canRegister} /></label>
+          <button className="cn-button" type="button" onClick={extractManualArticle} disabled={!canRegister || !safeHref(manual.sourceUrl)}>{pending === "extract" ? "가져오는 중…" : "제목·본문 가져오기"}</button>
+        </div>
+        <p className="cn-help">공개 HTTPS 기사에서 원문 언어 그대로 가져옵니다. 자동 등록되지는 않으며, 로그인이나 화면 실행이 필요한 사이트는 가져오지 못할 수 있습니다.</p>
+        {extractNotice && <p className="cn-alert cn-alert-success" role="status">{extractNotice}</p>}
+        {extractError && <p className="cn-alert cn-alert-error" role="alert">{extractError} 기존 입력은 유지했습니다.</p>}
+        <label className="cn-field">뉴스 제목<input aria-label="뉴스 제목" required maxLength={200} value={manual.title} onChange={event => setManual({ ...manual, title: event.target.value })} disabled={!canRegister} /><small>{manual.title.length.toLocaleString()}/200자</small></label>
+        <label className="cn-field">뉴스 내용<textarea aria-label="뉴스 내용" aria-describedby="cn-manual-copy-help" required rows={manual.summary.length > 600 ? 10 : 4} maxLength={600} value={manual.summary} onChange={event => setManual({ ...manual, summary: event.target.value })} disabled={!canRegister} /><small id="cn-manual-copy-help">{manual.summary.length.toLocaleString()}/600자 · 카드에는 제목 최대 2줄·본문 최대 7줄로 정리합니다.</small></label>
+        {manualTooLong && <p className="cn-alert" role="status">가져온 내용을 임의로 자르지 않았습니다. 제목 200자·내용 600자·출처 100자 이내로 정리하면 등록할 수 있습니다.</p>}
         <div className="cn-field-pair">
           <label className="cn-field">출처 이름<input required maxLength={100} placeholder="매체 또는 발표 기관" value={manual.sourceName} onChange={event => setManual({ ...manual, sourceName: event.target.value })} disabled={!canRegister} /></label>
           <label className="cn-field">원문 발행 시각 · KST<input required type="datetime-local" step="1" max={`${date}T23:59:59`} value={manual.publishedAt} onChange={event => setManual({ ...manual, publishedAt: event.target.value })} disabled={!canRegister} /><small>원문에서 확인한 실제 한국 시각을 입력하세요.</small></label>
         </div>
-        <label className="cn-field">원문 URL<input required type="url" maxLength={2000} placeholder="https://" value={manual.sourceUrl} onChange={event => setManual({ ...manual, sourceUrl: event.target.value })} disabled={!canRegister} /></label>
         <div className="cn-publish-actions">
-          <button className="cn-button cn-button-primary" type="submit" disabled={!canRegister}>뉴스 등록</button>
-          <button className="cn-button" type="button" disabled={!manualDirty || !canRegister} onClick={() => { if (window.confirm("등록 중인 뉴스 입력을 비울까요?")) setManual(EMPTY_MANUAL); }}>입력 비우기</button>
+          <button className="cn-button cn-button-primary" type="submit" disabled={!canRegister || manualTooLong}>뉴스 등록</button>
+          <button className="cn-button" type="button" disabled={!manualDirty || !canRegister} onClick={() => { if (window.confirm("등록 중인 뉴스 입력을 비울까요?")) { setManual(EMPTY_MANUAL); setExtractNotice(""); setExtractError(""); } }}>입력 비우기</button>
         </div>
         <p className="cn-help">등록하면 작성 중인 카드 원고도 함께 저장됩니다. 등록한 뉴스는 후보 목록에서 선택할 수 있으며, 뉴스레터를 다시 불러와도 유지됩니다.</p>
       </form>

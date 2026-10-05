@@ -64,6 +64,8 @@
 .cn-manual .cn-form { margin-top: 16px; }
 .cn-manual-panel { margin-top: 20px; }
 .cn-manual-panel > summary { color: #1d4ed8; font-size: 1rem; font-weight: 700; cursor: pointer; }
+.cn-url-extract { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; }
+.cn-url-extract .cn-field { flex: 1 1 260px; }
 .cn-card-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
 .cn-card-tab { min-width: 40px; min-height: 38px; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 6px; background: #fff; color: #475569; font: inherit; font-size: .85rem; cursor: pointer; }
 .cn-card-tab[aria-pressed=true] { color: #fff; background: #2563eb; border-color: #2563eb; }
