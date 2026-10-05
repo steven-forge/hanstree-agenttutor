@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-04",
   "targets": {
     "codex": {
       "commands": [
@@ -599,6 +599,7 @@
         "/permissions",
         "/plan",
         "/plugin",
+        "/plugin-authoring",
         "/powerup",
         "/pr-comments",
         "/privacy-settings",
@@ -671,7 +672,6 @@
         "claude Code applies the change without waiting for the current response to finish. Before v2.1.242",
         "claude Code applies the new level to the next request in that turn. Before v2.1.242",
         "claude Code asks you to confirm the directory right away",
-        "claude Code builds the system prompt once",
         "claude Code filters the",
         "claude Code generates one. Pass",
         "claude Code omits the text and thinking blocks of a subagent that runs in the",
@@ -732,7 +732,7 @@
         "claude plugin",
         "claude plugin install code-review@claude-plugins-official",
         "claude plugins",
-        "claude project purge",
+        "claude purge",
         "claude remote-control",
         "claude respawn",
         "claude respawn 7c5dcf5d",
@@ -810,7 +810,7 @@
         "claude plugin": "CLI 명령",
         "claude plugins": "CLI 명령",
         "claude plugin install code-review@claude-plugins-official": "CLI 명령",
-        "claude project purge": "CLI 명령",
+        "claude purge": "CLI 명령",
         "-i": "옵션/플래그",
         "--interactive": "옵션/플래그",
         "--all": "옵션/플래그",
@@ -1012,6 +1012,7 @@
         "/allowed-tools": "슬래시 명령",
         "/plugin": "슬래시 명령",
         "/reload-plugins": "슬래시 명령",
+        "/plugin-authoring": "슬래시 명령",
         "/powerup": "슬래시 명령",
         "/pr-comments": "슬래시 명령",
         "/privacy-settings": "슬래시 명령",
@@ -1081,7 +1082,6 @@
         "claude Code also opts the session in. The flag doesn’t affect MCP tools; to deny those too": "CLI 명령",
         "claude Code generates one. Pass": "CLI 명령",
         "claude Code provides five flags for customizing the system prompt. Four set its text": "CLI 명령",
-        "claude Code builds the system prompt once": "CLI 명령",
         "claude Code also opens dialog commands such as": "CLI 명령",
         "claude Code queued those dialogs until the turn finished.": "CLI 명령",
         "claude delegates side tasks to": "CLI 명령",
@@ -1133,6 +1133,13 @@
           "date": "2026-10-01"
         },
         {
+          "command": "/plugin-authoring",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-04"
+        },
+        {
           "command": "/slides",
           "category": "슬래시 명령",
           "status": "new",
@@ -1168,11 +1175,32 @@
           "date": "2026-10-02"
         },
         {
+          "command": "claude purge",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-04"
+        },
+        {
           "command": "/claude-api",
           "category": "슬래시 명령",
           "status": "unconfirmed",
           "statusText": "공식 문서에서 확인되지 않음",
           "date": "2026-10-01"
+        },
+        {
+          "command": "claude Code builds the system prompt once",
+          "category": "CLI 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-04"
+        },
+        {
+          "command": "claude project purge",
+          "category": "CLI 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-04"
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "revision": 0,
   "updated_at": null,
   "collection_interval_hours": 1,
@@ -48,6 +48,8 @@
     "xai-news": true,
     "claude-dev-blog": true
   },
+  "custom_sources": [],
+  "source_urls": {},
   "sources": {
     "hacker-news": {
       "enabled": true,
@@ -144,6 +146,5 @@
     "page_size": 10,
     "sort": "latest"
   },
-  "daily_target": 10,
-  "custom_sources": []
+  "daily_target": 10
 }
