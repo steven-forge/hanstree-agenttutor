@@ -1,8 +1,8 @@
 {
   "edition_date": "2026-10-06",
-  "window_start": "2026-08-07T01:02:49.192999+09:00",
-  "window_end": "2026-10-06T01:02:49.192999+09:00",
-  "collected_at": "2026-10-06T03:04:24.854134+09:00",
+  "window_start": "2026-08-07T07:02:39.067765+09:00",
+  "window_end": "2026-10-06T07:02:39.067765+09:00",
+  "collected_at": "2026-10-06T07:03:12.919824+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -21,6 +21,42 @@
       "source_summary_ko": "# # 버그 수정 - 명시적으로 구성된 원격 환경 변수가 있는 원격 stdio MCP 서버를 실행할 때 `SYSTEMROOT', 'TEMP' 및 `TMP` 를 유지하여 Unix 호스트가 Windows 실행기의 시작 환경을 유지할 수 있도록 합니다. # # 변경 로그 - [# 51121] (https://github.com/openai/codex/pull/51121): Windows 원격 MCP 환경 보존을 0.160으로 백포트합니다.",
       "release_notes_ko": {
         "bug_fixes": "명시적으로 구성된 원격 환경 변수가 있는 원격 stdio MCP 서버를 시작할 때 `SYSTEMROOT', 'TEMP' 및 `TMP` 를 유지하여 Unix 호스트가 Windows 실행기의 시작 환경을 유지할 수 있도록 합니다."
+      }
+    },
+    {
+      "id": "3685b45efb88af11",
+      "title": "OpenAI is adding text watermarking in ChatGPT and Codex",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act",
+      "source_summary": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or exceeded\" other approaches like Google DeepMind's SynthID for text, which is also the basis for the watermarking Anthropic announced in August. Like OpenAI, Anthropic […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-06T07:03:12+09:00",
+      "published_at": "2026-10-05T18:08:39+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu",
+          "independent": true
+        }
+      ],
+      "title_ko": "OpenAI는 ChatGPT 및 Codex에 텍스트 워터마킹을 추가하고 있습니다.",
+      "source_summary_ko": "EU에서 텍스트 워터마킹 도입.\n출시 시 텍스트 워터마킹을 전역 기본값으로 설정하지 않습니다.\nAPI 고객을 위한 옵트인 워터마킹 활성화.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Rolling out text watermarking in the EU.",
+        "ko": "EU에서 텍스트 워터마킹 도입."
       }
     },
     {
@@ -1588,6 +1624,22 @@
         "new_features": "이전 모델에 대한 Amazon Bedrock 지원 및 마이그레이션 프롬프트를 포함하여 GPT-6 Sol 및 Luna가 추가되었습니다.\n기본적으로 전체 화면 대본을 사용하도록 설정하고 Shift-클릭을 추가하여 텍스트 선택 영역을 확장합니다.\n적합한 대화형 세션에 대해 자동 백그라운드 서버 시작을 활성화하고 서버 설정이 호환되지 않을 때 복구를 선택합니다.",
         "bug_fixes": "스레드를 전환할 때 활성 음성 대화가 유지됩니다.\n활성 히스토리 검색을 방해하지 않고 턴이 끝나면 전송되지 않은 질문 답변을 컴포저로 복구했습니다.\n자동 화면 모드에서 SSH를 통해 tmux 마우스 설정을 존중하고 Terminal.app에 대한 기본 스크롤백을 복원했습니다."
       }
+    },
+    {
+      "id": "6c85667bb456be97",
+      "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/wayfair",
+      "source_summary": "Wayfair uses OpenAI models to improve ecommerce support and product catalog accuracy, automating ticket triage and enhancing millions of product attributes at scale.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-06T07:02:39+09:00",
+      "published_at": "2026-09-25T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Wayfair, OpenAI로 카탈로그 정확도 및 지원 속도 향상",
+      "source_summary_ko": "Wayfair는 OpenAI 모델을 사용하여 전자상거래 지원 및 제품 카탈로그 정확도를 개선하고 티켓 분류를 자동화하며 수백만 개의 제품 속성을 대규모로 향상시킵니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
     },
     {
       "id": "0b14b0c43ad6eee5",
