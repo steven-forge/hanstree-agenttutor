@@ -1,10 +1,139 @@
 {
   "edition_date": "2026-10-07",
-  "window_start": "2026-08-07T13:03:04.944669+09:00",
-  "window_end": "2026-10-06T13:03:04.944669+09:00",
-  "collected_at": "2026-10-07T00:11:11.723173+09:00",
+  "window_start": "2026-08-08T06:01:17.998807+09:00",
+  "window_end": "2026-10-07T06:01:17.998807+09:00",
+  "collected_at": "2026-10-07T06:02:21.611083+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "04d61de5c9f9c672",
+      "title": "Release v0.63.0",
+      "source_id": "gemini-releases",
+      "source_name": "Gemini CLI Releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.63.0",
+      "source_summary": "## What's Changed * fix(cli): display retry progress indicator during connection recovery (#28340) by @amelidev in https://github.com/google-gemini/gemini-cli/pull/29468 * Changelog for v0.61.0-preview.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29469 * Changelog for v0.61.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29472 * fix(cli): distinguish missing MCP enablement config from malformed JSON by @jesussamuel-byte in https://github.c",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:01:48+09:00",
+      "published_at": "2026-10-06T20:38:49+00:00",
+      "date_precision": "time",
+      "title_ko": "Gemini CLI v0.63.0 버전 출시",
+      "source_summary_ko": "# # 변경 사항 * FIX (CLI): https://github.com/google-gemini/gemini-cli/pull/29468에서 @ amelidev의 연결 복구 중 재시도 진행률 표시기 (# 28340) 표시 * https://github.com/google-gemini/gemini-cli/pull/29468의 @ gemini-cli-robot의 v0.61.0-preview.1에 대한 변경 로그 * https://github.com/google-gemini/gemini-cli/pull/29472의 @ gemini-cli-robot의 v0.61.0에 대한 변경 로그 * https://github.com/google-gemini/gemini-cli/pull/29472 * FIX (CLI) 에서 누락된 MCP 활성화 구성 구별 https://github.c에서 @ jesussamuel-byte의 잘못된 형식의 JSON",
+      "release_notes_ko": {
+        "bug_fixes": "fix (cli): 연결 복구 중 재시도 진행률 표시기 표시\nfix (cli): 누락된 MCP 활성화 구성과 잘못된 형식의 JSON 구별\nfix (cli): 기능 감지 후 일시 중지된 stdin 복원",
+        "chores": "V0.61.0-preview.1에 대한 변경 로그\nV0.61.0에 대한 변경 로그\nchore (release): 0.63.0-nightly.20260923.gf50ba8608로 범프 버전"
+      }
+    },
+    {
+      "id": "5efca30fd2326e3a",
+      "title": "How AI decision models could change content moderation",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation",
+      "source_summary": "On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T20:35:20+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation",
+          "independent": true
+        }
+      ],
+      "title_ko": "인공지능 의사 결정 모델이 콘텐츠 검토를 바꿀 수 있는 방법",
+      "source_summary_ko": "의사 결정 모델이 업계 전반으로 확산됨에 따라, 무수비라는 회사는 이를 업무에 적용하는 방법에 대한 새로운 아이디어인 콘텐츠 조정에 착수했습니다.\n텍스트를 출력하는 대신 의사 결정 모델은 결과 확률을 출력하지만, 이 경우 모델은 이진 판단을 출력합니다. 콘텐츠가 범주에 있거나 그렇지 않습니다.\n무엇이든, 회사는 의사 결정 모델에 대한 새로운 관심을 사용하여 콘텐츠 조정에 빛을 비추고자 합니다. 제품 발표에 따르면 \"JEV가 눈길을 끌었다면, PolicyLM-1.7B는 콘텐츠 검토를 위해 특별히 훈련된 동일한 종류의 모델로, 사용자가 직접 실행할 수 있습니다.\" 라고 합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "As decision models spread across the industry, a company called Musubi has a new idea for how to put them to work: moderating content.",
+        "ko": "의사 결정 모델이 업계 전반으로 확산됨에 따라, 무수비라는 회사는 이를 업무에 적용하는 방법에 대한 새로운 아이디어인 콘텐츠 조정에 착수했습니다."
+      }
+    },
+    {
+      "id": "f1ec779e602e7824",
+      "title": "AI computing startup Lambda to raise $4B ahead of planned IPO",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/ai-computing-startup-lambda-to-raise-4b-ahead-of-planned-ipo",
+      "source_summary": "Nvidia-backed Lambda is raising up to $4 billion at a $14.5 billion pre-money valuation ahead of a planned 2027 IPO, led by Coatue and Blackstone.",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T20:00:30+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/ai-computing-startup-lambda-to-raise-4b-ahead-of-planned-ipo",
+          "independent": true
+        }
+      ],
+      "title_ko": "AI 컴퓨팅 스타트업 Lambda, 계획된 IPO에 앞서 $ 40B 조달",
+      "source_summary_ko": "저널이 검토한 투자자들에게 보낸 서한에 따르면 람다의 잔고는 6월 150억 달러 ($) 에서 9월 500억 달러 ($) 로 증가했습니다.\nLambda와 같은 네오클라우드의 경우 수요는 충족하는 비용만큼 문제가 되지 않습니다.\n람다, 코아투, 블랙스톤은 논평 요청에 즉각 응하지 않았다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "A letter to investors reviewed by the Journal shows Lambda’s backlog grew from $15 billion in June to $50 billion in September.",
+        "ko": "저널이 검토한 투자자들에게 보낸 서한에 따르면 람다의 잔고는 6월 150억 달러 ($) 에서 9월 500억 달러 ($) 로 증가했습니다."
+      }
+    },
+    {
+      "id": "55a44998a2a04755",
+      "title": "The next hurdle for AI agents: getting websites to let them in",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in",
+      "source_summary": "Personal AI agents promise to shop, book flights, and make reservations for you. But deliberate blocks and anti-bot defenses are getting in the way, leaving consumers caught in the middle. A new standard aims to help.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T19:56:50+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/the-next-hurdle-for-ai-agents-getting-websites-to-let-them-in",
+          "independent": true
+        }
+      ],
+      "title_ko": "AI 상담원의 다음 장애물: 웹사이트를 들여보내기",
+      "source_summary_ko": "Meta's Muse, Instinct, ChatGPT's Dots 등과 같은 개인 AI 에이전트는 단순한 쿼리에 응답하는 것 이상을 포함하는 새로운 소비자 AI의 물결을 시작합니다.\n가장 최근에는 Amazon이 소매 사이트에서 Meta의 Muse AI 에이전트를 차단하기 시작했으며, 이는 에이전트가 더 이상 제품 카탈로그를 탐색하거나 구매할 수 없음을 의미합니다.\n그러나 Cloudflare가 Muse와 같은 개인 AI 에이전트의 차단으로 인해 어떤 일이 일어나고 있는지에 대한 통찰력이 있는지 물었을 때 회사는 현재 공유 할 특정 데이터가 없다고 말했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "However, the problem is not limited to Amazon or Muse.",
+        "ko": "그러나 문제는 아마존이나 뮤즈에만 국한되지 않습니다."
+      }
+    },
+    {
+      "id": "2bd8707fdab8226a",
+      "title": "Expanding the Cyber Verification Program",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/news/cyber-verification-program",
+      "source_summary": "We’re launching a new, expanded version of our Cyber Verification Program (CVP), which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:01:57+09:00",
+      "published_at": "2026-10-06T19:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "사이버 인증 프로그램 확대",
+      "source_summary_ko": "각 등급에는 Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1 및 앞으로 출시될 새로운 모델을 포함하여 가장 유능한 모델에 대한 액세스 권한이 포함됩니다.\n요건을 충족하는 조직은 Red Team Access 애플리케이션을 검토하는 동안 Defense Access 등급에 등록됩니다.\n액세스 신청 관심 있는 조직은 여기에서 CVP에 신청할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward.",
+        "ko": "각 등급에는 Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1 및 앞으로 출시될 새로운 모델을 포함하여 가장 유능한 모델에 대한 액세스 권한이 포함됩니다."
+      }
+    },
     {
       "id": "0c734930a759f57a",
       "title": "v2.1.292",
@@ -23,6 +152,310 @@
         "new_features": "`CLAUDE PLUGIN INSTALL` 에 `--marketplace' 추가: 필요한 경우 'CLAUDE PLUGIN MARKETPLACE ADD` 와 동일한 정책 검사 하에 마켓플레이스를 추가한 다음 플러그인을 설치합니다. 에이전트 도구에 `노력` 매개 변수를 추가하므로\n <source>Claude는 요청한 노력 수준에서 하위 에이전트를 실행합니다.",
         "bug_fixes": "자동 모드를 사용할 수 없을 때 `permissionMode: auto` 가 자동 모드로 들어가는 하위 에이전트 정의 수정 (설정, 회로 차단기 또는 이를 지원하지 않는 모델에 의해 비활성화됨)\n'~/.claude/seed-admin' 에서 `/ultrareview` 업로드의 스테이징된 파일 사본을 읽을 수 있는 샌드박스 명령 수정",
         "chores": "보안: PreToolUse hook approvals and auto mode bypassing the permission prompt for file reads from network (UNC) paths 수정\n'claude -p` 및 SDK 세션의 시작 개선: 첫 번째 턴은 더 이상 HTTP 및 SSE MCP 서버가 `리소스/목록` 에 응답할 때까지 기다리지 않습니다.\n글머리 기호가 길거나 번호가 매겨진 답변의 렌더링 속도 향상: 대화록 (ctrl + o) 에서 훨씬 빠르게 스트리밍, 크기 조정 및 다시 열립니다."
+      }
+    },
+    {
+      "id": "30cf4018af60ea82",
+      "title": "‘Artificial’ Roasts AI’s Creators—and Sends a Dark Warning About Its Dangers",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/artificial-roasts-ais-creators-and-sends-a-dark-warning-about-its-dangers",
+      "source_summary": "From their dorky parties to their weird walks, the movie holds OpenAI CEO Sam Altman and other stakeholders with contempt, while demonstrating their recklessness.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T18:45:39+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/artificial-roasts-ais-creators-and-sends-a-dark-warning-about-its-dangers",
+          "independent": true
+        }
+      ],
+      "title_ko": "‘인위적’ 으로 AI의 크리에이터를 배회하고 그 위험에 대해 어둠의 경고를 보냅니다.",
+      "source_summary_ko": "OpenAI와 인공 지능 군비 경쟁에 관한 새로운 코미디 드라마 인 Artificial은 이상한 산책의 영화입니다.\nOpenAI가 Artificial에 문제를 일으켰을 수 있다는 것은 타당합니다.\nArtificial에는 Sutskever의 캐릭터에 대한 Altman의 매혹적인 구애에 그 색조가 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Artificial, the new comedy-drama about OpenAI and the artificial intelligence arms race, is a movie of weird walks.",
+        "ko": "OpenAI와 인공 지능 군비 경쟁에 관한 새로운 코미디 드라마 인 Artificial은 이상한 산책의 영화입니다."
+      }
+    },
+    {
+      "id": "a3a57c5cc9d74cca",
+      "title": "Hark releases an AI personal assistant with a focus on privacy",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy",
+      "source_summary": "The AI lab's personal assistant is an operating system from the future designed to compete with Muse, Dots, and Instinct.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T18:22:45+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/hark-releases-an-ai-personal-assistant-with-a-focus-on-privacy",
+          "independent": true
+        }
+      ],
+      "title_ko": "Hark는 개인 정보 보호에 중점을 둔 AI 개인 비서를 공개합니다",
+      "source_summary_ko": "이 기반은 컴퓨터 사용을 위해 특별히 훈련된 모델이며, Hark Pro는 이를 위해 컴퓨터를 사용합니다.\nHark에서 디자인을 이끄는 전 Apple 직원인 Abidur Chowdhury가 제품을 시연했습니다.\n이 소프트웨어는 Hark의 약속의 절반에 불과합니다. Chowdhury는 Apple에서 그의 이름 디자인 장치를 만들었고 Hark는 2027년에 소프트웨어를 지원하기 위해 AI 네이티브 장치를 출시하겠다고 약속했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The foundation is a model trained specifically for computer use, and that’s what Hark Pro does — it uses your computer for you.",
+        "ko": "이 기반은 컴퓨터 사용을 위해 특별히 훈련된 모델이며, Hark Pro는 이를 위해 컴퓨터를 사용합니다."
+      }
+    },
+    {
+      "id": "339c80545a07bec2",
+      "title": "Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story.",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/github-reviewbench-code-review",
+      "source_summary": "If there’s one thing the AI software engineering world doesn’t lack, it’s benchmarks. Want to know whether an agent can The post Copilot tops GitHub’s own AI code review benchmark. An independent one tells a different story. appeared first on The New Stack .",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T18:06:25+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/github-reviewbench-code-review",
+          "independent": true
+        }
+      ],
+      "title_ko": "Copilot은 GitHub의 자체 AI 코드 검토 벤치마크를 능가합니다. 독립적인 사람은 다른 이야기를 합니다.",
+      "source_summary_ko": "AI 소프트웨어 엔지니어링 세계에서 한 가지 부족하지 않은 것이 있다면 바로 벤치마크입니다. 상담원이 할 수 있는지 알고 싶음 POST Copilot은 GitHub의 자체 AI 코드 검토 벤치마크를 능가합니다. 독립적인 사람이 다른 이야기를 합니다. 이 (가) The New Stack에 처음 등장했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "c5bf8a51f1d8c51e",
+      "title": "OpenAI Is Pissing Off a Bunch of Mathematicians—Again",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/openai-is-pissing-off-a-bunch-of-mathematicians-again",
+      "source_summary": "“There’s a perception of mobster behavior” from leading AI companies, one mathematician tells WIRED as OpenAI prepares to release more than 100 new solutions to unsolved problems.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T17:28:33+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/openai-is-pissing-off-a-bunch-of-mathematicians-again",
+          "independent": true
+        }
+      ],
+      "title_ko": "OpenAI가 많은 수학자들을 화나게 하고 있습니다 - 다시 시작하세요",
+      "source_summary_ko": "두 사람은 작품을 출판하지는 않았지만 OpenAI의 도구를 사용하여 도움을 주었습니다.\n노트에 따르면, Bubeck은 Buckmaster가 OpenAI가 자신의 작품을 훔쳤다는 자신의 믿음을 언론에 알리겠다고 위협했을 때 Buckmaster가 자신의 경력을 망칠 것이라고 제안하는 것처럼 보였습니다.\nOpenAI는 이러한 도구를 사용하도록 직접 권장되었지만 \"동작을 변경하지 않았습니다\" 라고 Kra는 말합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The pair hadn’t published their work but had been using OpenAI’s tools to help them.",
+        "ko": "두 사람은 작품을 출판하지는 않았지만 OpenAI의 도구를 사용하여 도움을 주었습니다."
+      }
+    },
+    {
+      "id": "4cbf0858f5fccc88",
+      "title": "SAP acquires TechWolf to feed more context into its HR agents",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/sap-acquires-techwolf-skills",
+      "source_summary": "SAP on Tuesday announced that it has agreed to acquire TechWolf, a Belgian AI company that maps what employees work on The post SAP acquires TechWolf to feed more context into its HR agents appeared first on The New Stack .",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T16:52:54+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/sap-acquires-techwolf-skills",
+          "independent": true
+        }
+      ],
+      "title_ko": "SAP는 TechWolf를 인수하여 HR 에이전트에 더 많은 컨텍스트를 제공합니다",
+      "source_summary_ko": "SAP는 화요일에 직원들이 일하는 것을 매핑하는 벨기에 AI 회사 인 TechWolf를 인수하기로 합의했다고 발표했습니다. SAP는 TechWolf를 인수하여 HR 에이전트에 더 많은 맥락을 부여합니다. The New Stack에 처음 등장했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "7e5fed36b45958f5",
+      "title": "“There is just not a room for error”: SAP is putting its AI agents in the back office",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/sap-connect-joule-assistants",
+      "source_summary": "Earlier this year, at its Sapphire conference, SAP outlined its plans for an “Autonomous Enterprise” run in large part by The post “There is just not a room for error”: SAP is putting its AI agents in the back office appeared first on The New Stack .",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T16:38:04+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/sap-connect-joule-assistants",
+          "independent": true
+        }
+      ],
+      "title_ko": "\"오류의 여지가 없습니다\": SAP는 AI 에이전트를 백 오피스에 배치하고 있습니다.",
+      "source_summary_ko": "올해 초 SAP는 사파이어 컨퍼런스에서 The post \"There is just not a room for error\": SAP is putting its AI agents in the back office appeared first on The New Stack.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "10921d448731c7a4",
+      "title": "Mirror Particle is building a ‘world model’ of human behavior",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/mirror-particle-is-building-a-world-model-of-human-behavior",
+      "source_summary": "Mirror Particle will launch at TechCrunch Disrupt's Startup Battlefield 200 with a world model built from scratch to predict human behavior, arguing that LLM role-play falls short for market research and brand strategy.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T16:35:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/mirror-particle-is-building-a-world-model-of-human-behavior",
+          "independent": true
+        }
+      ],
+      "title_ko": "미러 파티클은 인간 행동의 ‘세계 모델’ 을 구축하고 있습니다.",
+      "source_summary_ko": "지난 한 해 동안 Simile은 20억 달러의 가치 평가로 2억 달러를 모금했고, Aaru는 10억 달러의 가치 평가로 8,800만 달러를 모금했으며, 지난 1월 44억 8,000만 달러의 가치 평가로 4억 8,000만 달러의 대규모 종자 라운드를 발표한 AI 스타트업인 Humans & 는 인간 행동을 모델링하기 위해 Persimmon을 출시했습니다.\n미러 파티클 (Mirror Particle) 은 또 다른 접근 방식을 취하고 있습니다. 기초 모델을 구축하거나 아후자 (Ahuja) 가 설명한 것처럼 인간이 왜 그들이하는 일을하고 시간이 지남에 따라 인간의 행동이 어떻게 변하는지를 시뮬레이션하는 처음부터 만들어진 세계 모델입니다. 아후자는 \"우리는 정적인 사람을 붙잡고 싶지 않습니다.\" 라고 말했습니다. “우리는 변화하는 사람을 포착하고 싶습니다.\n이 회사는 다음 주 10월 13일부터 15일까지 샌프란시스코에서 열리는 TechCrunch Disrupt 2026에서 열리는 TechCrunch의 유명한 스타트업 대회인 Startup Battlefield 200에서도 경쟁하고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Startups that promise to predict how humans will behave are having a moment.",
+        "ko": "인간이 어떻게 행동할지 예측하겠다고 약속하는 스타트업들은 잠시 시간을 보내고 있습니다."
+      }
+    },
+    {
+      "id": "bccd44d02d6412ca",
+      "title": "We can’t just change the definition of ‘recording’",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/column/1005697/we-cant-just-change-the-definition-of-recording",
+      "source_summary": "With AI hardware, tech companies are pushing the definition of what does and doesn't constitute a recording. For most of gadget history, it'd be reasonable to assume that a device with a microphone or camera is either recording you or it isn't; it's either on or off, without much gray area. Microphones capture sound. Cameras […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T16:29:44+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/column/1005697/we-cant-just-change-the-definition-of-recording",
+          "independent": true
+        }
+      ],
+      "title_ko": "‘녹음‘ 의 정의만 바꿀 수는 없습니다.",
+      "source_summary_ko": "이는 Apple Watch Series 12 및 Apple Watch Ultra 4의 Apple 오디오 인텔리전스와 유사합니다.\n스마트 안경의 카메라가 데이터를 기록하지 않는다면 어떨까요?\n기술 회사가 시각적 영상을 기록하지 않는 카메라를 추가하기 시작하면 이는 더욱 악화될 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "It’s similar to Apple’s Audio Intelligence on the Apple Watch Series 12 and Apple Watch Ultra 4.",
+        "ko": "이는 Apple Watch Series 12 및 Apple Watch Ultra 4의 Apple 오디오 인텔리전스와 유사합니다."
+      }
+    },
+    {
+      "id": "2896758265cec81d",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/atlassian-partnership",
+      "source_summary": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:01:20+09:00",
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Atlassian과 OpenAI는 파트너십을 확대하여 전사적 지식을 행동으로 옮깁니다.",
+      "source_summary_ko": "Atlassian과 OpenAI는 프론티어 모델과 엔터프라이즈 지식을 연결하고 팀이 업무를 계획, 구축 및 제공할 수 있도록 파트너십을 확장하고 있습니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "f9ac1e263cb95c2e",
+      "title": "Anthropic is giving startups a free year of Claude Team and $1,000 in credits",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/anthropic-gives-startups-a-free-year-of-enterprise-service-and-1000-in-token-credits",
+      "source_summary": "\"We created this program because we believe the benefits of AI will reach most people through the companies that build on top of models, rather than through the models alone.\"",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T16:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/anthropic-gives-startups-a-free-year-of-enterprise-service-and-1000-in-token-credits",
+          "independent": true
+        }
+      ],
+      "title_ko": "Anthropic은 스타트업에게 Claude Team과 $ 1,000 크레딧을 무료로 제공합니다",
+      "source_summary_ko": "또한 기업은 서비스에 대한 플러그인을 구축할 수 있는 Claude Marketplace에 액세스할 수 있습니다.\n관심 있는 기업은 Claude for Startups 프로그램 페이지를 통해 신청할 수 있습니다.\n스타트업은 TechCrunch의 핵심이므로 매주 최고의 서비스를 받으세요.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Companies will also get access to Claude Marketplace, which lets them build plug-ins for the service.",
+        "ko": "또한 기업은 서비스에 대한 플러그인을 구축할 수 있는 Claude Marketplace에 액세스할 수 있습니다."
+      }
+    },
+    {
+      "id": "c4ec33fe0020f756",
+      "title": "LibreOffice says ‘no AI’ is now a software feature",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/06/libreoffice-says-no-ai-is-now-a-software-feature",
+      "source_summary": "The maker of the open source document editor says it has no plans to add AI to its software's default configuration, citing user privacy.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:21+09:00",
+      "published_at": "2026-10-06T15:25:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/06/libreoffice-says-no-ai-is-now-a-software-feature",
+          "independent": true
+        }
+      ],
+      "title_ko": "LibreOffice는 ‘no AI’ 가 이제 소프트웨어 기능이라고 말합니다.",
+      "source_summary_ko": "인공 지능을 사용하지 않는 문서 편집기를 찾고 있다면 LibreOffice가 당신을 위한 소프트웨어일 수 있습니다.\n오픈 소스 문서 편집기 LibreOffice의 비영리 소프트웨어 제조업체인 Document Foundation은 이번 주 블로그 게시물에서 AI를 거부하지는 않지만 가까운 장래에 AI를 소프트웨어에 \"추가하지 않을 것\" 이라고 말했습니다.\n보안 편집자 Zack Whittaker는 TechCrunch의 보안 편집자입니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "If you’re looking for a document editor that doesn’t use artificial intelligence, LibreOffice may be just the software for you.",
+        "ko": "인공 지능을 사용하지 않는 문서 편집기를 찾고 있다면 LibreOffice가 당신을 위한 소프트웨어일 수 있습니다."
       }
     },
     {
@@ -290,6 +723,22 @@
         "original": "The program connects emerging AI practices with established concerns in architecture, distributed systems, data platforms, observability, performance, and technical leadership.",
         "ko": "이 프로그램은 새로운 AI 관행을 아키텍처, 분산 시스템, 데이터 플랫폼, 관찰 가능성, 성능 및 기술 리더십에서 확립된 관심사와 연결합니다."
       }
+    },
+    {
+      "id": "f57eff9c23a4454b",
+      "title": "Advancing computer use with Ironclad",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "source_summary": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+      "why_it_matters": "AI를 배우고 사용하는 사람이 넓어질수록 쉬운 교육과 연령에 맞는 보호 장치가 중요해집니다. 초보자는 사용법뿐 아니라 개인정보와 잘못된 답을 확인하는 방법도 함께 익혀야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:01:18+09:00",
+      "published_at": "2026-10-06T10:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Ironclad로 컴퓨터 사용 개선",
+      "source_summary_ko": "OpenAI와 Ironclad가 복잡한 계약 워크플로우에 대해 AI 상담원을 교육하고 평가하여 전문적인 업무를 위한 컴퓨터 사용을 촉진하는 방법을 알아보세요.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
     },
     {
       "id": "ea578d7118702a73",
@@ -960,6 +1409,22 @@
       "title_ko": "EU 텍스트 출처 규칙에 대한 당사의 접근 방식",
       "source_summary_ko": "OpenAI가 EU 규칙에 따라 텍스트 워터마킹에 접근하는 방법. 워터마크가 적용되는 위치, 탐지 방법, 연구자로부터 액세스가 시작되는 이유에 대해 알아보세요.",
       "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "0ed96e1536caec1a",
+      "title": "Claude Code in the cloud: a field guide to cloud sessions",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/claude-code-in-the-cloud",
+      "source_summary": "Cloud sessions run Claude Code on a fresh VM for each task. Four real sessions, seven workflows that suit them, and how to connect GitHub without getting stuck.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T06:02:14+09:00",
+      "published_on": "2026-10-06",
+      "date_precision": "day",
+      "title_ko": "클라우드의 클로드 코드: 클라우드 세션에 대한 현장 가이드",
+      "source_summary_ko": "클라우드 세션은 각 작업마다 새로운 가상 머신에서 Claude Code를 실행합니다. 실제 세션 4개, 그에 맞는 워크플로 7개, 그리고 막힘없이 GitHub에 연결하는 방법을 소개합니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
     },
     {
       "id": "227ec0f2de5079af",
