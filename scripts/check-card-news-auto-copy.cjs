@@ -7,7 +7,9 @@ const assert = require('node:assert/strict');
 const ts = require('typescript');
 const root = path.resolve(__dirname, '..');
 const readJson = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
-const content = {todayData: readJson('data/today.json'), newsEditorial: readJson('data/news-editorial.json')};
+const content = {todayData: readJson('data/today.json'), newsEditorial: readJson('data/news-editorial.json'), glossaryTerms: readJson('data/glossary.json').terms};
+const explore = readJson('data/explore.json');
+const siteUrl = 'https://hanstree-agenttutor-jgwu.vercel.app';
 const cache = new Map();
 class AdminError extends Error {}
 function load(relative) {
@@ -23,10 +25,11 @@ function load(relative) {
       if (id === 'server-only') return {};
       if (id === 'node:crypto') return require('node:crypto');
       if (id === '../../content') return content;
-      if (id === '../../today/newsHelpers') return {RELEASE_SOURCE_IDS: new Set(['codex-releases', 'claude-releases', 'gemini-releases', 'grok-releases'])};
+      if (id === '../../today/newsHelpers') return {SITE_URL: siteUrl, RELEASE_SOURCE_IDS: new Set(['codex-releases', 'claude-releases', 'gemini-releases', 'grok-releases'])};
       if (id === '../../../data/card-news-copy.json') return readJson('data/card-news-copy.json');
+      if (id === '../../../data/explore.json') return explore;
       if (id === './server') return {AdminError};
-      if (!/^\.\/(?:copy|manual|types)$/.test(id)) throw new Error('Unexpected source dependency');
+      if (!/^\.\/(?:auto-copy|copy|manual|types)$/.test(id)) throw new Error('Unexpected source dependency');
       return load(path.relative(root, path.resolve(path.dirname(file), id + '.ts')));
     },
   }, {filename: file});
@@ -35,13 +38,15 @@ function load(relative) {
 const {selectAutomaticCards, AutoCopyError} = load('app/lib/card-news/auto-copy.ts');
 const {copyIssues} = load('app/lib/card-news/copy.ts');
 const {collectEdition} = load('app/lib/card-news/collect.ts');
+const {supplementCandidates} = load('app/lib/card-news/supplements.ts');
+const {candidateUrlKey} = load('app/lib/card-news/manual.ts');
 const now = new Date('2026-10-06T14:00:00Z');
 const titles = ['우주 관측 모델 공개', '전력 계약 확대', '병원 영상 분석 도입', '반도체 생산 시설 증설', '창작 도구 요금 변경', '정부 정보 공개 제도 개편', '로봇 공장 운영 시작', '학교 교사 교육 지원', '음성 인식 기술 개선', '검색 서비스 국가 확대', '소형 위성 통신 실험', '양자 오류 정정 연구', '번역 품질 평가 발표', '게임 엔진 보안 점검'];
 function candidate(index, ageHours = index + 1) { return {id: `fixture-${index}`, title: titles[index], summary: '확인한 내용을 공개했다. 이용 조건도 함께 밝혔다.', sourceName: '격리 확인용 출처', sourceUrl: `https://example.org/story/${index}`, publishedAt: new Date(now.getTime() - ageHours * 3600000).toISOString(), datePrecision: 'time', origin: 'newsletter'}; }
 let checks = 0;
 function check(name, fn) { fn(); checks++; }
-function failed(input, previous = [], hours = 168) {
-  try { selectAutomaticCards(input, previous, now, hours); assert.fail('Insufficient candidates must fail'); }
+function failed(input, previous = [], hours = 168, previousIds = []) {
+  try { selectAutomaticCards(input, previous, now, hours, previousIds); assert.fail('Insufficient candidates must fail'); }
   catch (error) { assert.ok(error instanceof AutoCopyError, error.message); return error.result; }
 }
 check('ten complete Korean cards retain facts and human-review false', () => {
@@ -111,9 +116,84 @@ check('bounded selectable periods are enforced', () => {
   const input = titles.slice(0, 10).map((_, i) => candidate(i, 200 + i));
   assert.equal(selectAutomaticCards(input, [], now, 336).windowHours, 336);
 });
+function supplement(index, origin, overrides = {}) {
+  const item = candidate(index);
+  return {...item, id: `${origin}:fixture-${index}`, origin, sourceUrl: origin === 'glossary' ? `${siteUrl}/glossary#fixture-${index}` : origin === 'explore' ? `${siteUrl}/explore/fixture-${index}` : item.sourceUrl, ...(origin === 'glossary' ? {publishedAt: '', datePrecision: 'none'} : origin === 'explore' ? {publishedAt: '2026-10-05', datePrecision: 'day'} : {}), ...overrides};
+}
+check('supplements fill only missing cards in release glossary explore priority', () => {
+  const news = titles.slice(0, 7).map((_, index) => candidate(index));
+  const additional = [supplement(9, 'explore'), supplement(8, 'glossary'), supplement(7, 'release')];
+  const result = selectAutomaticCards([...additional, ...news], [], now);
+  assert.equal(result.cards.length, 10);
+  assert.deepEqual(Array.from(result.cards.slice(0, 7), card => card.candidateId), news.map(item => item.id));
+  assert.deepEqual(Array.from(result.cards.slice(7), card => card.candidateId), ['release:fixture-7', 'glossary:fixture-8', 'explore:fixture-9']);
+  assert.ok(result.cards.every(card => card.verified === false));
+});
+check('ten eligible news items need no supplemental card', () => {
+  const input = titles.slice(0, 10).map((_, index) => candidate(index));
+  const result = selectAutomaticCards([supplement(10, 'release', {publishedAt: now.toISOString()}), supplement(11, 'glossary'), ...input], [], now);
+  assert.ok(result.cards.every(card => card.candidateId.startsWith('fixture-')));
+});
+check('previous supplemental stable IDs remain excluded after URL changes', () => {
+  const item = supplement(1, 'glossary', {sourceUrl: `${siteUrl}/glossary#renamed-reference`});
+  const result = failed([item], [], 168, [item.id]);
+  assert.equal(result.eligibleCount, 0);
+  assert.match(result.excluded[0].reason, /이전|발행|게시/);
+});
+check('glossary fragment identities are distinct while article fragments are ignored', () => {
+  const a = supplement(1, 'glossary'), b = supplement(2, 'glossary');
+  assert.notEqual(candidateUrlKey(a.sourceUrl), candidateUrlKey(b.sourceUrl));
+  assert.equal(candidateUrlKey('https://example.org/article#first'), candidateUrlKey('https://example.org/article#second'));
+  assert.equal(failed([a, b]).eligibleCount, 2);
+  assert.equal(failed([a, b], [a.sourceUrl]).eligibleCount, 1);
+});
+check('day-only supplements keep their precision while day-only news are rejected', () => {
+  const result = failed([supplement(0, 'explore'), {...candidate(1), datePrecision: 'day', publishedAt: '2026-10-05'}, supplement(2, 'glossary')]);
+  assert.equal(result.eligibleCount, 2);
+  assert.equal(result.cards.find(card => card.candidateId.startsWith('explore:')).publishedAt, '2026-10-05');
+  assert.equal(result.cards.find(card => card.candidateId.startsWith('glossary:')).publishedAt, '');
+});
+check('invalid future and too-old supplemental dates cannot fill a shortfall', () => {
+  const result = failed([supplement(0, 'explore', {publishedAt: '2026-02-30'}), supplement(1, 'explore', {publishedAt: '2026-10-07'}), supplement(2, 'release', {publishedAt: '2026-09-01', datePrecision: 'day'})]);
+  assert.equal(result.eligibleCount, 0);
+});
+check('fewer than ten news and supplements still returns a clear shortfall', () => {
+  const result = failed([...titles.slice(0, 7).map((_, index) => candidate(index)), supplement(7, 'release'), supplement(8, 'glossary')]);
+  assert.equal(result.eligibleCount, 9); assert.equal(result.cards.length, 9);
+});
+check('adapter preserves dates links and registration order without using global dates', () => {
+  const original = {articles: content.todayData.articles, glossary: content.glossaryTerms, docs: explore.docs};
+  try {
+    content.todayData.articles = [
+      {id: 'stable-release', title: '새 도구 버전 출시', source_id: 'codex-releases', source_name: 'Codex', source_url: 'https://github.com/example/tool/releases/tag/v1', published_at: '2026-10-05T10:00:00Z', release_notes_ko: {new_features: '아직 끝나지 않은 문장의\n종료할 때 메시지가 사라지는 문제를 수정했습니다.'}},
+      {id: 'invalid-release', title: '새 도구 버전 출시', source_id: 'codex-releases', source_name: 'Codex', source_url: 'http://example.org/insecure', published_at: '2026-10-05T10:00:00Z', summary: '문제를 수정했습니다.'},
+    ];
+    content.glossaryTerms = [{id: 'old-term', term: 'Old', korean: '기존 용어', definition: '기존에 등록된 용어를 설명합니다.'}, {id: 'new-term', term: 'New', korean: '새 용어', definition: '새로 등록된 용어를 설명합니다.'}];
+    explore.docs = [{slug: 'short-document', title: '도구 사용에 관한 의미가 완결된 원래 제목이지만 카드 두 줄에 들어가지 않을 만큼 아주 긴 원본 제목: 자세한 설명', summary: '검토를 돕는 도구입니다.', created_at: '2026-10-04', updated_at: '2026-10-05'}, {slug: 'valid-document', title: 'Tool: 아주 긴 제목과 다양한 이용 조건을 모두 확인할 수 있는 원본 문서의 설명', summary: '검토를 돕는 도구입니다. 실행 권한을 바꾸지 않습니다.', created_at: '2026-10-04', updated_at: '2026-10-05'}, {slug: 'future', title: '미래 문서', summary: '미래 문서입니다.', created_at: '2099-01-01'}, {slug: 'invalid-day', title: '날짜 오류', summary: '날짜 오류입니다.', created_at: '2026-02-30'}];
+    const candidates = supplementCandidates('2026-10-06');
+    const release = candidates.find(c => c.origin === 'release');
+    assert.equal(release.id, 'release:stable-release'); assert.equal(release.publishedAt, '2026-10-05T10:00:00.000Z');
+    assert.equal(release.summary, '종료할 때 메시지가 사라지는 문제를 수정했습니다.');
+    assert.deepEqual(Array.from(candidates.filter(c => c.origin === 'glossary'), c => c.id), ['glossary:new-term', 'glossary:old-term']);
+    for (const term of candidates.filter(c => c.origin === 'glossary')) { assert.equal(term.publishedAt, ''); assert.equal(term.datePrecision, 'none'); assert.ok(term.sourceUrl.includes('/glossary#')); }
+    const docs = candidates.filter(c => c.origin === 'explore'); assert.equal(docs.length, 1); assert.equal(docs[0].id, 'explore:valid-document'); assert.equal(docs[0].title, 'Tool: 핵심 정리'); assert.equal(docs[0].datePrecision, 'day'); assert.equal(docs[0].publishedAt, '2026-10-05');
+    for (const item of candidates) assert.equal(copyIssues(item.cardCopy).length, 0);
+    assert.throws(() => supplementCandidates('2026-02-30'));
+  } finally { content.todayData.articles = original.articles; content.glossaryTerms = original.glossary; explore.docs = original.docs; }
+});
+check('different English terms sharing a Korean translation keep distinct usable titles', () => {
+  const original = content.glossaryTerms;
+  try {
+    content.glossaryTerms = [{id: 'inference', term: 'Inference', korean: '추론', definition: '학습된 모델로 입력의 결과를 계산하는 과정입니다.'}, {id: 'reasoning', term: 'Reasoning', korean: '추론', definition: '문제를 해결하기 위해 여러 논리 단계를 연결하는 과정입니다.'}];
+    const terms = supplementCandidates('2026-10-06').filter(c => c.origin === 'glossary');
+    assert.equal(terms.length, 2); assert.notEqual(terms[0].title, terms[1].title);
+    assert.equal(failed(terms).eligibleCount, 2);
+  } finally { content.glossaryTerms = original; }
+});
 (async () => {
   const actualNow = new Date(), date = new Date(actualNow.getTime() + 9 * 3600000).toISOString().slice(0, 10);
   const edition = await collectEdition(date, null);
+  const supplements = supplementCandidates(date);
   const summaries = [];
   for (const hours of [72, 168, 336, 720]) {
     let result, success = true;
@@ -129,5 +209,20 @@ check('bounded selectable periods are enforced', () => {
       summaries[summaries.length - 1].remainingAfterFirstTen = next.eligibleCount;
     }
   }
-  console.log(JSON.stringify({checks, passed: true, at: actualNow.toISOString(), newsletterCandidates: edition.candidates.length, actualData: summaries, externalRequests: 0}, null, 2));
+  const withSupplements = [];
+  for (const hours of [72, 168]) {
+    let result;
+    try { result = selectAutomaticCards([...edition.candidates, ...supplements], [], actualNow, hours); }
+    catch (error) { if (!(error instanceof AutoCopyError)) throw error; result = error.result; }
+    const origins = result.cards.map(card => [...edition.candidates, ...supplements].find(c => c.id === card.candidateId).origin);
+    const eligibleByOrigin = {};
+    for (const origin of ['release', 'glossary', 'explore']) {
+      let partial;
+      try { partial = selectAutomaticCards(supplements.filter(c => c.origin === origin), [], actualNow, hours); }
+      catch (error) { if (!(error instanceof AutoCopyError)) throw error; partial = error.result; }
+      eligibleByOrigin[origin] = partial.eligibleCount;
+    }
+    withSupplements.push({hours, eligible: result.eligibleCount, selected: result.cards.length, origins, eligibleByOrigin});
+  }
+  console.log(JSON.stringify({checks, passed: true, at: actualNow.toISOString(), newsletterCandidates: edition.candidates.length, supplements: {release: supplements.filter(c => c.origin === 'release').length, glossary: supplements.filter(c => c.origin === 'glossary').length, explore: supplements.filter(c => c.origin === 'explore').length}, actualData: summaries, withSupplements, externalRequests: 0}, null, 2));
 })().catch(error => { console.error(error); process.exitCode = 1; });

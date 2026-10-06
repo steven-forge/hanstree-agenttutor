@@ -6,12 +6,13 @@ import { fitCardCopy } from "./copy";
 import { RELEASE_SOURCE_IDS } from "../../today/newsHelpers";
 import { captionFor, preserveDraft, MAX_CANDIDATES, type Edition, type NewsCandidate } from "./types";
 import { AdminError } from "./server";
+import { candidateUrlKey } from "./manual";
 
 function clean(value: unknown, length: number) {
   return (typeof value === "string" ? value : "").replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&(?:nbsp|#160);/g, " ").replace(/\s+/g, " ").trim().slice(0, length);
 }
 export function canonicalUrl(value: unknown) {
-  try { const u = new URL(String(value)); if (u.protocol !== "https:" || u.username || u.password) return ""; u.hash = ""; for (const k of Array.from(u.searchParams.keys())) if (/^(utm_|fbclid|gclid)/.test(k)) u.searchParams.delete(k); return u.toString(); } catch { return ""; }
+  try { const u = new URL(String(value)); if (u.protocol !== "https:" || u.username || u.password) return ""; u.hash = new URL(candidateUrlKey(u.href)).hash; for (const k of Array.from(u.searchParams.keys())) if (/^(utm_|fbclid|gclid)/.test(k)) u.searchParams.delete(k); return u.toString(); } catch { return ""; }
 }
 function candidate(title: unknown, summary: unknown, url: unknown, sourceName: string, published: unknown, window: Pick<Edition, "windowStart" | "windowEnd">, origin: NewsCandidate["origin"]): NewsCandidate | null {
   const sourceUrl = canonicalUrl(url), text = clean(title, 200);

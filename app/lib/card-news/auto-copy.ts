@@ -1,17 +1,17 @@
 import { CARD_TEXT, fitCardCopy, hasEllipsis, wrapCardText, type CardCopy } from "./copy";
 import { candidateUrlKey, exactPublishedTime } from "./manual";
-import type { NewsCandidate, NewsCard } from "./types";
+import { candidateTime, isSupplement, usesContentDate, type NewsCandidate, type NewsCard } from "./types";
 
 export type AutoCopyWindow = 72 | 168 | 336 | 720;
 export type AutoCopyExclusion = { candidateId: string; reason: string };
-export type AutoCopySelection = { candidateId: string; sourceUrl: string; publishedAt: string; copySource: "prepared" | "summary"; ageHours: number };
+export type AutoCopySelection = { candidateId: string; sourceUrl: string; publishedAt: string; copySource: "prepared" | "summary"; ageHours: number | null };
 export type AutoCopyResult = {
   cards: NewsCard[]; selection: AutoCopySelection[]; excluded: AutoCopyExclusion[];
   windowHours: number; maxAgeHours: AutoCopyWindow; eligibleCount: number;
 };
 export class AutoCopyError extends Error {
   constructor(public readonly result: AutoCopyResult) {
-    super(`자동 제작 가능한 뉴스가 ${result.eligibleCount}/10개입니다. 최근 ${result.maxAgeHours / 24}일 안의 새 기사와 짧은 한국어 원고가 더 필요합니다.`);
+    super(`자동 제작 가능한 뉴스·보충 콘텐츠가 ${result.eligibleCount}/10개입니다. 뉴스 또는 미발행 릴리스·용어·Explore의 완결된 한국어 원고가 더 필요합니다.`);
     this.name = "AutoCopyError";
   }
 }
@@ -28,7 +28,7 @@ function usableCopy(copy: CardCopy): CardCopy | null {
   if (!korean(copy.title, 2) || !korean(copy.body, 6) || !complete(copy.body) || introductionOnly(copy.body) || hasEllipsis(copy.title) || hasEllipsis(copy.body)) return null;
   return fitCardCopy(copy);
 }
-function copyFor(candidate: NewsCandidate): { copy?: CardCopy; source?: AutoCopySelection["copySource"]; reason?: string } {
+export function copyFor(candidate: Pick<NewsCandidate, "title" | "summary" | "cardCopy">): { copy?: CardCopy; source?: AutoCopySelection["copySource"]; reason?: string } {
   if (candidate.cardCopy) {
     const copy = usableCopy(candidate.cardCopy);
     if (copy) return { copy, source: "prepared" };
@@ -71,28 +71,31 @@ function sameEvent(left: string, right: string) {
 }
 
 /** Pure selection. No fetch, storage, approval, or publication; never marks a human review. */
-export function selectAutomaticCards(candidates: NewsCandidate[], previousSourceUrls: string[] = [], now = new Date(), maxAgeHours: AutoCopyWindow = 168): AutoCopyResult {
+export function selectAutomaticCards(candidates: NewsCandidate[], previousSourceUrls: string[] = [], now = new Date(), maxAgeHours: AutoCopyWindow = 168, previousCandidateIds: string[] = []): AutoCopyResult {
   if (![72, 168, 336, 720].includes(maxAgeHours) || !Number.isFinite(now.getTime())) throw new Error("자동 제작 기간과 기준 시각을 확인해 주세요.");
   const nowMs = now.getTime(), cutoff = nowMs - maxAgeHours * 3600000;
   const previous = new Set(previousSourceUrls.map(candidateUrlKey).filter(Boolean));
+  const publishedIds = new Set(previousCandidateIds);
   const excluded: AutoCopyExclusion[] = [];
   const available: { candidate: NewsCandidate; copy: CardCopy; source: AutoCopySelection["copySource"]; stamp: number; url: string }[] = [];
   for (const candidate of candidates) {
     const reject = (reason: string) => excluded.push({ candidateId: candidate.id, reason });
-    if (candidate.origin !== "newsletter" && candidate.origin !== "manual") { reject("현재 뉴스레터 또는 직접 등록한 후보가 아닙니다."); continue; }
+    if (candidate.origin !== "newsletter" && candidate.origin !== "manual" && !isSupplement(candidate)) { reject("현재 뉴스레터 또는 보충 콘텐츠 후보가 아닙니다."); continue; }
     const url = candidateUrlKey(candidate.sourceUrl);
     if (!candidate.id || !candidate.sourceName.trim() || !url || /\s|\\/.test(candidate.sourceUrl)) { reject("기사 번호·출처 이름·HTTPS 원문 주소를 확인해야 합니다."); continue; }
-    if (previous.has(url)) { reject("이전에 게시한 원문 주소입니다."); continue; }
-    const stamp = candidate.datePrecision === "time" ? exactPublishedTime(candidate.publishedAt) : NaN;
-    if (!Number.isFinite(stamp)) { reject("시간대가 포함된 정확한 발행 시각이 필요합니다."); continue; }
-    if (stamp > nowMs) { reject("미래 발행 시각입니다."); continue; }
-    if (stamp < cutoff) { reject(`최근 ${maxAgeHours / 24}일 범위 밖의 기사입니다.`); continue; }
+    if (previous.has(url) || publishedIds.has(candidate.id)) { reject("이전에 게시한 원문 주소 또는 콘텐츠입니다."); continue; }
+    const undatedTerm = candidate.origin === "glossary" && candidate.datePrecision === "none" && candidate.publishedAt === "";
+    const stamp = usesContentDate(candidate) ? candidateTime(candidate) : candidate.datePrecision === "time" ? exactPublishedTime(candidate.publishedAt) : NaN;
+    if (!undatedTerm && !Number.isFinite(stamp)) { reject("뉴스 발행 시각 또는 콘텐츠 날짜를 확인해야 합니다."); continue; }
+    if (!undatedTerm && stamp > nowMs) { reject("미래 발행 시각입니다."); continue; }
+    if (!undatedTerm && stamp < cutoff) { reject(`최근 ${maxAgeHours / 24}일 범위 밖의 기사입니다.`); continue; }
     const result = copyFor(candidate);
     if (!result.copy || !result.source) { reject(result.reason || "카드용 원고 정리가 필요합니다."); continue; }
-    available.push({ candidate, copy: result.copy, source: result.source, stamp, url });
+    available.push({ candidate, copy: result.copy, source: result.source, stamp: undatedTerm ? 0 : stamp, url });
   }
-  // A latest-first ordering exhausts 24h, then 72h, then the selected maximum period.
-  available.sort((a, b) => b.stamp - a.stamp);
+  // News always comes first. Undated terms retain the catalog's newest-registration order.
+  const priority = (c: NewsCandidate) => c.origin === "release" ? 1 : c.origin === "glossary" ? 2 : c.origin === "explore" ? 3 : 0;
+  available.sort((a, b) => priority(a.candidate) - priority(b.candidate) || b.stamp - a.stamp);
   const unique: typeof available = [];
   const urls = new Set<string>(), ids = new Set<string>();
   for (const item of available) {
@@ -102,8 +105,8 @@ export function selectAutomaticCards(candidates: NewsCandidate[], previousSource
   }
   const chosen = unique.slice(0, 10);
   for (const item of unique.slice(10)) excluded.push({ candidateId: item.candidate.id, reason: "더 최근의 제작 가능 기사 10개를 우선 선정했습니다." });
-  const selection = chosen.map(item => ({ candidateId: item.candidate.id, sourceUrl: item.candidate.sourceUrl, publishedAt: item.candidate.publishedAt, copySource: item.source, ageHours: (nowMs - item.stamp) / 3600000 }));
-  const oldestAge = Math.max(0, ...selection.map(item => item.ageHours));
+  const selection = chosen.map(item => ({ candidateId: item.candidate.id, sourceUrl: item.candidate.sourceUrl, publishedAt: item.candidate.publishedAt, copySource: item.source, ageHours: item.stamp ? (nowMs - item.stamp) / 3600000 : null }));
+  const oldestAge = Math.max(0, ...selection.map(item => item.ageHours ?? 0));
   const result: AutoCopyResult = {
     cards: chosen.map(({ candidate, copy }) => ({ candidateId: candidate.id, ...copy, sourceName: candidate.sourceName, sourceUrl: candidate.sourceUrl, publishedAt: candidate.publishedAt, verified: false })),
     selection, excluded, eligibleCount: unique.length, maxAgeHours,

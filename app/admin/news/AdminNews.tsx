@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
-import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
+import { cardIssues, captionFor, editionIssues, selectableCandidates, preserveDraft, cardDateIssue, usesContentDate, isSupplement, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
 import { fitCardCopy, copyIssues, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import type { ExtractedArticle } from "../../lib/card-news/article-extract";
@@ -40,18 +40,18 @@ function fromKstInput(value: string) {
   return Number.isFinite(date.getTime()) ? date.toISOString() : "";
 }
 function needsExactTime(card: NewsCard, candidate?: NewsCandidate) {
+  if (usesContentDate(candidate)) return false;
   return !/(Z|[+-]\d{2}:\d{2})$/.test(card.publishedAt) || !Number.isFinite(Date.parse(card.publishedAt)) ||
     (candidate?.datePrecision === "day" && card.publishedAt === candidate.publishedAt);
 }
-function timeIssue(card: NewsCard, edition: Edition) {
-  if (needsExactTime(card, edition.candidates.find(candidate => candidate.id === card.candidateId))) return "원문에서 정확한 발행 시각을 확인해 입력하세요.";
-  const time = Date.parse(card.publishedAt);
-  if (time < Date.parse(edition.windowStart) || time > Date.parse(edition.windowEnd)) return "발행 시각이 이 판본의 후보 기간 밖입니다.";
-  return "";
+function timeIssue(card: NewsCard, edition: Edition) { return cardDateIssue(card, edition); }
+const CONTENT_LABELS = { release: "릴리스", glossary: "용어사전", explore: "Explore" };
+function contentDateLabel(candidate: NewsCandidate) {
+  return candidate.datePrecision === "none" ? "날짜 기록 없음 · 최신 등록순" : candidate.datePrecision === "day" ? `${candidate.publishedAt} · 콘텐츠 날짜` : `${formatTime(candidate.publishedAt)} KST`;
 }
 function candidateCard(candidate: NewsCandidate): NewsCard {
   const copy = fitCardCopy(candidate.cardCopy || { title: candidate.title, body: candidate.summary });
-  return { candidateId: candidate.id, title: copy?.title || "", body: copy?.body || "", sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" ? candidate.publishedAt : "", verified: false };
+  return { candidateId: candidate.id, title: copy?.title || "", body: copy?.body || "", sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" || usesContentDate(candidate) ? candidate.publishedAt : "", verified: false };
 }
 function editableContent(edition: Edition | null) {
   return edition ? JSON.stringify({ cards: edition.cards, caption: edition.caption, candidates: edition.candidates }) : "";
@@ -338,7 +338,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       let applied = 0;
       const cards = edition.cards.map(card => {
         const candidate = refreshed.candidates.find(c => c.id === card.candidateId);
-        const copy = candidate && ["newsletter", "manual"].includes(candidate.origin) && candidate.cardCopy && fitCardCopy(candidate.cardCopy);
+        const copy = candidate && (["newsletter", "manual"].includes(candidate.origin) || isSupplement(candidate)) && candidate.cardCopy && fitCardCopy(candidate.cardCopy);
         if (!copy) return card;
         applied++;
         return { ...card, ...copy, verified: false, verification: undefined };
@@ -407,7 +407,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         </div>
       </div>
       <p className="cn-help">{edition ? `후보 발행 기간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 불러옴 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : "뉴스레터에 공개된 전체 기사를 최신순으로 불러옵니다. 판본 날짜 이후의 기사는 제외합니다."}</p>
-      <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 뉴스레터 공개 기사와 직접 등록한 뉴스를 후보로 사용합니다. 목록은 중요도 순위가 아닙니다.</p>
+      <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 뉴스레터·직접 등록 뉴스를 우선 사용하고, 자동 제작 시 부족하면 릴리스·용어·Explore로 보충합니다. 목록은 중요도 순위가 아닙니다.</p>
       {retainedCount > 0 && <p className="cn-alert cn-alert-info">이전 후보 {retainedCount}개는 원고 보존용으로 남겨 두었습니다. 새 뉴스레터 후보 수에는 포함하지 않으며, 해당 카드는 뉴스레터 후보로 다시 선정해야 합니다.</p>}
       {edition && !edition.candidateSource && <p className="cn-alert cn-alert-info">이전 방식으로 저장한 판본입니다. 뉴스레터 다시 불러오기를 누르면 저장한 카드와 설명을 유지하며 후보를 갱신합니다.</p>}
       <p className="cn-help">직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 위 예약 설정에서 확인하세요.</p>
@@ -415,7 +415,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       {pending && <p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
       {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
-      {edition && candidateCount < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {candidateCount}/10</strong><p>정상 제작 완료 상태가 아닙니다. 뉴스레터의 공개 기사와 수집 상태를 확인한 뒤 다시 불러오세요. 원문·날짜 확인을 통과한 서로 다른 뉴스가 최소 10개 필요합니다.</p></div>}
+      {edition && candidateCount < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {candidateCount}/10</strong><p>정상 제작 완료 상태가 아닙니다. 자동 제작으로 미발행 릴리스·용어·Explore를 보충하거나 뉴스를 직접 등록하세요. 원고 검사를 통과한 서로 다른 콘텐츠 10개가 필요합니다.</p></div>}
       {!localMode && edition && (edition.publication || pending === "publish" || publishUncertain || ["publishing", "needs_check", "published"].includes(edition.status)) && <PublicationProgress key={edition.date} edition={edition} pending={pending} uncertain={publishUncertain} sessionExpired={sessionExpired} onEdition={acceptProgress} onExpired={() => setSessionExpired(true)} onContinue={() => act("reconcile")} />}
     </section>
 
@@ -460,15 +460,15 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       </div>
       <div className="cn-workspace">
         <section className="cn-panel" aria-labelledby="cn-candidates-heading">
-          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. 뉴스 후보 선정</h2><p className="cn-muted">뉴스레터와 직접 등록한 후보에서 서로 다른 뉴스 10개를 골라 주세요.</p></div></div>
+          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. 뉴스 후보 선정</h2><p className="cn-muted">서로 다른 뉴스·보충 콘텐츠 10개를 골라 주세요. 보충 항목에는 종류가 표시됩니다.</p></div></div>
           <label className="cn-field">후보 검색<input type="search" placeholder="제목·출처·내용 검색" value={search} onChange={event => setSearch(event.target.value)} /></label>
           <div className="cn-candidates">
             {candidates.length ? candidates.map(candidate => {
               const index = selected.findIndex(item => item.candidateId === candidate.id);
               return <div className="cn-candidate" key={candidate.id}>
-                <label className="cn-candidate-label"><input type="checkbox" checked={index >= 0} disabled={!canEdit || (selected.length >= 10 && index < 0)} onChange={() => toggleCandidate(candidate)} /><span className="cn-candidate-title">{candidate.title} {candidate.origin === "manual" && <span className="cn-tag">직접 등록</span>} {index >= 0 && <span className="cn-tag cn-tag-info">카드 {index + 1}</span>}</span></label>
+                <label className="cn-candidate-label"><input type="checkbox" checked={index >= 0} disabled={!canEdit || (selected.length >= 10 && index < 0)} onChange={() => toggleCandidate(candidate)} /><span className="cn-candidate-title">{candidate.title} {candidate.origin === "manual" && <span className="cn-tag">직접 등록</span>} {isSupplement(candidate) && <span className="cn-tag">{CONTENT_LABELS[candidate.origin as keyof typeof CONTENT_LABELS]} 보충</span>} {index >= 0 && <span className="cn-tag cn-tag-info">카드 {index + 1}</span>}</span></label>
                 <p>{candidate.summary || "요약이 없습니다. 원문을 읽고 카드 본문을 작성하세요."}</p>
-                <div className="cn-candidate-meta">{safeHref(candidate.sourceUrl) ? <a className="cn-text-link" href={safeHref(candidate.sourceUrl)} target="_blank" rel="noopener noreferrer">{candidate.sourceName || "원문 보기"}</a> : <span>유효한 원문 주소 필요</span>}<span>{candidate.datePrecision === "time" ? `${formatTime(candidate.publishedAt)} KST` : `${candidate.publishedAt} · 날짜만 확인`}</span>{candidate.newsletterId && <a className="cn-text-link" href={`/today/${encodeURIComponent(candidate.newsletterId)}`} target="_blank" rel="noopener noreferrer">뉴스레터 보기</a>}</div>
+                <div className="cn-candidate-meta">{safeHref(candidate.sourceUrl) ? <a className="cn-text-link" href={safeHref(candidate.sourceUrl)} target="_blank" rel="noopener noreferrer">{candidate.sourceName || "원문 보기"}</a> : <span>유효한 원문 주소 필요</span>}<span>{isSupplement(candidate) ? contentDateLabel(candidate) : candidate.datePrecision === "time" ? `${formatTime(candidate.publishedAt)} KST` : `${candidate.publishedAt} · 날짜만 확인`}</span>{candidate.newsletterId && <a className="cn-text-link" href={`/today/${encodeURIComponent(candidate.newsletterId)}`} target="_blank" rel="noopener noreferrer">뉴스레터 보기</a>}</div>
               </div>;
             }) : <p className="cn-muted">{search ? "검색 결과가 없습니다." : "뉴스 후보가 없습니다. 뉴스레터를 불러오거나 뉴스를 직접 등록하세요."}</p>}
           </div>
@@ -493,8 +493,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                     <label className="cn-field">출처 이름<input value={card.sourceName} onChange={event => changeCard({ sourceName: event.target.value })} disabled={!canEdit} /></label>
                     <label className="cn-field">원문 주소<input type="url" value={card.sourceUrl} onChange={event => changeCard({ sourceUrl: event.target.value })} disabled={!canEdit} /></label>
                     {safeHref(card.sourceUrl) && <a className="cn-text-link" href={safeHref(card.sourceUrl)} target="_blank" rel="noopener noreferrer">원문을 새 탭에서 확인</a>}
-                    <label className="cn-field">확인한 발행 시각 · KST<input type="datetime-local" step="1" value={exactTimeNeeded ? "" : kstInput(card.publishedAt)} onChange={event => changeCard({ publishedAt: fromKstInput(event.target.value) })} disabled={!canEdit} /><small>{exactTimeNeeded ? "날짜만으로 선정 구간 안의 기사인지 판단할 수 없습니다. 원문의 정확한 시각이 필요합니다." : "기사 작성·추가 공개 시각과 사건 발생 시점을 구분해 주세요."}</small></label>
-                    <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>원문·수치·발행 시각을 확인했고 다른 카드와 같은 사건이 아님을 확인했습니다.</span></label>
+                    {usesContentDate(currentCandidate) ? <p className="cn-help">콘텐츠 기준: {contentDateLabel(currentCandidate!)}. 원문 기록을 사용하며 시각을 임의로 만들지 않습니다.</p> : <label className="cn-field">확인한 발행 시각 · KST<input type="datetime-local" step="1" value={exactTimeNeeded ? "" : kstInput(card.publishedAt)} onChange={event => changeCard({ publishedAt: fromKstInput(event.target.value) })} disabled={!canEdit} /><small>{exactTimeNeeded ? "날짜만으로 선정 구간 안의 기사인지 판단할 수 없습니다. 원문의 정확한 시각이 필요합니다." : "기사 작성·추가 공개 시각과 사건 발생 시점을 구분해 주세요."}</small></label>}
+                    <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>원문·수치·기록된 날짜를 확인했고 다른 카드와 같은 내용이 아님을 확인했습니다.</span></label>
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">

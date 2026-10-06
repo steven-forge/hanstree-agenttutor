@@ -103,7 +103,7 @@ export default function AutomationSettings(props: Props) {
   const disabled = !!busy || props.parentBusy || props.sessionExpired || !view;
   const run = view?.run;
   return <section className="cn-panel cn-automation" aria-labelledby="cn-automation-heading" aria-busy={loading || !!busy}>
-    <div className="cn-section-head"><div><h2 id="cn-automation-heading">매일 자동 제작과 예약 발행</h2><p className="cn-muted">뉴스 10개를 카드로 만들고, 연결한 Instagram에 하나의 게시물로 발행합니다.</p></div>{view && <span className={`cn-tag ${view.settings.enabled && view.schedulerConfigured ? "cn-tag-ok" : ""}`}>{view.settings.enabled ? view.schedulerConfigured ? "정기 예약 켜짐 · 실행 기록 확인" : "예약 저장됨 · 실행 연결 필요" : "정기 예약 꺼짐"}</span>}</div>
+    <div className="cn-section-head"><div><h2 id="cn-automation-heading">매일 자동 제작과 예약 발행</h2><p className="cn-muted">뉴스를 우선 선정해 카드 10장을 만듭니다. 부족하면 미발행 릴리스 → 용어사전 → Explore 순으로 보충합니다.</p></div>{view && <span className={`cn-tag ${view.settings.enabled && view.schedulerConfigured ? "cn-tag-ok" : ""}`}>{view.settings.enabled ? view.schedulerConfigured ? "정기 예약 켜짐 · 실행 기록 확인" : "예약 저장됨 · 실행 연결 필요" : "정기 예약 꺼짐"}</span>}</div>
     {props.localMode ? <p className="cn-alert cn-alert-info">자동 제작과 예약 발행에는 서버 저장소가 필요합니다. 현재는 이 브라우저에서 직접 카드 원고를 만들 수 있습니다. 서버 저장소와 <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결</a>을 준비한 뒤 이용하세요.</p> : <>
       {loading && <p className="cn-help" role="status">예약 상태를 불러오는 중…</p>}
       {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
@@ -115,7 +115,7 @@ export default function AutomationSettings(props: Props) {
           <div className="cn-automation-grid">
             <label className="cn-field">제작 시각 · KST<input type="time" value={draft.prepareTime} required disabled={disabled} onChange={event => setDraft(previous => ({ ...previous, prepareTime: event.target.value }))} /></label>
             <label className="cn-field">발행 시각 · KST<input type="time" value={draft.publishTime} required disabled={disabled} onChange={event => setDraft(previous => ({ ...previous, publishTime: event.target.value }))} /></label>
-            <label className="cn-field">뉴스 선정 기간<select value={draft.maxAgeHours} disabled={disabled} onChange={event => setDraft(previous => ({ ...previous, maxAgeHours: Number(event.target.value) }))}>{[[72, 3], [168, 7], [336, 14], [720, 30]].map(([hours, days]) => <option key={hours} value={hours}>최근 {days}일</option>)}</select></label>
+            <label className="cn-field">뉴스 선정 기간<select value={draft.maxAgeHours} disabled={disabled} onChange={event => setDraft(previous => ({ ...previous, maxAgeHours: Number(event.target.value) }))}>{[[72, 3], [168, 7], [336, 14], [720, 30]].map(([hours, days]) => <option key={hours} value={hours}>최근 {days}일</option>)}</select><small>뉴스·릴리스·Explore에 적용합니다. 날짜 없는 용어는 최신 등록순으로 보충합니다.</small></label>
           </div>
           <p className="cn-help">최근 24시간 뉴스를 먼저 고르고, 부족하면 72시간과 선택 기간까지 넓힙니다. 이미 게시한 기사·중복 사건은 제외하며, 완결된 한국어 카드가 10개 미만이면 발행하지 않습니다. 자동 제작은 사람이 원문을 확인한 것과 구분됩니다.</p>
           <div className="cn-publish-actions"><button className="cn-button cn-button-primary" type="submit" disabled={disabled || !dirty}>{busy === "save" ? "저장 중…" : "예약 설정 저장"}</button><button className="cn-button" type="button" disabled={disabled || !view.settings.enabled} onClick={() => act("stop")}>{busy === "stop" ? "중지 중…" : "정기 예약 중지"}</button>{dirty && <span className="cn-tag cn-tag-warn">저장하지 않은 예약 설정</span>}</div>

@@ -3,7 +3,7 @@ import { candidateUrlKey, exactPublishedTime } from "./manual";
 
 export type NewsCandidate = {
   id: string; title: string; summary: string; sourceName: string; sourceUrl: string;
-  publishedAt: string; datePrecision: "time" | "day"; origin: "newsletter" | "archive" | "feed" | "manual";
+  publishedAt: string; datePrecision: "time" | "day" | "none"; origin: "newsletter" | "archive" | "feed" | "manual" | "release" | "glossary" | "explore";
   newsletterId?: string;
   cardCopy?: CardCopy;
 };
@@ -18,7 +18,7 @@ export type Edition = {
   candidateSource?: "newsletter";
   candidates: NewsCandidate[]; sources: FeedStatus[]; cards: NewsCard[]; caption: string;
   updatedAt: string; approvedAt?: string; publishedAt?: string;
-  automation?: { preparedAt: string; settingsRevision: number; accountId?: string; candidateCount?: number };
+  automation?: { preparedAt: string; settingsRevision: number; accountId?: string; candidateCount?: number; supplementCount?: number };
   publication?: { attempt: string; children: string[]; containerId?: string; mediaId?: string; permalink?: string; message?: string; publishRequestedAt?: string; accountId?: string; startedAt?: string; stage?: "images" | "carousel" | "processing" | "publish" | "done" };
 };
 export type PublicationProgress = { edition: Edition | null; checkedAt: string; remoteStatus?: string; remoteCheckedAt?: string; statusError?: string };
@@ -26,8 +26,22 @@ export type AdminSetup = { auth: boolean; authIssue?: "password_missing" | "pass
 export type AdminSnapshot = { edition: Edition | null; setup: AdminSetup; history: { date: string; status: Edition["status"]; updatedAt: string }[] };
 
 export const MAX_CANDIDATES = 1000;
+export function isSupplement(candidate: NewsCandidate) { return ["release", "glossary", "explore"].includes(candidate.origin); }
+export function usesContentDate(candidate?: NewsCandidate) { return !!candidate && isSupplement(candidate); }
+export function candidateTime(candidate: NewsCandidate): number {
+  return candidate.datePrecision === "none" ? NaN : exactPublishedTime(candidate.datePrecision === "day" ? `${candidate.publishedAt}T00:00:00+09:00` : candidate.publishedAt);
+}
+export function cardDateIssue(card: NewsCard, edition: Edition): string {
+  const candidate = edition.candidates.find(c => c.id === card.candidateId);
+  if (usesContentDate(candidate)) {
+    if (card.publishedAt !== candidate!.publishedAt) return "콘텐츠에 기록된 날짜를 그대로 사용해야 합니다.";
+    if (candidate!.origin === "glossary" && candidate!.datePrecision === "none" && card.publishedAt === "") return "";
+  }
+  const time = usesContentDate(candidate) ? candidateTime(candidate!) : exactPublishedTime(card.publishedAt);
+  return !Number.isFinite(time) || time < Date.parse(edition.windowStart) || time > Math.min(Date.parse(edition.windowEnd), Date.now()) ? "수집 기간 안의 발행 시각 또는 콘텐츠 날짜를 확인하세요." : "";
+}
 export function selectableCandidates(edition: Edition) {
-  return edition.candidates.filter(c => c.origin === "newsletter" || c.origin === "manual");
+  return edition.candidates.filter(c => c.origin === "newsletter" || c.origin === "manual" || isSupplement(c));
 }
 // Refresh source metadata without losing edited cards, their IDs, or imported/manual backups.
 export function preserveDraft(fresh: Edition, old: Edition | null): Edition {
@@ -43,7 +57,10 @@ export function preserveDraft(fresh: Edition, old: Edition | null): Edition {
     if (index >= 0 && !claimed.has(index)) { candidates[index] = { ...candidates[index], id: c.id }; claimed.add(index); }
     else if (!candidates.some(n => n.id === c.id)) candidates.push({ ...c, origin: c.origin === "newsletter" ? "archive" : c.origin, newsletterId: undefined });
   }
-  const retainedTimes = [...candidates.filter(c => c.origin === "manual").map(c => c.publishedAt), ...old.cards.map(c => c.publishedAt)].map(Date.parse).filter(Number.isFinite);
+  const retainedTimes = [...candidates.filter(c => c.origin === "manual").map(candidateTime), ...old.cards.map(card => {
+    const candidate = candidates.find(c => c.id === card.candidateId);
+    return usesContentDate(candidate) ? candidateTime(candidate!) : exactPublishedTime(card.publishedAt);
+  })].filter(Number.isFinite);
   const windowStart = new Date(Math.min(Date.parse(fresh.windowStart), ...retainedTimes)).toISOString();
   return { ...fresh, windowStart, candidates, cards: old.cards, caption: old.caption };
 }
@@ -71,16 +88,16 @@ export function cardIssues(card: NewsCard): string[] {
 export function editionIssues(edition: Edition): string[] {
   const issues: string[] = [];
   const candidateCount = selectableCandidates(edition).length;
-  if (candidateCount < 10) issues.push(`후보 부족: ${candidateCount}개입니다. 뉴스레터 또는 직접 등록한 뉴스를 10개 이상 확보하세요.`);
+  if (candidateCount < 10) issues.push(`후보 부족: ${candidateCount}개입니다. 뉴스·보충 콘텐츠를 10개 이상 확보하세요.`);
   edition.cards.forEach((card, i) => {
-    if (!selectableCandidates(edition).some(c => c.id === card.candidateId)) issues.push(`${i + 1}번: 이전 원고를 보관 중입니다. 뉴스레터 또는 직접 등록한 후보에서 다시 선정하세요.`);
+    if (!selectableCandidates(edition).some(c => c.id === card.candidateId)) issues.push(`${i + 1}번: 이전 원고를 보관 중입니다. 현재 후보에서 다시 선정하세요.`);
   });
   if (edition.cards.length !== 10) issues.push(`뉴스를 정확히 10개 선정하세요. 현재 ${edition.cards.length}개입니다.`);
   if (new Set(edition.cards.map(c => c.candidateId)).size !== edition.cards.length || new Set(edition.cards.map(c => candidateUrlKey(c.sourceUrl))).size !== edition.cards.length) issues.push("같은 기사가 중복 선택됐습니다.");
   edition.cards.forEach((card, i) => cardIssues(card).forEach(issue => issues.push(`${i + 1}번: ${issue}`)));
   edition.cards.forEach((card, i) => {
-    const stamp = exactPublishedTime(card.publishedAt);
-    if (!Number.isFinite(stamp) || stamp < Date.parse(edition.windowStart) || stamp > Math.min(Date.parse(edition.windowEnd), Date.now())) issues.push(`${i + 1}번: 수집 기간 안의 정확한 발행시각을 확인하세요.`);
+    const issue = cardDateIssue(card, edition);
+    if (issue) issues.push(`${i + 1}번: ${issue}`);
   });
   if (new Set(edition.cards.map(c => c.title.replace(/\s+/g, "").toLowerCase())).size !== edition.cards.length) issues.push("같은 제목의 뉴스가 중복됐습니다.");
   if (!edition.caption.trim() || Array.from(edition.caption).length > 2200) issues.push("캡션을 1~2,200자로 작성하세요.");

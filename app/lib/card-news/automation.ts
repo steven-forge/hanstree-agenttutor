@@ -3,9 +3,11 @@ import { randomUUID } from "node:crypto";
 import { todayData } from "../../content";
 import { AdminError, getEdition, prefix, putEdition, redis, setupStatus } from "./server";
 import { collectEdition } from "./collect";
-import { captionFor, editionIssues, kstDate, type Edition } from "./types";
+import { captionFor, cardDateIssue, editionIssues, isSupplement, kstDate, MAX_CANDIDATES, type Edition } from "./types";
 import { renderCard } from "./render";
 import { AutoCopyError, selectAutomaticCards } from "./auto-copy";
+import { supplementCandidates } from "./supplements";
+import { candidateUrlKey } from "./manual";
 import { instagramAccount, latestInstagramPublication, PublishCooldown, publishEdition, reconcileEdition } from "./instagram";
 import { AUTOMATION_DEFAULTS, nextScheduledAt, scheduledAt, validateAutomationSettings, type AutomationRun, type AutomationSettings, type AutomationView } from "./automation-policy";
 
@@ -44,10 +46,24 @@ export async function saveAutomationSettings(input: unknown) {
   return automationView();
 }
 async function historyEditions(): Promise<Edition[]> {
-  const dates = await redis<string[]>("ZREVRANGE", `${prefix}history`, 0, 59);
-  if (!dates.length) return [];
-  const raw = await redis<(string | null)[]>("MGET", ...dates.map(date => `${prefix}edition:${date}`));
-  return raw.filter((item): item is string => !!item).map(item => JSON.parse(item));
+  const dates = await redis<string[]>("ZREVRANGE", `${prefix}history`, 0, -1);
+  const editions: Edition[] = [];
+  // ponytail: scan all saved editions; add a publication index if this grows to thousands.
+  for (let i = 0; i < dates.length; i += 10) {
+    const raw = await redis<(string | null)[]>("MGET", ...dates.slice(i, i + 10).map(date => `${prefix}edition:${date}`));
+    editions.push(...raw.filter((item): item is string => !!item).map(item => JSON.parse(item)));
+  }
+  return editions;
+}
+const cardsRecent = (edition: Edition, hours: number) => edition.cards.every(card => !cardDateIssue(card, { ...edition, windowStart: new Date(Date.now() - hours * 3600000).toISOString() }));
+function alreadyPublished(edition: Edition, history: Edition[]) {
+  const published = history.filter(item => item.date !== edition.date && item.status === "published").flatMap(item => item.cards);
+  const ids = new Set(published.map(card => card.candidateId)), urls = new Set(published.map(card => candidateUrlKey(card.sourceUrl)));
+  return edition.cards.some(card => ids.has(card.candidateId) || urls.has(candidateUrlKey(card.sourceUrl)));
+}
+function requireResolvedHistory(date: string, history: Edition[]) {
+  const uncertain = history.find(item => item.date !== date && ["publishing", "needs_check"].includes(item.status) && item.publication?.publishRequestedAt);
+  if (uncertain) throw new AdminError(`${uncertain.date} 판본의 이전 발행 결과가 아직 확정되지 않았습니다. 해당 판본에서 발행 결과를 확인한 뒤 다시 제작하세요.`, 409);
 }
 async function prepareEdition(date: string, settings: AutomationSettings) {
   const old = await getEdition(date);
@@ -55,17 +71,28 @@ async function prepareEdition(date: string, settings: AutomationSettings) {
   if (old && !old.automation && (old.cards.length || old.caption !== captionFor([]))) {
     throw new AdminError("관리자가 작성한 원고를 보존했습니다. 자동 제작은 카드가 없는 판본에서 실행하세요.", 409);
   }
-  if (old?.automation && !editionIssues(old).length && old.cards.every(card => Date.parse(card.publishedAt) >= Date.now() - settings.maxAgeHours * 3600000)) return old;
+  const history = await historyEditions();
+  requireResolvedHistory(date, history);
+  if (old?.automation && !editionIssues(old).length && cardsRecent(old, settings.maxAgeHours) && !alreadyPublished(old, history)) return old;
   const collectedAt = Date.parse(todayData.collected_at || "");
   if (!Number.isFinite(collectedAt) || Date.now() - collectedAt > 24 * 3600000 || collectedAt > Date.now() + 60000) throw new AdminError("최근 24시간 안에 수집한 뉴스레터 데이터가 없습니다. 뉴스 수집과 운영 반영 상태를 확인하세요.", 503);
   const edition = await collectEdition(date, old?.automation ? { ...old, status: "draft", cards: [], caption: captionFor([]) } : old);
-  const history = await historyEditions();
-  const uncertain = history.find(item => item.date !== date && ["publishing", "needs_check"].includes(item.status) && item.publication?.publishRequestedAt);
-  if (uncertain) throw new AdminError(`${uncertain.date} 판본의 이전 발행 결과가 아직 확정되지 않았습니다. 해당 판본에서 발행 결과를 확인한 뒤 다시 제작하세요.`, 409);
-  const previousUrls = history.filter(item => item.status === "published").flatMap(item => item.cards.map(card => card.sourceUrl));
-  const selected = selectAutomaticCards(edition.candidates, previousUrls, new Date(), settings.maxAgeHours as 72 | 168 | 336 | 720);
+  const publishedCards = history.filter(item => item.status === "published").flatMap(item => item.cards);
+  const select = () => selectAutomaticCards(edition.candidates, publishedCards.map(card => card.sourceUrl), new Date(), settings.maxAgeHours as 72 | 168 | 336 | 720, publishedCards.map(card => card.candidateId));
+  let selected;
+  try { selected = select(); }
+  catch (error) {
+    if (!(error instanceof AutoCopyError)) throw error;
+    edition.candidates.push(...supplementCandidates(date));
+    selected = select();
+  }
   const cards = selected.cards.map(card => ({ ...card, verification: "automatic" as const }));
-  const prepared: Edition = { ...edition, cards, caption: captionFor(cards), status: "approved", approvedAt: stamp(), automation: { preparedAt: stamp(), settingsRevision: settings.revision, accountId: settings.accountId, candidateCount: selected.eligibleCount } };
+  const ids = new Set(cards.map(card => card.candidateId));
+  const kept = edition.candidates.filter(candidate => candidate.origin === "manual" || ids.has(candidate.id));
+  if (kept.length > MAX_CANDIDATES) throw new AdminError("직접 등록한 후보를 정리한 뒤 자동 제작하세요.");
+  edition.candidates = [...kept, ...edition.candidates.filter(candidate => candidate.origin !== "manual" && !ids.has(candidate.id)).slice(0, MAX_CANDIDATES - kept.length)];
+  const supplementCount = edition.candidates.filter(candidate => ids.has(candidate.id) && isSupplement(candidate)).length;
+  const prepared: Edition = { ...edition, cards, caption: captionFor(cards), status: "approved", approvedAt: stamp(), automation: { preparedAt: stamp(), settingsRevision: settings.revision, accountId: settings.accountId, candidateCount: selected.eligibleCount, supplementCount } };
   const issues = editionIssues(prepared);
   if (issues.length) throw new AdminError(issues[0]);
   // Render all ten actual JPGs before marking automatic preparation complete.
@@ -127,7 +154,7 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
     if (!edition) throw new AdminError("제작할 판본이 없습니다.");
     if (mode === "prepare") {
       const inProgress = ["publishing", "needs_check"].includes(edition.status);
-      await writeRun(run, { phase: inProgress ? "waiting" : "ready", cards: edition.cards.length, candidates: edition.automation?.candidateCount, message: inProgress ? "기존 발행이 진행 중입니다. 판본을 보존했으며 발행 진행 상태를 확인해 주세요." : "카드 10장과 게시글 설명을 준비했습니다. 이 버튼은 Instagram에 게시하지 않습니다.", lastSuccessAt: inProgress ? run.lastSuccessAt : stamp(), nextAttemptAt: undefined });
+      await writeRun(run, { phase: inProgress ? "waiting" : "ready", cards: edition.cards.length, candidates: edition.automation?.candidateCount, message: inProgress ? "기존 발행이 진행 중입니다. 판본을 보존했으며 발행 진행 상태를 확인해 주세요." : `카드 10장과 게시글 설명을 준비했습니다${edition.automation?.supplementCount ? ` (보충 콘텐츠 ${edition.automation.supplementCount}장)` : ""}. 이 버튼은 Instagram에 게시하지 않습니다.`, lastSuccessAt: inProgress ? run.lastSuccessAt : stamp(), nextAttemptAt: undefined });
       return automationView();
     }
     if (!testing && !edition.automation) {
@@ -144,7 +171,12 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
     const assertPermission = async () => {
       const current = await automationSettings();
       if (current.revision !== settings.revision || (testing ? ticket?.settingsRevision !== current.revision || await redis("GET", testKey) !== rawTicket : !current.enabled || current.accountId !== accountId)) throw new AdminError("예약 설정이 변경되거나 발행 테스트가 취소되어 발행을 중단했습니다.", 409);
-      if (edition!.automation && edition!.cards.some(card => Date.parse(card.publishedAt) < Date.now() - current.maxAgeHours * 3600000)) throw new AdminError("제작한 카드가 현재 뉴스 선정 기간을 벗어났습니다. 원고를 확인해 다시 제작하세요.", 409);
+      if (edition!.automation && !cardsRecent(edition!, current.maxAgeHours)) throw new AdminError("제작한 카드가 현재 뉴스 선정 기간을 벗어났습니다. 원고를 확인해 다시 제작하세요.", 409);
+      if (edition!.automation && !edition!.publication?.publishRequestedAt) {
+        const history = await historyEditions();
+        requireResolvedHistory(edition!.date, history);
+        if (alreadyPublished(edition!, history)) throw new AdminError("준비한 콘텐츠가 다른 판본에서 이미 발행됐습니다. 미발행 콘텐츠로 다시 제작하세요.", 409);
+      }
     };
     // A pending final request must be reconciled even during cooldown, never sent twice.
     if (!edition.publication?.publishRequestedAt && Date.parse(recent.nextAllowedAt) > Date.now()) throw new PublishCooldown(recent.nextAllowedAt);

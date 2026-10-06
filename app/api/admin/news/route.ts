@@ -51,10 +51,6 @@ function ready(edition: Edition) {
   const issues = editionIssues(edition); if (issues.length) throw new AdminError(issues[0]);
   const titles = edition.cards.map(c => c.title.replace(/\s+/g, "").toLowerCase());
   if (new Set(titles).size !== titles.length) throw new AdminError("같은 제목의 뉴스가 중복됐습니다.");
-  for (const card of edition.cards) {
-    const stamp = Date.parse(card.publishedAt);
-    if (!/^\d{4}-\d{2}-\d{2}T.+(?:Z|[+-]\d{2}:\d{2})$/.test(card.publishedAt) || !Number.isFinite(stamp) || stamp < Date.parse(edition.windowStart) || stamp > Math.min(Date.parse(edition.windowEnd), Date.now())) throw new AdminError("모든 뉴스의 정확한 발행시각을 이번 수집 기간 안에서 확인해 주세요.");
-  }
 }
 export async function GET(request: Request) {
   try {

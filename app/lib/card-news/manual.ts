@@ -7,7 +7,8 @@ export function candidateUrlKey(value: string): string {
   try {
     const url = new URL(value);
     if (url.protocol !== "https:" || url.username || url.password) return "";
-    url.hash = "";
+    // A glossary anchor identifies a distinct term, not a section of one article.
+    if (!/^\/glossary\/?$/.test(url.pathname) || !/^#[a-z0-9-]+$/i.test(url.hash)) url.hash = "";
     url.pathname = url.pathname.replace(/\/$/, "");
     for (const key of Array.from(url.searchParams.keys())) if (/^(utm_|fbclid$|gclid$)/i.test(key)) url.searchParams.delete(key);
     url.searchParams.sort();

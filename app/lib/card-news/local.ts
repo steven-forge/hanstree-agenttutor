@@ -1,7 +1,7 @@
 "use client";
 import { zipSync, strToU8 } from "fflate";
 import { CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "./copy";
-import { editionIssues, editionWindow, cardIssues, preserveDraft, MAX_CANDIDATES, type AdminSnapshot, type Edition } from "./types";
+import { editionIssues, editionWindow, cardIssues, preserveDraft, isSupplement, MAX_CANDIDATES, type AdminSnapshot, type Edition } from "./types";
 import { appendManualCandidate, candidateUrlKey, createManualCandidate } from "./manual";
 
 const key = "agenttutor-card-news-v1:";
@@ -51,7 +51,7 @@ async function editedLocalEdition(old: Edition, body: Record<string, unknown>): 
   for (const candidate of old.candidates) if (candidate.origin === "manual" && !candidates.some(c => c.id === candidate.id)) candidates.push(candidate);
   if (candidates.length > MAX_CANDIDATES || new Set(candidates.map(c => c.id)).size !== candidates.length) throw new Error("후보 목록의 개수 또는 중복 번호를 확인하세요.");
   for (const card of body.cards) if (!card || typeof card.candidateId !== "string" || !candidates.some(c => c.id === card.candidateId) || typeof card.title !== "string" || card.title.length > 180 || typeof card.body !== "string" || card.body.length > 600 || typeof card.sourceName !== "string" || card.sourceName.length > 100 || typeof card.sourceUrl !== "string" || !candidateUrlKey(card.sourceUrl) || typeof card.publishedAt !== "string" || card.publishedAt.length > 40) throw new Error("카드 원고의 형식을 확인하세요.");
-  return { ...old, candidates, cards: body.cards as Edition["cards"], caption: body.caption, status: "draft", approvedAt: undefined, publication: undefined };
+  return { ...old, candidates, cards: (body.cards as Edition["cards"]).map(card => ({ ...card, verification: undefined })), caption: body.caption, status: "draft", approvedAt: undefined, publication: undefined, automation: undefined };
 }
 async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapshot> {
   const date = String(body.date), old = read(date);
@@ -74,7 +74,7 @@ async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapsho
     for (const c of incoming.candidates) if (!c || !text(c.id, 100) || !text(c.title, 200) || !text(c.summary, 600) || !text(c.sourceName, 100) || !url(c.sourceUrl) || !text(c.publishedAt, 40)) throw new Error("후보 기록의 형식을 확인하세요.");
     for (const c of incoming.cards) if (!c || !text(c.candidateId, 100) || !text(c.title, 180) || !text(c.body, 600) || !text(c.sourceName, 100) || !url(c.sourceUrl) || !text(c.publishedAt, 40) || !incoming.candidates.some(n => n.id === c.candidateId)) throw new Error("카드 원고의 형식을 확인하세요.");
     if (incoming.candidates.some(c => !c.id.trim()) || new Set(incoming.candidates.map(c => c.id)).size !== incoming.candidates.length) throw new Error("후보 번호가 비어 있거나 중복됐습니다.");
-    const candidates = incoming.candidates.map(c => c.origin === "manual" ? createManualCandidate(c, date, c.id) : ({ id: c.id, title: c.title, summary: c.summary, sourceName: c.sourceName, sourceUrl: c.sourceUrl, publishedAt: c.publishedAt, origin: c.origin === "newsletter" ? "newsletter" as const : "archive" as const, datePrecision: c.datePrecision === "time" ? "time" as const : "day" as const }));
+    const candidates = incoming.candidates.map(c => c.origin === "manual" ? createManualCandidate(c, date, c.id) : ({ id: c.id, title: c.title, summary: c.summary, sourceName: c.sourceName, sourceUrl: c.sourceUrl, publishedAt: c.publishedAt, origin: isSupplement(c) ? c.origin : c.origin === "newsletter" ? "newsletter" as const : "archive" as const, datePrecision: c.datePrecision === "none" && c.origin === "glossary" ? "none" as const : c.datePrecision === "time" ? "time" as const : "day" as const }));
     edition = { date, revision: 0, status: "draft", ...editionWindow(date), collectedAt: "", candidates, sources: [], cards: incoming.cards.map(c => ({ candidateId: c.candidateId, title: c.title, body: c.body, sourceName: c.sourceName, sourceUrl: c.sourceUrl, publishedAt: c.publishedAt, verified: false })), caption: incoming.caption, updatedAt: "" };
     edition = preserveDraft(await newsletterEdition(date), edition);
   } else if (body.action === "save" && old) {
