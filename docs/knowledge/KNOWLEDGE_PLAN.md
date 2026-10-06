@@ -41,7 +41,7 @@
 
 ## 현재 문서와 완료 기준
 
-Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교), 온톨로지(분류체계·데이터베이스 스키마·지식그래프 비교), Hermes Agent(Herdr·Claude Code 비교), FDE(제품 개발 엔지니어·솔루션 엔지니어 비교), ElevenLabs(Cartesia·Google Cloud TTS 비교), Osmo Film Emulation(Dehancer·FilmConvert Nitrate 비교), OpenMuse(Hermes Agent·OpenGenerativeUI 비교), Claude Mods(Skills·설정 Hooks·MCP·Plugins 비교)의 열네 문서를 관리한다.
+Decisions API(Jev 비교), OpenAI Dots(Claude Cowork 비교), Gemini 4 Argon(GPT-6 Astra·Claude Opus 5.5 비교), Exa(Tavily·Firecrawl 비교), Laya(TypeSafe Jev 비교), 하네스 엔지니어링(프롬프트·컨텍스트 엔지니어링과 비교), Herdr(tmux·Zellij 비교), 온톨로지(분류체계·데이터베이스 스키마·지식그래프 비교), Hermes Agent(Herdr·Claude Code 비교), FDE(제품 개발 엔지니어·솔루션 엔지니어 비교), ElevenLabs(Cartesia·Google Cloud TTS 비교), Osmo Film Emulation(Dehancer·FilmConvert Nitrate 비교), OpenMuse(Hermes Agent·OpenGenerativeUI 비교), Claude Mods(Skills·설정 Hooks·MCP·Plugins 비교), OpenAI Auto-review(승인 방식·코드 리뷰와 비교)의 열다섯 문서를 관리한다.
 
 v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제품 비교 구성을 반영한 개정판이다. 빌드·푸시·운영 문서 반영을 확인한 후 완료로 기록한다.
 
@@ -248,3 +248,9 @@ v0.10.2까지 세 문서가 운영에 공개됐다. v0.10.3은 위 문단·제�
 - Anthropic 공식 Claude Code Mods 문서를 작성해 연결했다. 공식 발표·Mods 개요·관리자 문서·시작 가이드를 근거로 하고 Skills·설정 Hooks·MCP·Plugins와 역할을 비교했다.
 - `data/explore.json`에 slug `claude-mods`, `data/explore-quizzes.json`에 5문항(`version: 1`, 정답 index 2·0·3·1·2)을 추가했고 `docs/knowledge/CLAUDE_MODS.md`를 같은 8개 섹션으로 작성했다. 웹툰은 `public/explore/claude-mods-webtoon.png`를 연결했다.
 - v0.13.21 빌드를 통과해 67개 정적 페이지를 생성했다. Claude Mods 상세 페이지의 비교표·웹툰·5문항(20개 보기)과 Explore 목록 연결을 확인했다. Mods 제품 자체의 설치·실행이나 실제 브라우저 조작은 수행하지 않았다.
+
+## 열다섯 번째 문서(OpenAI Auto-review) 작성 (2026-10-06)
+
+- OpenAI 공식 Codex 문서(Auto-review·Sandbox·Agent approvals & security·GitHub 연동)를 근거로 작성해 연결했다. 수동 승인·전체 접근·자동 코드 리뷰와 역할을 비교했다.
+- `data/explore.json`에 slug `openai-auto-review`, `data/explore-quizzes.json`에 5문항(`version: 1`, 정답 index 1·3·0·2·1)을 추가했고 `docs/knowledge/OPENAI_AUTO_REVIEW.md`를 같은 8개 섹션으로 작성했다. 내장 imagegen으로 제작한 8컷 웹툰(1024×1536)은 `public/explore/openai-auto-review-webtoon.png`에 연결했다.
+- v0.13.22 빌드를 통과해 68개 정적 페이지를 생성했다. 새 상세 페이지의 비교표·웹툰·5문항(20개 보기)과 목록 연결을 확인했다. Auto-review 설정 변경·실제 기능 실행이나 브라우저 조작은 수행하지 않았다.
