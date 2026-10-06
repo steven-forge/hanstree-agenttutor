@@ -61,7 +61,7 @@ export default function GlossaryPage() {
             <p style={{ margin: "12px 10px 4px", fontSize: "11px", fontWeight: 700, color: "#9ca3af" }}>
               주요 용어 바로가기
             </p>
-            {glossaryTerms.slice(0, 10).map((term) => (
+            {[...glossaryTerms].reverse().slice(0, 10).map((term) => (
               <a key={term.id} href={`#${term.id}`}>
                 {term.term}
               </a>

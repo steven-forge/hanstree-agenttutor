@@ -50,7 +50,7 @@ export default function GlossaryClient() {
 
   const filteredTerms = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
-    return glossaryTerms.filter((term) => {
+    return [...glossaryTerms].reverse().filter((term) => {
       if (selectedCategory !== "전체" && term.category !== selectedCategory) {
         return false;
       }
@@ -109,7 +109,7 @@ export default function GlossaryClient() {
 
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-          총 <strong>{glossaryTerms.length}</strong>개 용어 중 <strong>{filteredTerms.length}</strong>개 표시
+          총 <strong>{glossaryTerms.length}</strong>개 용어 중 <strong>{filteredTerms.length}</strong>개 표시 · 최신 등록순
         </span>
         {(searchQuery || selectedCategory !== "전체") && (
           <button
