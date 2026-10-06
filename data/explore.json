@@ -1964,6 +1964,111 @@
         }
       ],
       "dev_reference_links": []
+    },
+    {
+      "slug": "illithid",
+      "title": "Illithid: 여러 AI 코딩 도구의 설정을 한곳에서 관리하기",
+      "summary": "Illithid는 Claude Code, Codex 등 여러 AI 코딩 도구의 규칙·스킬·서브에이전트·MCP 설정을 공통 라이브러리에서 고쳐 선택한 도구의 설정 파일로 반영하는 macOS 앱입니다. 모델을 실행하거나 중계하지 않습니다.",
+      "topic": "AI 개발 도구",
+      "tags": [
+        "Illithid",
+        "Claude Code",
+        "Codex",
+        "OpenCode",
+        "Gemini CLI",
+        "GitHub Copilot",
+        "Grok CLI",
+        "MCP",
+        "Ruler"
+      ],
+      "created_at": "2026-10-07",
+      "updated_at": "2026-10-07",
+      "reviewed_at": "2026-10-07",
+      "question": "Illithid는 무엇이고, 여러 AI 코딩 도구의 설정을 어떻게 한곳에서 관리하나요?",
+      "core_answer": "Illithid는 Claude Code, Codex 같은 여러 AI 코딩 도구의 규칙·스킬·서브에이전트·MCP 설정을 공통 라이브러리 한 곳에서 고치고, 고른 도구의 설정 파일로 반영해 주는 macOS 앱입니다. 모델을 실행하거나 요청을 중계하는 제품이 아니라서, 기존 도구는 그대로 사용합니다.\n\n반영하기 전에 바뀌는 내용을 미리 보여 주고, 덮어쓰거나 지우는 원본은 백업합니다.",
+      "easy_explanation": "같은 규칙을 Claude Code용 파일에도, Codex용 파일에도 복사해 두었다고 해 봅시다. 규칙을 하나 고칠 때마다 도구 수만큼 파일을 열어 같은 수정을 반복해야 합니다.\n\nIllithid에서는 공통 라이브러리에서 한 번 고치고 반영할 도구를 고릅니다. 변경 미리보기를 확인한 뒤 적용하면 각 도구가 읽는 고유 파일에 맞는 형식으로 기록됩니다.\n\n가령 “답변은 한국어로 작성한다”라는 규칙을 여러 도구의 설정 파일에 전달할 수 있습니다. 같은 설정을 전달해도 모델의 답변이 항상 같아지는 것은 아닙니다.",
+      "api_explanation_title": "용어: 공통 라이브러리·스킬·서브에이전트·MCP·hooks",
+      "api_explanation": "공통 라이브러리는 여러 도구가 함께 쓸 설정을 모아 둔 한 곳입니다. 규칙은 AI에게 주는 지침이고, 스킬은 특정 작업의 방법을 담은 묶음입니다.\n\n서브에이전트는 일부 일을 맡기는 보조 AI입니다. MCP는 AI 도구를 외부 도구·서비스에 연결하는 방식이고, hooks는 정해진 때에 스크립트나 확인 규칙을 실행하는 장치입니다.\n\n권한은 명령을 허용할지, 물을지, 막을지를 정한 설정입니다. Illithid는 이 설정을 각 도구의 설정 파일에 써 줄 뿐이고, 실제 실행 여부는 각 도구가 판단합니다.",
+      "details": "공식 README가 설명하는 관리 대상은 규칙, 스킬, 서브에이전트, MCP 서버, hooks, 권한입니다. 각 도구가 받을 항목은 사용자가 고릅니다.\n\n문서가 거론하는 도구는 Claude Code, Codex, OpenCode, Gemini CLI, GitHub Copilot, Grok CLI 여섯 가지입니다. 모든 기능을 여섯 도구가 똑같이 지원하는 것은 아닙니다.\n\nhooks는 Claude Code, Codex, Gemini CLI, GitHub Copilot, Grok CLI에서 각 도구의 형식으로 실행됩니다. 셸 명령 권한은 Claude Code, Codex, Gemini CLI, GitHub Copilot에 적용되고, MCP 서버의 도구별 권한은 Claude Code, Codex, Gemini CLI, OpenCode에 적용됩니다.\n\n허용·질문·차단 설정은 파일로 기록되고 실행은 각 도구가 합니다. Illithid가 독립된 보안 장벽이나 승인 에이전트 역할을 하는 것은 아닙니다.\n\n처음 실행하면 이미 쓰던 설정을 가져올 수 있습니다. 가져온 원본은 Illithid가 관리를 시작하기 전에 백업됩니다.\n\n사용량 화면은 내 컴퓨터의 세션 로그를 읽어 요청 수, 토큰 사용량, 응답 시간 중앙값을 보여 줍니다. 비용은 공개된 API 단가로 환산한 금액입니다. 실제 구독 청구액이나 남은 사용량이 아닙니다.\n\n도구와 기간으로 걸러 모델·추론 강도 조합을 비교할 수 있지만, 작업의 종류와 길이가 다른 기록을 그대로 비교하면 모델 성능 비교가 되지는 않습니다. 사용 패턴을 살펴보는 자료로 활용합니다.\n\n부가 기능으로 지난 대화 검색·재개(Sessions), 에이전트 메모리를 검토해 공통 라이브러리로 올리는 기능(Memory), 에이전트가 만든 결과물 보기(Artifacts), 규칙·스킬·MCP 서버를 찾는 Market, 분리된 작업 공간과 Git 백업(Workspaces & backup)이 있습니다.\n\n확인한 최신 공개판은 v0.3.5입니다. 2026년 10월 6일 오전 10시 21분(한국 시간)에 게시됐고, macOS 12 이상의 Apple Silicon과 Intel을 지원합니다. 라이선스는 MIT이며 앱은 한국어를 지원합니다.\n\n지금 배포되는 것은 macOS용뿐입니다. 비밀값을 macOS 키체인에 저장하기 때문입니다. \n\nMac에서는 공식 릴리스의 DMG를 받거나 Homebrew로 설치할 수 있습니다. 처음에는 기존 설정을 가져오고 사용할 도구를 고른 뒤, 반영할 변경을 미리 확인합니다.\n\n모델 API를 호출하지 않는다고 해서 완전 오프라인은 아닙니다. 업데이트 확인, Market, Git 원격 백업, 선택적인 GitHub 백업 로그인 연결에서 외부 통신이 생길 수 있습니다.\n\nMarket과 업데이트 확인은 설정에서 끌 수 있다고 안내됩니다. 비밀값은 macOS 보안 저장소에 보관됩니다.\n\nv0.3.5는 GitHub 로그인으로 비공개 백업 저장소를 만드는 흐름을 안내합니다. 개인 GitHub 계정 기준이며, 조직과 Enterprise는 이 로그인 흐름을 지원하지 않습니다. 이미 있는 원격 저장소 주소를 연결하는 방법은 별개입니다.\n\n앱을 삭제해도 이미 기록된 일반 설정 파일은 남아 각 도구가 계속 동작합니다. 한 도구의 동기화만 끄고 싶다면 설정에서 끄고, 미리보기에서 제거될 항목을 확인합니다.\n\n교체되거나 삭제된 파일은 백업 폴더로 옮겨지고, 오래된 백업은 기본 30일 뒤 휴지통으로 이동합니다(기간은 바꿀 수 있습니다). 영구 보관을 보장하는 것은 아닙니다.\n\n이 문서는 공식 저장소와 릴리스 안내를 정리한 설명이며, Illithid를 설치하거나 실행해 본 결과가 아닙니다.",
+      "diagram_image": {
+        "src": "/explore/illithid-webtoon.png",
+        "alt": "같은 규칙을 여러 AI 도구에 반복 복사하던 개발자가 공통 라이브러리를 고치고 도구를 고른 뒤 변경을 미리 보고 적용하는 흐름을 그린 8컷 웹툰",
+        "caption": "이해를 위한 가상의 8컷 웹툰 · 실제 제품 화면 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "diagram_description": "같은 규칙을 여러 도구에 반복 복사하던 개발자가 공통 라이브러리를 고치고, 도구를 고른 뒤 미리보기를 확인해 적용하는 가상 예시입니다. 실제 제품 화면이 아닙니다.",
+      "comparison": {
+        "title": "비슷한 설정 관리 방식과 비교",
+        "intro": "Illithid는 앱 화면에서, Ruler는 파일과 명령어를 통해 공통 설정을 관리합니다. 도구별 수동 설정은 각 도구의 설정을 직접 관리하는 방법입니다.\n\nRuler도 규칙과 MCP 외에 실험적 스킬·서브에이전트 배포를 지원합니다. 스킬은 기본으로 켜져 있고 서브에이전트 배포는 기본으로 꺼져 있습니다.",
+        "table": {
+          "caption": "Illithid·Ruler·도구별 수동 설정 비교(공식 자료 기반, 성능 비교 아님)",
+          "columns": [
+            "관리 방식",
+            "주로 맞는 상황"
+          ],
+          "rows": [
+            {
+              "label": "Illithid",
+              "values": [
+                "앱의 공통 라이브러리에서 고치고 도구를 골라 미리 본 뒤 적용합니다. hooks와 허용·질문·차단 권한도 함께 다룹니다. macOS 앱입니다.",
+                "여러 도구의 설정을 앱 화면에서 한곳에 모아 두고 싶은 Mac 사용자"
+              ]
+            },
+            {
+              "label": "Ruler",
+              "values": [
+                ".ruler 폴더의 파일을 ruler apply 명령으로 각 도구의 파일에 배포합니다. --dry-run으로 미리 볼 수 있고, 규칙과 MCP, 실험적 스킬(기본 켜짐)·서브에이전트(기본 꺼짐)를 다룹니다.",
+                "설정을 프로젝트 파일과 명령줄로 다루는 방식이 편한 경우"
+              ]
+            },
+            {
+              "label": "도구별 수동 설정",
+              "values": [
+                "각 도구의 고유 파일을 직접 열어 고칩니다.",
+                "도구가 한두 개이고 바꿀 일이 드물어 반복 부담이 작은 경우"
+              ]
+            }
+          ]
+        },
+        "interpretation": "앱 화면에서 여러 도구를 함께 관리하려면 Illithid를, 프로젝트 파일과 명령어 중심으로 설정을 배포하려면 Ruler를 살펴볼 수 있습니다. 도구가 적고 설정 변경이 드물면 수동 관리로도 충분할 수 있습니다.\n\n이 선택 기준은 확인한 작동 방식에 따른 해석이며, 같은 조건에서 성능을 측정한 결과는 아닙니다.",
+        "sources": [
+          {
+            "name": "GitHub: doominkim/illithid",
+            "url": "https://github.com/doominkim/illithid"
+          },
+          {
+            "name": "GitHub: intellectronica/ruler",
+            "url": "https://github.com/intellectronica/ruler"
+          }
+        ]
+      },
+      "pitfalls": [
+        "Illithid는 모델을 실행하거나 요청을 중계하지 않습니다. 기존 AI 코딩 도구를 계속 사용하며, Illithid는 그 도구의 설정 파일을 관리합니다.",
+        "여섯 도구가 모든 기능을 똑같이 지원하지 않습니다. hooks, 셸 명령 권한, MCP 권한마다 지원하는 도구가 다릅니다.",
+        "사용량 화면의 비용은 공개 API 단가로 환산한 금액입니다. 실제 구독 청구액이나 남은 사용량이 아니며, 모델 우열을 보여 주는 실험 결과도 아닙니다.",
+        "모델 API를 호출하지 않아도 완전 오프라인은 아닙니다. 업데이트 확인, Market, Git 원격 백업 같은 기능은 외부와 통신할 수 있습니다.",
+        "허용·질문·차단 설정은 각 도구가 실행합니다. Illithid가 별도의 보안 장벽이나 승인 에이전트가 되는 것은 아닙니다."
+      ],
+      "sources": [
+        {
+          "name": "GitHub: doominkim/illithid",
+          "url": "https://github.com/doominkim/illithid"
+        },
+        {
+          "name": "GitHub: Illithid 0.3.5 릴리스",
+          "url": "https://github.com/doominkim/illithid/releases/tag/v0.3.5"
+        },
+        {
+          "name": "GitHub: Illithid GitHub 백업 안내",
+          "url": "https://github.com/doominkim/illithid/blob/main/docs/github-backup.md"
+        },
+        {
+          "name": "GitHub: intellectronica/ruler",
+          "url": "https://github.com/intellectronica/ruler"
+        }
+      ],
+      "dev_reference_links": []
     }
   ]
 }
