@@ -1,10 +1,30 @@
 {
   "edition_date": "2026-10-06",
-  "window_start": "2026-08-07T07:02:39.067765+09:00",
-  "window_end": "2026-10-06T07:02:39.067765+09:00",
-  "collected_at": "2026-10-06T07:03:12.919824+09:00",
+  "window_start": "2026-08-07T09:01:07.102362+09:00",
+  "window_end": "2026-10-06T09:01:07.102362+09:00",
+  "collected_at": "2026-10-06T09:01:07.102362+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "d9b88297cf0d952f",
+      "title": "v2.1.290",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.290",
+      "source_summary": "## What's changed - Added `serverToolUses` to the result of a mod's `turn.step` hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end - Added `agentId` to the `tool.check` event of plugin hooks, so a hook can tell a subagent's permission check from the main session's - Added `ceiling` to the question and verdict a mod's `tool.check` hook reads, naming the approval an organization requires for a tool - Added `ThemeKey` and `Color` types to the plugin ",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-06T09:01:39+09:00",
+      "published_at": "2026-10-05T23:33:17+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.290 버전 출시",
+      "source_summary_ko": "# # 변경된 내용 - 모드의 `turn.step' 훅 결과에 `serverToolUses` 추가: API가 실행됨 (어드바이저) 을 호출합니다. 각각 ID, 이름, 입력, 시작 및 끝이 있음 - 플러그인 훅의 `tool.check` 이벤트에 `agentId' 추가, 따라서 훅은 메인 세션의 `ceiling` 에서 하위 에이전트의 권한 확인을 알 수 있음 - 모드의 `tool.check` 훅을 읽고 승인에 이름을 지정합니다. - 플러그인에 `ThemeKey` 및 `Color` 유형 추가",
+      "release_notes_ko": {
+        "new_features": "Mod의 `turn.step` 훅 결과에 'serverToolUses` 추가: 도구는 API 자체 (어드바이저) 를 호출하며, 각각 ID, 이름, 입력, 시작 및 끝이 있습니다.\n플러그인 후크의 `tool.check` 이벤트에 `agentId' 를 추가하여 후크가 메인 세션의",
+        "bug_fixes": "클로드 코드의 베타 헤더 중 하나를 400 이외의 상태로 또는 두 번째 베타와 함께 거부하는 프록시 및 게이트웨이 뒤에 실패하는 수정된 요청\n\"모델에서 요청을 처리할 수 없는 것으로 거부됨\" 오류로 인해 수백 개의 이미지가 정지되는 긴 세션을 수정했습니다.",
+        "chores": "자체 호스팅 러너: 몇 초 동안 러너를 정지시키는 세션 오류 출력의 조작된 매우 긴 줄을 수정했습니다.\nWindows: CRLF 줄 끝으로 파일을 저장할 때 실패하는 기술 및 명령에서 다중 줄 `!` 셸 블록 수정\n네트워크 프록시 뒤에 MCP 시작 개선: 프록시 블록 (HTTP 403) 이 더 이상 세 번 재시도되지 않는 서버"
+      }
+    },
     {
       "id": "0e1dc4b876f48358",
       "title": "0.160.1",
