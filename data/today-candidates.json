@@ -36,12 +36,12 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-07T06:01:17.998807+09:00",
+      "checked_at": "2026-10-07T06:28:25.098989+09:00",
       "held_count": 0,
       "excluded_count": 206,
       "skipped_count": 28,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+      "last_success_at": "2026-10-07T06:28:25.098989+09:00"
     },
     {
       "id": "claude-releases",
@@ -49,25 +49,25 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-07T06:01:17.998807+09:00",
+      "checked_at": "2026-10-07T06:28:25.098989+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 56,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+      "last_success_at": "2026-10-07T06:28:25.098989+09:00"
     },
     {
       "id": "gemini-releases",
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
-      "count": 1,
-      "checked_at": "2026-10-07T06:01:17.998807+09:00",
+      "count": 0,
+      "checked_at": "2026-10-07T06:28:25.098989+09:00",
       "held_count": 0,
       "excluded_count": 69,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+      "last_success_at": "2026-10-07T06:28:25.098989+09:00"
     },
     {
       "id": "grok-releases",
@@ -75,7 +75,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-07T06:01:17.998807+09:00",
+      "checked_at": "2026-10-07T06:28:25.098989+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -83,7 +83,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+      "last_success_at": "2026-10-07T06:28:25.098989+09:00"
     },
     {
       "id": "anthropic-news",
@@ -325,27 +325,8 @@
     }
   ],
   "new_count": 5,
-  "archive_count": 403,
+  "archive_count": 416,
   "candidates": [
-    {
-      "id": "04d61de5c9f9c672",
-      "title": "Release v0.63.0",
-      "source_id": "gemini-releases",
-      "source_name": "Gemini CLI Releases",
-      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.63.0",
-      "source_summary": "## What's Changed * fix(cli): display retry progress indicator during connection recovery (#28340) by @amelidev in https://github.com/google-gemini/gemini-cli/pull/29468 * Changelog for v0.61.0-preview.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29469 * Changelog for v0.61.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29472 * fix(cli): distinguish missing MCP enablement config from malformed JSON by @jesussamuel-byte in https://github.c",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "why_it_matters_provenance": "automatic",
-      "fetched_at": "2026-10-07T06:01:48+09:00",
-      "published_at": "2026-10-06T20:38:49+00:00",
-      "date_precision": "time",
-      "title_ko": "Gemini CLI v0.63.0 버전 출시",
-      "source_summary_ko": "# # 변경 사항 * FIX (CLI): https://github.com/google-gemini/gemini-cli/pull/29468에서 @ amelidev의 연결 복구 중 재시도 진행률 표시기 (# 28340) 표시 * https://github.com/google-gemini/gemini-cli/pull/29468의 @ gemini-cli-robot의 v0.61.0-preview.1에 대한 변경 로그 * https://github.com/google-gemini/gemini-cli/pull/29472의 @ gemini-cli-robot의 v0.61.0에 대한 변경 로그 * https://github.com/google-gemini/gemini-cli/pull/29472 * FIX (CLI) 에서 누락된 MCP 활성화 구성 구별 https://github.c에서 @ jesussamuel-byte의 잘못된 형식의 JSON",
-      "release_notes_ko": {
-        "bug_fixes": "fix (cli): 연결 복구 중 재시도 진행률 표시기 표시\nfix (cli): 누락된 MCP 활성화 구성과 잘못된 형식의 JSON 구별\nfix (cli): 기능 감지 후 일시 중지된 stdin 복원",
-        "chores": "V0.61.0-preview.1에 대한 변경 로그\nV0.61.0에 대한 변경 로그\nchore (release): 0.63.0-nightly.20260923.gf50ba8608로 범프 버전"
-      }
-    },
     {
       "id": "2bd8707fdab8226a",
       "title": "Expanding the Cyber Verification Program",

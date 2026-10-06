@@ -37,12 +37,12 @@
         "url": "https://github.com/openai/codex/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-07T06:01:17.998807+09:00",
+        "checked_at": "2026-10-07T06:28:25.098989+09:00",
         "held_count": 0,
         "excluded_count": 206,
         "skipped_count": 28,
         "coverage_limited": false,
-        "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+        "last_success_at": "2026-10-07T06:28:25.098989+09:00"
       },
       {
         "id": "claude-releases",
@@ -50,25 +50,25 @@
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-07T06:01:17.998807+09:00",
+        "checked_at": "2026-10-07T06:28:25.098989+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 56,
         "coverage_limited": false,
-        "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+        "last_success_at": "2026-10-07T06:28:25.098989+09:00"
       },
       {
         "id": "gemini-releases",
         "name": "Gemini CLI Releases",
         "url": "https://github.com/google-gemini/gemini-cli/releases",
         "status": "ok",
-        "count": 1,
-        "checked_at": "2026-10-07T06:01:17.998807+09:00",
+        "count": 0,
+        "checked_at": "2026-10-07T06:28:25.098989+09:00",
         "held_count": 0,
         "excluded_count": 69,
-        "skipped_count": 8,
+        "skipped_count": 9,
         "coverage_limited": false,
-        "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+        "last_success_at": "2026-10-07T06:28:25.098989+09:00"
       },
       {
         "id": "grok-releases",
@@ -76,7 +76,7 @@
         "url": "https://docs.x.ai/developers/release-notes",
         "status": "partial",
         "count": 0,
-        "checked_at": "2026-10-07T06:01:17.998807+09:00",
+        "checked_at": "2026-10-07T06:28:25.098989+09:00",
         "held_count": 1,
         "excluded_count": 0,
         "skipped_count": 7,
@@ -84,7 +84,7 @@
         "held_reasons": [
           "한국어 번역 실패: 한국어 번역에 실패했습니다."
         ],
-        "last_success_at": "2026-10-07T06:01:17.998807+09:00"
+        "last_success_at": "2026-10-07T06:28:25.098989+09:00"
       },
       {
         "id": "anthropic-news",
@@ -328,7 +328,7 @@
     "pending_event_count": 498
   },
   "documents": {
-    "checked_at": "2026-10-06T06:39:01.478050+09:00",
+    "checked_at": "2026-10-07T06:28:57.424538+09:00",
     "sources": [
       {
         "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent",
@@ -371,6 +371,18 @@
         "url": "https://api-docs.deepseek.com/updates",
         "status": "unchanged",
         "checked_at": "2026-10-06T06:39:01.478050+09:00"
+      },
+      {
+        "url": "https://cloud.google.com/docs/generative-ai/glossary",
+        "status": "failed",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
+        "error": "허용되지 않은 호스트입니다: cloud.google.com"
+      },
+      {
+        "url": "https://cloud.google.com/use-cases/multimodal-ai",
+        "status": "failed",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
+        "error": "허용되지 않은 호스트입니다: cloud.google.com"
       },
       {
         "url": "https://code.claude.com/docs/en/context-window.md",
@@ -449,6 +461,18 @@
         "changed_at": "2026-09-25T07:44:06.580319+09:00"
       },
       {
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+        "status": "failed",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.aws.amazon.com"
+      },
+      {
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/definitions.html",
+        "status": "failed",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
+        "error": "허용되지 않은 호스트입니다: docs.aws.amazon.com"
+      },
+      {
         "url": "https://docs.x.ai/build/cli/reference",
         "status": "changed",
         "checked_at": "2026-10-06T06:39:01.478050+09:00",
@@ -463,31 +487,31 @@
       {
         "url": "https://docs.z.ai/guides/capabilities/thinking",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
         "url": "https://docs.z.ai/guides/llm/glm-5.2",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
         "url": "https://docs.z.ai/guides/llm/glm-5.3",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
         "url": "https://docs.z.ai/guides/overview/pricing",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
         "url": "https://docs.z.ai/release-notes/new-released",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: docs.z.ai"
       },
       {
@@ -500,6 +524,11 @@
         "url": "https://geminicli.com/docs",
         "status": "unchanged",
         "checked_at": "2026-10-06T06:39:01.478050+09:00"
+      },
+      {
+        "url": "https://huggingface.co/docs/transformers/tokenizer_summary",
+        "status": "baseline",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00"
       },
       {
         "url": "https://huggingface.co/learn/llm-course/chapter1/1",
@@ -567,25 +596,25 @@
       {
         "url": "https://www.alibabacloud.com/help/en/model-studio/models",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
       },
       {
         "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-flash",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
       },
       {
         "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
       },
       {
         "url": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-omni-flash",
         "status": "failed",
-        "checked_at": "2026-10-06T06:39:01.478050+09:00",
+        "checked_at": "2026-10-07T06:28:57.424538+09:00",
         "error": "허용되지 않은 호스트입니다: www.alibabacloud.com"
       },
       {
