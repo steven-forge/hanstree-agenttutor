@@ -36,25 +36,25 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-07T03:01:55.196173+09:00",
+      "checked_at": "2026-10-07T04:02:46.013567+09:00",
       "held_count": 0,
       "excluded_count": 206,
       "skipped_count": 28,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T03:01:55.196173+09:00"
+      "last_success_at": "2026-10-07T04:02:46.013567+09:00"
     },
     {
       "id": "claude-releases",
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
-      "checked_at": "2026-10-07T03:01:55.196173+09:00",
+      "count": 1,
+      "checked_at": "2026-10-07T04:02:46.013567+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 55,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T03:01:55.196173+09:00"
+      "last_success_at": "2026-10-07T04:02:46.013567+09:00"
     },
     {
       "id": "gemini-releases",
@@ -62,12 +62,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-07T03:01:55.196173+09:00",
+      "checked_at": "2026-10-07T04:02:46.013567+09:00",
       "held_count": 0,
       "excluded_count": 68,
       "skipped_count": 8,
       "coverage_limited": false,
-      "last_success_at": "2026-10-07T03:01:55.196173+09:00"
+      "last_success_at": "2026-10-07T04:02:46.013567+09:00"
     },
     {
       "id": "grok-releases",
@@ -75,7 +75,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-07T03:01:55.196173+09:00",
+      "checked_at": "2026-10-07T04:02:46.013567+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -83,7 +83,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-07T03:01:55.196173+09:00"
+      "last_success_at": "2026-10-07T04:02:46.013567+09:00"
     },
     {
       "id": "anthropic-news",
@@ -325,8 +325,29 @@
     }
   ],
   "new_count": 0,
-  "archive_count": 397,
-  "candidates": [],
+  "archive_count": 398,
+  "candidates": [
+    {
+      "id": "0c734930a759f57a",
+      "title": "v2.1.292",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
+      "source_summary": "## What's changed - Added `--marketplace ` to `claude plugin install`: adds the marketplace if needed, under the same policy checks as `claude plugin marketplace add`, then installs the plugin from it - Added an `effort` parameter to the Agent tool, so Claude runs a sub-agent at the effort level you ask for - Added `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS` environment variable to set a longer base delay for the backoff when retrying an overloaded (529) request - Added `prompt.autocomplete`, a",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-07T04:03:13+09:00",
+      "published_at": "2026-10-06T18:59:30+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.292 버전 출시",
+      "source_summary_ko": "# # 변경 사항 - `CLAUDE PLUGIN INSTALL` 에 '--marketplace` 추가: 필요한 경우 'CLAUDE PLUGIN MARKETPLACE ADD` 와 동일한 정책 검사 하에 마켓플레이스를 추가한 다음 플러그인을 설치합니다. - 에이전트 도구에 `노력` 매개 변수를 추가하므로 Claude는 요청한 노력 수준에서 하위 에이전트를 실행합니다. - 재시도할 때 백오프에 대한 더 긴 기본 지연을 설정하기 위해 `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS` 환경 변수를 추가했습니다. 오버로드된 (529) 요청 - `prompt.autocomplete` 추가됨, a",
+      "release_notes_ko": {
+        "new_features": "`CLAUDE PLUGIN INSTALL` 에 `--marketplace' 추가: 필요한 경우 'CLAUDE PLUGIN MARKETPLACE ADD` 와 동일한 정책 검사 하에 마켓플레이스를 추가한 다음 플러그인을 설치합니다. 에이전트 도구에 `노력` 매개 변수를 추가하므로\n <source>Claude는 요청한 노력 수준에서 하위 에이전트를 실행합니다.",
+        "bug_fixes": "자동 모드를 사용할 수 없을 때 `permissionMode: auto` 가 자동 모드로 들어가는 하위 에이전트 정의 수정 (설정, 회로 차단기 또는 이를 지원하지 않는 모델에 의해 비활성화됨)\n'~/.claude/seed-admin' 에서 `/ultrareview` 업로드의 스테이징된 파일 사본을 읽을 수 있는 샌드박스 명령 수정",
+        "chores": "보안: PreToolUse hook approvals and auto mode bypassing the permission prompt for file reads from network (UNC) paths 수정\n'claude -p` 및 SDK 세션의 시작 개선: 첫 번째 턴은 더 이상 HTTP 및 SSE MCP 서버가 `리소스/목록` 에 응답할 때까지 기다리지 않습니다.\n글머리 기호가 길거나 번호가 매겨진 답변의 렌더링 속도 향상: 대화록 (ctrl + o) 에서 훨씬 빠르게 스트리밍, 크기 조정 및 다시 열립니다."
+      }
+    }
+  ],
   "hourly_collected_at": "2026-10-07T00:15:40.744959+09:00",
   "hourly_window_start": "2026-10-04T12:15:40.744959+09:00",
   "events": [
