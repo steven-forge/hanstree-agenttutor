@@ -26,7 +26,9 @@ EXTERNAL_SOURCE_IDS = frozenset({
     "youtube", "x", "reddit",
 })
 TOP_KEYS = {"schema_version", "revision", "updated_at", "collection_interval_hours", "official_window_days",
-            "window_hours", "publish", "ai_keywords", "official_sources", "sources", "display", "daily_target"}
+            "window_hours", "publish", "ai_keywords", "official_sources", "sources", "display", "daily_target",
+            "glossary_review_interval_days"}
+GLOSSARY_REVIEW_DAYS = (1, 2, 3, 7, 14, 30)
 LOCAL_SUFFIXES = {"localhost", "local", "localdomain", "internal", "intranet", "lan", "home", "test", "invalid", "example", "onion"}
 SECRET_QUERY_KEYS = {"apikey", "accesskey", "accesstoken", "token", "key", "password", "passwd", "secret", "signature", "auth", "authorization", "code"}
 
@@ -108,6 +110,8 @@ def validate_policy(value: object) -> dict:
     """입력을 변경하지 않고 검증한다. 알 수 없는 필드·출처·자료형은 거부한다."""
     if not isinstance(value, dict):
         raise ValueError("정책: 객체가 필요합니다.")
+    if "glossary_review_interval_days" not in value:
+        value = {**value, "glossary_review_interval_days": 1}  # 이 필드 이전에 저장된 정책은 매일 검토
     version = value.get("schema_version")
     _integer(version, 1, 3, "schema_version")
     _keys(value, TOP_KEYS | ({"custom_sources"} if version != 1 else set()) | ({"source_urls"} if version == 3 else set()), "정책")
@@ -123,6 +127,8 @@ def validate_policy(value: object) -> dict:
     _integer(value["collection_interval_hours"], 1, 24, "collection_interval_hours")
     if value["collection_interval_hours"] not in (1, 2, 3, 6, 12, 24):
         raise ValueError("collection_interval_hours: 1, 2, 3, 6, 12, 24 중 하나가 필요합니다.")
+    if type(value["glossary_review_interval_days"]) is not int or value["glossary_review_interval_days"] not in GLOSSARY_REVIEW_DAYS:
+        raise ValueError("glossary_review_interval_days: 1, 2, 3, 7, 14, 30 중 하나가 필요합니다.")
     _integer(value["official_window_days"], 1, 60, "official_window_days")
     _integer(value["window_hours"], 1, 168, "window_hours")
     publish = value["publish"]

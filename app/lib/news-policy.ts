@@ -11,7 +11,7 @@ export type SourceRule = { enabled: boolean; independent: boolean; keyword_filte
 export type CustomSource = { id: string; name: string; url: string; site_url: string };
 export type NewsPolicy = {
   schema_version: 3; revision: number; updated_at: string | null;
-  collection_interval_hours: number; official_window_days: number; window_hours: number;
+  collection_interval_hours: number; glossary_review_interval_days: number; official_window_days: number; window_hours: number;
   publish: { auto_publish: boolean; official_single_source: boolean; min_independent: number; high_importance_at: number; official_model_high: boolean };
   ai_keywords: string[]; official_sources: Record<string, boolean>; sources: Record<string, SourceRule>;
   custom_sources: CustomSource[];
@@ -56,7 +56,10 @@ export function defaultSourceRule(id: string): SourceRule {
   if (!source) throw new Error("기본 채널을 확인해 주세요.");
   return { enabled: source.enabled, independent: source.independent, keyword_filter: source.keyword_filter ?? false, max_items: source.max_items };
 }
-export function validateNewsPolicy(value: unknown): NewsPolicy {
+export const GLOSSARY_REVIEW_DAYS = [1, 2, 3, 7, 14, 30];
+export function validateNewsPolicy(input: unknown): NewsPolicy {
+  // 이 필드 이전에 저장된 정책은 매일 검토(1일)로 본다.
+  const value = input && typeof input === "object" && !Array.isArray(input) && !Object.hasOwn(input, "glossary_review_interval_days") ? { ...input, glossary_review_interval_days: 1 } : input;
   const fail = (name: string): never => { throw new Error(`${name} 설정을 확인해 주세요.`); };
   function object(v: unknown, keys: string[], label: string): Record<string, unknown> {
     if (!v || typeof v !== "object" || Array.isArray(v)) return fail(label);
@@ -71,7 +74,7 @@ export function validateNewsPolicy(value: unknown): NewsPolicy {
   function bool(v: unknown, label: string): boolean { if (typeof v !== "boolean") return fail(label); return v; }
   const version = (value as Record<string, unknown> | null)?.schema_version;
   if (version !== 1 && version !== 2 && version !== 3) fail("지원하는 기준 형식");
-  const p = object(value, ["schema_version", "revision", "updated_at", "collection_interval_hours", "official_window_days", "window_hours", "publish", "ai_keywords", "official_sources", "sources", "display", "daily_target", ...(version !== 1 ? ["custom_sources"] : []), ...(version === 3 ? ["source_urls"] : [])], "뉴스레터 기준");
+  const p = object(value, ["schema_version", "revision", "updated_at", "collection_interval_hours", "glossary_review_interval_days", "official_window_days", "window_hours", "publish", "ai_keywords", "official_sources", "sources", "display", "daily_target", ...(version !== 1 ? ["custom_sources"] : []), ...(version === 3 ? ["source_urls"] : [])], "뉴스레터 기준");
   const revision = integer(p.revision, 0, Number.MAX_SAFE_INTEGER - 1, "저장 버전");
   if (p.updated_at !== null) {
     if (typeof p.updated_at !== "string" || p.updated_at.length > 40 || !/^(?!0000)\d{4}-\d{2}-\d{2}T(?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d(?:\.\d+)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)$/.test(p.updated_at) || !Number.isFinite(Date.parse(p.updated_at))) fail("저장 시각");
@@ -80,6 +83,8 @@ export function validateNewsPolicy(value: unknown): NewsPolicy {
   }
   const interval = integer(p.collection_interval_hours, 1, 24, "수집 주기");
   if (![1, 2, 3, 6, 12, 24].includes(interval)) fail("수집 주기");
+  const glossaryDays = integer(p.glossary_review_interval_days, 1, 30, "핵심용어 검토 주기");
+  if (!GLOSSARY_REVIEW_DAYS.includes(glossaryDays)) fail("핵심용어 검토 주기");
   const publish = object(p.publish, ["auto_publish", "official_single_source", "min_independent", "high_importance_at", "official_model_high"], "게시 기준");
   const min = integer(publish.min_independent, 1, 8, "게시 최소 매체 수");
   const high = integer(publish.high_importance_at, min, 8, "중요도 높음 매체 수");
@@ -130,7 +135,7 @@ export function validateNewsPolicy(value: unknown): NewsPolicy {
   if (display.sort !== "latest" && display.sort !== "importance") fail("정렬 방식");
   const result: NewsPolicy = {
     schema_version: 3, revision, updated_at: p.updated_at as string | null,
-    collection_interval_hours: interval, official_window_days: integer(p.official_window_days, 1, 60, "공식 수집 기간 1~60일"), window_hours: integer(p.window_hours, 1, 168, "외부 수집 기간 1~168시간"),
+    collection_interval_hours: interval, glossary_review_interval_days: glossaryDays, official_window_days: integer(p.official_window_days, 1, 60, "공식 수집 기간 1~60일"), window_hours: integer(p.window_hours, 1, 168, "외부 수집 기간 1~168시간"),
     publish: { auto_publish: bool(publish.auto_publish, "자동 게시"), official_single_source: bool(publish.official_single_source, "공식 단독 게시"), min_independent: min, high_importance_at: high, official_model_high: bool(publish.official_model_high, "공식 모델 중요도") },
     ai_keywords: keywords,
     official_sources: Object.fromEntries(OFFICIAL_SOURCES.map(s => [s.id, bool(official[s.id], s.name)])),

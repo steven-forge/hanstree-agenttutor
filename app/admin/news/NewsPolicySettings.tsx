@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { EXTERNAL_SOURCES, OFFICIAL_SOURCES, channelUrlKey, defaultSourceRule, externalSources, validateNewsPolicy, type NewsPolicy, type SourceRule } from "../../lib/news-policy";
+import { EXTERNAL_SOURCES, GLOSSARY_REVIEW_DAYS, OFFICIAL_SOURCES, channelUrlKey, defaultSourceRule, externalSources, validateNewsPolicy, type NewsPolicy, type SourceRule } from "../../lib/news-policy";
 
 type Snapshot = {
   policy: NewsPolicy; storageConfigured: boolean;
@@ -168,6 +168,7 @@ export default function NewsPolicySettings() {
         <legend>수집과 게시</legend>
         <div className="cn-policy-grid cn-policy-grid-single">
           <label className="cn-field">수집 주기<select value={draft.collection_interval_hours} onChange={e => update({ collection_interval_hours: Number(e.target.value) })}>{[1, 2, 3, 6, 12, 24].map(n => <option key={n} value={n}>{n}시간마다</option>)}</select><small>KST 정각 기준. 예약 실행과 배포는 지연될 수 있습니다.</small></label>
+          <label className="cn-field">핵심용어 사전 검토 주기<select value={draft.glossary_review_interval_days} onChange={e => update({ glossary_review_interval_days: Number(e.target.value) })}>{GLOSSARY_REVIEW_DAYS.map(n => <option key={n} value={n}>{n === 1 ? "매일" : `${n}일마다`}</option>)}</select><small>매일 06:15 KST 점검에서 이 주기가 지났을 때만 새 후보 용어를 확인해 추가합니다. 뉴스 수집 주기와는 별개입니다.</small></label>
           <label className="cn-field">공식 뉴스 수집 기간 · 일<input type="number" min={1} max={60} required value={draft.official_window_days} onChange={e => update({ official_window_days: Number(e.target.value) })} /></label>
           <label className="cn-field">외부 뉴스 수집 기간 · 시간<input type="number" min={1} max={168} required value={draft.window_hours} onChange={e => update({ window_hours: Number(e.target.value) })} /></label>
           <label className="cn-field">게시 최소 매체 수<input type="number" min={1} max={8} required value={draft.publish.min_independent} onChange={e => publish({ min_independent: Number(e.target.value) })} /><small>‘게시 근거’로 지정한 서로 다른 도메인 수입니다.</small></label>

@@ -27,12 +27,13 @@ AgentTutor에서 실제로 설정된 배치(자동·수동 반복) 작업을 정
 - **순서**:
   1. 뉴스 수집 (`python3 scripts/collect_content.py news`): 수집 시각 기준 최근 60일. 8개 출처(OpenAI News, Google AI, Codex/Claude Code/Gemini CLI/Grok Releases, Anthropic News, xAI News)를 매번 전체 재조회합니다. 새 기사만 `data/today.json`에 누적하며, 기존 기사의 편집 내용은 덮어쓰지 않습니다. 영어 제목·설명은 외부 번역 서비스(MyMemory)로 한국어 번역합니다.
   2. 문서 출처 점검 (`python3 scripts/collect_content.py documents`): 워크플로는 매일 돌지만 출처별 내부 주기가 다릅니다. **Agents 1일, Engineering 7일, Learn·Glossary 30일**. 주기가 지난 출처만 점검하고, 직전에 실패한 출처는 주기와 관계없이 다음 실행에서 다시 점검합니다.
+  2-1. 핵심용어 검토 (`python3 scripts/review_glossary.py`): 정책 동기화가 성공한 06:15 예약 또는 수동 실행에서만 돕니다. 검토 주기(1·2·3·7·14·30일, 기본 1일)는 관리자 `/admin/news/settings`의 ‘핵심용어 사전 검토 주기’에서 정하며 KST 달력 날짜로 판정합니다(수동 실행의 `force_glossary`는 주기 무시). `data/glossary-candidates.json`의 후보 중 사전에 없고 `learn.json`·`agent-engineering.json` 본문에 쓰이며 공식 출처(HTTP 200, 영문 용어 확인)가 확인된 것만 `data/glossary.json` 끝에 `is_new`로 추가합니다. 성공하면 `reviewed_at`, 추가 시 `updated_at`도 갱신하고, 출처 확인 실패 시 사전을 바꾸지 않고 실패로 끝나 마지막 단계에서 workflow가 실패 처리됩니다. 한계: 후보 풀은 현재 Tokenization·Temperature·Inference 3개뿐이라 모두 처리되면 새 용어를 찾지 못합니다.
   3. 빌드 (`npm run build`).
-  4. 커밋·푸시: 아래 4개 파일에 변경이 있을 때만 `chore(content): …` 메시지로 master에 커밋하고 `git pull --rebase` 후 푸시합니다. 변경이 없으면 푸시하지 않습니다.
+  4. 커밋·푸시: 아래 파일(핵심용어 추가 시 `data/glossary.json` 포함)에 변경이 있을 때만 `chore(content): …` 메시지로 master에 커밋하고 `git pull --rebase` 후 푸시합니다. 변경이 없으면 푸시하지 않습니다.
   5. 마지막 단계에서 수집 단계 실패 여부를 확인합니다.
 - **수동 실행 옵션 `force_docs`**: 체크하면 2번 단계가 `--force`로 실행되어 모든 문서 출처를 주기와 무관하게 점검합니다. 기본값은 꺼짐입니다.
 - **입력**: 8개 뉴스 출처(RSS, GitHub Releases API, HTML), `data/agents.json`·`data/agent-engineering.json`·`data/learn.json`·`data/glossary.json`의 출처 URL, 기존 `data/today.json`, `.source-cache/content.json`.
-- **출력(커밋 대상 4개 파일만)**:
+- **출력(커밋 대상: 아래 4개 파일과 `data/news-policy.json`·`data/glossary.json`)**:
   - `data/today.json`: 누적 뉴스. 새 기사 추가, 빠진 초보자 해설·릴리스 노트 보강.
   - `data/today-candidates.json`: 이번 실행에서 새로 발견한 항목과 출처별 결과.
   - `data/content-health.json`: 뉴스·문서 출처의 점검 상태.

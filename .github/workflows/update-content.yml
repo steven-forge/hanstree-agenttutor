@@ -9,13 +9,21 @@ on:
       - 'scripts/collect_hourly_news.py'
       - 'scripts/news_policy.py'
       - 'scripts/news_public_fetch.py'
+      - 'scripts/review_glossary.py'
+      - 'data/glossary-candidates.json'
+      - 'data/news-policy.json'
   schedule:
-    - cron: '15 21 * * *'  # 06:15 Asia/Seoul - 문서 확인 (뉴스 주기와 별개)
+    - cron: '15 21 * * *'  # 06:15 Asia/Seoul - 문서 확인·핵심용어 검토 (뉴스 주기와 별개)
     - cron: '0 * * * *'    # 매시간 정책 동기화 후 KST 기준 뉴스 주기 판정
   workflow_dispatch:
     inputs:
       force_docs:
         description: '모든 문서 출처 강제 점검 (--force)'
+        required: false
+        type: boolean
+        default: false
+      force_glossary:
+        description: '핵심용어 검토 주기와 무관하게 실행 (--force)'
         required: false
         type: boolean
         default: false
@@ -92,6 +100,19 @@ jobs:
           fi
         continue-on-error: true
 
+      - name: Review glossary terms (admin-selected interval)
+        id: review_glossary
+        if: steps.sync_policy.outcome == 'success' && (github.event.schedule == '15 21 * * *' || github.event_name == 'workflow_dispatch')
+        env:
+          FORCE_GLOSSARY: ${{ inputs.force_glossary == true && 'true' || 'false' }}
+        run: |
+          if [ "$FORCE_GLOSSARY" = "true" ]; then
+            python3 scripts/review_glossary.py --force
+          else
+            python3 scripts/review_glossary.py
+          fi
+        continue-on-error: true
+
       - name: Collect hourly news (external sources, auto-publish)
         id: collect_hourly
         if: steps.sync_policy.outcome == 'success' && steps.news_schedule.outcome == 'success' && steps.news_schedule.outputs.run == 'true'
@@ -110,8 +131,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain data/news-policy.json data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json)" ]; then
-            git add data/news-policy.json data/today.json data/today-candidates.json data/content-health.json .source-cache/content.json
+          if [ -n "$(git status --porcelain data/news-policy.json data/today.json data/today-candidates.json data/content-health.json data/glossary.json .source-cache/content.json)" ]; then
+            git add data/news-policy.json data/today.json data/today-candidates.json data/content-health.json data/glossary.json .source-cache/content.json
             git commit -m "chore(content): 뉴스 archive·후보 및 문서 출처 점검 갱신"
             git pull --rebase origin master
             git push origin master
@@ -122,7 +143,7 @@ jobs:
       - name: Check collection step outcome
         if: always()
         run: |
-          if [ "${{ steps.sync_policy.outcome }}" = "failure" ] || [ "${{ steps.news_schedule.outcome }}" = "failure" ] || [ "${{ steps.collect_news.outcome }}" = "failure" ] || [ "${{ steps.collect_docs.outcome }}" = "failure" ] || [ "${{ steps.collect_hourly.outcome }}" = "failure" ]; then
-            echo "Error: Policy synchronization, scheduling, or content collection failed. Newsletter publishing stays blocked when policy synchronization fails."
+          if [ "${{ steps.sync_policy.outcome }}" = "failure" ] || [ "${{ steps.news_schedule.outcome }}" = "failure" ] || [ "${{ steps.collect_news.outcome }}" = "failure" ] || [ "${{ steps.collect_docs.outcome }}" = "failure" ] || [ "${{ steps.review_glossary.outcome }}" = "failure" ] || [ "${{ steps.collect_hourly.outcome }}" = "failure" ]; then
+            echo "Error: Policy synchronization, scheduling, glossary review, or content collection failed. Newsletter publishing stays blocked when policy synchronization fails."
             exit 1
           fi
