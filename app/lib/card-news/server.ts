@@ -43,7 +43,7 @@ export function setupStatus(): AdminSetup {
     storage,
     // Env presence alone never means publishing is ready; snapshot() fills this from the stored connection state.
     instagram: false,
-    scheduler: Boolean(process.env.CARD_NEWS_CRON_SECRET),
+    scheduler: (process.env.CARD_NEWS_CRON_SECRET?.length || 0) >= 32,
   };
 }
 export function equalSecret(a: string, b: string) {

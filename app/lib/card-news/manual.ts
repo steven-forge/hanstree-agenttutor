@@ -48,5 +48,5 @@ export function appendManualCandidate(edition: Edition, input: unknown): Edition
   const candidate = createManualCandidate(input, edition.date);
   if (edition.candidates.some(c => candidateUrlKey(c.sourceUrl) === candidateUrlKey(candidate.sourceUrl))) throw new Error("같은 원문 주소의 뉴스가 이미 후보에 있습니다.");
   const start = Math.min(Date.parse(edition.windowStart), Date.parse(candidate.publishedAt));
-  return { ...edition, candidateSource: "newsletter", candidates: [candidate, ...edition.candidates], windowStart: new Date(start).toISOString(), windowEnd: new Date(`${edition.date}T23:59:59.999+09:00`).toISOString(), status: "draft", approvedAt: undefined, publication: undefined };
+  return { ...edition, candidateSource: "newsletter", candidates: [candidate, ...edition.candidates], windowStart: new Date(start).toISOString(), windowEnd: new Date(`${edition.date}T23:59:59.999+09:00`).toISOString(), status: "draft", approvedAt: undefined, publication: undefined, automation: undefined };
 }

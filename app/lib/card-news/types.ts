@@ -9,7 +9,7 @@ export type NewsCandidate = {
 };
 export type NewsCard = {
   candidateId: string; title: string; body: string; sourceUrl: string;
-  sourceName: string; publishedAt: string; verified: boolean;
+  sourceName: string; publishedAt: string; verified: boolean; verification?: "automatic";
 };
 export type FeedStatus = { name: string; status: "ok" | "failed"; count: number; message?: string };
 export type Edition = {
@@ -18,6 +18,7 @@ export type Edition = {
   candidateSource?: "newsletter";
   candidates: NewsCandidate[]; sources: FeedStatus[]; cards: NewsCard[]; caption: string;
   updatedAt: string; approvedAt?: string; publishedAt?: string;
+  automation?: { preparedAt: string; settingsRevision: number; accountId?: string; candidateCount?: number };
   publication?: { attempt: string; children: string[]; containerId?: string; mediaId?: string; permalink?: string; message?: string; publishRequestedAt?: string; accountId?: string; startedAt?: string; stage?: "images" | "carousel" | "processing" | "publish" | "done" };
 };
 export type PublicationProgress = { edition: Edition | null; checkedAt: string; remoteStatus?: string; remoteCheckedAt?: string; statusError?: string };
@@ -63,7 +64,7 @@ export function captionFor(cards: NewsCard[], candidates: NewsCandidate[] = []) 
 }
 export function cardIssues(card: NewsCard): string[] {
   const issues = copyIssues(card);
-  if (!card.verified) issues.push("원문·발행일·다른 카드와의 사건 중복을 확인하세요.");
+  if (!card.verified && card.verification !== "automatic") issues.push("원문·발행일·다른 카드와의 사건 중복을 확인하세요.");
   try { const u = new URL(card.sourceUrl); if (u.protocol !== "https:" || u.username || u.password) throw 0; } catch { issues.push("https 원문 주소가 필요합니다."); }
   return issues;
 }

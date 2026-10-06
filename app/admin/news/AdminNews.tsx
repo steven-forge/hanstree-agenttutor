@@ -6,6 +6,7 @@ import { fitCardCopy, copyIssues, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSou
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import type { ExtractedArticle } from "../../lib/card-news/article-extract";
 import PublicationProgress, { publicationSummary } from "./PublicationProgress";
+import AutomationSettings from "./AutomationSettings";
 import "./admin-news.css";
 
 const API = "/api/admin/news";
@@ -13,6 +14,7 @@ const STATUS: Record<Edition["status"], string> = {
   draft: "초안", approved: "검토 완료", publishing: "발행 처리 중", published: "발행 완료", needs_check: "발행 결과 확인 필요",
 };
 const ACTION_LABEL: Record<string, string> = {
+  automation: "자동 제작·예약 요청을 처리하는 중…",
   add_manual: "직접 입력한 뉴스를 등록하는 중…",
   extract: "원문을 요약하고 제목과 본문을 한국어로 옮기는 중…",
   compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG 10장을 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
@@ -339,7 +341,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
         const copy = candidate && ["newsletter", "manual"].includes(candidate.origin) && candidate.cardCopy && fitCardCopy(candidate.cardCopy);
         if (!copy) return card;
         applied++;
-        return { ...card, ...copy, verified: false };
+        return { ...card, ...copy, verified: false, verification: undefined };
       });
       setEdition({ ...edition, windowStart: refreshed.windowStart, candidates: refreshed.candidates, cards, caption: captionFor(cards, refreshed.candidates) }); setShowJpg(false);
       setMessage(`${applied}개 카드에 제목 최대 2줄·본문 최대 7줄 요약을 적용했습니다. 원고를 저장하고 내용을 다시 확인하세요.`);
@@ -349,7 +351,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
   }
   function changeCard(changes: Partial<NewsCard>) {
     if (!canEdit || !edition || !card) return;
-    const cards = edition.cards.map((item, index) => index === currentIndex ? { ...item, verified: false, ...changes } : item);
+    const cards = edition.cards.map((item, index) => index === currentIndex ? { ...item, verified: false, ...changes, verification: undefined } : item);
     setEdition({ ...edition, cards, caption: changes.title === undefined ? edition.caption : captionFor(cards, edition.candidates) });
     setMessage("");
   }
@@ -381,7 +383,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
   return <main className="cn-shell cn-admin-shell">
     <header className="cn-header">
-      <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">뉴스레터에서 고르거나 직접 등록한 뉴스로 카드 원고를 만들고 Instagram 발행을 준비합니다.</p><div className="cn-targets"><span><strong>08:30</strong> 검토 준비 목표</span><span><strong>09:00</strong> 발행 목표 · 한국 시간</span></div></div>
+      <div><p className="cn-eyebrow">AgentTutor · AI News 10</p><h1>카드뉴스 관리</h1><p className="cn-muted">뉴스 카드 10장을 직접 만들거나 매일 자동 제작과 Instagram 예약 발행을 설정합니다.</p></div>
       <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
     </header>
 
@@ -389,6 +391,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
     <p><a className="cn-text-link" href="/admin/news/settings">뉴스레터 기준 설정으로 이동 →</a></p>
     <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리로 이동 →</a></p>
+
+    <AutomationSettings localMode={localMode} parentBusy={!!pending} unsaved={unsaved} sessionExpired={sessionExpired} onExpired={() => setSessionExpired(true)} onBusyChange={busy => { operation.current = busy; setPending(busy ? "automation" : ""); }} onPrepared={() => setMessage("자동 제작·발행 요청 뒤에도 현재 원고 화면을 유지했습니다. 판본 날짜를 확인하고 ‘상태 새로 확인’을 눌러 저장된 결과를 불러오세요.")} />
 
     <section className="cn-panel" aria-label="날짜와 판본 상태">
       <div className="cn-toolbar">
@@ -406,7 +410,8 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 뉴스레터 공개 기사와 직접 등록한 뉴스를 후보로 사용합니다. 목록은 중요도 순위가 아닙니다.</p>
       {retainedCount > 0 && <p className="cn-alert cn-alert-info">이전 후보 {retainedCount}개는 원고 보존용으로 남겨 두었습니다. 새 뉴스레터 후보 수에는 포함하지 않으며, 해당 카드는 뉴스레터 후보로 다시 선정해야 합니다.</p>}
       {edition && !edition.candidateSource && <p className="cn-alert cn-alert-info">이전 방식으로 저장한 판본입니다. 뉴스레터 다시 불러오기를 누르면 저장한 카드와 설명을 유지하며 후보를 갱신합니다.</p>}
-      <p className="cn-help">현재 발행 방식: 관리자 검토 후 버튼으로 발행. 화면의 목표 시각에 자동으로 게시되지는 않습니다.</p>
+      <p className="cn-help">직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 위 예약 설정에서 확인하세요.</p>
+      {edition?.automation && <p className="cn-alert cn-alert-info">자동 제작된 판본입니다. 날짜·중복·글 길이를 자동 점검했으며, 사람이 원문을 검토한 것으로 표시하지 않습니다. 원고를 수정·저장하면 자동 발행 대상에서 빠지고 다시 검토해야 합니다.</p>}
       {pending && <p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
       {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
@@ -451,7 +456,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
       <div className="cn-stats" aria-label="제작 진행 상황">
         <div className={`cn-stat ${candidateCount < 10 ? "cn-stat-warn" : ""}`}><span>뉴스 후보 · 직접 등록 포함</span><strong>{candidateCount}개</strong></div>
         <div className={`cn-stat ${selected.length !== 10 ? "cn-stat-warn" : ""}`}><span>선정한 뉴스</span><strong>{selected.length}/10</strong></div>
-        <div className={`cn-stat ${verifiedCount !== 10 ? "cn-stat-warn" : ""}`}><span>원문 검토</span><strong>{verifiedCount}/10</strong></div>
+        <div className={`cn-stat ${verifiedCount !== 10 ? "cn-stat-warn" : ""}`}><span>사람이 확인한 원문</span><strong>{verifiedCount}/10</strong></div>
       </div>
       <div className="cn-workspace">
         <section className="cn-panel" aria-labelledby="cn-candidates-heading">
@@ -481,6 +486,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
                 <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><button className="cn-button cn-button-small" disabled={!canEdit} onClick={removeCard}>카드 선택 해제</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
+                    {card.verification === "automatic" && <p className="cn-help"><span className="cn-tag cn-tag-info">자동 제작</span> 아래 원문 확인 체크는 사람이 직접 확인한 경우에만 선택하세요.</p>}
                     <label className="cn-field">제목 · {card.title.split("\n").length}/2줄<textarea rows={2} value={card.title} onChange={event => changeCard({ title: event.target.value })} disabled={!canEdit} /><small>줄바꿈 위치가 이미지에 그대로 반영됩니다.</small></label>
                     <label className="cn-field">본문 · {card.body.split("\n").length}/7줄<textarea rows={7} value={card.body} onChange={event => changeCard({ body: event.target.value })} disabled={!canEdit} /></label>
                     {(!/[가-힣]/.test(card.title) || !/[가-힣]/.test(card.body)) && <p className="cn-alert">영문 원문이 그대로 들어간 초안은 한국어 제목과 본문으로 편집한 뒤 검토하세요.</p>}
@@ -525,7 +531,7 @@ export default function AdminNews({ initial, initialDate, localMode = false }: {
 
     <div className="cn-bottom">
       <section className="cn-panel" aria-labelledby="cn-setup-heading"><h2 id="cn-setup-heading">연결 준비 상태</h2><ul className="cn-setup-list">{([
-        ["auth", "관리자 인증"], ["storage", "원고·발행 기록 저장소"], ["instagram", "Instagram 발행 연결"], ["scheduler", "일일 제작 예약"],
+        ["auth", "관리자 인증"], ["storage", "원고·발행 기록 저장소"], ["instagram", "Instagram 발행 연결"],
       ] as const).map(([key, label]) => <li key={key}><span>{localMode && key === "storage" ? "현재 브라우저 원고 저장" : label}</span><span className={`cn-tag ${snapshot.setup[key] || (localMode && key === "storage") ? "cn-tag-ok" : "cn-tag-warn"}`}>{localMode && key === "storage" ? "이 브라우저" : snapshot.setup[key] ? "설정됨" : "준비 필요"}</span></li>)}</ul><p className="cn-help">{localMode ? "관리자 로그인 후 브라우저에서 카드 제작을 할 수 있습니다. 서버 저장소·Instagram 연결·일일 예약은 나중에 설정합니다." : "설정 여부를 표시합니다. 실제 수집·게시 성공 여부는 각 실행 결과에서 확인하세요."}</p>
         {!!edition?.sources.length && <details className="cn-details"><summary>최근 수집 출처 {edition.sources.length}곳 확인</summary><div className="cn-source-status">{edition.sources.map((source, index) => <span className={`cn-tag ${source.status === "ok" ? "cn-tag-ok" : "cn-tag-warn"}`} key={`${source.name}-${index}`} title={source.message}>{source.name} · {source.status === "ok" ? `${source.count}개` : "실패"}</span>)}</div>{edition.sources.filter(source => source.status === "failed").map((source, index) => <p className="cn-help" key={`${source.name}-${index}`}>{source.name}: {source.message || "가져오지 못했습니다. 출처 상태를 확인한 뒤 재수집하세요."}</p>)}</details>}
       </section>

@@ -88,6 +88,15 @@
 .cn-jpg { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; background: #000; }
 .cn-jpg-section { margin-top: 18px; }
 .cn-caption-panel { margin-top: 20px; }
+.cn-automation { margin: 20px 0; }
+.cn-automation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr)); gap: 14px; }
+.cn-automation select { width: 100%; min-width: 0; min-height: 42px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 7px; color: #111827; background: #fff; font: inherit; }
+.cn-automation .cn-form > .cn-help, .cn-automation .cn-form > .cn-publish-actions { margin: 0; }
+.cn-automation-times { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 18px 0; font-size: .85rem; }
+.cn-automation-times dt { color: #64748b; }
+.cn-automation-times dd { margin: 4px 0 0; font-weight: 650; }
+.cn-automation-run { padding: 14px; border-radius: 8px; background: #f8fafc; }
+.cn-automation-run p { margin: 8px 0 0; font-size: .85rem; }
 .cn-policy { margin-bottom: 20px; }
 .cn-policy > h2 .cn-tag { margin-left: 8px; }
 .cn-policy-status { color: #475569; font-size: .8rem; }

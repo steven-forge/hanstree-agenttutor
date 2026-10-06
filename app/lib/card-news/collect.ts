@@ -4,7 +4,7 @@ import { todayData, newsEditorial } from "../../content";
 import preparedCopy from "../../../data/card-news-copy.json";
 import { fitCardCopy } from "./copy";
 import { RELEASE_SOURCE_IDS } from "../../today/newsHelpers";
-import { captionFor, preserveDraft, type Edition, type NewsCandidate } from "./types";
+import { captionFor, preserveDraft, MAX_CANDIDATES, type Edition, type NewsCandidate } from "./types";
 import { AdminError } from "./server";
 
 function clean(value: unknown, length: number) {
@@ -49,10 +49,16 @@ export async function collectEdition(date: string, old: Edition | null): Promise
     }
   }
   const time = (c: NewsCandidate) => Date.parse(c.datePrecision === "day" ? `${c.publishedAt}T00:00:00+09:00` : c.publishedAt);
-  const candidates = Array.from(unique.values()).sort((a, b) => time(b) - time(a));
+  const candidates = Array.from(unique.values()).sort((a, b) => time(b) - time(a)).slice(0, MAX_CANDIDATES);
   const earliest = candidates.at(-1);
   if (earliest) window.windowStart = earliest.datePrecision === "day" ? `${earliest.publishedAt}T00:00:00+09:00` : earliest.publishedAt;
   const now = new Date().toISOString();
-  return preserveDraft({ date, revision: old?.revision || 0, status: "draft", ...window, candidateSource: "newsletter", collectedAt: now, candidates,
+  const edition = preserveDraft({ date, revision: old?.revision || 0, status: "draft", ...window, candidateSource: "newsletter", collectedAt: now, candidates,
     sources: [{ name: "AgentTutor 뉴스레터", status: "ok", count: candidates.length }], cards: [], caption: captionFor([]), updatedAt: old?.updatedAt || now }, old);
+  // Keep manual and selected candidates when trimming the archive to the editor's limit.
+  const selected = new Set(edition.cards.map(card => card.candidateId));
+  const protectedCandidates = edition.candidates.filter(c => c.origin === "manual" || selected.has(c.id));
+  if (protectedCandidates.length > MAX_CANDIDATES) throw new AdminError("보존할 후보가 1,000개를 초과했습니다. 후보를 정리한 뒤 다시 불러오세요.");
+  edition.candidates = [...protectedCandidates, ...edition.candidates.filter(c => c.origin !== "manual" && !selected.has(c.id)).slice(0, MAX_CANDIDATES - protectedCandidates.length)];
+  return edition;
 }

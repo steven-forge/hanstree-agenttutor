@@ -45,7 +45,7 @@ async function editedEdition(old: Edition, body: Record<string, unknown>): Promi
     if (!card.sourceUrl) throw new AdminError("https 원문 주소를 입력하세요.");
     return card;
   });
-  return { ...old, candidates, cards, caption: str(body.caption, 5000, "캡션"), status: "draft", approvedAt: undefined, publication: undefined };
+  return { ...old, candidates, cards, caption: str(body.caption, 5000, "캡션"), status: "draft", approvedAt: undefined, publication: undefined, automation: undefined };
 }
 function ready(edition: Edition) {
   const issues = editionIssues(edition); if (issues.length) throw new AdminError(issues[0]);

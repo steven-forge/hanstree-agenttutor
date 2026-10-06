@@ -1,9 +1,10 @@
-name: Prepare morning card news
+name: Prepare and publish scheduled card news
 on:
   workflow_dispatch:
   schedule:
-    # KST 08:05 and 08:20. GitHub scheduled jobs may start late.
-    - cron: '5,20 23 * * *'
+    # The server stores the editable KST times and checks whether work is due.
+    # GitHub schedules can be delayed; this is a five-minute check, not an exact-time guarantee.
+    - cron: '*/5 * * * *'
 permissions:
   contents: read
 concurrency:
@@ -13,9 +14,9 @@ jobs:
   prepare:
     if: ${{ vars.CARD_NEWS_AUTOMATION_ENABLED == 'true' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 7
     steps:
-      - name: Prepare candidates only; never publish to Instagram
+      - name: Run due preparation or publication with the server settings
         env:
           CARD_NEWS_PUBLIC_URL: ${{ vars.CARD_NEWS_PUBLIC_URL }}
           CARD_NEWS_CRON_SECRET: ${{ secrets.CARD_NEWS_CRON_SECRET }}
@@ -31,12 +32,12 @@ jobs:
                   return None
           request = urllib.request.Request(base + '/api/admin/news/prepare', method='POST', headers={'Authorization': 'Bearer ' + secret})
           try:
-              with urllib.request.build_opener(NoRedirect).open(request, timeout=80) as response:
+              with urllib.request.build_opener(NoRedirect).open(request, timeout=320) as response:
                   result = json.load(response)
               print(json.dumps(result, ensure_ascii=False))
           except urllib.error.HTTPError as error:
-              print('Morning collection failed, HTTP', error.code)
+              print('Card news automation failed, HTTP', error.code)
               raise SystemExit(1)
           except Exception:
-              raise SystemExit('Morning collection did not complete; inspect admin status.')
+              raise SystemExit('Card news automation did not complete; inspect admin status before retrying publication.')
           PY
