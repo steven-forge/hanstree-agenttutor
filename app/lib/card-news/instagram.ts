@@ -139,7 +139,7 @@ async function publishContainerNow(edition: Edition, creds: InstagramCredentials
 export async function publishEdition(edition: Edition, accountId: unknown, options: PublishOptions = {}) {
   if (edition.status !== "approved") throw new AdminError("검토 완료된 원고만 발행할 수 있습니다.", 409);
   const issues = editionIssues(edition); if (issues.length) throw new AdminError(issues[0]);
-  const total = edition.cards.length, key = editionKey(edition);
+  const total = edition.cards.length, key = editionKey(edition), single = total === 1;
   // Resolve credentials once; the token and account ID stay pinned for every step of this publication.
   const creds = await resolveCredentials();
   const account = await instagramAccount(creds);
@@ -157,11 +157,14 @@ export async function publishEdition(edition: Edition, accountId: unknown, optio
       const attempt = edition.publication!.attempt;
       const signature = signAsset(key, attempt, i, expires);
       const imageUrl = `${origin}/api/instagram-assets/${encodeURIComponent(key)}/${i}?attempt=${attempt}&expires=${expires}&signature=${signature}`;
-      const child = await graph(creds, `${pinnedId}/media`, { image_url: imageUrl, is_carousel_item: true, alt_text: `${edition.cards[i].title.replace(/\n/g, " ")} ${edition.cards[i].body.replace(/\n/g, " ")}` });
-      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, checkedId(child.id)], stage: i === total - 1 ? "carousel" : "images", message: i === total - 1 ? `카드 준비 ${total}/${total}장 완료. 게시물 한 개로 묶고 있습니다.` : `카드 준비 ${i + 1}/${total}장 완료. ${i + 2}번 카드를 인스타그램에 보내고 있습니다.` } });
+      const child = await graph(creds, `${pinnedId}/media`, { image_url: imageUrl, ...(single ? { caption: edition.caption } : { is_carousel_item: true }), alt_text: edition.cards[i].image?.alt || `${edition.cards[i].title.replace(/\n/g, " ")} ${edition.cards[i].body.replace(/\n/g, " ")}` });
+      const childId = checkedId(child.id);
+      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, childId], ...(single ? { containerId: childId } : {}), stage: single ? "processing" : i === total - 1 ? "carousel" : "images", message: single ? "웹툰 1장을 보냈습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다." : i === total - 1 ? `카드 준비 ${total}/${total}장 완료. 게시물 한 개로 묶고 있습니다.` : `카드 준비 ${i + 1}/${total}장 완료. ${i + 2}번 카드를 인스타그램에 보내고 있습니다.` } });
     }
-    const parent = await graph(creds, `${pinnedId}/media`, { media_type: "CAROUSEL", children: edition.publication!.children.join(","), caption: edition.caption });
-    edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id), stage: "processing", message: `카드 ${total}장을 묶었습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다.` } });
+    if (!single) {
+      const parent = await graph(creds, `${pinnedId}/media`, { media_type: "CAROUSEL", children: edition.publication!.children.join(","), caption: edition.caption });
+      edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id), stage: "processing", message: `카드 ${total}장을 묶었습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다.` } });
+    }
     const status = await graph(creds, `${edition.publication!.containerId}?fields=status_code`);
     if (status.status_code === "FINISHED") return await publishContainer(edition, creds, options);
     return await save({ ...edition, status: "needs_check", publication: { ...edition.publication!, stage: "processing", message: "이미지 처리 중입니다. 1분 뒤 발행 계속 및 확인을 눌러 주세요." } });

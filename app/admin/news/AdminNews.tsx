@@ -14,15 +14,15 @@ const STATUS: Record<Edition["status"], string> = {
   draft: "초안", approved: "검토 완료", publishing: "발행 처리 중", published: "발행 완료", needs_check: "발행 결과 확인 필요",
 };
 const ACTION_LABEL: Record<string, string> = {
-  create_explore: "Explore 카드 원고를 준비하는 중…",
+  create_webtoon: "기존 웹툰을 발행 원고로 불러오는 중…",
   automation: "자동 제작·예약 요청을 처리하는 중…",
   add_manual: "직접 입력한 뉴스를 등록하는 중…",
   extract: "원문을 요약하고 제목과 본문을 한국어로 옮기는 중…",
   compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG를 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
   approve: "카드 JPG와 검토 결과를 확인하는 중…", publish: "Instagram 발행을 요청하는 중…", reconcile: "최초 발행 요청을 이어 처리하고 결과를 확인하는 중…", check_connection: "연결된 Instagram 계정을 확인하는 중…", logout: "로그아웃 중…",
 };
-type ApiResult = Partial<AdminSnapshot> & { error?: string; id?: string; username?: string; article?: ExtractedArticle };
-type ExploreOption = { slug: string; title: string; summary: string; date: string };
+type ApiResult = Partial<AdminSnapshot> & { error?: string; message?: string; id?: string; username?: string; article?: ExtractedArticle };
+type ExploreOption = { slug: string; title: string; summary: string; date: string; format?: "webtoon" };
 const EMPTY_MANUAL = { title: "", summary: "", sourceName: "", sourceUrl: "", publishedAt: "" };
 
 function safeHref(value?: string): string | undefined {
@@ -52,6 +52,7 @@ function contentDateLabel(candidate: NewsCandidate) {
   return candidate.datePrecision === "none" ? "날짜 기록 없음 · 최신 등록순" : candidate.datePrecision === "day" ? `${candidate.publishedAt} · 콘텐츠 날짜` : `${formatTime(candidate.publishedAt)} KST`;
 }
 function candidateCard(candidate: NewsCandidate): NewsCard {
+  if (candidate.image) return { candidateId: candidate.id, title: candidate.title, body: candidate.summary, sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.publishedAt, image: candidate.image, verified: false };
   const copy = fitCardCopy(candidate.cardCopy || { title: candidate.title, body: candidate.summary }) || (candidate.origin === "explore" ? { title: wrapCardText(candidate.title, CARD_TEXT.title.width), body: wrapCardText(candidate.summary, CARD_TEXT.body.width) } : null);
   return { candidateId: candidate.id, title: copy?.title || "", body: copy?.body || "", sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" || usesContentDate(candidate) ? candidate.publishedAt : "", verified: false };
 }
@@ -59,6 +60,7 @@ function editableContent(edition: Edition | null) {
   return edition ? JSON.stringify({ cards: edition.cards, caption: edition.caption, candidates: edition.candidates }) : "";
 }
 function editorCaption(edition: Edition, cards: NewsCard[], candidates = edition.candidates) {
+  if (edition.explore?.format === "webtoon") return edition.caption;
   const caption = captionFor(cards, candidates);
   return edition.explore ? caption.replace(CAPTION_INTRO, `AgentTutor Explore · ${edition.explore.title}\n\n${edition.candidates[0]?.sourceUrl || ""}`) : caption;
 }
@@ -71,7 +73,7 @@ function downloadBlob(blob: Blob, filename: string) {
 }
 
 export default function AdminNews({ initial, initialDate, localMode = false, explore, exploreDocs = [] }: { initial: AdminSnapshot; initialDate: string; localMode?: boolean; explore?: ExploreOption; exploreDocs?: ExploreOption[] }) {
-  const targetKey = (day: string) => explore ? `${day}~explore~${explore.slug}` : day;
+  const targetKey = (day: string) => explore ? `${day}~webtoon~${explore.slug}` : day;
   const [snapshot, setSnapshot] = useState(initial);
   const [date, setDate] = useState(initialDate);
   const viewDate = useRef(targetKey(initialDate));
@@ -126,6 +128,15 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     const query = search.trim().toLocaleLowerCase();
     return (edition ? selectableCandidates(edition) : []).filter(candidate => !query || `${candidate.title} ${candidate.summary} ${candidate.sourceName}`.toLocaleLowerCase().includes(query));
   }, [edition?.candidates, search]);
+
+  useEffect(() => {
+    if (!explore) return;
+    const controller = new AbortController();
+    fetch(API, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "discard_explore_text", date: targetKey(initialDate) }), signal: controller.signal })
+      .then(async response => { if (!response.ok) throw new Error("이전 텍스트 초안을 정리하지 못했습니다. 페이지를 다시 열어 주세요."); })
+      .catch(error => { if (!controller.signal.aborted) setError(error.message); });
+    return () => controller.abort();
+  }, [explore?.slug, initialDate]);
 
   useEffect(() => {
     if (!unsaved) return;
@@ -221,7 +232,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       const result = localMode ? await localSnapshot(nextDate) : await readResponse(await fetch(`${API}?${new URLSearchParams({ date: targetKey(nextDate) })}`, { cache: "no-store", credentials: "same-origin" }));
       if (result.edition === undefined) throw new Error("판본 정보가 응답에 없습니다. 다시 시도해 주세요.");
       accept(result, nextDate); setActiveIndex(0); setSearch(""); setShowJpg(false); setManual(EMPTY_MANUAL); setExtractNotice(""); setExtractError("");
-      setMessage(result.edition ? "저장된 판본을 불러왔습니다." : explore ? "이 날짜에는 Explore 원고가 없습니다. ‘Explore 초안 만들기’를 눌러 시작하세요." : "아직 이 날짜의 판본이 없습니다. 뉴스레터를 불러오거나 뉴스를 직접 등록하세요.");
+      setMessage(result.edition ? "저장된 판본을 불러왔습니다." : explore ? "이 날짜에는 Explore 원고가 없습니다. ‘웹툰 불러오기’를 눌러 시작하세요." : "아직 이 날짜의 판본이 없습니다. 뉴스레터를 불러오거나 뉴스를 직접 등록하세요.");
     } catch (caught) { setError(caught instanceof Error ? caught.message : "판본을 불러오지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
   }
@@ -233,16 +244,21 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     operation.current = true; setPending(action); setError(""); setMessage("");
     try {
       const request = { action, date: targetKey(date), revision: saved?.revision ?? 0, ...extra };
-      const result = localMode && action !== "logout" ? await localAction(request) : await readResponse(await fetch(API, {
+      const result: ApiResult = localMode && action !== "logout" ? await localAction(request) : await readResponse(await fetch(API, {
         method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
       }));
       if (action === "logout") { suppressUnload.current = true; window.location.reload(); return; }
+      if (action === "check_explore_text") {
+        const history = result.history;
+        if (!history) throw new Error("발행 이력을 가져오지 못했습니다.");
+        setSnapshot(previous => ({ ...previous, history })); setMessage(result.message || "발행 상태를 확인했습니다."); return;
+      }
       if (result.edition === undefined) throw new Error("변경된 판본 정보가 응답에 없습니다. 상태를 새로 확인해 주세요.");
       accept(result);
       if (action === "collect") { setActiveIndex(0); setShowJpg(false); }
       const next = result.edition;
-      if (action === "create_explore") setMessage("Explore 초안을 준비했습니다. 카드별 내용과 주의사항을 원문과 대조하고 저장·검토한 뒤 발행하세요.");
+      if (action === "create_webtoon") setMessage("웹툰을 불러왔습니다. 실제 JPG와 게시글 설명을 검토한 뒤 발행하세요.");
       if (action === "collect") {
         const count = next ? selectableCandidates(next).length : 0;
         if (count < 10) setError(`후보 수집 미달: ${count}개입니다. 제작 완료로 처리할 수 없습니다. 뉴스레터의 공개 기사와 수집 상태를 확인해 주세요.`);
@@ -304,9 +320,9 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
 
   async function openExplore() {
     if (operation.current || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore) return;
-    operation.current = true; setPending("create_explore"); setError("");
+    operation.current = true; setPending("create_webtoon"); setError("");
     try {
-      await readResponse(await fetch(API, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "create_explore", date: `${date}~explore~${pickedExplore}` }) }));
+      await readResponse(await fetch(API, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "create_webtoon", date: `${date}~webtoon~${pickedExplore}` }) }));
       window.location.assign(`/admin/news/explore?${new URLSearchParams({ date, explore: pickedExplore })}`);
     } catch (caught) { setError(caught instanceof Error ? caught.message : "Explore 원고를 열지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
@@ -402,12 +418,12 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
   const canApprove = canEdit && !unsaved && !issues.length && edition?.status === "draft";
   const canPublish = !localMode && !publishUncertain && !!edition && edition.status === "approved" && !unsaved && !issues.length && snapshot.setup.instagram && !pending && !sessionExpired;
   const canDownload = !!saved && ["approved", "published"].includes(saved.status) && !unsaved && !pending && !sessionExpired;
-  const previewIssues = card ? copyIssues(card) : [];
+  const previewIssues = card && !card.image ? copyIssues(card) : [];
   const currentIssues = card && edition ? [...cardIssues(card), ...(timeIssue(card, edition) ? [timeIssue(card, edition)] : [])] : [];
 
   return <main className="cn-shell cn-admin-shell">
     <header className="cn-header">
-      <div><p className="cn-eyebrow">AgentTutor · {series}</p><h1>{explore ? "Explore 카드 발행" : "카드뉴스 관리"}</h1><p className="cn-muted">{explore ? explore.title : "뉴스 카드 10장을 직접 만들거나 매일 자동 제작과 Instagram 예약 발행을 설정합니다."}</p></div>
+      <div><p className="cn-eyebrow">AgentTutor · {series}</p><h1>{explore ? "Explore 웹툰 발행" : "카드뉴스 관리"}</h1><p className="cn-muted">{explore ? explore.title : "뉴스 카드 10장을 직접 만들거나 매일 자동 제작과 Instagram 예약 발행을 설정합니다."}</p></div>
       <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
     </header>
 
@@ -416,14 +432,14 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     <p><a className="cn-text-link" href="/admin/news/settings">뉴스레터 기준 설정으로 이동 →</a></p>
     <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리로 이동 →</a></p>
 
-    {!explore && <p><a className="cn-text-link" href="/admin/news/explore">Explore 문서로 카드 만들기로 이동 →</a></p>}
+    {!explore && <p><a className="cn-text-link" href="/admin/news/explore">Explore 웹툰 발행으로 이동 →</a></p>}
     {explore && <section className="cn-panel" aria-labelledby="cn-explore-heading">
-      <h2 id="cn-explore-heading">Explore 문서로 카드 만들기</h2>
-      <p className="cn-muted">문서 하나를 카드 2~10장으로 정리해 별도 Instagram 게시물로 발행합니다.</p>
+      <h2 id="cn-explore-heading">Explore 웹툰 발행</h2>
+      <p className="cn-muted">문서에 이미 만들어진 웹툰을 그대로 사용합니다. 한 장은 사진 게시물로, 여러 장은 넘겨 보는 게시물로 발행합니다.</p>
       <label className="cn-field">발행할 문서<select aria-label="발행할 문서" value={pickedExplore} onChange={event => setPickedExplore(event.target.value)} disabled={!!pending}>{exploreDocs.map(doc => <option key={doc.slug} value={doc.slug}>{doc.title}</option>)}</select></label>
       <p className="cn-help">{exploreDocs.find(doc => doc.slug === pickedExplore)?.summary}</p>
-      <div className="cn-publish-actions"><button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 카드 원고 열기</button>{pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}{explore && <a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a>}</div>
-      <p className="cn-help">처음 열면 문서 내용으로 초안을 만들고, 저장된 원고가 있으면 그대로 엽니다. 발행은 검토 후 별도로 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
+      <div className="cn-publish-actions"><button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 웹툰 불러오기</button>{pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}{explore && <a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a>}</div>
+      <p className="cn-help">처음 열면 등록된 웹툰 이미지를 불러옵니다. 저장한 웹툰 원고가 있으면 그대로 엽니다. 기존 텍스트 초안은 정리하며, 발행은 검토 후 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
     </section>}
 
     {!explore && <AutomationSettings localMode={localMode} parentBusy={!!pending} unsaved={unsaved} sessionExpired={sessionExpired} onExpired={() => setSessionExpired(true)} onBusyChange={busy => { operation.current = busy; setPending(busy ? "automation" : ""); }} onPrepared={() => setMessage("자동 제작·발행 요청 뒤에도 현재 원고 화면을 유지했습니다. 판본 날짜를 확인하고 ‘상태 새로 확인’을 눌러 저장된 결과를 불러오세요.")} />}
@@ -437,15 +453,15 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
         <div className="cn-toolbar-actions">
           <button className="cn-button" onClick={() => loadDate(date)} disabled={!!pending}>상태 새로 확인</button>
           {!explore && <button className="cn-button" onClick={() => act("collect")} disabled={!!pending || locked || edition?.status === "approved" || sessionExpired || (!localMode && !snapshot.setup.storage)}>{edition ? "뉴스레터 다시 불러오기" : "뉴스레터 불러오기"}</button>}
-          {explore && !edition && <button className="cn-button" onClick={() => act("create_explore")} disabled={!!pending || sessionExpired}>Explore 초안 만들기</button>}
+          {explore && !edition && <button className="cn-button" onClick={() => act("create_webtoon")} disabled={!!pending || sessionExpired}>웹툰 불러오기</button>}
           <button className="cn-button cn-button-primary" onClick={() => edition && act("save", { cards: edition.cards, caption: edition.caption, candidates: edition.candidates })} disabled={!canEdit || !dirty}>원고 저장</button>
         </div>
       </div>
-      <p className="cn-help">{edition ? explore ? `문서 날짜 ${edition.candidates[0]?.publishedAt || explore.date} · 초안 생성 ${formatTime(edition.collectedAt)} KST · 저장본 v${edition.revision}` : `후보 발행 기간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 불러옴 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : explore ? "선택한 문서로 별도 카드 원고를 만들 수 있습니다." : "뉴스레터에 공개된 전체 기사를 최신순으로 불러옵니다. 판본 날짜 이후의 기사는 제외합니다."}</p>
+      <p className="cn-help">{edition ? explore ? `문서 날짜 ${edition.candidates[0]?.publishedAt || explore.date} · 초안 생성 ${formatTime(edition.collectedAt)} KST · 저장본 v${edition.revision}` : `후보 발행 기간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 불러옴 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : explore ? "선택한 문서에 등록된 웹툰을 불러올 수 있습니다." : "뉴스레터에 공개된 전체 기사를 최신순으로 불러옵니다. 판본 날짜 이후의 기사는 제외합니다."}</p>
       {!explore && <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 뉴스레터·직접 등록 뉴스를 우선 사용하고, 자동 제작 시 부족하면 릴리스·용어·Explore로 보충합니다. 목록은 중요도 순위가 아닙니다.</p>}
       {retainedCount > 0 && <p className="cn-alert cn-alert-info">이전 후보 {retainedCount}개는 원고 보존용으로 남겨 두었습니다. 새 뉴스레터 후보 수에는 포함하지 않으며, 해당 카드는 뉴스레터 후보로 다시 선정해야 합니다.</p>}
       {edition && !edition.candidateSource && !explore && <p className="cn-alert cn-alert-info">이전 방식으로 저장한 판본입니다. 뉴스레터 다시 불러오기를 누르면 저장한 카드와 설명을 유지하며 후보를 갱신합니다.</p>}
-      <p className="cn-help">{explore ? "초안의 핵심 내용과 이용 조건·주의사항을 원문과 대조하세요. 검토 후 발행 버튼으로 게시하며, 최근 Instagram 게시 후 최소 1시간이 지나야 합니다." : "직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 위 예약 설정에서 확인하세요."}</p>
+      <p className="cn-help">{explore ? "웹툰의 그림·말풍선과 게시글 설명을 확인하세요. 검토 후 발행 버튼으로 게시하며, 최근 Instagram 게시 후 최소 1시간이 지나야 합니다." : "직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 위 예약 설정에서 확인하세요."}</p>
       {edition?.automation && <p className="cn-alert cn-alert-info">자동 제작된 판본입니다. 날짜·중복·글 길이를 자동 점검했으며, 사람이 원문을 검토한 것으로 표시하지 않습니다. 원고를 수정·저장하면 자동 발행 대상에서 빠지고 다시 검토해야 합니다.</p>}
       {pending && <p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
@@ -487,21 +503,22 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       </form>
     </details>}
 
-    {!edition ? <section className="cn-empty" style={{ marginTop: 22 }}><h2>아직 준비된 판본이 없습니다</h2><p>{explore ? "‘Explore 초안 만들기’를 눌러 문서를 카드로 정리하세요." : "‘뉴스레터 불러오기’ 또는 ‘뉴스 직접 등록’으로 시작하세요. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요."}</p></section> : <>
+    {!edition ? <section className="cn-empty" style={{ marginTop: 22 }}><h2>아직 준비된 판본이 없습니다</h2><p>{explore ? "‘웹툰 불러오기’를 눌러 등록된 이미지를 선택하세요." : "‘뉴스레터 불러오기’ 또는 ‘뉴스 직접 등록’으로 시작하세요. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요."}</p></section> : <>
       <div className="cn-stats" aria-label="제작 진행 상황">
-        <div className={`cn-stat ${candidateCount < (explore ? 2 : 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "문서의 카드 후보" : "뉴스 후보 · 직접 등록 포함"}</span><strong>{candidateCount}개</strong></div>
-        <div className={`cn-stat ${(explore ? selected.length < 2 : selected.length !== 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "선정한 카드" : "선정한 뉴스"}</span><strong>{selected.length}{explore ? "장 · 최대 10장" : "/10"}</strong></div>
+        <div className={`cn-stat ${candidateCount < (explore ? 1 : 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "등록된 웹툰" : "뉴스 후보 · 직접 등록 포함"}</span><strong>{candidateCount}개</strong></div>
+        <div className={`cn-stat ${(explore ? selected.length < 1 : selected.length !== 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "선택한 웹툰" : "선정한 뉴스"}</span><strong>{selected.length}{explore ? "장 · 최대 10장" : "/10"}</strong></div>
         <div className={`cn-stat ${verifiedCount !== expectedCount ? "cn-stat-warn" : ""}`}><span>사람이 확인한 원문</span><strong>{verifiedCount}/{expectedCount}</strong></div>
       </div>
       <div className="cn-workspace">
         <section className="cn-panel" aria-labelledby="cn-candidates-heading">
-          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. {explore ? "카드 내용 선택" : "뉴스 후보 선정"}</h2><p className="cn-muted">{explore ? "문서의 핵심 내용과 주의사항을 담을 카드 2~10장을 골라 주세요. 긴 문장은 편집란에서 정리할 수 있습니다." : "서로 다른 뉴스·보충 콘텐츠 10개를 골라 주세요. 보충 항목에는 종류가 표시됩니다."}</p></div></div>
+          <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. {explore ? "웹툰 선택" : "뉴스 후보 선정"}</h2><p className="cn-muted">{explore ? "게시할 웹툰을 선택하세요. 비교 웹툰이 있으면 함께 올리거나 선택을 해제할 수 있습니다." : "서로 다른 뉴스·보충 콘텐츠 10개를 골라 주세요. 보충 항목에는 종류가 표시됩니다."}</p></div></div>
           <label className="cn-field">후보 검색<input type="search" placeholder="제목·출처·내용 검색" value={search} onChange={event => setSearch(event.target.value)} /></label>
           <div className="cn-candidates">
             {candidates.length ? candidates.map(candidate => {
               const index = selected.findIndex(item => item.candidateId === candidate.id);
               return <div className="cn-candidate" key={candidate.id}>
                 <label className="cn-candidate-label"><input type="checkbox" checked={index >= 0} disabled={!canEdit || (selected.length >= 10 && index < 0)} onChange={() => toggleCandidate(candidate)} /><span className="cn-candidate-title">{candidate.title} {candidate.origin === "manual" && <span className="cn-tag">직접 등록</span>} {isSupplement(candidate) && <span className="cn-tag">{CONTENT_LABELS[candidate.origin as keyof typeof CONTENT_LABELS]}{explore ? "" : " 보충"}</span>} {index >= 0 && <span className="cn-tag cn-tag-info">카드 {index + 1}</span>}</span></label>
+                {candidate.image && <img src={candidate.image.src} alt={candidate.image.alt} loading="lazy" style={{ width: "100%", maxHeight: 280, objectFit: "contain" }} />}
                 <p>{candidate.summary || "요약이 없습니다. 원문을 읽고 카드 본문을 작성하세요."}</p>
                 <div className="cn-candidate-meta">{safeHref(candidate.sourceUrl) ? <a className="cn-text-link" href={safeHref(candidate.sourceUrl)} target="_blank" rel="noopener noreferrer">{candidate.sourceName || "원문 보기"}</a> : <span>유효한 원문 주소 필요</span>}<span>{isSupplement(candidate) ? contentDateLabel(candidate) : candidate.datePrecision === "time" ? `${formatTime(candidate.publishedAt)} KST` : `${candidate.publishedAt} · 날짜만 확인`}</span>{candidate.newsletterId && <a className="cn-text-link" href={`/today/${encodeURIComponent(candidate.newsletterId)}`} target="_blank" rel="noopener noreferrer">뉴스레터 보기</a>}</div>
               </div>;
@@ -513,8 +530,8 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
 
         <div>
           <section className="cn-panel" aria-labelledby="cn-editor-heading">
-            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. 카드 원고와 순서</h2><p className="cn-muted">제목 최대 2줄 · 본문 최대 7줄 · 말줄임표 없이 핵심 내용 정리</p></div></div>
-            <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>선정한 카드 원고 정리</button>
+            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. {explore ? "웹툰 확인과 순서" : "카드 원고와 순서"}</h2><p className="cn-muted">{explore ? "원본 전체를 자르지 않고 1080×1350 JPG에 맞춥니다. 긴 웹툰은 그림이 작아질 수 있으니 실제 JPG로 글씨를 확인하세요." : "제목 최대 2줄 · 본문 최대 7줄 · 말줄임표 없이 핵심 내용 정리"}</p></div></div>
+            {!explore && <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>선정한 카드 원고 정리</button>}
             {selected.length ? <>
               <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>
               {card && <>
@@ -522,19 +539,22 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
                     {card.verification === "automatic" && <p className="cn-help"><span className="cn-tag cn-tag-info">자동 제작</span> 아래 원문 확인 체크는 사람이 직접 확인한 경우에만 선택하세요.</p>}
+                    {!card.image && <>
                     <label className="cn-field">제목 · {card.title.split("\n").length}/2줄<textarea rows={2} value={card.title} onChange={event => changeCard({ title: event.target.value })} disabled={!canEdit} /><small>줄바꿈 위치가 이미지에 그대로 반영됩니다.</small></label>
                     <label className="cn-field">본문 · {card.body.split("\n").length}/7줄<textarea rows={7} value={card.body} onChange={event => changeCard({ body: event.target.value })} disabled={!canEdit} /></label>
                     {(!/[가-힣]/.test(card.title) || !/[가-힣]/.test(card.body)) && <p className="cn-alert">영문 원문이 그대로 들어간 초안은 한국어 제목과 본문으로 편집한 뒤 검토하세요.</p>}
+                    </>}
+                    {card.image && <p className="cn-help">등록된 원본 웹툰입니다. 이미지 속 글과 그림은 이 화면에서 바꾸지 않습니다.</p>}
                     <label className="cn-field">출처 이름<input value={card.sourceName} onChange={event => changeCard({ sourceName: event.target.value })} disabled={!canEdit || !!explore} /></label>
                     <label className="cn-field">원문 주소<input type="url" value={card.sourceUrl} onChange={event => changeCard({ sourceUrl: event.target.value })} disabled={!canEdit || !!explore} /></label>
                     {safeHref(card.sourceUrl) && <a className="cn-text-link" href={safeHref(card.sourceUrl)} target="_blank" rel="noopener noreferrer">원문을 새 탭에서 확인</a>}
                     {usesContentDate(currentCandidate) ? <p className="cn-help">콘텐츠 기준: {contentDateLabel(currentCandidate!)}. 원문 기록을 사용하며 시각을 임의로 만들지 않습니다.</p> : <label className="cn-field">확인한 발행 시각 · KST<input type="datetime-local" step="1" value={exactTimeNeeded ? "" : kstInput(card.publishedAt)} onChange={event => changeCard({ publishedAt: fromKstInput(event.target.value) })} disabled={!canEdit} /><small>{exactTimeNeeded ? "날짜만으로 선정 구간 안의 기사인지 판단할 수 없습니다. 원문의 정확한 시각이 필요합니다." : "기사 작성·추가 공개 시각과 사건 발생 시점을 구분해 주세요."}</small></label>}
-                    <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>원문·수치·기록된 날짜를 확인했고 다른 카드와 같은 내용이 아님을 확인했습니다.</span></label>
+                    <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>{explore ? "웹툰 그림·말풍선·출처와 실제 JPG의 글씨를 확인했습니다." : "원문·수치·기록된 날짜를 확인했고 다른 카드와 같은 내용이 아님을 확인했습니다."}</span></label>
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">
-                    {previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 7줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">{series}</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy" style={{ top: `${CARD_LAYOUT.titleTop / 10.8}cqw` }}><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body" style={{ top: `${(cardBodyTop(card.title) - CARD_LAYOUT.titleTop) / 10.8}cqw` }}>{card.body || "본문을 입력하세요"}</p></div><p className="cn-card-source" style={{ left: `${CARD_SOURCE.left / 10.8}cqw`, top: `${CARD_SOURCE.top / 10.8}cqw`, width: `${CARD_SOURCE.width / 10.8}cqw`, fontSize: `${CARD_SOURCE.fontSize / 10.8}cqw`, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: `${CARD_SOURCE.letterSpacing / CARD_SOURCE.fontSize}em`, color: CARD_SOURCE.color }}>{cardSourceLines(card).join("\n")}</p></div></div>}
-                    <p className="cn-preview-label">편집 미리보기 · 최종 줄바꿈과 넘침은 저장본 JPG에서 확인하세요.</p>
+                    {card.image ? <img className="cn-jpg" src={card.image.src} alt={card.image.alt} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "contain", background: "#fff" }} /> : previewIssues.length ? <div className="cn-empty" role="status"><strong>카드 내용 정리가 필요합니다</strong><p>제목은 최대 2줄, 본문은 최대 7줄로 완결되게 작성하세요. 말줄임표는 사용할 수 없습니다.</p><p>‘선정한 카드 원고 정리’를 누르면 준비된 짧은 요약을 적용합니다.</p></div> : <div className="cn-card-preview" aria-label="편집 중 카드 배치 미리보기"><div className="cn-card-surface"><div className="cn-card-band"><span className="cn-card-series">{series}</span><span className="cn-card-brand">AgentTutor</span></div><div className="cn-card-copy" style={{ top: `${CARD_LAYOUT.titleTop / 10.8}cqw` }}><p className="cn-card-headline">{card.title || "제목을 입력하세요"}</p><p className="cn-card-body" style={{ top: `${(cardBodyTop(card.title) - CARD_LAYOUT.titleTop) / 10.8}cqw` }}>{card.body || "본문을 입력하세요"}</p></div><p className="cn-card-source" style={{ left: `${CARD_SOURCE.left / 10.8}cqw`, top: `${CARD_SOURCE.top / 10.8}cqw`, width: `${CARD_SOURCE.width / 10.8}cqw`, fontSize: `${CARD_SOURCE.fontSize / 10.8}cqw`, lineHeight: CARD_SOURCE.lineHeight / CARD_SOURCE.fontSize, letterSpacing: `${CARD_SOURCE.letterSpacing / CARD_SOURCE.fontSize}em`, color: CARD_SOURCE.color }}>{cardSourceLines(card).join("\n")}</p></div></div>}
+                    <p className="cn-preview-label">{card.image ? "원본 웹툰 미리보기 · 실제 저장본 JPG에서 글씨 크기를 확인하세요." : "편집 미리보기 · 최종 줄바꿈과 넘침은 저장본 JPG에서 확인하세요."}</p>
                     <button className="cn-button cn-button-small" onClick={() => { setJpgError(false); setShowJpg(value => !value); }} disabled={!hasSavedImage || !!pending || sessionExpired}>{showJpg ? "저장본 JPG 접기" : "실제 저장본 JPG 보기"}</button>
                     {!hasSavedImage && <p className="cn-help">이 카드를 저장하면 실제 JPG를 볼 수 있습니다.</p>}
                     {showJpg && hasSavedImage && <div className="cn-jpg-section">{dirty && <p className="cn-alert">아래 JPG는 수정 전 저장본입니다. 원고를 저장해야 최신 내용이 반영됩니다.</p>}{jpgPending ? <p className="cn-help" role="status">저장한 원고로 JPG를 만드는 중…</p> : jpgError ? <p className="cn-alert cn-alert-error" role="alert">JPG를 가져오지 못했습니다. 원고의 줄 길이{localMode ? "와 브라우저 상태" : "와 로그인 상태"}를 확인하고, 저장 후 다시 열어 주세요.</p> : jpgUrl && <img className="cn-jpg" key={jpgUrl} src={jpgUrl} width={1080} height={1350} alt={`저장된 ${savedIndex + 1}번 카드 JPG`} onError={() => setJpgError(true)} />}<p className="cn-preview-label">저장본 v{saved?.revision} · 1080 × 1350 JPG</p></div>}
@@ -545,10 +565,10 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
           </section>
 
           <section className="cn-panel cn-caption-panel" aria-labelledby="cn-publish-heading">
-            <div className="cn-section-head"><div><h2 id="cn-publish-heading">3. 설명 검토와 발행</h2><p className="cn-muted">소개 문구 아래에 선택한 카드 제목이 순서대로 자동 입력됩니다.</p></div></div>
+            <div className="cn-section-head"><div><h2 id="cn-publish-heading">3. 설명 검토와 발행</h2><p className="cn-muted">{explore ? "문서 소개와 원문 링크를 확인하고 게시글 설명을 수정하세요." : "소개 문구 아래에 선택한 카드 제목이 순서대로 자동 입력됩니다."}</p></div></div>
             <label className="cn-field">게시글 설명 · {Array.from(edition.caption).length.toLocaleString()}/2,200자<textarea rows={8} value={edition.caption} onChange={event => { if (canEdit) { setEdition({ ...edition, caption: event.target.value }); setMessage(""); } }} disabled={!canEdit} /></label>
-            <p className="cn-help">설명을 직접 수정할 수 있습니다. 뉴스 선택·해제·순서·제목을 바꾸거나 카드 원고를 정리하면 설명이 다시 만들어집니다.</p>
-            <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit}>선택한 카드 제목으로 설명 다시 만들기</button></div>
+            <p className="cn-help">{explore ? "웹툰 선택과 순서를 바꿔도 작성한 설명은 유지됩니다." : "설명을 직접 수정할 수 있습니다. 뉴스 선택·해제·순서·제목을 바꾸거나 카드 원고를 정리하면 설명이 다시 만들어집니다."}</p>
+            {!explore && <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit}>선택한 카드 제목으로 설명 다시 만들기</button></div>}
             {!!issues.length && !locked && <details className="cn-details"><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
             {dirty && <p className="cn-alert">원고를 먼저 저장하세요. 승인 후 수정하면 다시 검토해야 합니다.</p>}
             {manualDirty && <p className="cn-alert">입력 중인 뉴스를 등록하거나 입력을 비운 뒤 검토를 완료하세요.</p>}
@@ -570,10 +590,10 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       ] as const).map(([key, label]) => <li key={key}><span>{localMode && key === "storage" ? "현재 브라우저 원고 저장" : label}</span><span className={`cn-tag ${snapshot.setup[key] || (localMode && key === "storage") ? "cn-tag-ok" : "cn-tag-warn"}`}>{localMode && key === "storage" ? "이 브라우저" : snapshot.setup[key] ? "설정됨" : "준비 필요"}</span></li>)}</ul><p className="cn-help">{localMode ? "관리자 로그인 후 브라우저에서 카드 제작을 할 수 있습니다. 서버 저장소·Instagram 연결·일일 예약은 나중에 설정합니다." : "설정 여부를 표시합니다. 실제 수집·게시 성공 여부는 각 실행 결과에서 확인하세요."}</p>
         {!!edition?.sources.length && <details className="cn-details"><summary>최근 수집 출처 {edition.sources.length}곳 확인</summary><div className="cn-source-status">{edition.sources.map((source, index) => <span className={`cn-tag ${source.status === "ok" ? "cn-tag-ok" : "cn-tag-warn"}`} key={`${source.name}-${index}`} title={source.message}>{source.name} · {source.status === "ok" ? `${source.count}개` : "실패"}</span>)}</div>{edition.sources.filter(source => source.status === "failed").map((source, index) => <p className="cn-help" key={`${source.name}-${index}`}>{source.name}: {source.message || "가져오지 못했습니다. 출처 상태를 확인한 뒤 재수집하세요."}</p>)}</details>}
       </section>
-      <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.map(item => {
+      <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.filter(item => !item.explore || item.explore.format === "webtoon" || ["published", "publishing", "needs_check"].includes(item.status)).map(item => {
         const current = (item.id || item.date) === targetKey(date);
         const href = `/admin/news${item.explore ? "/explore" : ""}?${new URLSearchParams({ date: item.date, ...(item.explore ? { explore: item.explore.slug } : {}) })}`;
-        return <li key={item.id || item.date}><div><a className="cn-history-date" href={href} aria-current={current ? "page" : undefined} onClick={event => { if (pending) event.preventDefault(); }}>{item.date} · {item.explore ? `Explore · ${item.explore.title}` : "AI News 10"}{current ? " · 현재 판본" : ""}</a><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{current && edition?.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress">발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>;
+        return <li key={item.id || item.date}><div><a className="cn-history-date" href={item.explore && item.explore.format !== "webtoon" ? undefined : href} aria-current={current ? "page" : undefined} onClick={event => { if (pending) event.preventDefault(); }}>{item.date} · {item.explore ? `Explore ${item.explore.format === "webtoon" ? "웹툰" : "텍스트 발행 기록"} · ${item.explore.title}` : "AI News 10"}{current ? " · 현재 판본" : ""}</a><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{item.explore && item.explore.format !== "webtoon" && ["publishing", "needs_check"].includes(item.status) && <button className="cn-button cn-button-small" disabled={!!pending || localMode || sessionExpired} onClick={() => act("check_explore_text", { date: item.id })}>이전 발행 결과 확인</button>}{current && edition?.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress">발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>;
       })}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>
     </div>
 

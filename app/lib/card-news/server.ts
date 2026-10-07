@@ -66,7 +66,7 @@ export function validDate(value: unknown): string {
   return value;
 }
 export function validEditionKey(value: unknown): string {
-  if (typeof value !== "string" || !/^20\d{2}-\d{2}-\d{2}(?:~explore~[a-z0-9-]{1,80})?$/.test(value)) throw new AdminError("원고 번호를 다시 확인해 주세요.");
+  if (typeof value !== "string" || !/^20\d{2}-\d{2}-\d{2}(?:~(?:explore|webtoon)~[a-z0-9-]{1,80})?$/.test(value)) throw new AdminError("원고 번호를 다시 확인해 주세요.");
   validDate(value.slice(0, 10));
   return value;
 }
@@ -77,7 +77,7 @@ export async function getEdition(key: string): Promise<Edition | null> {
 // Revision and history are committed atomically. Concurrent tabs cannot overwrite or publish twice.
 export async function putEdition(edition: Edition, expected: number): Promise<Edition> {
   const key = validEditionKey(editionKey(edition)), date = validDate(edition.date);
-  if (key.slice(0, 10) !== date || (edition.explore ? key !== `${date}~explore~${edition.explore.slug}` : key !== date)) throw new AdminError("날짜와 원고 번호가 일치하지 않습니다.");
+  if (key.slice(0, 10) !== date || (edition.explore ? key !== `${date}~${edition.explore.format === "webtoon" ? "webtoon" : "explore"}~${edition.explore.slug}` : key !== date)) throw new AdminError("날짜와 원고 번호가 일치하지 않습니다.");
   const next = { ...edition, revision: expected + 1, updatedAt: new Date().toISOString() };
   const result = await redis<number>("EVAL", `local old=redis.call('GET',KEYS[1]); local rev=0; if old then rev=cjson.decode(old).revision end; if rev~=tonumber(ARGV[1]) then return 0 end; redis.call('SET',KEYS[1],ARGV[2]); redis.call('ZADD',KEYS[2],ARGV[3],ARGV[4]); return 1`, 2, `${prefix}edition:${key}`, `${prefix}history`, expected, JSON.stringify(next), Date.parse(next.updatedAt), key);
   if (result !== 1) throw new AdminError("다른 작업에서 내용이 바뀌었습니다. 새로고침해 최신 내용을 확인하세요.", 409);

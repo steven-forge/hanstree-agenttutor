@@ -29,7 +29,7 @@ function harness(realInstagram = false) {
     }
     throw Error('Unexpected Redis command '+command);
   }
-  const server={AdminError,prefix,redis,setupStatus:()=>({scheduler:true}),equalSecret:(a,b)=>a===b,signAsset:(key,attempt,index,expires)=>{
+  const server={AdminError,prefix,redis,validDate:date=>{assert.match(date,/^20\d{2}-\d{2}-\d{2}$/);return date;},setupStatus:()=>({scheduler:true}),equalSecret:(a,b)=>a===b,signAsset:(key,attempt,index,expires)=>{
     const signature=require('node:crypto').createHash('sha256').update(JSON.stringify([key,attempt,index,expires])).digest('hex');
     h.signatures.push({key,attempt,index,expires,signature});return signature;
   },getEdition:async key=>h.editions.has(key)?clone(h.editions.get(key)):null,putEdition:async(e,expected)=>{
@@ -56,7 +56,7 @@ function harness(realInstagram = false) {
     if(cache.has(name)) return cache.get(name).exports;
     const filename=path.join(base,name+'.ts'), module={exports:{}};cache.set(name,module);
     const source=ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;
-    vm.runInNewContext(source,{module,exports:module.exports,Date:Clock,URL,Intl,Buffer,AbortSignal,process:{env:{CARD_NEWS_PUBLIC_URL:'https://example.org'}},fetch:async(url,init={})=>{
+    vm.runInNewContext(source,{module,exports:module.exports,Date:Clock,URL,Intl,Buffer,AbortSignal,process:{cwd:()=>root,env:{CARD_NEWS_PUBLIC_URL:'https://example.org'}},fetch:async(url,init={})=>{
       const parsed=new URL(url),endpoint=parsed.pathname;
       assert.equal(parsed.origin,'https://graph.instagram.com','Unexpected mocked network target');
       h.graphRequests.push({url,method:init.method||'GET',body:init.body?JSON.parse(init.body):null});
@@ -66,7 +66,7 @@ function harness(realInstagram = false) {
       return {ok:true,json:async()=>new URL(url).searchParams.get('fields')==='permalink'?{permalink:'https://www.instagram.com/p/example/'}:{status_code:h.remoteStatus}};
     },require:id=>{
       if(id==='server-only')return {};
-      if(id==='node:crypto')return require(id);
+      if(['node:crypto','node:fs/promises','node:path','sharp'].includes(id))return require(id);
       if(id==='../../content')return content;
       if(id==='../../today/newsHelpers')return {SITE_URL:'https://example.org'};
       if(id==='../../../data/explore.json')return JSON.parse(fs.readFileSync(path.join(root,'data/explore.json'),'utf8'));
@@ -182,17 +182,54 @@ function harness(realInstagram = false) {
     assert.deepEqual(await h.server.getEdition(daily.date),daily);
     await assert.rejects(h.ig.publishEdition(daily,'123'),error=>error instanceof h.ig.PublishCooldown);assert.equal(h.publishes,1);
   });
-  await check('every real Explore document builds review-required slides without truncation',async()=>{
-    const h=harness(),builder=h.load('explore-edition'),options=builder.exploreOptions();assert.ok(options.length>=17);
+  await check('registered webtoons generate original-image drafts and 1080x1350 JPGs',async()=>{
+    const h=harness(),builder=h.load('webtoon'),options=h.load('explore-edition').exploreOptions();
+    assert.ok(options.length>=17);let images=0;
     for(const option of options){
-      const e=builder.createExploreEdition('2026-10-07',option.slug);assert.equal(e.id,`2026-10-07~explore~${option.slug}`);
-      assert.ok(e.cards.length>=2&&e.cards.length<=10,`${option.slug}: ${e.cards.length} slides`);
-      assert.ok(e.cards.every(c=>!c.verified&&c.verification!=='automatic'));assert.ok(h.types.editionIssues(e).length>0);
-      const reviewed={...e,cards:e.cards.map(c=>({...c,verified:true}))};assert.equal(h.types.editionIssues(reviewed).length,0,`${option.slug}: ${h.types.editionIssues(reviewed).join('; ')}`);
-      for(const card of e.cards){assert.ok(card.title.split('\n').length<=2);assert.ok(card.body.split('\n').length<=7);assert.doesNotMatch(card.title+card.body,/…|\.{3}/);}
+      const e=await builder.createWebtoonEdition('2026-10-07',option.slug);
+      assert.equal(e.id,`2026-10-07~webtoon~${option.slug}`);assert.equal(e.explore.format,'webtoon');
+      assert.ok(e.cards.length>=1&&e.cards.length<=2);assert.ok(e.cards.every(c=>!c.verified));
+      assert.ok(h.types.editionIssues(e).length>0);e.cards.forEach(c=>c.verified=true);
+      assert.equal(h.types.editionIssues(e).length,0,h.types.editionIssues(e).join('; '));
+      for(const c of e.cards){
+        const original=fs.readFileSync(path.join(root,'public',c.image.src));
+        assert.equal(require('node:crypto').createHash('sha256').update(original).digest('hex'),c.image.sha256);
+        const jpeg=await builder.renderWebtoonImage(c.image),meta=await require('sharp')(jpeg).metadata();
+        assert.equal(meta.format,'jpeg');assert.equal(meta.width,1080);assert.equal(meta.height,1350);assert.equal(meta.space,'srgb');assert.ok(jpeg.length<8000000);images++;
+      }
     }
-    assert.throws(()=>builder.createExploreEdition('2026-10-07','missing-isolated-document'),/찾지 못했습니다/);
-    console.log(JSON.stringify({exploreDocuments:options.length,source:'local public data/explore.json'}));
+    assert.equal(images,18);console.log(JSON.stringify({webtoonDocuments:options.length,originalImages:images}));
+    await assert.rejects(builder.createWebtoonEdition('2026-10-07','missing-document'),/찾지 못했습니다/);
+    const e=await builder.createWebtoonEdition('2026-10-07','decisions-api'),image=e.cards[0].image;
+    for(const src of ['/explore/../../package.json','https://example.org/webtoon.png','/explore/unregistered-webtoon.png']) await assert.rejects(builder.renderWebtoonImage({...image,src}),/등록된/);
+    await assert.rejects(builder.renderWebtoonImage({...image,sha256:'0'.repeat(64)}),/변경/);
+    await assert.rejects(builder.renderWebtoonImage({...image,width:1}),/변경/);
+  });
+  await check('single webtoon has no carousel parent and shares news cooldown',async()=>{
+    const h=harness(true),e=await h.load('webtoon').createWebtoonEdition('2026-10-07','common-lisp');
+    e.status='approved';e.cards.forEach(c=>c.verified=true);h.editions.set(e.id,e);
+    const published=await h.ig.publishEdition(e,'123');assert.equal(published.status,'published');
+    const uploads=h.graphRequests.filter(r=>r.body?.image_url);assert.equal(uploads.length,1);
+    assert.equal(uploads[0].body.caption,e.caption);assert.equal(uploads[0].body.alt_text,e.cards[0].image.alt);assert.equal(uploads[0].body.is_carousel_item,undefined);
+    assert.equal(h.graphRequests.filter(r=>r.body?.media_type==='CAROUSEL').length,0);assert.equal(h.children,1);assert.equal(h.publishes,1);
+    assert.equal(published.publication.containerId,published.publication.children[0]);
+    await assert.rejects(h.ig.publishEdition(h.edition(),'123'),err=>err instanceof h.ig.PublishCooldown);
+  });
+  await check('two webtoons retain carousel and immutable human-reviewed image metadata',async()=>{
+    const h=harness(true),e=await h.load('webtoon').createWebtoonEdition('2026-10-07','decisions-api');
+    e.status='approved';e.cards.forEach(c=>c.verified=true);
+    for(const mutate of [x=>x.cards[0].verified=false,x=>x.cards[0].image.sha256='0'.repeat(64),x=>x.cards[1].image=x.cards[0].image,x=>delete x.cards[0].image]){
+      const bad=clone(e);mutate(bad);assert.ok(h.types.editionIssues(bad).length);await assert.rejects(h.ig.publishEdition(bad,'123'));assert.equal(h.graphRequests.length,0);
+    }
+    h.editions.set(e.id,e);const result=await h.ig.publishEdition(e,'123');assert.equal(result.status,'published');assert.equal(h.children,3);assert.equal(h.publishes,1);
+    assert.equal(h.graphRequests.filter(r=>r.body?.is_carousel_item).length,2);assert.equal(h.graphRequests.filter(r=>r.body?.media_type==='CAROUSEL').length,1);
+  });
+  await check('ambiguous single webtoon is reconciled without reposting',async()=>{
+    const h=harness(true),e=await h.load('webtoon').createWebtoonEdition('2026-10-07','common-lisp');
+    e.status='approved';e.cards.forEach(c=>c.verified=true);h.editions.set(e.id,e);h.ambiguous=true;
+    let result=await h.ig.publishEdition(e,'123');assert.equal(result.status,'needs_check');assert.equal(h.publishes,1);
+    h.now+=60001;result=await h.ig.reconcileEdition(result);assert.equal(h.publishes,1);
+    h.now+=60001;h.remoteStatus='PUBLISHED';result=await h.ig.reconcileEdition(result);assert.equal(result.status,'published');assert.equal(h.publishes,1);
   });
   console.log(JSON.stringify({passed:true,checks,externalRequests:0}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

@@ -28,7 +28,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { title: "Newsletter", href: "/today" },
       { title: "Releases", href: "/releases" },
       { title: "카드뉴스 관리", href: "/admin/news", children: [
-        { title: "Explore 문서로 카드 만들기", href: "/admin/news/explore" },
+        { title: "Explore 웹툰 발행", href: "/admin/news/explore" },
         { title: "뉴스레터 기준 설정", href: "/admin/news/settings" },
         { title: "Instagram 연결", href: "/admin/news/instagram" }
       ] }

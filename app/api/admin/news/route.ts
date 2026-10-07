@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import { AdminError, getEdition, login, logout, putEdition, readBody, requireAdmin, requireSameOrigin, snapshot, validDate, validEditionKey } from "../../../lib/card-news/server";
+import { AdminError, getEdition, login, logout, putEdition, readBody, requireAdmin, requireSameOrigin, snapshot, validDate, validEditionKey, redis, prefix } from "../../../lib/card-news/server";
 import { collectEdition, canonicalUrl } from "../../../lib/card-news/collect";
 import { editionIssues, kstDate, MAX_CANDIDATES, type Edition, type NewsCandidate, type NewsCard } from "../../../lib/card-news/types";
 import { renderBundle, renderCard } from "../../../lib/card-news/render";
 import { instagramAccount, publishEdition, reconcileEdition } from "../../../lib/card-news/instagram";
 import { appendManualCandidate, candidateUrlKey } from "../../../lib/card-news/manual";
-import { createExploreEdition } from "../../../lib/card-news/explore-edition";
+import { createWebtoonEdition } from "../../../lib/card-news/webtoon";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -42,7 +42,12 @@ async function editedEdition(old: Edition, body: Record<string, unknown>): Promi
   const cards: NewsCard[] = body.cards.map(c => {
     if (!c || typeof c !== "object") throw new AdminError("카드 형식을 확인하세요.");
     const card: NewsCard = { candidateId: str(c.candidateId, 100, "후보 번호"), title: str(c.title, 180, "제목"), body: str(c.body, 600, "본문"), sourceUrl: canonicalUrl(c.sourceUrl), sourceName: str(c.sourceName, 100, "출처"), publishedAt: str(c.publishedAt, 40, "발행시각"), verified: c.verified === true };
-    if (!candidates.some(n => n.id === card.candidateId)) throw new AdminError("선택한 뉴스의 후보 기록이 없습니다.");
+    const candidate = candidates.find(n => n.id === card.candidateId);
+    if (!candidate) throw new AdminError("선택한 뉴스의 후보 기록이 없습니다.");
+    if (old.explore?.format === "webtoon") {
+      if (!candidate.image) throw new AdminError("등록된 웹툰 이미지를 선택하세요.");
+      return { candidateId: candidate.id, title: candidate.title, body: candidate.summary, sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.publishedAt, image: candidate.image, verified: c.verified === true };
+    }
     if (!card.sourceUrl) throw new AdminError("https 원문 주소를 입력하세요.");
     return card;
   });
@@ -84,13 +89,28 @@ export async function POST(request: Request) {
     if (body.action === "check_connection") return json(await instagramAccount());
     const date = validEditionKey(body.date);
     const old = await getEdition(date);
-    if (body.action === "create_explore") {
-      const slug = date.split("~explore~")[1];
+    if (body.action === "discard_explore_text") {
+      const keys = await redis<string[]>("ZREVRANGE", `${prefix}history`, 0, -1);
+      let removed = 0;
+      for (const key of keys.filter(key => /^20\d{2}-\d{2}-\d{2}~explore~[a-z0-9-]{1,80}$/.test(key))) {
+        removed += await redis<number>("EVAL", "local raw=redis.call('GET',KEYS[1]); if not raw then return 0 end; local e=cjson.decode(raw); if e.explore and e.explore.format~='webtoon' and (e.status=='draft' or e.status=='approved') and not e.publication then redis.call('DEL',KEYS[1]); redis.call('ZREM',KEYS[2],ARGV[1]); return 1 end; return 0", 2, `${prefix}edition:${key}`, `${prefix}history`, key);
+      }
+      return json({ removed });
+    }
+    if (body.action === "check_explore_text") {
+      if (!date.includes("~explore~") || !old?.publication?.publishRequestedAt) throw new AdminError("최종 발행 요청 기록이 없습니다. 이전 텍스트 원고는 새로 발행하지 않습니다.", 409);
+      // A final request already exists: reconciliation only checks its result, never reposts.
+      const result = old.status === "published" ? old : await reconcileEdition(old);
+      return json({ history: (await snapshot(date)).history, message: result.status === "published" ? "이전 텍스트 게시물의 발행 완료를 확인했습니다." : result.publication?.message });
+    }
+    if (date.includes("~explore~")) throw new AdminError("Explore 텍스트 카드 제작은 종료했습니다. 웹툰 발행 화면을 이용하세요.", 410);
+    if (body.action === "create_webtoon") {
+      const slug = date.split("~webtoon~")[1];
       if (!slug) throw new AdminError("발행할 Explore 문서를 선택하세요.");
       if (!old) {
         let edition: Edition;
-        try { edition = createExploreEdition(validDate(date.slice(0, 10)), slug); }
-        catch (error) { throw new AdminError(error instanceof Error ? error.message : "Explore 초안을 만들지 못했습니다."); }
+        try { edition = await createWebtoonEdition(validDate(date.slice(0, 10)), slug); }
+        catch (error) { throw new AdminError(error instanceof Error ? error.message : "웹툰 발행 원고를 만들지 못했습니다."); }
         await putEdition(edition, 0);
       }
       return json(await snapshot(date));
@@ -117,7 +137,12 @@ export async function POST(request: Request) {
           for (const card of old.cards) await renderCard(card, old.explore ? "AI Explore" : "AI News 10");
           await putEdition({ ...old, status: "approved", approvedAt: new Date().toISOString() }, old.revision); break;
         }
-        case "publish": if (body.confirm !== true) throw new AdminError("최종 발행 확인이 필요합니다."); ready(old); await publishEdition(old, body.accountId); break;
+        case "publish": {
+          if (body.confirm !== true) throw new AdminError("최종 발행 확인이 필요합니다.");
+          ready(old);
+          if (old.explore?.format === "webtoon") for (const card of old.cards) await renderCard(card);
+          await publishEdition(old, body.accountId); break;
+        }
         case "reconcile": await reconcileEdition(old); break;
         default: throw new AdminError("지원하지 않는 작업입니다.");
       }

@@ -1,19 +1,22 @@
 import { copyIssues, type CardCopy } from "./copy";
 import { candidateUrlKey, exactPublishedTime } from "./manual";
 
+export type WebtoonImage = { src: string; alt: string; width: number; height: number; sha256: string };
 export type NewsCandidate = {
   id: string; title: string; summary: string; sourceName: string; sourceUrl: string;
   publishedAt: string; datePrecision: "time" | "day" | "none"; origin: "newsletter" | "archive" | "feed" | "manual" | "release" | "glossary" | "explore";
   newsletterId?: string;
   cardCopy?: CardCopy;
+  image?: WebtoonImage;
 };
 export type NewsCard = {
   candidateId: string; title: string; body: string; sourceUrl: string;
   sourceName: string; publishedAt: string; verified: boolean; verification?: "automatic";
+  image?: WebtoonImage;
 };
 export type FeedStatus = { name: string; status: "ok" | "failed"; count: number; message?: string };
 export type Edition = {
-  id?: string; explore?: { slug: string; title: string };
+  id?: string; explore?: { slug: string; title: string; format?: "webtoon" };
   date: string; revision: number; status: "draft" | "approved" | "publishing" | "published" | "needs_check";
   windowStart: string; windowEnd: string; collectedAt: string;
   candidateSource?: "newsletter";
@@ -83,23 +86,32 @@ export function captionFor(cards: NewsCard[], candidates: NewsCandidate[] = []) 
   return titles.length ? `${CAPTION_INTRO}\n\n${titles.join("\n")}` : CAPTION_INTRO;
 }
 export function cardIssues(card: NewsCard): string[] {
-  const issues = copyIssues(card);
-  if (!card.verified && card.verification !== "automatic") issues.push("원문·발행일·다른 카드와의 사건 중복을 확인하세요.");
+  const issues = card.image ? [] : copyIssues(card);
+  if (card.image) {
+    const image = card.image;
+    if (!/^\/explore\/[a-z0-9-]+-webtoon\.png$/.test(image.src) || typeof image.alt !== "string" || !image.alt.trim() || image.alt.length > 600 || !/^[a-f0-9]{64}$/.test(image.sha256) || !Number.isInteger(image.width) || !Number.isInteger(image.height) || image.width < 1 || image.height < 1 || image.width > 10000 || image.height > 10000) issues.push("등록된 웹툰 원본 정보를 확인하세요.");
+    if (!card.title.trim() || card.title.length > 180 || !card.body.trim() || card.body.length > 600) issues.push("웹툰 제목과 설명을 확인하세요.");
+  }
+  if (!card.verified && (card.image || card.verification !== "automatic")) issues.push("원문·발행일·다른 카드와의 사건 중복을 확인하세요.");
   try { const u = new URL(card.sourceUrl); if (u.protocol !== "https:" || u.username || u.password) throw 0; } catch { issues.push("https 원문 주소가 필요합니다."); }
   return issues;
 }
 export function editionIssues(edition: Edition): string[] {
   const issues: string[] = [];
   const explore = edition.explore;
+  const webtoon = explore?.format === "webtoon";
   const candidateCount = selectableCandidates(edition).length;
   if (explore) {
-    if (!/^[a-z0-9-]{1,80}$/.test(explore.slug) || edition.id !== `${edition.date}~explore~${explore.slug}` || !explore.title.trim()) issues.push("Explore 문서와 원고 번호를 확인하세요.");
-    if (edition.cards.length < 2 || edition.cards.length > 10) issues.push(`Explore 카드는 2~10장으로 구성하세요. 현재 ${edition.cards.length}장입니다.`);
+    if (!/^[a-z0-9-]{1,80}$/.test(explore.slug) || edition.id !== `${edition.date}~${webtoon ? "webtoon" : "explore"}~${explore.slug}` || !explore.title.trim() || (explore.format !== undefined && !webtoon)) issues.push("Explore 문서와 원고 번호를 확인하세요.");
+    if (edition.cards.length < (webtoon ? 1 : 2) || edition.cards.length > 10) issues.push(`Explore ${webtoon ? "웹툰은 1" : "카드는 2"}~10장으로 구성하세요. 현재 ${edition.cards.length}장입니다.`);
     edition.cards.forEach((card, i) => {
       const candidate = edition.candidates.find(c => c.id === card.candidateId);
       if (!candidate || candidate.origin !== "explore" || candidate.sourceUrl !== card.sourceUrl || candidate.sourceName !== card.sourceName || candidate.publishedAt !== card.publishedAt) issues.push(`${i + 1}번: 선택한 Explore 문서의 출처와 기록된 날짜를 그대로 사용하세요.`);
+      if (webtoon && (!card.image || !candidate?.image || !(["src", "alt", "width", "height", "sha256"] as const).every(key => card.image![key] === candidate.image![key]))) issues.push(`${i + 1}번: 저장된 웹툰 원본을 그대로 사용하세요.`);
     });
   } else if (candidateCount < 10) issues.push(`후보 부족: ${candidateCount}개입니다. 뉴스·보충 콘텐츠를 10개 이상 확보하세요.`);
+  if (!webtoon && edition.cards.some(card => card.image)) issues.push("이미지는 웹툰 전용 원고에서만 사용할 수 있습니다.");
+  if (webtoon && new Set(edition.cards.map(card => card.image?.src)).size !== edition.cards.length) issues.push("같은 웹툰이 중복 선택됐습니다.");
   edition.cards.forEach((card, i) => {
     if (!selectableCandidates(edition).some(c => c.id === card.candidateId)) issues.push(`${i + 1}번: 이전 원고를 보관 중입니다. 현재 후보에서 다시 선정하세요.`);
   });

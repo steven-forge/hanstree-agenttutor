@@ -8,12 +8,14 @@ import { editionKey, type Edition, type NewsCard } from "./types";
 import { cardIssues } from "./types";
 import { CARD_SOURCE, cardBodyTop, cardSourceLines } from "./copy";
 import { AdminError } from "./server";
+import { renderWebtoonImage } from "./webtoon";
 
 let fontPromise: Promise<Buffer[]> | undefined;
 const fonts = () => fontPromise ||= Promise.all(["NanumGothic-Bold.ttf", "Arimo-Bold.ttf", "Arimo-BoldItalic.ttf", "NanumGothic-ExtraBold.ttf"].map(f => readFile(path.join(process.cwd(), "public/fonts", f))));
 export async function renderCard(card: NewsCard, series: "AI News 10" | "AI Explore" = "AI News 10"): Promise<Buffer> {
   const issues = cardIssues({ ...card, verified: true }).filter(s => !s.includes("주소"));
   if (issues.length) throw new AdminError(issues[0]);
+  if (card.image) return renderWebtoonImage(card.image);
   const [face, latin, italic, heavy] = await fonts();
   const png = new ImageResponse(
     <div style={{ width: 1080, height: 1350, background: "#000", color: "#CCFF00", display: "flex", position: "relative", fontFamily: "CardGothic", fontWeight: 700 }}>
