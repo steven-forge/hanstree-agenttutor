@@ -307,7 +307,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     operation.current = true; setPending("create_explore"); setError("");
     try {
       await readResponse(await fetch(API, { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "create_explore", date: `${date}~explore~${pickedExplore}` }) }));
-      window.location.assign(`/admin/news?${new URLSearchParams({ date, explore: pickedExplore })}`);
+      window.location.assign(`/admin/news/explore?${new URLSearchParams({ date, explore: pickedExplore })}`);
     } catch (caught) { setError(caught instanceof Error ? caught.message : "Explore 원고를 열지 못했습니다."); }
     finally { operation.current = false; setPending(""); }
   }
@@ -416,14 +416,15 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     <p><a className="cn-text-link" href="/admin/news/settings">뉴스레터 기준 설정으로 이동 →</a></p>
     <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리로 이동 →</a></p>
 
-    <section className="cn-panel" aria-labelledby="cn-explore-heading">
+    {!explore && <p><a className="cn-text-link" href="/admin/news/explore">Explore 문서로 카드 만들기로 이동 →</a></p>}
+    {explore && <section className="cn-panel" aria-labelledby="cn-explore-heading">
       <h2 id="cn-explore-heading">Explore 문서로 카드 만들기</h2>
       <p className="cn-muted">문서 하나를 카드 2~10장으로 정리해 별도 Instagram 게시물로 발행합니다.</p>
       <label className="cn-field">발행할 문서<select aria-label="발행할 문서" value={pickedExplore} onChange={event => setPickedExplore(event.target.value)} disabled={!!pending}>{exploreDocs.map(doc => <option key={doc.slug} value={doc.slug}>{doc.title}</option>)}</select></label>
       <p className="cn-help">{exploreDocs.find(doc => doc.slug === pickedExplore)?.summary}</p>
       <div className="cn-publish-actions"><button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 카드 원고 열기</button>{pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}{explore && <a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a>}</div>
       <p className="cn-help">처음 열면 문서 내용으로 초안을 만들고, 저장된 원고가 있으면 그대로 엽니다. 발행은 검토 후 별도로 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
-    </section>
+    </section>}
 
     {!explore && <AutomationSettings localMode={localMode} parentBusy={!!pending} unsaved={unsaved} sessionExpired={sessionExpired} onExpired={() => setSessionExpired(true)} onBusyChange={busy => { operation.current = busy; setPending(busy ? "automation" : ""); }} onPrepared={() => setMessage("자동 제작·발행 요청 뒤에도 현재 원고 화면을 유지했습니다. 판본 날짜를 확인하고 ‘상태 새로 확인’을 눌러 저장된 결과를 불러오세요.")} />}
 
@@ -571,7 +572,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       </section>
       <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.map(item => {
         const current = (item.id || item.date) === targetKey(date);
-        const href = `/admin/news?${new URLSearchParams({ date: item.date, ...(item.explore ? { explore: item.explore.slug } : {}) })}`;
+        const href = `/admin/news${item.explore ? "/explore" : ""}?${new URLSearchParams({ date: item.date, ...(item.explore ? { explore: item.explore.slug } : {}) })}`;
         return <li key={item.id || item.date}><div><a className="cn-history-date" href={href} aria-current={current ? "page" : undefined} onClick={event => { if (pending) event.preventDefault(); }}>{item.date} · {item.explore ? `Explore · ${item.explore.title}` : "AI News 10"}{current ? " · 현재 판본" : ""}</a><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{current && edition?.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress">발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>;
       })}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>
     </div>

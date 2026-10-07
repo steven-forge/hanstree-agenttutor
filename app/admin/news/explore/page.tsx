@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import SiteHeader from "../../../SiteHeader";
+import DocsSidebar from "../../../DocsSidebar";
+import { isAdmin, setupStatus, snapshot, validDate } from "../../../lib/card-news/server";
+import { exploreOptions } from "../../../lib/card-news/explore-edition";
+import { kstDate, type AdminSnapshot } from "../../../lib/card-news/types";
+import AdminNews from "../AdminNews";
+import AdminLogin from "../AdminLogin";
+import "../admin-news.css";
+
+export const metadata: Metadata = { title: "Explore 문서로 카드 만들기 | AgentTutor", robots: { index: false, follow: false } };
+export const dynamic = "force-dynamic";
+export default async function ExploreCardsPage({ searchParams }: { searchParams: Promise<{ date?: string; explore?: string }> }) {
+  const params = await searchParams, setup = setupStatus();
+  let date: string;
+  try { date = validDate(params.date || kstDate()); } catch { notFound(); }
+  let admin = false;
+  try { admin = await isAdmin(); } catch { admin = false; }
+  const options = admin ? exploreOptions() : [];
+  const explore = params.explore ? options.find(doc => doc.slug === params.explore) : options[0];
+  if (admin && !explore) notFound();
+  let initial: AdminSnapshot | null = null;
+  if (admin && explore && setup.storage) {
+    try { initial = await snapshot(`${date}~explore~${explore.slug}`); } catch { /* Keep server-only drafts protected while storage is unavailable. */ }
+  }
+  return <><SiteHeader currentPath="/admin/news/explore" /><div className="docs-shell card-news-layout"><DocsSidebar currentPath="/admin/news/explore" /><div style={{ minWidth: 0 }}>
+    {!admin ? <AdminLogin setup={{ auth: setup.auth, authIssue: setup.authIssue, storage: false, instagram: false, scheduler: false }} title="Explore 문서로 카드 만들기" description="관리자 비밀번호를 확인한 뒤 Explore 문서를 골라 카드를 만들고 발행할 수 있습니다." /> : initial && explore ? <AdminNews initial={initial} initialDate={date} explore={explore} exploreDocs={options} /> : <main className="cn-shell"><h1>Explore 문서로 카드 만들기</h1><p>Explore 원고를 보관하려면 서버 저장소 연결이 필요합니다. 저장소 상태를 확인한 뒤 다시 열어 주세요.</p><a href="/admin/news">카드뉴스 관리로 돌아가기</a></main>}
+  </div></div></>;
+}
