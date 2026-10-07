@@ -2069,6 +2069,122 @@
         }
       ],
       "dev_reference_links": []
+    },
+    {
+      "slug": "common-lisp",
+      "title": "Common Lisp: 코드를 실행하며 확장하는 프로그래밍 언어",
+      "summary": "Common Lisp은 ANSI 표준이 있는 Lisp 계열 프로그래밍 언어입니다. 괄호로 쓴 코드를 대화하듯 실행하고, 매크로와 객체 시스템으로 언어의 쓰임새를 넓힐 수 있습니다.",
+      "topic": "프로그래밍 언어",
+      "tags": [
+        "Common Lisp",
+        "Lisp",
+        "REPL",
+        "매크로",
+        "CLOS",
+        "SBCL",
+        "Clojure",
+        "Python"
+      ],
+      "created_at": "2026-10-07",
+      "updated_at": "2026-10-07",
+      "reviewed_at": "2026-10-07",
+      "question": "Common Lisp은 무엇이고, 왜 괄호가 많고 코드를 실행하며 확장하는 언어라고 하나요?",
+      "core_answer": "Common Lisp은 표준으로 정해진 Lisp 계열 프로그래밍 언어입니다. (+ 2 3)처럼 연산 이름을 앞에 쓰고, 코드를 새로운 코드로 바꾸는 매크로와 객체 시스템을 지원합니다.\n\n대화형 환경인 REPL에서 작은 코드를 실행하고 결과를 보며 함수를 고쳐 나갈 수 있습니다.",
+      "easy_explanation": "계산기에 식을 넣으면 바로 답이 나오듯, Common Lisp도 식을 입력하면 결과를 돌려줍니다. 이 입력-평가-출력의 반복 화면을 REPL이라고 부릅니다.\n\n예를 들어 (+ 2 3)을 넣으면 5가 나올 것으로 예상합니다. (* 2 (+ 3 4))는 안쪽 (+ 3 4)가 7이 되고 2를 곱해 14가 될 것으로 예상합니다.\n\n함수도 같은 방식으로 만듭니다. (defun double (x) (* 2 x))로 정의하면 (double 7)은 14가 될 것으로 예상합니다.\n\n이 값들은 예상 결과이며, 이 문서를 쓰며 직접 실행한 결과가 아닙니다.\n\n보통 괄호 안 첫 항목은 연산이나 이름이고 나머지는 인수입니다. 다만 모든 괄호가 함수 호출은 아닙니다. 매크로, 특수 형식, 자료를 나타내는 괄호도 있습니다.",
+      "api_explanation_title": "용어: REPL·매크로·CLOS·구현체",
+      "api_explanation": "REPL은 입력한 식을 읽고(Read), 계산하고(Eval), 결과를 보여 주는(Print) 일을 되풀이하는 환경입니다.\n\n매크로는 코드 모양을 받아 새로운 코드 모양으로 바꿔 주는 장치입니다. 단순한 글자 바꾸기가 아니라 코드 구조 전체를 다룹니다.\n\nCLOS는 Common Lisp의 객체 시스템입니다. 일반 함수는 인수의 종류에 따라 실행할 방법(메서드)을 고르며, 호출 문법은 일반 함수와 같습니다.\n\n구현체는 언어를 실제로 실행하는 프로그램입니다. SBCL은 무료 오픈소스 Common Lisp 컴파일러·런타임 구현체의 하나입니다.",
+      "details": "Common Lisp은 하나의 제품이 아니라 표준으로 정해진 언어입니다. 공식 사이트는 ANSI 표준 Lisp 계열이며 컴파일을 지원하는 다중 패러다임 언어라고 소개합니다.\n\n그 표준을 실제로 동작시키는 프로그램이 구현체입니다. SBCL이 대표적인 예이며, 언어와 구현체는 구분해서 이해해야 합니다.\n\nREPL에서는 함수를 정의하고, 불러 보고, 고쳐 다시 정의하는 과정을 짧게 반복할 수 있습니다. 이것이 코드를 실행하며 키워 간다는 말의 뜻입니다.\n\n다만 이 방식이 모든 서비스를 멈춤 없이 고칠 수 있다는 보장은 아닙니다. 실제 서비스 수정은 상태, 데이터, 운영 절차를 따로 고려해야 합니다.\n\n매크로 설명에서 기준이 되는 표준 문서(HyperSpec)는 매크로가 코드 형식과 환경을 받아 새 형식을 만들고, 그 결과가 원래 코드 대신 평가된다고 설명합니다.\n\n그래서 매크로는 반복되는 코드 모양에 이름을 붙여 새로운 문법처럼 쓰게 해 줍니다. 언제 어떻게 펼쳐지는지는 실행 방식에 따라 다를 수 있어, 항상 컴파일 때만 일어난다고 단정하면 안 됩니다.\n\nCLOS는 객체를 중심으로 한 기능을 제공합니다. 일반 함수는 하나 이상의 인수의 클래스나 동일성에 따라 메서드를 선택합니다.\n\n그래서 호출하는 쪽에서는 보통 함수를 부르듯 쓰면서, 인수 종류에 따라 다른 동작을 붙일 수 있습니다.\n\nClojure도 Lisp 계열이지만 Common Lisp과는 다른 언어입니다. Clojure 공식 설명은 JVM 위에서 함수형 프로그래밍과 기본 불변 자료구조에 중점을 둔다고 밝히며, 코드 호환을 보장하지 않습니다.\n\nPython도 대화형 환경을 지원합니다. 공식 튜토리얼은 동적 타이핑, 객체지향, 스크립팅과 빠른 개발에 적합한 언어로 설명합니다. REPL이 Common Lisp만의 기능은 아닙니다.\n\n이 문서는 공식 자료를 정리한 설명입니다. 가격, 최신 버전, 성능 우열, 인기도는 다루지 않으며, 예시 코드를 실행해 본 결과도 아닙니다.",
+      "diagram_image": {
+        "src": "/explore/common-lisp-webtoon.png",
+        "alt": "괄호로 쓴 식을 입력하고 결과를 확인하며 함수를 정의하고 고쳐 가는 과정을 그린 8컷 웹툰",
+        "caption": "이해를 위한 가상의 8컷 웹툰 · 실제 실행 화면 아님",
+        "width": 1024,
+        "height": 1536
+      },
+      "diagram_description": "괄호로 쓴 식을 입력해 결과를 보고, 함수를 정의하고 고치며 코드를 키워 가는 가상 예시입니다. 실제 실행 화면이 아닙니다.",
+      "comparison": {
+        "title": "관련 언어와 비교",
+        "intro": "Common Lisp, Clojure, Python은 모두 대화형으로 시험해 볼 수 있지만 성격이 다릅니다.\n\nClojure는 Lisp 계열이어도 Common Lisp과 다른 언어입니다. 아래 표는 공식 설명 범위의 비교이며 성능 우열을 말하지 않습니다.",
+        "table": {
+          "caption": "Common Lisp·Clojure·Python 비교(공식 자료 기반, 성능 비교 아님)",
+          "columns": [
+            "특징",
+            "알아둘 점"
+          ],
+          "rows": [
+            {
+              "label": "Common Lisp",
+              "values": [
+                "ANSI 표준 Lisp 계열 언어입니다. 컴파일을 지원하고, 매크로와 객체 시스템(CLOS)을 갖추고 있습니다.",
+                "언어와 구현체가 구분됩니다. SBCL은 구현체의 하나입니다."
+              ]
+            },
+            {
+              "label": "Clojure",
+              "values": [
+                "JVM 위에서 동작하는 Lisp 계열 언어로, 함수형 프로그래밍과 기본 불변 자료구조에 중점을 둡니다.",
+                "Common Lisp과 다른 언어이며 코드 호환을 보장하지 않습니다."
+              ]
+            },
+            {
+              "label": "Python",
+              "values": [
+                "동적 타이핑, 객체지향을 지원하고 스크립팅과 빠른 개발에 쓰입니다. 대화형 환경도 지원합니다.",
+                "괄호 중심 문법이 아니며, REPL은 Common Lisp만의 기능이 아닙니다."
+              ]
+            }
+          ]
+        },
+        "interpretation": "코드 모양 자체를 다루는 매크로와 표준화된 객체 시스템에 관심이 있다면 Common Lisp을 살펴볼 수 있습니다. JVM 환경과 불변 자료구조가 중요하다면 Clojure를, 빠르게 작성하는 범용 스크립트가 목적이라면 Python을 볼 수 있습니다.\n\n이 선택 기준은 확인한 설명에 따른 해석이며, 같은 조건에서 성능을 측정한 결과는 아닙니다.",
+        "sources": [
+          {
+            "name": "Common-Lisp.net",
+            "url": "https://www.common-lisp.net/"
+          },
+          {
+            "name": "Clojure: Rationale",
+            "url": "https://clojure.org/about/rationale"
+          },
+          {
+            "name": "Python Tutorial",
+            "url": "https://docs.python.org/3/tutorial/"
+          }
+        ]
+      },
+      "pitfalls": [
+        "괄호 안 첫 항목이 연산이고 나머지가 인수라는 설명은 보통 함수 호출에 해당합니다. 매크로, 특수 형식, 자료를 나타내는 괄호도 있어 모든 괄호가 함수는 아닙니다.",
+        "REPL로 함수를 고쳐 가며 개발할 수 있어도 모든 서비스를 멈춤 없이 수정할 수 있다는 보장은 아닙니다.",
+        "매크로는 단순한 문자열 치환이 아니라 코드 구조를 받아 새 코드를 만드는 장치입니다. 항상 컴파일 때만 작동한다고 단정하면 안 됩니다.",
+        "Common Lisp은 AI 전용 언어도, 인터프리터 전용 언어도 아닙니다. 컴파일을 지원하는 범용 언어입니다.",
+        "Common Lisp은 언어이고 SBCL은 구현체입니다. Clojure는 같은 Lisp 계열이지만 다른 언어이며, Python에도 대화형 환경이 있습니다."
+      ],
+      "sources": [
+        {
+          "name": "Common-Lisp.net",
+          "url": "https://www.common-lisp.net/"
+        },
+        {
+          "name": "SBCL: Steel Bank Common Lisp",
+          "url": "https://www.sbcl.org/"
+        },
+        {
+          "name": "Common Lisp HyperSpec: Macro Forms",
+          "url": "https://www.lispworks.com/documentation/HyperSpec/Body/03_ababb.htm"
+        },
+        {
+          "name": "Common Lisp HyperSpec: Generic Functions and Methods",
+          "url": "https://www.lispworks.com/documentation/HyperSpec/Body/07_fa.htm"
+        },
+        {
+          "name": "Clojure: Rationale",
+          "url": "https://clojure.org/about/rationale"
+        },
+        {
+          "name": "Python Tutorial",
+          "url": "https://docs.python.org/3/tutorial/"
+        }
+      ],
+      "dev_reference_links": []
     }
   ]
 }
