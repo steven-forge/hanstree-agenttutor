@@ -29,7 +29,7 @@
 .cn-button:focus-visible, .cn-shell input:focus-visible, .cn-shell textarea:focus-visible, .cn-shell select:focus-visible, .cn-shell summary:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
 .cn-text-link { color: #1d4ed8; font-size: .85rem; overflow-wrap: anywhere; }
 .cn-field { display: grid; gap: 6px; min-width: 0; color: #374151; font-size: .85rem; font-weight: 650; }
-.cn-field input:not([type=checkbox]), .cn-field textarea, .cn-search { width: 100%; min-width: 0; min-height: 42px; padding: 10px 11px; border: 1px solid #cbd5e1; border-radius: 7px; background: #fff; color: #111827; font: inherit; font-size: .92rem; line-height: 1.5; }
+.cn-field input:not([type=checkbox]), .cn-field textarea, .cn-field select, .cn-search { width: 100%; min-width: 0; min-height: 42px; padding: 10px 11px; border: 1px solid #cbd5e1; border-radius: 7px; background: #fff; color: #111827; font: inherit; font-size: .92rem; line-height: 1.5; }
 .cn-field textarea { resize: vertical; font-weight: 400; }
 .cn-field input:disabled, .cn-field textarea:disabled { background: #f8fafc; color: #64748b; }
 .cn-field small, .cn-help { color: #64748b; font-size: .77rem; font-weight: 400; }
@@ -144,7 +144,7 @@
 .cn-bottom .cn-panel { margin: 0; }
 .cn-setup-list, .cn-history { margin: 14px 0; padding: 0; list-style: none; }
 .cn-setup-list li, .cn-history li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: .86rem; }
-.cn-history-date { border: 0; padding: 4px 0; background: none; color: #1d4ed8; font: inherit; cursor: pointer; text-align: left; }
+.cn-history-date { display: inline-block; max-width: 100%; overflow-wrap: anywhere; border: 0; padding: 4px 0; background: none; color: #1d4ed8; font: inherit; cursor: pointer; text-align: left; }
 .cn-history-date:disabled { color: #64748b; cursor: default; }
 .cn-history small { display: block; color: #64748b; font-size: .72rem; }
 .cn-history { max-height: 310px; overflow: auto; }

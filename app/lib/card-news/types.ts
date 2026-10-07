@@ -13,6 +13,7 @@ export type NewsCard = {
 };
 export type FeedStatus = { name: string; status: "ok" | "failed"; count: number; message?: string };
 export type Edition = {
+  id?: string; explore?: { slug: string; title: string };
   date: string; revision: number; status: "draft" | "approved" | "publishing" | "published" | "needs_check";
   windowStart: string; windowEnd: string; collectedAt: string;
   candidateSource?: "newsletter";
@@ -23,7 +24,9 @@ export type Edition = {
 };
 export type PublicationProgress = { edition: Edition | null; checkedAt: string; remoteStatus?: string; remoteCheckedAt?: string; statusError?: string };
 export type AdminSetup = { auth: boolean; authIssue?: "password_missing" | "password_length" | "signing_missing" | "signing_length"; storage: boolean; instagram: boolean; scheduler: boolean };
-export type AdminSnapshot = { edition: Edition | null; setup: AdminSetup; history: { date: string; status: Edition["status"]; updatedAt: string }[] };
+export type AdminSnapshot = { edition: Edition | null; setup: AdminSetup; history: { id?: string; explore?: Edition["explore"]; date: string; status: Edition["status"]; updatedAt: string }[] };
+
+export function editionKey(edition: Pick<Edition, "id" | "date">): string { return edition.id || edition.date; }
 
 export const MAX_CANDIDATES = 1000;
 export function isSupplement(candidate: NewsCandidate) { return ["release", "glossary", "explore"].includes(candidate.origin); }
@@ -87,14 +90,22 @@ export function cardIssues(card: NewsCard): string[] {
 }
 export function editionIssues(edition: Edition): string[] {
   const issues: string[] = [];
+  const explore = edition.explore;
   const candidateCount = selectableCandidates(edition).length;
-  if (candidateCount < 10) issues.push(`후보 부족: ${candidateCount}개입니다. 뉴스·보충 콘텐츠를 10개 이상 확보하세요.`);
+  if (explore) {
+    if (!/^[a-z0-9-]{1,80}$/.test(explore.slug) || edition.id !== `${edition.date}~explore~${explore.slug}` || !explore.title.trim()) issues.push("Explore 문서와 원고 번호를 확인하세요.");
+    if (edition.cards.length < 2 || edition.cards.length > 10) issues.push(`Explore 카드는 2~10장으로 구성하세요. 현재 ${edition.cards.length}장입니다.`);
+    edition.cards.forEach((card, i) => {
+      const candidate = edition.candidates.find(c => c.id === card.candidateId);
+      if (!candidate || candidate.origin !== "explore" || candidate.sourceUrl !== card.sourceUrl || candidate.sourceName !== card.sourceName || candidate.publishedAt !== card.publishedAt) issues.push(`${i + 1}번: 선택한 Explore 문서의 출처와 기록된 날짜를 그대로 사용하세요.`);
+    });
+  } else if (candidateCount < 10) issues.push(`후보 부족: ${candidateCount}개입니다. 뉴스·보충 콘텐츠를 10개 이상 확보하세요.`);
   edition.cards.forEach((card, i) => {
     if (!selectableCandidates(edition).some(c => c.id === card.candidateId)) issues.push(`${i + 1}번: 이전 원고를 보관 중입니다. 현재 후보에서 다시 선정하세요.`);
   });
-  if (edition.cards.length !== 10) issues.push(`뉴스를 정확히 10개 선정하세요. 현재 ${edition.cards.length}개입니다.`);
-  if (new Set(edition.cards.map(c => c.candidateId)).size !== edition.cards.length || new Set(edition.cards.map(c => candidateUrlKey(c.sourceUrl))).size !== edition.cards.length) issues.push("같은 기사가 중복 선택됐습니다.");
-  edition.cards.forEach((card, i) => cardIssues(card).forEach(issue => issues.push(`${i + 1}번: ${issue}`)));
+  if (!explore && edition.cards.length !== 10) issues.push(`뉴스를 정확히 10개 선정하세요. 현재 ${edition.cards.length}개입니다.`);
+  if (new Set(edition.cards.map(c => c.candidateId)).size !== edition.cards.length || (!explore && new Set(edition.cards.map(c => candidateUrlKey(c.sourceUrl))).size !== edition.cards.length)) issues.push("같은 카드 또는 기사가 중복 선택됐습니다.");
+  edition.cards.forEach((card, i) => cardIssues(explore ? { ...card, verification: undefined } : card).forEach(issue => issues.push(`${i + 1}번: ${issue}`)));
   edition.cards.forEach((card, i) => {
     const issue = cardDateIssue(card, edition);
     if (issue) issues.push(`${i + 1}번: ${issue}`);

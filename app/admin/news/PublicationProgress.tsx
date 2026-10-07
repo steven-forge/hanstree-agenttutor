@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { Edition } from "../../lib/card-news/types";
+import { editionKey, type Edition } from "../../lib/card-news/types";
 
 type ProgressResponse = { edition: Edition | null; checkedAt: string; remoteStatus?: string; remoteCheckedAt?: string; statusError?: string; error?: string };
 type Props = { edition: Edition; pending: string; uncertain: boolean; sessionExpired: boolean; onEdition: (edition: Edition) => void; onExpired: () => void; onContinue: () => void };
@@ -14,16 +14,17 @@ function elapsed(milliseconds: number) {
   return seconds >= 60 ? `${Math.floor(seconds / 60)}분 ${seconds % 60}초` : `${seconds}초`;
 }
 export function publicationSummary(edition: Edition) {
-  const p = edition.publication;
+  const p = edition.publication, total = edition.cards.length;
   if (edition.status === "published") return "Instagram 발행 완료";
   if (p?.publishRequestedAt) return "최종 발행 응답 확인 중";
   if (p?.containerId) return "Instagram 이미지 처리 단계";
-  if (p?.children.length === 10) return "카드 10장 준비 요청 완료 · 게시물 구성 단계";
-  return p ? `카드 준비 요청 ${p.children.length}/10장` : "발행 요청 확인 중";
+  if (p?.children.length === total && total > 0) return `카드 ${total}장 준비 요청 완료 · 게시물 구성 단계`;
+  return p ? `카드 준비 요청 ${p.children.length}/${total}장` : "발행 요청 확인 중";
 }
 
 export default function PublicationProgress(props: Props) {
   const { edition, pending, uncertain, sessionExpired, onContinue } = props;
+  const viewKey = editionKey(edition), total = edition.cards.length;
   const callbacks = useRef(props);
   callbacks.current = props;
   const [remote, setRemote] = useState<{ key: string; status: string; checkedAt: string } | null>(null);
@@ -37,7 +38,7 @@ export default function PublicationProgress(props: Props) {
   const active = !sessionExpired && (uncertain || pending === "publish" || pending === "reconcile" || ["publishing", "needs_check"].includes(edition.status));
   const starting = pending === "publish" && edition.status === "approved";
   const publication = starting ? undefined : edition.publication;
-  const remoteKey = `${publication?.attempt || ""}:${publication?.containerId || ""}:${publication?.publishRequestedAt || ""}`;
+  const remoteKey = `${viewKey}:${publication?.attempt || ""}:${publication?.containerId || ""}:${publication?.publishRequestedAt || ""}`;
   const remoteStatus = remote?.key === remoteKey ? remote.status : undefined;
 
   useEffect(() => {
@@ -54,27 +55,27 @@ export default function PublicationProgress(props: Props) {
       const current = callbacks.current;
       if (current.pending && !["publish", "reconcile"].includes(current.pending)) return;
       const p = current.edition.publication;
-      const key = `${p?.attempt || ""}:${p?.containerId || ""}:${p?.publishRequestedAt || ""}`;
+      const key = `${editionKey(current.edition)}:${p?.attempt || ""}:${p?.containerId || ""}:${p?.publishRequestedAt || ""}`;
       if (remotePoll.current.key !== key) remotePoll.current = { key, last: 0, count: 0 };
       const timing = remotePoll.current;
       const queryRemote = !!p?.containerId && timing.status !== "PUBLISHED" && Date.now() - Date.parse(current.edition.updatedAt) >= 60000 && timing.count < 5 && Date.now() - timing.last >= 60000;
       if (queryRemote) { timing.last = Date.now(); timing.count++; }
       fetching = true; setChecking(true);
       try {
-        const response = await fetch(`/api/admin/news/progress?${new URLSearchParams({ date: current.edition.date, ...(queryRemote ? { remote: "1" } : {}) })}`, { cache: "no-store", credentials: "same-origin", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(65000)]) });
+        const response = await fetch(`/api/admin/news/progress?${new URLSearchParams({ date: editionKey(current.edition), ...(queryRemote ? { remote: "1" } : {}) })}`, { cache: "no-store", credentials: "same-origin", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(65000)]) });
         const result: ProgressResponse = await response.json().catch(() => { throw new Error("진행 상태 응답을 읽지 못했습니다. 잠시 후 다시 확인합니다."); });
         if (disposed) return;
         if (response.status === 401) { current.onExpired(); throw new Error("로그인이 만료되어 자동 확인을 멈췄습니다. 다시 로그인해 주세요."); }
         if (!response.ok || result.error) throw new Error(result.error || "진행 상태를 가져오지 못했습니다. 잠시 후 다시 확인합니다.");
-        if (!result.edition || result.edition.date !== current.edition.date) throw new Error("아직 발행 기록을 확인하지 못했습니다. 기존 화면을 유지하고 다시 확인합니다.");
-        if (result.edition.date !== callbacks.current.edition.date || result.edition.revision < callbacks.current.edition.revision) return;
+        if (!result.edition || editionKey(result.edition) !== editionKey(current.edition)) throw new Error("아직 발행 기록을 확인하지 못했습니다. 기존 화면을 유지하고 다시 확인합니다.");
+        if (editionKey(result.edition) !== editionKey(callbacks.current.edition) || result.edition.revision < callbacks.current.edition.revision) return;
         // This query only reads progress. It never continues or retries a publication.
         callbacks.current.onEdition(result.edition);
         setCheckedAt(result.checkedAt); setQueryError(result.statusError || "");
         if (result.remoteStatus) {
           const latest = result.edition.publication;
           remotePoll.current.status = result.remoteStatus;
-          setRemote({ key: `${latest?.attempt || ""}:${latest?.containerId || ""}:${latest?.publishRequestedAt || ""}`, status: result.remoteStatus, checkedAt: result.remoteCheckedAt || result.checkedAt });
+          setRemote({ key: `${editionKey(result.edition)}:${latest?.attempt || ""}:${latest?.containerId || ""}:${latest?.publishRequestedAt || ""}`, status: result.remoteStatus, checkedAt: result.remoteCheckedAt || result.checkedAt });
         }
       } catch (caught) {
         if (!disposed) setQueryError(caught instanceof Error && caught.name !== "TimeoutError" ? caught.message : "진행 상태 조회가 늦어지고 있습니다. 기존 기록을 유지하고 다시 확인합니다.");
@@ -84,13 +85,13 @@ export default function PublicationProgress(props: Props) {
     const timer = window.setInterval(poll, 10000);
     document.addEventListener("visibilitychange", poll);
     return () => { disposed = true; controller.abort(); window.clearInterval(timer); document.removeEventListener("visibilitychange", poll); };
-  }, [active, edition.date, refresh]);
+  }, [active, viewKey, refresh]);
 
   const done = edition.status === "published" || remoteStatus === "PUBLISHED";
   const failed = remoteStatus === "ERROR" || remoteStatus === "EXPIRED";
   const ready = remoteStatus === "FINISHED" && !publication?.publishRequestedAt;
-  const stage = done ? 4 : publication?.publishRequestedAt || ready ? 3 : publication?.containerId ? 2 : publication?.children.length === 10 ? 1 : 0;
-  const count = Math.min(10, publication?.children.length || 0);
+  const stage = done ? 4 : publication?.publishRequestedAt || ready ? 3 : publication?.containerId ? 2 : publication?.children.length === total && total > 0 ? 1 : 0;
+  const count = Math.min(total, publication?.children.length || 0);
   const age = Math.max(0, clock - Date.parse(edition.updatedAt));
   const wait = Math.max(0, (publication?.containerId ? 60000 : 600000) - age);
   const recoverable = ["publishing", "needs_check"].includes(edition.status);
@@ -101,7 +102,7 @@ export default function PublicationProgress(props: Props) {
     <div className="cn-section-head"><h2 id="cn-progress-heading">Instagram 발행 진행</h2><span className={`cn-tag ${done ? "cn-tag-ok" : failed || edition.status === "needs_check" ? "cn-tag-warn" : "cn-tag-info"}`}>{done ? "완료 확인" : active && checking ? "상태 확인 중" : "진행 기록"}</span></div>
     <p className="cn-progress-title" role="status" aria-live="polite">{title}</p>
     <ol className="cn-progress-steps">{STEPS.map((label, index) => <li key={label} className={index < stage ? "is-done" : index === stage ? "is-current" : ""} aria-current={index === stage ? "step" : undefined}><span>{index < stage ? "✓" : index + 1}</span>{label}</li>)}</ol>
-    <label className="cn-progress-count">카드 준비 요청 <strong>{count}/10장</strong><progress max={10} value={count} aria-label={`카드 준비 요청 ${count}/10장`} /></label>
+    <label className="cn-progress-count">카드 준비 요청 <strong>{count}/{total}장</strong><progress max={Math.max(1, total)} value={count} aria-label={`카드 준비 요청 ${count}/${total}장`} /></label>
     {publication?.message && <p className="cn-progress-detail">최근 처리 기록: {publication.message}</p>}
     <div className="cn-progress-times"><span>발행 시작 {time(publication?.startedAt)}{publication?.startedAt && !done && ` · ${elapsed(clock - Date.parse(publication.startedAt))} 경과`}</span><span>마지막 처리 {time(edition.updatedAt)} KST</span><span>상태 조회 {checkedAt ? `${time(checkedAt)} KST` : active ? "확인 중" : "저장된 기록"}</span>{edition.publishedAt && <span>발행 완료 기록 {time(edition.publishedAt)} KST</span>}{remote?.key === remoteKey && <span>Instagram 확인 {time(remote.checkedAt)} KST</span>}</div>
     {queryError && <p className="cn-alert" role="alert">{queryError}</p>}

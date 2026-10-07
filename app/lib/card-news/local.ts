@@ -68,6 +68,7 @@ async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapsho
   } else if (body.action === "import") {
     if (old && !["draft", "approved"].includes(old.status)) throw new Error("발행이 시작된 원고는 복원으로 바꿀 수 없습니다.");
     const incoming = body.edition as Edition;
+    if (incoming?.explore || (incoming?.id && incoming.id !== date)) throw new Error("Explore 원고는 서버의 Explore 카드 발행 화면에서 열어 주세요.");
     if (!incoming || incoming.date !== date || !Array.isArray(incoming.cards) || incoming.cards.length > 10 || !Array.isArray(incoming.candidates) || incoming.candidates.length > MAX_CANDIDATES || typeof incoming.caption !== "string" || incoming.caption.length > 5000) throw new Error("이 날짜의 카드뉴스 원고 JSON을 선택하세요.");
     const text = (value: unknown, limit: number) => typeof value === "string" && value.length <= limit;
     const url = (value: unknown) => { try { const u = new URL(String(value)); return u.protocol === "https:" && !u.username && !u.password; } catch { return false; } };

@@ -1,7 +1,7 @@
 import "server-only";
 import { createHash, createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
-import type { AdminSetup, AdminSnapshot, Edition } from "./types";
+import { editionKey, type AdminSetup, type AdminSnapshot, type Edition } from "./types";
 
 export class AdminError extends Error {
   constructor(message: string, public status = 400) { super(message); }
@@ -65,14 +65,21 @@ export function validDate(value: unknown): string {
   if (typeof value !== "string" || !/^20\d{2}-\d{2}-\d{2}$/.test(value) || !Number.isFinite(Date.parse(value)) || new Date(value).toISOString().slice(0, 10) !== value) throw new AdminError("날짜를 다시 선택해 주세요.");
   return value;
 }
-export async function getEdition(date: string): Promise<Edition | null> {
-  const raw = await redis<string | null>("GET", `${prefix}edition:${validDate(date)}`);
+export function validEditionKey(value: unknown): string {
+  if (typeof value !== "string" || !/^20\d{2}-\d{2}-\d{2}(?:~explore~[a-z0-9-]{1,80})?$/.test(value)) throw new AdminError("원고 번호를 다시 확인해 주세요.");
+  validDate(value.slice(0, 10));
+  return value;
+}
+export async function getEdition(key: string): Promise<Edition | null> {
+  const raw = await redis<string | null>("GET", `${prefix}edition:${validEditionKey(key)}`);
   return raw ? JSON.parse(raw) as Edition : null;
 }
 // Revision and history are committed atomically. Concurrent tabs cannot overwrite or publish twice.
 export async function putEdition(edition: Edition, expected: number): Promise<Edition> {
+  const key = validEditionKey(editionKey(edition)), date = validDate(edition.date);
+  if (key.slice(0, 10) !== date || (edition.explore ? key !== `${date}~explore~${edition.explore.slug}` : key !== date)) throw new AdminError("날짜와 원고 번호가 일치하지 않습니다.");
   const next = { ...edition, revision: expected + 1, updatedAt: new Date().toISOString() };
-  const result = await redis<number>("EVAL", `local old=redis.call('GET',KEYS[1]); local rev=0; if old then rev=cjson.decode(old).revision end; if rev~=tonumber(ARGV[1]) then return 0 end; redis.call('SET',KEYS[1],ARGV[2]); redis.call('ZADD',KEYS[2],ARGV[3],ARGV[4]); return 1`, 2, `${prefix}edition:${validDate(edition.date)}`, `${prefix}history`, expected, JSON.stringify(next), Date.parse(next.updatedAt), next.date);
+  const result = await redis<number>("EVAL", `local old=redis.call('GET',KEYS[1]); local rev=0; if old then rev=cjson.decode(old).revision end; if rev~=tonumber(ARGV[1]) then return 0 end; redis.call('SET',KEYS[1],ARGV[2]); redis.call('ZADD',KEYS[2],ARGV[3],ARGV[4]); return 1`, 2, `${prefix}edition:${key}`, `${prefix}history`, expected, JSON.stringify(next), Date.parse(next.updatedAt), key);
   if (result !== 1) throw new AdminError("다른 작업에서 내용이 바뀌었습니다. 새로고침해 최신 내용을 확인하세요.", 409);
   return next;
 }
@@ -83,14 +90,14 @@ export async function putEdition(edition: Edition, expected: number): Promise<Ed
 async function publishReady(): Promise<boolean> {
   try { return (await (await import("./instagram-connection")).connectionView()).publishReady; } catch { return false; }
 }
-export async function snapshot(date: string): Promise<AdminSnapshot> {
+export async function snapshot(key: string): Promise<AdminSnapshot> {
   const base = setupStatus();
   if (!base.storage) return { setup: base, edition: null, history: [] };
   const setup = { ...base, instagram: await publishReady() };
   const dates = await redis<string[]>("ZREVRANGE", `${prefix}history`, 0, 29);
   const history: AdminSnapshot["history"] = [];
-  for (const day of dates) { const e = await getEdition(day); if (e) history.push({ date: e.date, status: e.status, updatedAt: e.updatedAt }); }
-  return { setup, edition: await getEdition(date), history };
+  for (const item of dates) { const e = await getEdition(item); if (e) history.push({ ...(e.id ? { id: e.id } : {}), ...(e.explore ? { explore: e.explore } : {}), date: e.date, status: e.status, updatedAt: e.updatedAt }); }
+  return { setup, edition: await getEdition(key), history };
 }
 export function requireSameOrigin(request: Request) {
   const origin = request.headers.get("origin");
@@ -213,10 +220,10 @@ export async function logout() {
     }
   } finally { jar.delete(cookieName); }
 }
-export function signAsset(date: string, attempt: string, index: number, expires: number) {
+export function signAsset(key: string, attempt: string, index: number, expires: number) {
   const secret = process.env.CARD_NEWS_SIGNING_SECRET;
   if (!secret || secret.length < 32) throw new AdminError("이미지 배포 서명 설정이 필요합니다.", 503);
-  return createHmac("sha256", secret).update(`${date}:${attempt}:${index}:${expires}`).digest("hex");
+  return createHmac("sha256", secret).update(`${validEditionKey(key)}:${attempt}:${index}:${expires}`).digest("hex");
 }
 export async function readBody(request: Request) {
   const reader = request.body?.getReader();

@@ -1,7 +1,7 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
 import { AdminError, equalSecret, getEdition, putEdition, signAsset, prefix, redis } from "./server";
-import { editionIssues, type Edition, type PublicationProgress } from "./types";
+import { editionIssues, editionKey, type Edition, type PublicationProgress } from "./types";
 import { apiVersion, assertCredentialsCurrent, resolveCredentials, verifyIdentity, type InstagramCredentials } from "./instagram-connection";
 
 class InstagramAuthRejection extends AdminError {}
@@ -9,7 +9,7 @@ export class PublishCooldown extends AdminError {
   constructor(public nextAllowedAt: string) { super(`최근 게시로부터 1시간이 지나야 발행할 수 있습니다. ${new Date(nextAllowedAt).toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })} KST 이후 다시 진행합니다.`, 409); }
 }
 type PublishOptions = { beforePublish?: () => Promise<void> };
-type PublishFence = { date: string; attempt: string; requestedAt: string; publishedAt?: string };
+type PublishFence = { date: string; editionId?: string; attempt: string; requestedAt: string; publishedAt?: string };
 const fenceKey = (id: string) => `${prefix}publish-fence:${id}`;
 
 function assetOrigin() {
@@ -80,7 +80,7 @@ async function checkPreviousFence(accountId: string) {
   if (!raw) return;
   const previous: PublishFence = JSON.parse(raw);
   if (previous.publishedAt) return;
-  const old = await getEdition(previous.date);
+  const old = await getEdition(previous.editionId || previous.date);
   if (old?.status === "published" && old.publication?.attempt === previous.attempt) {
     const next = JSON.stringify({ ...previous, publishedAt: old.publishedAt || new Date().toISOString() });
     if (await redis("EVAL", "if redis.call('GET',KEYS[1])~=ARGV[1] then return 0 end; redis.call('SET',KEYS[1],ARGV[2]); return 1", 1, fenceKey(accountId), raw, next) !== 1) throw new AdminError("다른 발행에서 상태를 변경했습니다. 잠시 후 다시 확인하세요.", 409);
@@ -115,7 +115,7 @@ async function publishContainerNow(edition: Edition, creds: InstagramCredentials
   await assertCredentialsCurrent(creds);
   // Durable fence before the external side effect. Never retry an ambiguous media_publish call.
   edition = await save({ ...edition, publication: { ...edition.publication, stage: "publish", publishRequestedAt: new Date().toISOString(), message: "인스타그램에 최종 발행 요청 중입니다." } });
-  const fence: PublishFence = { date: edition.date, attempt: edition.publication!.attempt, requestedAt: edition.publication!.publishRequestedAt! };
+  const fence: PublishFence = { date: edition.date, ...(edition.id ? { editionId: edition.id } : {}), attempt: edition.publication!.attempt, requestedAt: edition.publication!.publishRequestedAt! };
   await redis("SET", fenceKey(pinnedId), JSON.stringify(fence));
   let data: Awaited<ReturnType<typeof graph>>;
   try { data = await graph(creds, `${pinnedId}/media_publish`, { creation_id: edition.publication!.containerId! }); }
@@ -139,6 +139,7 @@ async function publishContainerNow(edition: Edition, creds: InstagramCredentials
 export async function publishEdition(edition: Edition, accountId: unknown, options: PublishOptions = {}) {
   if (edition.status !== "approved") throw new AdminError("검토 완료된 원고만 발행할 수 있습니다.", 409);
   const issues = editionIssues(edition); if (issues.length) throw new AdminError(issues[0]);
+  const total = edition.cards.length, key = editionKey(edition);
   // Resolve credentials once; the token and account ID stay pinned for every step of this publication.
   const creds = await resolveCredentials();
   const account = await instagramAccount(creds);
@@ -148,24 +149,24 @@ export async function publishEdition(edition: Edition, accountId: unknown, optio
   if (Date.parse(recent.nextAllowedAt) > Date.now()) throw new PublishCooldown(recent.nextAllowedAt);
   await options.beforePublish?.();
   const pinnedId = creds.userId;
-  edition = await save({ ...edition, status: "publishing", publication: { attempt: randomUUID(), children: [], accountId: pinnedId, startedAt: new Date().toISOString(), stage: "images", message: "카드 준비 0/10장 완료. 1번 카드를 인스타그램에 보내고 있습니다." } });
+  edition = await save({ ...edition, status: "publishing", publication: { attempt: randomUUID(), children: [], accountId: pinnedId, startedAt: new Date().toISOString(), stage: "images", message: `카드 준비 0/${total}장 완료. 1번 카드를 인스타그램에 보내고 있습니다.` } });
   try {
     const expires = Math.floor(Date.now() / 1000) + 86400;
     const origin = assetOrigin();
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < total; i++) {
       const attempt = edition.publication!.attempt;
-      const signature = signAsset(edition.date, attempt, i, expires);
-      const imageUrl = `${origin}/api/instagram-assets/${edition.date}/${i}?attempt=${attempt}&expires=${expires}&signature=${signature}`;
+      const signature = signAsset(key, attempt, i, expires);
+      const imageUrl = `${origin}/api/instagram-assets/${encodeURIComponent(key)}/${i}?attempt=${attempt}&expires=${expires}&signature=${signature}`;
       const child = await graph(creds, `${pinnedId}/media`, { image_url: imageUrl, is_carousel_item: true, alt_text: `${edition.cards[i].title.replace(/\n/g, " ")} ${edition.cards[i].body.replace(/\n/g, " ")}` });
-      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, checkedId(child.id)], stage: i === 9 ? "carousel" : "images", message: i === 9 ? "카드 준비 10/10장 완료. 게시물 한 개로 묶고 있습니다." : `카드 준비 ${i + 1}/10장 완료. ${i + 2}번 카드를 인스타그램에 보내고 있습니다.` } });
+      edition = await save({ ...edition, publication: { ...edition.publication!, children: [...edition.publication!.children, checkedId(child.id)], stage: i === total - 1 ? "carousel" : "images", message: i === total - 1 ? `카드 준비 ${total}/${total}장 완료. 게시물 한 개로 묶고 있습니다.` : `카드 준비 ${i + 1}/${total}장 완료. ${i + 2}번 카드를 인스타그램에 보내고 있습니다.` } });
     }
     const parent = await graph(creds, `${pinnedId}/media`, { media_type: "CAROUSEL", children: edition.publication!.children.join(","), caption: edition.caption });
-    edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id), stage: "processing", message: "카드 10장을 묶었습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다." } });
+    edition = await save({ ...edition, publication: { ...edition.publication!, containerId: checkedId(parent.id), stage: "processing", message: `카드 ${total}장을 묶었습니다. Instagram의 이미지 처리 상태를 확인하고 있습니다.` } });
     const status = await graph(creds, `${edition.publication!.containerId}?fields=status_code`);
     if (status.status_code === "FINISHED") return await publishContainer(edition, creds, options);
     return await save({ ...edition, status: "needs_check", publication: { ...edition.publication!, stage: "processing", message: "이미지 처리 중입니다. 1분 뒤 발행 계속 및 확인을 눌러 주세요." } });
   } catch (error) {
-    const latest = await getEdition(edition.date);
+    const latest = await getEdition(editionKey(edition));
     if (!latest || latest.status === "published") return latest || edition;
     return save({ ...latest, status: "needs_check", publication: { ...latest.publication!, message: error instanceof AdminError ? error.message : "발행 결과를 확인해야 합니다. 재발행하지 말고 상태를 확인해 주세요." } });
   }
@@ -191,7 +192,7 @@ export async function reconcileEdition(edition: Edition, options: PublishOptions
       if (publication.accountId) await instagramAccount(creds);
       return await publishContainer(edition, creds, options);
     } catch (error) {
-      const latest = await getEdition(edition.date); if (!latest || latest.status === "published") return latest || edition;
+      const latest = await getEdition(editionKey(edition)); if (!latest || latest.status === "published") return latest || edition;
       return save({ ...latest, status: "needs_check", publication: { ...latest.publication!, message: error instanceof AdminError ? error.message : "발행 결과 확인이 필요합니다." } });
     }
   }

@@ -6,7 +6,7 @@ const clone = x => JSON.parse(JSON.stringify(x));
 let checks = 0;
 async function check(name, fn) { await fn(); checks++; console.log('OK', name); }
 function harness(realInstagram = false) {
-  const h = { now: Date.parse('2026-10-07T00:00:00Z'), store: new Map(), editions: new Map(), renders: 0, publishes: 0, children: 0, recent: null, remoteStatus: 'FINISHED', ambiguous: false, authRejected: false, malformed: false, hook: null, onRender: null, candidates: null, supplements: [], supplementCalls: 0 };
+  const h = { now: Date.parse('2026-10-07T00:00:00Z'), store: new Map(), editions: new Map(), renders: 0, publishes: 0, children: 0, recent: null, remoteStatus: 'FINISHED', ambiguous: false, authRejected: false, malformed: false, hook: null, onRender: null, candidates: null, supplements: [], supplementCalls: 0, signatures: [], graphRequests: [] };
   class Clock extends Date { constructor(...args) { super(...(args.length ? args : [h.now])); } static now() { return h.now; } }
   const iso = () => new Clock().toISOString();
   class AdminError extends Error { constructor(message, status=400) { super(message); this.status=status; } }
@@ -29,12 +29,24 @@ function harness(realInstagram = false) {
     }
     throw Error('Unexpected Redis command '+command);
   }
-  const server={AdminError,prefix,redis,setupStatus:()=>({scheduler:true}),equalSecret:(a,b)=>a===b,signAsset:()=> 'isolated-signature',getEdition:async date=>h.editions.has(date)?clone(h.editions.get(date)):null,putEdition:async(e,expected)=>{
-    if((h.editions.get(e.date)?.revision||0)!==expected) throw new AdminError('revision conflict',409);
-    const next=clone({...e,revision:expected+1,updatedAt:iso()});h.editions.set(e.date,next);return clone(next);
+  const server={AdminError,prefix,redis,setupStatus:()=>({scheduler:true}),equalSecret:(a,b)=>a===b,signAsset:(key,attempt,index,expires)=>{
+    const signature=require('node:crypto').createHash('sha256').update(JSON.stringify([key,attempt,index,expires])).digest('hex');
+    h.signatures.push({key,attempt,index,expires,signature});return signature;
+  },getEdition:async key=>h.editions.has(key)?clone(h.editions.get(key)):null,putEdition:async(e,expected)=>{
+    const key=e.id||e.date;
+    if((h.editions.get(key)?.revision||0)!==expected) throw new AdminError('revision conflict',409);
+    const next=clone({...e,revision:expected+1,updatedAt:iso()});h.editions.set(key,next);return clone(next);
   }};
   const cards=()=>Array.from({length:10},(_,i)=>({candidateId:String(i),title:`뉴스 ${i}`,body:'새 기능을 공개했다.',sourceName:'확인 출처',sourceUrl:`https://example.org/${i}`,publishedAt:new Clock(h.now-3600000).toISOString(),verified:false}));
   h.edition=(date='2026-10-07')=>({date,revision:1,status:'approved',windowStart:new Clock(h.now-86400000).toISOString(),windowEnd:new Clock(h.now+86400000).toISOString(),collectedAt:iso(),updatedAt:iso(),cards:cards().map(c=>({...c,verified:true})),candidates:cards().map(c=>({id:c.candidateId,title:c.title,summary:c.body,sourceName:c.sourceName,sourceUrl:c.sourceUrl,publishedAt:c.publishedAt,datePrecision:'time',origin:'newsletter'})),caption:'설명',sources:[]});
+  // Synthetic, review-complete document fixtures. No real account, article or publication.
+  h.explore=(count=2,date='2026-10-07',slug='fixture-guide')=>{
+    const e=h.edition(date),sourceUrl=`https://example.org/explore/${slug}`;
+    e.id=`${date}~explore~${slug}`;e.explore={slug,title:'격리 확인용 도구 안내'};
+    e.windowStart='2026-10-05T15:00:00.000Z';e.caption='격리 점검용 설명';
+    e.cards=Array.from({length:count},(_,i)=>({candidateId:`explore:${slug}:${i+1}`,title:`도구 안내 ${i+1}`,body:'검토할 내용을 정리하는 도구입니다.',sourceName:'AgentTutor · Explore',sourceUrl,publishedAt:'2026-10-06',verified:true}));
+    e.candidates=e.cards.map(c=>({id:c.candidateId,title:c.title,summary:c.body,sourceName:c.sourceName,sourceUrl,publishedAt:c.publishedAt,datePrecision:'day',origin:'explore'}));return e;
+  };
   const instagramMock={PublishCooldown:Cooldown,instagramAccount:async()=>({id:'123',username:'test-account'}),latestInstagramPublication:async()=>{
     if(h.hook) await h.hook(); return {accountId:'123',nextAllowedAt:new Clock(h.recent?h.recent+3600000:0).toISOString()};
   },publishEdition:async(e,account,opts)=>{await opts.beforePublish();h.publishes++;return server.putEdition({...e,status:'published',publishedAt:iso(),publication:{attempt:'attempt',children:[],accountId:account}},e.revision);},reconcileEdition:async(e,opts)=>{await opts.beforePublish();return e;}};
@@ -44,8 +56,10 @@ function harness(realInstagram = false) {
     if(cache.has(name)) return cache.get(name).exports;
     const filename=path.join(base,name+'.ts'), module={exports:{}};cache.set(name,module);
     const source=ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;
-    vm.runInNewContext(source,{module,exports:module.exports,Date:Clock,URL,Intl,Buffer,AbortSignal,process:{env:{CARD_NEWS_PUBLIC_URL:'https://example.org'}},fetch:async url=>{
-      const endpoint=new URL(url).pathname;
+    vm.runInNewContext(source,{module,exports:module.exports,Date:Clock,URL,Intl,Buffer,AbortSignal,process:{env:{CARD_NEWS_PUBLIC_URL:'https://example.org'}},fetch:async(url,init={})=>{
+      const parsed=new URL(url),endpoint=parsed.pathname;
+      assert.equal(parsed.origin,'https://graph.instagram.com','Unexpected mocked network target');
+      h.graphRequests.push({url,method:init.method||'GET',body:init.body?JSON.parse(init.body):null});
       if(endpoint.endsWith('/media_publish')) { h.publishes++;if(h.ambiguous)throw Error('timeout');if(h.authRejected)return {ok:false,status:400,json:async()=>({error:{code:190}})};h.recent=h.now;return {ok:true,json:async()=>({id:'999'})}; }
       if(endpoint.endsWith('/media') && new URL(url).search) return {ok:true,json:async()=>h.malformed?{}:{data:h.recent?[{id:'1',timestamp:new Clock(h.recent).toISOString()}]:[]}};
       if(endpoint.endsWith('/media')) {h.children++;return {ok:true,json:async()=>({id:String(100+h.children)})};}
@@ -54,6 +68,8 @@ function harness(realInstagram = false) {
       if(id==='server-only')return {};
       if(id==='node:crypto')return require(id);
       if(id==='../../content')return content;
+      if(id==='../../today/newsHelpers')return {SITE_URL:'https://example.org'};
+      if(id==='../../../data/explore.json')return JSON.parse(fs.readFileSync(path.join(root,'data/explore.json'),'utf8'));
       if(id==='./server')return server;
       if(id==='./render')return {renderCard:async()=>{h.renders++;if(h.onRender)await h.onRender();return Buffer.from('isolated');}};
       if(id==='./collect')return {collectEdition:async(date,old)=>({...h.edition(date),revision:old?.revision||0,status:'draft',cards:[],candidateSource:'newsletter',candidates:h.candidates||h.edition(date).candidates})};
@@ -67,7 +83,7 @@ function harness(realInstagram = false) {
   }
   h.types=load('types');h.policy=load('automation-policy');h.api=load('automation');h.ig=realInstagram?load('instagram'):instagramMock;
   h.config=overrides=>h.store.set(prefix+'automation-settings',JSON.stringify({...h.policy.AUTOMATION_DEFAULTS,revision:1,enabled:true,accountId:'123',...overrides}));
-  h.server=server;h.iso=iso;return h;
+  h.server=server;h.iso=iso;h.load=load;return h;
 }
 (async()=>{
   await check('validate times, lookback and KST next-day boundary',async()=>{const h=harness(),p=h.policy;assert.throws(()=>p.validateAutomationSettings({...p.AUTOMATION_DEFAULTS,publishTime:'08:00'}));assert.throws(()=>p.validateAutomationSettings({...p.AUTOMATION_DEFAULTS,maxAgeHours:'168'}));assert.equal(p.nextScheduledAt('09:00',new Date('2026-10-06T23:59:00Z')),'2026-10-07T00:00:00.000Z');assert.equal(p.nextScheduledAt('09:00',new Date('2026-10-07T00:00:00Z')),'2026-10-08T00:00:00.000Z');});
@@ -98,5 +114,85 @@ function harness(realInstagram = false) {
   await check('restored day-only content uses KST for the retained date range',async()=>{const h=harness(),old=h.edition();const candidate={id:'explore:old',title:'도구 이해',summary:'도구의 작동 방식을 설명했다.',sourceName:'Explore',sourceUrl:'https://example.org/explore/old',publishedAt:'2026-10-01',datePrecision:'day',origin:'explore'};old.cards=[{candidateId:candidate.id,title:candidate.title,body:candidate.summary,sourceName:candidate.sourceName,sourceUrl:candidate.sourceUrl,publishedAt:candidate.publishedAt,verified:true}];old.candidates=[candidate];const fresh={...h.edition(),windowStart:'2026-10-06T00:00:00Z',cards:[],candidates:[]};const restored=h.types.preserveDraft(fresh,old);assert.equal(restored.windowStart,'2026-09-30T15:00:00.000Z');assert.equal(h.types.cardDateIssue(restored.cards[0],restored),'');});
   await check('cached automatic cards are regenerated after publication elsewhere',async()=>{const h=harness();await h.api.runAutomation('prepare');const old=await h.server.getEdition('2026-10-07');const previous={...h.edition('2026-10-06'),status:'published',cards:[old.cards[0]]};h.editions.set(previous.date,previous);h.supplements=[{id:'glossary:embedding',title:'임베딩 개념',summary:'의미를 숫자로 표현하는 방식이다.',sourceName:'용어사전',sourceUrl:'https://example.org/glossary#embedding',publishedAt:'',datePrecision:'none',origin:'glossary'}];const v=await h.api.runAutomation('prepare');assert.equal(v.run.phase,'ready',v.run.message);const next=await h.server.getEdition('2026-10-07');assert.ok(next.revision>old.revision);assert.ok(!next.cards.some(c=>c.candidateId===old.cards[0].candidateId));assert.equal(next.automation.supplementCount,1);});
   await check('a publication arriving after preparation blocks the final automatic request',async()=>{const h=harness();await h.api.runAutomation('prepare');const old=await h.server.getEdition('2026-10-07');h.hook=async()=>{h.editions.set('2026-10-06',{...h.edition('2026-10-06'),status:'published',cards:[old.cards[0]]});};const v=await h.api.runAutomation('test');assert.equal(v.run.phase,'failed');assert.match(v.run.message,/다른 판본에서 이미/);assert.equal(h.publishes,0);});
+  await check('same-day daily and Explore editions retain separate storage and revisions',async()=>{
+    const h=harness(),daily=await h.server.putEdition({...h.edition(),revision:0},0),explore=await h.server.putEdition({...h.explore(),revision:0},0);
+    assert.notEqual(h.types.editionKey(daily),h.types.editionKey(explore));assert.equal(h.editions.size,2);
+    const edited=await h.server.putEdition({...explore,caption:'Explore만 수정한 설명'},explore.revision);
+    assert.equal(edited.revision,2);assert.deepEqual(await h.server.getEdition(daily.date),daily);
+    await assert.rejects(h.server.putEdition(explore,explore.revision),/revision conflict/);
+    assert.equal((await h.server.getEdition(explore.id)).caption,edited.caption);
+  });
+  await check('two-slide Explore publication signs its own ID and uploads exactly two assets',async()=>{
+    const h=harness(true),e=h.explore(),daily=h.edition();h.editions.set(daily.date,clone(daily));h.editions.set(e.id,e);
+    assert.equal(h.types.editionIssues(e).length,0);
+    const result=await h.ig.publishEdition(e,'123');assert.equal(result.status,'published');assert.equal(result.id,e.id);
+    const uploads=h.graphRequests.filter(r=>r.body?.is_carousel_item),parents=h.graphRequests.filter(r=>r.body?.media_type==='CAROUSEL');
+    assert.equal(uploads.length,2);assert.equal(parents.length,1);assert.equal(h.children,3);assert.equal(h.publishes,1);assert.equal(h.signatures.length,2);
+    uploads.forEach((request,index)=>{
+      const asset=new URL(request.body.image_url),signature=h.signatures[index];
+      assert.equal(decodeURIComponent(asset.pathname),`/api/instagram-assets/${e.id}/${index}`);
+      assert.equal(signature.key,e.id);assert.equal(signature.index,index);
+      assert.equal(asset.searchParams.get('attempt'),signature.attempt);assert.equal(Number(asset.searchParams.get('expires')),signature.expires);
+      assert.equal(asset.searchParams.get('signature'),signature.signature);
+    });
+    assert.equal(parents[0].body.children.split(',').length,2);assert.equal(result.publication.children.length,2);assert.equal(result.publication.stage,'done');
+    const fence=JSON.parse(h.store.get('cardnews:{admin}:publish-fence:123'));assert.equal(fence.date,e.date);assert.equal(fence.editionId,e.id);
+    assert.deepEqual(await h.server.getEdition(daily.date),daily);
+  });
+  await check('Explore requires human review, original source metadata and two to ten unique slides',async()=>{
+    const cases=[
+      e=>{e.cards[0].verified=false;e.cards[0].verification='automatic';},
+      e=>{e.cards[0].sourceUrl='https://example.org/altered';},
+      e=>{e.cards[0].sourceName='변경된 출처';},
+      e=>{e.cards[0].publishedAt='2026-10-05';},
+      e=>{e.candidates[0].origin='newsletter';},
+      e=>{e.cards[1].candidateId=e.cards[0].candidateId;},
+      e=>{e.cards[1].title=e.cards[0].title;},
+      e=>{e.cards=e.cards.slice(0,1);},
+      e=>{e.cards.push(...e.cards,...e.cards,...e.cards,...e.cards,...e.cards);},
+    ];
+    for(const mutate of cases){const h=harness(true),e=h.explore();mutate(e);h.editions.set(e.id,e);assert.ok(h.types.editionIssues(e).length);await assert.rejects(h.ig.publishEdition(e,'123'));assert.equal(h.graphRequests.length,0);}
+    const h=harness();assert.equal(h.types.editionIssues(h.explore(10)).length,0);
+  });
+  await check('a same-day published Explore excludes its URL from automatic news selection',async()=>{
+    const h=harness(),previous={...h.explore(),status:'published',publishedAt:h.iso()};h.editions.set(previous.id,clone(previous));
+    h.candidates=h.edition().candidates;h.candidates[0].sourceUrl=previous.cards[0].sourceUrl;
+    h.supplements=[{id:'glossary:unpublished',title:'미발행 용어 안내',summary:'의미를 숫자로 표현하는 방식이다.',sourceName:'용어사전',sourceUrl:'https://example.org/glossary#unpublished',publishedAt:'',datePrecision:'none',origin:'glossary'}];
+    const result=await h.api.runAutomation('prepare');assert.equal(result.run.phase,'ready',result.run.message);
+    const daily=await h.server.getEdition(previous.date);assert.equal(daily.cards.length,10);assert.ok(!daily.cards.some(c=>c.sourceUrl===previous.cards[0].sourceUrl));
+    assert.equal(daily.automation.supplementCount,1);assert.deepEqual(await h.server.getEdition(previous.id),previous);
+  });
+  await check('a same-day unresolved Explore final request blocks automatic news',async()=>{
+    const h=harness();h.config();const e={...h.explore(),status:'needs_check',publication:{attempt:'isolated-unresolved',children:['101','102'],accountId:'123',containerId:'103',publishRequestedAt:h.iso()}};h.editions.set(e.id,e);
+    const result=await h.api.runAutomation();assert.equal(result.run.phase,'failed');assert.match(result.run.message,/발행 결과/);assert.equal(h.publishes,0);assert.equal(h.renders,0);
+  });
+  await check('daily and Explore publications share the full one-hour account cooldown',async()=>{
+    const h=harness(true),daily=h.edition(),explore=h.explore();h.editions.set(daily.date,daily);h.editions.set(explore.id,explore);
+    const published=await h.ig.publishEdition(daily,'123');assert.equal(published.status,'published');const before=h.children;
+    h.now+=3599999;await assert.rejects(h.ig.publishEdition(explore,'123'),error=>error instanceof h.ig.PublishCooldown);assert.equal(h.children,before);assert.equal(h.publishes,1);
+    h.now++;const result=await h.ig.publishEdition(explore,'123');assert.equal(result.status,'published');assert.equal(h.publishes,2);
+    assert.deepEqual(await h.server.getEdition(daily.date),published);assert.equal(JSON.parse(h.store.get('cardnews:{admin}:publish-fence:123')).editionId,explore.id);
+  });
+  await check('ambiguous Explore final request is never resent or confused with same-day news',async()=>{
+    const h=harness(true),e=h.explore(),daily=h.edition();h.editions.set(e.id,e);h.editions.set(daily.date,clone(daily));h.ambiguous=true;
+    let result=await h.ig.publishEdition(e,'123');assert.equal(result.status,'needs_check');assert.ok(result.publication.publishRequestedAt);assert.equal(h.publishes,1);
+    h.now+=60001;result=await h.ig.reconcileEdition(result);assert.equal(h.publishes,1);assert.equal(result.id,e.id);
+    await assert.rejects(h.ig.publishEdition(daily,'123'),/이전 발행 결과/);assert.equal(h.publishes,1);
+    h.now+=60001;h.remoteStatus='PUBLISHED';result=await h.ig.reconcileEdition(result);assert.equal(result.status,'published');assert.equal(h.publishes,1);
+    assert.deepEqual(await h.server.getEdition(daily.date),daily);
+    await assert.rejects(h.ig.publishEdition(daily,'123'),error=>error instanceof h.ig.PublishCooldown);assert.equal(h.publishes,1);
+  });
+  await check('every real Explore document builds review-required slides without truncation',async()=>{
+    const h=harness(),builder=h.load('explore-edition'),options=builder.exploreOptions();assert.ok(options.length>=17);
+    for(const option of options){
+      const e=builder.createExploreEdition('2026-10-07',option.slug);assert.equal(e.id,`2026-10-07~explore~${option.slug}`);
+      assert.ok(e.cards.length>=2&&e.cards.length<=10,`${option.slug}: ${e.cards.length} slides`);
+      assert.ok(e.cards.every(c=>!c.verified&&c.verification!=='automatic'));assert.ok(h.types.editionIssues(e).length>0);
+      const reviewed={...e,cards:e.cards.map(c=>({...c,verified:true}))};assert.equal(h.types.editionIssues(reviewed).length,0,`${option.slug}: ${h.types.editionIssues(reviewed).join('; ')}`);
+      for(const card of e.cards){assert.ok(card.title.split('\n').length<=2);assert.ok(card.body.split('\n').length<=7);assert.doesNotMatch(card.title+card.body,/…|\.{3}/);}
+    }
+    assert.throws(()=>builder.createExploreEdition('2026-10-07','missing-isolated-document'),/찾지 못했습니다/);
+    console.log(JSON.stringify({exploreDocuments:options.length,source:'local public data/explore.json'}));
+  });
   console.log(JSON.stringify({passed:true,checks,externalRequests:0}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

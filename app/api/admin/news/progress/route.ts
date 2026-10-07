@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { AdminError, getEdition, requireAdmin, validDate } from "../../../../lib/card-news/server";
+import { AdminError, getEdition, requireAdmin, validEditionKey } from "../../../../lib/card-news/server";
 import { publicationRemoteStatus } from "../../../../lib/card-news/instagram";
 import type { PublicationProgress } from "../../../../lib/card-news/types";
 
@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   try {
     await requireAdmin();
     const params = new URL(request.url).searchParams;
-    const edition = await getEdition(validDate(params.get("date")));
+    const edition = await getEdition(validEditionKey(params.get("date")));
     const remote = params.get("remote") === "1" && edition ? await publicationRemoteStatus(edition) : {};
     const progress: PublicationProgress = { edition, checkedAt: new Date().toISOString(), ...remote };
     return NextResponse.json(progress, { headers });

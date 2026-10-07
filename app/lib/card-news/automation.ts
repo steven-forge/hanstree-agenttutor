@@ -3,7 +3,7 @@ import { randomUUID } from "node:crypto";
 import { todayData } from "../../content";
 import { AdminError, getEdition, prefix, putEdition, redis, setupStatus } from "./server";
 import { collectEdition } from "./collect";
-import { captionFor, cardDateIssue, editionIssues, isSupplement, kstDate, MAX_CANDIDATES, type Edition } from "./types";
+import { captionFor, cardDateIssue, editionIssues, editionKey, isSupplement, kstDate, MAX_CANDIDATES, type Edition } from "./types";
 import { renderCard } from "./render";
 import { AutoCopyError, selectAutomaticCards } from "./auto-copy";
 import { supplementCandidates } from "./supplements";
@@ -57,12 +57,12 @@ async function historyEditions(): Promise<Edition[]> {
 }
 const cardsRecent = (edition: Edition, hours: number) => edition.cards.every(card => !cardDateIssue(card, { ...edition, windowStart: new Date(Date.now() - hours * 3600000).toISOString() }));
 function alreadyPublished(edition: Edition, history: Edition[]) {
-  const published = history.filter(item => item.date !== edition.date && item.status === "published").flatMap(item => item.cards);
+  const published = history.filter(item => editionKey(item) !== editionKey(edition) && item.status === "published").flatMap(item => item.cards);
   const ids = new Set(published.map(card => card.candidateId)), urls = new Set(published.map(card => candidateUrlKey(card.sourceUrl)));
   return edition.cards.some(card => ids.has(card.candidateId) || urls.has(candidateUrlKey(card.sourceUrl)));
 }
-function requireResolvedHistory(date: string, history: Edition[]) {
-  const uncertain = history.find(item => item.date !== date && ["publishing", "needs_check"].includes(item.status) && item.publication?.publishRequestedAt);
+function requireResolvedHistory(key: string, history: Edition[]) {
+  const uncertain = history.find(item => editionKey(item) !== key && ["publishing", "needs_check"].includes(item.status) && item.publication?.publishRequestedAt);
   if (uncertain) throw new AdminError(`${uncertain.date} 판본의 이전 발행 결과가 아직 확정되지 않았습니다. 해당 판본에서 발행 결과를 확인한 뒤 다시 제작하세요.`, 409);
 }
 async function prepareEdition(date: string, settings: AutomationSettings) {
@@ -174,7 +174,7 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
       if (edition!.automation && !cardsRecent(edition!, current.maxAgeHours)) throw new AdminError("제작한 카드가 현재 뉴스 선정 기간을 벗어났습니다. 원고를 확인해 다시 제작하세요.", 409);
       if (edition!.automation && !edition!.publication?.publishRequestedAt) {
         const history = await historyEditions();
-        requireResolvedHistory(edition!.date, history);
+        requireResolvedHistory(editionKey(edition!), history);
         if (alreadyPublished(edition!, history)) throw new AdminError("준비한 콘텐츠가 다른 판본에서 이미 발행됐습니다. 미발행 콘텐츠로 다시 제작하세요.", 409);
       }
     };

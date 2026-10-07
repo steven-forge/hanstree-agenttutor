@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
-import { AdminError, getEdition, login, logout, putEdition, readBody, requireAdmin, requireSameOrigin, snapshot, validDate } from "../../../lib/card-news/server";
+import { AdminError, getEdition, login, logout, putEdition, readBody, requireAdmin, requireSameOrigin, snapshot, validDate, validEditionKey } from "../../../lib/card-news/server";
 import { collectEdition, canonicalUrl } from "../../../lib/card-news/collect";
 import { editionIssues, kstDate, MAX_CANDIDATES, type Edition, type NewsCandidate, type NewsCard } from "../../../lib/card-news/types";
 import { renderBundle, renderCard } from "../../../lib/card-news/render";
 import { instagramAccount, publishEdition, reconcileEdition } from "../../../lib/card-news/instagram";
 import { appendManualCandidate, candidateUrlKey } from "../../../lib/card-news/manual";
+import { createExploreEdition } from "../../../lib/card-news/explore-edition";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -24,7 +25,7 @@ function parseCandidates(input: unknown): NewsCandidate[] {
 async function editedEdition(old: Edition, body: Record<string, unknown>): Promise<Edition> {
   if (!["draft", "approved"].includes(old.status)) throw new AdminError("발행이 시작된 원고는 수정할 수 없습니다.", 409);
   if (!Array.isArray(body.cards) || body.cards.length > 10) throw new AdminError("카드는 최대 10장입니다.");
-  const inputCandidates = body.candidates === undefined ? old.candidates : parseCandidates(body.candidates);
+  const inputCandidates = old.explore || body.candidates === undefined ? old.candidates : parseCandidates(body.candidates);
   // Refresh only from trusted newsletter data, never from client-supplied copy metadata.
   const latest = old.candidateSource === "newsletter" ? (await collectEdition(old.date, null)).candidates : [];
   const candidates = inputCandidates.map(c => {
@@ -56,18 +57,18 @@ export async function GET(request: Request) {
   try {
     await requireAdmin();
     if (new URL(request.url).searchParams.get("session") === "1") return json({ authenticated: true });
-    const params = new URL(request.url).searchParams, date = validDate(params.get("date") || kstDate());
+    const params = new URL(request.url).searchParams, date = validEditionKey(params.get("date") || kstDate());
     if (params.has("image") || params.get("download") === "zip") {
       const edition = await getEdition(date); if (!edition) throw new AdminError("저장된 원고가 없습니다.", 404);
       if (params.has("revision") && Number(params.get("revision")) !== edition.revision) throw new AdminError("원고가 변경됐습니다. 새로고침해 주세요.", 409);
       if (params.get("download") === "zip") {
         ready(edition);
         if (edition.status === "draft") throw new AdminError("검토를 완료한 뒤 전체 카드를 내려받으세요.", 409);
-        return new Response(new Uint8Array(await renderBundle(edition)), { headers: { ...headers, "Content-Type": "application/zip", "Content-Disposition": `attachment; filename="AgentTutor_AI_News10_${date}.zip"` } });
+        return new Response(new Uint8Array(await renderBundle(edition)), { headers: { ...headers, "Content-Type": "application/zip", "Content-Disposition": `attachment; filename="AgentTutor_AI_${edition.explore ? "Explore" : "News10"}_${date}.zip"` } });
       }
       const index = Number(params.get("image"));
       if (!Number.isInteger(index) || index < 0 || index >= edition.cards.length) throw new AdminError("카드 번호를 확인하세요.", 404);
-      return new Response(new Uint8Array(await renderCard(edition.cards[index])), { headers: { ...headers, "Content-Type": "image/jpeg" } });
+      return new Response(new Uint8Array(await renderCard(edition.cards[index], edition.explore ? "AI Explore" : "AI News 10")), { headers: { ...headers, "Content-Type": "image/jpeg" } });
     }
     return json(await snapshot(date));
   } catch (error) { return failure(error); }
@@ -81,9 +82,21 @@ export async function POST(request: Request) {
     if (body.action === "logout") { await logout(); return json({ ok: true }); }
     await requireAdmin();
     if (body.action === "check_connection") return json(await instagramAccount());
-    const date = validDate(body.date);
+    const date = validEditionKey(body.date);
     const old = await getEdition(date);
+    if (body.action === "create_explore") {
+      const slug = date.split("~explore~")[1];
+      if (!slug) throw new AdminError("발행할 Explore 문서를 선택하세요.");
+      if (!old) {
+        let edition: Edition;
+        try { edition = createExploreEdition(validDate(date.slice(0, 10)), slug); }
+        catch (error) { throw new AdminError(error instanceof Error ? error.message : "Explore 초안을 만들지 못했습니다."); }
+        await putEdition(edition, 0);
+      }
+      return json(await snapshot(date));
+    }
     if (!Number.isInteger(body.revision) || body.revision !== (old?.revision || 0)) throw new AdminError("원고가 변경됐습니다. 새로고침해 주세요.", 409);
+    if (date.includes("~") && ["collect", "add_manual"].includes(body.action)) throw new AdminError("Explore 원고에서는 선택한 문서의 카드만 편집할 수 있습니다.");
     if (body.action === "collect") await putEdition(await collectEdition(date, old), body.revision);
     else if (body.action === "add_manual") {
       if (old && !["draft", "approved"].includes(old.status)) throw new AdminError("발행이 시작된 원고에는 뉴스를 등록할 수 없습니다.", 409);
@@ -101,7 +114,7 @@ export async function POST(request: Request) {
           if (old.status !== "draft") throw new AdminError("검토할 초안이 없습니다.", 409);
           ready(old);
           // Generate every actual JPG before accepting the review, so broken fonts/content never reach publishing.
-          for (const card of old.cards) await renderCard(card);
+          for (const card of old.cards) await renderCard(card, old.explore ? "AI Explore" : "AI News 10");
           await putEdition({ ...old, status: "approved", approvedAt: new Date().toISOString() }, old.revision); break;
         }
         case "publish": if (body.confirm !== true) throw new AdminError("최종 발행 확인이 필요합니다."); ready(old); await publishEdition(old, body.accountId); break;
