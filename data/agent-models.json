@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-07",
-  "unit_note": "2026-10-07 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
+  "checked_at": "2026-10-08",
+  "unit_note": "2026-10-08 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
   "agents": [
     {
       "agent_slug": "claude",
@@ -113,7 +113,7 @@
           "access_source": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
           "input_cost": 2.0,
           "output_cost": 10.0,
-          "cache_read_cost": 0.2,
+          "cache_read_cost": 0.1,
           "context_window": "1M",
           "max_output": "128K",
           "key_feature": "속도와 지능의 균형·코딩·다단계 도구 작업",
@@ -1595,7 +1595,7 @@
   "auto_update": {
     "providers": {
       "claude": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "claude-fable-5",
@@ -1614,7 +1614,7 @@
         ]
       },
       "codex": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "gpt-3.5-turbo",
@@ -1651,7 +1651,7 @@
         ]
       },
       "grok": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "grok-4.3",
@@ -1661,7 +1661,7 @@
         ]
       },
       "gemini": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "gemini-2.0-flash",
@@ -1682,7 +1682,7 @@
         ]
       },
       "muse": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "muse-spark-1.1",
@@ -1693,7 +1693,7 @@
         ]
       },
       "deepseek": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "deepseek-flash",
@@ -1701,7 +1701,7 @@
         ]
       },
       "qwen": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "qwen2.5-omni-7b",
@@ -1761,7 +1761,7 @@
         ]
       },
       "glm": {
-        "checked_at": "2026-10-07T06:48:13+09:00",
+        "checked_at": "2026-10-08T06:50:30+09:00",
         "status": "success",
         "discovered_ids": [
           "glm-4-32b-0414-128k",
@@ -1778,8 +1778,8 @@
         ]
       }
     },
-    "last_checked_at": "2026-10-07T06:48:13+09:00",
-    "last_successful_check_at": "2026-10-07T06:48:13+09:00",
+    "last_checked_at": "2026-10-08T06:50:30+09:00",
+    "last_successful_check_at": "2026-10-08T06:50:30+09:00",
     "status": "success"
   }
 }
