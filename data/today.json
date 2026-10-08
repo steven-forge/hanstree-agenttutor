@@ -6,6 +6,25 @@
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
+      "id": "0dfdf17053d5d17a",
+      "title": "v2.1.294",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "source_summary": "## What's changed - Fixed `prompt` and `agent` hooks written as instructions (such as \"Block commands that...\") allowing what they should block - Improved how `prompt` hooks on Stop and SubagentStop written as instructions (such as \"Carry on if the build is broken\") are judged, so Claude is less likely to stop early",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-08T19:58:33+09:00",
+      "published_at": "2026-10-08T05:03:54+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.294 버전 출시",
+      "source_summary_ko": "# # 변경된 사항 - 지침으로 작성된 `프롬프트` 및 `에이전트` 후크 수정 (예: \"해당 명령 차단...\") - 지침으로 작성된 Stop 및 SubagentStop의 `프롬프트` 후크 (예: \"빌드가 손상된 경우 계속 진행\") 가 판단되는 방식을 개선하여 Claude가 조기에 중지할 가능성이 적습니다.",
+      "release_notes_ko": {
+        "bug_fixes": "지침으로 작성된 `프롬프트` 및 `에이전트` 훅 (예: \"해당 명령 차단...\") 을 수정하여 차단해야 하는 항목을 허용했습니다.",
+        "chores": "중지 및 하위 에이전트에서 `프롬프트` 후크가 지침 (예: \"빌드가 손상된 경우 계속\") 으로 작성된 후크가 판단되는 방식을 개선하여 Claude가 조기에 중지할 가능성이 낮아졌습니다."
+      }
+    },
+    {
       "id": "702bba9db21cf6ec",
       "title": "Nous Research confirms it hit $1.5B valuation, launches AI agents for business users",
       "source_id": "techcrunch-ai",

@@ -36,25 +36,25 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-08T12:04:17.667785+09:00",
+      "checked_at": "2026-10-08T19:58:01.096035+09:00",
       "held_count": 0,
-      "excluded_count": 209,
+      "excluded_count": 210,
       "skipped_count": 29,
       "coverage_limited": false,
-      "last_success_at": "2026-10-08T12:04:17.667785+09:00"
+      "last_success_at": "2026-10-08T19:58:01.096035+09:00"
     },
     {
       "id": "claude-releases",
       "name": "Claude Code Releases",
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "ok",
-      "count": 0,
-      "checked_at": "2026-10-08T12:04:17.667785+09:00",
+      "count": 1,
+      "checked_at": "2026-10-08T19:58:01.096035+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 55,
       "coverage_limited": false,
-      "last_success_at": "2026-10-08T12:04:17.667785+09:00"
+      "last_success_at": "2026-10-08T19:58:01.096035+09:00"
     },
     {
       "id": "gemini-releases",
@@ -62,12 +62,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-08T12:04:17.667785+09:00",
+      "checked_at": "2026-10-08T19:58:01.096035+09:00",
       "held_count": 0,
       "excluded_count": 69,
       "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-08T12:04:17.667785+09:00"
+      "last_success_at": "2026-10-08T19:58:01.096035+09:00"
     },
     {
       "id": "grok-releases",
@@ -75,7 +75,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-08T12:04:17.667785+09:00",
+      "checked_at": "2026-10-08T19:58:01.096035+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -83,7 +83,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-08T12:04:17.667785+09:00"
+      "last_success_at": "2026-10-08T19:58:01.096035+09:00"
     },
     {
       "id": "anthropic-news",
@@ -325,7 +325,7 @@
     }
   ],
   "new_count": 5,
-  "archive_count": 431,
+  "archive_count": 451,
   "candidates": [
     {
       "id": "661f64ddb5f472a2",
@@ -414,6 +414,25 @@
       "source_excerpt": {
         "original": "We ran 400 queries, and Claude Haiku 5.5 was a statistically significant improvement over Haiku 4.5: 0.84 vs.",
         "ko": "400개의 쿼리를 실행했는데, Claude Haiku 5.5는 Haiku 4.5: 0.84 대"
+      }
+    },
+    {
+      "id": "0dfdf17053d5d17a",
+      "title": "v2.1.294",
+      "source_id": "claude-releases",
+      "source_name": "Claude Code Releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "source_summary": "## What's changed - Fixed `prompt` and `agent` hooks written as instructions (such as \"Block commands that...\") allowing what they should block - Improved how `prompt` hooks on Stop and SubagentStop written as instructions (such as \"Carry on if the build is broken\") are judged, so Claude is less likely to stop early",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-08T19:58:33+09:00",
+      "published_at": "2026-10-08T05:03:54+00:00",
+      "date_precision": "time",
+      "title_ko": "Claude Code v2.1.294 버전 출시",
+      "source_summary_ko": "# # 변경된 사항 - 지침으로 작성된 `프롬프트` 및 `에이전트` 후크 수정 (예: \"해당 명령 차단...\") - 지침으로 작성된 Stop 및 SubagentStop의 `프롬프트` 후크 (예: \"빌드가 손상된 경우 계속 진행\") 가 판단되는 방식을 개선하여 Claude가 조기에 중지할 가능성이 적습니다.",
+      "release_notes_ko": {
+        "bug_fixes": "지침으로 작성된 `프롬프트` 및 `에이전트` 훅 (예: \"해당 명령 차단...\") 을 수정하여 차단해야 하는 항목을 허용했습니다.",
+        "chores": "중지 및 하위 에이전트에서 `프롬프트` 후크가 지침 (예: \"빌드가 손상된 경우 계속\") 으로 작성된 후크가 판단되는 방식을 개선하여 Claude가 조기에 중지할 가능성이 낮아졌습니다."
       }
     }
   ],
