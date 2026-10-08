@@ -6,6 +6,26 @@
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
+      "id": "6d91f7c55a55a1dc",
+      "title": "0.162.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.162.0",
+      "source_summary": "## New Features - Add tools for creating and listing managed Git worktrees from trusted local projects when the worktrees feature is enabled. (#50148) - Pin tasks in the agent Command Center with `p` and keep them in a shared Pinned group when supported by the server. (#51500) - Navigate and copy transcript blocks with `/copy`, use `Ctrl+Insert` to copy selections, and tune mouse-wheel scrolling with `tui.mouse_scroll_speed`. (#50434, #50215, #50209) - Make URLs clickable in approval headers, qu",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-09T07:31:13+09:00",
+      "published_at": "2026-10-08T18:55:59+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.162.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - 작업 트리 기능이 활성화되면 신뢰할 수 있는 로컬 프로젝트에서 관리되는 Git 작업 트리를 생성하고 나열하기 위한 도구를 추가합니다. (# 50148) - 에이전트 명령 센터에서 `p` 로 작업을 고정하고 서버에서 지원할 때 공유 Pinned 그룹에 유지합니다. (# 51500) - `/copy' 로 대화록 블록을 탐색 및 복사하고, `Ctrl + Insert` 를 사용하여 선택 항목을 복사하고, `tui.mouse_scroll_speed` 로 마우스 휠 스크롤을 조정합니다. (# 50434, # 50215, # 50209) - 승인 헤더에서 URL을 클릭할 수 있도록 설정, qu",
+      "release_notes_ko": {
+        "new_features": "작업 트리 기능이 활성화되면 신뢰할 수 있는 로컬 프로젝트에서 관리되는 Git 작업 트리를 생성하고 나열하는 도구를 추가합니다.\n서버에서 지원하는 경우 에이전트 명령 센터의 작업을 `p` 로 고정하고 공유 고정 그룹에 유지합니다.\n`/copy` 로 성적표 블록을 탐색 및 복사하고, `Ctrl + Insert` 를 사용하여 선택 항목을 복사하고, 'tui.mouse_scroll_speed` 로 마우스 휠 스크롤을 조정합니다.",
+        "bug_fixes": "명시적인 시작 재정의를 유지하면서 새 TUI 스레드에 대한 서버 모델 및 추론 요약 기본값을 준수합니다.\n옵트인할 필요 없이 `apply_patch` 업데이트에서 기존 CRLF 라인 끝을 유지합니다.\n여러 개의 거부된 파일로 Linux 샌드박스 시작을 수정하고, 쓰기 가능한 샌드박스 구성 실행 파일을 거부하고, ripgrep 구성을 deny-glob 마스크 약화로부터 유지합니다.",
+        "chores": "Windows 릴리스와 함께 서명된 PowerShell 설치 관리자를 게시합니다.\n안정적인 이전 릴리스 및 사전 릴리스를 유지하여 최신 안정적인 다운로드 대상 또는 설치 관리자 별칭을 대체하지 않도록 합니다."
+      }
+    },
+    {
       "id": "0dfdf17053d5d17a",
       "title": "v2.1.294",
       "source_id": "claude-releases",
