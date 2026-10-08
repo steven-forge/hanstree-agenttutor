@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { kstDate } from "../../lib/card-news/types";
 import { AUTOMATION_DEFAULTS, validateAutomationSettings, type AutomationSettings as Settings, type AutomationView, type AutomationRun } from "../../lib/card-news/automation-policy";
 
 const API = "/api/admin/news/automation";
@@ -9,9 +10,9 @@ type Action = "save" | "stop" | "prepare" | "test" | "cancel_test";
 type Props = { localMode: boolean; parentBusy: boolean; unsaved: boolean; sessionExpired: boolean; onExpired: () => void; onPrepared: () => void; onBusyChange: (busy: boolean) => void };
 
 function signature(settings: Settings) { return JSON.stringify([settings.enabled, settings.prepareTime, settings.publishTime, settings.maxAgeHours]); }
-function timeLabel(value?: string) {
+function timeLabel(value?: string, seconds = false) {
   if (!value || !Number.isFinite(Date.parse(value))) return "기록 없음";
-  return `${new Intl.DateTimeFormat("ko-KR", { timeZone: "Asia/Seoul", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(value))} KST`;
+  return `${new Intl.DateTimeFormat("ko-KR", { timeZone: "Asia/Seoul", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", ...(seconds ? { second: "2-digit" } : {}), hour12: false }).format(new Date(value))} KST`;
 }
 
 export default function AutomationSettings(props: Props) {
@@ -22,6 +23,7 @@ export default function AutomationSettings(props: Props) {
   const [error, setError] = useState("");
   const [statusError, setStatusError] = useState("");
   const [notice, setNotice] = useState("");
+  const [checking, setChecking] = useState(false);
   const dirty = !!view && signature(draft) !== signature(view.settings);
   const latest = useRef({ props, dirty, view, draft });
   latest.current = { props, dirty, view, draft };
@@ -44,23 +46,26 @@ export default function AutomationSettings(props: Props) {
     }
     const result = await response.json().catch(() => null);
     if (!response.ok || result?.error) throw new Error(typeof result?.error === "string" ? result.error : "예약 상태를 확인하지 못했습니다. 잠시 후 다시 확인하세요.");
-    if (!result?.settings || !("run" in result)) throw new Error("예약 상태 응답을 읽지 못했습니다. 상태를 다시 확인하세요.");
+    if (!result?.settings || !("run" in result) || typeof result.checkedAt !== "string" || !Number.isFinite(Date.parse(result.checkedAt))) throw new Error("예약 상태 응답을 읽지 못했습니다. 상태를 다시 확인하세요.");
     return result as AutomationView;
   }
 
-  async function refresh() {
+  async function refresh(explicit = false) {
     if (reading.current || busyRef.current || latest.current.props.localMode || latest.current.props.sessionExpired) return;
     reading.current = true;
     const request = ++sequence.current;
+    setChecking(true);
+    if (explicit) setNotice("");
     try {
       const result = await read(await fetch(API, { cache: "no-store", credentials: "same-origin", signal: AbortSignal.timeout(15000) }));
       if (!mounted.current || request !== sequence.current) return;
       // Never rebase the revision of an edited form: a concurrent save must conflict.
       if (!latest.current.dirty) setDraft(result.settings);
       setView(result); setStatusError("");
+      if (explicit) setNotice("저장된 판본과 예약 기록을 다시 확인했습니다.");
     } catch (caught) {
       if (mounted.current && request === sequence.current) setStatusError(caught instanceof Error ? caught.message : "예약 상태를 불러오지 못했습니다.");
-    } finally { reading.current = false; if (mounted.current && request === sequence.current) setLoading(false); }
+    } finally { reading.current = false; if (mounted.current) setChecking(false); if (mounted.current && request === sequence.current) setLoading(false); }
   }
 
   useEffect(() => {
@@ -101,8 +106,10 @@ export default function AutomationSettings(props: Props) {
 
   function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); void act("save"); }
   const disabled = !!busy || props.parentBusy || props.sessionExpired || !view;
-  const run = view?.run;
-  return <section className="cn-panel cn-automation" aria-labelledby="cn-automation-heading" aria-busy={loading || !!busy}>
+  const run = view?.run, done = view?.completedEdition;
+  const tick = run?.lastTickAt ? Date.parse(run.lastTickAt) : NaN;
+  const tickWarn = !!view && (view.settings.enabled || !!run?.testRequested) && !(Date.parse(view.checkedAt) - tick <= 15 * 60000);
+  return <section className="cn-panel cn-automation" aria-labelledby="cn-automation-heading" aria-busy={loading || checking || !!busy}>
     <div className="cn-section-head"><div><h2 id="cn-automation-heading">매일 자동 제작과 예약 발행</h2><p className="cn-muted">뉴스를 우선 선정해 카드 10장을 만듭니다. 부족하면 미발행 릴리스 → 용어사전 → Explore 순으로 보충합니다.</p></div>{view && <span className={`cn-tag ${view.settings.enabled && view.schedulerConfigured ? "cn-tag-ok" : ""}`}>{view.settings.enabled ? view.schedulerConfigured ? "정기 예약 켜짐 · 실행 기록 확인" : "예약 저장됨 · 실행 연결 필요" : "정기 예약 꺼짐"}</span>}</div>
     {props.localMode ? <p className="cn-alert cn-alert-info">자동 제작과 예약 발행에는 서버 저장소가 필요합니다. 현재는 이 브라우저에서 직접 카드 원고를 만들 수 있습니다. 서버 저장소와 <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결</a>을 준비한 뒤 이용하세요.</p> : <>
       {loading && <p className="cn-help" role="status">예약 상태를 불러오는 중…</p>}
@@ -123,11 +130,20 @@ export default function AutomationSettings(props: Props) {
         {!view.schedulerConfigured && <p className="cn-alert">예약 실행 연결이 준비되지 않았습니다. 설정을 저장해도 정기 실행을 보장할 수 없으니 예약 연결을 확인하세요.</p>}
         <p className="cn-help">한국 시간 기준으로 약 5분마다 실행 여부를 확인합니다. 실행 대기나 처리 시간에 따라 늦어질 수 있습니다. 마지막 Instagram 게시 후 1시간이 지나지 않으면 기다렸다가 발행합니다.</p>
         <dl className="cn-automation-times"><div><dt>다음 제작</dt><dd>{view.settings.enabled ? timeLabel(view.nextPrepareAt) : "정기 예약 꺼짐"}</dd></div><div><dt>다음 발행</dt><dd>{view.settings.enabled ? timeLabel(view.nextPublishAt) : "정기 예약 꺼짐"}</dd></div></dl>
-        <div className="cn-automation-run" aria-live="polite"><h3>최근 실행 · {run ? PHASE[run.phase] : "실행 기록 없음"}</h3>{run && <><p>{run.message}</p><p className="cn-help">{run.date} 판본 · 갱신 {timeLabel(run.updatedAt)}{typeof run.candidates === "number" ? ` · 선정 가능 ${run.candidates}개` : ""}{typeof run.cards === "number" ? ` · 카드 ${run.cards}/10장` : ""}</p>{run.nextAttemptAt && <p className="cn-help">다음 처리 가능 시각: {timeLabel(run.nextAttemptAt)}</p>}{run.lastTickAt && <p className="cn-help">최근 예약 확인: {timeLabel(run.lastTickAt)}</p>}{run.lastSuccessAt && <p className="cn-help">최근 제작·발행 성공: {timeLabel(run.lastSuccessAt)}</p>}{run.testRequested && <span className="cn-tag cn-tag-warn">실제 테스트 발행 요청 중</span>}</>}</div>
+        <div className="cn-automation-run"><h3 aria-live="polite">최근 판본 · {done ? "발행 완료 (저장된 판본 기준)" : run ? PHASE[run.phase] : "실행 기록 없음"}</h3>
+          {done && <><p>저장된 판본 결과: {done.date} 판본 카드 {done.cards}장 발행 완료 기록이 있습니다.</p><p className="cn-help">발행 완료 확인 기록: {timeLabel(done.publishedAt || done.updatedAt)} (실제 Instagram 게시 시각과 다를 수 있습니다)</p></>}
+          {run && <>
+            {done ? <details><summary>이전 예약 기록 보기</summary><p>{run.message}</p><p className="cn-help">{PHASE[run.phase]} · 갱신 {timeLabel(run.updatedAt)}{run.nextAttemptAt && ` · 당시 다음 처리 가능 시각 ${timeLabel(run.nextAttemptAt)}`}</p></details> : <><p>{run.message}</p><p className="cn-help">{run.date} 판본 · 갱신 {timeLabel(run.updatedAt)}{typeof run.candidates === "number" ? ` · 선정 가능 ${run.candidates}개` : ""}{typeof run.cards === "number" ? ` · 카드 ${run.cards}/10장` : ""}</p>{run.nextAttemptAt && <p className="cn-help">다음 처리 가능 시각: {timeLabel(run.nextAttemptAt)}</p>}</>}
+            {run.date !== kstDate(new Date(view.checkedAt)) && <p className="cn-help">오늘({kstDate(new Date(view.checkedAt))}) 준비 상태가 아니라 {run.date} 판본의 기록입니다.</p>}
+            {run.lastSuccessAt && <p className="cn-help">최근 제작·발행 성공: {timeLabel(run.lastSuccessAt)}</p>}
+            {run.testRequested && <span className="cn-tag cn-tag-warn">{done ? "완료된 판본의 이전 테스트 요청 기록이 남아 있습니다." : "실제 테스트 발행 요청 중"}</span>}
+          </>}
+          <p className="cn-help">최근 예약 확인(실행 기록): {timeLabel(run?.lastTickAt)}</p>{tickWarn && <p className="cn-alert">예약 실행 기록이 없거나 15분 넘게 오래됐습니다. 예약 실행 연결과 실행 이력을 확인해 주세요. 이 화면의 확인은 예약을 실행하거나 다시 발행하지 않습니다.</p>}
+        </div>
         <div className="cn-publish-actions"><button className="cn-button" disabled={disabled || dirty || props.unsaved} onClick={() => act("prepare")}>{busy === "prepare" ? "카드 제작 중…" : "지금 카드 10장 준비"}</button><button className="cn-button" disabled={disabled || dirty || props.unsaved || !!run?.testRequested} onClick={() => act("test")}>{busy === "test" ? "테스트 요청 중…" : "실제 Instagram 테스트 발행"}</button><button className="cn-button" disabled={disabled || !run?.testRequested} onClick={() => act("cancel_test")}>{busy === "cancel_test" ? "취소 중…" : "대기 중인 테스트 취소"}</button></div>
         <p className="cn-help">‘지금 카드 10장 준비’는 제작만 요청합니다. 정기 예약이 켜져 있으면 설정한 시각에 발행될 수 있습니다. 테스트 발행은 실제 게시되며, 정기 예약과 별도로 요청됩니다. 기존 편집 원고는 자동으로 덮어쓰지 않습니다.{props.unsaved && " 현재 입력한 원고와 뉴스를 먼저 저장하세요."}</p>
       </>}
-      <div className="cn-publish-actions"><button className="cn-button cn-button-small" disabled={!!busy || props.parentBusy || props.sessionExpired || loading} onClick={() => refresh()}>예약 상태 새로 확인</button></div>
+      <div className="cn-publish-actions"><button className="cn-button cn-button-small" disabled={!!busy || checking || props.parentBusy || props.sessionExpired || loading} onClick={() => refresh(true)}>{checking ? "확인 중…" : "예약 상태 새로 확인"}</button>{view && <span className="cn-help">마지막 확인 {timeLabel(view.checkedAt, true)} · 저장된 기록만 읽으며 예약 실행이나 재발행은 하지 않습니다.</span>}</div>
     </>}
   </section>;
 }

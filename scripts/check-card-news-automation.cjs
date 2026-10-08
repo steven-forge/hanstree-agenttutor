@@ -231,5 +231,24 @@ function harness(realInstagram = false) {
     h.now+=60001;result=await h.ig.reconcileEdition(result);assert.equal(h.publishes,1);
     h.now+=60001;h.remoteStatus='PUBLISHED';result=await h.ig.reconcileEdition(result);assert.equal(result.status,'published');assert.equal(h.publishes,1);
   });
+  await check('read-only view reports a manually published edition without touching a stale waiting run',async()=>{
+    const h=harness(),run={date:'2026-10-07',phase:'waiting',message:'발행 대기',updatedAt:'2026-10-07T02:02:00.000Z',lastTickAt:'2026-10-07T02:00:00.000Z',testRequested:true,nextAttemptAt:'2026-10-07T02:03:00.000Z'};
+    h.config();h.store.set('cardnews:{admin}:automation-run',JSON.stringify(run));h.store.set('cardnews:{admin}:automation-test','ticket');
+    const e={...h.edition(),status:'published',publishedAt:'2026-10-07T01:30:00.000Z'};h.editions.set(e.date,e);
+    const store=JSON.stringify([...h.store]),editions=clone([...h.editions]);
+    const v=await h.api.automationView();
+    assert.deepEqual(clone(v.completedEdition),{date:e.date,publishedAt:e.publishedAt,updatedAt:e.updatedAt,cards:10});
+    assert.deepEqual(clone(v.run),run);assert.equal(v.run.phase,'waiting');assert.equal(v.run.testRequested,true);assert.ok(Number.isFinite(Date.parse(v.checkedAt)));
+    assert.equal(JSON.stringify([...h.store]),store);assert.deepEqual(clone([...h.editions]),editions);
+    assert.equal(h.graphRequests.length+h.renders+h.publishes,0);
+  });
+  await check('nonpublished, missing or other-date editions are never reported completed',async()=>{
+    for(const status of ['draft','approved','publishing','needs_check']){const h=harness();h.store.set('cardnews:{admin}:automation-run',JSON.stringify({date:'2026-10-07',phase:'waiting',message:'x',updatedAt:h.iso()}));h.editions.set('2026-10-07',{...h.edition(),status});assert.equal((await h.api.automationView()).completedEdition,undefined,status);}
+    const h=harness();h.store.set('cardnews:{admin}:automation-run',JSON.stringify({date:'2026-10-07',phase:'waiting',message:'x',updatedAt:h.iso()}));
+    assert.equal((await h.api.automationView()).completedEdition,undefined);
+    h.editions.set('2026-10-08',{...h.edition('2026-10-08'),status:'published'});h.editions.set('2026-10-06',{...h.edition('2026-10-06'),status:'published'});
+    assert.equal((await h.api.automationView()).completedEdition,undefined);
+    assert.equal((await harness().api.automationView()).completedEdition,undefined);
+  });
   console.log(JSON.stringify({passed:true,checks,externalRequests:0}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

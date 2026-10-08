@@ -31,7 +31,11 @@ async function writeRun(run: AutomationRun, patch: Partial<AutomationRun>) {
 }
 export async function automationView(): Promise<AutomationView> {
   const settings = await automationSettings();
-  return { settings, run: await readRun(), schedulerConfigured: setupStatus().scheduler, nextPrepareAt: nextScheduledAt(settings.prepareTime), nextPublishAt: nextScheduledAt(settings.publishTime) };
+  const run = await readRun();
+  // Read-only: a stored published edition is the only evidence of completion.
+  const edition = run ? await getEdition(run.date) : null;
+  const completedEdition = edition?.status === "published" ? { date: edition.date, publishedAt: edition.publishedAt, updatedAt: edition.updatedAt, cards: edition.cards.length } : undefined;
+  return { settings, run, schedulerConfigured: setupStatus().scheduler, nextPrepareAt: nextScheduledAt(settings.prepareTime), nextPublishAt: nextScheduledAt(settings.publishTime), checkedAt: stamp(), ...(completedEdition ? { completedEdition } : {}) };
 }
 export async function saveAutomationSettings(input: unknown) {
   let settings: AutomationSettings;

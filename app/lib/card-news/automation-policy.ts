@@ -9,7 +9,9 @@ export type AutomationRun = {
 };
 export type AutomationView = {
   settings: AutomationSettings; run: AutomationRun | null; schedulerConfigured: boolean;
-  nextPrepareAt: string; nextPublishAt: string;
+  nextPrepareAt: string; nextPublishAt: string; checkedAt: string;
+  // Stored edition result only; the raw run above is never rewritten from it.
+  completedEdition?: { date: string; publishedAt?: string; updatedAt: string; cards: number };
 };
 export const AUTOMATION_DEFAULTS: AutomationSettings = { revision: 0, enabled: false, prepareTime: "08:05", publishTime: "09:00", maxAgeHours: 168 };
 export function validateAutomationSettings(value: unknown): AutomationSettings {
