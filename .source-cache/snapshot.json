@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-07",
+  "last_updated": "2026-10-09",
   "targets": {
     "codex": {
       "commands": [
@@ -709,6 +709,8 @@
         "claude auto-mode reset",
         "claude could also run",
         "claude could also start it on its own.",
+        "claude daemon logs",
+        "claude daemon run",
         "claude daemon status",
         "claude daemon stop",
         "claude delegates side tasks to",
@@ -789,6 +791,8 @@
         "claude auto-mode reset": "CLI 명령",
         "-y": "옵션/플래그",
         "--yes": "옵션/플래그",
+        "claude daemon logs": "CLI 명령",
+        "claude daemon run": "CLI 명령",
         "claude daemon status": "CLI 명령",
         "claude daemon stop": "CLI 명령",
         "--keep-workers": "옵션/플래그",
@@ -1189,6 +1193,20 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-07"
+        },
+        {
+          "command": "claude daemon logs",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
+        },
+        {
+          "command": "claude daemon run",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
         },
         {
           "command": "claude logs \\u003cid|name\\u003e",
@@ -1846,6 +1864,7 @@
         "/create-workflow",
         "/dashboard",
         "/deep-research",
+        "/density",
         "/dream",
         "/effort",
         "/exit",
@@ -2035,6 +2054,7 @@
         "/ml": "슬래시 명령",
         "/vim-mode": "슬래시 명령",
         "/timestamps": "슬래시 명령",
+        "/density": "슬래시 명령",
         "/terminal-setup": "슬래시 명령",
         "/config-agents": "슬래시 명령",
         "/agents": "슬래시 명령",
@@ -2059,7 +2079,15 @@
         "/dream": "슬래시 명령",
         "/local": "슬래시 명령"
       },
-      "auto_managed": []
+      "auto_managed": [
+        {
+          "command": "/density",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
+        }
+      ]
     }
   }
 }

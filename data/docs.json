@@ -390,8 +390,8 @@
           "url": "https://code.claude.com/docs/en/commands"
         }
       ],
-      "updated": "2026년 10월 07일",
-      "updatedIso": "2026-10-07",
+      "updated": "2026년 10월 09일",
+      "updatedIso": "2026-10-09",
       "sections": [
         "1. 시작·질문·세션 이어 하기",
         "2. 자동화·출력·권한",
@@ -867,6 +867,20 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-07"
+        },
+        {
+          "command": "claude daemon logs",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
+        },
+        {
+          "command": "claude daemon run",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
         },
         {
           "command": "claude logs \\u003cid|name\\u003e",
@@ -1467,8 +1481,8 @@
           "url": "https://docs.x.ai/build/modes-and-commands"
         }
       ],
-      "updated": "2026년 09월 19일",
-      "updatedIso": "2026-09-19",
+      "updated": "2026년 10월 09일",
+      "updatedIso": "2026-10-09",
       "sections": [
         "1. 시작·로그인·버전",
         "2. 자동화·Headless·IDE 연결",
@@ -1678,7 +1692,15 @@
           "description": "심층 조사"
         }
       ],
-      "autoManaged": [],
+      "autoManaged": [
+        {
+          "command": "/density",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-09"
+        }
+      ],
       "bodyHtml": "<div class=\"embedded-body\"><main class=\"wrap\"><section class=\"group\"><h2>1. 시작·로그인·버전</h2><p>처음 실행하거나 계정과 설치 상태를 관리할 때 씁니다.</p><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>grok</code></td><td>대화형 TUI 시작</td><td>현재 폴더에서 Grok 코딩 에이전트를 엽니다.</td></tr><tr><td><code>grok login</code></td><td>로그인</td><td>Grok에 로그인합니다. <code>--device-auth</code>는 원격·헤드리스 환경용입니다.</td></tr><tr><td><code>grok logout</code></td><td>로그아웃</td><td>로그아웃하고 저장된 인증 정보를 지웁니다.</td></tr><tr><td><code>grok version</code></td><td>버전 확인</td><td>설치된 Grok CLI 버전을 출력합니다.</td></tr><tr><td><code>grok update</code></td><td>업데이트</td><td>업데이트 확인 또는 특정 버전 설치를 합니다.</td></tr><tr><td><code>grok completions bash|zsh|fish|powershell</code></td><td>자동완성 생성</td><td>사용 중인 셸에서 Tab 자동완성을 설정할 수 있게 합니다.</td></tr><tr><td><code>grok setup</code></td><td>관리형 설정 설치</td><td>관리자가 제공한 설정을 가져와 설치합니다.</td></tr></tbody></table></div></section>\n\n<section class=\"group\"><h2>2. 자동화·Headless·IDE 연결</h2><p>사람이 화면을 계속 보지 않는 스크립트나 개발 도구 연동에 적합합니다.</p><div class=\"table-wrap\"><table><thead><tr><th>명령어·옵션</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>grok -p \"질문\"</code></td><td>한 번 실행</td><td>질문을 처리하고 종료합니다.</td></tr><tr><td><code>-m, --model 모델</code></td><td>모델 선택</td><td>사용할 모델을 지정합니다.</td></tr><tr><td><code>-s, --session-id ID</code></td><td>세션 생성·재사용</td><td>이름 있는 Headless 세션을 만들거나 이어갑니다.</td></tr><tr><td><code>-r, --resume ID</code></td><td>세션 재개</td><td>기존 세션 ID를 다시 엽니다.</td></tr><tr><td><code>-c, --continue</code></td><td>최근 세션 계속</td><td>현재 폴더의 가장 최근 세션을 이어갑니다.</td></tr><tr><td><code>--cwd 경로</code></td><td>작업 폴더 지정</td><td>명령을 실행할 폴더를 지정합니다.</td></tr><tr><td><code>--output-format plain|json|streaming-json</code></td><td>출력 형식</td><td>사람용 글, JSON, 실시간 JSON 중 고릅니다.</td></tr><tr><td><code>--always-approve</code></td><td>자동 승인</td><td class=\"danger\">도구 실행 승인 질문을 건너뜁니다. 신뢰·격리된 환경에서만 사용하세요.</td></tr><tr><td><code>--no-alt-screen</code></td><td>일반 화면 실행</td><td>전체 화면 TUI로 전환하지 않고 현재 터미널에 표시합니다.</td></tr><tr><td><code>grok agent stdio</code></td><td>ACP 에이전트 실행</td><td>JSON-RPC stdin/stdout으로 IDE나 다른 도구와 연결합니다.</td></tr><tr><td><code>grok wrap 명령...</code></td><td>터미널 명령 감싸기</td><td>로컬 PTY에서 명령을 실행하며 OSC 52 클립보드 쓰기를 전달합니다.</td></tr></tbody></table></div></section>\n\n<section class=\"group\"><h2>3. 설정·도구·플러그인 관리</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>grok inspect [--json]</code></td><td>설정 검사</td><td>현재 폴더에서 발견한 규칙·스킬·플러그인·훅·MCP를 확인합니다.</td></tr><tr><td><code>grok models</code></td><td>모델 목록</td><td>사용 가능한 모델을 봅니다.</td></tr><tr><td><code>grok mcp list|add|remove|doctor</code></td><td>MCP 관리</td><td>MCP 서버를 조회·추가·삭제하고 연결 문제를 진단합니다.</td></tr><tr><td><code>grok plugin list|install|uninstall|update|enable|disable|details|validate</code></td><td>플러그인 관리</td><td>플러그인 설치부터 검증·활성화까지 관리합니다.</td></tr><tr><td><code>grok plugin marketplace list|add|remove|update</code></td><td>마켓 관리</td><td>플러그인 마켓 소스를 관리합니다.</td></tr><tr><td><code>grok dashboard</code></td><td>에이전트 대시보드</td><td>에이전트 작업을 한눈에 보는 화면을 엽니다.</td></tr></tbody></table></div></section>\n\n<section class=\"group\"><h2>4. 세션·기억·작업공간 관리</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>grok sessions list|search|delete</code></td><td>세션 관리</td><td>세션을 목록 확인·검색·삭제합니다.</td></tr><tr><td><code>grok export 세션ID [출력]</code></td><td>대화 내보내기</td><td>세션 기록을 Markdown으로 저장합니다.</td></tr><tr><td><code>grok import [targets...]</code></td><td>세션 가져오기</td><td>Claude Code 세션을 가져옵니다.</td></tr><tr><td><code>grok memory clear --workspace|--global|--all</code></td><td>기억 삭제</td><td>프로젝트·전체 또는 모든 교차 세션 기억을 지웁니다.</td></tr><tr><td><code>grok worktree list|show|rm|gc</code></td><td>Git worktree 관리</td><td>세션에서 만든 작업공간을 조회·삭제·정리합니다.</td></tr></tbody></table></div></section>\n\n<section class=\"group\"><h2>5. Grok 화면 안 슬래시 명령</h2><p>대화형 <code>grok</code> 화면에서 입력합니다.</p><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>/quit</code> / <code>/exit</code></td><td>종료</td><td>Grok CLI를 닫습니다.</td></tr><tr><td><code>/help</code></td><td>도움말</td><td>명령과 키보드 단축키를 봅니다.</td></tr><tr><td><code>/home</code></td><td>첫 화면</td><td>환영 화면으로 돌아갑니다.</td></tr><tr><td><code>/new</code> / <code>/clear</code></td><td>새 세션</td><td>새 대화를 시작합니다.</td></tr><tr><td><code>/resume</code></td><td>세션 재개</td><td>이전 세션을 선택해 엽니다.</td></tr><tr><td><code>/sessions</code></td><td>세션 목록</td><td>활성 세션을 전환·이름 변경·종료합니다.</td></tr><tr><td><code>/fork</code></td><td>대화 분기</td><td>현재 세션을 별도 에이전트로 복사합니다.</td></tr><tr><td><code>/rename 이름</code> / <code>/title</code></td><td>이름 변경</td><td>현재 세션 제목을 바꿉니다.</td></tr><tr><td><code>/share</code></td><td>공유</td><td>세션을 URL로 공유합니다.</td></tr><tr><td><code>/session-info</code></td><td>세션 정보</td><td>현재 세션 정보를 표시합니다.</td></tr><tr><td><code>/context</code></td><td>문맥 사용량</td><td>현재 문맥 사용량을 확인합니다.</td></tr><tr><td><code>/compact [내용]</code></td><td>대화 압축</td><td>대화 기록을 요약해 문맥 공간을 확보합니다.</td></tr><tr><td><code>/rewind</code></td><td>되감기</td><td>이전 턴으로 되돌립니다.</td></tr><tr><td><code>/export</code></td><td>내보내기</td><td>대화를 파일이나 클립보드로 내보냅니다.</td></tr><tr><td><code>/plan [설명]</code></td><td>계획 모드</td><td>계획을 먼저 세우는 모드로 들어갑니다.</td></tr><tr><td><code>/auto</code></td><td>자동 승인 모드</td><td>안전한 도구는 자동 승인하도록 전환합니다.</td></tr><tr><td><code>/always-approve</code></td><td>항상 승인 모드</td><td class=\"danger\">도구 승인 질문을 생략합니다. 매우 신중하게 사용하세요.</td></tr><tr><td><code>/create-workflow</code></td><td>워크플로우 생성</td><td>여러 에이전트가 나눠 할 반복 작업을 정의합니다.</td></tr><tr><td><code>/workflow 이름</code></td><td>워크플로우 실행</td><td>저장한 워크플로우를 실행·일시정지·재개·중지합니다.</td></tr><tr><td><code>/workflows</code></td><td>워크플로우 대시보드</td><td>실행 중이거나 보관된 워크플로우를 봅니다.</td></tr><tr><td><code>/deep-research 질문</code></td><td>심층 조사</td><td>웹 검색·출처 확인·요약을 여러 단계로 수행합니다.</td></tr></tbody></table></div></section>"
     }
   ]
