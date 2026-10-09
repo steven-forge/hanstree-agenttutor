@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-08",
-  "unit_note": "2026-10-08 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
+  "checked_at": "2026-10-09",
+  "unit_note": "2026-10-09 공식 모델 목록 자동 조회 · 가격 단위: USD / 100만 토큰. API 표준 유료 텍스트 요금이며 앱 구독료와는 별개입니다. 모델 선택 가능 여부는 계정·서비스에 따라 다릅니다.",
   "agents": [
     {
       "agent_slug": "claude",
@@ -194,6 +194,42 @@
               "url": "https://platform.claude.com/docs/en/build-with-claude/effort.md"
             }
           ]
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "name": "Claude Haiku 5.5",
+          "effort_note": "지원 수준과 사용 조건은 공식 문서를 확인하세요.",
+          "release_source": "https://platform.claude.com/docs/en/models/haiku-5-5/overview.md",
+          "minimum_access": "앱 요금제 미확인 · API 이용 조건은 공식 문서 확인",
+          "access_source": "https://platform.claude.com/docs/en/models/haiku-5-5/overview.md",
+          "input_cost": 0.1,
+          "output_cost": 0.5,
+          "cache_read_cost": 0.01,
+          "context_window": "1M",
+          "max_output": "128K",
+          "input_modalities": "공식 미확인",
+          "key_feature": "공식 미확인",
+          "sources": [
+            {
+              "name": "claude-haiku-5-5 공식 문서",
+              "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview.md"
+            }
+          ],
+          "price_note": "공식 미확인",
+          "effort_levels": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "effort_source": [
+            {
+              "name": "Claude effort 파라미터 문서",
+              "url": "https://platform.claude.com/docs/en/build-with-claude/effort.md"
+            }
+          ],
+          "released_at": "2026-10-07"
         },
         {
           "id": "claude-haiku-4-5",
@@ -1595,12 +1631,13 @@
   "auto_update": {
     "providers": {
       "claude": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "claude-fable-5",
           "claude-fable-5-1",
           "claude-haiku-4-5",
+          "claude-haiku-5-5",
           "claude-opus-4-5",
           "claude-opus-4-6",
           "claude-opus-4-7",
@@ -1614,7 +1651,7 @@
         ]
       },
       "codex": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "gpt-3.5-turbo",
@@ -1651,7 +1688,7 @@
         ]
       },
       "grok": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "grok-4.3",
@@ -1661,7 +1698,7 @@
         ]
       },
       "gemini": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "gemini-2.0-flash",
@@ -1682,7 +1719,7 @@
         ]
       },
       "muse": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "muse-spark-1.1",
@@ -1693,7 +1730,7 @@
         ]
       },
       "deepseek": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "deepseek-flash",
@@ -1701,7 +1738,7 @@
         ]
       },
       "qwen": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "qwen2.5-omni-7b",
@@ -1761,7 +1798,7 @@
         ]
       },
       "glm": {
-        "checked_at": "2026-10-08T06:50:30+09:00",
+        "checked_at": "2026-10-09T10:23:35+09:00",
         "status": "success",
         "discovered_ids": [
           "glm-4-32b-0414-128k",
@@ -1778,8 +1815,8 @@
         ]
       }
     },
-    "last_checked_at": "2026-10-08T06:50:30+09:00",
-    "last_successful_check_at": "2026-10-08T06:50:30+09:00",
+    "last_checked_at": "2026-10-09T10:23:35+09:00",
+    "last_successful_check_at": "2026-10-09T10:23:35+09:00",
     "status": "success"
   }
 }
