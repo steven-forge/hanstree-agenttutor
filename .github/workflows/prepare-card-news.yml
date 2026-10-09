@@ -37,6 +37,14 @@ jobs:
               print(json.dumps(result, ensure_ascii=False))
           except urllib.error.HTTPError as error:
               print('Card news automation failed, HTTP', error.code)
+              try:
+                  body = json.load(error)
+                  run = body.get('run') if isinstance(body.get('run'), dict) else {}
+                  safe = {k: run.get(k) for k in ('phase', 'date', 'message', 'cards', 'candidates', 'nextAttemptAt', 'lastTickAt')}
+                  safe['error'] = body.get('error')
+                  print(json.dumps({k: (v[:300] if isinstance(v, str) else v if isinstance(v, (int, float)) else None) for k, v in safe.items()}, ensure_ascii=False))
+              except Exception:
+                  pass
               raise SystemExit(1)
           except Exception:
               raise SystemExit('Card news automation did not complete; inspect admin status before retrying publication.')

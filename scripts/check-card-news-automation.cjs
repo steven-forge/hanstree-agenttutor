@@ -50,7 +50,8 @@ function harness(realInstagram = false) {
   const instagramMock={PublishCooldown:Cooldown,instagramAccount:async()=>({id:'123',username:'test-account'}),latestInstagramPublication:async()=>{
     if(h.hook) await h.hook(); return {accountId:'123',nextAllowedAt:new Clock(h.recent?h.recent+3600000:0).toISOString()};
   },publishEdition:async(e,account,opts)=>{await opts.beforePublish();h.publishes++;return server.putEdition({...e,status:'published',publishedAt:iso(),publication:{attempt:'attempt',children:[],accountId:account}},e.revision);},reconcileEdition:async(e,opts)=>{await opts.beforePublish();return e;}};
-  const content={todayData:{get collected_at(){return iso();}}};
+  h.collectedAt=null;
+  const content={todayData:{get collected_at(){return h.collectedAt??iso();}}};
   const cache=new Map();
   function load(name) {
     if(cache.has(name)) return cache.get(name).exports;
@@ -249,6 +250,38 @@ function harness(realInstagram = false) {
     h.editions.set('2026-10-08',{...h.edition('2026-10-08'),status:'published'});h.editions.set('2026-10-06',{...h.edition('2026-10-06'),status:'published'});
     assert.equal((await h.api.automationView()).completedEdition,undefined);
     assert.equal((await harness().api.automationView()).completedEdition,undefined);
+  });
+  const runKey='cardnews:{admin}:automation-run',KST_0805=Date.parse('2026-10-06T23:05:00Z'),stale=h=>new Date(h.now-25*3600000).toISOString();
+  await check('stale newsletter fails closed; five+ preparation failures recover when data is fresh, without publishing',async()=>{
+    const h=harness();h.config();h.now=KST_0805;h.collectedAt=stale(h);
+    for(let i=0;i<6;i++){const v=await h.api.runAutomation();assert.equal(v.run.phase,'failed');assert.match(v.run.message,/24시간/);assert.ok(!v.run.attempts);h.now+=5*60000;}
+    assert.equal(h.renders,0);assert.equal(await h.server.getEdition('2026-10-07'),null);
+    h.collectedAt=null;const v=await h.api.runAutomation();
+    assert.equal(v.run.phase,'ready',v.run.message);assert.equal(v.run.attempts,0);assert.equal(h.renders,10);assert.equal(h.publishes,0);assert.equal((await h.server.getEdition('2026-10-07')).cards.length,10);
+  });
+  await check('old stored attempts>=5 without a publication recover once preparation works',async()=>{
+    const h=harness();h.config();h.now=KST_0805;h.store.set(runKey,JSON.stringify({date:'2026-10-07',phase:'failed',message:'오래된 오류',attempts:7,settingsRevision:1,nextAttemptAt:new Date(h.now-60000).toISOString(),updatedAt:h.iso()}));
+    const v=await h.api.runAutomation();assert.equal(v.run.phase,'ready',v.run.message);assert.equal(v.run.attempts,0);assert.equal(h.renders,10);assert.equal(h.publishes,0);
+  });
+  await check('publication errors are capped at five and the terminal message keeps the last error once',async()=>{
+    const h=harness();h.config();let calls=0;h.hook=async()=>{calls++;throw new h.server.AdminError('연결 오류 확인');};
+    h.collectedAt=stale(h);for(let i=0;i<3;i++){await h.api.runAutomation();h.now+=5*60000;}
+    h.collectedAt=null;for(let i=0;i<5;i++){await h.api.runAutomation();h.now+=5*60000;}
+    assert.equal(calls,5);let v=await h.api.runAutomation();assert.equal(calls,5);assert.equal(v.run.phase,'failed');assert.equal(v.run.nextAttemptAt,undefined);assert.match(v.run.message,/5회.*연결 오류 확인/);
+    const first=v.run.message;v=await h.api.runAutomation();assert.equal(v.run.message,first);assert.equal(calls,5);assert.equal(h.publishes,0);
+  });
+  await check('published edition with exhausted count is reconciled as published without another post',async()=>{
+    const h=harness();h.config();h.store.set(runKey,JSON.stringify({date:'2026-10-07',phase:'failed',message:'x',attempts:9,settingsRevision:1,nextAttemptAt:new Date(h.now-60000).toISOString(),updatedAt:h.iso()}));
+    h.editions.set('2026-10-07',{...h.edition(),status:'published',publishedAt:h.iso()});
+    const v=await h.api.runAutomation();assert.equal(v.run.phase,'published');assert.equal(h.publishes,0);assert.equal(h.renders,0);
+  });
+  await check('IN_PROGRESS reconcile is capped at five: no final publish, no container recreate, last status kept',async()=>{
+    const h=harness(true);h.config();await h.api.runAutomation('prepare');h.remoteStatus='IN_PROGRESS';
+    let v=await h.api.runAutomation('test');assert.equal(v.run.phase,'waiting');assert.equal(h.publishes,0);const children=h.children;
+    for(let i=0;i<10&&v.run.phase!=='failed';i++){h.now+=60001;const last=v.run.message;v=await h.api.runAutomation();if(v.run.phase==='failed')assert.ok(v.run.message.includes(last));}
+    assert.equal(v.run.phase,'failed');assert.match(v.run.message,/5회/);assert.equal(v.run.nextAttemptAt,undefined);
+    const requests=h.graphRequests.length;h.now+=60001;v=await h.api.runAutomation();
+    assert.equal(h.publishes,0);assert.equal(h.children,children);assert.equal(h.graphRequests.length,requests);assert.equal(v.run.phase,'failed');
   });
   console.log(JSON.stringify({passed:true,checks,externalRequests:0}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

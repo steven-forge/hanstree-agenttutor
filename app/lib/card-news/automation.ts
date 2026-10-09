@@ -115,7 +115,7 @@ export async function cancelAutomationTest() {
 export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") {
   const owner = randomUUID();
   if (await redis("SET", lockKey, owner, "NX", "EX", 360) !== "OK") return automationView();
-  let run: AutomationRun | null = null;
+  let run: AutomationRun | null = null, preparing = false;
   try {
     const settings = await automationSettings(), now = new Date();
     const previous = await readRun();
@@ -138,11 +138,6 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
       if (!["published", "failed"].includes(run.phase)) await writeRun(run, { phase: "failed", message: "예약 시각에서 2시간이 지나 오늘 자동 발행을 종료했습니다. 직접 확인 후 발행 테스트를 실행할 수 있습니다." });
       return automationView();
     }
-    if (mode === "tick" && (run.attempts || 0) >= 5) {
-      await writeRun(run, { phase: "failed", message: "자동 재시도 5회가 끝났습니다. 발행 결과와 연결 상태를 확인한 뒤 직접 다시 실행하세요.", testRequested: false });
-      if (rawTicket) await redis("EVAL", "if redis.call('GET',KEYS[1])==ARGV[1] then return redis.call('DEL',KEYS[1]) end return 0", 1, testKey, rawTicket);
-      return automationView();
-    }
     if (mode === "tick" && run.nextAttemptAt && Date.parse(run.nextAttemptAt) > Date.now()) return automationView();
     let edition = await getEdition(date);
     if (edition?.status === "published") {
@@ -150,10 +145,16 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
       if (rawTicket) await redis("EVAL", "if redis.call('GET',KEYS[1])==ARGV[1] then return redis.call('DEL',KEYS[1]) end return 0", 1, testKey, rawTicket);
       return automationView();
     }
+    const lastMessage = run.message;
     // Existing human-approved cards may be used only by an explicit administrator test.
     if (!(testing && edition?.status === "approved" && !editionIssues(edition).length) && !["publishing", "needs_check"].includes(edition?.status || "")) {
       run = await writeRun(run, { phase: "preparing", message: "뉴스를 선정하고 카드 10장의 JPG를 확인하고 있습니다." });
+      const before = edition?.revision;
+      preparing = true;
       edition = await prepareEdition(date, settings);
+      preparing = false;
+      // Only a genuinely new edition clears old failures; reusing one must not refill the publication budget.
+      if (edition.revision !== before && !["publishing", "needs_check", "published"].includes(edition.status)) run = await writeRun(run, { attempts: 0 });
     }
     if (!edition) throw new AdminError("제작할 판본이 없습니다.");
     if (mode === "prepare") {
@@ -167,6 +168,13 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
     }
     if (!testing && now.getTime() < publishAt) {
       await writeRun(run, { phase: "ready", cards: edition.cards.length, candidates: edition.automation?.candidateCount, message: `${settings.publishTime} KST 자동 발행을 기다리고 있습니다.`, lastSuccessAt: stamp(), nextAttemptAt: scheduledAt(date, settings.publishTime) });
+      return automationView();
+    }
+    // Publication/reconciliation budget; preparation failures never count against it.
+    if (mode === "tick" && (run.attempts || 0) >= 5) {
+      const head = "자동 재시도 5회가 끝났습니다. 마지막 상태: ";
+      await writeRun(run, { phase: "failed", message: lastMessage.startsWith(head) ? lastMessage : head + lastMessage, testRequested: false, nextAttemptAt: undefined });
+      if (rawTicket) await redis("EVAL", "if redis.call('GET',KEYS[1])==ARGV[1] then return redis.call('DEL',KEYS[1]) end return 0", 1, testKey, rawTicket);
       return automationView();
     }
     const recent = await latestInstagramPublication();
@@ -196,7 +204,7 @@ export async function runAutomation(mode: "tick" | "prepare" | "test" = "tick") 
     if (run) {
       const cooldown = error instanceof PublishCooldown;
       const preserved = error instanceof AdminError && error.message.startsWith("관리자가 작성한 원고");
-      await writeRun(run, { phase: cooldown ? "waiting" : preserved ? "preserved" : "failed", message: error instanceof AdminError || error instanceof AutoCopyError ? error.message : "자동 제작·발행을 완료하지 못했습니다. 저장소와 연결 상태를 확인하세요.", nextAttemptAt: cooldown ? error.nextAllowedAt : new Date(Date.now() + 5 * 60000).toISOString(), attempts: cooldown ? run.attempts : (run.attempts || 0) + 1, ...(error instanceof AutoCopyError ? { cards: error.result.cards.length, candidates: error.result.eligibleCount } : {}) });
+      await writeRun(run, { phase: cooldown ? "waiting" : preserved ? "preserved" : "failed", message: error instanceof AdminError || error instanceof AutoCopyError ? error.message : "자동 제작·발행을 완료하지 못했습니다. 저장소와 연결 상태를 확인하세요.", nextAttemptAt: cooldown ? error.nextAllowedAt : new Date(Date.now() + 5 * 60000).toISOString(), attempts: cooldown || preparing ? run.attempts : (run.attempts || 0) + 1, ...(error instanceof AutoCopyError ? { cards: error.result.cards.length, candidates: error.result.eligibleCount } : {}) });
     } else throw error;
   } finally {
     await redis("EVAL", "if redis.call('GET',KEYS[1])==ARGV[1] then return redis.call('DEL',KEYS[1]) end return 0", 1, lockKey, owner);
