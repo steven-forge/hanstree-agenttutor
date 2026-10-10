@@ -1,7 +1,7 @@
-@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NanumGothic-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NanumGothic-ExtraBold.ttf") format("truetype"); font-weight: 900; font-display: swap; }
-@font-face { font-family: "cn-CardLatin"; src: url("/fonts/Arimo-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "cn-CardLatin"; src: url("/fonts/Arimo-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NotoSansKR-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NotoSansKR-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NotoSansKR-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "cn-CardGothic"; src: url("/fonts/NotoSansKR-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap; }
 .cn-shell { max-width: 1380px; margin: 0 auto; padding: 40px 28px 80px; color: var(--ink, #111827); }
 .cn-admin-shell { width: 100%; max-width: none; margin: 0; }
 .cn-shell *, .cn-dialog * { box-sizing: border-box; }
@@ -75,15 +75,16 @@
 .cn-card-actions { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 14px; }
 .cn-check { display: flex; gap: 9px; align-items: flex-start; color: #374151; font-size: .84rem; font-weight: 500; }
 .cn-issues { margin: 10px 0 0; padding-left: 19px; color: #b45309; font-size: .8rem; }
-.cn-card-preview { width: 100%; container-type: inline-size; background: #000; }
-.cn-card-surface { position: relative; width: 100%; aspect-ratio: 4 / 5; padding-top: 11.85185cqw; overflow: hidden; background: #000; color: #ccff00; font-family: "cn-CardGothic", "Noto Sans KR", sans-serif; }
-.cn-card-band { position: relative; display: flex; align-items: center; height: 12.22222cqw; margin-left: 12.963cqw; padding-left: 1.2963cqw; background: #ccff00; color: #000; }
-.cn-card-series { white-space: nowrap; font-family: "cn-CardLatin", Arial, sans-serif; font-size: 11.6667cqw; font-weight: 700; line-height: 1; letter-spacing: -.065em; }
-.cn-card-brand { position: absolute; right: 5.18519cqw; bottom: 1.11111cqw; font-family: "cn-CardLatin", Arial, sans-serif; font-size: 2.963cqw; font-style: italic; font-weight: 700; line-height: 1; white-space: nowrap; }
-.cn-card-copy { position: absolute; right: 6.48cqw; left: 12.963cqw; }
-.cn-card-headline { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 5cqw; font-weight: 900; line-height: 1.5; letter-spacing: -.045em; }
-.cn-card-body { position: absolute; width: 100%; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 4.4444cqw; font-weight: 700; line-height: 1.74; letter-spacing: -.035em; }
-.cn-card-source { position: absolute; margin: 0; white-space: pre; font-weight: 700; }
+.cn-card-preview { width: 100%; container-type: inline-size; background: #131610; }
+/* S10 Lime Top Split: 1px of the 1080x1350 card = 1/10.8cqw; lime top is 567px = 42%. */
+.cn-card-surface { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: linear-gradient(#ccff00 0 42%, #131610 42%); color: #131610; font-family: "cn-CardGothic", "Noto Sans KR", sans-serif; font-weight: 400; }
+.cn-card-band { position: absolute; top: 8.33333cqw; right: 9.25926cqw; left: 9.25926cqw; display: flex; align-items: center; justify-content: space-between; height: 4.25926cqw; }
+.cn-card-series { white-space: nowrap; font-size: 3.51852cqw; font-weight: 700; line-height: 1; }
+.cn-card-brand { font-size: 2.77778cqw; font-style: italic; font-weight: 500; line-height: 1; white-space: nowrap; }
+.cn-card-copy { position: absolute; right: 9.25926cqw; left: 9.25926cqw; }
+.cn-card-headline { margin: 0; white-space: pre; font-weight: 800; }
+.cn-card-body { position: absolute; width: 100%; margin: 0; white-space: pre; color: #ecf3dc; font-size: 4.44444cqw; font-weight: 400; line-height: 6.22222cqw; }
+.cn-card-source { position: absolute; margin: 0; white-space: pre; font-weight: 400; }
 .cn-preview-label { margin: 9px 0; color: #64748b; font-size: .76rem; }
 .cn-jpg { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; background: #000; }
 .cn-jpg-section { margin-top: 18px; }

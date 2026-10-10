@@ -1,6 +1,6 @@
 "use client";
 import { zipSync, strToU8 } from "fflate";
-import { CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines } from "./copy";
+import { CARD_COLORS, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines, cardFontSize } from "./copy";
 import { editionIssues, editionWindow, cardIssues, preserveDraft, isSupplement, MAX_CANDIDATES, type AdminSnapshot, type Edition } from "./types";
 import { appendManualCandidate, candidateUrlKey, createManualCandidate } from "./manual";
 
@@ -94,10 +94,10 @@ async function lockedAction(body: Record<string, unknown>): Promise<AdminSnapsho
 let fontsReady: Promise<void> | undefined;
 function loadFonts() {
   return fontsReady ||= Promise.all([
-    new FontFace("CardGothic", "url(/fonts/NanumGothic-Bold.ttf)", { weight: "700" }),
-    new FontFace("CardGothic", "url(/fonts/NanumGothic-ExtraBold.ttf)", { weight: "900" }),
-    new FontFace("CardLatin", "url(/fonts/Arimo-Bold.ttf)", { weight: "700" }),
-    new FontFace("CardLatin", "url(/fonts/Arimo-BoldItalic.ttf)", { weight: "700", style: "italic" }),
+    new FontFace("CardGothic", "url(/fonts/NotoSansKR-Regular.ttf)", { weight: "400" }),
+    new FontFace("CardGothic", "url(/fonts/NotoSansKR-Medium.ttf)", { weight: "500" }),
+    new FontFace("CardGothic", "url(/fonts/NotoSansKR-Bold.ttf)", { weight: "700" }),
+    new FontFace("CardGothic", "url(/fonts/NotoSansKR-ExtraBold.ttf)", { weight: "800" }),
   ].map(async font => { document.fonts.add(await font.load()); })).then(() => undefined).catch(error => { fontsReady = undefined; throw error; });
 }
 async function cardBlob(card: Edition["cards"][number]) {
@@ -105,20 +105,23 @@ async function cardBlob(card: Edition["cards"][number]) {
   if (issues.length) throw new Error(issues[0]);
   await loadFonts();
   const canvas = document.createElement("canvas"); canvas.width = 1080; canvas.height = 1350;
-  const ctx = canvas.getContext("2d")!; ctx.fillStyle = "#000000"; ctx.fillRect(0, 0, 1080, 1350);
-  ctx.fillStyle = "#CCFF00"; ctx.fillRect(140, 128, 940, 132); ctx.textBaseline = "top";
-  const draw = (text: string, x: number, y: number, size: number, family: string, spacing: number, italic = false, limit?: number, weight = 700) => {
-    ctx.font = `${italic ? "italic " : ""}${weight} ${size}px "${family}"`; ctx.letterSpacing = `${spacing}px`;
-    if (limit && ctx.measureText(text).width > limit) throw new Error("카드의 한 줄이 너무 깁니다. 줄을 나눠 주세요.");
-    ctx.fillText(text, x, y);
+  const L = CARD_LAYOUT, ctx = canvas.getContext("2d")!; ctx.fillStyle = CARD_COLORS.dark; ctx.fillRect(0, 0, L.width, L.height);
+  ctx.fillStyle = CARD_COLORS.lime; ctx.fillRect(0, 0, L.width, L.split); ctx.textBaseline = "middle";
+  // y is the line-box top; middle baseline at its center matches the CSS and server renderers.
+  const draw = (text: string, x: number, y: number, size: number, lineHeight: number, weight: number, color: string, italic = false, right = false) => {
+    ctx.font = `${italic ? "italic " : ""}${weight} ${size}px "CardGothic"`; ctx.fillStyle = color; ctx.textAlign = right ? "right" : "left";
+    if (ctx.measureText(text).width > L.contentWidth) throw new Error("카드의 한 줄이 너무 깁니다. 줄을 나눠 주세요.");
+    ctx.fillText(text, x, y + lineHeight / 2);
   };
-  ctx.fillStyle = "#111111"; draw("AI News 10", 154, 133, 126, "CardLatin", -8.19);
-  ctx.textAlign = "right"; draw("AgentTutor", 1024, 216, 32, "CardLatin", -1.12, true); ctx.textAlign = "left";
-  ctx.fillStyle = "#CCFF00";
-  card.title.split("\n").forEach((line, i) => draw(line, 140, CARD_LAYOUT.titleTop + i * CARD_LAYOUT.titleLineHeight, 54, "CardGothic", -2.43, false, 870, 900));
-  card.body.split("\n").forEach((line, i) => draw(line, 140, cardBodyTop(card.title) + i * 83.52, 48, "CardGothic", -1.68, false, 870));
-  ctx.fillStyle = CARD_SOURCE.color;
-  cardSourceLines(card).forEach((line, i) => draw(line, CARD_SOURCE.left, CARD_SOURCE.top + i * CARD_SOURCE.lineHeight, CARD_SOURCE.fontSize, "CardGothic", CARD_SOURCE.letterSpacing, false, CARD_SOURCE.width));
+  draw("AI News 10", L.left, L.headerTop, L.seriesSize, L.headerLineHeight, 700, CARD_COLORS.dark);
+  draw("AgentTutor", L.left + L.contentWidth, L.headerTop, L.brandSize, L.headerLineHeight, 500, CARD_COLORS.dark, true, true);
+  const titleSize = cardFontSize(card.title, L.titleSize);
+  const bodySize = cardFontSize(card.body, L.bodySize);
+  card.title.split("\n").forEach((line, i) => draw(line, L.left, L.titleTop + i * L.titleLineHeight, titleSize, L.titleLineHeight, 800, CARD_COLORS.dark));
+  card.body.split("\n").forEach((line, i) => draw(line, L.left, cardBodyTop(card.title) + i * L.bodyLineHeight, bodySize, L.bodyLineHeight, 400, CARD_COLORS.body));
+  const sourceLines = cardSourceLines(card);
+  const sourceSize = cardFontSize(sourceLines.join("\n"), CARD_SOURCE.fontSize);
+  sourceLines.forEach((line, i) => draw(line, CARD_SOURCE.left, CARD_SOURCE.top + i * CARD_SOURCE.lineHeight, sourceSize, CARD_SOURCE.lineHeight, 400, CARD_SOURCE.color));
   return new Promise<Blob>((resolve, reject) => canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("JPG 생성에 실패했습니다.")), "image/jpeg", 0.96));
 }
 export async function localImage(edition: Edition, index: number): Promise<string> { return URL.createObjectURL(await cardBlob(edition.cards[index])); }

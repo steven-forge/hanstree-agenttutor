@@ -1,12 +1,16 @@
 export type CardCopy = { title: string; body: string };
 export const CARD_TEXT = { title: { lines: 2, width: 16 }, body: { lines: 7, width: 18 } } as const;
-export const CARD_LAYOUT = { titleTop: 391, titleLineHeight: 81, titleBodyGap: 48 } as const;
-export function cardBodyTop(title: string): number {
-  return CARD_LAYOUT.titleTop + title.split("\n").length * CARD_LAYOUT.titleLineHeight + CARD_LAYOUT.titleBodyGap;
-}
-export const CARD_SOURCE = { left: 140, top: 1240, width: 870, fontSize: 26, lineHeight: 34, color: "#858585", letterSpacing: -.52 } as const;
+// S10 Lime Top Split, 1080x1350. Every y is a CSS line-box top; all renderers center glyphs in the line box.
+export const CARD_LAYOUT = { width: 1080, height: 1350, split: 567, left: 100, contentWidth: 880, headerTop: 90, headerLineHeight: 46, seriesSize: 38, brandSize: 30, titleTop: 250, titleSize: 74, titleLineHeight: 88.8, bodyTop: 650, bodySize: 48, bodyLineHeight: 67.2 } as const;
+export const CARD_COLORS = { lime: "#CCFF00", dark: "#131610", body: "#ECF3DC", source: "#ACB89B" } as const;
+export const cardBodyTop = (_title: string): number => CARD_LAYOUT.bodyTop;
+export const CARD_SOURCE = { left: 100, top: 1222, width: 880, fontSize: 26, lineHeight: 34, color: CARD_COLORS.source, letterSpacing: 0 } as const;
 export const hasEllipsis = (text: string) => /[\u2026\u22ef]|\.(?:\s*\.){2,}/.test(text);
 export const lineWidth = (text: string) => Array.from(text).reduce((n, c) => n + (/[^\u0000-\u007f]/.test(c) || /[MW@%]/.test(c) ? 1 : .65), 0);
+// Conservative per-char em width for Noto Sans KR (measured ASCII metrics); not used for validation.
+const glyphEm = (c: string) => c === "@" ? 1.05 : /[^\u0000-\u007f]|[MWmw%]/.test(c) ? 1 : /[A-Z&]/.test(c) ? .8 : .66;
+// Largest whole-pixel size (<= maxSize) at which the longest line fits the content width.
+export const cardFontSize = (text: string, maxSize: number) => Math.floor(Math.min(maxSize, CARD_LAYOUT.contentWidth / Math.max(1, ...text.split("\n").map(l => Array.from(l).reduce((n, c) => n + glyphEm(c), 0)))));
 
 // Wrap complete copy at word boundaries; never discard text or append an ellipsis.
 export function wrapCardText(text: string, width: number): string {

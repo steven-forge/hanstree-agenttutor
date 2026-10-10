@@ -36,7 +36,22 @@ function load(relative) {
   return module.exports;
 }
 const {selectAutomaticCards, AutoCopyError} = load('app/lib/card-news/auto-copy.ts');
-const {copyIssues} = load('app/lib/card-news/copy.ts');
+const {copyIssues, cardFontSize, cardBodyTop, wrapCardText, lineWidth, cardSourceLines, CARD_LAYOUT, CARD_SOURCE} = load('app/lib/card-news/copy.ts');
+// S10 geometry and title sizing: no truncation, no extra wraps, text unchanged.
+assert.equal(CARD_LAYOUT.split, 567); assert.equal(CARD_LAYOUT.left, 100); assert.equal(CARD_LAYOUT.contentWidth, 880);
+assert.equal(CARD_LAYOUT.titleTop, 250); assert.equal(CARD_LAYOUT.titleLineHeight, 88.8); assert.equal(cardBodyTop('가\n나'), 650);
+assert.equal(CARD_LAYOUT.bodyLineHeight, 67.2); assert.equal(CARD_SOURCE.top + 2 * CARD_SOURCE.lineHeight + 60, 1350);
+assert.equal(cardFontSize('짧은 제목', 74), 74);
+const longTitle = '가나다라마바사아자차카타파하가나\n가나다라마바사아자차카타파하가나';
+assert.equal(lineWidth(longTitle.split('\n')[0]), 16); assert.equal(cardFontSize(longTitle, 74), 55);
+assert.ok(lineWidth('가'.repeat(16)) * cardFontSize(longTitle, 74) <= 880);
+assert.ok(cardFontSize('N'.repeat(24), 74) <= 48); assert.ok(cardFontSize('m'.repeat(24), 74) <= 37);
+assert.ok(cardFontSize('N'.repeat(27), 48) <= 40); assert.equal(cardFontSize('가'.repeat(18), 48), 48);
+const mSource = cardSourceLines({sourceName: 'm'.repeat(48), sourceUrl: 'https://example.com'});
+assert.equal(mSource.length, 2); assert.equal(mSource.join('').replace(/\s/g, ''), '출처:' + 'm'.repeat(48));
+assert.ok(cardFontSize(mSource.join('\n'), CARD_SOURCE.fontSize) <= 19);
+assert.equal(wrapCardText(longTitle.replace('\n', ' '), 16), longTitle);
+assert.equal(copyIssues({title: longTitle, body: '본문'}).length, 0);
 const {collectEdition} = load('app/lib/card-news/collect.ts');
 const {supplementCandidates} = load('app/lib/card-news/supplements.ts');
 const {candidateUrlKey} = load('app/lib/card-news/manual.ts');
