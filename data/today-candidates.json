@@ -35,13 +35,13 @@
       "name": "Codex Releases",
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
-      "count": 1,
-      "checked_at": "2026-10-10T06:21:25.086081+09:00",
+      "count": 0,
+      "checked_at": "2026-10-10T09:50:41.332669+09:00",
       "held_count": 0,
       "excluded_count": 212,
-      "skipped_count": 30,
+      "skipped_count": 31,
       "coverage_limited": false,
-      "last_success_at": "2026-10-10T06:21:25.086081+09:00"
+      "last_success_at": "2026-10-10T09:50:41.332669+09:00"
     },
     {
       "id": "claude-releases",
@@ -49,7 +49,7 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-10T06:21:25.086081+09:00",
+      "checked_at": "2026-10-10T09:50:41.332669+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -63,12 +63,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-10T06:21:25.086081+09:00",
+      "checked_at": "2026-10-10T09:50:41.332669+09:00",
       "held_count": 0,
       "excluded_count": 69,
       "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-10T06:21:25.086081+09:00"
+      "last_success_at": "2026-10-10T09:50:41.332669+09:00"
     },
     {
       "id": "grok-releases",
@@ -76,7 +76,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-10T06:21:25.086081+09:00",
+      "checked_at": "2026-10-10T09:50:41.332669+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
@@ -84,7 +84,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-10T06:21:25.086081+09:00"
+      "last_success_at": "2026-10-10T09:50:41.332669+09:00"
     },
     {
       "id": "anthropic-news",
@@ -326,26 +326,8 @@
     }
   ],
   "new_count": 3,
-  "archive_count": 482,
+  "archive_count": 498,
   "candidates": [
-    {
-      "id": "396d5f6b9bc0a0f2",
-      "title": "0.162.1",
-      "source_id": "codex-releases",
-      "source_name": "Codex Releases",
-      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.162.1",
-      "source_summary": "## Bug Fixes - Fixed a TUI crash when asynchronous questions contain multiple lines, preserving line breaks and complete hyperlink destinations. (#51866) - Fixed startup failures caused by differences between a running background server's feature settings and CLI defaults. Compatibility checks now apply only to explicit command-line feature overrides. (#52648) Full Changelog: https://github.com/openai/codex/compare/rust-v0.162.0...rust-v0.162.1",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "why_it_matters_provenance": "automatic",
-      "fetched_at": "2026-10-10T06:21:32+09:00",
-      "published_at": "2026-10-09T19:44:51+00:00",
-      "date_precision": "time",
-      "title_ko": "Codex 0.162.1 버전 출시",
-      "source_summary_ko": "# # 버그 수정 - 비동기 질문이 여러 줄을 포함하고 줄 바꿈을 유지하며 하이퍼링크 대상을 완료하는 경우 TUI 충돌이 수정되었습니다. (# 51866) - 실행 중인 백그라운드 서버의 기능 설정과 CLI 기본값의 차이로 인한 시작 실패를 수정했습니다. 호환성 검사는 이제 명시적인 명령줄 기능 재정의에만 적용됩니다. (# 52648) 전체 변경 로그: https://github.com/openai/codex/compare/rust-v0.162.0... rust-v0.162.1",
-      "release_notes_ko": {
-        "bug_fixes": "비동기 질문에 여러 줄이 포함되어 줄 바꿈을 유지하고 하이퍼링크 대상을 완료하는 경우 TUI 충돌이 수정되었습니다.\n실행 중인 백그라운드 서버의 기능 설정과 CLI 기본값 간의 차이로 인한 시작 실패를 수정했습니다. 이제 호환성 검사는 명시적인 명령줄 기능 재정의에만 적용됩니다."
-      }
-    },
     {
       "id": "9bf93d58cc35db99",
       "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
