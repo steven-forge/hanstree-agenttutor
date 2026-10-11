@@ -435,10 +435,6 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
 
   const openTools = () => { setToolsOpen(true); toolsDialog.current?.showModal(); };
   const logoutButton =<button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>;
-  const header = <header className="cn-header">
-      <div><p className="cn-eyebrow">AgentTutor · {series}</p><h1>{explore ? "Explore 웹툰 발행" : "카드뉴스 관리"}</h1><p className="cn-muted">{explore ? explore.title : "뉴스 카드 10장을 직접 만들고 검토해 발행합니다."}</p></div>
-      {logoutButton}
-    </header>;
 
   const localAlert = localMode && <div className="cn-alert cn-alert-info"><strong>관리자 로그인됨 · 이 브라우저에 저장</strong><p>Instagram 연결 전에 뉴스 선정과 카드 제작을 할 수 있습니다. 원고는 현재 브라우저에만 저장되며, 기기를 바꾸거나 브라우저 데이터를 삭제하면 사용할 수 없습니다. JSON 내보내기로 원고를 보관하세요.</p><p>로그아웃해도 저장한 원고는 유지됩니다. 다시 관리자 비밀번호로 로그인하면 이어서 작업할 수 있습니다.</p><div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={exportJson} disabled={!edition || !!pending}>원고 JSON 내보내기</button><button className="cn-button cn-button-small" onClick={() => importInput.current?.click()} disabled={!!pending || locked}>원고 JSON 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={importJson} /></div></div>;
 
@@ -447,17 +443,19 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결·자동 제작과 예약 발행으로 이동 →</a></p>
 
     {!explore && <p><a className="cn-text-link" href="/admin/news/explore">Explore 웹툰 발행으로 이동 →</a></p>}
-    {explore && <section className="cn-panel" aria-labelledby="cn-explore-heading">
-      <h2 id="cn-explore-heading">Explore 웹툰 발행</h2>
-      <p className="cn-muted">문서에 이미 만들어진 웹툰을 그대로 사용합니다. 한 장은 사진 게시물로, 여러 장은 넘겨 보는 게시물로 발행합니다.</p>
-      <label className="cn-field">발행할 문서<select aria-label="발행할 문서" value={pickedExplore} onChange={event => setPickedExplore(event.target.value)} disabled={!!pending}>{exploreDocs.map(doc => <option key={doc.slug} value={doc.slug}>{doc.title}</option>)}</select></label>
-      <p className="cn-help">{exploreDocs.find(doc => doc.slug === pickedExplore)?.summary}</p>
-      <div className="cn-publish-actions"><button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 웹툰 불러오기</button>{pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}{explore && <a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a>}</div>
-      <p className="cn-help">처음 열면 등록된 웹툰 이미지를 불러옵니다. 저장한 웹툰 원고가 있으면 그대로 엽니다. 기존 텍스트 초안은 정리하며, 발행은 검토 후 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
-    </section>}
+    {explore && <p><a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a></p>}
   </>;
+  const exploreEntry = explore && <div className="cn-stage-start cn-explore-entry">
+      <label className="cn-field">발행할 문서<select aria-label="발행할 문서" value={pickedExplore} onChange={event => setPickedExplore(event.target.value)} disabled={!!pending}>{exploreDocs.map(doc => <option key={doc.slug} value={doc.slug}>{doc.title}</option>)}</select></label>
+      <button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 웹툰 불러오기</button>
+      {pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}
+      <details className="cn-help"><summary>안내</summary>
+        <p>{exploreDocs.find(doc => doc.slug === pickedExplore)?.summary}</p>
+        <p>문서에 이미 만들어진 웹툰을 그대로 사용합니다. 한 장은 사진 게시물로, 여러 장은 넘겨 보는 게시물로 발행합니다. 처음 열면 등록된 웹툰 이미지를 불러오고, 저장한 웹툰 원고가 있으면 그대로 엽니다. 기존 텍스트 초안은 정리하며, 발행은 검토 후 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
+      </details>
+    </div>;
 
-  const dateField = <label className="cn-field">{daily ? "날짜 · KST" : "판본 날짜 · KST"}<input type="date" value={date} onChange={event => loadDate(event.target.value)} disabled={!!pending} /></label>;
+  const dateField = <label className="cn-field">날짜 · KST<input type="date" value={date} onChange={event => loadDate(event.target.value)} disabled={!!pending} /></label>;
   const statusTags = <>
         {edition && <span className={`cn-tag ${edition.status === "published" || edition.status === "approved" ? "cn-tag-ok" : edition.status === "needs_check" ? "cn-tag-warn" : "cn-tag-info"}`}>{STATUS[edition.status]}</span>}
         {dirty && <span className="cn-tag cn-tag-warn">저장하지 않은 수정</span>}
@@ -471,7 +469,6 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
   const toolbarActions = <div className="cn-toolbar-actions">
           <button className="cn-button" onClick={() => loadDate(date)} disabled={!!pending}>상태 새로 확인</button>
           {collectButtons}
-          {!daily && saveButton}
   </div>;
   const dateInfo = <>
       <p className="cn-help">{edition ? explore ? `문서 날짜 ${edition.candidates[0]?.publishedAt || explore.date} · 초안 생성 ${formatTime(edition.collectedAt)} KST · 저장본 v${edition.revision}` : `후보 발행 기간 ${formatTime(edition.windowStart)} ~ ${formatTime(edition.windowEnd)} KST · 불러옴 ${formatTime(edition.collectedAt)} · 저장본 v${edition.revision}` : explore ? "선택한 문서에 등록된 웹툰을 불러올 수 있습니다." : "뉴스레터에 공개된 전체 기사를 최신순으로 불러옵니다. 판본 날짜 이후의 기사는 제외합니다."}</p>
@@ -484,7 +481,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
   const statusBlock = <>
       {pending &&<p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}
-      {message && (daily ? <details className="cn-alert cn-alert-success cn-alert-compact" role="status"><summary>{message}</summary></details> : <p className="cn-alert cn-alert-success" role="status">{message}</p>)}
+      {message && <details className="cn-alert cn-alert-success cn-alert-compact" role="status"><summary>{message}</summary></details>}
       {!explore && edition && candidateCount < 10 && <div className="cn-alert cn-alert-error"><strong>뉴스 수집 부족 · {candidateCount}/10</strong><p>정상 제작 완료 상태가 아닙니다. 자동 제작으로 미발행 릴리스·용어·Explore를 보충하거나 뉴스를 직접 등록하세요. 원고 검사를 통과한 서로 다른 콘텐츠 10개가 필요합니다.</p></div>}
   </>;
   const progress = !localMode && edition && (edition.publication || pending === "publish" || publishUncertain || ["publishing", "needs_check", "published"].includes(edition.status)) && <PublicationProgress key={editionKey(edition)} edition={edition} pending={pending} uncertain={publishUncertain} sessionExpired={sessionExpired} onEdition={acceptProgress} onExpired={() => setSessionExpired(true)} onContinue={() => act("reconcile")} />;
@@ -523,15 +520,10 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       </form>
     </details>;
 
-  const emptyState = <section className="cn-empty" style={{ marginTop: daily ? 0 : 22 }}><h2>아직 준비된 판본이 없습니다</h2><p>{explore ? "‘웹툰 불러오기’를 눌러 등록된 이미지를 선택하세요." : "‘뉴스레터 불러오기’ 또는 ‘뉴스 직접 등록’으로 시작하세요. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요."}</p></section>;
-  const stats = edition && <div className="cn-stats" aria-label="제작 진행 상황">
-        <div className={`cn-stat ${candidateCount < (explore ? 1 : 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "등록된 웹툰" : "뉴스 후보 · 직접 등록 포함"}</span><strong>{candidateCount}개</strong></div>
-        <div className={`cn-stat ${(explore ? selected.length < 1 : selected.length !== 10) ? "cn-stat-warn" : ""}`}><span>{explore ? "선택한 웹툰" : "선정한 뉴스"}</span><strong>{selected.length}{explore ? "장 · 최대 10장" : "/10"}</strong></div>
-        <div className={`cn-stat ${verifiedCount !== expectedCount ? "cn-stat-warn" : ""}`}><span>사람이 확인한 원문</span><strong>{verifiedCount}/{expectedCount}</strong></div>
-      </div>;
+  const emptyState = <section className="cn-empty"><h2>아직 준비된 판본이 없습니다</h2><p>{explore ? "‘웹툰 불러오기’를 눌러 등록된 이미지를 선택하세요." : "‘뉴스레터 불러오기’ 또는 ‘뉴스 직접 등록’으로 시작하세요. 뉴스 10개를 선정하고 저장한 뒤 원문 확인과 최종 검토를 진행하세요."}</p></section>;
   const candidatesSection = edition && <section className="cn-panel" aria-labelledby="cn-candidates-heading">
           <div className="cn-section-head"><div><h2 id="cn-candidates-heading">1. {explore ? "웹툰 선택" : "뉴스 후보 선정"}</h2><p className="cn-muted">{explore ? "게시할 웹툰을 선택하세요. 비교 웹툰이 있으면 함께 올리거나 선택을 해제할 수 있습니다." : "서로 다른 뉴스·보충 콘텐츠 10개를 골라 주세요. 보충 항목에는 종류가 표시됩니다."}</p></div></div>
-          <label className="cn-field">후보 검색<input type="search" placeholder="제목·출처·내용 검색" value={search} onChange={event => setSearch(event.target.value)} /></label>
+          {(daily || candidateCount > 3) && <label className="cn-field">후보 검색<input type="search" placeholder="제목·출처·내용 검색" value={search} onChange={event => setSearch(event.target.value)} /></label>}
           <div className="cn-candidates">
             {candidates.length ? candidates.map(candidate => {
               const index = selected.findIndex(item => item.candidateId === candidate.id);
@@ -546,21 +538,19 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
           {selected.length >= 10 && <p className="cn-help">10개를 선정했습니다. 다른 후보를 고르려면 기존 선택을 해제하세요.</p>}
         </section>;
 
-  const verifyBox = card && <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>{explore ? "웹툰 그림·말풍선·출처와 실제 JPG의 글씨를 확인했습니다." : daily ? "원문·수치·날짜·중복을 확인했습니다." : "원문·수치·기록된 날짜를 확인했고 다른 카드와 같은 내용이 아님을 확인했습니다."}</span></label>;
-  const OrderBox: "details" | "div" = daily ? "details" : "div";
+  const verifyBox = card && <label className="cn-check"><input type="checkbox" checked={card.verified} disabled={!canEdit || exactTimeNeeded} onChange={event => changeCard({ verified: event.target.checked })} /><span>{explore ? "웹툰 그림·말풍선·출처와 실제 JPG의 글씨를 확인했습니다." : "원문·수치·날짜·중복을 확인했습니다."}</span></label>;
   const cardTabs = <div className="cn-card-tabs" aria-label="편집할 카드 선택">{selected.map((item, index) => <button className="cn-card-tab" key={item.candidateId} aria-pressed={index === currentIndex} aria-label={`${index + 1}번 카드: ${item.title.replace(/\n/g, " ")}`} onClick={() => setActiveIndex(index)}>{index + 1}{item.verified ? " ✓" : ""}</button>)}</div>;
-  const editorSection = edition && <section className={`cn-panel${daily ? " cn-editor-daily" : ""}`} aria-labelledby="cn-editor-heading">
-            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. {explore ? "웹툰 확인과 순서" : "카드 원고와 순서"}</h2><p className="cn-muted">{explore ? "원본 전체를 자르지 않고 1080×1350 JPG에 맞춥니다. 긴 웹툰은 그림이 작아질 수 있으니 실제 JPG로 글씨를 확인하세요." : "제목 최대 2줄 · 본문 최대 7줄 · 말줄임표 없이 핵심 내용 정리"}</p></div>{daily && !!selected.length && cardTabs}{!explore && <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>{daily ? "원고 정리" : "선정한 카드 원고 정리"}</button>}</div>
+  const editorSection = edition && <section className="cn-panel cn-editor-daily" aria-labelledby="cn-editor-heading">
+            <div className="cn-section-head"><div><h2 id="cn-editor-heading">2. {explore ? "웹툰 확인과 순서" : "카드 원고와 순서"}</h2><p className="cn-muted">{explore ? "원본 전체를 자르지 않고 1080×1350 JPG에 맞춥니다. 긴 웹툰은 그림이 작아질 수 있으니 실제 JPG로 글씨를 확인하세요." : "제목 최대 2줄 · 본문 최대 7줄 · 말줄임표 없이 핵심 내용 정리"}</p></div>{!!selected.length && cardTabs}{!explore && <button className="cn-button cn-button-small" onClick={composeCards} disabled={!canEdit || !selected.length}>원고 정리</button>}</div>
             {selected.length ? <>
-              {!daily && cardTabs}
               {card && <>
-                <div className={daily ? "cn-order-verify" : undefined}>
-                <OrderBox className="cn-order-tools">{daily && <summary>순서·선택</summary>}
+                <div className="cn-order-verify">
+                <details className="cn-order-tools"><summary>순서·선택</summary>
                 <div className="cn-card-actions"><button className="cn-button cn-button-small" onClick={() => moveCard(-1)} disabled={!canEdit || currentIndex === 0}>앞으로 이동</button><button className="cn-button cn-button-small" onClick={() => moveCard(1)} disabled={!canEdit || currentIndex === selected.length - 1}>뒤로 이동</button><button className="cn-button cn-button-small" disabled={!canEdit} onClick={removeCard}>카드 선택 해제</button><span className="cn-help">현재 {currentIndex + 1}번째 카드</span></div>
-                </OrderBox>
-                {daily && <div className="cn-verify-row">{verifyBox}{exactTimeNeeded && <span className="cn-help">정확한 발행 시각 입력 후 확인할 수 있습니다.</span>}</div>}
+                </details>
+                <div className="cn-verify-row">{verifyBox}{exactTimeNeeded && <span className="cn-help">정확한 발행 시각 입력 후 확인할 수 있습니다.</span>}</div>
                 </div>
-                <div className={daily ? "cn-editor-scroll" : undefined}>
+                <div className="cn-editor-scroll">
                 <div className="cn-editor-grid">
                   <div className="cn-editor-fields">
                     {card.verification === "automatic" && <p className="cn-help"><span className="cn-tag cn-tag-info">자동 제작</span> 원문 확인 체크는 사람이 직접 확인한 경우에만 선택하세요.</p>}
@@ -574,7 +564,6 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
                     <label className="cn-field">원문 주소<input type="url" value={card.sourceUrl} onChange={event => changeCard({ sourceUrl: event.target.value })} disabled={!canEdit || !!explore} /></label>
                     {safeHref(card.sourceUrl) && <a className="cn-text-link" href={safeHref(card.sourceUrl)} target="_blank" rel="noopener noreferrer">원문을 새 탭에서 확인</a>}
                     {usesContentDate(currentCandidate) ? <p className="cn-help">콘텐츠 기준: {contentDateLabel(currentCandidate!)}. 원문 기록을 사용하며 시각을 임의로 만들지 않습니다.</p> : <label className="cn-field">확인한 발행 시각 · KST<input type="datetime-local" step="1" value={exactTimeNeeded ? "" : kstInput(card.publishedAt)} onChange={event => changeCard({ publishedAt: fromKstInput(event.target.value) })} disabled={!canEdit} /><small>{exactTimeNeeded ? "날짜만으로 선정 구간 안의 기사인지 판단할 수 없습니다. 원문의 정확한 시각이 필요합니다." : "기사 작성·추가 공개 시각과 사건 발생 시점을 구분해 주세요."}</small></label>}
-                    {!daily && verifyBox}
                     {!!currentIssues.length && <ul className="cn-issues">{currentIssues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul>}
                   </div>
                   <div className="cn-preview-column">
@@ -591,7 +580,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
           </section>;
 
   const publishActions = edition && <div className="cn-publish-actions">
-              <button className="cn-button" onClick={() => act("approve")} disabled={!canApprove}>{edition.status === "approved" && !dirty ? "검토 완료됨" : `${selected.length}개 원고 검토 완료`}</button>
+              <button className="cn-button" onClick={() => act("approve")} disabled={!canApprove}>{edition.status === "approved" && !dirty ? "검토 완료됨" : `${explore ? `웹툰 ${selected.length}장` : `${selected.length}개 원고`} 검토 완료`}</button>
               {canDownload ? localMode ? <button className="cn-button" onClick={downloadLocalBundle}>JPG 10장 ZIP 받기</button> : <a className="cn-button" href={`${API}?${new URLSearchParams({ date: targetKey(date), download: "zip", revision: String(saved!.revision) })}`}>JPG {selected.length}장 ZIP 받기</a> : <button className="cn-button" disabled>검토 후 ZIP 받기</button>}
               <button className="cn-button cn-button-primary" onClick={preparePublication} disabled={!canPublish}>Instagram에 발행</button>
             </div>;
@@ -601,11 +590,10 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
             <label className="cn-field">게시글 설명 · {Array.from(edition.caption).length.toLocaleString()}/2,200자<textarea rows={8} value={edition.caption} onChange={event => { if (canEdit) { setEdition({ ...edition, caption: event.target.value }); setMessage(""); } }} disabled={!canEdit} /></label>
             <p className="cn-help">{explore ? "웹툰 선택과 순서를 바꿔도 작성한 설명은 유지됩니다." : "설명을 직접 수정할 수 있습니다. 뉴스 선택·해제·순서·제목을 바꾸거나 카드 원고를 정리하면 설명이 다시 만들어집니다."}</p>
             {!explore && <div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={regenerateCaption} disabled={!canEdit}>선택한 카드 제목으로 설명 다시 만들기</button></div>}
-            {!!issues.length && !locked && <details className="cn-details" open={daily || undefined}><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
+            {!!issues.length && !locked && <details className="cn-details" open><summary>검토 완료 전 확인할 항목 {issues.length}개</summary><ul className="cn-issues">{issues.map((issue, index) => <li key={`${index}-${issue}`}>{issue}</li>)}</ul></details>}
             {dirty && <p className="cn-alert">원고를 먼저 저장하세요. 승인 후 수정하면 다시 검토해야 합니다.</p>}
             {manualDirty && <p className="cn-alert">입력 중인 뉴스를 등록하거나 입력을 비운 뒤 검토를 완료하세요.</p>}
-            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 발행 연결이 준비되지 않았습니다. 원고 작성·검토와 ZIP 다운로드는 지금도 이용할 수 있습니다. <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리에서 상태 확인</a>{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading" onClick={daily ? event => { event.preventDefault(); openTools(); } : undefined}>연결 준비 상태 보기</a></>}</p>}
-            {!daily && publishActions}
+            {!snapshot.setup.instagram && <p className="cn-alert">Instagram 발행 연결이 준비되지 않았습니다. 원고 작성·검토와 ZIP 다운로드는 지금도 이용할 수 있습니다. <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리에서 상태 확인</a>{localMode && <> 서버 저장소로 전환하기 전에는 원고를 JSON으로 보관해 주세요. <a className="cn-text-link" href="#cn-setup-heading" onClick={event => { event.preventDefault(); openTools(); }}>연결 준비 상태 보기</a></>}</p>}
             <p className="cn-help">{localMode ? "브라우저 원고 모드에서는 Instagram에 게시되지 않습니다. 계정 연결 후 서버 관리자 모드에서 발행합니다." : "최종 확인 창에서 동의한 뒤 실제로 게시합니다. 카드 원고를 저장하거나 검토 완료하는 것만으로 게시되지는 않습니다."}</p>
           </section>;
 
@@ -618,7 +606,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       <section className="cn-panel" aria-labelledby="cn-history-heading"><h2 id="cn-history-heading">판본 이력</h2>{snapshot.history.length ? <ul className="cn-history">{snapshot.history.filter(item => !item.explore || item.explore.format === "webtoon" || ["published", "publishing", "needs_check"].includes(item.status)).map(item => {
         const current = (item.id || item.date) === targetKey(date);
         const href = `/admin/news${item.explore ? "/explore" : ""}?${new URLSearchParams({ date: item.date, ...(item.explore ? { explore: item.explore.slug } : {}) })}`;
-        return <li key={item.id || item.date}><div><a className="cn-history-date" href={item.explore && item.explore.format !== "webtoon" ? undefined : href} aria-current={current ? "page" : undefined} onClick={event => { if (pending) event.preventDefault(); }}>{item.date} · {item.explore ? `Explore ${item.explore.format === "webtoon" ? "웹툰" : "텍스트 발행 기록"} · ${item.explore.title}` : "AI News 10"}{current ? " · 현재 판본" : ""}</a><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{item.explore && item.explore.format !== "webtoon" && ["publishing", "needs_check"].includes(item.status) && <button className="cn-button cn-button-small" disabled={!!pending || localMode || sessionExpired} onClick={() => act("check_explore_text", { date: item.id })}>이전 발행 결과 확인</button>}{current && edition?.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress" onClick={daily ? event => { event.preventDefault(); toolsDialog.current?.close(); setStage(3); } : undefined}>발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>;
+        return <li key={item.id || item.date}><div><a className="cn-history-date" href={item.explore && item.explore.format !== "webtoon" ? undefined : href} aria-current={current ? "page" : undefined} onClick={event => { if (pending) event.preventDefault(); }}>{item.date} · {item.explore ? `Explore ${item.explore.format === "webtoon" ? "웹툰" : "텍스트 발행 기록"} · ${item.explore.title}` : "AI News 10"}{current ? " · 현재 판본" : ""}</a><small>최근 변경 {formatTime(item.updatedAt)} KST</small>{item.explore && item.explore.format !== "webtoon" && ["publishing", "needs_check"].includes(item.status) && <button className="cn-button cn-button-small" disabled={!!pending || localMode || sessionExpired} onClick={() => act("check_explore_text", { date: item.id })}>이전 발행 결과 확인</button>}{current && edition?.publication && <><small>{publicationSummary(edition)}</small><a className="cn-text-link" href="#cn-publication-progress" onClick={event => { event.preventDefault(); toolsDialog.current?.close(); setStage(3); }}>발행 진행 자세히 보기 ↑</a></>}</div><span className={`cn-tag ${item.status === "published" ? "cn-tag-ok" : item.status === "needs_check" ? "cn-tag-warn" : ""}`}>{STATUS[item.status]}</span></li>;
       })}</ul> : <p className="cn-muted">저장된 판본 이력이 없습니다.</p>}{edition?.publication?.message && <p className="cn-help">최근 발행 기록: {edition.publication.message}</p>}</section>
     </div>;
 
@@ -628,11 +616,11 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       <div className="cn-publish-actions"><button className="cn-button" onClick={() => setConfirmPublish(false)}>돌아가서 확인</button><button className="cn-button cn-button-primary" disabled={!canPublish || !account} onClick={() => { if (!account) return; setConfirmPublish(false); void act("publish", { confirm: true, accountId: account.id }); }}>확인 · {selected.length}장 발행</button></div>
     </dialog>;
 
-  const steps = [[1, "뉴스 선택"], [2, "카드 검토"], [3, "발행"]] as const;
+  const steps = explore ? [[1, "웹툰 선택"], [2, "웹툰 검토"], [3, "발행"]] as const : [[1, "뉴스 선택"], [2, "카드 검토"], [3, "발행"]] as const;
   const nextBlocked = stage === 1 && !selected.length;
   const checks: [boolean, string][] = edition ? [
-    [selected.length === expectedCount, `선정한 뉴스 ${selected.length}/${expectedCount}`],
-    [verifiedCount === expectedCount, `사람이 확인한 원문 ${verifiedCount}/${expectedCount}`],
+    [explore ? selected.length > 0 : selected.length === expectedCount, explore ? `선택한 웹툰 ${selected.length}장` : `선정한 뉴스 ${selected.length}/${expectedCount}`],
+    [selected.length > 0 && verifiedCount === expectedCount, explore ? `확인한 웹툰 ${verifiedCount}/${expectedCount}` : `사람이 확인한 원문 ${verifiedCount}/${expectedCount}`],
     [!unsaved, unsaved ? "저장하지 않은 원고 또는 등록 중인 뉴스가 있습니다" : "원고 저장됨"],
     [["approved", "published"].includes(edition.status), `판본 상태: ${STATUS[edition.status]}`],
     [!issues.length, issues.length ? `확인할 항목 ${issues.length}개` : "확인할 항목 없음"],
@@ -640,26 +628,25 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
     [!sessionExpired, sessionExpired ? "로그인 만료" : "로그인 유지 중"],
   ] : [];
 
-  return <main className={`cn-shell cn-admin-shell${daily ? " cn-daily" : ""}`}>
-    {daily ? <>
+  return <main className={`cn-shell cn-admin-shell cn-daily${explore ? " cn-explore" : ""}`}>
       <div className="cn-daily-bar">
-        <h1>카드뉴스 관리</h1>
+        <h1>{explore ? "Explore 웹툰 발행" : "카드뉴스 관리"}</h1>
         {dateField}
         <div className="cn-daily-tags">
           {statusTags}
           {pending && <span className="cn-tag cn-tag-info">처리 중</span>}
           {sessionExpired && <span className="cn-tag cn-tag-warn">로그인 만료</span>}
-          {edition && <span className="cn-tag">선정 {selected.length}/{expectedCount}</span>}
+          {edition && <span className="cn-tag">{explore ? `웹툰 ${selected.length}장` : `선정 ${selected.length}/${expectedCount}`}</span>}
           {edition && <span className="cn-tag">확인 {verifiedCount}/{expectedCount}</span>}
         </div>
         <button className="cn-button cn-button-small" onClick={openTools}>도구·설정</button>
       </div>
-      <nav className="cn-daily-steps" aria-label="카드뉴스 제작 단계">
+      <nav className="cn-daily-steps" aria-label={explore ? "웹툰 발행 단계" : "카드뉴스 제작 단계"}>
         {steps.map(([number, label]) => <button key={number} className="cn-card-tab" aria-current={stage === number ? "step" : undefined} aria-pressed={stage === number} onClick={() => setStage(number)}>{number}. {label}</button>)}
       </nav>
       {!toolsOpen && <div className="cn-daily-alerts">{statusBlock}</div>}
       <div className="cn-daily-body">
-        <div className="cn-daily-panel cn-daily-list" hidden={stage !== 1}><div className="cn-stage-start">{collectButtons}<button className="cn-button" onClick={openManual} disabled={!!pending}>뉴스 직접 등록</button></div>{edition ? candidatesSection : emptyState}</div>
+        <div className="cn-daily-panel cn-daily-list" hidden={stage !== 1}>{explore ? exploreEntry : <div className="cn-stage-start">{collectButtons}<button className="cn-button" onClick={openManual} disabled={!!pending}>뉴스 직접 등록</button></div>}{edition ? candidatesSection : emptyState}</div>
         <div className="cn-daily-panel cn-daily-list" hidden={stage !== 2}>{edition ? editorSection : emptyState}</div>
         <div className="cn-daily-panel" hidden={stage !== 3}>
           {progress}
@@ -672,27 +659,14 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       <div className="cn-daily-footer cn-workflow-actions">
         <button className="cn-button" onClick={() => setStage(stage === 3 ? 2 : 1)} disabled={stage === 1}>이전</button>
         {saveButton}
-        {stage < 3 ? <button className="cn-button cn-button-primary" onClick={() => setStage(stage === 1 ? 2 : 3)} disabled={nextBlocked} title={nextBlocked ? "뉴스를 한 개 이상 선택하세요" : undefined}>다음 · {steps[stage === 1 ? 1 : 2][1]}</button> : publishActions}
+        {stage < 3 ? <button className="cn-button cn-button-primary" onClick={() => setStage(stage === 1 ? 2 : 3)} disabled={nextBlocked} title={nextBlocked ? `${explore ? "웹툰을" : "뉴스를"} 한 개 이상 선택하세요` : undefined}>다음 · {steps[stage === 1 ? 1 : 2][1]}</button> : publishActions}
       </div>
-    </> : <>
-      {header}{localAlert}{links}
-      <section className="cn-panel" aria-label="날짜와 판본 상태">
-        <div className="cn-toolbar">{dateField}{statusTags}{toolbarActions}</div>
-        {dateInfo}{statusBlock}{progress}
-      </section>
-      {manualPanel}
-      {!edition ? emptyState : <>
-        {stats}
-        <div className="cn-workspace">{candidatesSection}<div>{editorSection}{captionSection}</div></div>
-      </>}
-      {bottom}
-    </>}
-    {daily && <dialog ref={toolsDialog} className="cn-dialog cn-tools-dialog" onClose={() => setToolsOpen(false)} aria-labelledby="cn-tools-heading">
+    <dialog ref={toolsDialog} className="cn-dialog cn-tools-dialog" onClose={() => setToolsOpen(false)} aria-labelledby="cn-tools-heading">
       <div className="cn-section-head"><h2 id="cn-tools-heading">도구·설정</h2><button className="cn-button cn-button-small" onClick={() => toolsDialog.current?.close()}>닫기</button></div>
       {toolsOpen && statusBlock}
       <div className="cn-toolbar">{toolbarActions}{logoutButton}</div>
       {localAlert}{links}{dateInfo}{manualPanel}{bottom}
-    </dialog>}
+    </dialog>
     {publishDialog}
   </main>;
 }
