@@ -1,4 +1,4 @@
-import { CARD_TEXT, fitCardCopy, hasEllipsis, wrapCardText, type CardCopy } from "./copy";
+import { CARD_TEXT, fitCardCopy, hasEllipsis, wrapCardTitle, type CardCopy } from "./copy";
 import { candidateUrlKey, exactPublishedTime } from "./manual";
 import { candidateTime, isSupplement, usesContentDate, type NewsCandidate, type NewsCard } from "./types";
 
@@ -36,7 +36,7 @@ export function copyFor(candidate: Pick<NewsCandidate, "title" | "summary" | "ca
   const title = normalize(candidate.title);
   if (!korean(title, 2)) return { reason: "제목의 한국어 정리가 필요합니다." };
   if (hasEllipsis(title)) return { reason: "제목에 말줄임표가 있습니다." };
-  if (wrapCardText(title, CARD_TEXT.title.width).split("\n").length > CARD_TEXT.title.lines) return { reason: "제목 전체가 2줄 안에 들어가지 않습니다." };
+  if (wrapCardTitle(title).split("\n").length > CARD_TEXT.title.lines) return { reason: "제목 전체가 2줄 안에 들어가지 않습니다." };
   const summary = normalize(candidate.summary);
   if (introductionOnly(summary)) return { reason: "소개·안내 문구 대신 실제 발표 내용을 정리해야 합니다." };
   if (!korean(summary, 6)) return { reason: "본문의 한국어 정리가 필요합니다." };

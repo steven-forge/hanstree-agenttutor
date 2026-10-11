@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import { cardIssues, captionFor, CAPTION_INTRO, editionKey, editionIssues, selectableCandidates, preserveDraft, cardDateIssue, usesContentDate, isSupplement, type AdminSnapshot, type Edition, type NewsCandidate, type NewsCard } from "../../lib/card-news/types";
 import { copyFor } from "../../lib/card-news/auto-copy";
-import { fitCardCopy, copyIssues, CARD_TEXT, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines, cardFontSize, wrapCardText } from "../../lib/card-news/copy";
+import { fitCardCopy, copyIssues, CARD_TEXT, CARD_LAYOUT, CARD_SOURCE, cardBodyTop, cardSourceLines, cardFontSize, wrapCardText, wrapCardTitle } from "../../lib/card-news/copy";
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import type { ExtractedArticle } from "../../lib/card-news/article-extract";
 import PublicationProgress, { publicationSummary } from "./PublicationProgress";
@@ -55,7 +55,7 @@ function contentDateLabel(candidate: NewsCandidate) {
 function candidateCard(candidate: NewsCandidate): NewsCard {
   if (candidate.image) return { candidateId: candidate.id, title: candidate.title, body: candidate.summary, sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.publishedAt, image: candidate.image, verified: false };
   // Prepared copy, then complete lead sentences; otherwise keep the original text editable instead of blanking it.
-  const copy = fitCardCopy(candidate.cardCopy || { title: candidate.title, body: candidate.summary }) || copyFor(candidate).copy || { title: wrapCardText(candidate.title, CARD_TEXT.title.width), body: wrapCardText(candidate.summary, CARD_TEXT.body.width) };
+  const copy = fitCardCopy(candidate.cardCopy || { title: candidate.title, body: candidate.summary }) || copyFor(candidate).copy || { title: wrapCardTitle(candidate.title), body: wrapCardText(candidate.summary, CARD_TEXT.body.width) };
   return { candidateId: candidate.id, title: copy.title, body: copy.body, sourceUrl: candidate.sourceUrl, sourceName: candidate.sourceName, publishedAt: candidate.datePrecision === "time" || usesContentDate(candidate) ? candidate.publishedAt : "", verified: false };
 }
 function editableContent(edition: Edition | null) {

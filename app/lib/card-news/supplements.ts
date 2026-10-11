@@ -2,7 +2,7 @@ import "server-only";
 import { todayData, glossaryTerms } from "../../content";
 import rawExplore from "../../../data/explore.json";
 import { RELEASE_SOURCE_IDS, SITE_URL } from "../../today/newsHelpers";
-import { CARD_TEXT, hasEllipsis, wrapCardText, type CardCopy } from "./copy";
+import { CARD_TEXT, hasEllipsis, wrapCardTitle, type CardCopy } from "./copy";
 import { copyFor } from "./auto-copy";
 import { exactPublishedTime } from "./manual";
 import { kstDate, type NewsCandidate } from "./types";
@@ -14,7 +14,7 @@ function validDay(day: string) {
 }
 function titleFor(original: string, alternative: string): string | null {
   for (const title of [clean(original), clean(alternative)]) {
-    if (title && /[가-힣]/.test(title) && !hasEllipsis(title) && wrapCardText(title, CARD_TEXT.title.width).split("\n").length <= CARD_TEXT.title.lines) return title;
+    if (title && /[가-힣]/.test(title) && !hasEllipsis(title) && wrapCardTitle(title).split("\n").length <= CARD_TEXT.title.lines) return title;
   }
   return null;
 }

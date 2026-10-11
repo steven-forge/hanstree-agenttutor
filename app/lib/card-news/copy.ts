@@ -1,5 +1,5 @@
 export type CardCopy = { title: string; body: string };
-export const CARD_TEXT = { title: { lines: 2, width: 16 }, body: { lines: 7, width: 18 } } as const;
+export const CARD_TEXT = { title: { lines: 2, width: 18 }, body: { lines: 7, width: 18 } } as const;
 // S10 Lime Top Split, 1080x1350. Every y is a CSS line-box top; all renderers center glyphs in the line box.
 export const CARD_LAYOUT = { width: 1080, height: 1350, split: 567, left: 100, contentWidth: 880, headerTop: 90, headerLineHeight: 46, seriesSize: 38, brandSize: 30, titleTop: 250, titleSize: 74, titleLineHeight: 88.8, bodyTop: 650, bodySize: 48, bodyLineHeight: 67.2 } as const;
 export const CARD_COLORS = { lime: "#CCFF00", dark: "#131610", body: "#ECF3DC", source: "#ACB89B" } as const;
@@ -27,6 +27,11 @@ export function wrapCardText(text: string, width: number): string {
   if (line) lines.push(line);
   return lines.join("\n");
 }
+// Title: keep the 16-wide wrap when it fits in 2 lines, otherwise try the 18-wide limit. Never truncates.
+export function wrapCardTitle(text: string): string {
+  const narrow = wrapCardText(text, 16);
+  return narrow.split("\n").length <= CARD_TEXT.title.lines ? narrow : wrapCardText(text, CARD_TEXT.title.width);
+}
 export function copyIssues(copy: CardCopy): string[] {
   const issues: string[] = [];
   for (const key of ["title", "body"] as const) {
@@ -38,7 +43,7 @@ export function copyIssues(copy: CardCopy): string[] {
   return issues;
 }
 export function fitCardCopy(copy: CardCopy): CardCopy | null {
-  const result = { title: wrapCardText(copy.title, CARD_TEXT.title.width), body: wrapCardText(copy.body, CARD_TEXT.body.width) };
+  const result = { title: wrapCardTitle(copy.title), body: wrapCardText(copy.body, CARD_TEXT.body.width) };
   return copyIssues(result).length ? null : result;
 }
 

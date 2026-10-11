@@ -35,8 +35,8 @@ function load(relative) {
   }, {filename: file});
   return module.exports;
 }
-const {selectAutomaticCards, AutoCopyError} = load('app/lib/card-news/auto-copy.ts');
-const {copyIssues, cardFontSize, cardBodyTop, wrapCardText, lineWidth, cardSourceLines, CARD_LAYOUT, CARD_SOURCE} = load('app/lib/card-news/copy.ts');
+const {selectAutomaticCards, AutoCopyError, copyFor} = load('app/lib/card-news/auto-copy.ts');
+const {fitCardCopy, wrapCardTitle, hasEllipsis, copyIssues, cardFontSize, cardBodyTop, wrapCardText, lineWidth, cardSourceLines, CARD_LAYOUT, CARD_SOURCE} = load('app/lib/card-news/copy.ts');
 // S10 geometry and title sizing: no truncation, no extra wraps, text unchanged.
 assert.equal(CARD_LAYOUT.split, 567); assert.equal(CARD_LAYOUT.left, 100); assert.equal(CARD_LAYOUT.contentWidth, 880);
 assert.equal(CARD_LAYOUT.titleTop, 250); assert.equal(CARD_LAYOUT.titleLineHeight, 88.8); assert.equal(cardBodyTop('가\n나'), 650);
@@ -52,6 +52,28 @@ assert.equal(mSource.length, 2); assert.equal(mSource.join('').replace(/\s/g, ''
 assert.ok(cardFontSize(mSource.join('\n'), CARD_SOURCE.fontSize) <= 19);
 assert.equal(wrapCardText(longTitle.replace('\n', ' '), 16), longTitle);
 assert.equal(copyIssues({title: longTitle, body: '본문'}).length, 0);
+// Title wrap: 16 first, 18 only when 16 exceeds two lines; never truncates, overlong stays blocked.
+const asanaTitle = 'Asana, GPT-6.1 SOL로 브라우저 테스트에서 모델 비용 76배 절감';
+assert.equal(wrapCardText(asanaTitle, 16).split('\n').length, 3);
+const asanaWrapped = wrapCardTitle(asanaTitle);
+assert.equal(asanaWrapped, wrapCardText(asanaTitle, 18)); assert.equal(asanaWrapped.split('\n').length, 2);
+assert.equal(asanaWrapped.replace(/\s+/g, ''), asanaTitle.replace(/\s+/g, '')); assert.ok(!hasEllipsis(asanaWrapped));
+assert.equal(cardFontSize(asanaWrapped, 74), 47);
+assert.equal(wrapCardTitle('짧은 제목 확인'), '짧은 제목 확인');
+assert.equal(wrapCardTitle(longTitle.replace('\n', ' ')), longTitle);
+const asanaArticle = readJson('data/today.json').articles.find(a => a.id === '9bf93d58cc35db99');
+assert.ok(asanaArticle && asanaArticle.source_summary_ko, 'Asana source summary must exist');
+const asanaBody = asanaArticle.source_summary_ko;
+const asanaFit = fitCardCopy({title: asanaTitle, body: asanaBody});
+assert.ok(asanaFit, 'Asana copy must fit');
+assert.equal(asanaFit.title.replace(/\s+/g, ''), asanaTitle.replace(/\s+/g, ''));
+assert.equal(asanaFit.body.replace(/\s+/g, ''), asanaBody.replace(/\s+/g, ''));
+assert.ok(asanaFit.body.split('\n').length <= 7);
+assert.equal(copyFor({title: asanaTitle, summary: asanaBody}).copy.title, asanaWrapped);
+const overlong = '가나다라마바사아자차카타파하가나다라마바 사아자차카타파하가나다라마바사아자차 카타파하가나다라마바사아자차카타파하';
+assert.equal(fitCardCopy({title: overlong, body: '본문'}), null);
+assert.ok(copyFor({title: overlong, summary: asanaBody}).reason);
+assert.equal(fitCardCopy({title: '짧은 제목', body: '가'.repeat(18 * 7 + 1)}), null);
 const {collectEdition} = load('app/lib/card-news/collect.ts');
 const {supplementCandidates} = load('app/lib/card-news/supplements.ts');
 const {candidateUrlKey} = load('app/lib/card-news/manual.ts');
