@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { todayData, newsEditorial } from "../../content";
 import preparedCopy from "../../../data/card-news-copy.json";
 import { fitCardCopy } from "./copy";
+import { copyFor } from "./auto-copy";
 import { RELEASE_SOURCE_IDS } from "../../today/newsHelpers";
 import { captionFor, preserveDraft, MAX_CANDIDATES, type Edition, type NewsCandidate } from "./types";
 import { AdminError } from "./server";
@@ -45,7 +46,8 @@ export async function collectEdition(date: string, old: Edition | null): Promise
       const sourceHash = createHash("sha256").update(JSON.stringify([c.title, c.summary])).digest("hex").slice(0, 24);
       const prepared = (preparedCopy as Record<string, { sourceHash: string; title: string; body: string }>)[a.id];
       const copy = prepared?.sourceHash === sourceHash ? prepared : { title: c.title, body: newsEditorial.articles?.[a.id]?.reading?.summary_ko || c.summary };
-      const cardCopy = fitCardCopy(copy);
+      // A long summary falls back to its complete Korean lead sentences, never a cut-off body.
+      const cardCopy = fitCardCopy(copy) || copyFor({ title: c.title, summary: copy.body }).copy;
       unique.set(c.sourceUrl, { ...c, newsletterId: a.id, ...(cardCopy ? { cardCopy } : {}) });
     }
   }

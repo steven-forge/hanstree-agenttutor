@@ -208,6 +208,25 @@ check('different English terms sharing a Korean translation keep distinct usable
 (async () => {
   const actualNow = new Date(), date = new Date(actualNow.getTime() + 9 * 3600000).toISOString().slice(0, 10);
   const edition = await collectEdition(date, null);
+  // Collection: valid prepared 2/7 copy, complete-lead summary fallback, oversized Korean kept whole (never cut or blanked).
+  const verge = edition.candidates.find(item => item.newsletterId === 'd55dd9b285d68fe3');
+  assert.ok(verge && verge.cardCopy, 'prepared Verge copy must apply'); assert.equal(copyIssues(verge.cardCopy).length, 0);
+  assert.equal(verge.cardCopy.title.split('\n').length, 2); assert.ok(verge.cardCopy.body.split('\n').length <= 7); assert.match(verge.cardCopy.body, /해고 사유로 밝혔다/);
+  const sentence = i => `회사는 ${i}번째 안전 점검 결과를 공개했다.`;
+  const longLead = Array.from({length: 9}, (_, i) => sentence(i + 1)).join(' ');
+  const oversized = '중요한 수치와 조건을 설명하며 '.repeat(12) + '발표했다.';
+  const stamp = new Date(actualNow.getTime() - 3600000).toISOString(), originalArticles = content.todayData.articles;
+  try {
+    content.todayData.articles = [
+      {id: 'lead-fallback', title: '안전 점검 결과 공개', summary: longLead, source_id: 'news', source_name: '출처', source_url: 'https://example.org/lead', published_at: stamp},
+      {id: 'oversized', title: '안전 점검 결과 공개', summary: oversized, source_id: 'news', source_name: '출처', source_url: 'https://example.org/oversized', published_at: stamp},
+    ];
+    const {candidates} = await collectEdition(date, null);
+    const lead = candidates.find(item => item.newsletterId === 'lead-fallback'), big = candidates.find(item => item.newsletterId === 'oversized');
+    const flat = lead.cardCopy.body.replace(/\s+/g, ' ');
+    assert.equal(copyIssues(lead.cardCopy).length, 0); assert.ok(flat.length < longLead.length && longLead.startsWith(flat) && /\.$/.test(flat) && !/[…]/.test(flat));
+    assert.equal(big.cardCopy, undefined); assert.equal(big.summary, oversized);
+  } finally { content.todayData.articles = originalArticles; }
   const supplements = supplementCandidates(date);
   const summaries = [];
   for (const hours of [72, 168, 336, 720]) {
