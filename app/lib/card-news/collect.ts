@@ -47,7 +47,7 @@ export async function collectEdition(date: string, old: Edition | null): Promise
       const prepared = (preparedCopy as Record<string, { sourceHash: string; title: string; body: string }>)[a.id];
       const copy = prepared?.sourceHash === sourceHash ? prepared : { title: c.title, body: newsEditorial.articles?.[a.id]?.reading?.summary_ko || c.summary };
       // A long summary falls back to its complete Korean lead sentences, never a cut-off body.
-      const cardCopy = fitCardCopy(copy) || copyFor({ title: c.title, summary: copy.body }).copy;
+      const cardCopy = fitCardCopy(copy) || copyFor({ title: c.title, summary: copy.body, cardCopy: copy }).copy;
       unique.set(c.sourceUrl, { ...c, newsletterId: a.id, ...(cardCopy ? { cardCopy } : {}) });
     }
   }

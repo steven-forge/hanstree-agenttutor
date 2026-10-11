@@ -227,6 +227,81 @@ check('different English terms sharing a Korean translation keep distinct usable
     assert.equal(failed(terms).eligibleCount, 2);
   } finally { content.glossaryTerms = original; }
 });
+// Conservative compression: compare primitive fields only (the module runs in another VM context).
+const {compressKorean} = load('app/lib/card-news/auto-copy.ts');
+const compressionSamples = [];
+const bodyLines = text => wrapCardText(text, 18).split('\n').length;
+const sample = (kind, before, after) => compressionSamples.push({kind, before: String(before).replace(/\n/g, ' '), after: String(after).replace(/\n/g, ' ')});
+// Realistic news-style sentences. The body is 8 wrapped lines as written (the final "진행했습니다." wraps alone) and
+// 7 lines after the wording "점검을 진행했습니다" becomes "점검을 했다"; the title is 3 lines before and 2 after.
+const realBody = '국내 반도체 업체는 지난달 사내 인공지능 서버실의 전력 사용량과 냉각 설비 운영 효율을 높일 방안을 마련하기 위해 외부 전문 기관과 함께 사내 서버실 전체 전력 설비의 노후 장비를 교체하기로 하고 이달부터 전면 안전 점검을 진행했습니다.';
+const realTitle = '인공지능 서버실 전력 설비 노후 장비 교체와 전면 안전 점검을 진행했습니다';
+const realBodyAfter = realBody.replace('점검을 진행했습니다.', '점검을 했다.');
+check('fixtures are genuinely over the limits before compression', () => {
+  assert.equal(bodyLines(realBody), 8); assert.equal(bodyLines(realBodyAfter), 7);
+  assert.ok(wrapCardTitle(realTitle).split('\n').length > 2);
+});
+check('overlong Korean title becomes two complete lines', () => {
+  const copy = copyFor({title: realTitle, summary: '확인한 내용을 공개했습니다.'}).copy;
+  assert.ok(copy && copy.title.split('\n').length <= 2 && copyIssues(copy).length === 0);
+  assert.equal(copy.title.replace(/\s/g, ''), realTitle.replace('점검을 진행했습니다', '점검을 했다').replace(/\s/g, '')); assert.ok(!hasEllipsis(copy.title));
+  sample('title', realTitle, copy.title);
+});
+check('overlong first sentence becomes seven lines and keeps every content word', () => {
+  const candidateItem = Object.freeze({title: '안전 점검 결과 공개', summary: realBody});
+  assert.equal(fitCardCopy({title: '안전 점검 결과 공개', body: realBody}), null);
+  const result = copyFor(candidateItem), flat = result.copy.body.replace(/\s+/g, ' ');
+  assert.equal(result.source, 'summary'); assert.ok(result.copy.body.split('\n').length <= 7); assert.equal(copyIssues(result.copy).length, 0);
+  assert.equal(flat, realBodyAfter); assert.ok(!/[…]|\.\.\./.test(flat));
+  assert.equal(candidateItem.summary, realBody);
+  sample('summary', realBody, flat);
+});
+check('overlong prepared copy is compressed before falling back', () => {
+  const result = copyFor({title: '원래 후보 제목', summary: '원래 후보 요약은 다른 문장입니다.', cardCopy: {title: realTitle, body: realBody}});
+  assert.equal(result.source, 'prepared'); assert.equal(copyIssues(result.copy).length, 0);
+  assert.ok(result.copy.title.replace(/\s/g, '').endsWith('안전점검을했다')); assert.equal(result.copy.body.replace(/\s+/g, ' '), realBodyAfter);
+  sample('prepared', `${realTitle} / ${realBody}`, `${result.copy.title} / ${result.copy.body}`);
+});
+check('already fitting copy is returned exactly as before', () => {
+  const fit = copyFor({title: '우주 관측 모델 공개', summary: '확인한 내용을 공개했습니다. 이용 조건도 함께 밝혔습니다.'}).copy;
+  assert.equal(fit.title, '우주 관측 모델 공개'); assert.equal(fit.body.replace(/\n/g, ' '), '확인한 내용을 공개했습니다. 이용 조건도 함께 밝혔습니다.');
+  assert.equal(copyFor({title: '짧은 제목', summary: '확인한 내용을 공개했습니다.', cardCopy: {title: '준비한 제목', body: '준비한 본문을 그대로 사용합니다.'}}).copy.body.replace(/\n/g, ' '), '준비한 본문을 그대로 사용합니다.');
+});
+check('compression keeps names, numbers, bounds, negation, plans, claims and quotes', () => {
+  const cases = [
+    ['GPT-6.1 SOL은 비용을 최대 76배까지 줄일 수 있다고 회사가 주장했습니다.', 'GPT-6.1 SOL은 비용을 최대 76배까지 줄일 수 있다고 회사가 주장했다.'],
+    ['업체는 올해 도입 계획이 없습니다.', '업체는 올해 도입 계획이 없다.'],
+    ['출시는 내년 이후로 검토 중이며 예정입니다.', '출시는 내년 이후로 검토 중이며 예정이다.'],
+    ['이 기능은 일부 지역에서 제공되지 않습니다.', '이 기능은 일부 지역에서 제공되지 않습니다.'],
+    ['정부는 “안전하다고 판단합니다.” 라고 전망했습니다.', '정부는 “안전하다고 판단합니다.” 라고 전망했다.'],
+    ['한화솔루션은 점검을 진행했습니다. 또한 결과를 공개합니다.', '한화솔루션은 점검을 했다. 또한 결과를 공개한다.'],
+    ['AI의 이름을 바꾸려는 트럼프의 시도는 끔찍하게 인위적으로 보입니다.', 'AI의 이름을 바꾸려는 트럼프의 시도는 끔찍하게 인위적으로 보인다.'],
+    ['이 설정은 비용을 크게 줄입니다. 이 규정은 필요합니다.', '이 설정은 비용을 크게 줄입니다. 이 규정은 필요합니다.'],
+    ['LibreOffice는 ‘no AI’ 가 이제 소프트웨어 기능이라고 말합니다.', 'LibreOffice는 ‘no AI’ 가 이제 소프트웨어 기능이라고 말한다.'],
+    ["회사는 'open-source' 모드를 3개 모델에 지원합니다.", "회사는 'open-source' 모드를 3개 모델에 지원한다."],
+    ['새로운 점검을 진행했습니다.', '새로운 점검을 했다.'],
+    ['회사에 맞는 교육을 실시했습니다.', '회사에 맞는 교육을 했다.'],
+    ['이 모델은 이미 공개된 것입니다.', '이 모델은 이미 공개된 것이다.'],
+  ];
+  for (const [before, after] of cases) assert.equal(compressKorean(before), after);
+  sample('semantic', cases[0][0], compressKorean(cases[0][0])); sample('semantic', cases[4][0], compressKorean(cases[4][0]));
+  sample('semantic', cases[6][0], compressKorean(cases[6][0])); sample('semantic', cases[8][0], compressKorean(cases[8][0]));
+});
+check('compressed output still cannot drop a following limitation sentence', () => {
+  const result = failed([{...candidate(0), summary: '새 기능을 공개했습니다. 다만 ' + '이러한 중요한 이용 제한을 설명하며 '.repeat(15) + '추가 확인이 필요합니다.'}]);
+  assert.equal(result.eligibleCount, 0); assert.match(result.excluded[0].reason, /조건·제한/);
+});
+check('incompressible long copy still fails with a concrete reason', () => {
+  const result = copyFor({title: '안전 점검 결과 공개', summary: '중요한 수치와 조건을 설명하며 '.repeat(30) + '발표했습니다.'});
+  assert.equal(result.copy, undefined); assert.match(result.reason, /첫 핵심 문장/);
+});
+check('automatic selection compresses without changing candidate or review state', () => {
+  const summary = realBody, input = titles.slice(0, 10).map((_, i) => candidate(i));
+  input[0] = {...input[0], summary};
+  const result = selectAutomaticCards(input, [], now);
+  const card = result.cards.find(item => item.candidateId === 'fixture-0');
+  assert.ok(card && card.verified === false && copyIssues(card).length === 0); assert.equal(input[0].summary, summary);
+});
 (async () => {
   const actualNow = new Date(), date = new Date(actualNow.getTime() + 9 * 3600000).toISOString().slice(0, 10);
   const edition = await collectEdition(date, null);
@@ -284,5 +359,5 @@ check('different English terms sharing a Korean translation keep distinct usable
     }
     withSupplements.push({hours, eligible: result.eligibleCount, selected: result.cards.length, origins, eligibleByOrigin});
   }
-  console.log(JSON.stringify({checks, passed: true, at: actualNow.toISOString(), newsletterCandidates: edition.candidates.length, supplements: {release: supplements.filter(c => c.origin === 'release').length, glossary: supplements.filter(c => c.origin === 'glossary').length, explore: supplements.filter(c => c.origin === 'explore').length}, actualData: summaries, withSupplements, externalRequests: 0}, null, 2));
+  console.log(JSON.stringify({checks, passed: true, compressionSamples, at: actualNow.toISOString(), newsletterCandidates: edition.candidates.length, supplements: {release: supplements.filter(c => c.origin === 'release').length, glossary: supplements.filter(c => c.origin === 'glossary').length, explore: supplements.filter(c => c.origin === 'explore').length}, actualData: summaries, withSupplements, externalRequests: 0}, null, 2));
 })().catch(error => { console.error(error); process.exitCode = 1; });
