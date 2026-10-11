@@ -490,12 +490,25 @@ class ArticleBodyExtractor(HTMLParser):
         self.ignored_tags = {"script", "style", "nav", "header", "footer", "aside", "noscript"}
         self.ignore_depth = 0
         self.scope_depth = 0
+        self.skip_tag = None  # 작성자 카드 컨테이너의 태그명. 같은 태그명의 중첩만 세어 void/미닫힘 태그에 영향받지 않는다.
+        self.skip_depth = 0
         self.capture_tag = None
         self.buffer: list[str] = []
         self.blocks: list[str] = []
 
+    SKIP_CLASSES = frozenset({"wp-block-tc23-author-card", "wp-block-tc23-author-card-bio"})
+    VOID_TAGS = frozenset({"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"})
+
     def handle_starttag(self, tag, attrs):
         t = tag.lower()
+        if self.skip_depth > 0:
+            if t == self.skip_tag:
+                self.skip_depth += 1
+            return
+        if t not in self.VOID_TAGS and self.SKIP_CLASSES.intersection((dict(attrs).get("class") or "").split()):
+            self.skip_tag, self.skip_depth = t, 1
+            self.capture_tag, self.buffer = None, []
+            return
         if t in self.ignored_tags:
             self.ignore_depth += 1
             return
@@ -510,6 +523,10 @@ class ArticleBodyExtractor(HTMLParser):
 
     def handle_endtag(self, tag):
         t = tag.lower()
+        if self.skip_depth > 0:
+            if t == self.skip_tag:
+                self.skip_depth -= 1
+            return
         if t in self.ignored_tags:
             if self.ignore_depth > 0:
                 self.ignore_depth -= 1
@@ -526,7 +543,7 @@ class ArticleBodyExtractor(HTMLParser):
             self.buffer = []
 
     def handle_data(self, data):
-        if self.ignore_depth > 0 or self.scope_depth == 0 or self.capture_tag is None:
+        if self.skip_depth > 0 or self.ignore_depth > 0 or self.scope_depth == 0 or self.capture_tag is None:
             return
         self.buffer.append(data)
 

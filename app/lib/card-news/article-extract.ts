@@ -26,6 +26,8 @@ export function extractArticle(html: string, sourceUrl: string): ExtractedArticl
     const section = heading.closest('section, aside, [role="complementary"]');
     if (section && section.querySelector("h1, h2, h3") === heading && !section.querySelector("article")) section.remove();
   });
+  // TechCrunch author cards sit inside the story and would be scored as body text.
+  document.querySelectorAll(".wp-block-tc23-author-card, .wp-block-tc23-author-card-bio").forEach(element => element.remove());
   const article = new Readability(document as unknown as Document, { charThreshold: 80, maxElemsToParse: 20000 }).parse();
   const title = article?.title?.replace(/\s+/g, " ").trim() || "";
   if (!article?.content || !title || /^(just a moment|access denied|attention required|captcha)/i.test(title)) throw new ArticleExtractionError("원문에서 기사 제목과 본문을 찾지 못했습니다. 주소를 확인하거나 직접 입력해 주세요.");

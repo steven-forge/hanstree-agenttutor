@@ -403,6 +403,26 @@ def check_extract_full_text_data_excerpt_success() -> None:
     assert partial["summary_lines"] is None and partial["excerpt"], "요약 번역 실패가 성공 가능한 발췌를 막았다."
 
 
+def check_article_body_excludes_exact_author_card() -> None:
+    def blocks(html: str) -> list[str]:
+        parser = collect_content.ArticleBodyExtractor()
+        parser.feed(html)
+        return parser.blocks
+
+    html = (
+        "<article><p>Before story.</p>"
+        '<div class="x wp-block-tc23-author-card"><img src="a.jpg"><br><img src="b.jpg"/><br/>'
+        '<span>Name</span><div class="wp-block-tc23-author-card-bio"><div><p>Reporter bio text.</p></div></div>'
+        "<p>Second bio paragraph.</p></div>"
+        "<p>After story.</p></article>"
+    )
+    assert blocks(html) == ["Before story.", "After story."], "작성자 카드가 제외되지 않았거나 이후 본문이 사라졌다."
+    kept = '<article><div class="wp-block-tc23-author-cardigan"><p>The reporters said so.</p></div></article>'
+    assert blocks(kept) == ["The reporters said so."], "정확히 일치하지 않는 class가 제외되었다."
+    bare = "<article><div class><p>Keep article text.</p></div></article>"
+    assert blocks(bare) == ["Keep article text."], "값 없는 class 속성에서 본문이 사라졌거나 예외가 발생했다."
+
+
 def check_extract_full_text_data_long_excluded_and_quote_failure_visible() -> None:
     calls = []
 
@@ -502,6 +522,7 @@ def main() -> None:
     check_editorial_links_resolve()
     print("[OK] apply_reviewed_edition, 용어집 링크 무결성 점검 통과")
 
+    check_article_body_excludes_exact_author_card()
     check_extract_full_text_data_excerpt_success()
     check_extract_full_text_data_long_excluded_and_quote_failure_visible()
     check_extract_full_text_data_prefetched_skips_fetch()

@@ -234,6 +234,10 @@ check('different English terms sharing a Korean translation keep distinct usable
   const verge = edition.candidates.find(item => item.newsletterId === 'd55dd9b285d68fe3');
   assert.ok(verge && verge.cardCopy, 'prepared Verge copy must apply'); assert.equal(copyIssues(verge.cardCopy).length, 0);
   assert.equal(verge.cardCopy.title.split('\n').length, 2); assert.ok(verge.cardCopy.body.split('\n').length <= 7); assert.match(verge.cardCopy.body, /해고 사유로 밝혔다/);
+  const holmes = edition.candidates.find(item => item.newsletterId === '24278ccc21fb5421');
+  assert.ok(holmes && holmes.cardCopy, 'prepared Holmes copy must apply'); assert.equal(copyIssues(holmes.cardCopy).length, 0);
+  assert.ok(holmes.cardCopy.title.split('\n').length <= 2 && holmes.cardCopy.body.split('\n').length <= 7);
+  assert.match(holmes.cardCopy.body, /1천/); assert.doesNotMatch(holmes.cardCopy.body, /기자|reporter/i);
   const sentence = i => `회사는 ${i}번째 안전 점검 결과를 공개했다.`;
   const longLead = Array.from({length: 9}, (_, i) => sentence(i + 1)).join(' ');
   const oversized = '중요한 수치와 조건을 설명하며 '.repeat(12) + '발표했다.';
