@@ -94,7 +94,7 @@ export default function AutomationSettings(props: Props) {
       setView(result);
       if (action === "stop" && latest.current.dirty) setDraft(previous => ({ ...previous, enabled: false, revision: result.settings.revision }));
       else if (action === "save" || action === "stop" || !latest.current.dirty) setDraft(result.settings);
-      setNotice(action === "stop" ? "정기 예약을 중지했습니다. 대기 중인 테스트는 별도로 취소하세요. 이미 시작된 게시 요청은 되돌리지 않습니다." : action === "save" ? "예약 설정을 저장했습니다." : action === "cancel_test" ? "테스트 취소 요청을 처리했습니다. 이미 시작된 게시 요청은 되돌리지 않습니다." : action === "prepare" ? "오늘 판본의 제작 요청을 처리했습니다. 아래 최근 실행 결과를 확인하세요. 현재 편집 화면은 유지됩니다." : "실제 테스트 발행을 요청했습니다. 아래에서 발행 결과와 대기 사유를 확인하세요.");
+      setNotice(action === "stop" ? "정기 예약을 중지했습니다. 대기 중인 테스트는 별도로 취소하세요. 이미 시작된 게시 요청은 되돌리지 않습니다." : action === "save" ? "예약 설정을 저장했습니다." : action === "cancel_test" ? "테스트 취소 요청을 처리했습니다. 이미 시작된 게시 요청은 되돌리지 않습니다." : action === "prepare" ? "오늘 판본의 제작 요청을 처리했습니다. 아래 최근 실행 결과를 확인하세요. 오늘 판본은 카드뉴스 관리 화면에서 확인하세요." : "실제 테스트 발행을 요청했습니다. 아래에서 발행 결과와 대기 사유를 확인하세요.");
       if (action === "prepare" || action === "test") latest.current.props.onPrepared();
     } catch (caught) {
       if (mounted.current) setError(caught instanceof Error && caught.name !== "TimeoutError" ? caught.message : "응답을 확인하지 못했습니다. 요청이 진행 중일 수 있으니 다시 요청하기 전에 예약 상태를 새로 확인하세요.");
@@ -111,7 +111,7 @@ export default function AutomationSettings(props: Props) {
   const tickWarn = !!view && (view.settings.enabled || !!run?.testRequested) && !(Date.parse(view.checkedAt) - tick <= 15 * 60000);
   return <section className="cn-panel cn-automation" aria-labelledby="cn-automation-heading" aria-busy={loading || checking || !!busy}>
     <div className="cn-section-head"><div><h2 id="cn-automation-heading">매일 자동 제작과 예약 발행</h2><p className="cn-muted">뉴스를 우선 선정해 카드 10장을 만듭니다. 부족하면 미발행 릴리스 → 용어사전 → Explore 순으로 보충합니다.</p></div>{view && <span className={`cn-tag ${view.settings.enabled && view.schedulerConfigured ? "cn-tag-ok" : ""}`}>{view.settings.enabled ? view.schedulerConfigured ? "정기 예약 켜짐 · 실행 기록 확인" : "예약 저장됨 · 실행 연결 필요" : "정기 예약 꺼짐"}</span>}</div>
-    {props.localMode ? <p className="cn-alert cn-alert-info">자동 제작과 예약 발행에는 서버 저장소가 필요합니다. 현재는 이 브라우저에서 직접 카드 원고를 만들 수 있습니다. 서버 저장소와 <a className="cn-text-link" href="/admin/news/instagram">Instagram 연결</a>을 준비한 뒤 이용하세요.</p> : <>
+    {props.localMode ? <p className="cn-alert cn-alert-info">자동 제작과 예약 발행에는 서버 저장소가 필요합니다. 현재는 <a className="cn-text-link" href="/admin/news">카드뉴스 관리</a>에서 이 브라우저에 직접 카드 원고를 만들 수 있습니다. 서버 저장소와 위 연결 상태를 준비한 뒤 이용하세요.</p> : <>
       {loading && <p className="cn-help" role="status">예약 상태를 불러오는 중…</p>}
       {error && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
       {statusError && statusError !== error && <p className="cn-alert cn-alert-error" role="alert">{statusError}</p>}

@@ -7,7 +7,6 @@ import { fitCardCopy, copyIssues, CARD_TEXT, CARD_LAYOUT, CARD_SOURCE, cardBodyT
 import { localAction, localBundle, localImage, localSnapshot } from "../../lib/card-news/local";
 import type { ExtractedArticle } from "../../lib/card-news/article-extract";
 import PublicationProgress, { publicationSummary } from "./PublicationProgress";
-import AutomationSettings from "./AutomationSettings";
 import "./admin-news.css";
 
 const API = "/api/admin/news";
@@ -16,7 +15,6 @@ const STATUS: Record<Edition["status"], string> = {
 };
 const ACTION_LABEL: Record<string, string> = {
   create_webtoon: "기존 웹툰을 발행 원고로 불러오는 중…",
-  automation: "자동 제작·예약 요청을 처리하는 중…",
   add_manual: "직접 입력한 뉴스를 등록하는 중…",
   extract: "원문을 요약하고 제목과 본문을 한국어로 옮기는 중…",
   compose: "카드용 요약을 적용하는 중…", load: "판본을 불러오는 중…", collect: "뉴스레터를 불러오는 중…", save: "원고를 저장하는 중…", zip: "JPG를 묶는 중…", import: "원고 파일을 확인하고 가져오는 중…",
@@ -428,14 +426,14 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
 
   return <main className="cn-shell cn-admin-shell">
     <header className="cn-header">
-      <div><p className="cn-eyebrow">AgentTutor · {series}</p><h1>{explore ? "Explore 웹툰 발행" : "카드뉴스 관리"}</h1><p className="cn-muted">{explore ? explore.title : "뉴스 카드 10장을 직접 만들거나 매일 자동 제작과 Instagram 예약 발행을 설정합니다."}</p></div>
+      <div><p className="cn-eyebrow">AgentTutor · {series}</p><h1>{explore ? "Explore 웹툰 발행" : "카드뉴스 관리"}</h1><p className="cn-muted">{explore ? explore.title : "뉴스 카드 10장을 직접 만들고 검토해 발행합니다."}</p></div>
       <button className="cn-button" onClick={() => act("logout")} disabled={!!pending}>로그아웃</button>
     </header>
 
     {localMode && <div className="cn-alert cn-alert-info"><strong>관리자 로그인됨 · 이 브라우저에 저장</strong><p>Instagram 연결 전에 뉴스 선정과 카드 제작을 할 수 있습니다. 원고는 현재 브라우저에만 저장되며, 기기를 바꾸거나 브라우저 데이터를 삭제하면 사용할 수 없습니다. JSON 내보내기로 원고를 보관하세요.</p><p>로그아웃해도 저장한 원고는 유지됩니다. 다시 관리자 비밀번호로 로그인하면 이어서 작업할 수 있습니다.</p><div className="cn-publish-actions"><button className="cn-button cn-button-small" onClick={exportJson} disabled={!edition || !!pending}>원고 JSON 내보내기</button><button className="cn-button cn-button-small" onClick={() => importInput.current?.click()} disabled={!!pending || locked}>원고 JSON 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={importJson} /></div></div>}
 
     <p><a className="cn-text-link" href="/admin/news/settings">뉴스레터 기준 설정으로 이동 →</a></p>
-    <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결 관리로 이동 →</a></p>
+    <p><a className="cn-text-link" href="/admin/news/instagram">Instagram 연결·자동 제작과 예약 발행으로 이동 →</a></p>
 
     {!explore && <p><a className="cn-text-link" href="/admin/news/explore">Explore 웹툰 발행으로 이동 →</a></p>}
     {explore && <section className="cn-panel" aria-labelledby="cn-explore-heading">
@@ -446,8 +444,6 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       <div className="cn-publish-actions"><button className="cn-button cn-button-primary" onClick={openExplore} disabled={!!pending || unsaved || localMode || sessionExpired || !snapshot.setup.storage || !pickedExplore}>선택한 문서의 웹툰 불러오기</button>{pickedExplore && <a className="cn-text-link" href={`/explore/${encodeURIComponent(pickedExplore)}`} target="_blank" rel="noopener noreferrer">문서 보기</a>}{explore && <a className="cn-text-link" href="/admin/news">일일 뉴스 관리로 돌아가기</a>}</div>
       <p className="cn-help">처음 열면 등록된 웹툰 이미지를 불러옵니다. 저장한 웹툰 원고가 있으면 그대로 엽니다. 기존 텍스트 초안은 정리하며, 발행은 검토 후 진행합니다.{unsaved && " 현재 원고를 먼저 저장하거나 입력을 비워 주세요."}{localMode && " Explore 원고에는 서버 저장소 연결이 필요합니다."}</p>
     </section>}
-
-    {!explore && <AutomationSettings localMode={localMode} parentBusy={!!pending} unsaved={unsaved} sessionExpired={sessionExpired} onExpired={() => setSessionExpired(true)} onBusyChange={busy => { operation.current = busy; setPending(busy ? "automation" : ""); }} onPrepared={() => setMessage("자동 제작·발행 요청 뒤에도 현재 원고 화면을 유지했습니다. 판본 날짜를 확인하고 ‘상태 새로 확인’을 눌러 저장된 결과를 불러오세요.")} />}
 
     <section className="cn-panel" aria-label="날짜와 판본 상태">
       <div className="cn-toolbar">
@@ -466,7 +462,7 @@ export default function AdminNews({ initial, initialDate, localMode = false, exp
       {!explore && <p className="cn-help"><a className="cn-text-link" href="/today" target="_blank" rel="noopener noreferrer">뉴스레터 열기</a> · 뉴스레터·직접 등록 뉴스를 우선 사용하고, 자동 제작 시 부족하면 릴리스·용어·Explore로 보충합니다. 목록은 중요도 순위가 아닙니다.</p>}
       {retainedCount > 0 && <p className="cn-alert cn-alert-info">이전 후보 {retainedCount}개는 원고 보존용으로 남겨 두었습니다. 새 뉴스레터 후보 수에는 포함하지 않으며, 해당 카드는 뉴스레터 후보로 다시 선정해야 합니다.</p>}
       {edition && !edition.candidateSource && !explore && <p className="cn-alert cn-alert-info">이전 방식으로 저장한 판본입니다. 뉴스레터 다시 불러오기를 누르면 저장한 카드와 설명을 유지하며 후보를 갱신합니다.</p>}
-      <p className="cn-help">{explore ? "웹툰의 그림·말풍선과 게시글 설명을 확인하세요. 검토 후 발행 버튼으로 게시하며, 최근 Instagram 게시 후 최소 1시간이 지나야 합니다." : "직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 위 예약 설정에서 확인하세요."}</p>
+      <p className="cn-help">{explore ? "웹툰의 그림·말풍선과 게시글 설명을 확인하세요. 검토 후 발행 버튼으로 게시하며, 최근 Instagram 게시 후 최소 1시간이 지나야 합니다." : "직접 편집한 원고는 검토 후 아래 발행 버튼으로 게시합니다. 매일 자동 제작·발행 여부와 시간은 Instagram 연결 페이지에서 확인하세요."}</p>
       {edition?.automation && <p className="cn-alert cn-alert-info">자동 제작된 판본입니다. 날짜·중복·글 길이를 자동 점검했으며, 사람이 원문을 검토한 것으로 표시하지 않습니다. 원고를 수정·저장하면 자동 발행 대상에서 빠지고 다시 검토해야 합니다.</p>}
       {pending && <p className="cn-alert cn-alert-info" role="status">{ACTION_LABEL[pending] || "처리 중…"}</p>}
       {error && <div className="cn-alert cn-alert-error" role="alert"><p>{error}</p>{sessionExpired && <button className="cn-button cn-button-small" onClick={() => { if (!unsaved || window.confirm("저장하지 않은 원고와 등록 중인 입력은 사라집니다. 따로 보관했다면 로그인 화면으로 이동할까요?")) { suppressUnload.current = true; window.location.reload(); } }}>다시 로그인</button>}</div>}

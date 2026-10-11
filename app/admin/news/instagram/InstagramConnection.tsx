@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { ConnectionView } from "../../../lib/card-news/instagram-connection";
+import AutomationSettings from "../AutomationSettings";
 import "../admin-news.css";
 
 const API = "/api/admin/news/instagram";
@@ -20,7 +21,9 @@ function stateLabel(view: ConnectionView) {
   return "연결 안 됨";
 }
 
-export default function InstagramConnection({ initial }: { initial: ConnectionView | null }) {
+export default function InstagramConnection({ initial, storage }: { initial: ConnectionView | null; storage: boolean }) {
+  const [automationBusy, setAutomationBusy] = useState(false);
+  const [prepared, setPrepared] = useState(false);
   const [view, setView] = useState<ConnectionView | null>(initial);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -43,6 +46,7 @@ export default function InstagramConnection({ initial }: { initial: ConnectionVi
     return data as { view?: ConnectionView; url?: string; result?: { ok: boolean; message: string } };
   }
   async function reload() {
+    if (busy || automationBusy || loginNeeded) return;
     setBusy(true); setError("");
     try { const data = await request(); if (data.view) setView(data.view); }
     catch (caught) { setError(caught instanceof Error ? caught.message : "연결 상태를 불러오지 못했습니다."); }
@@ -51,7 +55,7 @@ export default function InstagramConnection({ initial }: { initial: ConnectionVi
   useEffect(() => { if (!initial) void reload(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function call(action: string, extra: Record<string, unknown> = {}) {
-    if (busy) return;
+    if (busy || automationBusy || loginNeeded) return;
     setBusy(true); setError(""); setMessage(""); setReturned(null);
     try {
       const data = await request({ method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action, ...extra }) });
@@ -71,17 +75,18 @@ export default function InstagramConnection({ initial }: { initial: ConnectionVi
     : { ok: false, text: "새 연결이 저장된 것을 확인하지 못했습니다. 아래 연결 상태를 확인하고 필요하면 다시 연결해 주세요." };
   const active = view?.state === "active";
   const needsReconnect = view?.state === "expired" || (view?.state === "unreadable" && view.source === "oauth");
+  const locked = busy || automationBusy || loginNeeded;
   const refreshable = active && view?.source === "oauth" && !!view.obtainedAt && Date.now() - Date.parse(view.obtainedAt) >= 24 * 3600000;
 
   return <main className="cn-shell">
-    <header className="cn-header"><div><p className="cn-eyebrow">AgentTutor · 카드뉴스</p><h1>Instagram 연결</h1><a className="cn-text-link" href="/admin/news">← 카드뉴스 관리로 돌아가기</a></div></header>
+    <header className="cn-header"><div><p className="cn-eyebrow">AgentTutor · 카드뉴스</p><h1>Instagram 연결·자동 제작과 예약 발행</h1><a className="cn-text-link" href="/admin/news">← 카드뉴스 관리로 돌아가기</a></div></header>
     <section className="cn-panel" aria-labelledby="ig-heading">
       <h2 id="ig-heading">연결 상태</h2>
       {loginNeeded && <p className="cn-alert cn-alert-error" role="alert">관리자 로그인이 만료되었습니다. <a className="cn-text-link" href="/admin/news/instagram">다시 로그인하기</a></p>}
       {returnNotice && <p className={`cn-alert ${returnNotice.ok ? "cn-alert-success" : "cn-alert-error"}`} role="status">{returnNotice.text}</p>}
       {error && !loginNeeded && <p className="cn-alert cn-alert-error" role="alert">{error}</p>}
       {message && <p className="cn-alert cn-alert-success" role="status">{message}</p>}
-      {!view ? <p className="cn-muted">{error ? "연결 상태를 불러오지 못했습니다." : "불러오는 중…"} <button className="cn-button cn-button-small" onClick={reload} disabled={busy}>다시 불러오기</button></p> : <>
+      {!view ? <p className="cn-muted">{error ? "연결 상태를 불러오지 못했습니다." : "불러오는 중…"} <button className="cn-button cn-button-small" onClick={reload} disabled={locked}>다시 불러오기</button></p> : <>
         <ul className="cn-setup-list">
           <li><span>연결 설정</span><span style={{ flexShrink: 1, textAlign: "right" }} className={`cn-tag ${active ? "cn-tag-ok" : "cn-tag-warn"}`}>{stateLabel(view)}</span></li>
           <li><span>실제 계정 확인</span><span style={{ flexShrink: 1, textAlign: "right" }} className={`cn-tag ${view.lastCheckStatus === "ok" ? "cn-tag-ok" : "cn-tag-warn"}`}>{view.lastCheckStatus === "ok" ? `확인됨 · @${view.username || "이름 없음"} · ${time(view.lastCheckedAt)}` : view.lastCheckStatus === "error" ? `확인 실패 · ${time(view.lastCheckedAt)}` : "아직 확인하지 않음"}</span></li>
@@ -99,15 +104,15 @@ export default function InstagramConnection({ initial }: { initial: ConnectionVi
         </div>
         {needsReconnect && <p className="cn-alert">{view.state === "expired" ? "연결이 만료되어 갱신할 수 없습니다." : "저장된 연결을 읽을 수 없습니다. 서버의 서명 비밀값이 바뀌었을 수 있습니다."} {view.appConfigured ? "‘다시 연결’을 눌러 Instagram에서 다시 동의해 주세요." : "아래 ‘연결 준비 상태’의 부족한 설정을 먼저 등록한 뒤 다시 연결해 주세요."} 필요 없는 연결이라면 ‘이 사이트 연결 해제’로 지울 수 있습니다.</p>}
         <div className="cn-publish-actions">
-          <button className={`cn-button ${!active || needsReconnect ? "cn-button-primary" : ""}`} onClick={() => call("start")} disabled={busy || !view.appConfigured}>{view.stored ? "다시 연결" : "Instagram 연결"}</button>
-          <button className={`cn-button ${active ? "cn-button-primary" : ""}`} onClick={() => call("verify")} disabled={busy || !active}>연결 확인</button>
-          {view.source === "oauth" && <button className="cn-button" onClick={() => call("refresh")} disabled={busy || !refreshable}>연결 갱신</button>}
-          <button className="cn-button" onClick={() => { if (window.confirm("이 사이트에 저장된 Instagram 연결 정보를 삭제할까요? Instagram 쪽의 앱 권한은 그대로 남으며, 완전히 철회하려면 Instagram 계정 설정에서 직접 해제해야 합니다.")) void call("disconnect", { confirm: true }); }} disabled={busy || !view.stored}>이 사이트 연결 해제</button>
-          <button className="cn-button" onClick={reload} disabled={busy}>상태 새로 불러오기</button>
+          <button className={`cn-button ${!active || needsReconnect ? "cn-button-primary" : ""}`} onClick={() => call("start")} disabled={locked || !view.appConfigured}>{view.stored ? "다시 연결" : "Instagram 연결"}</button>
+          <button className={`cn-button ${active ? "cn-button-primary" : ""}`} onClick={() => call("verify")} disabled={locked || !active}>연결 확인</button>
+          {view.source === "oauth" && <button className="cn-button" onClick={() => call("refresh")} disabled={locked || !refreshable}>연결 갱신</button>}
+          <button className="cn-button" onClick={() => { if (window.confirm("이 사이트에 저장된 Instagram 연결 정보를 삭제할까요? Instagram 쪽의 앱 권한은 그대로 남으며, 완전히 철회하려면 Instagram 계정 설정에서 직접 해제해야 합니다.")) void call("disconnect", { confirm: true }); }} disabled={locked || !view.stored}>이 사이트 연결 해제</button>
+          <button className="cn-button" onClick={reload} disabled={locked}>상태 새로 불러오기</button>
         </div>
         {!view.appConfigured && <p className="cn-alert">서버 설정이 부족해 새 연결을 시작할 수 없습니다. 아래 ‘연결 준비 상태와 설정 도움말’에서 부족한 항목을 확인하세요.</p>}
         <p className="cn-help">‘연결 확인’은 계정 정보와 게시 한도만 조회하며 게시물을 만들지 않습니다. ‘연결 갱신’은 연결·갱신 후 24시간이 지나고 만료 전일 때만 가능합니다.</p>
-        <p className="cn-help">카드 10장과 설명은 관리자 검토 후 카드뉴스 관리 화면의 발행 버튼으로만 게시됩니다. 이 화면은 계정 연결만 관리합니다.</p>
+        <p className="cn-help">직접 만든 카드 10장은 관리자 검토 후 카드뉴스 관리 화면의 발행 버튼으로 게시됩니다. 이 화면의 자동 예약 발행과 ‘실제 Instagram 테스트 발행’은 연결된 계정에 실제로 게시할 수 있습니다. 연결 상태 확인 자체는 읽기만 하며 게시하지 않습니다.</p>
         <p className="cn-help">‘이 사이트 연결 해제’는 이 서버에 저장된 연결만 지웁니다. 해제한 뒤에는 고정 토큰 설정이 있어도 사용하지 않으며, 다시 연결해야 발행할 수 있습니다.</p>
         <details className="cn-details">
           <summary>연결 준비 상태와 설정 도움말</summary>
@@ -122,5 +127,7 @@ export default function InstagramConnection({ initial }: { initial: ConnectionVi
         </details>
       </>}
     </section>
+    <AutomationSettings localMode={!storage} parentBusy={busy} unsaved={false} sessionExpired={loginNeeded} onExpired={() => setLoginNeeded(true)} onBusyChange={setAutomationBusy} onPrepared={() => setPrepared(true)} />
+    {prepared && <p className="cn-alert cn-alert-success" role="status">오늘 판본은 <a className="cn-text-link" href="/admin/news">카드뉴스 관리</a>에서 확인할 수 있습니다.</p>}
   </main>;
 }
