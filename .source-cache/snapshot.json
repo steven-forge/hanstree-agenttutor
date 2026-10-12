@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-12",
   "targets": {
     "codex": {
       "commands": [
@@ -668,7 +668,6 @@
         "claude Code also opens dialog commands such as",
         "claude Code also opts the session in",
         "claude Code also opts the session in. The flag doesn’t affect MCP tools; to deny those too",
-        "claude Code applies",
         "claude Code applies the change without waiting for the current response to finish. Before v2.1.242",
         "claude Code applies the new level to the next request in that turn. Before v2.1.242",
         "claude Code asks you to confirm the directory right away",
@@ -1081,7 +1080,6 @@
         "claude Code omits the text and thinking blocks of a subagent that runs in the": "CLI 명령",
         "claude Code still emits": "CLI 명령",
         "claude Code waits for still-pending servers to connect before running the first turn": "CLI 명령",
-        "claude Code applies": "CLI 명령",
         "claude Code sends them to the Agent SDK host or the": "CLI 명령",
         "claude Code searches the current project directory and its git worktrees": "CLI 명령",
         "claude Code refused and printed the": "CLI 명령",
@@ -1228,6 +1226,13 @@
           "status": "unconfirmed",
           "statusText": "공식 문서에서 확인되지 않음",
           "date": "2026-10-01"
+        },
+        {
+          "command": "claude Code applies",
+          "category": "CLI 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-12"
         },
         {
           "command": "claude Code builds the system prompt once",
