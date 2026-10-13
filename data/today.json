@@ -1,10 +1,554 @@
 {
-  "edition_date": "2026-10-12",
-  "window_start": "2026-08-11T06:21:25.086081+09:00",
-  "window_end": "2026-10-10T06:21:25.086081+09:00",
-  "collected_at": "2026-10-12T18:50:48.134763+09:00",
+  "edition_date": "2026-10-14",
+  "window_start": "2026-08-15T06:35:37.220076+09:00",
+  "window_end": "2026-10-14T06:35:37.220076+09:00",
+  "collected_at": "2026-10-14T06:36:40.346758+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "6ec803e44d1742cc",
+      "title": "OpenAI employee arrested for allegedly planting a bug in a conference room",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device",
+      "source_summary": "An OpenAI engineer was arrested after the company said it discovered a \"sophisticated recording device\" hidden in one of its offices. The employee was identified as Abdulrahman Alfozan, a 35-year-old Saudi national. Alfozan is charged with using or endeavoring to use a device to intercept oral communications, according to a press release from the Department […]",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T20:45:25+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50078582",
+          "independent": false,
+          "target_url": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/ok"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1010642/openai-employee-arrested-recording-device",
+          "independent": true
+        }
+      ],
+      "title_ko": "OpenAI 직원이 회의실에 버그를 심었다는 혐의로 체포됨",
+      "source_summary_ko": "AI News OpenAI 녹화 장치가 임원 회의실의 TV USB 포트에 꽂혀 있는 것으로 나타났습니다.\nOpenAI는 직원을 해고하고 FBI에 사건을 회부했다고 말합니다.\n우리는 사무실 중 하나에 숨겨져 있는 정교한 녹음 장치를 발견했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "OpenAI says it fired the employee and referred the incident to the FBI.",
+        "ko": "OpenAI는 직원을 해고하고 FBI에 사건을 회부했다고 말합니다."
+      }
+    },
+    {
+      "id": "dbb95ff3d456141d",
+      "title": "Release v0.64.0",
+      "source_id": "gemini-releases",
+      "source_name": "Gemini CLI Releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0",
+      "source_summary": "## What's Changed * refactor(a2a-server): implement V1 to V2 settings migration logic by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29450 * fix(acp): bridge PromptResponse.usage and emit usage_update notifications (#29389) by @elberthc-byte in https://github.com/google-gemini/gemini-cli/pull/29549 * Changelog for v0.63.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29565 * fix(cli): propagate resolved folder trust state in headle",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:26+09:00",
+      "published_at": "2026-10-13T20:44:46+00:00",
+      "date_precision": "time",
+      "title_ko": "Gemini CLI v0.64.0 버전 출시",
+      "source_summary_ko": "# # 변경된 내용 * REFACTOR (a2a-server): https://github.com/google-gemini/gemini-cli/pull/29450 * fix (acp): bridge PromptResponse.usage and emit usage_update notifications (# 29389) by @ elberthc-byte in https://github.com/google-gemini/gemini-cli/pull/29549 * Changelog for v0.63.0-preview.0 by @ gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29565 * fix (cli): HEADLE에서 해결된 폴더 신뢰 상태 전파",
+      "release_notes_ko": {
+        "bug_fixes": "fix (acp): bridge PromptResponse.usage 및 emit usage_update 알림\nfix (cli): 헤드리스 모드에서 해결된 폴더 신뢰 상태 전파\nfix (cli): 코드 내에서 @ 에 CPU 정지 및 견적 삼키기 방지",
+        "chores": "refactor (a2a-server): V1 ~ V2 설정 마이그레이션 로직 구현\nV0.63.0-preview.0에 대한 변경 로그\nchore (release): 0.64.0-nightly.20260929.gd75234cae로 범프 버전"
+      }
+    },
+    {
+      "id": "f1305662a1d2e7c4",
+      "title": "Shopify opens its catalog up to more AI agents",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+      "source_summary": "More AI agents will soon be able to browse and purchase from Shopify listings, marking an expansion of the company's agentic commerce ambitions. Shopify announced Tuesday it will let shoppers configure their AI agents to purchase products on their behalf, giving more agents access to over a billion listings in Shopify's catalog. (The catalog consists […]",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T19:42:42+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents",
+          "independent": true
+        }
+      ],
+      "title_ko": "Shopify, 더 많은 AI 상담원에게 카탈로그 공개",
+      "source_summary_ko": "Muse 파트너십과 마찬가지로 고객은 클릭 한 번으로 Shop Pay 기능을 사용하여 상담원과의 대화에서 결제할 수 있습니다.\n상담원을 통한 주문은 Shop 앱으로 다시 유입됩니다.\n미아 사토 온라인 쇼핑 가장 인기있는 모든 것 애플이 ‘웰컴 홈’ 이벤트에서 출시 한 모든 것 애플의 첫 번째 스마트 디스플레이 인 HomeView 출시 애플의 ‘웰컴 홈’ 이벤트의 모든 소식 새로운 Apple TV 4K에는 마이크가 내장되어있어 Siri AI와 대화 할 수 있습니다. Apple의 HomeView 스마트 디스플레이를 사용해 보았습니다. The Verge Daily 가장 중요한 뉴스를 매일 무료로 제공합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Like the Muse partnership, customers use the one-click Shop Pay feature to check out within the conversation with the agent.",
+        "ko": "Muse 파트너십과 마찬가지로 고객은 클릭 한 번으로 Shop Pay 기능을 사용하여 상담원과의 대화에서 결제할 수 있습니다."
+      }
+    },
+    {
+      "id": "bb575fe9ad4e4a98",
+      "title": "OpenAI and Anthropic Tell British Lawmakers: Regulate Us",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us",
+      "source_summary": "AI leaders joined whistleblowers and security leaders at a sweeping parliamentary session, while a few hundred meters away Britain’s spy chief warned AI could be used to create new bioweapons.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T19:35:29+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us",
+          "independent": true
+        }
+      ],
+      "title_ko": "OpenAI와 Anthropic은 영국 입법자들에게 다음과 같이 말합니다: 우리를 규제하십시오",
+      "source_summary_ko": "더프 고든 (Duff Gordon) 은 사고 보고를 시작으로 \"필수 요소가 있어야 한다\" 고 말했습니다. 그는 \"우리는 모든 것을 프론티어 리스크에 대한 자발적인 약속에 기반하는 것이 좋은 장기 계획이라고 생각하지 않는다\" 고 말했다.\n영국의 AI 보안 연구소 (AISI) 는 출시 전에 프론티어 모델을 테스트하지만 기업이 넘겨주기로 선택한 경우에만 테스트합니다.\n그것은 미국 정부의 질문입니다. \"그는 AISI가 이제 접근할 수 있다고 덧붙이기 전에 말했다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Britain’s AI Security Institute (AISI) tests frontier models before release, but only when companies choose to hand them over.",
+        "ko": "영국의 AI 보안 연구소 (AISI) 는 출시 전에 프론티어 모델을 테스트하지만 기업이 넘겨주기로 선택한 경우에만 테스트합니다."
+      }
+    },
+    {
+      "id": "b5a0bcffb5b3a77b",
+      "title": "Xbox is officially embracing the chaos of AI-powered game ports",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration",
+      "source_summary": "Retro gaming is going through a wild time at the moment, thanks to decompilations and recompilations that are letting gamers port classic titles to new devices, or merge code from two different games into a single new experience. Microsoft has witnessed skateboarding being modded into Call of Duty and Halo being played in a web […]",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T19:00:48+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/news/1010406/xbox-labs-game-decompiling-emulation-exploration",
+          "independent": true
+        }
+      ],
+      "title_ko": "Xbox는 공식적으로 AI 기반 게임 포트의 혼란을 수용하고 있습니다",
+      "source_summary_ko": "News AI Gaming Microsoft는 게임을 디컴파일하고 다시 컴파일하는 실험을 위해 새로운 Xbox Labs 그룹을 만들었습니다.\n게임은 동일한 속성을 공유하며, 사람들은 XBOX 게임을 플레이하는 데 연간 720억 시간 이상을 소비합니다. 이는 전 세계적으로 코드를 작성하는 데 소요되는 예상 시간의 약 5배입니다. \"Xbox Labs는 분명히 AI가 게임이 진행되는 장소를 어떻게 형성할지 Microsoft가 실험할 수 있는 방법이며, Xbox는 모든 도구와 학습 내용을 개발자와 공유할 것입니다.\n게임은 동일한 속성을 공유하며, 사람들은 XBOX 게임을 플레이하는 데 연간 720억 시간 이상을 소비합니다. 이는 전 세계적으로 코드를 작성하는 데 소요되는 예상 시간의 약 5배입니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Microsoft has created a new Xbox Labs group to experiment with decompiling and recompiling games.",
+        "ko": "Microsoft는 게임을 디컴파일하고 다시 컴파일하는 실험을 위해 새로운 Xbox Labs 그룹을 만들었습니다."
+      }
+    },
+    {
+      "id": "b5b8a08608e1d9e3",
+      "title": "I don’t miss the camera on the Ray-Ban Meta Audio glasses",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables",
+      "source_summary": "The other day I whizzed past several people while running in the park, my playlist blasting at full volume. The next morning, I smiled at a barista while ordering a caramel apple-flavored matcha latte. Afterward, I sat on a park bench reading a book, called up a pal to chat about her recent trip to […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T18:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1009128/ray-ban-meta-audio-glasses-review-smart-glasses-headphones-wearables",
+          "independent": true
+        }
+      ],
+      "title_ko": "Ray-Ban Meta Audio 안경의 카메라를 놓치지 않습니다.",
+      "source_summary_ko": "Meta의 Muse AI가 결국 안경에 등장하지만 지금은 사용할 수 없습니다.\n예를 들어, Meta Glasses는 이제 $ 250부터 시작하여 기술적으로 더 많은 작업을 수행합니다.\n개인 정보 보호가 우려되는 경우 안경 설정에서 안경 개인 정보 보호 메뉴에 액세스할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Meta’s Muse AI is eventually coming to the glasses, but it’s not available right now.",
+        "ko": "Meta의 Muse AI가 결국 안경에 등장하지만 지금은 사용할 수 없습니다."
+      }
+    },
+    {
+      "id": "a579d9458f5d4ccb",
+      "title": "Facebook will let you customize your feed algorithm using AI",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai",
+      "source_summary": "Facebook's new \"Your Algorithm\" feature will let you directly add and manage topics you want to see in your feed and Facebook Reels. Meta says your recommendations \"respond right away\" after you make updates using the new feature by hitting \"interested\" or \"not interested\" for different topics. Your Algorithm previously launched on Instagram earlier this […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T17:01:31+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai",
+          "independent": true
+        }
+      ],
+      "title_ko": "Facebook을 사용하면 AI를 사용하여 피드 알고리즘을 사용자 정의할 수 있습니다.",
+      "source_summary_ko": "Tech AI News Meta는 Instagram의 \"Your Algorithm\" 기능을 Facebook에 도입하고 LLM을 사용하여 콘텐츠 순위를 매깁니다. ﻿ Link Share Gift Facebook의 새로운 \"내 알고리즘\" 기능을 사용하면 피드 및 Facebook 릴에서 보고 싶은 주제를 직접 추가하고 관리할 수 있습니다.\nMeta는 새로운 기능을 사용하여 업데이트한 후 다른 주제에 대해 '관심 있음' 또는 '관심 없음' 을 눌러 추천 사항을 '즉시 응답' 한다고 말합니다.\nFacebook 사용자는 개별 게시물의 점 세 개 메뉴에서 알고리즘에 액세스하거나 \"관심 있음\" 또는 \"관심 없음\" 을 선택할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Meta says your recommendations “respond right away” after you make updates using the new feature by hitting “interested” or “not interested” for different topics.",
+        "ko": "Meta는 새로운 기능을 사용하여 업데이트한 후 다른 주제에 대해 '관심 있음' 또는 '관심 없음' 을 눌러 추천 사항을 '즉시 응답' 한다고 말합니다."
+      }
+    },
+    {
+      "id": "20321888fc5ad637",
+      "title": "Google makes it easier to launch your vibe-coded apps",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch",
+      "source_summary": "The next time you vibe-code a custom app with Google's AI Studio, you won't have to connect your phone to a computer to install it. On Tuesday, Google announced a new feature in the US that will allow you to launch personal apps directly through the Play Store. Google first launched the ability to vibe-code […]",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T17:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch",
+          "independent": true
+        }
+      ],
+      "title_ko": "Google을 사용하면 진동으로 코딩된 앱을 더 쉽게 실행할 수 있습니다.",
+      "source_summary_ko": "기술 AI 뉴스 이제 Google Play 스토어에서 직접 진동으로 코딩된 앱을 실행할 수 있습니다.\n화요일, Google은 미국에서 Play 스토어를 통해 개인 앱을 직접 실행할 수 있는 새로운 기능을 발표했습니다.\nGoogle은 5월에 개인용 Android 앱을 바이브 코딩할 수 있는 기능을 처음 출시했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "On Tuesday, Google announced a new feature in the US that will allow you to launch personal apps directly through the Play Store.",
+        "ko": "화요일, Google은 미국에서 Play 스토어를 통해 개인 앱을 직접 실행할 수 있는 새로운 기능을 발표했습니다."
+      }
+    },
+    {
+      "id": "8e68e2cc66d400ed",
+      "title": "Actress Mia Goth says it’s ‘incomprehensible’ that Instagram allowed an AI image of her to spread",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1010277/mia-goth-instagram-ai-shirt-deepfake-divorce",
+      "source_summary": "Earlier this month, news broke that actress Mia Goth had filed for divorce from actor and filmmaker Shia LaBeouf. An Instagram post from the account miagoth_ - marked with a blue verified checkmark - quickly spread. The post shows Goth in a T-shirt that reads \"MY EX IS MY BIGGEST FAN\" in bold black letters. […]",
+      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T16:42:51+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1010277/mia-goth-instagram-ai-shirt-deepfake-divorce",
+          "independent": true
+        }
+      ],
+      "title_ko": "여배우 미아 고스 (Mia Goth) 는 인스타그램이 그녀의 인공지능 이미지가 퍼지도록 허용한 것은 ‘이해할 수 없다' 고 말합니다.",
+      "source_summary_ko": "파란색 확인 표시가 있는 miagoth_계정의 Instagram 게시물이 빠르게 퍼졌습니다.\n그러나 Goth의 담당자는 Instagram에 삭제를 요청한 계정에 의해 AI가 생성된 이미지가 게시되었다고 말합니다. \"Mia Goth는 소유권이 없으며 어떤 플랫폼에서도 소셜 미디어에 참여하지 않습니다.\nMeta는 실제 사람의 AI 생성 콘텐츠를 금지하는 대신 생성 AI로 생성된 일부 콘텐츠에 레이블을 지정하는 접근 방식을 취했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "An Instagram post from the account miagoth_ — marked with a blue verified checkmark — quickly spread.",
+        "ko": "파란색 확인 표시가 있는 miagoth_계정의 Instagram 게시물이 빠르게 퍼졌습니다."
+      }
+    },
+    {
+      "id": "ed1be8ea5f53c737",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon",
+      "source_summary": "We’re giving developers, enterprises, scientists, and consumers access to Gemini 4 Argon, our latest frontier model.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:35:39+09:00",
+      "published_at": "2026-10-13T16:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "쌍둥이자리 4 아르곤: 가장 어려운 문제를 해결하기 위해 제작됨",
+      "source_summary_ko": "아르곤은 또한 양자 서브루틴의 시공간 비용을 줄이고 있습니다.\n자세한 내용은 쌍둥이자리 4 아르곤 모델 카드를 참조하십시오.\n공개적으로 액세스하도록 설계된 아르곤 모델에만 적용됩니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Argon is also reducing spacetime costs for quantum subroutines.",
+        "ko": "아르곤은 또한 양자 서브루틴의 시공간 비용을 줄이고 있습니다."
+      }
+    },
+    {
+      "id": "f9f5ac5db3b603f4",
+      "title": "Google finally releases Gemini 4 Argon",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon",
+      "source_summary": "After months sitting on the sidelines of the frontier AI race, Google has finally launched its long-awaited Gemini 4 Argon model, claiming it can compete with the best the industry has to offer. Google says Argon delivers \"frontier reasoning and improved performance across complex workflows,\" while cutting down on hedging, repetition, and the cliches that […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T16:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon",
+          "independent": true
+        },
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/gemini-4-argon-live",
+          "independent": true
+        }
+      ],
+      "title_ko": "Google, 마침내 Gemini 4 Argon 출시",
+      "source_summary_ko": "Google은 아르곤의 가격을 매우 경쟁력 있게 책정하고 있습니다.\nArgon은 2025년 말 Gemini 3 이후 Google의 첫 번째 주요 프론티어 버전입니다.\n그러나 아르곤의 도착은 우리가 아직 AI 경쟁에서 Google을 셀 수 없다는 것을 암시합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Google is pricing Argon very competitively.",
+        "ko": "Google은 아르곤의 가격을 매우 경쟁력 있게 책정하고 있습니다."
+      }
+    },
+    {
+      "id": "ce8b8b48b5a890c3",
+      "title": "Epic shifts to ‘AI-accelerated development’ for upcoming Disney game",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art",
+      "source_summary": "Epic Games plans to use AI to generate code and art for an unannounced Disney game, which is now delayed from its original March release window, according to a report from Bloomberg. The project's developers have been given an \"AI-first\" mandate directing them to use tools like Anthropic's Claude more to finish the game. According […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T15:12:59+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art",
+          "independent": true
+        }
+      ],
+      "title_ko": "곧 출시될 디즈니 게임을 위한 ‘AI 가속 개발’ 로의 에픽 전환",
+      "source_summary_ko": "에픽과 디즈니의 다년간 협업의 일환으로, 2024년 에픽에 15억 달러 ($) 를 투자했습니다.\n그러나 에픽은 새로운 디즈니 게임에서 AI가 대부분의 무거운 리프팅을 수행하도록 목표로 할 수 있습니다.\n메타, 구글 등 다른 대기업에서 인공지능 게임 개발 도구가 등장하고 있기 때문에 에픽은 혼자가 아닙니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "It’s part of a multiyear collaboration between Epic and Disney, which also invested $1.5 billion in Epic in 2024.",
+        "ko": "에픽과 디즈니의 다년간 협업의 일환으로, 2024년 에픽에 15억 달러 ($) 를 투자했습니다."
+      }
+    },
+    {
+      "id": "7a844a813e581002",
+      "title": "DLSS 5 gets toned down for its Hogwarts Legacy debut next month",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
+      "source_summary": "When Nvidia originally showed off DLSS 5 earlier this year, the technology immediately got branded as gen AI for video games. To gamers, Nvidia had lost the plot. I personally couldn't get over how faces were transformed using DLSS 5. The 15-year-old student from Hogwarts Legacy suddenly looked much older, and Grace from Resident Evil […]",
+      "why_it_matters": "AI를 배우고 사용하는 사람이 넓어질수록 쉬운 교육과 연령에 맞는 보호 장치가 중요해집니다. 초보자는 사용법뿐 아니라 개인정보와 잘못된 답을 확인하는 방법도 함께 익혀야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T13:55:45+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/news/1009904/dlss-5-hogwarts-legacy-changes-improvements",
+          "independent": true
+        }
+      ],
+      "title_ko": "DLSS 5는 다음 달 호그와트 레거시 데뷔를 위해 톤다운됩니다",
+      "source_summary_ko": "뉴스 AI 게이밍 DLSS 5가 호그와트의 유산과 바람이 만나는 곳에서 다음 달에 데뷔합니다.\n이 새로운 DLSS 5 모델은 10월 16일 NBA 2K27에서 첫 선을 보일 것이며 \"향후 DLSS 5 게임과 함께 기본적으로 출시될 것입니다.\" DLSS 5 업데이트와 함께 엔비디아는 RTX 40 및 50 시리즈 GPU에서 프레임 생성을 위한 더 빠른 성능 모드를 포함하는 새로운 엔비디아 앱 베타 업데이트를 출시했습니다.\n업데이트된 AI 모델은 프레임 젠 (Frame Gen), 멀티 프레임 젠 (Multi Frame Gen) 및 동적 멀티 프레임 젠 (Dynamic Multi Frame Gen) 에 대해 \"프레임 속도를 높이기 위한 더 빠르고 가벼운 알고리즘\" 을 사용합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The updated AI model uses a “faster and lighter algorithm to boost frame rates” for Frame Gen, Multi Frame Gen, and Dynamic Multi Frame Gen.",
+        "ko": "업데이트된 AI 모델은 프레임 젠 (Frame Gen), 멀티 프레임 젠 (Multi Frame Gen) 및 동적 멀티 프레임 젠 (Dynamic Multi Frame Gen) 에 대해 \"프레임 속도를 높이기 위한 더 빠르고 가벼운 알고리즘\" 을 사용합니다."
+      }
+    },
+    {
+      "id": "8d45898e533e591d",
+      "title": "Higgsfield takes AI video from 1 minute to over 10",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "source_summary": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live.",
+      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:35:37+09:00",
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "힉스필드는 AI 동영상을 1분에서 10분 이상",
+      "source_summary_ko": "힉스필드는 GPT-6 Astra로 크리에이터에게 더 긴 동영상, GPT-Image-2.5로 정밀한 비주얼, GPT-Live로 음성 영화 제작의 길을 제시합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "ed226af48013818b",
+      "title": "Wikipedians Believed AI Would Come and Go. They Were Wrong",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/book-excerpt-the-last-best-place-on-the-internet-wikipedia-artificial-intelligence",
+      "source_summary": "In a world of AI Overviews, Wikipedia usage declines. But the real loss may be far more existential than website traffic.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T11:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/book-excerpt-the-last-best-place-on-the-internet-wikipedia-artificial-intelligence",
+          "independent": true
+        }
+      ],
+      "title_ko": "위키백과 사용자들은 AI가 오고 갈 것이라고 믿었습니다. 그들은 틀렸습니다",
+      "source_summary_ko": "예, 위키피디아는 할 수 있는 작은 백과사전이었습니다.\n그것들은 내부에서 나옵니다. ”H보다 더 명확하게 위키백과를 예견했다고 평가받는 사람은 없습니다.\n위키피디아에서 영감을 받은 많은 작품 중 하나가 이 현상을 말해줍니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Yes, Wikipedia was the little encyclopedia that could.",
+        "ko": "예, 위키피디아는 할 수 있는 작은 백과사전이었습니다."
+      }
+    },
+    {
+      "id": "35b9fb4caf325888",
+      "title": "The Biggest Pro-AI Super PAC Network Has Poured Millions Into Nevada Shell Companies",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/the-biggest-pro-ai-super-pac-network-has-poured-millions-into-nevada-shell-companies",
+      "source_summary": "Backed by Silicon Valley titans, Leading the Future has raised huge sums to promote pro-AI candidates on both side of the aisle.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-13T10:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/the-biggest-pro-ai-super-pac-network-has-poured-millions-into-nevada-shell-companies",
+          "independent": true
+        }
+      ],
+      "title_ko": "가장 큰 Pro-AI 슈퍼 PAC 네트워크는 네바다 쉘 회사에 수백만 달러를 쏟아 부었습니다.",
+      "source_summary_ko": "지난 5월, 캠페인 법률 센터는 캠페인 금융법을 시행하는 FEC에 고소장을 제출했으며, Think Big과 American Mission이 이러한 방식으로 쉘 회사를 사용하여 연방법 위반을 주장했습니다.\nLeading the Future는 쉘 회사를 사용하여 벤더를 보호한다고 비난받는 유일한 PAC는 아닙니다.\n캠페인 법률 센터 (Campaign Legal Center) 는 공화당 전략가들과 연결되지 않기 위해 셸 회사에 돈을 지불한다고 비난했다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Leading the Future isn’t the only PAC accused of shielding vendors by using shell companies.",
+        "ko": "Leading the Future는 쉘 회사를 사용하여 벤더를 보호한다고 비난받는 유일한 PAC는 아닙니다."
+      }
+    },
+    {
+      "id": "4077f3ad381dd8fd",
+      "title": "Elon Musk Bragged About His Grok Lego Star Wars Haul. Then X Users Punked Him",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/elon-musk-bragged-about-his-grok-lego-star-wars-haul-then-x-users-punked-him",
+      "source_summary": "Musk, we find your lack of security disturbing.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-12T17:55:12+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/elon-musk-bragged-about-his-grok-lego-star-wars-haul-then-x-users-punked-him",
+          "independent": true
+        }
+      ],
+      "title_ko": "일론 머스크는 자신의 그록 레고 스타워즈 운반에 대해 자랑했습니다. 그런 다음 X 사용자가 그를 펑크 냈습니다.",
+      "source_summary_ko": "Enderman이라는 X 계정 소유자는 웹사이트에 레고의 고객 서비스 챗봇과의 상호 작용 스크린샷을 게시했습니다. 이 챗봇은 사용자가 Musk의 주문을 취소하기 위해 이메일과 주문 번호를 친절하게 사용하면서도 무모하게 제공한 것으로 보입니다.\n예를 들어, 다른 X 사용자가 \"Sophia\" 라는 레고의 AI 비서에게 돌아가서 동일한 세부 정보를 사용하여 배달을 다시 열었으며, 이번에는 주문 수를 400으로 늘리고 배달 주소를 변경하면서 Musk의 원래 결제 수단을 사용했습니다. \"완벽해요!\n레고는 유선이 회사에 연락하여 그러한 활동이 머스크의 개인 스타워즈 주문에서 이루어졌는지 확인했을 때 언급을 거부했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Lego declined to comment when WIRED contacted the company to confirm if such activity took place on Musk's personal Star Wars order.",
+        "ko": "레고는 유선이 회사에 연락하여 그러한 활동이 머스크의 개인 스타워즈 주문에서 이루어졌는지 확인했을 때 언급을 거부했습니다."
+      }
+    },
+    {
+      "id": "5ce09feadbf0c473",
+      "title": "Muse Wonder Puts Meta Back at the AI Frontier",
+      "source_id": "wired-ai",
+      "source_name": "WIRED",
+      "source_url": "https://www.wired.com/story/muse-wonder-puts-meta-back-at-the-ai-frontier",
+      "source_summary": "Meta’s biggest model rivals the world’s best—and includes new features to keep agents from going off the rails.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:40+09:00",
+      "published_at": "2026-10-12T17:00:27+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/muse-wonder-puts-meta-back-at-the-ai-frontier",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder",
+          "independent": true
+        }
+      ],
+      "title_ko": "뮤즈 원더 (Muse Wonder), AI 프론티어에서 메타백 퍼팅",
+      "source_summary_ko": "Muse Wonder 모델은 API와 AI로 소프트웨어를 작성하기 위한 도구인 Muse Code를 통해 사용할 수 있습니다.\nMeta는 올해 4월 새로운 실험실인 Muse Spark의 첫 번째 모델을 발표했습니다.\n새로운 Muse Wonder 모델이 어떻게 제작되거나 훈련되었는지에 대한 세부 사항은 공개하지 않았습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The Muse Wonder models will be available through an API and through Muse Code, a tool for writing software with AI.",
+        "ko": "Muse Wonder 모델은 API와 AI로 소프트웨어를 작성하기 위한 도구인 Muse Code를 통해 사용할 수 있습니다."
+      }
+    },
+    {
+      "id": "ec0714e7c8ff9438",
+      "title": "Introducing The X Subscription",
+      "source_id": "xai-news",
+      "source_name": "xAI News",
+      "source_url": "https://x.ai/news/x-subscription",
+      "source_summary": "Grok, Grok Bot, Cursor, and X Premium, all on one plan.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-14T06:36:36+09:00",
+      "published_at": "2026-10-12T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "X 구독 소개",
+      "source_summary_ko": "The X Subscription의 유료 요금제에는 Grok 및 Cursor에서 공유되는 Grok 모델 사용량 풀이 포함됩니다.\nX 구독 무료 플랜은 Grok, Cursor 및 X에 대한 액세스를 제공합니다.\nX 구독의 모든 계층에는 Grok 및 Cursor에서 공유되는 AI 사용 풀이 포함됩니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Paid plans on The X Subscription include a generous pool of Grok model usage shared across Grok and Cursor.",
+        "ko": "The X Subscription의 유료 요금제에는 Grok 및 Cursor에서 공유되는 Grok 모델 사용량 풀이 포함됩니다."
+      }
+    },
     {
       "id": "6ad735d17667970a",
       "title": "Will the HomeView be Apple’s first smart home success?",
@@ -54,6 +598,12 @@
           "source_id": "techcrunch-ai",
           "name": "TechCrunch",
           "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/techcrunch-disrupt-2026-day-1",
           "independent": true
         }
       ],
@@ -1034,6 +1584,12 @@
           "source_id": "techcrunch-ai",
           "name": "TechCrunch",
           "url": "https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/techcrunch-disrupt-2026-starts-tomorrow-your-final-chance-to-secure-up-to-100-ticket-savings",
           "independent": true
         }
       ],
