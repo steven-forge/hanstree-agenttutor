@@ -36,12 +36,12 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-14T06:35:37.220076+09:00",
+      "checked_at": "2026-10-14T09:17:55.946342+09:00",
       "held_count": 0,
-      "excluded_count": 205,
+      "excluded_count": 204,
       "skipped_count": 31,
       "coverage_limited": false,
-      "last_success_at": "2026-10-14T06:35:37.220076+09:00"
+      "last_success_at": "2026-10-14T09:17:55.946342+09:00"
     },
     {
       "id": "claude-releases",
@@ -49,7 +49,7 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-14T06:35:37.220076+09:00",
+      "checked_at": "2026-10-14T09:17:55.946342+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -62,13 +62,13 @@
       "name": "Gemini CLI Releases",
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
-      "count": 1,
-      "checked_at": "2026-10-14T06:35:37.220076+09:00",
+      "count": 0,
+      "checked_at": "2026-10-14T09:17:55.946342+09:00",
       "held_count": 0,
       "excluded_count": 67,
-      "skipped_count": 8,
+      "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-14T06:35:37.220076+09:00"
+      "last_success_at": "2026-10-14T09:17:55.946342+09:00"
     },
     {
       "id": "grok-releases",
@@ -76,7 +76,7 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-14T06:35:37.220076+09:00",
+      "checked_at": "2026-10-14T09:17:55.946342+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 5,
@@ -84,7 +84,7 @@
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-14T06:35:37.220076+09:00"
+      "last_success_at": "2026-10-14T09:17:55.946342+09:00"
     },
     {
       "id": "anthropic-news",
@@ -326,27 +326,8 @@
     }
   ],
   "new_count": 4,
-  "archive_count": 542,
+  "archive_count": 557,
   "candidates": [
-    {
-      "id": "dbb95ff3d456141d",
-      "title": "Release v0.64.0",
-      "source_id": "gemini-releases",
-      "source_name": "Gemini CLI Releases",
-      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0",
-      "source_summary": "## What's Changed * refactor(a2a-server): implement V1 to V2 settings migration logic by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29450 * fix(acp): bridge PromptResponse.usage and emit usage_update notifications (#29389) by @elberthc-byte in https://github.com/google-gemini/gemini-cli/pull/29549 * Changelog for v0.63.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29565 * fix(cli): propagate resolved folder trust state in headle",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "why_it_matters_provenance": "automatic",
-      "fetched_at": "2026-10-14T06:36:26+09:00",
-      "published_at": "2026-10-13T20:44:46+00:00",
-      "date_precision": "time",
-      "title_ko": "Gemini CLI v0.64.0 버전 출시",
-      "source_summary_ko": "# # 변경된 내용 * REFACTOR (a2a-server): https://github.com/google-gemini/gemini-cli/pull/29450 * fix (acp): bridge PromptResponse.usage and emit usage_update notifications (# 29389) by @ elberthc-byte in https://github.com/google-gemini/gemini-cli/pull/29549 * Changelog for v0.63.0-preview.0 by @ gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29565 * fix (cli): HEADLE에서 해결된 폴더 신뢰 상태 전파",
-      "release_notes_ko": {
-        "bug_fixes": "fix (acp): bridge PromptResponse.usage 및 emit usage_update 알림\nfix (cli): 헤드리스 모드에서 해결된 폴더 신뢰 상태 전파\nfix (cli): 코드 내에서 @ 에 CPU 정지 및 견적 삼키기 방지",
-        "chores": "refactor (a2a-server): V1 ~ V2 설정 마이그레이션 로직 구현\nV0.63.0-preview.0에 대한 변경 로그\nchore (release): 0.64.0-nightly.20260929.gd75234cae로 범프 버전"
-      }
-    },
     {
       "id": "ed1be8ea5f53c737",
       "title": "Gemini 4 Argon: Built to solve your hardest problems",
