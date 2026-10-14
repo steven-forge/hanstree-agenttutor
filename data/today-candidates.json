@@ -36,12 +36,12 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-15T04:45:40.937904+09:00",
+      "checked_at": "2026-10-15T07:43:54.996398+09:00",
       "held_count": 0,
-      "excluded_count": 204,
+      "excluded_count": 205,
       "skipped_count": 31,
       "coverage_limited": false,
-      "last_success_at": "2026-10-15T04:45:40.937904+09:00"
+      "last_success_at": "2026-10-15T07:43:54.996398+09:00"
     },
     {
       "id": "claude-releases",
@@ -49,7 +49,7 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-15T04:45:40.937904+09:00",
+      "checked_at": "2026-10-15T07:43:54.996398+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -63,28 +63,28 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-15T04:45:40.937904+09:00",
+      "checked_at": "2026-10-15T07:43:54.996398+09:00",
       "held_count": 0,
       "excluded_count": 67,
       "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-15T04:45:40.937904+09:00"
+      "last_success_at": "2026-10-15T07:43:54.996398+09:00"
     },
     {
       "id": "grok-releases",
       "name": "Grok Releases",
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
-      "count": 2,
-      "checked_at": "2026-10-15T04:45:40.937904+09:00",
+      "count": 0,
+      "checked_at": "2026-10-15T07:43:54.996398+09:00",
       "held_count": 1,
       "excluded_count": 0,
-      "skipped_count": 5,
+      "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
         "한국어 번역 실패: 한국어 번역에 실패했습니다."
       ],
-      "last_success_at": "2026-10-15T04:45:40.937904+09:00"
+      "last_success_at": "2026-10-15T07:43:54.996398+09:00"
     },
     {
       "id": "anthropic-news",
@@ -379,42 +379,6 @@
       "title_ko": "AI에서 EU의 다음 장은 agentic입니다.",
       "source_summary_ko": "새로운 분석은 에이전트 AI 채택이 EU 기업과 중소기업에서 어떻게 성장하고 있는지, 그리고 더 깊은 사용이 더 많은 가치를 창출할 수 있는지를 보여줍니다.",
       "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
-    },
-    {
-      "id": "6b9ec1aea4699c2d",
-      "title": "Grok Voice 2.0 deprecation",
-      "source_id": "grok-releases",
-      "source_name": "Grok Releases",
-      "source_url": "https://docs.x.ai/developers/release-notes#grok-voice-20-deprecation",
-      "source_summary": "grok-voice-2.0 is deprecated. To upgrade, set model to grok-voice-3.0 or grok-voice-latest, at the same price. See Upgrading from Grok Voice 2.0.",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "why_it_matters_provenance": "automatic",
-      "fetched_at": "2026-10-15T04:46:28+09:00",
-      "published_on": "2026-10-14",
-      "date_precision": "day",
-      "title_ko": "Grok Voice 2.0 지원 중단",
-      "source_summary_ko": "grok-voice-2.0은 더 이상 사용되지 않습니다. 업그레이드하려면 모델을 동일한 가격으로 grok-voice-3.0 또는 grok-voice-latest로 설정하십시오. Grok Voice 2.0에서 업그레이드를 참조하십시오.",
-      "release_notes_ko": {
-        "chores": "grok-voice-2.0은 더 이상 사용되지 않습니다. 업그레이드하려면 모델을 동일한 가격으로 grok-voice-3.0 또는 grok-voice-latest로 설정하십시오. Grok Voice 2.0에서 업그레이드를 참조하십시오."
-      }
-    },
-    {
-      "id": "bff8e8c9b5984049",
-      "title": "Grok Voice 3.0 is available",
-      "source_id": "grok-releases",
-      "source_name": "Grok Releases",
-      "source_url": "https://docs.x.ai/developers/release-notes#grok-voice-30-is-available",
-      "source_summary": "grok-voice-3.0 is now available with Speech to Speech, at the same price as Grok Voice 2.0. grok-voice-latest now points to grok-voice-3.0, so sessions that use the alias are upgraded automatically. The API is unchanged. To get started, see the Speech to Speech docs.",
-      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
-      "why_it_matters_provenance": "automatic",
-      "fetched_at": "2026-10-15T04:46:24+09:00",
-      "published_on": "2026-10-14",
-      "date_precision": "day",
-      "title_ko": "Grok Voice 3.0을 사용할 수 있습니다",
-      "source_summary_ko": "grok-voice-3.0은 이제 Grok Voice 2.0과 동일한 가격으로 Speech to Speech에서 사용할 수 있습니다. grok-voice-latest는 이제 grok-voice-3.0을 가리키므로 별칭을 사용하는 세션은 자동으로 업그레이드됩니다. API가 변경되지 않았습니다. 시작하려면 Speech to Speech 문서를 참조하세요.",
-      "release_notes_ko": {
-        "new_features": "grok-voice-3.0은 이제 Grok Voice 2.0과 동일한 가격으로 Speech to Speech에서 사용할 수 있습니다. grok-voice-latest는 이제 grok-voice-3.0을 가리키므로 별칭을 사용하는 세션은 자동으로 업그레이드됩니다. API가 변경되지 않았습니다. 시작하려면 Speech to Speech 문서를 참조하세요."
-      }
     }
   ],
   "hourly_collected_at": "2026-10-15T00:34:37.056789+09:00",
