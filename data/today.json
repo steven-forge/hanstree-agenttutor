@@ -1,10 +1,62 @@
 {
-  "edition_date": "2026-10-14",
-  "window_start": "2026-08-15T06:35:37.220076+09:00",
-  "window_end": "2026-10-14T06:35:37.220076+09:00",
-  "collected_at": "2026-10-14T06:36:40.346758+09:00",
+  "edition_date": "2026-10-15",
+  "window_start": "2026-08-16T00:33:49.290183+09:00",
+  "window_end": "2026-10-15T00:33:49.290183+09:00",
+  "collected_at": "2026-10-15T00:34:37.056789+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
+    {
+      "id": "241a0eb7150b75c2",
+      "title": "Singapore office and government MOU",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/news/singapore-office-opening",
+      "source_summary": "Anthropic opens its fifth Asia-Pacific office in Singapore and signs an MOU with the government on AI safety, evaluation, and responsible adoption.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:32+09:00",
+      "published_at": "2026-10-14T08:30:00+00:00",
+      "date_precision": "time",
+      "title_ko": "싱가포르 사무소 및 정부 MOU",
+      "source_summary_ko": "싱가포르 최대의 기술 기업과 스타트업도 클로드와 함께 성장하고 있습니다.\n그리고 싱가포르에 뿌리를 둔 개발자 플랫폼인 Supabase는 Claude Code로 구축하고 있습니다.\n싱가포르 사무소가 오픈되어 채용을 진행하고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Singapore’s largest technology companies and startups are building with Claude too.",
+        "ko": "싱가포르 최대의 기술 기업과 스타트업도 클로드와 함께 성장하고 있습니다."
+      }
+    },
+    {
+      "id": "a8b8c31de898145e",
+      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/third-moment-research",
+      "source_summary": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:33:49+09:00",
+      "published_at": "2026-10-14T07:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Third Moment Research가 36시간 이상 10,000명의 상담원을 운영하는 방법",
+      "source_summary_ko": "사이버 보안을 위해 GPT-6 Astra 및 GPT-6.1 SOL, CODEX 및 DAYBREAK를 사용하는 이 AI 연구소는 며칠 동안 집중하고 사용으로 개선하는 에이전트를 구축합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "200a5d3dd39c6bfb",
+      "title": "The EU’s next chapter in AI is agentic",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+      "source_summary": "New analysis shows how agentic AI adoption is growing across EU enterprises and small businesses—and where deeper use could unlock more value.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:33:51+09:00",
+      "published_at": "2026-10-14T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "AI에서 EU의 다음 장은 agentic입니다.",
+      "source_summary_ko": "새로운 분석은 에이전트 AI 채택이 EU 기업과 중소기업에서 어떻게 성장하고 있는지, 그리고 더 깊은 사용이 더 많은 가치를 창출할 수 있는지를 보여줍니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
     {
       "id": "6ec803e44d1742cc",
       "title": "OpenAI employee arrested for allegedly planting a bug in a conference room",
@@ -59,6 +111,36 @@
       "release_notes_ko": {
         "bug_fixes": "fix (acp): bridge PromptResponse.usage 및 emit usage_update 알림\nfix (cli): 헤드리스 모드에서 해결된 폴더 신뢰 상태 전파\nfix (cli): 코드 내에서 @ 에 CPU 정지 및 견적 삼키기 방지",
         "chores": "refactor (a2a-server): V1 ~ V2 설정 마이그레이션 로직 구현\nV0.63.0-preview.0에 대한 변경 로그\nchore (release): 0.64.0-nightly.20260929.gd75234cae로 범프 버전"
+      }
+    },
+    {
+      "id": "47b1c61501a00890",
+      "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case",
+      "source_summary": "A federal judge ruled that Apple can access OpenAI's interview materials involving former Apple employees, as well as private messages and testimony from key figures in the case.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T20:36:44+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case",
+          "independent": true
+        }
+      ],
+      "title_ko": "심사위원이 OpenAI에 Apple 영업 비밀 케이스의 채용 기록을 넘겨달라고 명령함",
+      "source_summary_ko": "Apple은 또한 OpenAI의 전 Apple 직원이 다른 혐의 중에서도 인터뷰에 어떤 정보를 가져올지에 대해 OpenAI를 위해 Apple을 떠나는 것을 고려할 때 다른 사람들을 코칭했다고 말했습니다.\n에드워드 다빌라 (Edward Davila) 지방 판사는 사건과 관련된 OpenAI 문서 및 메시지에 대한 신속한 액세스에 대한 Apple의 모든 요청을 그린라이트로 표시하지 않았습니다.\n그는 또한 OpenAI의 하드웨어 연구에 대한 액세스 또는 이전 직원이 OpenAI에서 일하면서 만든 것에 대한 정보와 같은 Apple의 광범위한 발견 요청 중 몇 가지를 거부했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "District Judge Edward Davila didn’t greenlight all of Apple’s requests for expedited access to OpenAI documents and messages relevant to the case.",
+        "ko": "에드워드 다빌라 (Edward Davila) 지방 판사는 사건과 관련된 OpenAI 문서 및 메시지에 대한 신속한 액세스에 대한 Apple의 모든 요청을 그린라이트로 표시하지 않았습니다."
       }
     },
     {
@@ -152,6 +234,66 @@
       }
     },
     {
+      "id": "fd0dc8b4fea02801",
+      "title": "Flox Intelligence is building AI to keep wildlife away from trains, airports, and roads",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/flox-intelligence-is-building-ai-to-keep-wildlife-away-from-trains-airports-and-roads",
+      "source_summary": "Flox's edge devices can identify animals and use species-specific sounds to drive them away from critical infrastructure.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T18:30:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/flox-intelligence-is-building-ai-to-keep-wildlife-away-from-trains-airports-and-roads",
+          "independent": true
+        }
+      ],
+      "title_ko": "Flox Intelligence는 기차, 공항 및 도로에서 야생 동물을 멀리하기 위해 AI를 구축하고 있습니다.",
+      "source_summary_ko": "이 회사는 선불로 엣지 유닛을 판매한 다음 첫해 이후 연간 소프트웨어 및 AI 구독을 청구합니다.\nFlox는 또한 열차와 같은 차량에 소프트웨어를 배포하기 위해 연회비를 지불하는 회사와 OEM 파트너십을 맺고 있습니다.\n이 회사는 약 150만 $ 의 매출로 2026년을 끝낼 것으로 예상한다고 노즈코바는 말했다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The company sells edge units up front, then charges an annual software and AI subscription after the first year.",
+        "ko": "이 회사는 선불로 엣지 유닛을 판매한 다음 첫해 이후 연간 소프트웨어 및 AI 구독을 청구합니다."
+      }
+    },
+    {
+      "id": "d2b49f5446522b41",
+      "title": "Facebook is giving users more control over their algorithm",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm",
+      "source_summary": "Meta announced the launch of its new AI-powered feature, “Your Algorithm,” a feature it first launched on Instagram.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T18:05:24+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm",
+          "independent": true
+        }
+      ],
+      "title_ko": "페이스북은 사용자에게 알고리즘에 대한 더 많은 제어 권한을 부여하고 있습니다.",
+      "source_summary_ko": "Facebook은 사용자가 피드에 표시되는 내용을 결정하는 알고리즘을 더 잘 제어할 수 있는 최신 소셜 미디어 플랫폼입니다.\n이 새로운 도구를 통해 Facebook 사용자는 자연어를 사용하여 자신의 언어로 선호 사항을 설명함으로써 피드 및 릴에서 보는 콘텐츠에 영향을 줄 수 있습니다.\n사용자는 더 많거나 적게 보고 싶은 내용을 설명하여 Facebook이 응답을 기반으로 권장 사항을 개선하는 데 도움을 줄 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Facebook is the latest social media platform to give users greater control over the algorithm that determines what appears in their feeds.",
+        "ko": "Facebook은 사용자가 피드에 표시되는 내용을 결정하는 알고리즘을 더 잘 제어할 수 있는 최신 소셜 미디어 플랫폼입니다."
+      }
+    },
+    {
       "id": "b5b8a08608e1d9e3",
       "title": "I don’t miss the camera on the Ray-Ban Meta Audio glasses",
       "source_id": "the-verge-ai",
@@ -179,6 +321,66 @@
       "source_excerpt": {
         "original": "Meta’s Muse AI is eventually coming to the glasses, but it’s not available right now.",
         "ko": "Meta의 Muse AI가 결국 안경에 등장하지만 지금은 사용할 수 없습니다."
+      }
+    },
+    {
+      "id": "f0f1c2f3634e5356",
+      "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world",
+      "source_summary": "University of Michigan spinout Laplace Intelligence uses AI agents and interactive simulation to stress-test robots and self-driving vehicles before deployment. The profitable startup is competing in Startup Battlefield at TechCrunch Disrupt, October 13-15 in San Francisco.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T17:30:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world",
+          "independent": true
+        }
+      ],
+      "title_ko": "라플라스 인텔리전스 (Laplace Intelligence) 는 로봇과 자율 주행 자동차가 실제 세계에 도달하기 전에 빨간색 팀을 구성합니다.",
+      "source_summary_ko": "목표는 로봇, 자율 차량 또는 스마트 시티 솔루션과 같은 모든 물리적 AI가 실제 세계에 배치되기 전에 시뮬레이션에서 안전하도록 하는 것입니다.\n시뮬레이션은 서로 다른 실제 정보의 메시를 혼합하여 생성됩니다.\nSun은 Laplace가 TomTom과 같은 내비게이션 제공업체로부터 실시간 트래픽 및 혼잡 정보를 가져온다고 말합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Simulations are generated by blending a mesh of different real-world information.",
+        "ko": "시뮬레이션은 서로 다른 실제 정보의 메시를 혼합하여 생성됩니다."
+      }
+    },
+    {
+      "id": "4e9e4f1d9cd106f6",
+      "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache",
+      "source_summary": "The problem with giving everyone in a company access to AI tools is that people will use them in unexpected ways. And that fact is steadily seeding fears that companies now have new, gaping security holes in their systems or, at least, will soon.",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T17:18:25+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache",
+          "independent": true
+        }
+      ],
+      "title_ko": "인공지능 (AI) 이 기업 보안팀에 새로운 골칫거리를 제공함에 따라 명왕성 보안 (Pluto Security) 이 $ 42M를 올립니다.",
+      "source_summary_ko": "회사는 직원들이 AI 도구를 사용하거나 만드는 것을 막지 않고도 위험한 구성 요소를 식별하고, 잠재적으로 위험한 상담원 활동을 포착하고, 보안 정책을 시행할 수 있다고 말합니다.\n눈에 띄는 것은 명왕성의 시스템이 에이전트가 작업하는 동안 개입할 수 있다는 것입니다.\n미국과 이스라엘에 40명의 직원이 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "What stood out is that Pluto’s system can intervene while an agent is working, Bahat said.",
+        "ko": "눈에 띄는 것은 명왕성의 시스템이 에이전트가 작업하는 동안 개입할 수 있다는 것입니다."
       }
     },
     {
@@ -242,6 +444,36 @@
       }
     },
     {
+      "id": "45d87d6cab7a70af",
+      "title": "Google Play now lets anyone build private, vibe-coded apps that run on Android",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you",
+      "source_summary": "Google is making it easier to build and use personal Android apps created with AI, without having to make them available to everyone on the Play Store.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T17:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you",
+          "independent": true
+        }
+      ],
+      "title_ko": "이제 Google Play를 통해 누구나 Android에서 실행되는 비공개 진동 코딩 앱을 빌드할 수 있습니다.",
+      "source_summary_ko": "새로운 기능을 통해 사용자는 표준 Google 계정을 사용하여 Google Play를 통해 기기에서 개인 앱을 실행할 수 있지만 완전히 비공개로 유지됩니다.\n그러나 자신의 Android 기기에서 해당 앱을 사용할 수 있다는 것은 Google Play에 게시하여 Play 스토어의 약 30억 명의 사용자가 액세스할 수 있도록 하는 것을 의미합니다.\nGoogle Play 앱과 게임도 Gemini의 대화에 더욱 깊이 통합될 것입니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Google Play apps and games will also be more deeply integrated into Gemini’s conversations.",
+        "ko": "Google Play 앱과 게임도 Gemini의 대화에 더욱 깊이 통합될 것입니다."
+      }
+    },
+    {
       "id": "8e68e2cc66d400ed",
       "title": "Actress Mia Goth says it’s ‘incomprehensible’ that Instagram allowed an AI image of her to spread",
       "source_id": "the-verge-ai",
@@ -269,6 +501,36 @@
       "source_excerpt": {
         "original": "An Instagram post from the account miagoth_ — marked with a blue verified checkmark — quickly spread.",
         "ko": "파란색 확인 표시가 있는 miagoth_계정의 Instagram 게시물이 빠르게 퍼졌습니다."
+      }
+    },
+    {
+      "id": "c84e593e0844397d",
+      "title": "SpaceX and Google both said no. Now his software is riding a SpaceX rocket next to Google’s",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites",
+      "source_summary": "Satlyt wants to be the Android of orbital computing, offering open software that works on many companies' satellites, versus SpaceX's closed, all-in-one iPhone-style approach.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T16:30:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites",
+          "independent": true
+        }
+      ],
+      "title_ko": "SpaceX와 Google은 모두 거절했습니다. 이제 그의 소프트웨어는 Google 옆에 있는 SpaceX 로켓을 타고 있습니다.",
+      "source_summary_ko": "SpaceX, Google 또는 Starcloud 및 Cowboy Space Company와 같은 신생 기업과 달리 Satlyt는 자체 우주선을 만들 계획이 없습니다.\n즉, Satlyt는 많은 회사의 위성에서 작동하는 소프트웨어를 제공하고자 합니다.\n발사를 통해 Satlyt의 소프트웨어는 인공위성을 위한 컴퓨팅 하드웨어를 구축하는 인도 스타트업 TakeMe2Space가 제작한 우주선에서 작동하게 됩니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Unlike SpaceX, Google, or startups like Starcloud and Cowboy Space Company, Satlyt isn’t planning to build its own spacecraft.",
+        "ko": "SpaceX, Google 또는 Starcloud 및 Cowboy Space Company와 같은 신생 기업과 달리 Satlyt는 자체 우주선을 만들 계획이 없습니다."
       }
     },
     {
@@ -388,6 +650,214 @@
       }
     },
     {
+      "id": "1c21139e121f2f83",
+      "title": "SpaceXSI bundles X Premium, Grok, and Cursor into one subscription",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription",
+      "source_summary": "The new X Subscription combines X's paid features with AI tools like Grok and Cursor, offering plans ranging from $8 to $200 per month.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T13:50:19+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription",
+          "independent": true
+        },
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/x-subscription-cursor-pricing",
+          "independent": true
+        }
+      ],
+      "title_ko": "SpaceXSI는 X Premium, Grok 및 Cursor를 하나의 구독으로 묶습니다",
+      "source_summary_ko": "새로운 구독에는 무료, 플러스 ($ 8/월), 프리미엄 ($ 30/월), 슈퍼 ($ 100/월), 울트라 ($ 200/월) 의 다섯 가지 요금제가 있으며, 등급을 높일수록 AI 사용 한도가 증가합니다.\n기존 사용자는 X의 구독 설정에서 전환하여 새 번들로 업그레이드하거나 현재 요금제를 유지할 수 있습니다.\n스타트업은 TechCrunch의 핵심이므로 매주 최고의 서비스를 받으세요.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Existing users can either switch from their subscription settings on X to upgrade to the new bundle, or maintain their current plan.",
+        "ko": "기존 사용자는 X의 구독 설정에서 전환하여 새 번들로 업그레이드하거나 현재 요금제를 유지할 수 있습니다."
+      }
+    },
+    {
+      "id": "9a845b395df164fb",
+      "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026",
+      "source_summary": "The full TechCrunch Disrupt Stage lineup revealed, featuring Max Hodak, Mark Wahlberg, Benchmark partners, and more. Register now to save up to $100 on your pass and get a second at 50% off.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T13:28:06+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026",
+          "independent": true
+        }
+      ],
+      "title_ko": "최종 Disrupt Stage 라인업: TechCrunch Disrupt 2026 외부에서는 들을 수 없는 3일간의 대화",
+      "source_summary_ko": "TechCrunch Disrupt의 가장 큰 단계는 미래를 건설하는 사람들이 기술 생태계에서 다음에 일어날 일에 대해 이야기하는 것입니다.\nDisrupt Stage의 정면과 중앙에 앉아 기술을 형성하는 리더들의 의견을 직접 들어보세요.\n지금 등록하고 50% 할인된 가격에 두 번째 이용권을 받으세요.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The biggest stage at TechCrunch Disrupt is where the people building the future come to talk about what happens next in the tech ecosystem.",
+        "ko": "TechCrunch Disrupt의 가장 큰 단계는 미래를 건설하는 사람들이 기술 생태계에서 다음에 일어날 일에 대해 이야기하는 것입니다."
+      }
+    },
+    {
+      "id": "49b1bdb6bdb27bb4",
+      "title": "Workday is using TypeSafe’s Jev to build user interfaces on the fly",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/workday-is-using-typesafes-jev-to-build-user-interfaces-on-the-fly",
+      "source_summary": "Workday on Tuesday made Sana, its AI assistant, the new home screen for its HR, finance, and IT software. If The post Workday is using TypeSafe’s Jev to build user interfaces on the fly appeared first on The New Stack .",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T13:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/workday-is-using-typesafes-jev-to-build-user-interfaces-on-the-fly",
+          "independent": true
+        }
+      ],
+      "title_ko": "Workday는 TypeSafe의 Jev를 사용하여 즉석에서 사용자 인터페이스를 구축하고 있습니다.",
+      "source_summary_ko": "Workday는 화요일에 AI 어시스턴트인 Sana를 HR, 재무 및 IT 소프트웨어의 새로운 홈 화면으로 만들었습니다. POST Workday가 TypeSafe의 JEV를 사용하여 즉석에서 사용자 인터페이스를 구축하는 경우 새 스택에 처음 나타납니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "cbaf709e321ce807",
+      "title": "Workday goes headless, opening its HR and finance data to outside AI agents",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/workday-headless-mcp-agents",
+      "source_summary": "Workday is opening up its platform and allowing developers to build their own HR and finance agents in Claude Code, The post Workday goes headless, opening its HR and finance data to outside AI agents appeared first on The New Stack .",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T13:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/workday-headless-mcp-agents",
+          "independent": true
+        }
+      ],
+      "title_ko": "Workday는 인사 및 재무 데이터를 외부 AI 상담원에게 개방하는 데 어려움을 겪고 있습니다.",
+      "source_summary_ko": "Workday는 플랫폼을 개방하고 있으며 개발자가 Claude Code에서 자체 HR 및 재무 에이전트를 구축할 수 있도록 허용하고 있습니다. Workday는 HR 및 재무 데이터를 외부 AI 에이전트에 개방하는 데 앞장서고 있습니다. The post Workday goes headless, opening its HR and finance data to outside AI agents appeared first on The New Stack.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "d7ffd4af20344ede",
+      "title": "Amex introduces a framework to prevent AI agents from making unauthorized purchases",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases",
+      "source_summary": "American Express is introducing a new framework designed to ensure AI agents only make purchases their users have authorized, potentially preventing costly mistakes and disputes as AI-powered shopping grows.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T13:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases",
+          "independent": true
+        }
+      ],
+      "title_ko": "Amex는 AI 상담원이 무단으로 구매하는 것을 방지하기 위한 프레임워크를 도입합니다.",
+      "source_summary_ko": "그런 다음 고객은 자신의 신원을 인증하고 상담원이 포착한 의도에 대해 사인오프합니다.\n그런 다음 의도를 나타내는 고유 식별자인 Intent ID가 고객의 높은 수준의 제약을 포함하는 Proof of Intent Token과 함께 생성됩니다.\n이를 통해 Amex는 고객이 에이전트에게 권한을 부여한 내용과 일치하면서 구매가 안전하게 유지될 것이라고 말합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The customer then authenticates their identity and signs off on the intent captured by the agent.",
+        "ko": "그런 다음 고객은 자신의 신원을 인증하고 상담원이 포착한 의도에 대해 사인오프합니다."
+      }
+    },
+    {
+      "id": "540f856caa518165",
+      "title": "Just 5 years in, interactive chatbot platform Character.AI files for bankruptcy",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy",
+      "source_summary": "The startup will sell some of its assets to Disney for $20 million.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T12:23:42+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy",
+          "independent": true
+        }
+      ],
+      "title_ko": "불과 5년 만에 인터랙티브 챗봇 플랫폼인 Character.AI 파산 신청",
+      "source_summary_ko": "Character.AI는 5년 동안 격동의 시간을 보냈습니다.\n그러나 Character.AI의 견인력은 그해 10월까지 플랫폼이 월간 활성 사용자 2천만 명을 기록하면서 느려지지 않았습니다.\n이후 회사는 이러한 소송 중 일부를 해결하고, 더 많은 안전 기능을 추가하고, 미성년자를 플랫폼에서 금지했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Character.AI has had a tumultuous five years.",
+        "ko": "Character.AI는 5년 동안 격동의 시간을 보냈습니다."
+      }
+    },
+    {
+      "id": "341b0dd56fd99af0",
+      "title": "Production Patterns for Agents, Evals, and LLM Costs: QCon AI New York 2026",
+      "source_id": "infoq-ai",
+      "source_name": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-sessionsv2",
+      "source_summary": "Once AI is in production, code arrives faster than it can be reviewed, token costs rise, evals have to be good enough to act on, and agents need permissions and guardrails. QCon AI New York 2026 (December 15-16) has confirmed sessions from engineers sharing how they handle these constraints. By Artenisa Chatziou",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T12:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-sessionsv2",
+          "independent": true
+        }
+      ],
+      "title_ko": "에이전트, Evals 및 LLM 비용의 생산 패턴: QCon AI New York 2026",
+      "source_summary_ko": "수석 엔지니어와 기술 리더가 생산 AI에 대한 결정을 내리는 것입니다.\n발표하는 수석 엔지니어는 이미 이러한 결정을 내리고 생산 결과를 실행했습니다.\n프로덕션 에이전트에 대한 신원 및 승인 QCon AI 오프닝 기조 연설에서는 에이전트 프로덕션 액세스 권한을 부여하기 위한 두 가지 나쁜 옵션에 대해 설명합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "It is for senior engineers and technical leaders making decisions on production AI.",
+        "ko": "수석 엔지니어와 기술 리더가 생산 AI에 대한 결정을 내리는 것입니다."
+      }
+    },
+    {
       "id": "8d45898e533e591d",
       "title": "Higgsfield takes AI video from 1 minute to over 10",
       "source_id": "openai-news",
@@ -464,6 +934,88 @@
       }
     },
     {
+      "id": "5fb712458e1fa1d2",
+      "title": "Meta's Watermelon ripens into a frontier model",
+      "source_id": "the-rundown-ai",
+      "source_name": "The Rundown AI",
+      "source_url": "https://www.therundown.ai/articles/meta-watermelon-ripens-into-a-frontier-model",
+      "source_summary": "PLUS: Put Meta’s new model to work",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-13T09:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/meta-watermelon-ripens-into-a-frontier-model",
+          "independent": true
+        }
+      ],
+      "title_ko": "국경 모델로 익어가는 메타의 수박",
+      "source_summary_ko": "Wonder Full은 Muse Code 플랜으로 $ 50 또는 $ 200/월로 제한되며, 표준 모델은 Meta의 API에서 사용할 수 있으며 유료 Muse 앱 구독자에게 배포됩니다.\n런다운: 이 가이드에서는 Meta의 새로운 Muse Wonder를 사용하여 워크숍 브리프를 일정과 예산으로 전환합니다.\n단계별: Muse Code를 열고 로그인한 후 Wonder를 선택합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The Rundown: In this guide, you’ll use Meta’s new Muse Wonder to turn a workshop brief into an agenda and budget.",
+        "ko": "런다운: 이 가이드에서는 Meta의 새로운 Muse Wonder를 사용하여 워크숍 브리프를 일정과 예산으로 전환합니다."
+      }
+    },
+    {
+      "id": "9a6447a00a3a902e",
+      "title": "“A major overhaul”: OpenCode 2.0 puts its terminal, desktop, and web apps on one shared service",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/opencode-2-shared-service",
+      "source_summary": "OpenCode 2.0 is getting a formal unpacking today, some three months after its public beta launch. The sizable architectural upgrade The post “A major overhaul”: OpenCode 2.0 puts its terminal, desktop, and web apps on one shared service appeared first on The New Stack .",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T21:11:33+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/opencode-2-shared-service",
+          "independent": true
+        }
+      ],
+      "title_ko": "\"대대적인 점검\": OpenCode 2.0은 터미널, 데스크톱 및 웹 앱을 하나의 공유 서비스에 배치합니다.",
+      "source_summary_ko": "OpenCode 2.0은 공개 베타 출시 후 약 3개월이 지난 오늘 정식 언팩을 받고 있습니다. 상당한 아키텍처 업그레이드 \"대대적인 개편\": OpenCode 2.0은 터미널, 데스크톱 및 웹 앱을 하나의 공유 서비스에 배치합니다. 새 스택에 처음 등장했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "86a16431c62dc661",
+      "title": "Coding agents made building easy. Platform teams that build from scratch are 3.5x more likely to lack a strategy.",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/coding-agents-platform-teams",
+      "source_summary": "Build-or-buy is usually framed as an engineering trade-off, where developer time is weighed against integration and migration overhead, and control The post Coding agents made building easy. Platform teams that build from scratch are 3.5x more likely to lack a strategy. appeared first on The New Stack .",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T19:28:27+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/coding-agents-platform-teams",
+          "independent": true
+        }
+      ],
+      "title_ko": "코딩 에이전트를 사용하면 쉽게 구축할 수 있습니다. 처음부터 구축하는 플랫폼 팀은 전략이 부족할 가능성이 3.5배 더 높습니다.",
+      "source_summary_ko": "빌드 또는 바이 (build-or-buy) 는 일반적으로 개발자의 시간이 통합 및 마이그레이션 오버헤드에 비중을 두고 제어하는 엔지니어링 트레이드 오프 (engineering trade-off) 로 구성됩니다. 포스트 코딩 에이전트는 구축을 쉽게 만들었습니다. 처음부터 구축하는 플랫폼 팀은 전략이 부족할 가능성이 3.5배 더 높습니다. 는 The New Stack에 처음 등장했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
       "id": "4077f3ad381dd8fd",
       "title": "Elon Musk Bragged About His Grok Lego Star Wars Haul. Then X Users Punked Him",
       "source_id": "wired-ai",
@@ -491,6 +1043,36 @@
       "source_excerpt": {
         "original": "Lego declined to comment when WIRED contacted the company to confirm if such activity took place on Musk's personal Star Wars order.",
         "ko": "레고는 유선이 회사에 연락하여 그러한 활동이 머스크의 개인 스타워즈 주문에서 이루어졌는지 확인했을 때 언급을 거부했습니다."
+      }
+    },
+    {
+      "id": "5086a26c24b9017f",
+      "title": "WindBorne wins a hefty US Air Force contract for its balloon data",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data",
+      "source_summary": "A Silicon Valley startup that uses weather balloons and AI to predict the weather won a U.S. military contract worth almost $50 million.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T17:19:14+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data",
+          "independent": true
+        }
+      ],
+      "title_ko": "WindBorne은 풍선 데이터로 무거운 미 공군 계약을 따냅니다",
+      "source_summary_ko": "공군은 WindBorne Systems의 자율 기상 풍선 함대가 수집한 데이터를 신생 기업에 거의 5천만 달러 ($) 상당의 새로운 계약에 따라 구매할 것입니다.\nWindBorne은 현재 전 세계를 비행하는 약 700개의 기상 풍선을 보유하고 있으며, 회사가 고객에게 판매하는 대기 센서 판독값을 수집하고 자체 AI 일기 예보 모델도 제공합니다.\n이 회사는 미국 정부, 특히 미국 기상청 및 미국과 긴밀히 협력해 왔습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The company has worked closely with the U.S. government, particularly the National Weather Service and the U.S.",
+        "ko": "이 회사는 미국 정부, 특히 미국 기상청 및 미국과 긴밀히 협력해 왔습니다."
       }
     },
     {
@@ -527,6 +1109,186 @@
       "source_excerpt": {
         "original": "The Muse Wonder models will be available through an API and through Muse Code, a tool for writing software with AI.",
         "ko": "Muse Wonder 모델은 API와 AI로 소프트웨어를 작성하기 위한 도구인 Muse Code를 통해 사용할 수 있습니다."
+      }
+    },
+    {
+      "id": "f32ec83ece71d3f7",
+      "title": "Honeyjar offers AI tools to improve PR and comms at every company",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company",
+      "source_summary": "Journalists, entrepreneurs, and even some public relations professionals will tell you that the PR process is broken. But could AI actually make things better?",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T15:45:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company",
+          "independent": true
+        }
+      ],
+      "title_ko": "Honeyjar는 모든 회사의 PR 및 커뮤니케이션을 개선하는 AI 도구를 제공합니다.",
+      "source_summary_ko": "그래서 나는 Masek이 \"우리가하는 적극적이고 숙련 된 방식으로 사용자가 커뮤니케이션 작업을 수행하는 데 실제로 도움이되는 AI [방식으로] 로 고위 수준의 전문 지식을 확장 할 수있는 방법이 있습니까?\" 꿀자르는 그 질문에 대한 그녀의 대답입니다.\nMasek은 자신과 Jamshidi가 직접 사용하고 싶은 도구를 만들었다고 말했습니다.\n그녀는 Honeyjar가 PR 회사와 사내 커뮤니케이션 팀을 보다 효과적으로 만들 수 있으며, 동시에 개별 PR 실무자가 \"확장 비용 없이 세 번째 고객을 맡을 수 있다고 주장했습니다.\" Honeyjar가 대기자 명단을 열었을 때, 처음 24시간 동안 10,000명의 가입자를 받았다고 Masek이 말했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Masek said she and Jamshidi built the tool they wanted to use themselves.",
+        "ko": "Masek은 자신과 Jamshidi가 직접 사용하고 싶은 도구를 만들었다고 말했습니다."
+      }
+    },
+    {
+      "id": "3280ed302a3eecae",
+      "title": "Microsoft president says UK is best placed to drive AI regulation",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation",
+      "source_summary": "Microsoft president Brad Smith calls for urgent AI regulation, saying milk and washing machines have more oversight than AI companies.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T15:31:19+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation",
+          "independent": true
+        }
+      ],
+      "title_ko": "Microsoft 사장은 영국이 AI 규제를 추진하는 데 가장 적합하다고 말합니다.",
+      "source_summary_ko": "최근 BBC 팟캐스트에서 스미스는 AI를 세계의 사이버 보안을 위험에 빠뜨리는 \"무기와 도구\" 라고 부르며 글로벌 안전 규칙을 제정하는 \"순간이 왔다\" 고 말했다.\n스미스는 또한 미국이나 유럽연합이 아닌 영국이 글로벌 안전 규칙을 주도하는 것이 가장 좋다고 말했다.\n그는 자발적인 자율 규제의 문제는 \"좋은 회사\" 만이 준수할 것이라고 말했다. 그는 \"당신이 걱정해야 할 것은 그만큼 책임감이 없는 회사들\" 이라고 말했다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Smith also said the U.K., and not the U.S. or European Union, is best placed to lead on global safety rules.",
+        "ko": "스미스는 또한 미국이나 유럽연합이 아닌 영국이 글로벌 안전 규칙을 주도하는 것이 가장 좋다고 말했다."
+      }
+    },
+    {
+      "id": "de563f5e428af2e8",
+      "title": "This AI startup says it can generate permit-ready blueprints in minutes",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes",
+      "source_summary": "Blueprints AI, a bootstrapped startup based in Santa Monica, developed software that produces code-compliant construction blueprints from a photo, PDF, or sketch.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T15:27:59+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes",
+          "independent": true
+        }
+      ],
+      "title_ko": "이 AI 스타트업은 몇 분 안에 허가 준비 청사진을 생성할 수 있다고 말합니다.",
+      "source_summary_ko": "이 스타트업의 2세대 소프트웨어는 상당한 업그레이드를 제공할 것입니다.\n이 스타트업은 이미 구조 분석 및 전기 패널 설계를 추가하는 세 번째 버전의 소프트웨어를 개발하고 있습니다.\n청사진 AI는 새로운 소프트웨어로 두 그룹을 타겟팅하고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The startup’s second-generation software will deliver a considerable upgrade.",
+        "ko": "이 스타트업의 2세대 소프트웨어는 상당한 업그레이드를 제공할 것입니다."
+      }
+    },
+    {
+      "id": "c30d391f218d6260",
+      "title": "UCLA builds a humanoid from smartphone",
+      "source_id": "the-rundown-ai",
+      "source_name": "The Rundown AI",
+      "source_url": "https://www.therundown.ai/articles/ucla-builds-a-humanoid-from-smartphone",
+      "source_summary": "PLUS: Tesla is developing a robot skin",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T14:30:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/ucla-builds-a-humanoid-from-smartphone",
+          "independent": true
+        }
+      ],
+      "title_ko": "UCLA는 스마트폰에서 휴머노이드를 만듭니다",
+      "source_summary_ko": "또한: Tesla의 특허 출원은 터치에 민감한 로봇 피부를 자세히 설명하고 EPFL은 실처럼 보이는 로봇 모터를 공개합니다.\n테슬라는 지난 9월\n로봇 회사는 부족한 실제 훈련 데이터를 채우기 위해 \"로봇 체육관\" 을 만들고 일상적인 작업을 촬영하고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Also: Tesla’s patent application details touch-sensitive robot skin, while EPFL unveils a robot motor that looks like thread.",
+        "ko": "또한: Tesla의 특허 출원은 터치에 민감한 로봇 피부를 자세히 설명하고 EPFL은 실처럼 보이는 로봇 모터를 공개합니다."
+      }
+    },
+    {
+      "id": "923391ccc7454943",
+      "title": "Former Plaud exec raises $26M for AI app that listens to you in the background",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/12/former-plaud-exec-raises-26m-for-ai-app-that-listens-to-you-in-the-background",
+      "source_summary": "One of the core promises of AI is that the more it knows about a person, the better it will be able to assist them with tasks and make appropriate suggestions, which, if you'll believe the tech companies, requires apps and devices to listen, watch, or record users' activity all the time and gather all possible context.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T12:47:59+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/12/former-plaud-exec-raises-26m-for-ai-app-that-listens-to-you-in-the-background",
+          "independent": true
+        }
+      ],
+      "title_ko": "전 Plaud 경영진이 백그라운드에서 여러분의 의견을 경청하는 AI 앱으로 $ 26M를 모금했습니다",
+      "source_summary_ko": "이러한 앱은 미팅 노트 작성자처럼 작동하지만 사용자는 하루 종일 컨텍스트를 캡처할 수 있도록 청취하도록 선택할 수 있습니다.\n회사는 더 많은 정보를 포착하고자 합니다.\nMo는 사용자가 Ambi의 앱과 장치에서 언제든지 주변 데이터 캡처를 끌 수 있으며 이 기능은 기본적으로 꺼져 있다고 말했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "These apps act like meeting notetakers, but users can choose to have them listening so they can capture context all day.",
+        "ko": "이러한 앱은 미팅 노트 작성자처럼 작동하지만 사용자는 하루 종일 컨텍스트를 캡처할 수 있도록 청취하도록 선택할 수 있습니다."
+      }
+    },
+    {
+      "id": "d82d862b9eb993d7",
+      "title": "This AI factory builds tiny machines from code",
+      "source_id": "the-rundown-ai",
+      "source_name": "The Rundown AI",
+      "source_url": "https://www.therundown.ai/articles/this-ai-factory-builds-tiny-machines-from-code",
+      "source_summary": "PLUS: Turn a product photo into three matching ads",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-15T00:34:37+09:00",
+      "published_at": "2026-10-12T09:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/this-ai-factory-builds-tiny-machines-from-code",
+          "independent": true
+        }
+      ],
+      "title_ko": "이 AI 공장은 코드에서 초소형 기계를 제작합니다",
+      "source_summary_ko": "The Rundown: The Rundown Roundtable은 The Rundown 직원을 대상으로 업무와 일상 생활에서 AI를 사용하는 방법에 대해 설문조사를 실시하는 주간 기능입니다.\n런다운: 이 가이드에서는 Nano Banana 2.1을 사용하여 제품 사진 하나를 캠페인 이미지 세트로 변환합니다.\n더 중요한 것은 사용자가 자신의 이미지와 텍스트 아카이브로 작업할 수 있도록 했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The Rundown: In this guide, you’ll use Nano Banana 2.1 to turn one product photo into a matching set of campaign images.",
+        "ko": "런다운: 이 가이드에서는 Nano Banana 2.1을 사용하여 제품 사진 하나를 캠페인 이미지 세트로 변환합니다."
       }
     },
     {
@@ -604,6 +1366,12 @@
           "source_id": "techcrunch-ai",
           "name": "TechCrunch",
           "url": "https://techcrunch.com/2026/10/13/techcrunch-disrupt-2026-day-1",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/14/techcrunch-disrupt-2026-day-2",
           "independent": true
         }
       ],
