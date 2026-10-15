@@ -6,6 +6,26 @@
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
+      "id": "255cde9f48a82982",
+      "title": "0.163.0",
+      "source_id": "codex-releases",
+      "source_name": "Codex Releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0",
+      "source_summary": "## New Features - Open `/config` to search preferences across categories, change supported settings immediately, and see which changes require a restart. (#52990, #53429) - Send a follow-up while Codex is responding to steer it immediately. Interrupting a turn also stops active Code Mode cells and their nested tool calls. (#51812, #51835) - Configure a leader key in `/keymap`. The default is `Ctrl+X`, shortcut hints stay open until you choose or cancel, and voice mute moves to `F9`. (#52273) - R",
+      "why_it_matters": "새 버전의 기능과 수정 사항은 개발 도구의 동작과 작업 안정성에 직접 영향을 줄 수 있습니다. 초보자는 업데이트 전에 변경 내역을 확인하면 기존 설정이나 작업 흐름이 달라지는 이유를 이해하기 쉽습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-16T07:43:11+09:00",
+      "published_at": "2026-10-15T21:30:38+00:00",
+      "date_precision": "time",
+      "title_ko": "Codex 0.163.0 버전 출시",
+      "source_summary_ko": "# # 새로운 기능 - `/config` 를 열어 카테고리의 기본 설정을 검색하고, 지원되는 설정을 즉시 변경하고, 재시작해야 하는 변경 사항을 확인하세요. (# 52990, # 53429) - 코덱스가 응답하는 동안 후속 조치를 보내 즉시 조종하세요. 턴을 중단하면 활성 코드 모드 셀과 중첩된 도구 호출도 중지됩니다. (# 51812, # 51835) - `/keymap` 에서 리더 키를 구성합니다. 기본값은 `Ctrl + X` 이며, 단축키 힌트는 선택하거나 취소하면 음성 음소거가 `F9` 로 이동합니다. (# 52273) - R",
+      "release_notes_ko": {
+        "new_features": "`/config` 를 열어 카테고리의 기본 설정을 검색하고, 지원되는 설정을 즉시 변경하고, 다시 시작해야 하는 변경 사항을 확인하세요.\n코덱스가 즉시 조종하기 위해 응답하는 동안 후속 조치를 보냅니다. 턴을 중단하면 활성 코드 모드 셀과 중첩된 도구 호출도 중지됩니다.",
+        "bug_fixes": "저장된 스레드를 재개하면 명시적 재정의 및 현재 관리되는 정책을 존중하면서 사용 권한과 네트워크 승인이 복원됩니다.\n이제 네트워크 프록시는 DNS 조회 전에 권한을 확인하고 중복된 `호스트` 헤더를 거부하며 자격 증명 별칭이 검사 후크를 우회하지 못하게 합니다.",
+        "chores": "이제 코덱스는 표준 셸 실행기를 사용하고 더 이상 패치된 `zsh` 를 번들로 제공하지 않습니다. 폐기된 셸 플래그를 사용하는 구성은 마이그레이션 알림을 받습니다.\n원래 빌드 출력에 기호를 유지하면서 패키지 바이너리에서 기호를 제거하여 Linux 및 macOS 릴리스 패키지 크기를 줄였습니다."
+      }
+    },
+    {
       "id": "a60f4a701f887ae8",
       "title": "Teaching students to think and learn through questions",
       "source_id": "openai-news",
