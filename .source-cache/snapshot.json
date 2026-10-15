@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "targets": {
     "codex": {
       "commands": [
@@ -1720,6 +1720,7 @@
         "/artifact",
         "/boost",
         "/branch",
+        "/browser",
         "/btw",
         "/changelog",
         "/clear",
@@ -1734,9 +1735,11 @@
         "/fast",
         "/feedback",
         "/fork",
+        "/goal",
         "/help",
         "/hooks",
         "/keybindings",
+        "/learn",
         "/logout",
         "/mcp",
         "/model",
@@ -1753,6 +1756,7 @@
         "/rename",
         "/resume",
         "/rewind",
+        "/schedule",
         "/settings",
         "/skills",
         "/statusline",
@@ -1773,6 +1777,7 @@
         "/agents": "슬래시 명령",
         "/artifact": "슬래시 명령",
         "/boost": "슬래시 명령",
+        "/browser": "슬래시 명령",
         "/btw": "슬래시 명령",
         "/changelog": "슬래시 명령",
         "/clear": "슬래시 명령",
@@ -1790,9 +1795,11 @@
         "/feedback": "슬래시 명령",
         "/fork": "슬래시 명령",
         "/branch": "슬래시 명령",
+        "/goal": "슬래시 명령",
         "/help": "슬래시 명령",
         "/hooks": "슬래시 명령",
         "/keybindings": "슬래시 명령",
+        "/learn": "슬래시 명령",
         "/logout": "슬래시 명령",
         "/mcp": "슬래시 명령",
         "/model": "슬래시 명령",
@@ -1808,6 +1815,7 @@
         "/conversation": "슬래시 명령",
         "/rewind": "슬래시 명령",
         "/undo": "슬래시 명령",
+        "/schedule": "슬래시 명령",
         "/skills": "슬래시 명령",
         "/statusline": "슬래시 명령",
         "/tasks": "슬래시 명령",
@@ -1944,6 +1952,13 @@
           "date": "2026-09-29"
         },
         {
+          "command": "/browser",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-16"
+        },
+        {
           "command": "/changelog",
           "category": "슬래시 명령",
           "status": "new",
@@ -1958,6 +1973,20 @@
           "date": "2026-10-15"
         },
         {
+          "command": "/goal",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-16"
+        },
+        {
+          "command": "/learn",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-16"
+        },
+        {
           "command": "/plugin",
           "category": "슬래시 명령",
           "status": "new",
@@ -1970,6 +1999,13 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-09-30"
+        },
+        {
+          "command": "/schedule",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-16"
         },
         {
           "command": "agy",
