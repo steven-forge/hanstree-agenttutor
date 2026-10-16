@@ -1,8 +1,8 @@
 {
-  "edition_date": "2026-10-16",
-  "window_start": "2026-08-17T00:21:35.109033+09:00",
-  "window_end": "2026-10-16T00:21:35.109033+09:00",
-  "collected_at": "2026-10-16T00:22:24.439722+09:00",
+  "edition_date": "2026-10-17",
+  "window_start": "2026-08-18T00:01:55.889380+09:00",
+  "window_end": "2026-10-17T00:01:55.889380+09:00",
+  "collected_at": "2026-10-17T00:02:46.633345+09:00",
   "reviewed_at": "2026-09-21T05:36:52+09:00",
   "articles": [
     {
@@ -26,6 +26,207 @@
       }
     },
     {
+      "id": "32165ee6af8945a5",
+      "title": "Bringing GPT-Rosalind to academic research labs",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "source_summary": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:01:56+09:00",
+      "published_at": "2026-10-15T19:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "학술 연구실에 GPT-Rosalind 도입",
+      "source_summary_ko": "Rosalind Academic Plan을 소개합니다. GPT-Rosalind에 대한 자격을 갖춘 학술 실험실 후원 액세스 및 생명 과학 연구를 발전시키는 도구를 제공합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "c3f9aa1e97f35f24",
+      "title": "Anthropic update on independent evaluators",
+      "source_id": "anthropic-news",
+      "source_name": "Anthropic News",
+      "source_url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "source_summary": "Anthropic announces updates to embedding independent evaluators",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:40+09:00",
+      "published_at": "2026-10-15T17:20:00+00:00",
+      "date_precision": "time",
+      "title_ko": "독립 평가자에 대한 인류애적 업데이트",
+      "source_summary_ko": "METR은 위험 평가 결과를 발표할 것입니다.\n평가자를 위한 세 가지 액세스 계층을 개발하고 있습니다.\n두 번째 등급에서는 평가자가 Patreon의 승인 없이 게시할 수 있으며, 더 많은 정보를 확인할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "METR will publish the results of its risk assessments.",
+        "ko": "METR은 위험 평가 결과를 발표할 것입니다."
+      }
+    },
+    {
+      "id": "c3903dc3735427e9",
+      "title": "Nvidia squeezed a 74B agent model into 24GB so it can run on your laptop",
+      "source_id": "the-new-stack-ai",
+      "source_name": "The New Stack",
+      "source_url": "https://thenewstack.io/nvidia-nemotron-bolt-laptop",
+      "source_summary": "Nvidia on Thursday announced a few new additions to its Nemotron family: Nemotron 3.5 Super VL, a 120B vision-language model for The post Nvidia squeezed a 74B agent model into 24GB so it can run on your laptop appeared first on The New Stack .",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T16:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50104922",
+          "independent": false,
+          "target_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB"
+        },
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50104756",
+          "independent": false,
+          "target_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16"
+        },
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/nvidia-nemotron-bolt-laptop",
+          "independent": true
+        }
+      ],
+      "title_ko": "엔비디아가 74B 에이전트 모델을 24GB로 압축하여 노트북에서 실행할 수 있도록 했습니다.",
+      "source_summary_ko": "목요일 Nvidia는 Nemotron 제품군에 몇 가지 새로운 추가 기능을 발표했습니다. Nemotron 3.5 Super VL은 The post Nvidia의 120B 비전 언어 모델로 74B 에이전트 모델을 24GB로 압축하여 노트북에서 실행할 수 있도록 했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "fa3be6b020a0d422",
+      "title": "AI agents are coming to Rivian’s cars",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars",
+      "source_summary": "We'll likely learn more about how this will work at the company's upcoming \"AI & Autonomy Day\" event in December.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T15:02:36+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/15/ai-agents-are-coming-to-rivians-cars",
+          "independent": true
+        }
+      ],
+      "title_ko": "AI 요원이 리비안의 차량으로 오고 있습니다",
+      "source_summary_ko": "12월에 열릴 예정인 회사의 'AI 및 자율주행의 날' 행사에서 이 기능이 어떻게 작동하는지 자세히 알아볼 수 있을 것입니다.",
+      "source_excerpt": {
+        "original": "And then even for that, we have different models that we use,” Scaringe said.",
+        "ko": "그런 다음에도 우리가 사용하는 모델이 다릅니다. \"라고 Scaringe는 말했습니다."
+      }
+    },
+    {
+      "id": "b7e6e91e4028317e",
+      "title": "How Windows is being optimized for Nvidia’s RTX Spark laptops",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad",
+      "source_summary": "Microsoft and Nvidia held a launch party for the first wave of RTX Spark laptops last week in San Francisco, where a new wave of AI PCs took center stage amid a packed crowd and a lively hands-on area. A day after the media event, I was invited to a quieter Nvidia event to hear […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T14:30:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1011996/microsoft-windows-rtx-spark-platform-changes-notepad",
+          "independent": true
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
+          "independent": true
+        }
+      ],
+      "title_ko": "Windows가 Nvidia의 RTX Spark 노트북에 최적화되는 방법",
+      "source_summary_ko": "Tech AI Microsoft Microsoft는 현지 AI 모델, 게임 및 메모리 관리에 중점을 두었습니다.\nMicrosoft는 고급 셰이더 제공 시스템도 RTX Spark에 도입하고 있습니다.\nMicrosoft의 RTX Spark 작업의 마지막 부분에는 Windows 기능이 포함됩니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Microsoft is also bringing its advanced shader delivery system to RTX Spark.",
+        "ko": "Microsoft는 고급 셰이더 제공 시스템도 RTX Spark에 도입하고 있습니다."
+      }
+    },
+    {
+      "id": "bd42108ff227ced5",
+      "title": "Nobody is safe from celebrity AI deepfakes",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/report/1011927/instagram-celebrity-ai-slop-likeness-taylor-swift-mia-goth",
+      "source_summary": "In hindsight, the post on Instagram should have raised more red flags. The image purported to show actress Mia Goth, just days after filing for divorce from actor and filmmaker Shia LaBeouf, posing in a T-shirt with a pointed message: MY EX IS MY BIGGEST FAN. To really drive home the point, the song \"Single […]",
+      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T14:03:42+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/report/1011927/instagram-celebrity-ai-slop-likeness-taylor-swift-mia-goth",
+          "independent": true
+        }
+      ],
+      "title_ko": "유명인 AI 딥페이크로부터 안전하지 않은 사람은 없습니다.",
+      "source_summary_ko": "The Verge가 보도한 것처럼 이미지는 AI로 생성되었으며, Goth의 담당자는 이전에 Goth의 \"위조, AI 이미지\" 를 게시한 것에 대해 Instagram에 불만을 제기했다고 말했습니다.\nAriana Grande는 작년에 AI로 생성된 콘텐츠를 게시하는 계정을 차단했다고 합니다.\n플랫폼 외부의 콘텐츠는 Johansson의 이름과 (AI) 이미지를 사용하여 성인 콘텐츠를 광고했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Ariana Grande is said to have blocked an account posting AI-generated content of her last year.",
+        "ko": "Ariana Grande는 작년에 AI로 생성된 콘텐츠를 게시하는 계정을 차단했다고 합니다."
+      }
+    },
+    {
+      "id": "4b235d19b2c1618b",
+      "title": "Benn Jordan on Flock, privacy, and the new surveillance backlash",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/podcast/1011170/benn-jordan-flock-cameras-alpr-ai-surveillance-privacy",
+      "source_summary": "Today, I’m talking with Benn Jordan, musician, YouTuber, researcher, and investigative journalist. You might know Benn from those first two titles — he’s got a prolific discography of experimental music dating back decades. But in the last couple of years, he’s become a high-profile face in the creator and media spaces for his work investigating […]",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T14:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/1011170/benn-jordan-flock-cameras-alpr-ai-surveillance-privacy",
+          "independent": true
+        }
+      ],
+      "title_ko": "Flock, 개인 정보 보호 및 새로운 감시 반발에 대한 Benn Jordan",
+      "source_summary_ko": "내 마음대로 했다면 경찰은 전혀 플록에 접근할 수 없었을 것이다.\n제 생각에, 그리고 제가 바라는 것은 사람들이 Flock과 다른 경찰 감시 기술에 대해 어떤 일이 일어나고 있는지 발견할 때, 그들은 또한 즉시 잘못된 정보로 가지 않는다는 것입니다. 왜냐하면 그것이 많은 사람들이 하는 일이기 때문입니다.\nFlock과의 현재 관계는 어떻습니까?",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "If I were to have it my way, police officers would not have access to Flock at all.",
+        "ko": "내 마음대로 했다면 경찰은 전혀 플록에 접근할 수 없었을 것이다."
+      }
+    },
+    {
       "id": "a60f4a701f887ae8",
       "title": "Teaching students to think and learn through questions",
       "source_id": "openai-news",
@@ -40,6 +241,238 @@
       "title_ko": "학생들에게 질문을 통해 생각하고 배우도록 가르치기",
       "source_summary_ko": "브라질 포르투갈어 교육자를 위한 AI로 스승의 날을 기념하고 학습 모드가 교사가 능동적인 단계별 학습을 지원하는 데 어떻게 도움이 되는지 알아보세요.",
       "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "ffc7b43ee50f74cc",
+      "title": "Google launches its ‘universal’ online shopping cart ahead of the holidays",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch",
+      "source_summary": "Google's intelligent AI shopping cart is finally here, and just in time to tempt users into Black Friday and seasonal holiday spending. The Universal Cart tool Google previewed at its I/O event in May is now rolling out in the US across the Gemini app and Google Search, with the aim of making it easier […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T13:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 2,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch",
+          "independent": true
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us",
+          "independent": true
+        }
+      ],
+      "title_ko": "Google, 연말연시를 앞두고 ‘범용’ 온라인 쇼핑 카트 출시",
+      "source_summary_ko": "5월에 열리는 I/O 이벤트에서 Google이 선보인 유니버설 카트 도구는 이제 Gemini 앱과 Google 검색을 통해 미국에서 출시되며, 온라인 쇼핑을 할 때 더 쉽게 정리하고 비용을 절약할 수 있습니다.\n즉, Gemini 앱과 Google 검색 AI 모드를 사용하여 여러 제품을 찾아 추가할 수 있으며 모두 동일한 장바구니에 저장됩니다.\nGoogle 지갑을 사용하여 장바구니에서 아이템을 결제하거나 판매자의 장바구니로 이체하여 소매업체에서 직접 결제할 수 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Google’s intelligent AI shopping cart is finally here, and just in time to tempt users into Black Friday and seasonal holiday spending.",
+        "ko": "Google의 지능형 AI 장바구니가 드디어 출시되었습니다. 블랙 프라이데이와 계절별 휴일 지출에 사용자를 유혹 할 때입니다."
+      }
+    },
+    {
+      "id": "c07a9af3c9fccff9",
+      "title": "Amazon’s always-listening Bee wearable can now help you buy stuff",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs",
+      "source_summary": "Last year, Amazon bought Bee, a relatively unknown startup with a $50 always-listening AI wearable that summarized every conversation you had. Today, the e-commerce giant is announcing two new Bee devices - and a new subscription to go with them. First is the $74.99 Bee Frontier, an updated version of the original Bee device. And […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T12:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs",
+          "independent": true
+        }
+      ],
+      "title_ko": "아마존의 항상 경청하는 꿀벌 웨어러블은 이제 물건을 구입하는 데 도움이 될 수 있습니다.",
+      "source_summary_ko": "오늘, 전자 상거래 대기업은 두 개의 새로운 BEE 장치와 함께 사용할 새로운 구독을 발표합니다.\n첫 번째는 오리지널 Bee 장치의 업데이트 버전인 $ 74.99 Bee Frontier입니다.\n이러한 장치는 무료로 사용할 수 있지만 아마존은 월 $ 11.99 에 Bee Pro 구독도 도입하고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Today, the e-commerce giant is announcing two new Bee devices — and a new subscription to go with them.",
+        "ko": "오늘, 전자 상거래 대기업은 두 개의 새로운 BEE 장치와 함께 사용할 새로운 구독을 발표합니다."
+      }
+    },
+    {
+      "id": "c0b77d592a9eb64d",
+      "title": "Your secrets aren’t safe with this cute robot toy — they’re on Chinese servers ready to be hacked",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab",
+      "source_summary": "There's a new digital pet in town - a cute little marshmallow of a robot that can change its cartoony expressions to match your mood. But if you or your kids talk to \"Eiliko\" over Wi-Fi, it'll phone home to China. Its AI companion can store literally everything you tell it on Chinese servers, where […]",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-15T11:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab",
+          "independent": true
+        }
+      ],
+      "title_ko": "이 귀여운 로봇 장난감으로 당신의 비밀은 안전하지 않습니다 — 해킹당할 준비가 된 중국 서버에 있습니다",
+      "source_summary_ko": "Tech AI Gadgets Eiliko와 제조업체인 Energize Lab은 신뢰할 수 없는 것으로 보입니다.\n그리고 그것을 만든 회사인 에너자이즈 랩 (Energize Lab) 은 신경 쓰지 않는 것 같습니다.\n그리고 Azdoufal은 해커가 동시에 Energize Lab의 전체 로봇 함대에 그렇게 할 수 있다고 말합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "And the company that made it, Energize Lab, doesn’t seem to care.",
+        "ko": "그리고 그것을 만든 회사인 에너자이즈 랩 (Energize Lab) 은 신경 쓰지 않는 것 같습니다."
+      }
+    },
+    {
+      "id": "94eadcab22c41e35",
+      "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/sullivan-cromwell",
+      "source_summary": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:01:57+09:00",
+      "published_at": "2026-10-15T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "설리번 앤 크롬웰 (Sullivan & Cromwell) 은 계약 검토에 법률 전문 지식을 제공합니다.",
+      "source_summary_ko": "Sullivan & Cromwell은 OpenAI와 공동으로 계약 초안의 문제를 식별하기 위한 AI 도구인 계약 분석기를 개발했습니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "e10522981d38e793",
+      "title": "McKinsey is making job applicants spar with a fake AI client",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+      "source_summary": "Consulting firm McKinsey & Company is going to ask some entry-level candidates to have a 10-minute conversation with an AI simulation of a client as part of the interview process, according to The Wall Street Journal. The AI simulation \"aims to reflect 80% of the scenarios McKinsey consultants might encounter in their day-to-day work,\" the […]",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T22:53:31+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+          "independent": true
+        }
+      ],
+      "title_ko": "맥킨지 (McKinsey) 는 가짜 AI 클라이언트와 함께 구직자를 스파링하고 있습니다.",
+      "source_summary_ko": "뉴스 AI 일부 엔트리 레벨 맥킨지 지원자는 면접 과정의 일환으로 시뮬레이션된 고객과 10분 동안 대화를 나눕니다.\n월스트리트 저널에 따르면 링크 쉐어 기프트 컨설팅 회사 맥킨지 앤 컴퍼니 (McKinsey & Company) 는 일부 엔트리 레벨 지원자에게 인터뷰 과정의 일환으로 고객의 AI 시뮬레이션과 10 분 동안 대화를 나눌 것을 요청할 예정입니다.\n다른 회사들도 취업 면접 과정의 일환으로 AI 아바타를 사용할 수 있는 도구를 만들고 있으며, 제 동료인 Hayden Field는 3월에 발표한 동영상을 위해 그 중 일부를 시도했습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Some entry-level McKinsey candidates will have a 10-minute conversation with a simulated client as part of the interview process.",
+        "ko": "일부 엔트리 레벨 맥킨지 지원자는 면접 과정의 일환으로 시뮬레이션된 고객과 10분간 대화를 나눕니다."
+      }
+    },
+    {
+      "id": "9194e801adbca278",
+      "title": "Eight states sue OpenAI, saying ChatGPT isn’t safe for kids",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+      "source_summary": "OpenAI is facing a new wave of lawsuits from eight US states that accuse the company of harming children and misleading customers about the safety of ChatGPT, as reported earlier by Reuters. The lawsuits, filed separately by Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho, and Montana, allege OpenAI unlawfully put profits over safety when […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T21:11:28+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+          "independent": true
+        }
+      ],
+      "title_ko": "8개 주가 OpenAI를 고소하여 ChatGPT가 어린이에게 안전하지 않다고 말합니다.",
+      "source_summary_ko": "AI 뉴스 정책 OpenAI는 챗봇의 안전에 대해 대중을 오도하고 모든 사람을 위험에 빠뜨린 혐의로 기소되었습니다.\n주정부는 법원에 OpenAI가 일련의 민사 처벌을 지불하고 ChatGPT의 안전에 대해 대중을 오도하는 것을 중단하도록 요청하고 있습니다.\n10월 14일 업데이트: OpenAI의 진술이 추가되었습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Update, October 14th: Added a statement from OpenAI.",
+        "ko": "10월 14일 업데이트: OpenAI의 진술이 추가되었습니다."
+      }
+    },
+    {
+      "id": "0a3035ce11f254c3",
+      "title": "The AI race is back on",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
+      "source_summary": "Last week, Anthropic and OpenAI looked like they had the AI race to themselves, pulling ahead with increasingly powerful models that left their rivals in the dust. Google seemed hopelessly far behind, while Meta, despite spending billions to revive its floundering AI ambitions, had yet to establish itself as a serious contender. Even the latest […]",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T19:06:03+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
+          "independent": true
+        }
+      ],
+      "title_ko": "AI 경쟁이 다시 시작됩니다",
+      "source_summary_ko": "AI Tech Anthropic Google과 Meta는 AI 프론티어에서 Anthropic과 OpenAI에 도전하고 있습니다. 링크 공유 선물 지난 주, Anthropic과 OpenAI는 라이벌을 먼지에 빠뜨린 점점 더 강력한 모델로 앞서 나가며 AI 경쟁을 펼친 것처럼 보였습니다.\nGoogle과 Meta는 모두 OpenAI와 Anthropic의 최고로 발끝까지 갈 수 있다고 주장하는 공개된 프론티어 모델을 공개했습니다.\n원시 성능과 성능이 더 이상 앞서 나가기에 충분하지 않은 경우, Google과 Meta는 Anthropic과 OpenAI가 누리지 못하는 많은 이점을 가지고 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Google and Meta both unveiled frontier models they claim can go toe to toe with the best from OpenAI and Anthropic.",
+        "ko": "Google과 Meta는 모두 OpenAI와 Anthropic의 최고로 발끝까지 갈 수 있다고 주장하는 공개된 프론티어 모델을 공개했습니다."
+      }
+    },
+    {
+      "id": "45dfe01c4dcdbd6b",
+      "title": "Now that Character.AI is going bankrupt, what happens to all of its users’ data?",
+      "source_id": "the-verge-ai",
+      "source_name": "The Verge",
+      "source_url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+      "source_summary": "New York Attorney General Letitia James revealed a years-long multi-state investigation against Character.AI as they now seek to require protections on consumer data sold through its bankruptcy proceeding. James is among 40 bipartisan AGs who filed a notice of interest in Character.AI's bankruptcy case \"to put all parties on notice of the regulatory issues that […]",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T18:47:54+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+          "independent": true
+        }
+      ],
+      "title_ko": "Character.AI가 파산하면 모든 사용자의 데이터는 어떻게 됩니까?",
+      "source_summary_ko": "주정부는 Character.AI와 함께 이러한 문제를 해결하기 위해 노력했지만 회사가 파산을 신청하기 전에 합의에 이르지 못했습니다.\nCharacter.AI의 CEO인 Colin Adams는 성명서에서 AGS의 서류 제출은 “플랫폼의 안전을 정확하게 묘사하지 않습니다.\nCharacter.ai는 특히 미성년자와 관련하여 사용자와 플랫폼의 안전을 매우 중요하게 생각합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "The states were working to address these issues with Character.AI, but didn’t reach an agreement before the company filed for bankruptcy.",
+        "ko": "주정부는 Character.AI와 함께 이러한 문제를 해결하기 위해 노력했지만 회사가 파산을 신청하기 전에 합의에 이르지 못했습니다."
+      }
     },
     {
       "id": "ad577cc4d385593c",
@@ -209,6 +642,52 @@
       "source_excerpt": {
         "original": "Floqer aims to automate much of that research.",
         "ko": "Floqer는 이러한 연구의 대부분을 자동화하는 것을 목표로 합니다."
+      }
+    },
+    {
+      "id": "6d6f8ad0753534aa",
+      "title": "How the Claude Code team does code review",
+      "source_id": "claude-dev-blog",
+      "source_name": "Claude.dev Blog",
+      "source_url": "https://claude.dev/blog/solving-code-review-at-anthropic",
+      "source_summary": "How do you review code at the volume agents produce it? On the Claude Code team, once we had high coverage and deep reviews, we started optimizing for the minimum amount of human review time that doesn't raise reverts or incidents.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:44+09:00",
+      "published_on": "2026-10-15",
+      "date_precision": "day",
+      "title_ko": "Claude Code 팀이 코드를 검토하는 방법",
+      "source_summary_ko": "볼륨 에이전트가 생성한 코드를 어떻게 검토합니까? Claude Code 팀에서는 높은 커버리지와 깊이 있는 후기를 받으면 되돌리거나 사고가 발생하지 않는 최소한의 검토 시간을 최적화하기 시작했습니다.",
+      "source_excerpt_error": "본문을 찾지 못함"
+    },
+    {
+      "id": "af2b2afeb775e263",
+      "title": "Meta Extends Confidential Computing to AI Glasses with Private Processing",
+      "source_id": "infoq-ai",
+      "source_name": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/10/meta-private-process-ai-glasses",
+      "source_summary": "Meta has extended Private Processing to AI glasses, using confidential VMs, trusted execution environments, remote attestation, anonymous credentials, OHTTP routing, and TEE-based storage to process AI workloads and persistent user context in the cloud. By Leela Kumili",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T13:57:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/meta-private-process-ai-glasses",
+          "independent": true
+        }
+      ],
+      "title_ko": "Meta, 프라이빗 프로세싱으로 기밀 컴퓨팅을 AI 안경으로 확장",
+      "source_summary_ko": "InfoQ 홈페이지 뉴스 Meta Extends Confidential Computing to AI Glasses with Private Processing 2026년 10월 14일 Leela Kumili가 읽은 2분 읽기 목록 Meta는 민감한 AI 워크로드 및 클라우드의 지속적인 사용자 컨텍스트를 위해 기밀 가상 머신 (CVM) 을 사용하여 Private Processing을 AI 안경으로 확장했습니다.\nMeta는 2025년에 WhatsApp 및 Meta AI를 위한 개인 프로세싱을 도입했으며 현재 웨어러블 AI 워크로드로 아키텍처를 확장하고 있습니다.\nMeta의 프라이빗 프로세싱 아키텍처 (출처: Meta Blog Post) 영구 상태는 기밀 경계 내에 남아 있습니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Meta introduced Private Processing for WhatsApp and Meta AI in 2025 and is now extending the architecture to wearable AI workloads.",
+        "ko": "Meta는 2025년에 WhatsApp 및 Meta AI를 위한 개인 프로세싱을 도입했으며 현재 웨어러블 AI 워크로드로 아키텍처를 확장하고 있습니다."
       }
     },
     {
@@ -416,6 +895,36 @@
       "source_excerpt": {
         "original": "But men and women answer questions incorrectly at around the same rate.",
         "ko": "그러나 남성과 여성은 거의 같은 비율로 질문에 잘못 대답합니다."
+      }
+    },
+    {
+      "id": "04d85f279333a881",
+      "title": "Google Antigravity SDK Adds Local Model Support for Greater Token Efficiency and Code Privacy",
+      "source_id": "infoq-ai",
+      "source_name": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/10/antigravity-sdk-local-models",
+      "source_summary": "Google has introduced support for local models in the Antigravity SDK, enabling developers to build and execute agentic workflows directly on their own machines, while retaining the flexibility to mix in cloud-based models for higher-level tasks. This approach gives developers greater control over data privacy, inference costs, network dependencies, and computational workload distribution. By Sergio De Simone",
+      "why_it_matters": "AI가 널리 쓰일수록 개인정보 보호, 악용 방지, 결과의 신뢰성이 제품 기능만큼 중요해집니다. 초보자는 새 기능을 사용할 때 권한 범위와 안전장치를 함께 확인해야 한다는 점을 보여주는 소식입니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-17T00:02:46+09:00",
+      "published_at": "2026-10-14T09:00:00+00:00",
+      "date_precision": "time",
+      "importance": "normal",
+      "independent_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/antigravity-sdk-local-models",
+          "independent": true
+        }
+      ],
+      "title_ko": "Google Antigravity SDK, 토큰 효율성 및 코드 개인 정보 보호 향상을 위한 로컬 모델 지원 추가",
+      "source_summary_ko": "Antigravity SDK의 가장 강력한 기능 중 하나는 Google이 제안한 Architect-Builder 패턴을 혼합 클라우드 로컬 컴퓨팅 환경에 맞게 조정하는 하이브리드 에이전트 오케스트레이션입니다.\n또한 Google은 클라우드에 소스 코드가 업로드되지 않았다고 말합니다.\nAntigravity SDK는 Antigravity SDK에 의해 구동되는 IDE인 Antigravity IDE와 혼동해서는 안 됩니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Google also states that no source code was uploaded to the cloud.",
+        "ko": "또한 Google은 클라우드에 소스 코드가 업로드되지 않았다고 말합니다."
       }
     },
     {
@@ -1828,6 +2337,12 @@
           "name": "TechCrunch",
           "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder",
           "independent": true
+        },
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/meta-muse-spark-open",
+          "independent": false
         }
       ],
       "title_ko": "뮤즈 원더 (Muse Wonder), AI 프론티어에서 메타백 퍼팅",
