@@ -531,8 +531,8 @@
           "url": "https://code.claude.com/docs/en/commands"
         }
       ],
-      "updated": "2026년 10월 12일",
-      "updatedIso": "2026-10-12",
+      "updated": "2026년 10월 20일",
+      "updatedIso": "2026-10-20",
       "sections": [
         "1. 시작·질문·세션 이어 하기",
         "2. 자동화·출력·권한",
@@ -982,6 +982,13 @@
           "date": "2026-10-07"
         },
         {
+          "command": "claude Code prints a usage line",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
           "command": "claude Code refused and printed the",
           "category": "CLI 명령",
           "status": "new",
@@ -1057,6 +1064,13 @@
           "status": "unconfirmed",
           "statusText": "공식 문서에서 확인되지 않음",
           "date": "2026-10-04"
+        },
+        {
+          "command": "claude Code prints a usage line. Before v2.1.212",
+          "category": "CLI 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-20"
         },
         {
           "command": "claude attach \\u003cid\\u003e",
@@ -1303,8 +1317,8 @@
           "url": "https://www.agy.dev/docs/cli/headless/"
         }
       ],
-      "updated": "2026년 10월 18일",
-      "updatedIso": "2026-10-18",
+      "updated": "2026년 10월 20일",
+      "updatedIso": "2026-10-20",
       "sections": [
         "1. 시작·자동화",
         "2. 작업·에이전트·검토",
@@ -1467,6 +1481,111 @@
       ],
       "autoManaged": [
         {
+          "command": "--agent",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--continue",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--conversation",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--dangerously-skip-permissions",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--effort",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--input-format",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--json-schema",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--model",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--output-format",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--print",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--print-timeout",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--prompt",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--sandbox",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "-c",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "-p",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
           "command": "/browser",
           "category": "슬래시 명령",
           "status": "new",
@@ -1523,130 +1642,25 @@
           "date": "2026-10-16"
         },
         {
-          "command": "--agent",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--continue",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--conversation",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--dangerously-skip-permissions",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--effort",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--input-format",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--json-schema",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--model",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--output-format",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--print",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--print-timeout",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--prompt",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--sandbox",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "-c",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "-p",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
           "command": "agy",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         },
         {
           "command": "agy agents",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         },
         {
           "command": "agy models",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         }
       ],
       "bodyHtml": "<div class=\"embedded-body\"><main class=\"wrap\"><section class=\"group\"><h2>1. 시작·자동화</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>agy</code></td><td>Antigravity CLI 시작</td><td>터미널에서 Antigravity 에이전트를 엽니다.</td></tr><tr><td><code>agy -p \"질문\"</code></td><td>Headless 실행</td><td>대화 화면 없이 질문을 실행해 스크립트·CI에 연결합니다.</td></tr><tr><td><code>agy --help</code></td><td>도움말</td><td>설치된 버전에서 사용 가능한 도움말을 확인합니다.</td></tr><tr><td><code>agy --sandbox</code></td><td>샌드박스</td><td>에이전트의 터미널 실행을 제한된 환경에서 수행합니다.</td></tr><tr><td><code>agy --dangerously-skip-permissions</code></td><td>승인 우회</td><td class=\"warn\">위험합니다. 도구 실행 승인 절차를 건너뛰므로 격리된 환경에서만 사용하세요.</td></tr></tbody></table></div></section>\n<section class=\"group\"><h2>2. 작업·에이전트·검토</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>/agents</code></td><td>에이전트 관리자</td><td>사용자 에이전트를 바꾸고 백그라운드 에이전트를 봅니다.</td></tr><tr><td><code>/boost 작업</code></td><td>추론 강화</td><td>여러 에이전트의 깊은 추론 루프를 실행합니다.</td></tr><tr><td><code>/teamwork-preview 작업</code></td><td>팀 작업</td><td>장시간 작업을 여러 에이전트 팀으로 나눕니다. 유료 플랜 조건이 있습니다.</td></tr><tr><td><code>/planning</code></td><td>계획 모드</td><td>복잡한 개발 작업 전에 여러 단계 계획을 켭니다.</td></tr><tr><td><code>/artifact</code></td><td>Artifact 검토</td><td>생성된 결과물 검토 패널을 엽니다.</td></tr><tr><td><code>/diff</code></td><td>변경 검토</td><td>파일 변경·턴·커밋을 확인합니다.</td></tr><tr><td><code>/tasks</code></td><td>작업 관리자</td><td>백그라운드 셸 작업 로그를 확인합니다.</td></tr><tr><td><code>/rewind</code> / <code>/undo</code></td><td>되돌리기</td><td>대화를 이전 메시지 시점으로 되돌립니다.</td></tr></tbody></table></div></section>\n<section class=\"group\"><h2>3. 설정·계정·세션</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>/config</code> / <code>/settings</code></td><td>설정</td><td>설정 편집 화면을 엽니다.</td></tr><tr><td><code>/model</code></td><td>모델 선택</td><td>추론 모델을 선택하고 기본값으로 저장합니다.</td></tr><tr><td><code>/fast</code></td><td>빠른 모드</td><td>빠른 작업을 위해 추론 계획을 줄입니다.</td></tr><tr><td><code>/permissions</code></td><td>권한 관리</td><td>도구 사용 승인 정책을 설정합니다.</td></tr><tr><td><code>/credits</code></td><td>크레딧 확인</td><td>남은 G1 크레딧과 구매 링크를 봅니다.</td></tr><tr><td><code>/usage</code> / <code>/quota</code></td><td>사용량·쿼터</td><td>모델 사용량을 확인합니다.</td></tr><tr><td><code>/resume</code> / <code>/switch</code> / <code>/conversation</code></td><td>대화 선택</td><td>이전 대화 목록에서 불러옵니다.</td></tr><tr><td><code>/fork</code> / <code>/branch</code></td><td>대화 복제</td><td>현재 대화를 새 병렬 세션으로 복사합니다.</td></tr><tr><td><code>/rename 이름</code></td><td>대화 이름 변경</td><td>현재 세션의 이름을 바꿉니다.</td></tr><tr><td><code>/clear</code> / <code>/new</code></td><td>새 대화</td><td>터미널과 현재 대화 맥락을 초기화합니다.</td></tr><tr><td><code>/logout</code></td><td>로그아웃</td><td>프로필과 보안 저장소의 인증 정보를 끊습니다.</td></tr><tr><td><code>/exit</code> / <code>/quit</code></td><td>종료</td><td>Antigravity CLI를 닫습니다.</td></tr></tbody></table></div></section>\n<section class=\"group\"><h2>4. 도구·편의 기능</h2><div class=\"table-wrap\"><table><thead><tr><th>명령어</th><th>뜻</th><th>쉽게 말하면</th></tr></thead><tbody>\n<tr><td><code>/add-dir 경로</code></td><td>폴더 추가</td><td>활성 작업공간에 폴더를 추가합니다.</td></tr><tr><td><code>/btw 질문</code></td><td>옆 질문</td><td>본 대화를 방해하지 않는 별도 질문을 합니다.</td></tr><tr><td><code>/context</code></td><td>문맥 사용량</td><td>현재 문맥 사용량을 시각화합니다.</td></tr><tr><td><code>/copy</code></td><td>답변 복사</td><td>마지막 에이전트 답변을 클립보드에 복사합니다.</td></tr><tr><td><code>/hooks</code></td><td>훅 보기</td><td>실행 전·후 스크립트 훅을 봅니다.</td></tr><tr><td><code>/keybindings</code></td><td>키 설정</td><td>키보드 단축키 편집기를 엽니다.</td></tr><tr><td><code>/mcp</code></td><td>MCP 관리</td><td>MCP 서버 관리 화면을 엽니다.</td></tr><tr><td><code>/open 경로</code></td><td>편집기로 열기</td><td>지정 경로를 기본 시스템 편집기에서 엽니다.</td></tr><tr><td><code>/remote-control on|off</code></td><td>원격 제어</td><td>현재 터미널 세션의 원격 제어를 켜거나 끕니다.</td></tr><tr><td><code>/statusline</code></td><td>상태 표시줄</td><td>하단 상태 표시를 설정합니다.</td></tr><tr><td><code>/title on|off</code></td><td>창 제목</td><td>터미널 창 제목 업데이트를 켜거나 끕니다.</td></tr><tr><td><code>/voice</code> / <code>/record</code></td><td>음성 입력</td><td>마이크로 프롬프트를 말합니다.</td></tr><tr><td><code>/feedback</code></td><td>피드백</td><td>Antigravity에 의견을 보냅니다.</td></tr></tbody></table></div></section></main></div>"

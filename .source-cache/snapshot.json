@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-18",
+  "last_updated": "2026-10-20",
   "targets": {
     "codex": {
       "commands": [
@@ -845,7 +845,7 @@
         "claude Code ignores the flag",
         "claude Code omits the text and thinking blocks of a subagent that runs in the",
         "claude Code opens the dialog immediately. Before v2.1.232",
-        "claude Code prints a usage line. Before v2.1.212",
+        "claude Code prints a usage line",
         "claude Code provides five flags for customizing the system prompt. Four set its text",
         "claude Code queued the command until the turn finished",
         "claude Code queued the command until the turn finished. Alias:",
@@ -1262,7 +1262,7 @@
         "claude could also start it on its own.": "CLI 명령",
         "claude Code asks you to confirm the directory right away": "CLI 명령",
         "claude Code queued the command until the turn finished": "CLI 명령",
-        "claude Code prints a usage line. Before v2.1.212": "CLI 명령",
+        "claude Code prints a usage line": "CLI 명령",
         "claude Code writes the report to a": "CLI 명령",
         "claude Code opens the dialog immediately. Before v2.1.232": "CLI 명령",
         "claude Code queued the command until the turn finished. Alias:": "CLI 명령",
@@ -1332,6 +1332,13 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-07"
+        },
+        {
+          "command": "claude Code prints a usage line",
+          "category": "CLI 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         },
         {
           "command": "claude Code refused and printed the",
@@ -1409,6 +1416,13 @@
           "status": "unconfirmed",
           "statusText": "공식 문서에서 확인되지 않음",
           "date": "2026-10-04"
+        },
+        {
+          "command": "claude Code prints a usage line. Before v2.1.212",
+          "category": "CLI 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-20"
         },
         {
           "command": "claude attach \\u003cid\\u003e",
@@ -1700,6 +1714,21 @@
     },
     "agy": {
       "commands": [
+        "--agent",
+        "--continue",
+        "--conversation",
+        "--dangerously-skip-permissions",
+        "--effort",
+        "--input-format",
+        "--json-schema",
+        "--model",
+        "--output-format",
+        "--print",
+        "--print-timeout",
+        "--prompt",
+        "--sandbox",
+        "-c",
+        "-p",
         "/add-dir",
         "/agents",
         "/artifact",
@@ -1752,7 +1781,10 @@
         "/title",
         "/undo",
         "/usage",
-        "/voice"
+        "/voice",
+        "agy",
+        "agy agents",
+        "agy models"
       ],
       "command_categories": {
         "/add-dir": "슬래시 명령",
@@ -1807,9 +1839,132 @@
         "/usage": "슬래시 명령",
         "/quota": "슬래시 명령",
         "/voice": "슬래시 명령",
-        "/record": "슬래시 명령"
+        "/record": "슬래시 명령",
+        "-p": "옵션/플래그",
+        "--print": "옵션/플래그",
+        "--prompt": "옵션/플래그",
+        "agy": "CLI 명령",
+        "--output-format": "옵션/플래그",
+        "--json-schema": "옵션/플래그",
+        "--model": "옵션/플래그",
+        "--agent": "옵션/플래그",
+        "--dangerously-skip-permissions": "옵션/플래그",
+        "--continue": "옵션/플래그",
+        "-c": "옵션/플래그",
+        "--conversation": "옵션/플래그",
+        "--input-format": "옵션/플래그",
+        "agy models": "CLI 명령",
+        "--print-timeout": "옵션/플래그",
+        "--effort": "옵션/플래그",
+        "agy agents": "CLI 명령",
+        "--sandbox": "옵션/플래그"
       },
       "auto_managed": [
+        {
+          "command": "--agent",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--continue",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--conversation",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--dangerously-skip-permissions",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--effort",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--input-format",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--json-schema",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--model",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--output-format",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--print",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--print-timeout",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--prompt",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "--sandbox",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "-c",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
+        {
+          "command": "-p",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
+        },
         {
           "command": "/browser",
           "category": "슬래시 명령",
@@ -1867,130 +2022,25 @@
           "date": "2026-10-16"
         },
         {
-          "command": "--agent",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--continue",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--conversation",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--dangerously-skip-permissions",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--effort",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--input-format",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--json-schema",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--model",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--output-format",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--print",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--print-timeout",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--prompt",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "--sandbox",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "-c",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
-          "command": "-p",
-          "category": "옵션/플래그",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
-        },
-        {
           "command": "agy",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         },
         {
           "command": "agy agents",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         },
         {
           "command": "agy models",
           "category": "CLI 명령",
-          "status": "unconfirmed",
-          "statusText": "공식 문서에서 확인되지 않음",
-          "date": "2026-10-18"
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-20"
         }
       ]
     },
