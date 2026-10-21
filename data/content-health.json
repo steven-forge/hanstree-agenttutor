@@ -1,35 +1,35 @@
 {
   "news": {
-    "checked_at": "2026-10-21T06:58:03.545902+09:00",
+    "checked_at": "2026-10-22T00:41:33.515398+09:00",
     "status": "partial",
-    "candidate_count": 5,
-    "archive_count": 697,
+    "candidate_count": 7,
+    "archive_count": 713,
     "sources": [
       {
         "id": "openai-news",
         "name": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "status": "ok",
-        "count": 2,
-        "checked_at": "2026-10-21T06:57:12.438685+09:00",
+        "count": 6,
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 123,
+        "skipped_count": 125,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:57:12.438685+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "google-ai",
         "name": "Google AI",
         "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
         "status": "ok",
-        "count": 0,
-        "checked_at": "2026-10-21T06:57:12.438685+09:00",
+        "count": 1,
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 20,
+        "skipped_count": 19,
         "coverage_limited": true,
-        "last_success_at": "2026-10-21T06:57:12.438685+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "codex-releases",
@@ -37,7 +37,7 @@
         "url": "https://github.com/openai/codex/releases",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-10-21T19:39:19.783748+09:00",
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
@@ -51,7 +51,7 @@
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-10-21T19:39:19.783748+09:00",
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
@@ -65,12 +65,12 @@
         "url": "https://github.com/google-gemini/gemini-cli/releases",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-21T19:39:19.783748+09:00",
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 66,
         "skipped_count": 9,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T19:39:19.783748+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "grok-releases",
@@ -78,7 +78,7 @@
         "url": "https://docs.x.ai/developers/release-notes",
         "status": "partial",
         "count": 0,
-        "checked_at": "2026-10-21T19:39:19.783748+09:00",
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 1,
         "excluded_count": 0,
         "skipped_count": 7,
@@ -86,46 +86,46 @@
         "held_reasons": [
           "한국어 번역 실패: 한국어 번역에 실패했습니다."
         ],
-        "last_success_at": "2026-10-21T19:39:19.783748+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "anthropic-news",
         "name": "Anthropic News",
         "url": "https://www.anthropic.com/news",
         "status": "partial",
-        "count": 1,
-        "checked_at": "2026-10-21T06:57:12.438685+09:00",
-        "held_count": 6,
+        "count": 0,
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
+        "held_count": 7,
         "excluded_count": 0,
-        "skipped_count": 22,
+        "skipped_count": 23,
         "coverage_limited": true,
-        "last_success_at": "2026-10-21T06:57:12.438685+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "xai-news",
         "name": "xAI News",
         "url": "https://x.ai/news",
         "status": "ok",
-        "count": 1,
-        "checked_at": "2026-10-21T06:57:12.438685+09:00",
+        "count": 0,
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 60,
-        "skipped_count": 27,
+        "skipped_count": 28,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:57:12.438685+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       },
       {
         "id": "hacker-news",
         "name": "Hacker News",
         "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-        "status": "partial",
-        "count": 7,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
-        "held_count": 2,
-        "excluded_count": 29,
+        "status": "ok",
+        "count": 10,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
+        "held_count": 0,
+        "excluded_count": 28,
         "skipped_count": 0,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "huggingface-blog",
@@ -133,38 +133,38 @@
         "url": "https://huggingface.co/blog/feed.xml",
         "status": "ok",
         "count": 7,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
         "excluded_count": 23,
-        "skipped_count": 1,
+        "skipped_count": 5,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "wired-ai",
         "name": "WIRED",
         "url": "https://www.wired.com/feed/tag/ai/latest/rss",
         "status": "ok",
-        "count": 7,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 10,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 3,
-        "skipped_count": 5,
+        "excluded_count": 0,
+        "skipped_count": 4,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "the-verge-ai",
         "name": "The Verge",
         "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
         "status": "ok",
-        "count": 9,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 10,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 1,
+        "excluded_count": 0,
         "skipped_count": 6,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "techcrunch-ai",
@@ -172,12 +172,12 @@
         "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "status": "ok",
         "count": 20,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
         "excluded_count": 0,
-        "skipped_count": 7,
+        "skipped_count": 16,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "ars-technica",
@@ -185,64 +185,64 @@
         "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
         "excluded_count": 20,
         "skipped_count": 0,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "product-hunt",
         "name": "Product Hunt",
         "url": "https://www.producthunt.com/feed",
         "status": "ok",
-        "count": 9,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 10,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 21,
+        "excluded_count": 20,
         "skipped_count": 0,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "the-new-stack-ai",
         "name": "The New Stack",
         "url": "https://thenewstack.io/category/ai/feed/",
         "status": "ok",
-        "count": 3,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 5,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 23,
-        "skipped_count": 1,
+        "excluded_count": 21,
+        "skipped_count": 3,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "the-rundown-ai",
         "name": "The Rundown AI",
         "url": "https://www.therundown.ai/feed",
         "status": "ok",
-        "count": 3,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 5,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 17,
-        "skipped_count": 2,
+        "excluded_count": 15,
+        "skipped_count": 3,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "infoq-ai",
         "name": "InfoQ",
         "url": "https://feed.infoq.com/ai-ml-data-eng/",
         "status": "ok",
-        "count": 4,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "count": 7,
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
-        "excluded_count": 11,
-        "skipped_count": 3,
+        "excluded_count": 8,
+        "skipped_count": 4,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "medium-ai",
@@ -250,12 +250,12 @@
         "url": "https://medium.com/feed/tag/artificial-intelligence",
         "status": "ok",
         "count": 5,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
         "coverage_limited": false,
-        "last_success_at": "2026-10-21T06:58:03.545902+09:00"
+        "last_success_at": "2026-10-22T00:41:33.515398+09:00"
       },
       {
         "id": "venturebeat-ai",
@@ -263,7 +263,7 @@
         "url": "https://venturebeat.com/category/ai/feed/",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-10-21T06:58:03.545902+09:00",
+        "checked_at": "2026-10-22T00:41:33.515398+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
@@ -319,15 +319,15 @@
         "url": "https://claude.dev/",
         "status": "ok",
         "count": 0,
-        "checked_at": "2026-10-21T06:57:12.438685+09:00",
+        "checked_at": "2026-10-22T00:40:36.756252+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 10,
         "coverage_limited": true,
-        "last_success_at": "2026-10-21T06:57:12.438685+09:00"
+        "last_success_at": "2026-10-22T00:40:36.756252+09:00"
       }
     ],
-    "pending_event_count": 93
+    "pending_event_count": 113
   },
   "documents": {
     "checked_at": "2026-10-21T08:53:00.644154+09:00",
