@@ -1317,8 +1317,8 @@
           "url": "https://www.agy.dev/docs/cli/headless/"
         }
       ],
-      "updated": "2026년 10월 20일",
-      "updatedIso": "2026-10-20",
+      "updated": "2026년 10월 23일",
+      "updatedIso": "2026-10-23",
       "sections": [
         "1. 시작·자동화",
         "2. 작업·에이전트·검토",
@@ -1481,6 +1481,13 @@
       ],
       "autoManaged": [
         {
+          "command": "--add-dir",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--agent",
           "category": "옵션/플래그",
           "status": "new",
@@ -1509,6 +1516,13 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--disable-slash-commands",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--effort",
           "category": "옵션/플래그",
           "status": "new",
@@ -1530,11 +1544,32 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--log-file",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "--mode",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--model",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "--new-project",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "--output-format",
@@ -1558,11 +1593,32 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--project",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--prompt",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "--prompt-interactive",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "--remote-control",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "--sandbox",
@@ -1572,11 +1628,25 @@
           "date": "2026-10-20"
         },
         {
+          "command": "-1",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "-c",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "-i",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "-p",
@@ -1598,6 +1668,20 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-15"
+        },
+        {
+          "command": "/codesearch",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "/cs",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "/effort",
@@ -1640,6 +1724,13 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-16"
+        },
+        {
+          "command": "/search",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "agy",

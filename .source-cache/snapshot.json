@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-23",
   "targets": {
     "codex": {
       "commands": [
@@ -1714,20 +1714,30 @@
     },
     "agy": {
       "commands": [
+        "--add-dir",
         "--agent",
         "--continue",
         "--conversation",
         "--dangerously-skip-permissions",
+        "--disable-slash-commands",
         "--effort",
         "--input-format",
         "--json-schema",
+        "--log-file",
+        "--mode",
         "--model",
+        "--new-project",
         "--output-format",
         "--print",
         "--print-timeout",
+        "--project",
         "--prompt",
+        "--prompt-interactive",
+        "--remote-control",
         "--sandbox",
+        "-1",
         "-c",
+        "-i",
         "-p",
         "/add-dir",
         "/agents",
@@ -1738,11 +1748,13 @@
         "/btw",
         "/changelog",
         "/clear",
+        "/codesearch",
         "/config",
         "/context",
         "/conversation",
         "/copy",
         "/credits",
+        "/cs",
         "/diff",
         "/effort",
         "/exit",
@@ -1771,6 +1783,7 @@
         "/resume",
         "/rewind",
         "/schedule",
+        "/search",
         "/settings",
         "/skills",
         "/statusline",
@@ -1796,6 +1809,9 @@
         "/changelog": "슬래시 명령",
         "/clear": "슬래시 명령",
         "/new": "슬래시 명령",
+        "/codesearch": "슬래시 명령",
+        "/cs": "슬래시 명령",
+        "/search": "슬래시 명령",
         "/config": "슬래시 명령",
         "/settings": "슬래시 명령",
         "/context": "슬래시 명령",
@@ -1840,26 +1856,43 @@
         "/quota": "슬래시 명령",
         "/voice": "슬래시 명령",
         "/record": "슬래시 명령",
+        "agy": "CLI 명령",
+        "--mode": "옵션/플래그",
+        "--model": "옵션/플래그",
+        "agy models": "CLI 명령",
+        "--effort": "옵션/플래그",
+        "--agent": "옵션/플래그",
+        "agy agents": "CLI 명령",
+        "--add-dir": "옵션/플래그",
+        "-c": "옵션/플래그",
+        "--continue": "옵션/플래그",
+        "--conversation": "옵션/플래그",
+        "-i": "옵션/플래그",
+        "--prompt-interactive": "옵션/플래그",
         "-p": "옵션/플래그",
         "--print": "옵션/플래그",
         "--prompt": "옵션/플래그",
-        "agy": "CLI 명령",
         "--output-format": "옵션/플래그",
-        "--json-schema": "옵션/플래그",
-        "--model": "옵션/플래그",
-        "--agent": "옵션/플래그",
-        "--dangerously-skip-permissions": "옵션/플래그",
-        "--continue": "옵션/플래그",
-        "-c": "옵션/플래그",
-        "--conversation": "옵션/플래그",
         "--input-format": "옵션/플래그",
-        "agy models": "CLI 명령",
+        "--json-schema": "옵션/플래그",
         "--print-timeout": "옵션/플래그",
-        "--effort": "옵션/플래그",
-        "agy agents": "CLI 명령",
-        "--sandbox": "옵션/플래그"
+        "--disable-slash-commands": "옵션/플래그",
+        "--sandbox": "옵션/플래그",
+        "--dangerously-skip-permissions": "옵션/플래그",
+        "--remote-control": "옵션/플래그",
+        "--project": "옵션/플래그",
+        "--new-project": "옵션/플래그",
+        "--log-file": "옵션/플래그",
+        "-1": "옵션/플래그"
       },
       "auto_managed": [
+        {
+          "command": "--add-dir",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
         {
           "command": "--agent",
           "category": "옵션/플래그",
@@ -1889,6 +1922,13 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--disable-slash-commands",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--effort",
           "category": "옵션/플래그",
           "status": "new",
@@ -1910,11 +1950,32 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--log-file",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "--mode",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--model",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "--new-project",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "--output-format",
@@ -1938,11 +1999,32 @@
           "date": "2026-10-20"
         },
         {
+          "command": "--project",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "--prompt",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "--prompt-interactive",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "--remote-control",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "--sandbox",
@@ -1952,11 +2034,25 @@
           "date": "2026-10-20"
         },
         {
+          "command": "-1",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
           "command": "-c",
           "category": "옵션/플래그",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "-i",
+          "category": "옵션/플래그",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "-p",
@@ -1978,6 +2074,20 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-15"
+        },
+        {
+          "command": "/codesearch",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
+        },
+        {
+          "command": "/cs",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "/effort",
@@ -2020,6 +2130,13 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-16"
+        },
+        {
+          "command": "/search",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-23"
         },
         {
           "command": "agy",
