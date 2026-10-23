@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-20",
-  "last_updated": "2026-10-23",
+  "last_updated": "2026-10-24",
   "targets": {
     "codex": {
       "commands": [
@@ -1758,10 +1758,10 @@
         "/diff",
         "/effort",
         "/exit",
-        "/fast",
         "/feedback",
         "/fork",
         "/goal",
+        "/grill-me",
         "/help",
         "/hooks",
         "/keybindings",
@@ -1772,7 +1772,7 @@
         "/new",
         "/open",
         "/permissions",
-        "/planning",
+        "/plan",
         "/plugin",
         "/plugins",
         "/quit",
@@ -1821,11 +1821,11 @@
         "/effort": "슬래시 명령",
         "/exit": "슬래시 명령",
         "/quit": "슬래시 명령",
-        "/fast": "슬래시 명령",
         "/feedback": "슬래시 명령",
         "/fork": "슬래시 명령",
         "/branch": "슬래시 명령",
         "/goal": "슬래시 명령",
+        "/grill-me": "슬래시 명령",
         "/help": "슬래시 명령",
         "/hooks": "슬래시 명령",
         "/keybindings": "슬래시 명령",
@@ -1835,7 +1835,7 @@
         "/model": "슬래시 명령",
         "/open": "슬래시 명령",
         "/permissions": "슬래시 명령",
-        "/planning": "슬래시 명령",
+        "/plan": "슬래시 명령",
         "/plugin": "슬래시 명령",
         "/plugins": "슬래시 명령",
         "/rename": "슬래시 명령",
@@ -2104,11 +2104,25 @@
           "date": "2026-10-16"
         },
         {
+          "command": "/grill-me",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-24"
+        },
+        {
           "command": "/learn",
           "category": "슬래시 명령",
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-16"
+        },
+        {
+          "command": "/plan",
+          "category": "슬래시 명령",
+          "status": "new",
+          "statusText": "신규 감지",
+          "date": "2026-10-24"
         },
         {
           "command": "/plugin",
@@ -2158,6 +2172,20 @@
           "status": "new",
           "statusText": "신규 감지",
           "date": "2026-10-20"
+        },
+        {
+          "command": "/fast",
+          "category": "슬래시 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-24"
+        },
+        {
+          "command": "/planning",
+          "category": "슬래시 명령",
+          "status": "unconfirmed",
+          "statusText": "공식 문서에서 확인되지 않음",
+          "date": "2026-10-24"
         }
       ]
     },
