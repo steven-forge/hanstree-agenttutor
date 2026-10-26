@@ -36,7 +36,7 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-26T09:46:37.963727+09:00",
+      "checked_at": "2026-10-26T14:28:57.435364+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -50,12 +50,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-26T09:46:37.963727+09:00",
+      "checked_at": "2026-10-26T14:28:57.435364+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "한국어 번역에 실패했습니다.",
+      "error": "Retry-After 대기시간 초과 (66621.0초)",
       "last_success_at": "2026-10-09T02:40:51.184745+09:00"
     },
     {
@@ -64,12 +64,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-26T09:46:37.963727+09:00",
+      "checked_at": "2026-10-26T14:28:57.435364+09:00",
       "held_count": 0,
-      "excluded_count": 64,
+      "excluded_count": 63,
       "skipped_count": 8,
       "coverage_limited": false,
-      "last_success_at": "2026-10-26T09:46:37.963727+09:00"
+      "last_success_at": "2026-10-26T14:28:57.435364+09:00"
     },
     {
       "id": "grok-releases",
@@ -77,15 +77,15 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-26T09:46:37.963727+09:00",
+      "checked_at": "2026-10-26T14:28:57.435364+09:00",
       "held_count": 1,
       "excluded_count": 0,
       "skipped_count": 7,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: 한국어 번역에 실패했습니다."
+        "한국어 번역 실패: Retry-After 대기시간 초과 (66618.0초)"
       ],
-      "last_success_at": "2026-10-26T09:46:37.963727+09:00"
+      "last_success_at": "2026-10-26T14:28:57.435364+09:00"
     },
     {
       "id": "anthropic-news",
