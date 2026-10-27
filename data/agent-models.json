@@ -277,6 +277,42 @@
       "effort_note": "API reasoning.effort 기준이며 Sol·Luna의 기본값은 medium입니다. Ultra는 API effort가 아닌 Codex의 별도 실행 모드입니다.",
       "models": [
         {
+          "id": "gpt-6.1-terra",
+          "name": "GPT-6.1 Terra",
+          "effort_note": "지원 수준과 사용 조건은 공식 문서를 확인하세요.",
+          "release_source": "https://developers.openai.com/api/docs/models/gpt-6.1-terra.md",
+          "minimum_access": "앱 요금제 미확인 · API 이용 조건은 공식 문서 확인",
+          "access_source": "https://developers.openai.com/api/docs/models/gpt-6.1-terra.md",
+          "input_cost": 1.0,
+          "output_cost": 5.0,
+          "cache_read_cost": 0.05,
+          "context_window": "1,050,000",
+          "max_output": "128,000",
+          "input_modalities": "텍스트 · 이미지",
+          "key_feature": "A fast, efficient model for visual reasoning, precise computer use, and clear, natural writing.",
+          "sources": [
+            {
+              "name": "gpt-6.1-terra 공식 문서",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra.md"
+            }
+          ],
+          "price_note": "공식 미확인",
+          "effort_levels": [
+            "none",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "effort_source": [
+            {
+              "name": "gpt-6.1-terra 공식 문서",
+              "url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra.md"
+            }
+          ]
+        },
+        {
           "id": "gpt-6-astra",
           "name": "GPT-6 Astra",
           "effort_levels": [
@@ -1631,7 +1667,7 @@
   "auto_update": {
     "providers": {
       "claude": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "claude-fable-5",
@@ -1651,7 +1687,7 @@
         ]
       },
       "codex": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "gpt-3.5-turbo",
@@ -1684,11 +1720,12 @@
           "gpt-6-astra",
           "gpt-6-luna",
           "gpt-6-sol",
-          "gpt-6.1-sol"
+          "gpt-6.1-sol",
+          "gpt-6.1-terra"
         ]
       },
       "grok": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "grok-4.3",
@@ -1698,7 +1735,7 @@
         ]
       },
       "gemini": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "partial",
         "discovered_ids": [
           "gemini-2.0-flash",
@@ -1720,7 +1757,7 @@
         "error": "gemini-3.5-flash: 카탈로그에 없음(기존 값 유지); gemini-3.7-flash: 카탈로그에 없음(기존 값 유지)"
       },
       "muse": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "partial",
         "discovered_ids": [
           "muse-spark-1.1",
@@ -1732,7 +1769,7 @@
         "error": "muse-spark-1.3: 문서에서 모델을 찾지 못함; muse-spark-1.3-contributor: 문서에서 모델을 찾지 못함; muse-spark-1.2: 문서에서 모델을 찾지 못함; muse-spark-1.1: 문서에서 모델을 찾지 못함; muse-spark-1.2-contributor: 문서에서 모델을 찾지 못함"
       },
       "deepseek": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "deepseek-flash",
@@ -1740,7 +1777,7 @@
         ]
       },
       "qwen": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "qwen2.5-omni-7b",
@@ -1800,7 +1837,7 @@
         ]
       },
       "glm": {
-        "checked_at": "2026-10-26T08:30:38+09:00",
+        "checked_at": "2026-10-27T09:45:45+09:00",
         "status": "success",
         "discovered_ids": [
           "glm-4-32b-0414-128k",
@@ -1817,7 +1854,7 @@
         ]
       }
     },
-    "last_checked_at": "2026-10-26T08:30:38+09:00",
+    "last_checked_at": "2026-10-27T09:45:45+09:00",
     "last_successful_check_at": "2026-10-09T10:23:35+09:00",
     "status": "partial"
   }
