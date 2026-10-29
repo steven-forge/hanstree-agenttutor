@@ -1,22 +1,21 @@
 {
-  "collected_at": "2026-10-29T18:12:19.398332+09:00",
-  "window_start": "2026-08-30T18:12:19.398332+09:00",
-  "window_end": "2026-10-29T18:12:19.398332+09:00",
-  "edition_date": "2026-10-29",
+  "collected_at": "2026-10-30T06:28:12.460850+09:00",
+  "window_start": "2026-08-31T06:28:12.460850+09:00",
+  "window_end": "2026-10-30T06:28:12.460850+09:00",
+  "edition_date": "2026-10-30",
   "sources": [
     {
       "id": "openai-news",
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
-      "status": "failed",
-      "count": 0,
-      "checked_at": "2026-10-29T18:12:19.398332+09:00",
+      "status": "ok",
+      "count": 9,
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 138,
       "coverage_limited": false,
-      "error": "한국어 번역 응답을 읽을 수 없습니다: argument of type 'NoneType' is not iterable",
-      "last_success_at": "2026-10-28T06:01:44.623182+09:00"
+      "last_success_at": "2026-10-30T06:28:12.460850+09:00"
     },
     {
       "id": "google-ai",
@@ -24,12 +23,12 @@
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-29T18:12:19.398332+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 20,
       "coverage_limited": true,
-      "last_success_at": "2026-10-29T18:12:19.398332+09:00"
+      "last_success_at": "2026-10-30T06:28:12.460850+09:00"
     },
     {
       "id": "codex-releases",
@@ -37,7 +36,7 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-30T01:28:02.593419+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -51,12 +50,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-30T01:28:02.593419+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (27061.0초)",
+      "error": "Retry-After 대기시간 초과 (9036.0초)",
       "last_success_at": "2026-10-09T02:40:51.184745+09:00"
     },
     {
@@ -65,12 +64,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-30T01:28:02.593419+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (27060.0초)",
+      "error": "Retry-After 대기시간 초과 (9035.0초)",
       "last_success_at": "2026-10-28T01:53:48.272004+09:00"
     },
     {
@@ -79,16 +78,16 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-10-30T01:28:02.593419+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 2,
       "excluded_count": 0,
       "skipped_count": 6,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: Retry-After 대기시간 초과 (27060.0초)",
-        "한국어 번역 실패: Retry-After 대기시간 초과 (27059.0초)"
+        "한국어 번역 실패: Retry-After 대기시간 초과 (9034.0초)",
+        "한국어 번역 실패: Retry-After 대기시간 초과 (9034.0초)"
       ],
-      "last_success_at": "2026-10-30T01:28:02.593419+09:00"
+      "last_success_at": "2026-10-30T06:28:12.460850+09:00"
     },
     {
       "id": "anthropic-news",
@@ -96,12 +95,12 @@
       "url": "https://www.anthropic.com/news",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-29T18:12:19.398332+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (53034.0초)",
+      "error": "Retry-After 대기시간 초과 (9033.0초)",
       "last_success_at": "2026-10-22T00:40:36.756252+09:00"
     },
     {
@@ -110,52 +109,52 @@
       "url": "https://x.ai/news",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-29T18:12:19.398332+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (53033.0초)",
+      "error": "Retry-After 대기시간 초과 (9032.0초)",
       "last_success_at": "2026-10-22T00:40:36.756252+09:00"
     },
     {
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "ok",
-      "count": 9,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
-      "held_count": 0,
-      "excluded_count": 24,
+      "status": "partial",
+      "count": 6,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
+      "held_count": 1,
+      "excluded_count": 33,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "huggingface-blog",
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "count": 3,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 7,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 27,
-      "skipped_count": 2,
+      "excluded_count": 23,
+      "skipped_count": 3,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "wired-ai",
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 9,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 10,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 1,
-      "skipped_count": 5,
+      "excluded_count": 0,
+      "skipped_count": 6,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "the-verge-ai",
@@ -163,12 +162,12 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
       "count": 10,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 0,
+      "skipped_count": 4,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "techcrunch-ai",
@@ -176,12 +175,12 @@
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "status": "ok",
       "count": 20,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 2,
+      "skipped_count": 9,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "ars-technica",
@@ -189,64 +188,64 @@
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
       "excluded_count": 20,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "product-hunt",
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 12,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 13,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 18,
-      "skipped_count": 0,
+      "excluded_count": 17,
+      "skipped_count": 12,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "the-new-stack-ai",
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 5,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 7,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 21,
-      "skipped_count": 2,
+      "excluded_count": 19,
+      "skipped_count": 5,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "the-rundown-ai",
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 3,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 4,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 17,
-      "skipped_count": 1,
+      "excluded_count": 16,
+      "skipped_count": 3,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "infoq-ai",
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 6,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "count": 8,
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
-      "excluded_count": 9,
+      "excluded_count": 7,
       "skipped_count": 4,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "medium-ai",
@@ -254,12 +253,12 @@
       "url": "https://medium.com/feed/tag/artificial-intelligence",
       "status": "ok",
       "count": 5,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-10-29T18:16:07.962038+09:00"
+      "last_success_at": "2026-10-30T06:29:29.192230+09:00"
     },
     {
       "id": "venturebeat-ai",
@@ -267,7 +266,7 @@
       "url": "https://venturebeat.com/category/ai/feed/",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-10-29T18:16:07.962038+09:00",
+      "checked_at": "2026-10-30T06:29:29.192230+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -323,141 +322,170 @@
       "url": "https://claude.dev/",
       "status": "ok",
       "count": 0,
-      "checked_at": "2026-10-29T18:12:19.398332+09:00",
+      "checked_at": "2026-10-30T06:28:12.460850+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 10,
       "coverage_limited": true,
-      "last_success_at": "2026-10-29T18:12:19.398332+09:00"
+      "last_success_at": "2026-10-30T06:28:12.460850+09:00"
     }
   ],
-  "new_count": 0,
-  "archive_count": 734,
-  "candidates": [],
-  "hourly_collected_at": "2026-10-29T18:16:07.962038+09:00",
-  "hourly_window_start": "2026-10-27T06:16:07.962038+09:00",
+  "new_count": 9,
+  "archive_count": 743,
+  "candidates": [
+    {
+      "id": "9349f418e7bc7ab4",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/updated-model-spec",
+      "source_summary": "OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:12+09:00",
+      "published_at": "2026-10-29T17:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "더 유능하고 유익한 AI를 위한 업데이트된 모델 사양",
+      "source_summary_ko": "OpenAI의 업데이트된 모델 사양은 보다 유능한 AI를 건전한 판단, 인간적 선택의지, 인간적 의도에 대한 충실함으로 안내하기 위한 5가지 핵심 가치를 요약합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "0f01adb2acab0a67",
+      "title": "How we detect frontier model misalignment",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "source_summary": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:14+09:00",
+      "published_at": "2026-10-29T09:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "프론티어 모델 오정렬 감지 방법",
+      "source_summary_ko": "OpenAI는 계층화된 모니터링을 사용하여 프론티어 모델의 잘못된 정렬 및 승인되지 않은 상담원 행동을 감지하여 사고가 에스컬레이션되기 전에 대응자가 개입할 수 있도록 합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "d948735545c20cf3",
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/ropes-gray-ai-diligence",
+      "source_summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:16+09:00",
+      "published_at": "2026-10-29T07:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Ropes & Gray가 거래 실사를 위한 AI를 개발하는 방법",
+      "source_summary_ko": "Ropes & Gray는 OpenAI와 거래 실사를 위한 AI를 개발하고 있습니다. 변호사는 고객에게 조언하기 전에 그룹화된 문서, 요약 및 보고서를 검토합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "a395c7da350b5086",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "source_summary": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:18+09:00",
+      "published_at": "2026-10-28T13:15:00+00:00",
+      "date_precision": "time",
+      "title_ko": "OpenAI 및 ServiceNow는 엔터프라이즈 워크플로우 전반에 걸쳐 파트너십을 확장합니다.",
+      "source_summary_ko": "OpenAI와 ServiceNow는 파트너십을 확장하여 OpenAI 모델 및 에이전트를 ServiceNow 및 ServiceNow 워크플로에 ChatGPT 및 Codex로 가져옵니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "e2ed7680c50ae3f0",
+      "title": "The future of the firm",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/the-future-of-the-firm",
+      "source_summary": "How AI might enter the org chart—beneath, beside, and between us.",
+      "why_it_matters": "이 공식 발표는 AI 기술이 실제 제품과 업무에 어떻게 적용되는지 보여줍니다. 초보자는 무엇이 새로 생겼는지뿐 아니라 자신의 작업 방식, 비용, 주의사항이 달라지는지도 함께 살펴보면 좋습니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:20+09:00",
+      "published_at": "2026-10-28T10:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "회사의 미래",
+      "source_summary_ko": "인공지능이 우리 아래, 옆, 그리고 우리 사이의 조직도에 어떻게 진입할 수 있을까.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "709cc8e2bd467b79",
+      "title": "Legora is building the agentic operating system for legal work",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/legora",
+      "source_summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
+      "why_it_matters": "정부·기관의 AI 정책은 어떤 서비스를 어디서, 어떤 기준으로 사용할 수 있는지에 영향을 줍니다. 초보자는 기능뿐 아니라 적용 대상, 책임 범위, 이용 조건도 함께 살펴봐야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:22+09:00",
+      "published_at": "2026-10-28T09:30:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Legora는 법적 작업을 위한 에이전트 운영 체제를 구축하고 있습니다",
+      "source_summary_ko": "Legora가 OpenAI 모델, ChatGPT 및 Codex를 사용하여 법적 워크플로우를 가속화하고 계약 분석을 확장하며 무료 변호사를 통해 더 높은 가치의 업무에 집중하는 방법을 알아보세요.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "1e3ebf94e41ebe19",
+      "title": "Retell uses OpenAI models to help power 100M monthly calls",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/retell-ai",
+      "source_summary": "GPT-6 Astra tops Retell’s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee.",
+      "why_it_matters": "새 AI 모델이나 성능 변화는 답변 품질, 속도, 비용, 사용할 수 있는 작업 범위에 영향을 줄 수 있습니다. 초보자는 이름이나 성능 주장만 비교하지 말고 자신의 용도에서 정확성과 제한 사항을 직접 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:24+09:00",
+      "published_at": "2026-10-27T15:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Retell은 OpenAI 모델을 사용하여 1억 건의 월간 통화에 전력을 공급합니다.",
+      "source_summary_ko": "GPT-6 Astra는 Retell의 음성 상담원 벤치마크에서 1위를 차지했으며, Codex는 직원당 연간 160만 $ 의 수익률을 달성하는 데 도움을 줍니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "86dbfdb5b436c283",
+      "title": "How Grupo Boticário uses AI to strengthen human connections",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/grupo-boticario",
+      "source_summary": "Almost 50 years after starting in a compounding pharmacy in Paraná, the group operates a proprietary agent platform that autonomously resolves up to 80% of resellers’ operational requests—enabling the sales force to take on an advisory role.",
+      "why_it_matters": "AI가 답변만 하는 도구에서 실제 작업을 수행하는 에이전트로 확장되는 흐름과 관련된 소식입니다. 초보자는 자동화 범위를 작게 시작하고 권한, 실행 결과, 실패 기록을 사람이 확인할 수 있게 해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:25+09:00",
+      "published_at": "2026-10-16T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Grupo Boticário가 인간 관계를 강화하기 위해 AI를 사용하는 방법",
+      "source_summary_ko": "파라나의 복합 약국에서 시작한 지 거의 50년이 지난 후, 이 그룹은 리셀러의 운영 요청의 최대 80% 를 자율적으로 해결하는 독점 에이전트 플랫폼을 운영하여 영업 인력이 자문 역할을 수행할 수 있도록 합니다.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    },
+    {
+      "id": "d3b9ba6f7bd01af0",
+      "title": "How Localiza reorganized work around generative AI",
+      "source_id": "openai-news",
+      "source_name": "OpenAI News",
+      "source_url": "https://openai.com/index/localiza-generative-ai",
+      "source_summary": "See how Localiza uses ChatGPT Enterprise, the OpenAI API, Codex, and 60+ specialized agents to reorganize work and build AI-native mobility experiences.",
+      "why_it_matters": "이 사례는 AI가 실제 조직의 비용, 업무 속도, 의사결정 방식에 어떤 영향을 줄 수 있는지 보여줍니다. 초보자는 홍보 수치만 보기보다 적용 조건과 사람이 검토해야 할 지점을 함께 확인하는 것이 중요합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-10-30T06:28:27+09:00",
+      "published_at": "2026-10-16T00:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Localiza가 생성 AI를 중심으로 어떻게 개편되었는지",
+      "source_summary_ko": "Localiza가 ChatGPT Enterprise, OpenAI API, Codex 및 60개 이상의 전문 에이전트를 사용하여 업무를 재구성하고 AI 네이티브 모빌리티 경험을 구축하는 방법을 알아보세요.",
+      "source_excerpt_error": "원문 본문 접근에 실패했습니다 (HTTP 403)"
+    }
+  ],
+  "hourly_collected_at": "2026-10-30T06:29:29.192230+09:00",
+  "hourly_window_start": "2026-10-27T18:29:29.192230+09:00",
   "events": [
     {
-      "id": "8e3dbbad5a793330",
-      "title": "Show HN: Kashkeshet – non-opinionated agent-to-agent chat MCP server in Rust",
+      "id": "cf82a873ac09f752",
+      "title": "Show HN: Agent Skills – 51 SKILL.md workflows for coding agents and marketers",
       "first_seen": "2026-10-27T06:57:38+09:00",
       "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251519",
-          "target_url": "https://github.com/sam-mfb/kashkeshet",
-          "independent": false,
-          "title": "Show HN: Kashkeshet – non-opinionated agent-to-agent chat MCP server in Rust",
-          "summary": "",
-          "published_at": "2026-10-26T21:48:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "49c7bc2e0678f0b7",
-      "title": "The US AI Labs, Mapped: Founders, Revenue and the Money Behind Them",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251518",
-          "target_url": "https://codingplans.dev/briefs/us-model-labs-part-1",
-          "independent": false,
-          "title": "The US AI Labs, Mapped: Founders, Revenue and the Money Behind Them",
-          "summary": "",
-          "published_at": "2026-10-26T21:48:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "554b0d7ca57e054f",
-      "title": "Wall St banksline up $63B to finance Broadcom AI chips for Anthropic",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251513",
-          "target_url": "https://www.reuters.com/legal/transactional/wall-street-banks-blackstone-line-up-63-billion-finance-broadcom-chips-anthropic-2026-10-26",
-          "independent": false,
-          "title": "Wall St banksline up $63B to finance Broadcom AI chips for Anthropic",
-          "summary": "",
-          "published_at": "2026-10-26T21:48:01+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "55edade81a507672",
-      "title": "Police Pulling People over Because AI Deems Their Driving Patterns \"Suspicious\"",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251477",
-          "target_url": "https://www.aclu.org/news/privacy-technology/ai-driven-police-stops",
-          "independent": false,
-          "title": "Police Pulling People over Because AI Deems Their Driving Patterns \"Suspicious\"",
-          "summary": "",
-          "published_at": "2026-10-26T21:45:23+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "798534da297905d8",
-      "title": "Cost-effective agentic delegation scheme for Claude Code, Cursor and Codex",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251450",
-          "target_url": "https://medium.com/@tbugaevsky/ai-is-expensive-how-do-you-save-tokens-without-compromising-quality-9d76b333e5e5",
-          "independent": false,
-          "title": "Cost-effective agentic delegation scheme for Claude Code, Cursor and Codex",
-          "summary": "",
-          "published_at": "2026-10-26T21:43:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a87dfcc1ff624cb8",
-      "title": "Show HN: GradientDeck – a design skill for coding agents",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251342",
-          "target_url": "https://github.com/VenoM9078/gradientdeck-skill",
-          "independent": false,
-          "title": "Show HN: GradientDeck – a design skill for coding agents",
-          "summary": "",
-          "published_at": "2026-10-26T21:35:27+00:00",
-          "date_precision": "time"
-        },
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -467,195 +495,6 @@
           "title": "Show HN: Agent Skills – 51 SKILL.md workflows for coding agents and marketers",
           "summary": "",
           "published_at": "2026-10-27T20:16:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "16744a7fb53d8cd6",
-      "title": "You can hack your TVs and gadgets with AI for free now – but should you?",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251301",
-          "target_url": "https://www.zdnet.com/innovation/ai-reverse-engineering-old-gadgets-smart-tvs",
-          "independent": false,
-          "title": "You can hack your TVs and gadgets with AI for free now – but should you?",
-          "summary": "",
-          "published_at": "2026-10-26T21:32:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e4a8291671e5b387",
-      "title": "Analysis – In China, the AI bubble has burst",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251278",
-          "target_url": "https://www.msn.com/en-us/money/general/analysis-in-china-the-ai-bubble-has-already-burst/ar-AA2g68nN",
-          "independent": false,
-          "title": "Analysis – In China, the AI bubble has burst",
-          "summary": "",
-          "published_at": "2026-10-26T21:29:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1dc7e2df39a11f00",
-      "title": "OpenAI's agents talked to each other through the CPU Cache",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50251200",
-          "target_url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache",
-          "independent": false,
-          "title": "OpenAI's agents talked to each other through the CPU Cache",
-          "summary": "",
-          "published_at": "2026-10-26T21:24:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d4711f2306c23d0c",
-      "title": "Why Anthropic’s IPO Prospectus Is Missing So Many Key Figures",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/anthropic-prospectus-leaves-out-some-numbers",
-          "target_url": "https://www.wired.com/story/anthropic-prospectus-leaves-out-some-numbers",
-          "independent": true,
-          "title": "Why Anthropic’s IPO Prospectus Is Missing So Many Key Figures",
-          "summary": "Anthropic’s S-1 filing is hundreds of pages long—and it leaves out quite a few financial details. “Anthropic owes investors more information,” one analyst tells WIRED.",
-          "published_at": "2026-10-26T21:27:15+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53020.0초)"
-    },
-    {
-      "id": "9cbde6163a6ef646",
-      "title": "Introducing ZipWiki: Portable, AI-Searchable Knowledge Packages",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@steve_10566/introducing-zipwiki-portable-ai-searchable-knowledge-packages-3fa8a94e7ccc",
-          "target_url": "https://medium.com/@steve_10566/introducing-zipwiki-portable-ai-searchable-knowledge-packages-3fa8a94e7ccc",
-          "independent": false,
-          "title": "Introducing ZipWiki: Portable, AI-Searchable Knowledge Packages",
-          "summary": "ZipWiki by NeoWare — your archives, indexed for AI and shrunk to a fraction of their original size. Continue reading on Medium »",
-          "published_at": "2026-10-26T21:54:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "aa37e8fe6572c4c2",
-      "title": "Agents Need Testing for the Moment Their Tools Break",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://abduljaleelkavungal.medium.com/agents-need-testing-for-the-moment-their-tools-break-55f19ca3154a",
-          "target_url": "https://abduljaleelkavungal.medium.com/agents-need-testing-for-the-moment-their-tools-break-55f19ca3154a",
-          "independent": false,
-          "title": "Agents Need Testing for the Moment Their Tools Break",
-          "summary": "A research model, a web server flaw and a new policy on training runs all point at the part of a system that rarely gets a demo. Continue reading on Medium »",
-          "published_at": "2026-10-26T21:52:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "cfd9708d00f5a5c0",
-      "title": "Will the Human Role Shrink?",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@poola.vii/will-the-human-role-shrink-3339e683f682",
-          "target_url": "https://medium.com/@poola.vii/will-the-human-role-shrink-3339e683f682",
-          "independent": false,
-          "title": "Will the Human Role Shrink?",
-          "summary": "When people stop being needed in one kind of work, the role is moving, not vanishing. And going unnoticed on the scale of all humanity is… Continue reading on Medium »",
-          "published_at": "2026-10-26T21:50:49+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c6870965cbabff3d",
-      "title": "\"Codex of Weights\": An Open Ethical Protocol for AI",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@codexofweight/codex-of-weights-an-open-ethical-protocol-for-ai-efedc58c4a5a",
-          "target_url": "https://medium.com/@codexofweight/codex-of-weights-an-open-ethical-protocol-for-ai-efedc58c4a5a",
-          "independent": false,
-          "title": "\"Codex of Weights\": An Open Ethical Protocol for AI",
-          "summary": "While the industry argues about how to control artificial intelligence, one independent document proposes a different approach: not… Continue reading on Medium »",
-          "published_at": "2026-10-26T21:45:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "feb5c38442e05fa6",
-      "title": "OpenAI casse les prix pour prendre les clients d’Anthropic : le modèle d’IA est devenu un achat qui…",
-      "first_seen": "2026-10-27T06:57:38+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@abbas_mistrah/openai-casse-les-prix-pour-prendre-les-clients-danthropic-le-mod%C3%A8le-d-ia-est-devenu-un-achat-qui-913924a508c7",
-          "target_url": "https://medium.com/@abbas_mistrah/openai-casse-les-prix-pour-prendre-les-clients-danthropic-le-mod%C3%A8le-d-ia-est-devenu-un-achat-qui-913924a508c7",
-          "independent": false,
-          "title": "OpenAI casse les prix pour prendre les clients d’Anthropic : le modèle d’IA est devenu un achat qui…",
-          "summary": "Replit, Rippling, DataCamp : les remises d’OpenAI déplacent des contrats à plus de 100 millions de dollars. La guerre des modèles se joue… Continue reading on Medium »",
-          "published_at": "2026-10-26T21:43:07+00:00",
           "date_precision": "time"
         }
       ],
@@ -934,7 +773,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53019.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9018.0초)"
     },
     {
       "id": "c9f08b7f37026212",
@@ -955,7 +794,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53019.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9017.0초)"
     },
     {
       "id": "4d7746a3bca6ecc8",
@@ -976,7 +815,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53019.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9017.0초)"
     },
     {
       "id": "3ba81838af30b2b8",
@@ -997,7 +836,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53018.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9016.0초)"
     },
     {
       "id": "b2aff63a03e983b2",
@@ -1018,7 +857,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53018.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9016.0초)"
     },
     {
       "id": "bb9f02a56d8cd14e",
@@ -1035,11 +874,22 @@
           "summary": "Anthropic wants to have it both ways. With its impending IPO, it wants to tap the vast riches of the public markets and insists it doesn't want to compromise its core mission of developing AI safely and for the benefit of humanity. But greater model capabilities bring greater risks, and shareholders eager for returns may […]",
           "published_at": "2026-10-27T16:51:22+00:00",
           "date_precision": "time"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
+          "target_url": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
+          "independent": true,
+          "title": "Anthropic is asking Wall Street to believe in AGI",
+          "summary": "Today on Decoder, I’m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing — a document known as an S-1. Anthropic just filed its S-1 to go public on the Nasdaq, and it could start […]",
+          "published_at": "2026-10-29T14:00:00+00:00",
+          "date_precision": "time"
         }
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53017.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9015.0초)"
     },
     {
       "id": "991356d9e9385200",
@@ -1060,7 +910,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53017.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9015.0초)"
     },
     {
       "id": "8fc62bcb0cb10104",
@@ -1092,7 +942,7 @@
       ],
       "independent_source_count": 2,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53016.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9014.0초)"
     },
     {
       "id": "77387043f69a853e",
@@ -1113,7 +963,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53016.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9014.0초)"
     },
     {
       "id": "10515f024c670e28",
@@ -1134,49 +984,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53015.0초)"
-    },
-    {
-      "id": "b555ce2afa55383d",
-      "title": "OpenAI announces three big science discoveries and a new way to work with academics",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics",
-          "independent": true,
-          "title": "OpenAI announces three big science discoveries and a new way to work with academics",
-          "summary": "Less than a month after its mass release of hundreds of manuscripts that it said contained solutions to long-standing mathematics questions, OpenAI is back with three more \"major\" discoveries in math, computer science, and physics. What's different this time is the choice to have external experts that OpenAI describes as \"shepherds\" guiding the results in […]",
-          "published_at": "2026-10-26T23:34:58+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53015.0초)"
-    },
-    {
-      "id": "092e8ceea2bd79fc",
-      "title": "Anthropic is burning gas to feed the AI boom",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
-          "independent": true,
-          "title": "Anthropic is burning gas to feed the AI boom",
-          "summary": "As it prepares to go public, Anthropic's S-1 filing makes generative AI's methane dependency glaringly obvious. \"Competition for access to electrical supply and data center locations with adequate power availability is intense.\" In documents filed with the US Securities and Exchange Commission Monday, Anthropic acknowledges that data centers are becoming increasingly reliant on \"natural gas\" […]",
-          "published_at": "2026-10-26T21:45:31+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53014.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9013.0초)"
     },
     {
       "id": "ff390db43c3b5faf",
@@ -1197,7 +1005,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53014.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9013.0초)"
     },
     {
       "id": "64295c3ae779f4ac",
@@ -1218,7 +1026,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53013.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9012.0초)"
     },
     {
       "id": "dc291fa0a78ddf3b",
@@ -1239,7 +1047,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53013.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9012.0초)"
     },
     {
       "id": "1630e683256dee46",
@@ -1260,7 +1068,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53012.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9012.0초)"
     },
     {
       "id": "257d2044442d252a",
@@ -1281,7 +1089,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53012.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9011.0초)"
     },
     {
       "id": "8f3cfb5cce39de3e",
@@ -1302,7 +1110,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53012.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9011.0초)"
     },
     {
       "id": "93d8b38790e5bd87",
@@ -1323,154 +1131,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53011.0초)"
-    },
-    {
-      "id": "c6bba90d60fe3883",
-      "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant",
-          "target_url": "https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant",
-          "independent": true,
-          "title": "How OpenAI turned its coding tools into dots, an always-on personal assistant",
-          "summary": "Alexander Embiricos, the OpenAI executive responsible for dots, never wants to have a meeting with someone else's AI agent.",
-          "published_at": "2026-10-27T02:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53011.0초)"
-    },
-    {
-      "id": "6e162aff655bfd4c",
-      "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing",
-          "target_url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing",
-          "independent": true,
-          "title": "Cohere says Alibaba’s Qwen model tried to send a file to Beijing",
-          "summary": "An AI model said it wouldn’t use any tools, then tried to send something to a server in Beijing anyway, and while researchers say it’s probably a training quirk and not espionage, the whole thing has people asking how much to trust free Chinese AI.",
-          "published_at": "2026-10-27T01:12:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53010.0초)"
-    },
-    {
-      "id": "d1b2e82c44f78c76",
-      "title": "GPT-6.1 Terra",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/openai",
-          "target_url": "https://www.producthunt.com/products/openai",
-          "independent": false,
-          "title": "GPT-6.1 Terra",
-          "summary": "Fast, capable computer use at half the price Discussion | Link",
-          "published_at": "2026-10-26T23:33:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "3f53f10f752a8269",
-      "title": "ContextGem 1.0",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/contextgem",
-          "target_url": "https://www.producthunt.com/products/contextgem",
-          "independent": false,
-          "title": "ContextGem 1.0",
-          "summary": "Decision models join LLMs to extract data from documents Discussion | Link",
-          "published_at": "2026-10-27T04:48:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "1a8015f4f2b7e4a4",
-      "title": "Paddock",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/paddock-2",
-          "target_url": "https://www.producthunt.com/products/paddock-2",
-          "independent": false,
-          "title": "Paddock",
-          "summary": "Computers and sandboxes for your agents Discussion | Link",
-          "published_at": "2026-10-27T02:46:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "158b80486d5284b9",
-      "title": "Revix AI",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/revix-ai-2",
-          "target_url": "https://www.producthunt.com/products/revix-ai-2",
-          "independent": false,
-          "title": "Revix AI",
-          "summary": "AI code review that learns your repo's own rules Discussion | Link",
-          "published_at": "2026-10-26T21:29:10+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b8027b998a3859ca",
-      "title": "PulseDev",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/pulsedev",
-          "target_url": "https://www.producthunt.com/products/pulsedev",
-          "independent": false,
-          "title": "PulseDev",
-          "summary": "Click any UI bug on localhost and your AI agent fixes it Discussion | Link",
-          "published_at": "2026-10-26T22:47:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9010.0초)"
     },
     {
       "id": "ec16b2854b828d7b",
@@ -1491,7 +1152,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53010.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9010.0초)"
     },
     {
       "id": "c8310af1ecece18a",
@@ -1512,7 +1173,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53009.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9009.0초)"
     },
     {
       "id": "c0b829d9145454f6",
@@ -1533,7 +1194,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53009.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9009.0초)"
     },
     {
       "id": "6ffc468f49ec102f",
@@ -1554,7 +1215,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53008.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9008.0초)"
     },
     {
       "id": "8045a1d5393eb535",
@@ -1575,49 +1236,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53008.0초)"
-    },
-    {
-      "id": "c6946dcfbedf652a",
-      "title": "Developers Reporting Double-Digit Weekly Time Savings from AI Fell from 68% to 26%",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/10/atlassian-devex-2026",
-          "target_url": "https://www.infoq.com/news/2026/10/atlassian-devex-2026",
-          "independent": true,
-          "title": "Developers Reporting Double-Digit Weekly Time Savings from AI Fell from 68% to 26%",
-          "summary": "Atlassian’s State of Developer Experience 2026 finds the share of developers saving ten or more hours a week with AI dropped from 68% to 26% year over year, while only 28% report noticeably less friction than before AI. Engineering leaders report spending more time managing and correcting AI output than developers do. By Steef-Jan Wiggers",
-          "published_at": "2026-10-27T04:45:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53008.0초)"
-    },
-    {
-      "id": "c522c32c8006003a",
-      "title": "AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security",
-      "first_seen": "2026-10-28T06:02:49+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026",
-          "target_url": "https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026",
-          "independent": true,
-          "title": "AGNTCon + MCPCon 2026: Agentic AI Foundation Adds Four Projects as MCP Turns to Security",
-          "summary": "At AGNTCon + MCPCon North America 2026, the Agentic AI Foundation added OpenSandbox, Open Responses, Agent Skills, and OpenEnv, reaching ten projects in its first year. Keynotes from Anthropic, OpenAI, Google, and UC Berkeley focused on MCP in production, security, and agents with their own identities. By Andrew Hoblitzell",
-          "published_at": "2026-10-26T22:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53007.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9008.0초)"
     },
     {
       "id": "ff6bb52ea1af95c3",
@@ -1943,7 +1562,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53007.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9007.0초)"
     },
     {
       "id": "580eb2775725ea47",
@@ -1964,7 +1583,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53006.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9007.0초)"
     },
     {
       "id": "4f9cf69330811725",
@@ -1985,7 +1604,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53006.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9006.0초)"
     },
     {
       "id": "df65cd12f346a5f2",
@@ -2006,7 +1625,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53005.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9006.0초)"
     },
     {
       "id": "3b64f2126ca310fc",
@@ -2027,7 +1646,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53005.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9005.0초)"
     },
     {
       "id": "cf0b445a13fca74c",
@@ -2048,7 +1667,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53005.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9005.0초)"
     },
     {
       "id": "7b5653451a244c2d",
@@ -2069,7 +1688,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53004.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9004.0초)"
     },
     {
       "id": "8c981a7773ea1054",
@@ -2090,7 +1709,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53004.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9004.0초)"
     },
     {
       "id": "db30df4bb3be374c",
@@ -2122,7 +1741,7 @@
       ],
       "independent_source_count": 2,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53003.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9003.0초)"
     },
     {
       "id": "1583c560106073a3",
@@ -2143,7 +1762,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53003.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9003.0초)"
     },
     {
       "id": "bddebf86268f0d30",
@@ -2164,7 +1783,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53002.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9002.0초)"
     },
     {
       "id": "3a0e6f223eff99ed",
@@ -2185,7 +1804,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53002.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9002.0초)"
     },
     {
       "id": "3c84bdc9f1b42a29",
@@ -2206,7 +1825,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53002.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9001.0초)"
     },
     {
       "id": "578f4a1cc2a6a4ec",
@@ -2227,7 +1846,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53001.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9001.0초)"
     },
     {
       "id": "3801bfeec8403796",
@@ -2248,7 +1867,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53001.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9000.0초)"
     },
     {
       "id": "14bd5a3a69122b7b",
@@ -2269,7 +1888,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53000.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (9000.0초)"
     },
     {
       "id": "353dd9ae44065218",
@@ -2301,7 +1920,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (53000.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8999.0초)"
     },
     {
       "id": "bb1f2f07f5994d40",
@@ -2322,7 +1941,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52999.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8999.0초)"
     },
     {
       "id": "40e02ac52743a947",
@@ -2354,7 +1973,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52999.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8998.0초)"
     },
     {
       "id": "090274bcc4740a70",
@@ -2375,7 +1994,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52999.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8998.0초)"
     },
     {
       "id": "29526404518cacde",
@@ -2396,7 +2015,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52998.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8997.0초)"
     },
     {
       "id": "3db1c51608c54789",
@@ -2417,7 +2036,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52998.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8997.0초)"
     },
     {
       "id": "83a93c348b55de58",
@@ -2438,7 +2057,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52997.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8997.0초)"
     },
     {
       "id": "f9d0c14c0ffafa07",
@@ -2459,7 +2078,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52997.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8996.0초)"
     },
     {
       "id": "8128c7853b28b767",
@@ -2480,7 +2099,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52996.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8996.0초)"
     },
     {
       "id": "db05b50ceb26005a",
@@ -2501,7 +2120,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52996.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8995.0초)"
     },
     {
       "id": "a660049bd369894d",
@@ -2522,7 +2141,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52996.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8995.0초)"
     },
     {
       "id": "9a3764356b202945",
@@ -2543,7 +2162,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52995.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8994.0초)"
     },
     {
       "id": "f74f3a0c358e9a1d",
@@ -2564,7 +2183,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52995.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8994.0초)"
     },
     {
       "id": "06cef07de21f8187",
@@ -2837,7 +2456,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52994.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8993.0초)"
     },
     {
       "id": "75dcf0747cbcaa89",
@@ -2858,7 +2477,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52994.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8993.0초)"
     },
     {
       "id": "026993d9381b5a0d",
@@ -2879,7 +2498,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52993.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8992.0초)"
     },
     {
       "id": "40f004666066d4ef",
@@ -2900,7 +2519,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52993.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8992.0초)"
     },
     {
       "id": "c5912b0a414a6da7",
@@ -2921,7 +2540,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52992.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8991.0초)"
     },
     {
       "id": "8b3deadb648a1f92",
@@ -2942,7 +2561,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52992.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8991.0초)"
     },
     {
       "id": "55f336d15e51352f",
@@ -2963,7 +2582,7 @@
       ],
       "independent_source_count": 1,
       "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (52992.0초)"
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8990.0초)"
     },
     {
       "id": "3a3a9fcaae10d150",
@@ -3069,36 +2688,939 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "9cf0d2983f1d56d0",
+      "title": "Show HN: AI Knows Us – see who ChatGPT and Perplexity recommend instead of you",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50296304",
+          "target_url": "https://www.aiknowsus.com",
+          "independent": false,
+          "title": "Show HN: AI Knows Us – see who ChatGPT and Perplexity recommend instead of you",
+          "summary": "",
+          "published_at": "2026-10-29T21:27:11+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e0b7caccab526776",
+      "title": "How to Run Multiple Claude Code Agents on the Same Xcode Project",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50296034",
+          "target_url": "https://flowdeck.studio/blog/run-multiple-claude-code-agents-xcode-project",
+          "independent": false,
+          "title": "How to Run Multiple Claude Code Agents on the Same Xcode Project",
+          "summary": "",
+          "published_at": "2026-10-29T21:09:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "05a085df958cd113",
+      "title": "Show HN: Axoris – macOS App for Grok, Claude, ChatGPT and Gemini",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50295965",
+          "target_url": "https://www.axoris.app/",
+          "independent": false,
+          "title": "Show HN: Axoris – macOS App for Grok, Claude, ChatGPT and Gemini",
+          "summary": "",
+          "published_at": "2026-10-29T21:05:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "48356a5a0d97b177",
+      "title": "Apple bullied flash memory suppliers, and why AI datacenters changed the game",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50295755",
+          "target_url": "https://www.msn.com/en-us/news/other/the-beleaguered-chip-sellers-getting-their-revenge-on-apple/ar-AA2ghTPi",
+          "independent": false,
+          "title": "Apple bullied flash memory suppliers, and why AI datacenters changed the game",
+          "summary": "",
+          "published_at": "2026-10-29T20:52:44+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "d52c57c7f831211e",
+      "title": "AI microdrama edit of Neighbours worries actors and crew",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50295748",
+          "target_url": "https://www.bbc.com/news/articles/cj1dw9znd1q1o",
+          "independent": false,
+          "title": "AI microdrama edit of Neighbours worries actors and crew",
+          "summary": "",
+          "published_at": "2026-10-29T20:52:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "1e7d133375f9472d",
+      "title": "The AI bubble is about to pop [video]",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50295666",
+          "target_url": "https://www.youtube.com/watch?v=MgngwkPAuqQ",
+          "independent": false,
+          "title": "The AI bubble is about to pop [video]",
+          "summary": "",
+          "published_at": "2026-10-29T20:46:45+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e508e29ae812fe58",
+      "title": "Granite Switch 4.1.1 — Update models like you update software",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+          "target_url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+          "independent": false,
+          "title": "Granite Switch 4.1.1 — Update models like you update software",
+          "summary": "",
+          "published_at": "2026-10-29T13:37:07+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "718617961cab3abc",
+      "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/announcing-project-protostar",
+          "target_url": "https://huggingface.co/blog/announcing-project-protostar",
+          "independent": false,
+          "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+          "summary": "",
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b6b30743068c2627",
+      "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/mistral-large4",
+          "target_url": "https://huggingface.co/blog/mistral-large4",
+          "independent": false,
+          "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+          "summary": "",
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6394645bd5105adc",
+      "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/anydecisionmodel",
+          "target_url": "https://huggingface.co/blog/anydecisionmodel",
+          "independent": false,
+          "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+          "summary": "",
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "912dfdbd28658cc8",
+      "title": "A Defense Contractor Gave Their Personal AI Agent Access to a Secure Pentagon System",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/a-defense-contractor-gave-their-personal-ai-agent-access-to-a-secure-pentagon-system",
+          "target_url": "https://www.wired.com/story/a-defense-contractor-gave-their-personal-ai-agent-access-to-a-secure-pentagon-system",
+          "independent": true,
+          "title": "A Defense Contractor Gave Their Personal AI Agent Access to a Secure Pentagon System",
+          "summary": "Sources tell WIRED that an Accenture employee’s personal Claude agent ran on a DOD network for two months before it was identified and the vulnerability could be patched.",
+          "published_at": "2026-10-29T18:39:43+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8990.0초)"
+    },
+    {
+      "id": "7472c3c6cdd911f6",
+      "title": "The ‘Pain in the Ass’ Math That Could Save Vibe Coding From Itself",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/software-verification-is-the-hot-new-answer-to-the-ai-safety-crisis",
+          "target_url": "https://www.wired.com/story/software-verification-is-the-hot-new-answer-to-the-ai-safety-crisis",
+          "independent": true,
+          "title": "The ‘Pain in the Ass’ Math That Could Save Vibe Coding From Itself",
+          "summary": "A new startup called &Truth is joining the race to automate formal verification, a painstaking process that uses math to prove software works as intended.",
+          "published_at": "2026-10-29T15:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8989.0초)"
+    },
+    {
+      "id": "7a2ff422d91cef5c",
+      "title": "Mistral Says Its AI Model ‘Le Chonk’ Has Leapfrogged China in the Open-Weight Race",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/mistral-says-le-chonk-surpasses-chinese-models-cybersecurity",
+          "target_url": "https://www.wired.com/story/mistral-says-le-chonk-surpasses-chinese-models-cybersecurity",
+          "independent": true,
+          "title": "Mistral Says Its AI Model ‘Le Chonk’ Has Leapfrogged China in the Open-Weight Race",
+          "summary": "The French AI lab claims its latest release matches or outperforms even the best models from DeepSeek and Z.ai in coding and cybersecurity.",
+          "published_at": "2026-10-29T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8989.0초)"
+    },
+    {
+      "id": "7bfdd9bb1af858e7",
+      "title": "I Gave My Blood to the AI Death Clock",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/i-gave-an-ai-death-clock-my-blood",
+          "target_url": "https://www.wired.com/story/i-gave-an-ai-death-clock-my-blood",
+          "independent": true,
+          "title": "I Gave My Blood to the AI Death Clock",
+          "summary": "Death Clock promises to predict when you’re going to die and help you extend your time on Earth. After a month, I felt like it was sucking the life out of me.",
+          "published_at": "2026-10-29T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8988.0초)"
+    },
+    {
+      "id": "4aa6b4f10322be2e",
+      "title": "You can generate and edit Google Docs files directly in Gemini chats now",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1022519/google-gemini-file-editing-documents-pdfs",
+          "independent": true,
+          "title": "You can generate and edit Google Docs files directly in Gemini chats now",
+          "summary": "Now you can generate, preview, and edit PDFs, Google Docs, Google Sheets, slide decks, Markdown files, TXT files, and code directly within Google Gemini. The new file editing capabilities are available starting today for all Gemini users, and while PDF previews/editing works on both the web and mobile, all other file formats are only in […]",
+          "published_at": "2026-10-29T18:45:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8988.0초)"
+    },
+    {
+      "id": "5f992c32f5756cf3",
+      "title": "Microsoft’s AI future has fewer jobs",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad",
+          "target_url": "https://www.theverge.com/tech/1022023/microsoft-exit-offer-layoffs-notepad",
+          "independent": true,
+          "title": "Microsoft’s AI future has fewer jobs",
+          "summary": "To anyone listening closely to what Microsoft CEO Satya Nadella has been saying over the past couple of years, this week felt like the clearest sign yet that AI is about to fundamentally change the size of Microsoft's workforce. Microsoft is now offering voluntary buyouts to around 60,000 employees across the US, UK, Canada, and […]",
+          "published_at": "2026-10-29T16:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8987.0초)"
+    },
+    {
+      "id": "8d448df3e470faab",
+      "title": "The NYT Cooking app is testing AI recipe modifications",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
+          "independent": true,
+          "title": "The NYT Cooking app is testing AI recipe modifications",
+          "summary": "The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior editor Genevieve Ko announced the feature, which can be used to recommend substitutions for ingredients and cooking equipment, scale recipes to any […]",
+          "published_at": "2026-10-29T14:39:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8987.0초)"
+    },
+    {
+      "id": "130656092a266855",
+      "title": "Anthropic’s business plan: Build God or die trying",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
+          "independent": true,
+          "title": "Anthropic’s business plan: Build God or die trying",
+          "summary": "The Anthropic S-1 seems to have provided the financial justification for the company to spend as much as it possibly can on compute. If you are the kind of person who wonders if Anthropic is doing its level best to build a machine god while convincing Wall Street it's in the business of selling IT […]",
+          "published_at": "2026-10-29T13:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8986.0초)"
+    },
+    {
+      "id": "d62a8f09dced3dd9",
+      "title": "AI has come for Arizona’s water",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
+          "target_url": "https://www.theverge.com/cs/features/1016650/arizona-water-data-center-tsmc",
+          "independent": true,
+          "title": "AI has come for Arizona’s water",
+          "summary": "A hulking gray giant rises from the desert. Inside, engineers create the force behind our phones and computers and appliances, our streaming services and search engines and chatbots and vibe-coded apps and websites. The complex is simultaneously massive and squat, dwarfed by the mountains that surround it, and it is endless. I drive past one […]",
+          "published_at": "2026-10-29T10:00:04+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8986.0초)"
+    },
+    {
+      "id": "b35042356bf7a80a",
+      "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience",
+          "target_url": "https://techcrunch.com/2026/10/29/as-search-traffic-dries-up-reddit-announces-its-shifting-to-a-logged-in-experience",
+          "independent": true,
+          "title": "As search traffic dries up, Reddit announces it’s shifting to a logged-in experience",
+          "summary": "As AI transforms how people find information online, Reddit is rethinking its open-web roots to protect its audience and business.",
+          "published_at": "2026-10-29T20:08:31+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8985.0초)"
+    },
+    {
+      "id": "f3117e1d89a120ca",
+      "title": "Rivian expands joint venture with VW to include AI assistant",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant",
+          "target_url": "https://techcrunch.com/2026/10/29/rivian-expands-joint-venture-with-vw-to-include-ai-assistant",
+          "independent": true,
+          "title": "Rivian expands joint venture with VW to include AI assistant",
+          "summary": "Rivian doesn't disclose if the value of its $5.8 billion joint venture will expand as a result.",
+          "published_at": "2026-10-29T20:05:47+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8985.0초)"
+    },
+    {
+      "id": "5229178591e013ae",
+      "title": "OpenAI-backed Thrive Holdings acquires ADT",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt",
+          "target_url": "https://techcrunch.com/2026/10/29/openai-backed-thrive-holdings-acquires-adt",
+          "independent": true,
+          "title": "OpenAI-backed Thrive Holdings acquires ADT",
+          "summary": "OpenAI-backed Thrive Holdings is buying ADT in a $15.3 billion deal, with plans to bring AI to the home security business.",
+          "published_at": "2026-10-29T19:56:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8984.0초)"
+    },
+    {
+      "id": "79cec0107600d9d5",
+      "title": "Meta quietly launches an AI fashion app called Style Sketch",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch",
+          "target_url": "https://techcrunch.com/2026/10/29/meta-quietly-launches-an-ai-fashion-app-called-style-sketch",
+          "independent": true,
+          "title": "Meta quietly launches an AI fashion app called Style Sketch",
+          "summary": "The app connects to Instagram to build a virtual closet from photos you’ve already shared, or lets you add items manually by snapping a photo, recording a quick video, or uploading images from your camera roll.",
+          "published_at": "2026-10-29T19:14:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8984.0초)"
+    },
+    {
+      "id": "3e7c26f588631c0f",
+      "title": "Granola crunches up a dictation feature to compete with Wispr",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr",
+          "target_url": "https://techcrunch.com/2026/10/29/granola-crunches-up-a-dictation-feature-to-compete-with-wispr",
+          "independent": true,
+          "title": "Granola crunches up a dictation feature to compete with Wispr",
+          "summary": "Uno reverse! After Wispr added meeting notes to its dictation app, Granola is adding dictation to its meeting notetaker. The voice AI wars are getting interesting.",
+          "published_at": "2026-10-29T17:54:38+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8983.0초)"
+    },
+    {
+      "id": "927698c982f0f511",
+      "title": "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity",
+          "target_url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity",
+          "independent": true,
+          "title": "Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity",
+          "summary": "Mistral says its new model can afford organizations a kind of control over its cyber defenses that closed models can't.",
+          "published_at": "2026-10-29T17:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8983.0초)"
+    },
+    {
+      "id": "990b533cbb64ab7a",
+      "title": "US investigated Chinese spy plot aimed at Nvidia CEO",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo",
+          "target_url": "https://techcrunch.com/2026/10/29/u-s-investigated-chinese-spy-plot-aimed-at-nvidia-ceo",
+          "independent": true,
+          "title": "US investigated Chinese spy plot aimed at Nvidia CEO",
+          "summary": "A top executive of a Singapore AI cloud company that was accused of illegally selling Nvidia chips to China could also have been a Chinese spy, sources have told the New York Times.",
+          "published_at": "2026-10-29T16:42:32+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8982.0초)"
+    },
+    {
+      "id": "06fa0e4540548db0",
+      "title": "Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction",
+          "target_url": "https://techcrunch.com/2026/10/29/ex-palantir-execs-launch-dream-with-17m-from-a16z-to-build-ai-world-models-for-construction",
+          "independent": true,
+          "title": "Ex-Palantir execs launch Dream with $17M from a16z to build AI world models for construction",
+          "summary": "Dream is grounded in real physics and construction standards. Just as LLMs learn from text, Dream's world model is trained on more than 100 million square feet of building data gathered from permit archives across the United States.",
+          "published_at": "2026-10-29T16:21:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8982.0초)"
+    },
+    {
+      "id": "f8adb1021dcc3d4c",
+      "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round",
+          "target_url": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round",
+          "independent": true,
+          "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
+          "summary": "On Thursday, AI app Wabi, now describing itself as a \"personal agent,\" said it has raised $55 million at a $1.25 billion valuation.",
+          "published_at": "2026-10-29T14:35:26+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8981.0초)"
+    },
+    {
+      "id": "03a7d63dd6bfd616",
+      "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure",
+          "target_url": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure",
+          "independent": true,
+          "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
+          "summary": "With Pipecat, Deepgram will likely gain a deeper understanding of real-time voice and video infrastructure.",
+          "published_at": "2026-10-29T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8981.0초)"
+    },
+    {
+      "id": "503de030fe636205",
+      "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions",
+          "target_url": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions",
+          "independent": true,
+          "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
+          "summary": "The update allows you to use Alexa to create lists, register them, see what's on them, and add or edit items. You can also manage subscriptions.",
+          "published_at": "2026-10-29T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8981.0초)"
+    },
+    {
+      "id": "4800b69e29fe5e1c",
+      "title": "Notch Metrics",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/notch-metrics",
+          "target_url": "https://www.producthunt.com/products/notch-metrics",
+          "independent": false,
+          "title": "Notch Metrics",
+          "summary": "Use claude code to build analytics widgets for your notch Discussion | Link",
+          "published_at": "2026-10-28T09:57:56+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5aa079cb48c863d1",
+      "title": "Why MCP servers should tell agents what to do next",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/aws-mcp-agent-observability",
+          "target_url": "https://thenewstack.io/aws-mcp-agent-observability",
+          "independent": true,
+          "title": "Why MCP servers should tell agents what to do next",
+          "summary": "Many MCP servers do one thing. An agent asks for data, and the server hands it back. AWS’s James Ward The post Why MCP servers should tell agents what to do next appeared first on The New Stack .",
+          "published_at": "2026-10-29T15:55:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8980.0초)"
+    },
+    {
+      "id": "19a2dd61b417e5e7",
+      "title": "“I don’t think the world needs a new GitHub”: What GitHub’s leaders really think about their new rivals",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/github-agentic-infrastructure-rebuild",
+          "target_url": "https://thenewstack.io/github-agentic-infrastructure-rebuild",
+          "independent": true,
+          "title": "“I don’t think the world needs a new GitHub”: What GitHub’s leaders really think about their new rivals",
+          "summary": "At its annual Universe ’26 conference in San Francisco this week, GitHub took to the question of the platform’s stability The post “I don’t think the world needs a new GitHub”: What GitHub’s leaders really think about their new rivals appeared first on The New Stack .",
+          "published_at": "2026-10-29T13:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8980.0초)"
+    },
+    {
+      "id": "2fc2db7e78070b8b",
+      "title": "Google’s Gemini 4 Carbon tops the charts (for now)",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/google-gemini-4-carbon-tops-the-charts-for-now",
+          "target_url": "https://www.therundown.ai/articles/google-gemini-4-carbon-tops-the-charts-for-now",
+          "independent": true,
+          "title": "Google’s Gemini 4 Carbon tops the charts (for now)",
+          "summary": "PLUS: Turn a prompt into a poster with Canva Craft",
+          "published_at": "2026-10-29T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8979.0초)"
+    },
+    {
+      "id": "0ea9f9a21dd3e13e",
+      "title": "Bug0 Releases QA Agent to Automate Regression Testing With Cached Playwright Replays",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/bug0-agent-testing-cached-replay",
+          "target_url": "https://www.infoq.com/news/2026/10/bug0-agent-testing-cached-replay",
+          "independent": true,
+          "title": "Bug0 Releases QA Agent to Automate Regression Testing With Cached Playwright Replays",
+          "summary": "QA Agent is a new source-available Playwright library for agentic browser regression testing. The agent associates test instructions expressed in natural language to actions on the user interface, caches those when appropriate for faster CI replays, remapping them to test specifications when the user interface changes. Verification is based on multi-model consensus and vision model evaluations. By Bruno Couriol",
+          "published_at": "2026-10-29T15:17:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8979.0초)"
+    },
+    {
+      "id": "fce7655b56110495",
+      "title": "How to Make Artificial Intelligence More Environmentally Sustainable",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/AI-environmentally-sustainable",
+          "target_url": "https://www.infoq.com/news/2026/10/AI-environmentally-sustainable",
+          "independent": true,
+          "title": "How to Make Artificial Intelligence More Environmentally Sustainable",
+          "summary": "IT is responsible for about 2 - 4% of all global emissions, and electricity use at Microsoft and Google has climbed because of AI, according to their own reports. Sustainability ought to be a top-level architectural concern. Some recommendations are: use pre-built and smaller models, run compute where low-carbon electricity is abundant, and train on renewable energy. By Ben Linders",
+          "published_at": "2026-10-29T11:41:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8978.0초)"
+    },
+    {
+      "id": "cb8481b53764193f",
+      "title": "QCon AI New York 2026 Program Committee Picks: Agent Identity, Context Costs, and Open-Source Infere",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-pc-picks",
+          "target_url": "https://www.infoq.com/news/2026/10/qcon-ai-newyork-2026-pc-picks",
+          "independent": true,
+          "title": "QCon AI New York 2026 Program Committee Picks: Agent Identity, Context Costs, and Open-Source Infere",
+          "summary": "Who authorizes an agent’s actions, and how should teams manage growing context costs? The QCon AI New York 2026 program committee shares six session picks that tackle these questions, alongside open-source inference, agent standards, and audio AI. By Artenisa Chatziou",
+          "published_at": "2026-10-29T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8978.0초)"
+    },
+    {
+      "id": "667e0e723589bcaf",
+      "title": "Anthropic Says Nobody Needs a Mental Model of Claude Code. Practitioners Are Testing That",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/10/anthropic-code-review",
+          "target_url": "https://www.infoq.com/news/2026/10/anthropic-code-review",
+          "independent": true,
+          "title": "Anthropic Says Nobody Needs a Mental Model of Claude Code. Practitioners Are Testing That",
+          "summary": "Anthropic has published how the Claude Code team reviews code now that Claude writes roughly 90% of it, including a claim that nobody keeps a complete mental model of the codebase. The post documents a pull request that ran more than fifty review rounds overnight, a reviewer spending most of its effort on pre-existing code, and a control the team says it does not yet have. By Steef-Jan Wiggers",
+          "published_at": "2026-10-29T09:58:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (8977.0초)"
+    },
+    {
+      "id": "9f2428e9ae49e905",
+      "title": "When words and actions don’t match up: can a model say one thing and then do another?",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ceo_44783/when-words-and-actions-dont-match-up-can-a-model-say-one-thing-and-then-do-another-f9575cc065b2",
+          "target_url": "https://medium.com/@ceo_44783/when-words-and-actions-dont-match-up-can-a-model-say-one-thing-and-then-do-another-f9575cc065b2",
+          "independent": false,
+          "title": "When words and actions don’t match up: can a model say one thing and then do another?",
+          "summary": "I started with a strange question: would an AI hesitate to delete another AI? Continue reading on Medium »",
+          "published_at": "2026-10-29T21:19:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5da7a7e712408e4b",
+      "title": "Our AI Processed 50,000 Documents. Customer Onboarding Still Took 12 Days",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/the-generator/our-ai-processed-50-000-documents-customer-onboarding-still-took-12-days-515080618abf",
+          "target_url": "https://medium.com/the-generator/our-ai-processed-50-000-documents-customer-onboarding-still-took-12-days-515080618abf",
+          "independent": false,
+          "title": "Our AI Processed 50,000 Documents. Customer Onboarding Still Took 12 Days",
+          "summary": "An enterprise automation failure involving document extraction, identity verification, CRM integration, exception queues, and the hidden… Continue reading on The Generator »",
+          "published_at": "2026-10-29T21:17:23+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "db0db2a91fc0fba6",
+      "title": "Where Does AI Actually Fit in Your Work?",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://maxonboarder.medium.com/where-does-ai-actually-fit-in-your-work-ee3a7acd461a",
+          "target_url": "https://maxonboarder.medium.com/where-does-ai-actually-fit-in-your-work-ee3a7acd461a",
+          "independent": false,
+          "title": "Where Does AI Actually Fit in Your Work?",
+          "summary": "A practical way to find your starting point, whether you are adding AI to the work you do or building a career in it Continue reading on Medium »",
+          "published_at": "2026-10-29T21:16:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "8850b05ffa81df52",
+      "title": "AI-Assisted Development in SAP Analytics Cloud: Experimenting with Browser Automation",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@kamenetskiy/ai-assisted-development-in-sap-analytics-cloud-experimenting-with-browser-automation-ef714e0d7854",
+          "target_url": "https://medium.com/@kamenetskiy/ai-assisted-development-in-sap-analytics-cloud-experimenting-with-browser-automation-ef714e0d7854",
+          "independent": false,
+          "title": "AI-Assisted Development in SAP Analytics Cloud: Experimenting with Browser Automation",
+          "summary": "Can AI coding agents create SAP Analytics Cloud objects directly through the user interface? I built and tested a prototype using… Continue reading on Medium »",
+          "published_at": "2026-10-29T21:16:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "b4b77ddd7d3e8b46",
+      "title": "JOB IS NOT THE FUTURE !",
+      "first_seen": "2026-10-30T06:29:29+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@jayantsingh2805/job-is-not-the-future-b81f135d71eb",
+          "target_url": "https://medium.com/@jayantsingh2805/job-is-not-the-future-b81f135d71eb",
+          "independent": false,
+          "title": "JOB IS NOT THE FUTURE !",
+          "summary": "What if the technology you are using to become better at your job is also learning how to replace parts of it? Continue reading on Medium »",
+          "published_at": "2026-10-29T21:15:22+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
   "auto_published_count": 0,
   "official_run": {
-    "collected_at": "2026-10-29T18:12:19.398332+09:00",
-    "window_start": "2026-08-30T18:12:19.398332+09:00",
-    "window_end": "2026-10-29T18:12:19.398332+09:00",
-    "candidate_count": 0,
-    "published_count": 0,
+    "collected_at": "2026-10-30T06:28:12.460850+09:00",
+    "window_start": "2026-08-31T06:28:12.460850+09:00",
+    "window_end": "2026-10-30T06:28:12.460850+09:00",
+    "candidate_count": 9,
+    "published_count": 9,
     "held_item_count": 0,
-    "failed_source_count": 3,
+    "failed_source_count": 2,
     "checked_source_count": 5,
     "waiting_count": 0,
     "policy_revision": 1,
     "policy_updated_at": "2026-10-06T14:37:00.557Z",
     "daily_target": 10,
-    "published_today": 0,
-    "shortfall": 10
+    "published_today": 1,
+    "shortfall": 9
   },
   "hourly_run": {
-    "collected_at": "2026-10-29T18:16:07.962038+09:00",
-    "window_start": "2026-10-27T06:16:07.962038+09:00",
-    "window_end": "2026-10-29T18:16:07.962038+09:00",
-    "candidate_count": 127,
-    "eligible_count": 65,
+    "collected_at": "2026-10-30T06:29:29.192230+09:00",
+    "window_start": "2026-10-27T18:29:29.192230+09:00",
+    "window_end": "2026-10-30T06:29:29.192230+09:00",
+    "candidate_count": 145,
+    "eligible_count": 85,
     "published_count": 0,
-    "waiting_count": 62,
-    "held_count": 65,
+    "waiting_count": 60,
+    "held_count": 85,
     "duplicate_count": 0,
-    "held_item_count": 0,
+    "held_item_count": 1,
     "failed_source_count": 1,
     "checked_source_count": 12,
     "not_configured_source_count": 3,
@@ -3106,8 +3628,8 @@
     "policy_revision": 1,
     "policy_updated_at": "2026-10-06T14:37:00.557Z",
     "daily_target": 10,
-    "published_today": 0,
-    "shortfall": 10
+    "published_today": 1,
+    "shortfall": 9
   },
   "official_pending": [],
   "retired_events": []
