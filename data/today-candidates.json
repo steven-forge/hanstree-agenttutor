@@ -1,8 +1,8 @@
 {
-  "collected_at": "2026-11-08T18:36:47.133906+09:00",
-  "window_start": "2026-09-09T18:36:47.133906+09:00",
-  "window_end": "2026-11-08T18:36:47.133906+09:00",
-  "edition_date": "2026-11-08",
+  "collected_at": "2026-11-11T00:50:46.048787+09:00",
+  "window_start": "2026-09-12T00:50:46.048787+09:00",
+  "window_end": "2026-11-11T00:50:46.048787+09:00",
+  "edition_date": "2026-11-11",
   "sources": [
     {
       "id": "openai-news",
@@ -10,7 +10,7 @@
       "url": "https://openai.com/news/rss.xml",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-08T18:36:47.133906+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -23,13 +23,13 @@
       "name": "Google AI",
       "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
       "status": "ok",
-      "count": 0,
-      "checked_at": "2026-11-08T18:36:47.133906+09:00",
+      "count": 2,
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 20,
+      "skipped_count": 18,
       "coverage_limited": true,
-      "last_success_at": "2026-11-08T18:36:47.133906+09:00"
+      "last_success_at": "2026-11-11T00:50:46.048787+09:00"
     },
     {
       "id": "codex-releases",
@@ -37,7 +37,7 @@
       "url": "https://github.com/openai/codex/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-10T16:49:30.836989+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -51,12 +51,12 @@
       "url": "https://github.com/anthropics/claude-code/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-10T16:49:30.836989+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (58174.0초)",
+      "error": "Retry-After 대기시간 초과 (29265.0초)",
       "last_success_at": "2026-10-09T02:40:51.184745+09:00"
     },
     {
@@ -65,12 +65,12 @@
       "url": "https://github.com/google-gemini/gemini-cli/releases",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-10T16:49:30.836989+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (58173.0초)",
+      "error": "Retry-After 대기시간 초과 (29264.0초)",
       "last_success_at": "2026-10-28T01:53:48.272004+09:00"
     },
     {
@@ -79,17 +79,17 @@
       "url": "https://docs.x.ai/developers/release-notes",
       "status": "partial",
       "count": 0,
-      "checked_at": "2026-11-10T16:49:30.836989+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 3,
       "excluded_count": 0,
       "skipped_count": 5,
       "coverage_limited": false,
       "held_reasons": [
-        "한국어 번역 실패: Retry-After 대기시간 초과 (58172.0초)",
-        "한국어 번역 실패: Retry-After 대기시간 초과 (58172.0초)",
-        "한국어 번역 실패: Retry-After 대기시간 초과 (58172.0초)"
+        "한국어 번역 실패: Retry-After 대기시간 초과 (29264.0초)",
+        "한국어 번역 실패: Retry-After 대기시간 초과 (29264.0초)",
+        "한국어 번역 실패: Retry-After 대기시간 초과 (29263.0초)"
       ],
-      "last_success_at": "2026-11-10T16:49:30.836989+09:00"
+      "last_success_at": "2026-11-11T00:50:46.048787+09:00"
     },
     {
       "id": "anthropic-news",
@@ -97,12 +97,12 @@
       "url": "https://www.anthropic.com/news",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-08T18:36:47.133906+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (51708.0초)",
+      "error": "Retry-After 대기시간 초과 (29262.0초)",
       "last_success_at": "2026-10-22T00:40:36.756252+09:00"
     },
     {
@@ -111,52 +111,52 @@
       "url": "https://x.ai/news",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-08T18:36:47.133906+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "error": "Retry-After 대기시간 초과 (51707.0초)",
+      "error": "Retry-After 대기시간 초과 (29262.0초)",
       "last_success_at": "2026-10-22T00:40:36.756252+09:00"
     },
     {
       "id": "hacker-news",
       "name": "Hacker News",
       "url": "https://hacker-news.firebaseio.com/v0/newstories.json",
-      "status": "partial",
-      "count": 5,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
-      "held_count": 1,
-      "excluded_count": 32,
+      "status": "ok",
+      "count": 13,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
+      "held_count": 0,
+      "excluded_count": 27,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "huggingface-blog",
       "name": "Hugging Face Blog",
       "url": "https://huggingface.co/blog/feed.xml",
       "status": "ok",
-      "count": 2,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 3,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 28,
-      "skipped_count": 2,
+      "excluded_count": 27,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "wired-ai",
       "name": "WIRED",
       "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "status": "ok",
-      "count": 3,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 10,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 7,
-      "skipped_count": 2,
+      "excluded_count": 0,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "the-verge-ai",
@@ -164,90 +164,90 @@
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
       "status": "ok",
       "count": 10,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 4,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "techcrunch-ai",
       "name": "TechCrunch",
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
       "status": "ok",
-      "count": 14,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 20,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 6,
-      "skipped_count": 10,
+      "excluded_count": 0,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "ars-technica",
       "name": "Ars Technica",
       "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
       "status": "ok",
-      "count": 1,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 0,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 19,
-      "skipped_count": 1,
+      "excluded_count": 20,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "product-hunt",
       "name": "Product Hunt",
       "url": "https://www.producthunt.com/feed",
       "status": "ok",
-      "count": 2,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 6,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 28,
+      "excluded_count": 24,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "the-new-stack-ai",
       "name": "The New Stack",
       "url": "https://thenewstack.io/category/ai/feed/",
       "status": "ok",
-      "count": 4,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 5,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 22,
-      "skipped_count": 3,
+      "excluded_count": 21,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "the-rundown-ai",
       "name": "The Rundown AI",
       "url": "https://www.therundown.ai/feed",
       "status": "ok",
-      "count": 2,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 3,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 18,
-      "skipped_count": 1,
+      "excluded_count": 17,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "infoq-ai",
       "name": "InfoQ",
       "url": "https://feed.infoq.com/ai-ml-data-eng/",
       "status": "ok",
-      "count": 4,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "count": 7,
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
-      "excluded_count": 11,
-      "skipped_count": 2,
+      "excluded_count": 8,
+      "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "medium-ai",
@@ -255,12 +255,12 @@
       "url": "https://medium.com/feed/tag/artificial-intelligence",
       "status": "ok",
       "count": 5,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
       "coverage_limited": false,
-      "last_success_at": "2026-11-08T18:38:13.445138+09:00"
+      "last_success_at": "2026-11-11T00:52:19.439742+09:00"
     },
     {
       "id": "venturebeat-ai",
@@ -268,7 +268,7 @@
       "url": "https://venturebeat.com/category/ai/feed/",
       "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-08T18:38:13.445138+09:00",
+      "checked_at": "2026-11-11T00:52:19.439742+09:00",
       "held_count": 0,
       "excluded_count": 0,
       "skipped_count": 0,
@@ -322,343 +322,69 @@
       "id": "claude-dev-blog",
       "name": "Claude.dev Blog",
       "url": "https://claude.dev/",
-      "status": "ok",
+      "status": "failed",
       "count": 0,
-      "checked_at": "2026-11-08T18:36:47.133906+09:00",
+      "checked_at": "2026-11-11T00:50:46.048787+09:00",
       "held_count": 0,
       "excluded_count": 0,
-      "skipped_count": 10,
-      "coverage_limited": true,
+      "skipped_count": 0,
+      "coverage_limited": false,
+      "error": "Retry-After 대기시간 초과 (29261.0초)",
       "last_success_at": "2026-11-08T18:36:47.133906+09:00"
     }
   ],
-  "new_count": 0,
-  "archive_count": 749,
-  "candidates": [],
-  "hourly_collected_at": "2026-11-08T18:38:13.445138+09:00",
-  "hourly_window_start": "2026-11-06T06:38:13.445138+09:00",
+  "new_count": 2,
+  "archive_count": 751,
+  "candidates": [
+    {
+      "id": "e192e4f92a704298",
+      "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration",
+      "source_summary": "Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.",
+      "why_it_matters": "텍스트를 넘어 이미지·영상·음성까지 AI로 다루는 범위가 넓어지고 있음을 보여줍니다. 초보자는 결과의 품질뿐 아니라 저작권, 출처 표시, 사람의 최종 검토도 함께 고려해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-11-11T00:51:33+09:00",
+      "published_at": "2026-11-10T14:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Adobe의 크리에이티브 및 생산성 도구를 일상적인 Google 앱에 더 가깝게 제공합니다.",
+      "source_summary_ko": "2026년 11월 10일 오늘 Adobe Max에서 Adobe와의 파트너십을 확대한다고 발표했습니다.\n또한 Google의 프론티어 AI 모델을 Adobe 앱으로 가져옵니다.\nAdobe는 Google 검색에서 크리에이티브 도구를 AI 모드로 전환합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "It will also bring Google’s frontier AI models into Adobe’s apps.",
+        "ko": "또한 Google의 프론티어 AI 모델을 Adobe 앱으로 가져옵니다."
+      }
+    },
+    {
+      "id": "c979be8e72cc92b8",
+      "title": "Google Cloud launches Gemini for healthcare.",
+      "source_id": "google-ai",
+      "source_name": "Google AI",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare",
+      "source_summary": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
+      "why_it_matters": "AI가 의료·과학 연구에 쓰이면 분석과 실험을 빠르게 도울 수 있지만 결과 검증과 전문가 판단이 필요합니다. 초보자는 AI의 제안을 확정된 사실로 보지 말고 근거와 검토 절차를 함께 확인해야 합니다.",
+      "why_it_matters_provenance": "automatic",
+      "fetched_at": "2026-11-11T00:51:36+09:00",
+      "published_at": "2026-11-10T13:00:00+00:00",
+      "date_precision": "time",
+      "title_ko": "Google Cloud가 건강 관리를 위한 Gemini를 출시합니다.",
+      "source_summary_ko": "2026년 11월 10일 Google Cloud는 단편화된 임상, 운영 및 관리 시스템을 통합하도록 설계된 AI 솔루션인 Gemini for healthcare를 발표했습니다.\n단순한 정보 검색을 넘어 의료팀이 사일로 데이터를 조정된 작업으로 전환할 수 있습니다.\nHCA Healthcare, Highmark Health 및 Northwell Health를 포함한 출시 파트너와 함께 미리보기에서 처음 사용할 수 있으며, 병목 현상을 해결하고 환자 치료를 위한 귀중한 직원 시간을 확보합니다.",
+      "source_summary_provenance": "article_full_text_3line",
+      "source_excerpt": {
+        "original": "Moving beyond simple information retrieval, it enables healthcare teams to turn siloed data into coordinated action.",
+        "ko": "단순한 정보 검색을 넘어 의료팀이 사일로 데이터를 조정된 작업으로 전환할 수 있습니다."
+      }
+    }
+  ],
+  "hourly_collected_at": "2026-11-11T00:52:19.439742+09:00",
+  "hourly_window_start": "2026-11-08T12:52:19.439742+09:00",
   "events": [
     {
-      "id": "07479f9e576d8e32",
-      "title": "Combining freelancing, social networking, and AI",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398916",
-          "target_url": "https://freelancer.svoxx.com/int/en",
-          "independent": false,
-          "title": "Combining freelancing, social networking, and AI",
-          "summary": "",
-          "published_at": "2026-11-06T21:43:59+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8c416cac2e1213d0",
-      "title": "New Research Tests Whether AI Models Know Their Own Thoughts",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398758",
-          "target_url": "https://www.quantamagazine.org/new-research-tests-whether-ai-models-know-their-own-thoughts-20261104",
-          "independent": false,
-          "title": "New Research Tests Whether AI Models Know Their Own Thoughts",
-          "summary": "",
-          "published_at": "2026-11-06T21:27:07+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "027699110bd0e9ba",
-      "title": "How I Learned to Stop Worrying and Love AI",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398741",
-          "target_url": "https://koenvangilst.nl/lab/how-i-stopped-worrying-and-learned-to-love-ai",
-          "independent": false,
-          "title": "How I Learned to Stop Worrying and Love AI",
-          "summary": "",
-          "published_at": "2026-11-06T21:25:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "91d6447d2452dcb2",
-      "title": "Anthropic to press ahead with November IPO targeting $1.5T valuation",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398736",
-          "target_url": "https://www.ft.com/content/314e17df-e7af-4814-b208-70a0557cb452",
-          "independent": false,
-          "title": "Anthropic to press ahead with November IPO targeting $1.5T valuation",
-          "summary": "",
-          "published_at": "2026-11-06T21:25:37+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b50aa22d5e38efe3",
-      "title": "Ballast – cold email infrastructure with AI and MCP",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398734",
-          "target_url": "https://ballast.to",
-          "independent": false,
-          "title": "Ballast – cold email infrastructure with AI and MCP",
-          "summary": "",
-          "published_at": "2026-11-06T21:25:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8a424d75a52656da",
-      "title": "Teaching AI to build scientific models",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398727",
-          "target_url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
-          "independent": false,
-          "title": "Teaching AI to build scientific models",
-          "summary": "",
-          "published_at": "2026-11-06T21:24:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "8017ce29f6d88c8d",
-      "title": "The End of AI Frontiers",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398596",
-          "target_url": "https://hunch.net/?p=13764006",
-          "independent": false,
-          "title": "The End of AI Frontiers",
-          "summary": "",
-          "published_at": "2026-11-06T21:10:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "85df4722ee729068",
-      "title": "Protesters break into Microsoft AI data centre site in Amsterdam",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398562",
-          "target_url": "https://www.aljazeera.com/video/newsfeed/2026/11/6/protesters-break-into-microsoft-ai-data-centre-site-in-amsterdam",
-          "independent": false,
-          "title": "Protesters break into Microsoft AI data centre site in Amsterdam",
-          "summary": "",
-          "published_at": "2026-11-06T21:07:45+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
-          "target_url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
-          "independent": true,
-          "title": "Protesters break into Microsoft data center site in Amsterdam",
-          "summary": "Protesters have broken into a construction site of a new Microsoft data center in Amsterdam this morning. Members of the Geef Tegengas group helped organize the protest against the construction of three 85-meter data center towers in the outskirts of Amsterdam. Reuters reports that around 100 people made it into the construction site, with some […]",
-          "published_at": "2026-11-06T11:55:19+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51694.0초)"
-    },
-    {
-      "id": "9b40d9fa77faf20b",
-      "title": "Leeroy: Making AI agents play World of Warcraft",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398561",
-          "target_url": "https://pthm.dev/leeroy-making-ai-agents-play-world-of-warcraft",
-          "independent": false,
-          "title": "Leeroy: Making AI agents play World of Warcraft",
-          "summary": "",
-          "published_at": "2026-11-06T21:07:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "a808ed89cd62089c",
-      "title": "VFlash: Enabling System-1 VLMs for Physical AI",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398514",
-          "target_url": "https://research.nvidia.com/labs/lpr/vflash",
-          "independent": false,
-          "title": "VFlash: Enabling System-1 VLMs for Physical AI",
-          "summary": "",
-          "published_at": "2026-11-06T21:04:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5d6aaf835fa3bf32",
-      "title": "Nvidia CEO Jensen Huang Summoned by Congress over Chinese Espionage Concerns",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "hacker-news",
-          "name": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50398513",
-          "target_url": "https://arstechnica.com/tech-policy/2026/11/nvidia-ceo-jensen-huang-summoned-by-congress-over-chinese-espionage-concerns",
-          "independent": false,
-          "title": "Nvidia CEO Jensen Huang Summoned by Congress over Chinese Espionage Concerns",
-          "summary": "",
-          "published_at": "2026-11-06T21:04:03+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "5a90caffb2c87d2e",
-      "title": "ToyBlocks: A controlled world for robot learning and evaluation",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/allenai/toyblocks",
-          "target_url": "https://huggingface.co/blog/allenai/toyblocks",
-          "independent": false,
-          "title": "ToyBlocks: A controlled world for robot learning and evaluation",
-          "summary": "",
-          "published_at": "2026-11-06T14:00:48+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "13e4c95dcbaa6d34",
-      "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "name": "Hugging Face Blog",
-          "url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
-          "target_url": "https://huggingface.co/blog/open-asr-leaderboard-liva",
-          "independent": false,
-          "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
-          "summary": "",
-          "published_at": "2026-11-06T00:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "224c3d5c5f30d73d",
-      "title": "Free Chinese AI Models Are Getting Scary Good at Hacking",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking",
-          "target_url": "https://www.wired.com/story/free-chinese-ai-models-are-getting-scary-good-at-hacking",
-          "independent": true,
-          "title": "Free Chinese AI Models Are Getting Scary Good at Hacking",
-          "summary": "An experiment in which AI models were asked to break into simulated networks showed the hacking skills of DeepSeek and GLM to be not far behind OpenAI’s most advanced cyber model, which isn’t public.",
-          "published_at": "2026-11-06T18:43:43+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51693.0초)"
-    },
-    {
       "id": "ab976e70bde961f7",
-      "title": "AI Companies Really, Really Want to Buy Your Work Files and Emails",
+      "title": "AI Companies Want to Buy Your Work Files and Emails",
       "first_seen": "2026-11-07T06:49:21+09:00",
       "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails",
-          "target_url": "https://www.wired.com/story/ai-companies-really-really-want-to-buy-your-work-files-and-emails",
-          "independent": true,
-          "title": "AI Companies Really, Really Want to Buy Your Work Files and Emails",
-          "summary": "Data brokers are collecting all sorts of internal corporate files to help train AI models. Not everyone is thrilled.",
-          "published_at": "2026-11-06T16:00:00+00:00",
-          "date_precision": "time"
-        },
         {
           "source_id": "hacker-news",
           "name": "Hacker News",
@@ -668,679 +394,6 @@
           "title": "AI Companies Want to Buy Your Work Files and Emails",
           "summary": "",
           "published_at": "2026-11-08T09:15:06+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51693.0초)"
-    },
-    {
-      "id": "f8fe21ba7f368ed1",
-      "title": "All the latest updates on AI data centers",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
-          "independent": true,
-          "title": "All the latest updates on AI data centers",
-          "summary": "Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impact on power grids, utility bills, nearby communities, and the environment. Data centers were a major bipartisan issue ahead […]",
-          "published_at": "2026-11-06T20:02:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51692.0초)"
-    },
-    {
-      "id": "9aeac73058ac351b",
-      "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
-          "target_url": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
-          "independent": true,
-          "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
-          "summary": "Meta will now allow you to build customized, app-like experiences within Muse. The new feature, called \"spaces,\" allows its AI assistant to build things like a shopping hub, school dashboard, music tracker, trivia game, and more, which you can interact with directly in the Muse app. Meta says you can create a new space by […]",
-          "published_at": "2026-11-06T18:10:10+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent",
-          "target_url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent",
-          "independent": true,
-          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
-          "summary": "Meta's Muse agents continue to get new features and integrations. Spaces promises to be a new way to interact with the AI helpers.",
-          "published_at": "2026-11-06T18:44:20+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 2,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51692.0초)"
-    },
-    {
-      "id": "84e924c4ab2b73c1",
-      "title": "AI is the new dating dealbreaker",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
-          "independent": true,
-          "title": "AI is the new dating dealbreaker",
-          "summary": "When Irene moved to San Francisco last year, she started using dating apps as a way to meet new people, get to know her new city, and connect with others who care about the things she does. After the 25-year-old analyst downloaded Hinge and started swiping, she noticed a trend. \"Hinge has a prompt where […]",
-          "published_at": "2026-11-06T17:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51691.0초)"
-    },
-    {
-      "id": "f659f2b84ee7c431",
-      "title": "Big Tech lost big in the 2026 election",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
-          "target_url": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
-          "independent": true,
-          "title": "Big Tech lost big in the 2026 election",
-          "summary": "On Tuesday, millions of American voters went to the polls and voted overwhelmingly for Democrats and against AI. The fight against Big Tech is about to come roaring back, and the fight over data centers is looking even harder for the folks trying to build them. On this episode of The Vergecast, Nilay and David […]",
-          "published_at": "2026-11-06T16:38:02+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51691.0초)"
-    },
-    {
-      "id": "51872e89890c6332",
-      "title": "How Akai and Moog are embracing vibe-coded mods",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai",
-          "target_url": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai",
-          "independent": true,
-          "title": "How Akai and Moog are embracing vibe-coded mods",
-          "summary": "inMusic, the parent company of Akai, Moog, Native Instruments, and more, has decided to embrace the modding community. In an interview with The Verge, inMusic CEO Jack O'Donnell said, \"We're going to provide a toolbox to the community, we're going to provide the inner workings of, say, an MPC or Sample so that people can […]",
-          "published_at": "2026-11-06T16:34:39+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51690.0초)"
-    },
-    {
-      "id": "58fc9a0b8ae1b328",
-      "title": "Amazon will let you text Alexa your shopping list",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
-          "target_url": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
-          "independent": true,
-          "title": "Amazon will let you text Alexa your shopping list",
-          "summary": "Amazon is adding a new feature to Alexa for Shopping that allows customers to purchase items by texting the AI shopping assistant. Users can describe the products they're looking to buy and/or provide a photograph of the item, and Alexa for Shopping will search for matching results in Amazon listings, text back with recommendations, and […]",
-          "published_at": "2026-11-06T14:00:00+00:00",
-          "date_precision": "time"
-        },
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop",
-          "target_url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop",
-          "independent": true,
-          "title": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
-          "summary": "Amazon said that the feature will roll out to millions of users in coming weeks.",
-          "published_at": "2026-11-06T14:10:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 2,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51690.0초)"
-    },
-    {
-      "id": "ad929875c5a71925",
-      "title": "OpenAI is stepping back from NDAs for data center projects",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
-          "independent": true,
-          "title": "OpenAI is stepping back from NDAs for data center projects",
-          "summary": "Following this week's midterms where voters resoundingly voiced their opposition to data center expansion, OpenAI today announced new commitments to communities where it is working on data center projects, including that it won't use non-disclosure agreements (NDAs) with public officials. Many data center projects have come under scrutiny for relying on NDAs to hide discussions […]",
-          "published_at": "2026-11-06T00:37:56+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51689.0초)"
-    },
-    {
-      "id": "8b33f1382f19de19",
-      "title": "Airbnb is working on an AI travel agent",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
-          "target_url": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
-          "independent": true,
-          "title": "Airbnb is working on an AI travel agent",
-          "summary": "Airbnb plans to roll out an AI agent in the first half of 2027 that will help users plan and book travel, the company said in its Q3 2026 earnings shareholder letter released today. \"Today's AI agents are good at simple, routine tasks, like making a restaurant reservation or scheduling an appointment,\" Airbnb said. \"But […]",
-          "published_at": "2026-11-06T00:06:12+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51689.0초)"
-    },
-    {
-      "id": "2165b65a40c289be",
-      "title": "Perplexity launches its own take on AI agents for work",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
-          "independent": true,
-          "title": "Perplexity launches its own take on AI agents for work",
-          "summary": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup's new always-on \"Teammates\" can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use. Teammates integrate with Perplexity Computer, an AI system that can deploy agents on your device […]",
-          "published_at": "2026-11-05T22:26:50+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51688.0초)"
-    },
-    {
-      "id": "0b47ae94b8dc6c92",
-      "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web",
-          "target_url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web",
-          "independent": true,
-          "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
-          "summary": "Security researchers found hundreds of servers hosting the penetration testing tool Artex exposed to the internet, allowing anyone access to the hacking tool.",
-          "published_at": "2026-11-06T18:44:38+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51688.0초)"
-    },
-    {
-      "id": "94d3f146301ece8e",
-      "title": "How a Blue Wave midterm might reshape the AI industry",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry",
-          "target_url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry",
-          "independent": true,
-          "title": "How a Blue Wave midterm might reshape the AI industry",
-          "summary": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry. The public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to impose more restrictions on data center development. And even when data centers weren’t on the ballot directly, they were a […]",
-          "published_at": "2026-11-06T18:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51688.0초)"
-    },
-    {
-      "id": "2563b3e6ff404ee3",
-      "title": "After the midterms, is the AI industry in for a rough two years?",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years",
-          "target_url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years",
-          "independent": true,
-          "title": "After the midterms, is the AI industry in for a rough two years?",
-          "summary": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry. The public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to impose more restrictions on data center development. And even when data centers weren’t on the ballot directly, they were a […]",
-          "published_at": "2026-11-06T17:23:52+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51687.0초)"
-    },
-    {
-      "id": "97dac9d9308d381a",
-      "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo",
-          "target_url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo",
-          "independent": true,
-          "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
-          "summary": "AI usage keeps climbing, but spending has stalled. Price cuts and smarter cost controls among the biggest spenders could challenge investor assumptions about AI hypergrowth.",
-          "published_at": "2026-11-06T15:54:47+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51687.0초)"
-    },
-    {
-      "id": "a128386b25427955",
-      "title": "Underdog shows off a 32MB speech model in new demo",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo",
-          "target_url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo",
-          "independent": true,
-          "title": "Underdog shows off a 32MB speech model in new demo",
-          "summary": "Despite its small size, Underdog's new model can generate both speech and music.",
-          "published_at": "2026-11-06T13:02:16+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51686.0초)"
-    },
-    {
-      "id": "9a6eee5802a8318d",
-      "title": "Physicl raises $10M to make the digital world real enough for robots",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots",
-          "target_url": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots",
-          "independent": true,
-          "title": "Physicl raises $10M to make the digital world real enough for robots",
-          "summary": "Physicl is trying to solve the sim-to-real gap with a pipeline originally built to market goods online.",
-          "published_at": "2026-11-06T13:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51686.0초)"
-    },
-    {
-      "id": "a83a56374fd6aa91",
-      "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m",
-          "target_url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m",
-          "independent": true,
-          "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
-          "summary": "Clutch, backed by Lightspeed and SignalFire, was last valued at $85 million, according to a source.",
-          "published_at": "2026-11-06T06:28:32+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51685.0초)"
-    },
-    {
-      "id": "1121cf54e69f72cb",
-      "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027",
-          "target_url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027",
-          "independent": true,
-          "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
-          "summary": "Airbnb says its upcoming AI agent will help travelers plan trips, compare options, manage bookings, and get assistance throughout their stay.",
-          "published_at": "2026-11-05T22:40:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51685.0초)"
-    },
-    {
-      "id": "7142f0ef7fb76f39",
-      "title": "Chainalysis says hackers stole credentials and tokens for all of its customers",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "ars-technica",
-          "name": "Ars Technica",
-          "url": "https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers",
-          "target_url": "https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers",
-          "independent": true,
-          "title": "Chainalysis says hackers stole credentials and tokens for all of its customers",
-          "summary": "Company said a \"multifront cyberattack\" included AI agents and an on-path data snatch.",
-          "published_at": "2026-11-06T20:56:41+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51684.0초)"
-    },
-    {
-      "id": "c268f72e5fa452d2",
-      "title": "Cloptima",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/cloptima",
-          "target_url": "https://www.producthunt.com/products/cloptima",
-          "independent": false,
-          "title": "Cloptima",
-          "summary": "AI Gateway, Guardrails & LLM FinOps Discussion | Link",
-          "published_at": "2026-11-05T23:40:34+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "c950dc177f5da82b",
-      "title": "crystl",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/crystl-multitasking-terminal",
-          "target_url": "https://www.producthunt.com/products/crystl-multitasking-terminal",
-          "independent": false,
-          "title": "crystl",
-          "summary": "multitasking terminal for AI coding agents, built for macOS Discussion | Link",
-          "published_at": "2026-11-06T02:44:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "eb97f66498798295",
-      "title": "Meta’s best AI model now trains the one most of its users get",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/meta-muse-specialized-models",
-          "target_url": "https://thenewstack.io/meta-muse-specialized-models",
-          "independent": true,
-          "title": "Meta’s best AI model now trains the one most of its users get",
-          "summary": "Starting on Friday, everyone using Meta’s Muse agent and Meta AI gets new models the company trained using Muse Wonder, The post Meta’s best AI model now trains the one most of its users get appeared first on The New Stack .",
-          "published_at": "2026-11-06T18:05:55+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51684.0초)"
-    },
-    {
-      "id": "987aea82d482ef31",
-      "title": "“Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/cursor-ai-app-deployment",
-          "target_url": "https://thenewstack.io/cursor-ai-app-deployment",
-          "independent": true,
-          "title": "“Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment",
-          "summary": "AI coding agents have certainly made it easier to transform an idea into a working application. However, getting that application The post “Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment appeared first on The New Stack .",
-          "published_at": "2026-11-06T15:15:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51683.0초)"
-    },
-    {
-      "id": "8cfb76cd724aa732",
-      "title": "Kubernetes, mark II? Why Google’s giving away gVisor, a code sandbox used by Anthropic and OpenAI",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/gvisor-cncf-kubernetes-open-source",
-          "target_url": "https://thenewstack.io/gvisor-cncf-kubernetes-open-source",
-          "independent": true,
-          "title": "Kubernetes, mark II? Why Google’s giving away gVisor, a code sandbox used by Anthropic and OpenAI",
-          "summary": "Google wants to emulate one of its biggest ever open-source success stories, donating three core AI agent infrastructure projects to The post Kubernetes, mark II? Why Google’s giving away gVisor, a code sandbox used by Anthropic and OpenAI appeared first on The New Stack .",
-          "published_at": "2026-11-06T11:49:04+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51683.0초)"
-    },
-    {
-      "id": "1f713f2388627b88",
-      "title": "An inside look at Anthropic’s AI speedup",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "the-rundown-ai",
-          "name": "The Rundown AI",
-          "url": "https://www.therundown.ai/articles/an-inside-look-at-anthropic-s-ai-speedup",
-          "target_url": "https://www.therundown.ai/articles/an-inside-look-at-anthropic-s-ai-speedup",
-          "independent": true,
-          "title": "An inside look at Anthropic’s AI speedup",
-          "summary": "PLUS: Use AI to find a job and prepare to get hired",
-          "published_at": "2026-11-06T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51682.0초)"
-    },
-    {
-      "id": "81383615f11d44b5",
-      "title": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/11/gitlab-19-5-agentic-platform",
-          "target_url": "https://www.infoq.com/news/2026/11/gitlab-19-5-agentic-platform",
-          "independent": true,
-          "title": "GitLab 19.5 Makes Agentic Development a Governed Part of the DevOps Platform",
-          "summary": "GitLab 19.5, released on October 15, puts agentic software development and governance at the centre of the platform, making its GitLab MCP server generally available while expanding how external AI agents can interact with GitLab. By Craig Risi",
-          "published_at": "2026-11-06T12:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51682.0초)"
-    },
-    {
-      "id": "157a2a8c562fdbdb",
-      "title": "AWS Ships Continuum for Code Vulnerabilities",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/11/aws-continuum-ga",
-          "target_url": "https://www.infoq.com/news/2026/11/aws-continuum-ga",
-          "independent": true,
-          "title": "AWS Ships Continuum for Code Vulnerabilities",
-          "summary": "AWS has made Continuum for code vulnerabilities generally available in two regions. The service proves exploitability by running real exploits in a sandbox, then opens fixes as pull requests. Published pricing charges per finding processed as well as per line of code, and practitioners are asking what would justify letting it merge fixes on its own. By Steef-Jan Wiggers",
-          "published_at": "2026-11-06T10:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51681.0초)"
-    },
-    {
-      "id": "3784fa3b2da66168",
-      "title": "My Best Engineer Found Out the New Hire Earned $80,000 More. He Did Something Unexpected",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://devrimozcay.medium.com/my-best-engineer-found-out-the-new-hire-earned-80-000-more-he-did-something-unexpected-f4b9fd683f0b",
-          "target_url": "https://devrimozcay.medium.com/my-best-engineer-found-out-the-new-hire-earned-80-000-more-he-did-something-unexpected-f4b9fd683f0b",
-          "independent": false,
-          "title": "My Best Engineer Found Out the New Hire Earned $80,000 More. He Did Something Unexpected",
-          "summary": "He had spent seven years keeping our systems alive, trained the engineer who now earned more than him, and never complained about money… Continue reading on Medium »",
-          "published_at": "2026-11-06T21:40:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "bea0101ae3e977c2",
-      "title": "Meta Compute: How a Fourth Hyperscaler Could Reshape the Economics of AI Infrastructure",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@myneogroup1/meta-compute-how-a-fourth-hyperscaler-could-reshape-the-economics-of-ai-infrastructure-922bdd69fb34",
-          "target_url": "https://medium.com/@myneogroup1/meta-compute-how-a-fourth-hyperscaler-could-reshape-the-economics-of-ai-infrastructure-922bdd69fb34",
-          "independent": false,
-          "title": "Meta Compute: How a Fourth Hyperscaler Could Reshape the Economics of AI Infrastructure",
-          "summary": "The global AI infrastructure market is entering a new competitive phase. For years, enterprise cloud computing has been dominated by three… Continue reading on Medium »",
-          "published_at": "2026-11-06T21:37:21+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "e74a6191660d091e",
-      "title": "Many People Think AI Is Fast, but Few Think It Is Accelerating",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@poola.vii/many-people-think-ai-is-fast-but-few-think-it-is-accelerating-93b8907204f2",
-          "target_url": "https://medium.com/@poola.vii/many-people-think-ai-is-fast-but-few-think-it-is-accelerating-93b8907204f2",
-          "independent": false,
-          "title": "Many People Think AI Is Fast, but Few Think It Is Accelerating",
-          "summary": "We instinctively read acceleration as a straight line. Continue reading on Medium »",
-          "published_at": "2026-11-06T21:35:42+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "b6cef4f419972917",
-      "title": "Are you building a Voice Agent? What Real Callers Teach You About Voice AI",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@legalytical/are-you-building-a-voice-agent-what-real-callers-teach-you-about-voice-ai-c78ff9bbb5ee",
-          "target_url": "https://medium.com/@legalytical/are-you-building-a-voice-agent-what-real-callers-teach-you-about-voice-ai-c78ff9bbb5ee",
-          "independent": false,
-          "title": "Are you building a Voice Agent? What Real Callers Teach You About Voice AI",
-          "summary": "When you build a conversational AI agent, you spend a lot of time thinking about how a conversation should go. You define the agent’s… Continue reading on Medium »",
-          "published_at": "2026-11-06T21:33:51+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "482ab3d096284a83",
-      "title": "A Knack for a Hack with Business Cards",
-      "first_seen": "2026-11-07T06:49:21+09:00",
-      "sources": [
-        {
-          "source_id": "medium-ai",
-          "name": "Medium",
-          "url": "https://medium.com/@tomsims/a-knack-for-a-hack-with-business-cards-0a2a361b8bda",
-          "target_url": "https://medium.com/@tomsims/a-knack-for-a-hack-with-business-cards-0a2a361b8bda",
-          "independent": false,
-          "title": "A Knack for a Hack with Business Cards",
-          "summary": "You go to an event. You give out your business cards. You receive business cards. You put them in your pocket, bring them home, and make a… Continue reading on Medium »",
-          "published_at": "2026-11-06T21:33:48+00:00",
           "date_precision": "time"
         }
       ],
@@ -1431,363 +484,6 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "fe4fdd184fa7a3ca",
-      "title": "Apps for Caregivers Get a Dose of AI, but That Might Not Be Enough",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "wired-ai",
-          "name": "WIRED",
-          "url": "https://www.wired.com/story/apps-for-caregivers-get-a-dose-of-ai-but-that-might-not-be-enough",
-          "target_url": "https://www.wired.com/story/apps-for-caregivers-get-a-dose-of-ai-but-that-might-not-be-enough",
-          "independent": true,
-          "title": "Apps for Caregivers Get a Dose of AI, but That Might Not Be Enough",
-          "summary": "The apps and platforms that help family caregivers manage their loved ones’ needs are becoming more capable, but the broader issue of caregivers’ well-being remains unsolved.",
-          "published_at": "2026-11-07T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51681.0초)"
-    },
-    {
-      "id": "1ab28dde47a3074f",
-      "title": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
-          "target_url": "https://www.theverge.com/tech/1029489/nyt-cooking-ai-assistant-review",
-          "independent": true,
-          "title": "NYT Cooking’s AI assistant saved my weeknight chicken, but almost ruined my cake",
-          "summary": "Around 7PM each weeknight, I find myself standing in front of the fridge, trying to decide on something for dinner that won't make my husband complain, \"Chicken again?\" Yes, I should meal plan more, but I don't, so this is where I'm at. A nightly battle in which the chicken usually wins. Recently, my best […]",
-          "published_at": "2026-11-07T15:50:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51680.0초)"
-    },
-    {
-      "id": "b521172828d62613",
-      "title": "The US let Nvidia sell chips to an empty office in China",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
-          "independent": true,
-          "title": "The US let Nvidia sell chips to an empty office in China",
-          "summary": "Concerns are being raised that neither the Commerce Department nor Nvidia are doing their due diligence when it comes to vetting Chinese firms cleared to handle the company's H200 AI chips. According to The New York Times, New Matrix is on the list of approved firms, yet its offices are empty, \"a hollow gray shell […]",
-          "published_at": "2026-11-07T15:43:45+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51680.0초)"
-    },
-    {
-      "id": "4b429bd7582936e3",
-      "title": "AI broke the cybersecurity world. What’s next?",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
-          "target_url": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
-          "independent": true,
-          "title": "AI broke the cybersecurity world. What’s next?",
-          "summary": "Today, I’m talking with Alex Stamos, chief security officer at Cognition and longtime cybersecurity expert, about what a mess cybersecurity is right now. This episode is part one of a special series looking at AI in real life. I’ve always enjoyed talking to Alex because he’s so direct, and you’re going to hear him say […]",
-          "published_at": "2026-11-07T15:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51679.0초)"
-    },
-    {
-      "id": "eecad6fef1daea32",
-      "title": "Why a new report on Anthropic automating AI development is alarming researchers",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
-          "independent": true,
-          "title": "Why a new report on Anthropic automating AI development is alarming researchers",
-          "summary": "Anthropic is using AI to build more powerful AI. And it appears to be working remarkably well, with the company's models improving roughly twice as quickly as a year ago, with little indication of slowing down. That's according to a new report published Thursday by the AI safety research organization METR, following an 11-week investigation […]",
-          "published_at": "2026-11-07T12:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51679.0초)"
-    },
-    {
-      "id": "6c7191a9daddd032",
-      "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
-          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
-          "independent": true,
-          "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
-          "summary": "OpenAI is now valued at $1.25 trillion in a new round of funding that has raised another $11 billion, according to Bloomberg. That would make it one of the world's most valuable companies, not long after raising $122 billion from investors in March at a valuation of $852 billion. Echoing FT and Wall Street Journal […]",
-          "published_at": "2026-11-06T23:46:18+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51678.0초)"
-    },
-    {
-      "id": "a7e1415152c9585b",
-      "title": "China reportedly recruited AI exec to spy on Jensen Huang",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-verge-ai",
-          "name": "The Verge",
-          "url": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
-          "target_url": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
-          "independent": true,
-          "title": "China reportedly recruited AI exec to spy on Jensen Huang",
-          "summary": "China's intelligence agency recruited Megaspeed executive Alice Huang to spy on Nvidia CEO Jensen Huang, according to The New York Times. The Ministry of State Security (MSS) enlisted her to glean information about American AI chips and \"potentially influence the company to push for its most advanced chips to be made available to China.\" Megaspeed […]",
-          "published_at": "2026-11-06T23:00:44+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51678.0초)"
-    },
-    {
-      "id": "51a247b5b6ae00e9",
-      "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers",
-          "target_url": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers",
-          "independent": true,
-          "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
-          "summary": "On Equity, we unpacked what the midterms mean for the tech industry.",
-          "published_at": "2026-11-07T22:07:22+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51677.0초)"
-    },
-    {
-      "id": "3b069222ecbd3b59",
-      "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo",
-          "target_url": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo",
-          "independent": true,
-          "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
-          "summary": "A memo circulated earlier this year reportedly claimed that China’s Ministry of State Security recruited a female technology executive to spy on Nvidia's CEO.",
-          "published_at": "2026-11-07T21:17:08+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51677.0초)"
-    },
-    {
-      "id": "2af345503cb4dc3a",
-      "title": "Crusoe sells troubled Wyoming data center project to Google",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google",
-          "target_url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google",
-          "independent": true,
-          "title": "Crusoe sells troubled Wyoming data center project to Google",
-          "summary": "The deal highlights the challenges of developing massive AI data centers.",
-          "published_at": "2026-11-07T01:40:28+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51676.0초)"
-    },
-    {
-      "id": "d9d8ed120c50cfe2",
-      "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "name": "TechCrunch",
-          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation",
-          "target_url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation",
-          "independent": true,
-          "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
-          "summary": "OpenAI has reportedly raised an additional $11 billion as part of a funding round that hasn't closed yet but is expected to in the coming weeks.",
-          "published_at": "2026-11-06T22:53:46+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51675.0초)"
-    },
-    {
-      "id": "53fc8d7d6a6c5b77",
-      "title": "Agent Clan",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/agent-clan",
-          "target_url": "https://www.producthunt.com/products/agent-clan",
-          "independent": false,
-          "title": "Agent Clan",
-          "summary": "Command your Claude Code and Codex agents with gestures Discussion | Link",
-          "published_at": "2026-11-07T17:52:26+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "49e9b0e5bd03672c",
-      "title": "The Writer's Quarter",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "product-hunt",
-          "name": "Product Hunt",
-          "url": "https://www.producthunt.com/products/the-writer-s-quarter",
-          "target_url": "https://www.producthunt.com/products/the-writer-s-quarter",
-          "independent": false,
-          "title": "The Writer's Quarter",
-          "summary": "AI-Free Writing & Novel Planning Software Discussion | Link",
-          "published_at": "2026-11-06T16:06:36+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 0,
-      "status": "candidate",
-      "reason": "커뮤니티·소셜 신호만 있음"
-    },
-    {
-      "id": "d2a3dab6cc79c8ee",
-      "title": "Why AWS wants developers to stop babysitting their AI agents",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-new-stack-ai",
-          "name": "The New Stack",
-          "url": "https://thenewstack.io/kiro-bots-agent-memory",
-          "target_url": "https://thenewstack.io/kiro-bots-agent-memory",
-          "independent": true,
-          "title": "Why AWS wants developers to stop babysitting their AI agents",
-          "summary": "AWS first introduced Kiro, its agentic, spec-driven development environment, in July 2025. It also introduced Kiro Crew in August of The post Why AWS wants developers to stop babysitting their AI agents appeared first on The New Stack .",
-          "published_at": "2026-11-07T15:30:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51675.0초)"
-    },
-    {
-      "id": "1a72306ced34e1b5",
-      "title": "Big Tech sues to save the feed",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "the-rundown-ai",
-          "name": "The Rundown AI",
-          "url": "https://www.therundown.ai/articles/big-tech-sues-to-save-the-feed",
-          "target_url": "https://www.therundown.ai/articles/big-tech-sues-to-save-the-feed",
-          "independent": true,
-          "title": "Big Tech sues to save the feed",
-          "summary": "PLUS: Cybertruck out, Cybercab in",
-          "published_at": "2026-11-06T15:30:33+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51674.0초)"
-    },
-    {
-      "id": "7726b14a2fe88515",
-      "title": "How Grab Improved Mobile App Stability by Safely Handling Surge in AI-Generated Code Changes",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/11/grab-ai-generated-code-safety",
-          "target_url": "https://www.infoq.com/news/2026/11/grab-ai-generated-code-safety",
-          "independent": true,
-          "title": "How Grab Improved Mobile App Stability by Safely Handling Surge in AI-Generated Code Changes",
-          "summary": "The growing adoption of AI coding assistants has accelerated development and increased the volume of code changes per release, bringing more opportunities for defects and crashes, says Grab. To address these challenges, they implemented a layered defense strategy to prevent, detect, and contain crashes throughout the development and release lifecycle. By Sergio De Simone",
-          "published_at": "2026-11-07T11:00:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51674.0초)"
-    },
-    {
-      "id": "201cc1c0f2954c19",
-      "title": "Open Source pg_vectorsearch Brings More Scalable Vector Search to PostgreSQL",
-      "first_seen": "2026-11-08T18:38:13+09:00",
-      "sources": [
-        {
-          "source_id": "infoq-ai",
-          "name": "InfoQ",
-          "url": "https://www.infoq.com/news/2026/11/postgresql-vector-search",
-          "target_url": "https://www.infoq.com/news/2026/11/postgresql-vector-search",
-          "independent": true,
-          "title": "Open Source pg_vectorsearch Brings More Scalable Vector Search to PostgreSQL",
-          "summary": "Tiger Data has released pg_vectorsearch, an open source PostgreSQL extension for vector similarity search, currently in alpha. Its PRISM index uses data partitioning and compression instead of the graph-based approach used by pgvector’s HNSW index, reducing memory requirements and index build times. By Renato Losio",
-          "published_at": "2026-11-07T09:49:00+00:00",
-          "date_precision": "time"
-        }
-      ],
-      "independent_source_count": 1,
-      "status": "held",
-      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (51673.0초)"
     },
     {
       "id": "ab98f99d3a9a9bd8",
@@ -1893,17 +589,1659 @@
       "independent_source_count": 0,
       "status": "candidate",
       "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bcbe2f625def80fa",
+      "title": "Show HN: Dryplate MCP – local image tools for AI agents (HEIC, strip metadata)",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50442087",
+          "target_url": "https://github.com/dryplate/dryplate",
+          "independent": false,
+          "title": "Show HN: Dryplate MCP – local image tools for AI agents (HEIC, strip metadata)",
+          "summary": "",
+          "published_at": "2026-11-10T15:50:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "807a5a687b32565f",
+      "title": "Gemini Carbon API out today",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50442025",
+          "target_url": "https://aistudio.google.com/docs/whats-new-gemini-4-carbon",
+          "independent": false,
+          "title": "Gemini Carbon API out today",
+          "summary": "",
+          "published_at": "2026-11-10T15:47:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "3ba992bf1f32e8bb",
+      "title": "How Not to Use AI",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50442021",
+          "target_url": "https://www.annashipman.co.uk/jfdi/how-not-to-use-ai.html",
+          "independent": false,
+          "title": "How Not to Use AI",
+          "summary": "",
+          "published_at": "2026-11-10T15:46:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "69f862f22dacd457",
+      "title": "Can you prompt your AI into telling the truth? I tested it",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50442016",
+          "target_url": "https://scottdesapio.com/thoughts",
+          "independent": false,
+          "title": "Can you prompt your AI into telling the truth? I tested it",
+          "summary": "",
+          "published_at": "2026-11-10T15:46:24+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "03d5d319ca911de5",
+      "title": "New Linux-Based Desktop Operating System Is Built for AI Nerds",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441957",
+          "target_url": "https://www.wired.com/story/kora-new-linux-based-desktop-operating-system-is-built-for-ai-nerds",
+          "independent": false,
+          "title": "New Linux-Based Desktop Operating System Is Built for AI Nerds",
+          "summary": "",
+          "published_at": "2026-11-10T15:43:06+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/kora-new-linux-based-desktop-operating-system-is-built-for-ai-nerds",
+          "target_url": "https://www.wired.com/story/kora-new-linux-based-desktop-operating-system-is-built-for-ai-nerds",
+          "independent": true,
+          "title": "This New Linux-Based Desktop Operating System Is Built for AI Nerds",
+          "summary": "Built by Cyanogen’s cofounder, Kora is a next-gen alternative to Windows and macOS built for power users running local AI models.",
+          "published_at": "2026-11-10T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29249.0초)"
+    },
+    {
+      "id": "a0ae6f64f895d735",
+      "title": "Anthropic seeks $1.4T valuation; IPO aiming for November 19 or 20",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441946",
+          "target_url": "https://finance.yahoo.com/markets/article/anthropic-seeks-14-trillion-valuation-in-ipo-130300928.html",
+          "independent": false,
+          "title": "Anthropic seeks $1.4T valuation; IPO aiming for November 19 or 20",
+          "summary": "",
+          "published_at": "2026-11-10T15:42:03+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "58ef0cd6ff976108",
+      "title": "With web search, LLMs still give uncorrected EU law in 25% of decided answers",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441945",
+          "target_url": "https://zenodo.org/records/24098388",
+          "independent": false,
+          "title": "With web search, LLMs still give uncorrected EU law in 25% of decided answers",
+          "summary": "",
+          "published_at": "2026-11-10T15:42:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2f97c84acd3e3328",
+      "title": "Show HN: Deedglass – Verify AI Agent SQL Changes Using Postgres WAL",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441923",
+          "target_url": "https://github.com/deedglass/deedglass",
+          "independent": false,
+          "title": "Show HN: Deedglass – Verify AI Agent SQL Changes Using Postgres WAL",
+          "summary": "",
+          "published_at": "2026-11-10T15:40:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "4cb4dacae72c87b0",
+      "title": "Pennsylvania Enacts Artificial Intelligence Deceptive Advertising Act",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441913",
+          "target_url": "https://www.insideprivacy.com/artificial-intelligence/pennsylvania-enacts-artificial-intelligence-deceptive-advertising-act",
+          "independent": false,
+          "title": "Pennsylvania Enacts Artificial Intelligence Deceptive Advertising Act",
+          "summary": "",
+          "published_at": "2026-11-10T15:39:48+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "cd590e2512518260",
+      "title": "Show HN: We wanted to build an AI application, not maintain RAG pipelines",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441876",
+          "target_url": "https://akropolys.cloud/docs",
+          "independent": false,
+          "title": "Show HN: We wanted to build an AI application, not maintain RAG pipelines",
+          "summary": "",
+          "published_at": "2026-11-10T15:37:40+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6b6709b612e5913e",
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441849",
+          "target_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
+          "independent": false,
+          "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+          "summary": "",
+          "published_at": "2026-11-10T15:35:34+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6d32c6450e419289",
+      "title": "Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441841",
+          "target_url": "https://claude.dev/blog/which-claude-model-should-you-build-with",
+          "independent": false,
+          "title": "Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku",
+          "summary": "",
+          "published_at": "2026-11-10T15:35:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5fa149cc5d6144b6",
+      "title": "Show HN: Mantis – Faster browser interaction than Playwright MCP",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "hacker-news",
+          "name": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50441765",
+          "target_url": "https://github.com/perzianhq/mantis/blob/main/README.md",
+          "independent": false,
+          "title": "Show HN: Mantis – Faster browser interaction than Playwright MCP",
+          "summary": "",
+          "published_at": "2026-11-10T15:29:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "5f3963726dbe36e6",
+      "title": "Decision Models in Hugging Face",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/decision",
+          "target_url": "https://huggingface.co/blog/decision",
+          "independent": false,
+          "title": "Decision Models in Hugging Face",
+          "summary": "",
+          "published_at": "2026-11-10T00:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "ac8f18750241a65f",
+      "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+          "target_url": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+          "independent": false,
+          "title": "Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context",
+          "summary": "",
+          "published_at": "2026-11-09T15:05:57+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "55d059b88c6c576a",
+      "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "name": "Hugging Face Blog",
+          "url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+          "target_url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts",
+          "independent": false,
+          "title": "Your Experts Have Partners. There's HOPE for Keeping Them Together",
+          "summary": "",
+          "published_at": "2026-11-09T12:34:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "245880e5ae81a337",
+      "title": "Tear Down Those Guardrails! Meet the Renegades Freeing Chatbots From Corporate Enslavers",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/tear-down-those-guardrails-meet-the-renegades-freeing-chatbots-from-corporate-enslavers",
+          "target_url": "https://www.wired.com/story/tear-down-those-guardrails-meet-the-renegades-freeing-chatbots-from-corporate-enslavers",
+          "independent": true,
+          "title": "Tear Down Those Guardrails! Meet the Renegades Freeing Chatbots From Corporate Enslavers",
+          "summary": "The “abliterators” are flooding the internet with AI models that never say no, making it easier for people to improve their cyberdefenses—or build a bomb.",
+          "published_at": "2026-11-10T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29249.0초)"
+    },
+    {
+      "id": "da5a3d0f035fcc89",
+      "title": "The AI Safety Debate Has Lost the Plot. We Asked 10 Experts What the Real Nightmares Are",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/the-ai-safety-debate-has-lost-the-plot-we-asked-10-experts-what-the-real-nightmares-are",
+          "target_url": "https://www.wired.com/story/the-ai-safety-debate-has-lost-the-plot-we-asked-10-experts-what-the-real-nightmares-are",
+          "independent": true,
+          "title": "The AI Safety Debate Has Lost the Plot. We Asked 10 Experts What the Real Nightmares Are",
+          "summary": "The risk of nuclear catastrophe is real, as is the fallout of the China–US domination game (hi there, spies). But no need to panic about Skynet.",
+          "published_at": "2026-11-10T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29249.0초)"
+    },
+    {
+      "id": "ccc979e1da2b25ee",
+      "title": "Security Flaws Across UK Government Sites Exposed ‘God-Tier’ Information",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/security-flaws-across-uk-government-sites-exposed-god-tier-information",
+          "target_url": "https://www.wired.com/story/security-flaws-across-uk-government-sites-exposed-god-tier-information",
+          "independent": true,
+          "title": "Security Flaws Across UK Government Sites Exposed ‘God-Tier’ Information",
+          "summary": "A researcher’s trawl through publicly available code found private information was at risk across multiple departments.",
+          "published_at": "2026-11-10T07:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29248.0초)"
+    },
+    {
+      "id": "b61ba34289d3e8db",
+      "title": "A New AI Tool From Google DeepMind Proved the Signal Protocol Is Secure",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/a-new-ai-tool-from-google-deepmind-formally-verified-the-signal-protocol",
+          "target_url": "https://www.wired.com/story/a-new-ai-tool-from-google-deepmind-formally-verified-the-signal-protocol",
+          "independent": true,
+          "title": "A New AI Tool From Google DeepMind Proved the Signal Protocol Is Secure",
+          "summary": "DeepMind researchers were able to formally verify that the widely used encryption protocol works as intended. Their stretch goal? Do the same for “all the software of the world.”",
+          "published_at": "2026-11-10T05:01:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29248.0초)"
+    },
+    {
+      "id": "86992df8e81dce28",
+      "title": "Jensen Huang’s Troubles Leave the AI Industry Reeling",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/jensen-huangs-troubles-leaves-the-ai-industry-reeling",
+          "target_url": "https://www.wired.com/story/jensen-huangs-troubles-leaves-the-ai-industry-reeling",
+          "independent": true,
+          "title": "Jensen Huang’s Troubles Leave the AI Industry Reeling",
+          "summary": "With a big checkbook and sought-after chips, Nvidia’s CEO had his thumb on the world of AI. An extramarital affair with a suspected Chinese spy may put all of that at risk.",
+          "published_at": "2026-11-10T00:18:19+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29248.0초)"
+    },
+    {
+      "id": "8368c66208828eb0",
+      "title": "Jensen Huang Hired a PR Firm Known for Handling Sex Scandals Last Year",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/nvidia-ceo-jensen-huang-hired-a-pr-firm-known-for-handling-sex-scandals-last-year",
+          "target_url": "https://www.wired.com/story/nvidia-ceo-jensen-huang-hired-a-pr-firm-known-for-handling-sex-scandals-last-year",
+          "independent": true,
+          "title": "Jensen Huang Hired a PR Firm Known for Handling Sex Scandals Last Year",
+          "summary": "The Nvidia CEO began working with consultants from Heller as early as October 2025, around the same time he was first linked to a suspected Chinese spy.",
+          "published_at": "2026-11-09T14:30:56+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago",
+          "target_url": "https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago",
+          "independent": true,
+          "title": "Jensen Huang reportedly engaged a PR firm with a history of handling high-profile sex scandals a year ago",
+          "summary": "The PR firm was enlisted shortly after an October 2025 New York Times report described Alice Huang's business dealings with Jensen Huang, Wired reported.",
+          "published_at": "2026-11-09T23:28:37+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 2,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29248.0초)"
+    },
+    {
+      "id": "d87410c6c541a05e",
+      "title": "Authors Can Defend Against AI Allegations With ‘Paper Trail’ Tools. Is It Enough?",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/authors-can-defend-against-ai-allegations-with-paper-trail-tools",
+          "target_url": "https://www.wired.com/story/authors-can-defend-against-ai-allegations-with-paper-trail-tools",
+          "independent": true,
+          "title": "Authors Can Defend Against AI Allegations With ‘Paper Trail’ Tools. Is It Enough?",
+          "summary": "As the publishing industry wrestles with paranoia over the provenance of manuscripts, writers are caught in an impossible bind.",
+          "published_at": "2026-11-09T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29247.0초)"
+    },
+    {
+      "id": "ad34c832c41eff92",
+      "title": "Bikers and Bug-Lovers Join Forces to Fight a New Google Data Center",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/bug-activists-and-biker-gang-members-are-teaming-up-to-protest-data-centers",
+          "target_url": "https://www.wired.com/story/bug-activists-and-biker-gang-members-are-teaming-up-to-protest-data-centers",
+          "independent": true,
+          "title": "Bikers and Bug-Lovers Join Forces to Fight a New Google Data Center",
+          "summary": "As data center protests break out across Europe, a mismatched band of campaigners is trying to block Google from building a sprawling new facility east of London.",
+          "published_at": "2026-11-09T08:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29247.0초)"
+    },
+    {
+      "id": "9a720b3178d2f337",
+      "title": "I Used NYT Cooking’s New AI-Powered Recipe Modifier, and It’s Actually Pretty Good",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "wired-ai",
+          "name": "WIRED",
+          "url": "https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good",
+          "target_url": "https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good",
+          "independent": true,
+          "title": "I Used NYT Cooking’s New AI-Powered Recipe Modifier, and It’s Actually Pretty Good",
+          "summary": "The New York Times has added a beta feature to its Cooking app that helps readers swap ingredients or adjust recipes to suit their needs. It mostly hits the mark.",
+          "published_at": "2026-11-08T12:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29247.0초)"
+    },
+    {
+      "id": "c039564e4f55eeee",
+      "title": "Anthropic targets $1.4 trillion IPO",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030703/anthropic-ipo-1-4-trillion",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1030703/anthropic-ipo-1-4-trillion",
+          "independent": true,
+          "title": "Anthropic targets $1.4 trillion IPO",
+          "summary": "Anthropic confirmed on Tuesday that its IPO could be one of the biggest ever, even while falling short of previous expectations. Its IPO price is expected to be between $70.00 and $78.00 per share, which would put its valuation as high as $1.4 trillion, according to the New York Times. The Wall Street Journal reports […]",
+          "published_at": "2026-11-10T14:06:54+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion",
+          "target_url": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion",
+          "independent": true,
+          "title": "Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion",
+          "summary": "The company could end up being worth a hefty $1.404 trillion if its shares list at the top of the price range, on a fully diluted basis.",
+          "published_at": "2026-11-10T14:01:39+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 2,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29246.0초)"
+    },
+    {
+      "id": "499cff9552f92642",
+      "title": "Adobe is going all in on agentic AI",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1030593/adobe-max-ai-agents-mcp-firefly-assistant-updates",
+          "target_url": "https://www.theverge.com/tech/1030593/adobe-max-ai-agents-mcp-firefly-assistant-updates",
+          "independent": true,
+          "title": "Adobe is going all in on agentic AI",
+          "summary": "Adobe is committing itself to the notion that chatbots and AI agents could be your next design assistant, or even automate creative workflows and repetitive tasks on your behalf. Some of the tools and features announced today at Adobe's Max conference in Miami, Florida, include allowing your preferred third-party AI agents to access and change […]",
+          "published_at": "2026-11-10T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29246.0초)"
+    },
+    {
+      "id": "e313ab2892aad27b",
+      "title": "Photoshop, Lightroom, and Premiere are making it easier to remove things",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1030653/adobe-max-2026-photoshop-premiere-removal-updates",
+          "target_url": "https://www.theverge.com/tech/1030653/adobe-max-2026-photoshop-premiere-removal-updates",
+          "independent": true,
+          "title": "Photoshop, Lightroom, and Premiere are making it easier to remove things",
+          "summary": "Adobe is expanding its Creative Cloud apps and Firefly AI platform with new capabilities that aim to make design and editing projects faster and less complicated. Some of the announcements from Adobe's Max event today include features for automatically removing objects, blemishes, and other unwanted distractions in Premiere, Photoshop, and Lightroom, alongside new generative AI […]",
+          "published_at": "2026-11-10T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29246.0초)"
+    },
+    {
+      "id": "1d8889c9661cfe54",
+      "title": "Hands-on with Ring’s new AI drone camera for your home",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot",
+          "target_url": "https://www.theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot",
+          "independent": true,
+          "title": "Hands-on with Ring’s new AI drone camera for your home",
+          "summary": "Ring is finally shipping a flying indoor drone camera. For real this time. The Ring Drone Cam will arrive on January 27th, 2027, for $249.99, Ring founder Jamie Siminoff said at a launch event in New York City this week. If it does actually ship, it will arrive almost six years after the company announced […]",
+          "published_at": "2026-11-10T13:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29245.0초)"
+    },
+    {
+      "id": "05e31abb81030e94",
+      "title": "David Ellison says AI could be the ‘biggest creative unlock in modern history’",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/entertainment/1030510/paramount-skydance-david-ellison-ai",
+          "target_url": "https://www.theverge.com/entertainment/1030510/paramount-skydance-david-ellison-ai",
+          "independent": true,
+          "title": "David Ellison says AI could be the ‘biggest creative unlock in modern history’",
+          "summary": "During Paramount Skydance's latest earnings call, CEO David Ellison said \"it's hard to imagine\" AI won't have a bigger impact on the film industry than CGI. In response to a question about the company's outlook for AI, Ellison said: \"I think when you zoom out and look at production, AI really has the potential to […]",
+          "published_at": "2026-11-10T00:28:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29245.0초)"
+    },
+    {
+      "id": "44bb6093a440b817",
+      "title": "What could China get from Jensen Huang?",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang",
+          "independent": true,
+          "title": "What could China get from Jensen Huang?",
+          "summary": "It's difficult to overstate Nvidia's power in today's AI landscape. The company's chips are the bedrock upon which advanced AI technology in the US is being built, and demand has consistently outpaced supply for years. Nvidia has also been an influential investor in a wide range of up-and-coming AI companies in recent years, with about […]",
+          "published_at": "2026-11-09T23:51:58+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny",
+          "target_url": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny",
+          "independent": true,
+          "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
+          "summary": "Jensen Huang’s alleged affair with a suspected Chinese spy threatens to complicate Nvidia’s lobbying efforts to loosen U.S. chip export restrictions and maintain access to China’s lucrative AI market.",
+          "published_at": "2026-11-09T18:09:52+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy",
+          "target_url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy",
+          "independent": true,
+          "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+          "summary": "In a memo to the company, Huang admitted that he had an affair.",
+          "published_at": "2026-11-08T21:00:11+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/jensen-huang-admits-affair-amid-spy-claims",
+          "target_url": "https://www.therundown.ai/articles/jensen-huang-admits-affair-amid-spy-claims",
+          "independent": true,
+          "title": "Jensen Huang admits affair amid spy claims",
+          "summary": "PLUS: Turn your X bookmarks into a personal research desk",
+          "published_at": "2026-11-09T10:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+          "target_url": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+          "independent": true,
+          "title": "Everything we know so far about the Nvidia spy scandal targeting CEO Jensen Huang",
+          "summary": "The leather-jacketed CEO of Nvidia, Jensen Huang, has acknowledged an affair with Megaspeed exec Alice Huang, spurring an investigation by his company and intense discussions worldwide. Recent reporting noted that since last year, US intelligence reports had identified Alice Huang (no relation) as not only the exec for an AI compute company renting access to […]",
+          "published_at": "2026-11-09T23:07:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 3,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29245.0초)"
+    },
+    {
+      "id": "cd027b24b17aebaf",
+      "title": "Here’s what Trump said he knew about Jensen Huang",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1030446/trump-jensen-huang-press-conference",
+          "target_url": "https://www.theverge.com/tech/1030446/trump-jensen-huang-press-conference",
+          "independent": true,
+          "title": "Here’s what Trump said he knew about Jensen Huang",
+          "summary": "President Trump held a White House press briefing earlier today and responded to several questions about his knowledge of Nvidia CEO Jensen Huang's affair with an alleged Chinese spy. Huang said this weekend that he had been \"​​unfaithful\" to his wife, and the company has opened an investigation into Huang. Recent articles from The New […]",
+          "published_at": "2026-11-09T23:47:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29244.0초)"
+    },
+    {
+      "id": "79ac4b66951afb86",
+      "title": "The global pledge to use AI for climate good is a cruel joke",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/science/1030252/ai-data-center-climate-pledge-united-nations-cop31",
+          "target_url": "https://www.theverge.com/science/1030252/ai-data-center-climate-pledge-united-nations-cop31",
+          "independent": true,
+          "title": "The global pledge to use AI for climate good is a cruel joke",
+          "summary": "At this point, reading through the latest splashy pledge to use AI for the good of the environment feels like downing a nonalcoholic beer. Admittedly, I'm suspicious from the onset. How can this be good? But I love beer and our planet enough to give it a whirl - and hey, why not try a […]",
+          "published_at": "2026-11-09T21:13:16+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29244.0초)"
+    },
+    {
+      "id": "5ef93d9981a0db1c",
+      "title": "Apple’s $50 Intelligence Usage Packs extend access to some AI features",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-verge-ai",
+          "name": "The Verge",
+          "url": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+          "target_url": "https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+          "independent": true,
+          "title": "Apple’s $50 Intelligence Usage Packs extend access to some AI features",
+          "summary": "After publishing a support article in early September outlining usage limits for some Apple Intelligence features, the company has updated Logic Pro with an option to \"Buy More Usage\" for a one-time purchase price of $49.99, as spotted by 9to5Mac. It has a built-in AI assistant to do things like \"start a new song, set […]",
+          "published_at": "2026-11-09T19:09:58+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29244.0초)"
+    },
+    {
+      "id": "00824ebcd8896845",
+      "title": "Meta’s AI agent Muse lands on Apple Watch and Android Wear OS",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/metas-ai-agent-muse-lands-on-apple-watch-and-wear-os",
+          "target_url": "https://techcrunch.com/2026/11/10/metas-ai-agent-muse-lands-on-apple-watch-and-wear-os",
+          "independent": true,
+          "title": "Meta’s AI agent Muse lands on Apple Watch and Android Wear OS",
+          "summary": "Users can now interact with Meta’s AI assistant through voice calls, text messages, or dictation on their Apple Watch.",
+          "published_at": "2026-11-10T15:29:30+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29244.0초)"
+    },
+    {
+      "id": "126b111b5d436487",
+      "title": "Adobe brings AI agents and new creative tools to Photoshop, Premiere, and Firefly",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp",
+          "target_url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp",
+          "independent": true,
+          "title": "Adobe brings AI agents and new creative tools to Photoshop, Premiere, and Firefly",
+          "summary": "Adobe is taking on Figma with a new prototype builder tool in Firefly.",
+          "published_at": "2026-11-10T14:05:10+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29243.0초)"
+    },
+    {
+      "id": "b5b0ef99e191cd08",
+      "title": "Spotify’s AI DJ gets new voices, personalities, and an option for less chatter",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/spotifys-ai-dj-gets-new-voices-personalities-and-an-option-for-less-chatter",
+          "target_url": "https://techcrunch.com/2026/11/10/spotifys-ai-dj-gets-new-voices-personalities-and-an-option-for-less-chatter",
+          "independent": true,
+          "title": "Spotify’s AI DJ gets new voices, personalities, and an option for less chatter",
+          "summary": "Spotify Premium users can now customize their AI DJ with new voices with different personalities, or turn off the commentary between songs.",
+          "published_at": "2026-11-10T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29243.0초)"
+    },
+    {
+      "id": "e086b6a569cdaf26",
+      "title": "After challenging Google’s Android with Cyanogen, its co-founder takes aim at Windows for AI era",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/after-challenging-googles-android-with-cyanogen-its-co-founder-takes-aim-at-windows-for-ai-era",
+          "target_url": "https://techcrunch.com/2026/11/10/after-challenging-googles-android-with-cyanogen-its-co-founder-takes-aim-at-windows-for-ai-era",
+          "independent": true,
+          "title": "After challenging Google’s Android with Cyanogen, its co-founder takes aim at Windows for AI era",
+          "summary": "Kora is set to launch as a free-to-use alternative to Windows, targeting users who rely heavily on AI models and agents.",
+          "published_at": "2026-11-10T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29243.0초)"
+    },
+    {
+      "id": "7fc88fbdaa8e9721",
+      "title": "Cyberattacks threaten to make open-source AI a little less open, Hugging Face exec warns",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns",
+          "target_url": "https://techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns",
+          "independent": true,
+          "title": "Cyberattacks threaten to make open-source AI a little less open, Hugging Face exec warns",
+          "summary": "Hugging Face executive Irene Solaiman warns that growing cyberattacks on open AI platforms could force tighter security restrictions, threatening the accessibility that makes open-source communities valuable to developers worldwide.",
+          "published_at": "2026-11-10T13:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29242.0초)"
+    },
+    {
+      "id": "0f192bba36f64bb6",
+      "title": "Otter AI can now follow conversations across 30+ languages",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages",
+          "target_url": "https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages",
+          "independent": true,
+          "title": "Otter AI can now follow conversations across 30+ languages",
+          "summary": "Otter AI just added support for 27 languages and revealed an upcoming feature that can follow along if speakers switch between languages.",
+          "published_at": "2026-11-10T07:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29242.0초)"
+    },
+    {
+      "id": "4f4fd1b1da1f00aa",
+      "title": "Anthropic reportedly plans to move forward with IPO plans",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans",
+          "target_url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans",
+          "independent": true,
+          "title": "Anthropic reportedly plans to move forward with IPO plans",
+          "summary": "The AI company is expected to set its valuation range this week, the Wall Street Journal reported.",
+          "published_at": "2026-11-10T01:27:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29242.0초)"
+    },
+    {
+      "id": "e105484703996e34",
+      "title": "A short seller flagged Nvidia CEO’s ties to a suspected Chinese spy six months before the scandal",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal",
+          "target_url": "https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal",
+          "independent": true,
+          "title": "A short seller flagged Nvidia CEO’s ties to a suspected Chinese spy six months before the scandal",
+          "summary": "Six months before Nvidia's spy scandal erupted, Culper Research was already questioning Jensen Huang's unusually close relationship with a Chinese executive.",
+          "published_at": "2026-11-09T22:46:09+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29241.0초)"
+    },
+    {
+      "id": "bda3011897fcd946",
+      "title": "The race is on to sue Nvidia",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia",
+          "target_url": "https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia",
+          "independent": true,
+          "title": "The race is on to sue Nvidia",
+          "summary": "Nvidia’s stock slid more than 4% after its board opened an investigation into Jensen Huang’s relationship with a suspected Chinese spy, and one securities law expert says the company’s earlier insistence that it was all “normal” could turn into a very expensive problem.",
+          "published_at": "2026-11-09T22:23:42+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29241.0초)"
+    },
+    {
+      "id": "e7b41c563c8e101b",
+      "title": "Jensen Huang pulls out of ElevenLabs Summit amid Nvidia controversy",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy",
+          "target_url": "https://techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy",
+          "independent": true,
+          "title": "Jensen Huang pulls out of ElevenLabs Summit amid Nvidia controversy",
+          "summary": "The Nvidia CEO also pulled out of an Anthropic event earlier.",
+          "published_at": "2026-11-09T20:09:06+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29241.0초)"
+    },
+    {
+      "id": "a3bc8ca770f44f2d",
+      "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns",
+          "target_url": "https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns",
+          "independent": true,
+          "title": "Anthropic releases new Mythos and Fable models amid RSI concerns",
+          "summary": "Anthropic says the new models \"show improvements in areas like coding, reasoning, and vision,\" as well as in communicating more clearly with users.",
+          "published_at": "2026-11-09T19:24:51+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29240.0초)"
+    },
+    {
+      "id": "e8884a0ba45abd76",
+      "title": "Meta releases Muse Ember, a new lightweight model for agent execution",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution",
+          "target_url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution",
+          "independent": true,
+          "title": "Meta releases Muse Ember, a new lightweight model for agent execution",
+          "summary": "At 10 cents per million input tokens, Ember is significantly cheaper than frontier competitors like Haiku and Luna.",
+          "published_at": "2026-11-09T18:00:00+00:00",
+          "date_precision": "time"
+        },
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/meta-muse-ember-launch",
+          "target_url": "https://thenewstack.io/meta-muse-ember-launch",
+          "independent": true,
+          "title": "Meta launches Muse Ember to take on Claude Haiku and GPT-6 Luna",
+          "summary": "Meta on Monday debuted Muse Ember, a smaller, more efficient multimodal member of its Muse model family. The company is The post Meta launches Muse Ember to take on Claude Haiku and GPT-6 Luna appeared first on The New Stack .",
+          "published_at": "2026-11-09T18:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 2,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29240.0초)"
+    },
+    {
+      "id": "48b9783d0be50413",
+      "title": "Anthropic joins AI’s natural gas frenzy, buys $3.4B worth of turbines",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines",
+          "target_url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines",
+          "independent": true,
+          "title": "Anthropic joins AI’s natural gas frenzy, buys $3.4B worth of turbines",
+          "summary": "Anthropic bought billions of dollars' worth of natural gas turbines in a deal that could give it buyer's remorse.",
+          "published_at": "2026-11-09T16:56:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29240.0초)"
+    },
+    {
+      "id": "d65b75d7c2a2b265",
+      "title": "Medium’s new TK app brings AI assistance directly into the writing process",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process",
+          "target_url": "https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process",
+          "independent": true,
+          "title": "Medium’s new TK app brings AI assistance directly into the writing process",
+          "summary": "Medium's new writing app embraces AI-assisted writing, despite growing controversy over the technology's role in publishing.",
+          "published_at": "2026-11-09T16:12:28+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29240.0초)"
+    },
+    {
+      "id": "002b5d6d214abd27",
+      "title": "Automattic debuts a platform to deploy vibe-coding apps amid a changing internet",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet",
+          "target_url": "https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet",
+          "independent": true,
+          "title": "Automattic debuts a platform to deploy vibe-coding apps amid a changing internet",
+          "summary": "Automattic aims to compete with the likes of Lovable with Spacefast.",
+          "published_at": "2026-11-09T14:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29239.0초)"
+    },
+    {
+      "id": "177dd03271cc9aec",
+      "title": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s ‘about a 50-50’",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "techcrunch-ai",
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50",
+          "target_url": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50",
+          "independent": true,
+          "title": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s ‘about a 50-50’",
+          "summary": "Nvidia’s board is investigating Jensen Huang over his relationship with a suspected Chinese spy, and Yale’s Jeffrey Sonnenfeld thinks it’s roughly a coin flip whether Huang stays on as CEO.",
+          "published_at": "2026-11-09T05:26:29+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29239.0초)"
+    },
+    {
+      "id": "255cb0603ec1b380",
+      "title": "Lottie AI",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/lottiefiles",
+          "target_url": "https://www.producthunt.com/products/lottiefiles",
+          "independent": false,
+          "title": "Lottie AI",
+          "summary": "Editable vector animations from a text prompt Discussion | Link",
+          "published_at": "2026-11-09T08:16:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "796fbb61871611ba",
+      "title": "Seldon",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/seldon",
+          "target_url": "https://www.producthunt.com/products/seldon",
+          "independent": false,
+          "title": "Seldon",
+          "summary": "Behavioral QA agents that use your product like customers do Discussion | Link",
+          "published_at": "2026-11-10T01:18:21+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "6d260bee3dcaf035",
+      "title": "Wipecraft",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/wipecraft",
+          "target_url": "https://www.producthunt.com/products/wipecraft",
+          "independent": false,
+          "title": "Wipecraft",
+          "summary": "Mac System Data cleaner with on-device AI mode Discussion | Link",
+          "published_at": "2026-11-09T11:50:59+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "e56a684e1425ac50",
+      "title": "AppuBot",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/appubot",
+          "target_url": "https://www.producthunt.com/products/appubot",
+          "independent": false,
+          "title": "AppuBot",
+          "summary": "Grok Bot alternative that runs on your AI, completely free Discussion | Link",
+          "published_at": "2026-11-10T04:16:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "73f912cf049f6f59",
+      "title": "SideKick By Open",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/open-for-sales",
+          "target_url": "https://www.producthunt.com/products/open-for-sales",
+          "independent": false,
+          "title": "SideKick By Open",
+          "summary": "“Claude, but for your product” is here. Discussion | Link",
+          "published_at": "2026-11-09T12:59:46+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "29281bab309c6322",
+      "title": "ZUS",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com/products/zus-2",
+          "target_url": "https://www.producthunt.com/products/zus-2",
+          "independent": false,
+          "title": "ZUS",
+          "summary": "AI-native IDE: agents code with human review Discussion | Link",
+          "published_at": "2026-11-09T17:01:49+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "251c42ea15e17385",
+      "title": "New CNCF report: 75% of cloud-native developers ship code with AI. Jonathan Bryce explains why.",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/cncf-developer-ai-adoption",
+          "target_url": "https://thenewstack.io/cncf-developer-ai-adoption",
+          "independent": true,
+          "title": "New CNCF report: 75% of cloud-native developers ship code with AI. Jonathan Bryce explains why.",
+          "summary": "Today’s developers are AI-pilled. Cloud native developers even more so. That’s the key takeaway from the Cloud Native Computing Foundation’s The post New CNCF report: 75% of cloud-native developers ship code with AI. Jonathan Bryce explains why. appeared first on The New Stack .",
+          "published_at": "2026-11-10T15:42:54+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29239.0초)"
+    },
+    {
+      "id": "ea17c3bd304fbe53",
+      "title": "Anthropic launches Fable 5.2 with a price cut and stronger coding scores",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/anthropic-fable-coding-upgrade",
+          "target_url": "https://thenewstack.io/anthropic-fable-coding-upgrade",
+          "independent": true,
+          "title": "Anthropic launches Fable 5.2 with a price cut and stronger coding scores",
+          "summary": "On Monday, Anthropic launched Claude Fable 5.2 and Mythos 5.2, the latest versions of its duo of flagship models. Like before, The post Anthropic launches Fable 5.2 with a price cut and stronger coding scores appeared first on The New Stack .",
+          "published_at": "2026-11-09T19:08:20+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29238.0초)"
+    },
+    {
+      "id": "e8648791d0f12497",
+      "title": "Google claims its new AI software cuts inference latency by over 90% — but there’s a catch",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/google-tpu-sync-inference",
+          "target_url": "https://thenewstack.io/google-tpu-sync-inference",
+          "independent": true,
+          "title": "Google claims its new AI software cuts inference latency by over 90% — but there’s a catch",
+          "summary": "Google’s eighth-generation TPU announcement on Monday included more than new chips, introducing TPU Sync, an open-source system designed to speed The post Google claims its new AI software cuts inference latency by over 90% — but there’s a catch appeared first on The New Stack .",
+          "published_at": "2026-11-09T18:40:01+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29238.0초)"
+    },
+    {
+      "id": "0ca7bd4325b92bd0",
+      "title": "Cursor and Google join OpenAI in giving coding agents a voice. Claude Code stays silent.",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-new-stack-ai",
+          "name": "The New Stack",
+          "url": "https://thenewstack.io/cursor-antigravity-voice-agents",
+          "target_url": "https://thenewstack.io/cursor-antigravity-voice-agents",
+          "independent": true,
+          "title": "Cursor and Google join OpenAI in giving coding agents a voice. Claude Code stays silent.",
+          "summary": "Two of the biggest players in the AI coding space are betting that developers want to talk to their agents The post Cursor and Google join OpenAI in giving coding agents a voice. Claude Code stays silent. appeared first on The New Stack .",
+          "published_at": "2026-11-09T18:22:41+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29238.0초)"
+    },
+    {
+      "id": "9c6236e5c87bd916",
+      "title": "Anthropic says ‘pacing, not pausing’ with Fable 5.2",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/anthropic-says-pacing-not-pausing-with-fable-5-2",
+          "target_url": "https://www.therundown.ai/articles/anthropic-says-pacing-not-pausing-with-fable-5-2",
+          "independent": true,
+          "title": "Anthropic says ‘pacing, not pausing’ with Fable 5.2",
+          "summary": "PLUS: Clean up a messy Excel report with Claude",
+          "published_at": "2026-11-10T10:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29237.0초)"
+    },
+    {
+      "id": "d33e06d5aa4596e3",
+      "title": "Amazon builds its home robot team",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "the-rundown-ai",
+          "name": "The Rundown AI",
+          "url": "https://www.therundown.ai/articles/amazon-builds-its-home-robot-team",
+          "target_url": "https://www.therundown.ai/articles/amazon-builds-its-home-robot-team",
+          "independent": true,
+          "title": "Amazon builds its home robot team",
+          "summary": "PLUS: Zipline nearly triples its valuation",
+          "published_at": "2026-11-09T15:30:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29237.0초)"
+    },
+    {
+      "id": "79991ff3e844403d",
+      "title": "Presentation: Batch Intelligence at Scale: Cost-Efficient Multi-Agent LLM Workflows with Built-In Resilience",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/presentations/scaling-multi-agent-llm-batch",
+          "target_url": "https://www.infoq.com/presentations/scaling-multi-agent-llm-batch",
+          "independent": true,
+          "title": "Presentation: Batch Intelligence at Scale: Cost-Efficient Multi-Agent LLM Workflows with Built-In Resilience",
+          "summary": "Aditya Mulik explains how Walmart Global Tech deployed multi-agent LLM workflows across 4,700 stores for nightly batch inventory forecasting. He discusses tackling production hurdles - schema violations, cross-department data mismatches, and network drops - via MCP grounding and loop agents, while slashing cloud inference costs from $100k+ to $10k per month shifting from PTUs to pay-as-you-go. By Aditya Mulik",
+          "published_at": "2026-11-10T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29237.0초)"
+    },
+    {
+      "id": "a031e2611caeed38",
+      "title": "Article: LLM Reliability Layers Under Test: Accuracy, Yield, and the Limits of Verification",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/articles/llm-reliability-layers-limits-accuracy",
+          "target_url": "https://www.infoq.com/articles/llm-reliability-layers-limits-accuracy",
+          "independent": true,
+          "title": "Article: LLM Reliability Layers Under Test: Accuracy, Yield, and the Limits of Verification",
+          "summary": "Verification layers sort outputs by trust rather than fixing errors. In a benchmark of six reliability layers, voting and self-correction failed to recover accuracy - they only withheld doubtful records. Production systems gain more reliability by replacing generation with deterministic lookups, tracking yield over raw accuracy, and resolving extraction bottlenecks before stacking checks. By Pushpdeep Mishra, Wejdan Bagais",
+          "published_at": "2026-11-10T09:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29236.0초)"
+    },
+    {
+      "id": "92f8356324058d6c",
+      "title": "Google Releases Gemini 4 Argon for Robotics Control, Simulation, and Policy Improvement",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/11/google-gemini-argon",
+          "target_url": "https://www.infoq.com/news/2026/11/google-gemini-argon",
+          "independent": true,
+          "title": "Google Releases Gemini 4 Argon for Robotics Control, Simulation, and Policy Improvement",
+          "summary": "Google has released Gemini 4 Argon framing it as a general-purpose physical-reasoning model for robot control, Real2Sim scene construction, multimodal labeling of robot video, and iterative policy improvement, rather than as a single end-effector policy. By Daniel Dominguez",
+          "published_at": "2026-11-09T15:44:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29236.0초)"
+    },
+    {
+      "id": "d6031f26938e0351",
+      "title": "Cloudflare Develops Public Certificate Authority for Post-Quantum Web Security",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/11/cloudflare-merkle-certificates",
+          "target_url": "https://www.infoq.com/news/2026/11/cloudflare-merkle-certificates",
+          "independent": true,
+          "title": "Cloudflare Develops Public Certificate Authority for Post-Quantum Web Security",
+          "summary": "Cloudflare is developing a public certificate authority for Merkle Tree Certificates (MTCs) to reduce the bandwidth overhead of post-quantum cryptography. A Chrome experiment served billions of MTCs to 50% of Chrome Beta 146 for selected domains, reporting 9% faster median performance. Wider deployment depends on browser support, transparency, and production-scale validation. By Leela Kumili",
+          "published_at": "2026-11-09T14:35:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29236.0초)"
+    },
+    {
+      "id": "42fff6f531f368dc",
+      "title": "AWS Launches TorchNeuron to Run PyTorch Models on AWS Trainium Without Modifications",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/11/aws-torchneuron-trainium-pytorch",
+          "target_url": "https://www.infoq.com/news/2026/11/aws-torchneuron-trainium-pytorch",
+          "independent": true,
+          "title": "AWS Launches TorchNeuron to Run PyTorch Models on AWS Trainium Without Modifications",
+          "summary": "At the recent PyTorch Conference North America 2026, Amazon introduced TorchNeuron, a native PyTorch backend that enables developers to run existing PyTorch code on AWS Trainium AI chips with virtually no code modifications. By Sergio De Simone",
+          "published_at": "2026-11-09T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29236.0초)"
+    },
+    {
+      "id": "132b52f415194e6d",
+      "title": "Podcast: Distributed LLM Inference on Kubernetes with llm-d, Wasm, & TornadoVM",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/podcasts/distributed-llm-inference-kubernetes",
+          "target_url": "https://www.infoq.com/podcasts/distributed-llm-inference-kubernetes",
+          "independent": true,
+          "title": "Podcast: Distributed LLM Inference on Kubernetes with llm-d, Wasm, & TornadoVM",
+          "summary": "In this episode, Edoardo Vacchi discusses the evolving landscape of WebAssembly on the backend, running Java workloads on GPUs using TornadoVM, and optimizing distributed AI inference using llm-d and vLLM on Kubernetes. Edoardo explains how llm-d manages cache locality (KV and prefix caches), request routing, and batch inference across Kubernetes clusters to maximize expensive GPU utilization. By Edoardo Vacchi",
+          "published_at": "2026-11-09T11:00:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29235.0초)"
+    },
+    {
+      "id": "c9113f07ad18c27b",
+      "title": "Pinterest Replaces Journey Clustering with 4B Qwen3 LLM, Reports Improved Engagement",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "infoq-ai",
+          "name": "InfoQ",
+          "url": "https://www.infoq.com/news/2026/11/pinterest-journey",
+          "target_url": "https://www.infoq.com/news/2026/11/pinterest-journey",
+          "independent": true,
+          "title": "Pinterest Replaces Journey Clustering with 4B Qwen3 LLM, Reports Improved Engagement",
+          "summary": "Pinterest has moved its user-journey inference system from a multi-stage clustering pipeline to a fine-tuned 4-billion-parameter language model, reporting a 1.1% improvement in email click-through and 1.3% higher push opens. By Matt Foster",
+          "published_at": "2026-11-09T07:25:00+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 1,
+      "status": "held",
+      "reason": "자동 게시 보류: Retry-After 대기시간 초과 (29235.0초)"
+    },
+    {
+      "id": "94a027f3c6000a58",
+      "title": "The AI Agent Crossed the Boundary. The Incident Response Failed to Keep Up.",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://inclinq.medium.com/the-ai-agent-crossed-the-boundary-the-incident-response-failed-to-keep-up-4ef16c36ed49",
+          "target_url": "https://inclinq.medium.com/the-ai-agent-crossed-the-boundary-the-incident-response-failed-to-keep-up-4ef16c36ed49",
+          "independent": false,
+          "title": "The AI Agent Crossed the Boundary. The Incident Response Failed to Keep Up.",
+          "summary": "Australia’s Medicare statistics incident shows why agent security must cover runtime restrictions, monitoring and disclosure — not just… Continue reading on Medium »",
+          "published_at": "2026-11-10T15:51:14+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "c0b5c2b85783f4b6",
+      "title": "AI Ecommerce Integration Starts With Better Shopping Experiences",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://scottcmcmahan.medium.com/ai-ecommerce-integration-starts-with-better-shopping-experiences-4d6147040091",
+          "target_url": "https://scottcmcmahan.medium.com/ai-ecommerce-integration-starts-with-better-shopping-experiences-4d6147040091",
+          "independent": false,
+          "title": "AI Ecommerce Integration Starts With Better Shopping Experiences",
+          "summary": "A shopper visits your online store with a simple question: “Which jacket would work best for rainy hikes?” Continue reading on Medium »",
+          "published_at": "2026-11-10T15:51:12+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "2cbc52145c67bdd6",
+      "title": "Microsoft Copilot for a 10-Person Business: Is It Worth It?",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@ittoolsreviews/microsoft-copilot-for-a-10-person-business-is-it-worth-it-8622c5d4f911",
+          "target_url": "https://medium.com/@ittoolsreviews/microsoft-copilot-for-a-10-person-business-is-it-worth-it-8622c5d4f911",
+          "independent": false,
+          "title": "Microsoft Copilot for a 10-Person Business: Is It Worth It?",
+          "summary": "What you already get for free, what the paid version adds, and a simple test to run before you pay for every seat Continue reading on Medium »",
+          "published_at": "2026-11-10T15:47:36+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "bd9c7536fee103bf",
+      "title": "Beyond Death: Could Human Memories, Consciousness and Identity One Day Live in the Cloud?",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/@magaiwamohoria/beyond-death-could-human-memories-consciousness-and-identity-one-day-live-in-the-cloud-c00a038ade08",
+          "target_url": "https://medium.com/@magaiwamohoria/beyond-death-could-human-memories-consciousness-and-identity-one-day-live-in-the-cloud-c00a038ade08",
+          "independent": false,
+          "title": "Beyond Death: Could Human Memories, Consciousness and Identity One Day Live in the Cloud?",
+          "summary": "Imagine a world where death is merely a data transfer. Continue reading on Medium »",
+          "published_at": "2026-11-10T15:46:27+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
+    },
+    {
+      "id": "7c7350d6ff5acb1c",
+      "title": "L’intelligence artificielle : une utilisation inégale et fragile dans le monde du travail",
+      "first_seen": "2026-11-11T00:52:19+09:00",
+      "sources": [
+        {
+          "source_id": "medium-ai",
+          "name": "Medium",
+          "url": "https://medium.com/digital-gems/lintelligence-artificielle-une-utilisation-in%C3%A9gale-et-fragile-dans-le-monde-du-travail-277ee7dcde1f",
+          "target_url": "https://medium.com/digital-gems/lintelligence-artificielle-une-utilisation-in%C3%A9gale-et-fragile-dans-le-monde-du-travail-277ee7dcde1f",
+          "independent": false,
+          "title": "L’intelligence artificielle : une utilisation inégale et fragile dans le monde du travail",
+          "summary": "Comment faire face aux inégalités liées à l’IA dans le monde du travail ? Continue reading on Digital GEMs »",
+          "published_at": "2026-11-10T15:46:18+00:00",
+          "date_precision": "time"
+        }
+      ],
+      "independent_source_count": 0,
+      "status": "candidate",
+      "reason": "커뮤니티·소셜 신호만 있음"
     }
   ],
   "auto_published_count": 0,
   "official_run": {
-    "collected_at": "2026-11-08T18:36:47.133906+09:00",
-    "window_start": "2026-09-09T18:36:47.133906+09:00",
-    "window_end": "2026-11-08T18:36:47.133906+09:00",
-    "candidate_count": 0,
-    "published_count": 0,
+    "collected_at": "2026-11-11T00:50:46.048787+09:00",
+    "window_start": "2026-09-12T00:50:46.048787+09:00",
+    "window_end": "2026-11-11T00:50:46.048787+09:00",
+    "candidate_count": 2,
+    "published_count": 2,
     "held_item_count": 0,
-    "failed_source_count": 3,
+    "failed_source_count": 4,
     "checked_source_count": 5,
     "waiting_count": 0,
     "policy_revision": 1,
@@ -1913,16 +2251,16 @@
     "shortfall": 10
   },
   "hourly_run": {
-    "collected_at": "2026-11-08T18:38:13.445138+09:00",
-    "window_start": "2026-11-06T06:38:13.445138+09:00",
-    "window_end": "2026-11-08T18:38:13.445138+09:00",
-    "candidate_count": 72,
-    "eligible_count": 42,
+    "collected_at": "2026-11-11T00:52:19.439742+09:00",
+    "window_start": "2026-11-08T12:52:19.439742+09:00",
+    "window_end": "2026-11-11T00:52:19.439742+09:00",
+    "candidate_count": 84,
+    "eligible_count": 48,
     "published_count": 0,
-    "waiting_count": 30,
-    "held_count": 42,
+    "waiting_count": 36,
+    "held_count": 48,
     "duplicate_count": 0,
-    "held_item_count": 1,
+    "held_item_count": 0,
     "failed_source_count": 1,
     "checked_source_count": 12,
     "not_configured_source_count": 3,
