@@ -39,12 +39,12 @@
         "url": "https://github.com/openai/codex/releases",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-11-22T02:47:49.309494+09:00",
+        "checked_at": "2026-11-22T07:28:25.884907+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
         "coverage_limited": false,
-        "error": "응답 크기가 최대 허용치(12MB)를 초과했습니다: https://api.github.com/repos/openai/codex/releases?per_page=30&page=3",
+        "error": "Retry-After 대기시간 초과 (5481.0초)",
         "last_success_at": "2026-10-19T23:22:48.475365+09:00"
       },
       {
@@ -53,12 +53,12 @@
         "url": "https://github.com/anthropics/claude-code/releases",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-11-22T02:47:49.309494+09:00",
+        "checked_at": "2026-11-22T07:28:25.884907+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
         "coverage_limited": false,
-        "error": "Retry-After 대기시간 초과 (22245.0초)",
+        "error": "Retry-After 대기시간 초과 (5480.0초)",
         "last_success_at": "2026-10-09T02:40:51.184745+09:00"
       },
       {
@@ -67,12 +67,12 @@
         "url": "https://github.com/google-gemini/gemini-cli/releases",
         "status": "failed",
         "count": 0,
-        "checked_at": "2026-11-22T02:47:49.309494+09:00",
+        "checked_at": "2026-11-22T07:28:25.884907+09:00",
         "held_count": 0,
         "excluded_count": 0,
         "skipped_count": 0,
         "coverage_limited": false,
-        "error": "Retry-After 대기시간 초과 (22244.0초)",
+        "error": "Retry-After 대기시간 초과 (5479.0초)",
         "last_success_at": "2026-10-28T01:53:48.272004+09:00"
       },
       {
@@ -81,17 +81,17 @@
         "url": "https://docs.x.ai/developers/release-notes",
         "status": "partial",
         "count": 0,
-        "checked_at": "2026-11-22T02:47:49.309494+09:00",
+        "checked_at": "2026-11-22T07:28:25.884907+09:00",
         "held_count": 3,
         "excluded_count": 0,
         "skipped_count": 4,
         "coverage_limited": false,
         "held_reasons": [
-          "한국어 번역 실패: Retry-After 대기시간 초과 (22243.0초)",
-          "한국어 번역 실패: Retry-After 대기시간 초과 (22243.0초)",
-          "한국어 번역 실패: Retry-After 대기시간 초과 (22242.0초)"
+          "한국어 번역 실패: Retry-After 대기시간 초과 (5479.0초)",
+          "한국어 번역 실패: Retry-After 대기시간 초과 (5479.0초)",
+          "한국어 번역 실패: Retry-After 대기시간 초과 (5478.0초)"
         ],
-        "last_success_at": "2026-11-22T02:47:49.309494+09:00"
+        "last_success_at": "2026-11-22T07:28:25.884907+09:00"
       },
       {
         "id": "anthropic-news",
